@@ -7,6 +7,7 @@ const http = require('http');
 const config = require('../shared/config');
 const logger = require('../shared/logger');
 const { getTraceId } = require('../shared/tracing');
+const generationLogger = require('./generation-logger');
 
 class OllamaService {
     constructor() {
@@ -232,18 +233,39 @@ class OllamaService {
                             evalDuration: responseData.eval_duration
                         });
 
+                        const stats = {
+                            evalCount: responseData.eval_count,
+                            evalDuration: responseData.eval_duration,
+                            totalDuration: responseData.total_duration
+                        };
+
+                        generationLogger.logGeneration({
+                            traceId,
+                            model,
+                            type: 'json_generation',
+                            prompt,
+                            options,
+                            response: parsed,
+                            rawResponse: responseData.response,
+                            stats
+                        });
+
                         resolve({
                             success: true,
                             result: parsed,
                             raw: responseData.response,
-                            stats: {
-                                evalCount: responseData.eval_count,
-                                evalDuration: responseData.eval_duration,
-                                totalDuration: responseData.total_duration
-                            }
+                            stats
                         });
                     } catch (error) {
                         logger.error('JSON generation parse error', { traceId, model, error: error.message });
+                        generationLogger.logGeneration({
+                            traceId,
+                            model,
+                            type: 'json_generation_error',
+                            prompt,
+                            options,
+                            error: error.message
+                        });
                         resolve({ success: false, error: error.message });
                     }
                 });
@@ -312,17 +334,40 @@ class OllamaService {
                             responseLength: responseData.response?.length
                         });
 
+                        const stats = {
+                            evalCount: responseData.eval_count,
+                            evalDuration: responseData.eval_duration,
+                            totalDuration: responseData.total_duration
+                        };
+
+                        // Archive generation
+                        generationLogger.logGeneration({
+                            traceId,
+                            model,
+                            type: 'text_generation',
+                            prompt,
+                            system: options.system,
+                            options,
+                            response: responseData.response,
+                            stats
+                        });
+
                         resolve({
                             success: true,
                             text: responseData.response,
-                            stats: {
-                                evalCount: responseData.eval_count,
-                                evalDuration: responseData.eval_duration,
-                                totalDuration: responseData.total_duration
-                            }
+                            stats
                         });
                     } catch (error) {
                         logger.error('Text generation parse error', { traceId, model, error: error.message });
+                        generationLogger.logGeneration({
+                            traceId,
+                            model,
+                            type: 'text_generation_error',
+                            prompt,
+                            system: options.system,
+                            options,
+                            error: error.message
+                        });
                         resolve({ success: false, error: error.message });
                     }
                 });

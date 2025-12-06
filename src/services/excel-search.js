@@ -5,34 +5,142 @@ const XLSX = require('xlsx');
 const path = require('path');
 const logger = require('../shared/logger');
 
+const fs = require('fs');
+
 class ExcelSearchService {
     constructor() {
-        this.filePath = path.join(__dirname, '../../docs/tabela podsumowan.xlsx');
-        this.data = null;
-        this.lastLoad = 0;
+        this.paths = {
+            charHistory: path.join(__dirname, '../../docs/tabela podsumowan.xlsx'),
+            mgProfiles: path.join(__dirname, '../../docs/Larp Gothic - Mapowanie kompetencji (Odpowiedzi).xlsx'),
+            docsDir: path.join(__dirname, '../../docs/')
+        };
+
+        // Data caches
+        this.data = {
+            charHistory: null,
+            mgProfiles: null,
+            factionHistory: {}
+        };
+
+        this.timestamps = {
+            charHistory: 0,
+            mgProfiles: 0,
+            factionHistory: 0
+        };
+
         this.CACHE_DURATION = 1000 * 60 * 5; // 5 minutes
     }
 
+    // --- Character History (Existing) ---
     async loadData() {
+        return this.loadCharHistory();
+    }
+
+    async loadCharHistory() {
         const now = Date.now();
-        if (this.data && (now - this.lastLoad < this.CACHE_DURATION)) {
-            return this.data;
+        if (this.data.charHistory && (now - this.timestamps.charHistory < this.CACHE_DURATION)) {
+            return this.data.charHistory;
         }
 
         try {
-            logger.info('Loading Excel file for search', { path: this.filePath });
-            const workbook = XLSX.readFile(this.filePath);
+            logger.info('Loading Character History', { path: this.paths.charHistory });
+            if (!fs.existsSync(this.paths.charHistory)) {
+                logger.warn('Character History file not found');
+                return [];
+            }
+
+            const workbook = XLSX.readFile(this.paths.charHistory);
             const sheetName = workbook.SheetNames[0];
             const sheet = workbook.Sheets[sheetName];
 
-            // Read with headers
-            this.data = XLSX.utils.sheet_to_json(sheet);
-            this.lastLoad = now;
-            logger.info('Excel data loaded', { rows: this.data.length });
-            return this.data;
+            this.data.charHistory = XLSX.utils.sheet_to_json(sheet);
+            this.timestamps.charHistory = now;
+            return this.data.charHistory;
         } catch (error) {
-            logger.error('Failed to load Excel file', { error: error.message });
-            throw error;
+            logger.error('Failed to load Character History', { error: error.message });
+            return [];
+        }
+    }
+
+    // --- MG Profiles ---
+    async loadMgProfiles() {
+        const now = Date.now();
+        if (this.data.mgProfiles && (now - this.timestamps.mgProfiles < this.CACHE_DURATION)) {
+            return this.data.mgProfiles;
+        }
+
+        try {
+            logger.info('Loading MG Profiles', { path: this.paths.mgProfiles });
+            if (!fs.existsSync(this.paths.mgProfiles)) {
+                logger.warn('MG Profiles file not found');
+                return [];
+            }
+
+            const workbook = XLSX.readFile(this.paths.mgProfiles);
+            const sheetName = workbook.SheetNames[0];
+            const sheet = workbook.Sheets[sheetName];
+
+            const rawData = XLSX.utils.sheet_to_json(sheet);
+
+            // Map to cleaner structure
+            this.data.mgProfiles = rawData.map(row => ({
+                id: row['Sygnatura czasowa'], // Use timestamp as ID
+                email: row['Adres e-mail'],
+                name: row['Imię i nazwisko'],
+                role: row['Pełniona funkcja'],
+                joined: row['Rok dołączenia do organizacji'],
+                style_strengths: row['Z jakimi elementami prowadzenia gry czujesz się najlepiej?'] || '',
+                style_weaknesses: row['Z jakimi elementami prowadzenia gry czujesz się najsłabiej/niepewnie?'] || '',
+                preferences: row['Jakie rodzaje scen/wątków lubisz prowadzić najbardziej?'] || ''
+            }));
+
+            this.timestamps.mgProfiles = now;
+            logger.info('MG Profiles loaded', { count: this.data.mgProfiles.length });
+            return this.data.mgProfiles;
+        } catch (error) {
+            logger.error('Failed to load MG Profiles', { error: error.message });
+            return [];
+        }
+    }
+
+    // --- Faction History (2025 Inspiration) ---
+    async loadFactionHistory() {
+        const now = Date.now();
+        // Check if any key exists in cache
+        if (Object.keys(this.data.factionHistory).length > 0 && (now - this.timestamps.factionHistory < this.CACHE_DURATION)) {
+            return this.data.factionHistory;
+        }
+
+        try {
+            logger.info('Loading Faction History files...');
+            const files = fs.readdirSync(this.paths.docsDir);
+            const factionFiles = files.filter(f => f.startsWith('Fabuła') && f.endsWith('.xlsx'));
+
+            const historyData = {};
+
+            for (const file of factionFiles) {
+                const fractionName = file.replace('Fabuła ', '').replace(' 2025.xlsx', '').trim();
+                const fullPath = path.join(this.paths.docsDir, file);
+
+                try {
+                    const workbook = XLSX.readFile(fullPath);
+                    const sheetName = workbook.SheetNames[0]; // Assume first sheet
+                    const sheet = workbook.Sheets[sheetName];
+                    const rows = XLSX.utils.sheet_to_json(sheet);
+
+                    historyData[fractionName] = rows;
+                    logger.info(`Loaded faction history: ${fractionName}`, { count: rows.length });
+                } catch (err) {
+                    logger.warn(`Failed to read faction file: ${file}`, { error: err.message });
+                }
+            }
+
+            this.data.factionHistory = historyData;
+            this.timestamps.factionHistory = now;
+            return this.data.factionHistory;
+        } catch (error) {
+            logger.error('Failed to load Faction History', { error: error.message });
+            return {};
         }
     }
 
@@ -176,13 +284,14 @@ class ExcelSearchService {
     }
     async getProfileByName(name) {
         await this.loadData();
-        if (!this.data) return null;
+        const data = this.data.charHistory;
+        if (!data) return null;
 
         const normalize = (str) => (str || '').toString().trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const targetName = normalize(name);
 
         // 1. Exact match (normalized)
-        let match = this.data.find(row => {
+        let match = data.find(row => {
             const rowName = normalize(row['Imie postaci'] || row['name']);
             const rowNick = normalize(row['nick']);
             return rowName === targetName || rowNick === targetName;
@@ -190,7 +299,7 @@ class ExcelSearchService {
 
         // 2. Fallback: Check if target is a substring of row name (for "Iblis" -> "Iblis ibn Nadżib")
         if (!match) {
-            match = this.data.find(row => {
+            match = data.find(row => {
                 const rowName = normalize(row['Imie postaci'] || row['name']);
                 return rowName.includes(targetName) || targetName.includes(rowName);
             });
@@ -201,9 +310,10 @@ class ExcelSearchService {
 
     async getAllNames() {
         await this.loadData();
-        if (!this.data) return [];
+        const data = this.data.charHistory;
+        if (!data) return [];
 
-        return this.data
+        return data
             .map(row => row['Imie postaci'] || row['name'])
             .filter(name => name && typeof name === 'string' && name.length > 0);
     }

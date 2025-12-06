@@ -43,6 +43,12 @@ contextBridge.exposeInMainWorld('electronAPI', {
     getProfileByName: (name) => ipcRenderer.invoke('get-profile-by-name', name),
     getAllCharacterNames: () => ipcRenderer.invoke('get-all-character-names'),
 
+    // Data Loading (Excel)
+    dataLoadMgProfiles: () => ipcRenderer.invoke('data:load-mg-profiles'),
+    dataLoadFactionHistory: () => ipcRenderer.invoke('data:load-faction-history'),
+    dataLoadCharHistory: () => ipcRenderer.invoke('data:load-char-history'),
+    dataLoadWorldContext: () => ipcRenderer.invoke('data:load-world-context'),
+
     // AI Assistant
     aiCommand: (commandType, profile, options = {}) => ipcRenderer.invoke('ai-command', commandType, profile, options),
 

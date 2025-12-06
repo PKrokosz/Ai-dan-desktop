@@ -322,6 +322,42 @@ function showTestPanel(testId) {
 
   // Activate tab
   event.target.classList.add('active');
+
+  // Refresh model list when panel is opened
+  populateTestPanelModels();
+}
+
+/**
+ * Populate the global model selector dropdown
+ */
+async function populateTestPanelModels() {
+  const selector = document.getElementById('global-model-selector');
+  if (!selector) return;
+
+  try {
+    const result = await window.electronAPI.testbenchGetModels();
+    if (!result.success) return;
+
+    const currentSelection = selector.value;
+
+    // Keep the "All" option
+    let html = '<option value="all">🚀 Wszystkie Modele (Domyślne)</option>';
+
+    result.models.forEach(m => {
+      // Calculate simplfied size for display
+      const sizeGB = (m.size / (1024 * 1024 * 1024)).toFixed(1);
+      html += `<option value="${m.name}">${m.name} (${sizeGB} GB)</option>`;
+    });
+
+    selector.innerHTML = html;
+
+    // Restore selection if still available
+    if (currentSelection && result.models.some(m => m.name === currentSelection)) {
+      selector.value = currentSelection;
+    }
+  } catch (error) {
+    console.error('Failed to populate test panel models:', error);
+  }
 }
 
 // Run Context Limits test on all models
@@ -483,7 +519,15 @@ async function runMemoryUsageTest() {
       throw new Error(modelsResult.error || 'Failed to get models');
     }
 
-    const modelNames = modelsResult.models.map(m => m.name);
+    const selectedModel = document.getElementById('global-model-selector') ? document.getElementById('global-model-selector').value : 'all';
+    let modelNames = [];
+
+    if (selectedModel && selectedModel !== 'all') {
+      modelNames = [selectedModel];
+    } else {
+      modelNames = modelsResult.models.map(m => m.name);
+    }
+
     addLog('info', `💾 Testowanie Memory Usage dla ${modelNames.length} modeli...`);
 
     const result = await window.electronAPI.testsMemoryUsageRunAll(modelNames);
@@ -617,7 +661,15 @@ async function runConsistencyTest() {
     const modelsResult = await window.electronAPI.testbenchGetModels();
     if (!modelsResult.success) throw new Error(modelsResult.error);
 
-    const modelNames = modelsResult.models.map(m => m.name);
+    const selectedModel = document.getElementById('global-model-selector') ? document.getElementById('global-model-selector').value : 'all';
+    let modelNames = [];
+
+    if (selectedModel && selectedModel !== 'all') {
+      modelNames = [selectedModel];
+    } else {
+      modelNames = modelsResult.models.map(m => m.name);
+    }
+
     addLog('info', `🔄 Testowanie Consistency dla ${modelNames.length} modeli (3x każdy)...`);
 
     const result = await window.electronAPI.testsConsistencyRunAll(modelNames);
@@ -742,7 +794,15 @@ async function runPromptSensitivityTest() {
     const modelsResult = await window.electronAPI.testbenchGetModels();
     if (!modelsResult.success) throw new Error(modelsResult.error);
 
-    const modelNames = modelsResult.models.map(m => m.name);
+    const selectedModel = document.getElementById('global-model-selector') ? document.getElementById('global-model-selector').value : 'all';
+    let modelNames = [];
+
+    if (selectedModel && selectedModel !== 'all') {
+      modelNames = [selectedModel];
+    } else {
+      modelNames = modelsResult.models.map(m => m.name);
+    }
+
     addLog('info', `📐 Testowanie Prompt Sensitivity dla ${modelNames.length} modeli...`);
 
     const result = await window.electronAPI.testsPromptSensitivityRunAll(modelNames);
@@ -858,7 +918,15 @@ async function runInstructionFollowingTest() {
     const modelsResult = await window.electronAPI.testbenchGetModels();
     if (!modelsResult.success) throw new Error(modelsResult.error);
 
-    const modelNames = modelsResult.models.map(m => m.name);
+    const selectedModel = document.getElementById('global-model-selector') ? document.getElementById('global-model-selector').value : 'all';
+    let modelNames = [];
+
+    if (selectedModel && selectedModel !== 'all') {
+      modelNames = [selectedModel];
+    } else {
+      modelNames = modelsResult.models.map(m => m.name);
+    }
+
     addLog('info', `✅ Testowanie Instruction Following dla ${modelNames.length} modeli...`);
 
     const result = await window.electronAPI.testsInstructionFollowingRunAll(modelNames);
@@ -975,7 +1043,15 @@ async function runHallucinationTest() {
     const modelsResult = await window.electronAPI.testbenchGetModels();
     if (!modelsResult.success) throw new Error(modelsResult.error);
 
-    const modelNames = modelsResult.models.map(m => m.name);
+    const selectedModel = document.getElementById('global-model-selector') ? document.getElementById('global-model-selector').value : 'all';
+    let modelNames = [];
+
+    if (selectedModel && selectedModel !== 'all') {
+      modelNames = [selectedModel];
+    } else {
+      modelNames = modelsResult.models.map(m => m.name);
+    }
+
     addLog('info', `🔍 Testowanie Hallucination dla ${modelNames.length} modeli...`);
 
     const result = await window.electronAPI.testsHallucinationRunAll(modelNames);
@@ -1091,7 +1167,15 @@ async function runLatencyTest() {
     const modelsResult = await window.electronAPI.testbenchGetModels();
     if (!modelsResult.success) throw new Error(modelsResult.error);
 
-    const modelNames = modelsResult.models.map(m => m.name);
+    const selectedModel = document.getElementById('global-model-selector') ? document.getElementById('global-model-selector').value : 'all';
+    let modelNames = [];
+
+    if (selectedModel && selectedModel !== 'all') {
+      modelNames = [selectedModel];
+    } else {
+      modelNames = modelsResult.models.map(m => m.name);
+    }
+
     addLog('info', `⏱️ Testowanie Latency dla ${modelNames.length} modeli...`);
 
     const result = await window.electronAPI.testsLatencyRunAll(modelNames);
@@ -1201,7 +1285,15 @@ async function runCostEfficiencyTest() {
     const modelsResult = await window.electronAPI.testbenchGetModels();
     if (!modelsResult.success) throw new Error(modelsResult.error);
 
-    const modelNames = modelsResult.models.map(m => m.name);
+    const selectedModel = document.getElementById('global-model-selector') ? document.getElementById('global-model-selector').value : 'all';
+    let modelNames = [];
+
+    if (selectedModel && selectedModel !== 'all') {
+      modelNames = [selectedModel];
+    } else {
+      modelNames = modelsResult.models.map(m => m.name);
+    }
+
     addLog('info', `💰 Testowanie Cost Efficiency dla ${modelNames.length} modeli...`);
 
     const result = await window.electronAPI.testsCostEfficiencyRunAll(modelNames);

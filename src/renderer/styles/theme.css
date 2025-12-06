@@ -847,3 +847,138 @@ body {
   padding: 6px 12px;
   font-size: 12px;
 }
+/* ==============================
+   Operator Widget & Matrix
+   ============================== */
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.operator-widget {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.operator-widget:hover {
+  background: rgba(255, 215, 0, 0.05);
+  border-color: var(--gold-soft);
+  transform: translateY(-1px);
+}
+
+.operator-icon {
+  font-size: 20px;
+  background: var(--bg-dark);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--gold);
+}
+
+.operator-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.operator-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+}
+
+.operator-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Modal Styles specific to Matrix */
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  min-height: 400px;
+}
+
+.matrix-sidebar {
+  border-right: 1px solid var(--border-subtle);
+  padding-right: 20px;
+}
+
+.matrix-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.matrix-item {
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.matrix-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.matrix-item.active {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: var(--gold-soft);
+  color: var(--gold-bright);
+}
+
+.matrix-details {
+  padding: 10px;
+}
+
+.stat-card {
+  background: var(--bg-dark);
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 15px;
+}
+
+.stat-title {
+  color: var(--gold-soft);
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 4px;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background: rgba(255,255,255,0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+.tag.positive { color: #4caf50; border-color: #4caf50; background: rgba(76, 175, 80, 0.1); }
+.tag.negative { color: #f44336; border-color: #f44336; background: rgba(244, 67, 54, 0.1); }

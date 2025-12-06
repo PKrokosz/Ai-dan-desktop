@@ -563,6 +563,62 @@ FORMAT:
 [konsekwencje]`;
 }
 
+// ==============================
+// Data Loading Handlers
+// ==============================
+
+ipcMain.handle('data:load-mg-profiles', async (event) => {
+    return runWithTrace(async () => {
+        const excelSearchService = require('../services/excel-search');
+        try {
+            const profiles = await excelSearchService.loadMgProfiles();
+            return { success: true, profiles };
+        } catch (error) {
+            logger.error('Error loading MG profiles:', error);
+            return { success: false, error: error.message };
+        }
+    });
+});
+
+ipcMain.handle('data:load-faction-history', async (event) => {
+    return runWithTrace(async () => {
+        const excelSearchService = require('../services/excel-search');
+        try {
+            const history = await excelSearchService.loadFactionHistory();
+            return { success: true, history };
+        } catch (error) {
+            logger.error('Error loading faction history:', error);
+            return { success: false, error: error.message };
+        }
+    });
+});
+
+ipcMain.handle('data:load-char-history', async (event) => {
+    return runWithTrace(async () => {
+        const excelSearchService = require('../services/excel-search');
+        try {
+            const history = await excelSearchService.loadCharHistory();
+            return { success: true, history };
+        } catch (error) {
+            logger.error('Error loading character history:', error);
+            return { success: false, error: error.message };
+        }
+    });
+});
+
+ipcMain.handle('data:load-world-context', async (event) => {
+    return runWithTrace(async () => {
+        const worldContextService = require('../services/world-context');
+        try {
+            const context = worldContextService.getAllContexts();
+            return { success: true, context };
+        } catch (error) {
+            logger.error('Error loading world context:', error);
+            return { success: false, error: error.message };
+        }
+    });
+});
+
 ipcMain.handle('get-profile-by-name', async (event, name) => {
     return runWithTrace(async () => {
         const excelSearchService = require('../services/excel-search');

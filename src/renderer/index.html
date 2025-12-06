@@ -62,6 +62,15 @@
       </div>
 
       <div class="sidebar-footer">
+        <div class="operator-widget" id="operatorWidget" onclick="openOperatorModal()"
+          title="Kliknij, aby zmienić Operatora">
+          <div class="operator-icon">👤</div>
+          <div class="operator-info">
+            <span class="operator-label">Operator</span>
+            <span class="operator-name" id="currentOperatorName">Domyślny</span>
+          </div>
+        </div>
+
         <div class="ollama-status" id="ollamaStatus">
           <span class="status-dot offline"></span>
           <span>Ollama: sprawdzam...</span>
