@@ -1,0 +1,206 @@
+Tekst stanowi szczegółowy opis geografii i lore świata LARP-a Gothic, koncentrując się na krainach, które stanowią kontekst dla historii Kolonii Karnej. Centralnym punktem jest Królestwo Myrtany, rządzone przez Króla Robara II i uwikłane w kosztowną wojnę z Orkami, która doprowadziła do upadku terenów takich jak pustynia Varant i północny Nordmar. Kluczowym obszarem jest Wyspa Khorinis, osadzona w nieprzeniknionej Magicznej Barierze, gdzie funkcjonują trzy frakcje więźniów: Stary Obóz, Nowy Obóz i Bractwo Śniącego, a ich codzienne życie toczy się w surowej Górniczej Dolinie i jej dzikich regionach, takich jak niebezpieczne Bagna. Ponadto, źródło wspomina o innych ważnych wyspach, takich jak Archolos, które pomimo włączenia do królestwa, zachowały swoją odrębną geografię i historię.
+
+
+
+
+
+
+
+
+
+
+
+Geografia i Lore Świata Gothic LARP
+
+Zgodnie z Twoim życzeniem, na podstawie dostarczonych źródeł, przygotowuję szczegółowy opis i charakterystykę krain świata Gothic LARP, z uwzględnieniem znaczenia tych miejsc dla kontekstu Kolonii Karnej.
+
+--------------------------------------------------------------------------------
+
+Geolore: Opis i Charakterystyka Miejsc Pochodzenia
+
+Świat LARP-a obejmuje nie tylko Górniczą Dolinę (Khorinis), ale także terytoria zewnętrzne, które stanowią źródło postaci, intryg politycznych i tło wojny z Orkami.
+
+1. Królestwo Myrtany (Kontynent)
+
+Myrtana jest zjednoczonym królestwem ludzkim, dowodzonym przez Króla Robara II [1-3]. Jest to kraina tocząca niezwykle kosztowną wojnę z Orkami [2].
+
+Charakterystyka i Opis
+
+Kontekst w Kolonii Karnej
+
+Status w czasie wojny
+
+Królestwo było na skraju klęski. Trzy lata przed początkiem wydarzeń upadła pustynia Varant [4]. W chwili zesłania Bezimiennego tylko wschodnie ziemie jeszcze się broniły [4].
+
+Religia i Porządek
+
+Magowie Ognia, służący Innosowi (bóstwu światła, ciepła, Ładu i porządku) [6, 7], stali zawsze najbliżej królów i władców Myrtany [8, 9].
+
+Miasta/Regiony
+
+W Myrtanie znajdowały się liczne miasta i lokacje, z których pochodzili skazańcy, takie jak Montera [11], Geldern (znane z kopalni siarki) [4], czy Silden [12].
+
+2. Pustynia Varant
+
+Varant to pustynna kraina, niegdyś część Królestwa Myrtany.
+
+Charakterystyka i Opis
+
+Kontekst w Kolonii Karnej
+
+Upadek
+
+Varant upadł pod naporem Orków trzy lata przed rozpoczęciem wydarzeń w Kolonii [4].
+
+Ishtar
+
+W Varanie znajdowała się arena gladiatorów i niewolników (Ishtar) [4].
+
+3. Nordmar (Północ)
+
+Nordmar to północny, surowy region.
+
+Charakterystyka i Opis
+
+Kontekst w Kolonii Karnej
+
+Status i surowość
+
+Był to region surowy i zimny [14]. Znajduje się tam Klasztor Magów Ognia [7].
+
+Wojna
+
+Orkowie podbili Nordmar 10 lat przed zrzuceniem Bezimiennego, przejmując tamtejsze kopalnie Rudy [4].
+
+4. Wyspa Khorinis (Kolonia Karna)
+
+Khorinis to duża wyspa. Samo Miasto Khorinis było centrum życia na wyspie. Obecnie jest to obszar Górniczej Doliny, uwięziony przez Magiczną Barierę [1, 3, 5].
+
+Lokacja/Region
+
+Charakterystyka i Opis
+
+Powiązane Postacie / Kontekst
+
+Górnicza Dolina (Kolonia)
+
+Otoczona nieprzeniknioną, połyskującą Barierą [1, 5]. Krajobraz zdominowany przez zielone, gęste lasy i ponure, kamienne szczyty górskie [1, 5, 15, 16].
+
+Ustanowione zostały tu trzy frakcje: Stary Obóz, Nowy Obóz i Bractwo Śniącego [17-22]. Całe Khorinis z kopalniami znalazło się w rękach więźniów [1, 5].
+
+Las Doliny
+
+Jest dziki i nieprzyjazny, pełen wilków, kretoszczurów, ścierwojadów [23-25] oraz cieniostworów [26]. Posiada bogactwo flory i fauny (dziwaczne kwiaty, grzyby, lepkie owoce) [27-29].
+
+Mordrak prowadzi przez niego ukryte szlaki, unikając utartych ścieżek, które są pułapką dla bandytów [30].
+
+Bagna (Obóz Bractwa)
+
+Mroczny, wilgotny region, z gęstą mgłą i grzęzawiskami [19, 21, 31]. Bagno "oddycha" jak żywa istota [32]. Powietrze jest gęste i nasycone zapachem ziół i spalenisk [33-35].
+
+Jest to siedlisko niebezpiecznych potworów, takich jak Krwiopijce (przerośnięte muchy z jadowitym żądłem) [36-38] i bagienne potwory (przypominające węże z paszczą rozchylaną na trzy strony) [39].
+
+Kotlinka Wymian
+
+Niewielki plac na brzegu stawu [40, 41].
+
+Jedyna formalna komunikacja ze światem zewnętrznym, gdzie ludzie Króla dostarczają towary w zamian za rudę [41].
+
+Jaskinia Neka
+
+Jaskinia w klifie, gdzie oprócz wilgoci i smrodu znaleziono ciało Neka (zaginionego strażnika) [42, 43].
+
+Mimo odkrycia rudy i cennych przedmiotów [12, 44], panował tam smród gnijącego ciała [45].
+
+5. Archolos (Wyspa)
+
+Archolos to największa i najważniejsza wyspa Wschodniego Archipelagu [46].
+
+Charakterystyka i Opis
+
+Kontekst w Kolonii Karnej
+
+Geografia i Klimat
+
+Wyspa jest górzysta, pełna dolin i wysokich szczytów. Klimat jest podzwrotnikowy, z obecnością bagnistych, tropikalnych cech (np. palmy) [46]. Uprawiane są tam winogrona (winnice) [46].
+
+Historia i Polityka
+
+Wyspa została odkryta i zaanektowana przez Myrtańczyków po długiej kampanii [48]. Stolicą regionu jest Miasto Archolos, które stało się jednym z największych miast w królestwie [48, 49]. Wilczy Synowie zachowali autonomię i zamieszkali w Wilczym Leżu na południu wyspy [47, 48].
+
+6. Wyspy Południowe
+
+Wyspy na południu kontynentu.
+
+Charakterystyka i Opis
+
+Powiązane Postacie / Kontekst
+
+Charakterystyka
+
+Są źródłem towarów do handlu [50].
+
+7. Lokacje wewnątrz Khorinis (Miasta / Ważne Punkty)
+
+Lokacja/Region
+
+Charakterystyka i Opis
+
+Powiązane Postacie / Kontekst
+
+Farma Onara
+
+Choć nazwana Farmą Onara, postacie wspominają o farmach Khorinis [11, 51].
+
+Wielu skazańców (np. Rufus) było farmerami. Lester (Mag Wody) trafił do Kolonii jako wichrzyciel za otwarte wypowiedzi przeciwko szlachcie [52].
+
+Kuźnia (SO)
+
+Jest to magazyn i zbrojownia [53, 54].
+
+Stone pracuje w kuźni [55, 56]. Mężczyźni w kuźni byli pochłonięci rozmową o pełzaczach i ich wnętrznościach przechowywanych w skrzyni, które były potrzebne Cor Kalomowi [57, 58].
+
+Bajoro (SO)
+
+Mętna, paskudna kałuża na brzegu stawu [59, 60], stanowiąca namiastkę oczyszczenia i normalności w tym świecie.
+
+Grawo, pełniący rolę pośrednika/negocjatora w SO, kąpał się w Bajorze [59, 61].
+
+Plac Targowy (SO)
+
+Imrowizowane zadaszenie i stojaki [62].
+
+Neuteralny teren dla handlu. To tam Świstak i Rączka (ludzie zaufani Diego) [63] prowadzili interesy, a Strażnicy pilnowali porządku [64].
+
+Świątynia Bractwa
+
+Kamienne ruiny [65-67], gdzie guru Iberion czuje się bliżej Śniącego [68].
+
+Jest to miejsce kultu i medytacji. Iberion rezyduje na niewielkim podwyższeniu z kamiennym ołtarzem [66]. Dostanie się do świątyni wymaga pozwolenia Guru [69].
+
+Laboratorium Cor Kaloma
+
+Wnętrze jest duszne, pełne dymu [34, 70], ostrego zapachu ziół i palonych cieczy, z kolbami i fiolkami na stołach [70].
+
+Jest to centrum alchemicznych kalkulacji Guru. Kalom przechowuje tam receptury (np. tę, której szukali ludzie ze Starego Obozu) [71, 72].
+
+Taras Ryżowy (NO)
+
+Ręcznie stworzone tarasy na wzniesieniach [73], na których ludzie pracują w wodzie po kostki [74, 75].
+
+Jest to miejsce uprawy ryżu. Zarządza nimi Ryżowy Książę [75, 76].
+
+Kuźnia (Bractwo)
+
+Mimo panującego smrodu, Kuźnia pełni rolę magazynu.
+
+Wnętrzności pełzaczy – kluczowy składnik eksperymentów Kaloma – były przechowywane w skrzyni w Kuźni Bractwa [57, 58, 77].
+
+Wieża Ksardasa
+
+Ksardas, były Arcymistrz Magów Ognia, zamieszkał w wieży na terytorium Orków z dala od ludzi, poświęcając się badaniom magicznym nad barierą [10, 78].
+
+
+
+
+

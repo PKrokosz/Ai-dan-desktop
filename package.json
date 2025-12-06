@@ -1,0 +1,46 @@
+{
+    "name": "agent-mg",
+    "version": "1.0.0",
+    "description": "Agent MG - Kreator Postaci LARP",
+    "main": "src/main/index.js",
+    "scripts": {
+        "dev": "electron .",
+        "build": "electron-builder --win",
+        "start": "electron ."
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^28.0.0",
+        "electron-builder": "^24.9.1",
+        "mammoth": "^1.11.0",
+        "pdf-parse": "^2.4.5"
+    },
+    "dependencies": {
+        "ajv": "^8.12.0",
+        "googleapis": "^129.0.0",
+        "handlebars": "^4.7.8",
+        "winston": "^3.11.0",
+        "xlsx": "^0.18.5"
+    },
+    "build": {
+        "appId": "com.agentmg.app",
+        "productName": "Agent MG",
+        "win": {
+            "target": "nsis",
+            "icon": "assets/icon.ico"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true
+        },
+        "files": [
+            "src/**/*",
+            "assets/**/*"
+        ],
+        "directories": {
+            "output": "dist"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+output/
+logs/
+.env
+credentials/
+*.log
+.cache/
+assets/icon.png
+scripts/convert-icon.js
+

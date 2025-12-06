@@ -1,0 +1,128 @@
+Przedstawiony dokument szczegółowo opisuje złożone ambicje i intrygi w Kolonii Karnej, gdzie możliwości rozwoju są ściśle związane z przynależnością frakcyjną i społeczną hierarchią. Tekst mapuje cele różnych grup, od elit Starego Obozu (SO), dążących do dywersyfikacji przychodów przez tajną eksploatację niebieskiej rudy i rywalizujących o miejsce przy stole Magnatów, po Magów Wody (Nowy Obóz, NO), których nadrzędnym celem jest zniszczenie Bariery i ucieczka. Kluczowe jest, że aspiracje dotyczą nie tylko awansu w ramach struktur (np. Strażnicy, Cienie, Magowie), ale także zdobycia wpływów, wiedzy (badania Magów nad językiem Orków i metodą ucieczki) lub osiągnięcia radykalnych celów, jak np. tajne zadanie Nulla z Bractwa Śniącego, który dąży do zostania duchowym i politycznym liderem nowej społeczności. Liczne podpunkty ilustrują, jak poszczególne postacie – od służących marzących o „skoku stulecia” po Najemników walczących o pozycję Warchiefa – wykorzystują podstęp i specjalizację, aby piąć się w górę.Intrygi i Ambicje Kolonii Karnej
+
+Aspiracje
+
+Możliwości rozwoju i cele w Kolonii Karnej są ściśle powiązane z hierarchią społeczną, frakcyjną przynależnością oraz ambicją, często prowadząc do podstępnych intryg w celu szybkiego awansu [1, 2].
+
+1. Awans w Hierarchii Starego Obozu (SO)
+
+W SO awansowanie (np. na Strażnika lub Sierżanta) wymaga służby i lojalności [3]. Konieczne jest również przygotowanie stroju/pancerza odpowiedniego dla nowej klasy [1, 4].
+
+A. Magnateria i Elita
+
+• Cel Magnatów (SO): Utrzymanie władzy i dywersyfikacja przychodów, ponieważ ruda jest jedynym źródłem potęgi gospodarczej [5]. Dążą do prywatnej eksploatacji bogatego złoża niebieskiej rudy w zawalonym szybie kopalni, w tajemnicy przed Gomezem [6, 7].
+
+• Wyścig Magnacki: Trwa intensywna rywalizacja o puste miejsce przy stole Magnatów po Valerii [8, 9].
+
+    ◦ Beza (Służąca): Ma wielkie ambicje bycia nową Magnatką [10-12]. Planuje osiągnąć to poprzez dbanie o splendor (wystawne uczty, prezenty), pokazanie wpływu i widowiskowe przechylenie szali na stronę SO podczas negocjacji politycznych, zaskakując Nowy Obóz [12].
+
+    ◦ Valentin (Strażnik): Dąży do awansu podstępem. Specjalizuje się w jednej dziedzinie, by zająć miejsce Magnata, który wypadł z łask (np. Magnus) [9, 13].
+
+• Strażnicy: Dążą do awansu na wyższe stopnie (Sierżant) lub zdobycia sławy [14].
+
+    ◦ Oddział Jima Wiązki (w tym Sęp): Aspirują do zostania Gwardią Osobistą Gomeza, co wymaga udowodnienia karności, musztry, odpowiedniego uzbrojenia i reprezentatywności [15].
+
+    ◦ Glodgar: Założył się z Perganem, że dotrze do finałów otwartego turnieju szermierki, by na jeden dzień zostać sierżantem oddziału [16].
+
+    ◦ Wolf: Dąży do zdobycia wpływów, które zapewnią mu bezpieczeństwo i protekcję od Magnatów, zwłaszcza od Alvareza, którego uważa za lojalnego wobec SO [17].
+
+    ◦ Oddział Sverha: Chce zorganizować epicką imprezę, by zwrócić na siebie uwagę Magnatów i ewentualnie uzyskać pozycję Magnata od Rozrywki [18].
+
+B. Cienie i Służba
+
+• Cienie: Mogą ubiegać się o awans na Strażnika, wykazując siłę, lojalność i dyscyplinę oraz świadcząc szereg usług [1, 19].
+
+    ◦ Drax: Aspiruje do zostania Prawą Ręką Pasco (szefa Bandy Siepaczy) [20].
+
+    ◦ Cyra: Zyskała awans na Cienia dzięki zaradności i talentowi do wywiadu ("trzecie oko") i zamierza wykorzystać informacje, by zyskać przewagę i unikać pracy fizycznej [21-23].
+
+    ◦ Landebert (Lambert): Dąży do handlu ze światem zewnętrznym i chce zostać Specjalistą ds. zamówień towarów z Wysp Południowych dla Gomeza i Magnatów [23, 24].
+
+    ◦ Siebert: Aktywnie dąży do wyrobienia licencji Łowcy, zdobycia broni dystansowej i udowodnienia swojej wartości w Bandzie Łowców [25, 26].
+
+• Gildia Złodziei: Dąży do rekrutacji nowych, sprawnych członków poprzez organizację Turnieju Złodziei [23, 27]. Rączka rozważa rezygnację z pozycji Szefa Gildii i wspięcie się w hierarchii Starego Obozu [28, 29]. Chcą utrzymać swoją sieć, unikając okradania Apteki, Karczmy i Administracji Andersa, by dbać o sojuszników [30].
+
+• Służący: Tuna dąży do wypracowania zwolnienia podatkowego dla szwalni u Magnatów i stworzenia nowych szat Magnata [31, 32]. Mario Majestro planuje "skok stulecia" – obrabowanie skarbca Gomeza [33].
+
+2. Dążenia Magów i Kapłanów
+
+A. Magowie Ognia (SO)
+
+Magowie Ognia dążą do utrzymania Ładu i zwiększenia swojego wpływu oraz wiedzy [34].
+
+• Awans w Kręgu: Adepci (Karat, Arik) dążą do awansu na Drugi Krąg Ognia [35, 36]. Wymaga to wyraźnego sukcesu (np. postęp w badaniach nad wypadkiem Magini Lux) i dumnego zakomunikowania go Kręgowi [35].
+
+• Próba Magii: Karat dąży do wykorzystania luki prawnej, by zażądać Próby Magii, wypełniając rolę Nowicjusza podczas obrzędów [36, 37].
+
+• Dastan: Ma duże ambicje, by zostać Magiem Ognia, wykonuje misje dla Kręgu [38, 39]. Planuje zaimponować Magom Ognia (Calor, Sybilla) dostarczając im coś konkretnego lub angażując się w ich dysputy [39].
+
+• Sybilla: Prowadzi badania nad językiem Orków, co ma być jej naukowym osiągnięciem i potencjalnym atutem w negocjacjach na Zamku [40].
+
+• Hrodgir: Dąży do utrzymywania kontaktu z Vengardem (Karrypto) i informowania o eskalacji napięcia [41].
+
+B. Magowie Wody (NO)
+
+Nadrzędnym celem NO i Magów Wody jest zniszczenie Bariery i ucieczka [42, 43].
+
+• Dyplomacja i Wolność: Magowie Wody biorą udział w Posiedzeniach Politycznych na Zamku, aby ustalić pisemny statut współżycia pod barierą, regulując handel esencjami, zyskując skrzynie towarowe i uzgadniając pakt o nieagresji z Bractwem [44].
+
+• Badania i Wiedza: Aktywnie poszukują zaginionego listu i zwoju Magini Wiktorii, które mogą zawierać informacje o metodzie ucieczki [45]. Selene dąży do wyjaśnienia sprawy feralnego rytuału Lux i powiększenia zbiorów biblioteki [46]. Chcą wtajemniczyć Szkodników w "wniebowstąpienie Heliosa" [47, 48].
+
+C. Bractwo Śniącego (BŚ)
+
+• Oświecenie i Władza: Null postrzega ruch Śniącego jako możliwość odnowy społecznej. Dąży do zdobycia władzy, potęgi magicznej i pozycji jako narzędzi do osiągnięcia swoich idealistycznych celów. Skrycie wierzy, że jest duchowym, politycznym i mistycznym liderem nowej społeczności, Wybrańcem Śniącego [49].
+
+• Misja Nulla: Jego tajemne zadanie to zbadanie faktycznego stanu placówki Bractwa, zweryfikowanie pogłosek o zaniedbaniach, zepsuciu i dwulicowości oraz przygotowanie raportu dla Iberiona [50].
+
+• Guru Ayen: Dąży do nawrócenia Gomeza i całego Starego Obozu [51]. Chce wychować potwora (trolla/pełzacza) do budowania dla Śniącego [51].
+
+• Felix (Nowicjusz): Aspiruje do zostania Starszym Nowicjuszem [52].
+
+3. Aspiracje Nowego Obozu i Niezależnych
+
+A. Najemnicy
+
+• Awans na Warchiefa: Najemnicy dążą do zostania nowym Warchiefem (dowódcą), co zapewnia wielki honor i przywileje [53-55]. Konkurencja o tę rolę jest zaostrzona przez system rankingowy [53] oraz zbieranie Listów Polecających od Magów Wody [56].
+
+• Eiron: Chce "stać się mniej szkodliwy" i działać na rzecz dobra NO, choć jest oportunistą [57].
+
+• Rembajło: Chce zostać Mistrzem Areny w każdym z obozów [58].
+
+B. Szkodnicy i Handlarze
+
+• Wpływy i Handel:
+
+    ◦ Kayla: Chce porzucić dorywcze napady i skupić się na roli Kuriera Magów Wody, jednocześnie przemycając ryżówkę do SO dla zysku [59].
+
+    ◦ Kora: Chce nawiązać kontakt z Gildią Kupiecką Araxos, by rozwinąć handel [60, 61].
+
+    ◦ Baryła: Chce własnej chaty i wygodnego łóżka [62] oraz dorobić się, sprzedając fałszywe eliksiry i weksle [62, 63].
+
+    ◦ Lore i Enzo: Chcą rozwinąć działalność, stworzyć półmobilną karczmę na rozdrożu i stworzyć nową półoficjalną grupę zajmującą się handlem, przemytem i lichwiarstwem [64, 65].
+
+    ◦ Hecke: Dąży do zyskania zaufania Magów Wody, aby zostać zauważonym i otrzymać nagrodę [66].
+
+C. Rozwój kariery i profesjonalizm
+
+• Łowiectwo: Łowcy (Szkodnicy i Cienie) chcą się wykazać w celu zdobycia tytułu Mistrza Łowów w małych zawodach ogłoszonych przez Demwara, zdobywając najrzadszy komponent [67, 68].
+
+• Alchemia: Postacie dążą do opanowania alchemii, np. Jagoda szuka nauczyciela, który przyjmie go na asystenta [69].
+
+• Przemyt: Kilgara (Służący) chce wkręcić się w siatkę przemytniczą Modaresa (Strażnicy i Najemnicy) [70, 71].
+
+4. Dążenia Kopaczy i Odkupienie
+
+• Kopacze: Dążą do wydostania się z kopalni, awansu na wyższą klasę [23, 72] lub zemsty.
+
+    ◦ Morian (Skazaniec): Planuje wykorzystać plotki i układy, aby dołączyć do Służby na Zamku i odzyskać dawną pozycję arystokraty [23, 73].
+
+    ◦ Kopacze Piątej Brygady: Cienie (Faran) i Kopacze (Cespenar, Olga) dążą do zemsty na Magnacie Magnusie za wymordowanie ich brygady ("Kwestia Honoru") [74, 75].
+
+    ◦ Erart: Chce odkryć prawdę o śmierci przyjaciela Ustregala, by pozbyć się dręczących go snów [76].
+
+    ◦ Trzecia Brygada: Chce udowodnić, że jest "najlepsza" poprzez naprawę zawalonej podpory w kopalni, którą Strażnicy zignorowali [77].
+
+    ◦ Ravill: Nie aspiruje do bycia Cieniem, lecz chce zostać "wpływowym Kopaczem" [78].
+
+
+

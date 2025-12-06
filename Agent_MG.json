@@ -1,0 +1,2049 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        820
+      ],
+      "id": "4a0ea289-8e9b-4467-87cd-d737ec23af46",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "model": "phi4-mini:latest",
+        "options": {
+          "temperature": 0,
+          "topP": 0.1,
+          "numPredict": 2000,
+          "format": "json"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmOllama",
+      "typeVersion": 1,
+      "position": [
+        1304,
+        -896
+      ],
+      "id": "ce605b10-44b8-4351-8ab2-9a8c56f9d441",
+      "name": "Ollama Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "2Flignq24q0R9OSd",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "120meAeu6DFgQo0_FlWnKCy1I2Pq548ZY",
+          "mode": "list",
+          "cachedResultName": "quest_examples_filled.pdf",
+          "cachedResultUrl": "https://drive.google.com/file/d/120meAeu6DFgQo0_FlWnKCy1I2Pq548ZY/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        2320,
+        784
+      ],
+      "id": "1a776089-8f81-42ab-8e32-952ad8383057",
+      "name": "quest_examples_filled",
+      "credentials": {
+        "googleApi": {
+          "id": "cObjUwWBjsLegZ1K",
+          "name": "Google Service Account account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1Rp6B4-fBelQSMF4N_BtPbT7D-VGJxS_o",
+          "mode": "list",
+          "cachedResultName": "quest_examples.pdf",
+          "cachedResultUrl": "https://drive.google.com/file/d/1Rp6B4-fBelQSMF4N_BtPbT7D-VGJxS_o/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        2320,
+        60
+      ],
+      "id": "2e109cd6-0eb3-42f1-9f7f-7ddafa376a7a",
+      "name": "quest_examples",
+      "credentials": {
+        "googleApi": {
+          "id": "cObjUwWBjsLegZ1K",
+          "name": "Google Service Account account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        48,
+        1120
+      ],
+      "id": "1f46e394-1ec9-462a-8dd1-8af22aefbdd6",
+      "name": "konwersja do txt",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": {
+          "__rl": true,
+          "value": "1Ta11vWw0KP1lZgheqAngjoh-3UYh5g3Vt3rYYz4tDkU",
+          "mode": "list",
+          "cachedResultName": "tabela zgloszen",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Ta11vWw0KP1lZgheqAngjoh-3UYh5g3Vt3rYYz4tDkU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 337863016,
+          "mode": "list",
+          "cachedResultName": "arkusz1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Ta11vWw0KP1lZgheqAngjoh-3UYh5g3Vt3rYYz4tDkU/edit#gid=337863016"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -176,
+        180
+      ],
+      "id": "399fc097-e2c7-482c-9c9d-71adcf88541e",
+      "name": "Weź \"tabela zgloszen\"",
+      "credentials": {
+        "googleApi": {
+          "id": "cObjUwWBjsLegZ1K",
+          "name": "Google Service Account account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        48,
+        180
+      ],
+      "id": "4899707b-0914-4cfd-b880-166a788b965a",
+      "name": "wez jeden wiersz"
+    },
+    {
+      "parameters": {
+        "jsCode": "// INPUT: items = wiersze z GS (1..N)\n// OUTPUT: dla KAŻDEGO wiersza 6 itemów (historia, relacje, aspiracje, slabosci, umiejetnosci, geolore)\n\nfunction norm(s) {\n  if (!s) return \"\";\n  return String(s).replace(/\\r?\\n/g, \"\\n\").replace(/[ \\t]+/g, \" \").trim();\n}\n\nconst out = [];\n\nfor (const it of items) {\n  const r = it.json;\n  const postacId = r[\"E-learning\"] ?? r[\"ID\"] ?? r[\"id\"] ?? r[\"row_number\"] ?? \"UNKNOWN\";\n\n  const historia_full = [\n    r[\"Jak zarabiala na zycie, kim byla\"],\n    r[\"Jak zarabia na zycie, kim jest\"],\n    r[\"Jak trafila do obozu\"],\n    r[\"Inne wydarzenia z przeszlosci\"],\n    r[\"Kim chce zostac\"],\n    r[\"Znajomi, przyjaciele i wrogowie\"],\n    r[\"Jakie zadania bedziesz kontynuowac\"],\n    r[\"Slabosci\"],\n    r[\"Umiejetnosci\"],\n    r[\"Region\"],\n    r[\"Miejscowosc\"]\n  ].filter(Boolean).map(norm).join(\"\\n\");\n\n  const lanes = [\n    { lane: \"historia\",     value: historia_full },\n    { lane: \"relacje\",      value: norm(r[\"Znajomi, przyjaciele i wrogowie\"]) },\n    { lane: \"aspiracje\",    value: norm(r[\"Kim chce zostac\"]) },\n    { lane: \"slabosci\",     value: norm(r[\"Slabosci\"]) },\n    { lane: \"umiejetnosci\", value: norm(r[\"Umiejetnosci\"]) },\n    { lane: \"geolore\",      value: norm([r[\"Region\"], r[\"Miejscowosc\"]].filter(Boolean).join(\" / \")) }\n  ];\n\n  for (const L of lanes) {\n    out.push({ json: { lane: L.lane, postac_id: postacId, value: L.value, all_fields: r } });\n  }\n}\n\nreturn out;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        272,
+        180
+      ],
+      "id": "b6c4fee7-b436-415e-97eb-e6d1900f05e9",
+      "name": "definiowanie sciezek"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "145fR4wO2AsfUTDA59fYRCIuqNgAlmcYQ",
+          "mode": "list",
+          "cachedResultName": "world_base.pdf",
+          "cachedResultUrl": "https://drive.google.com/file/d/145fR4wO2AsfUTDA59fYRCIuqNgAlmcYQ/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -176,
+        1120
+      ],
+      "id": "f41cbfd4-b35c-4d2c-b0a1-65c5f214c681",
+      "name": "kontekst - opis świata",
+      "credentials": {
+        "googleApi": {
+          "id": "cObjUwWBjsLegZ1K",
+          "name": "Google Service Account account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.lane }}",
+                    "rightValue": "historia",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "19c947d1-15ff-48b7-b38a-457166dd1a6f"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "historia"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "99374d61-cd5f-4286-bcac-a3abcb7fd4a5",
+                    "leftValue": "={{ $json.lane }}",
+                    "rightValue": "relacje",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "relacje"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1e309cd3-ea94-40ea-b17b-91ee42b0bb53",
+                    "leftValue": "={{ $json.lane }}",
+                    "rightValue": "aspiracje",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "aspiracje"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "67a6eb28-d003-4c4b-8b1f-0555e9da8e80",
+                    "leftValue": "={{ $json.lane }}",
+                    "rightValue": "slabosci",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "slabosci"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "99f2d720-e306-4a9c-afbc-30885ede30e7",
+                    "leftValue": "={{ $json.lane }}",
+                    "rightValue": "umiejetnosci",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "umiejetnosci"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "374db22a-93aa-433b-a17a-fc378ce42d6c",
+                    "leftValue": "={{ $json.lane }}",
+                    "rightValue": "geolore",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "geolore"
+            }
+          ]
+        },
+        "options": {
+          "allMatchingOutputs": false
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        720,
+        116
+      ],
+      "id": "16582d53-41b3-4eea-a6bd-432eb51ace72",
+      "name": "rozdziel sciezki"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "fieldsToMatchString": "lane",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        496,
+        180
+      ],
+      "id": "ae4175ac-a8c7-468f-9d8c-7f00d6fcf743",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "// --- n8n Code: split world-base text into 6 lanes and emit {lane, world_context} ---\n// input: one item from Extract From File with json.text\n// output: 6 items with lanes: historia, relacje, aspiracje, slabosci, umiejetnosci, geolore\n\nconst RAW = (items[0]?.json?.text ?? '').replace(/\\r/g, '\\n');\n\n// keep bullets/newlines, tylko normalizacja odstępów\nfunction tidy(s) {\n  return String(s)\n    .replace(/\\n{3,}/g, '\\n\\n')   // max 2 kolejne puste wiersze\n    .replace(/[ \\t]+\\n/g, '\\n')   // trailing spaces\n    .trim();\n}\n\n// pomocnicze: usuwanie polskich znaków do dopasowania nagłówków\nfunction ascii(s) {\n  return s\n    .normalize('NFD')\n    .replace(/[\\u0300-\\u036f]/g, '')\n    .toLowerCase();\n}\n\n// bezpieczne dla RegExp\nfunction esc(s){ return s.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'); }\n\n// Sekcje -> aliasy nagłówków (wszystko dopasowujemy na tekście znormalizowanym)\nconst HEADERS = {\n  historia: [\n    'historia',\n  ],\n  relacje: [\n    'relacje',\n  ],\n  aspiracje: [\n    'aspiracje',\n    'cele',                       // na wszelki wypadek\n  ],\n  slabosci: [\n    'slabosci','słabości','slabosc','słabosc',\n    'wady','ograniczenia',\n  ],\n  umiejetnosci: [\n    'umiejetnosci','umiejętności','skille','zdolnosci','zdolności',\n  ],\n  geolore: [\n    'geolore','geolor','geografia','lokacje','lokacje i geografia',\n    'schemat gry i zasady swiata','schemat gry i zasady świata',\n  ],\n};\n\n// Przygotowanie wersji znormalizowanej do szukania nagłówków\nconst normText = ascii(RAW);\n\n// Zbuduj regex dla każdej sekcji; nagłówek musi zaczynać się w nowej linii,\n// może mieć numerację \"1. \" lub markdown \"## \".\nfunction buildRegex(aliases){\n  const alt = aliases.map(a => esc(ascii(a))).join('|');\n  // linia nagłówka, dopuszczamy ewentualne nawiasy po nazwie (np. \"(Geolor)\")\n  return new RegExp(\n    `(?:^|\\\\n)\\\\s*(?:\\\\d+\\\\.|##+)?\\\\s*(?:${alt})(?:\\\\s*\\\\([^\\\\n]*\\\\))?\\\\s*(?:\\\\n|$)`,\n    'i'\n  );\n}\n\n// Znajdź indeksy początków sekcji w tekście znormalizowanym\nconst starts = {};\nfor (const [lane, aliases] of Object.entries(HEADERS)) {\n  const re = buildRegex(aliases);\n  const m = re.exec(normText);\n  starts[lane] = m ? m.index : -1;\n}\n\n// Upłynnij brakujące — gdy czegoś nie ma, dostaniemy pustą sekcję\n// Kolejność do wycięcia:\nconst order = ['historia','relacje','aspiracje','slabosci','umiejetnosci','geolore'];\n\n// Stwórz listę {lane, idx} tylko z istniejącymi indeksami, posortuj po idx\nconst found = order\n  .filter(lane => starts[lane] >= 0)\n  .map(lane => ({ lane, idx: starts[lane] }))\n  .sort((a,b) => a.idx - b.idx);\n\n// Jeżeli nic nie znaleziono (np. brak nagłówków), całość pod \"historia\"\nif (found.length === 0) {\n  return [\n    { json: { lane: 'historia', world_context: tidy(RAW) } },\n    { json: { lane: 'relacje', world_context: '' } },\n    { json: { lane: 'aspiracje', world_context: '' } },\n    { json: { lane: 'slabosci', world_context: '' } },\n    { json: { lane: 'umiejetnosci', world_context: '' } },\n    { json: { lane: 'geolore', world_context: '' } },\n  ];\n}\n\n// Wyznacz przedziały [start, end) po kolejnych nagłówkach\nconst spans = [];\nfor (let i = 0; i < found.length; i++) {\n  const start = found[i].idx;\n  const end = (i+1 < found.length) ? found[i+1].idx : normText.length;\n\n  // Z mapowania indeksów w tekście \"normText\" do oryginalnego \"RAW\":\n  // ponieważ usuwaliśmy tylko znaki akcentów i case, długości linii są takie same.\n  // Slicing po indeksach z normText będzie pasował do RAW.\n  const slice = RAW.slice(start, end);\n\n  spans.push({ lane: found[i].lane, text: slice });\n}\n\n// Zbuduj słownik lane->tekst\nconst bucket = Object.fromEntries(order.map(l => [l, '']));\nfor (const s of spans) {\n  bucket[s.lane] = tidy(s.text\n    // usuń sam nagłówek z początku fragmentu\n    .replace(/^\\s*(?:\\d+\\.\\s*|##+\\s*)?([^\\n]+)\\n/, '')\n  );\n}\n\n// Zwróć 6 itemów pod Merge (combine by \"lane\")\nreturn order.map(lane => ({ json: { lane, world_context: bucket[lane] } }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        272,
+        1120
+      ],
+      "id": "f85a4678-0f84-459d-a32c-13b1bbd19b4e",
+      "name": "definiowanie sciezek1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "==Return ONLY raw JSON. No code fences. No comments. No trailing commas.\nUnknown → null or [].\n\nCONTEXT:\n{{ $json.world_context || \"\" }}\n\nFORM:\nName: {{ $json.all_fields['Imie postaci'] || null }}\nGuild: {{ $json.all_fields.Gildia || null }}\n\nRAW:\n{{ $json.value || \"\" }}\n\nRULES:\n- No new proper nouns beyond inputs/context.\n- Map Guild → core_identity.status_class; infer current_group_band from context if obvious (e.g., \"Nowicjusz\" → \"Bractwo Śniącego\"), else null.\n- short_description: 1–2 zdania (pochodzenie/rola/motywacja).\n- keywords: lista haseł pojawiających się w inputs/context; jeśli brak → [].\n",
+        "hasOutputParser": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1296,
+        -1120
+      ],
+      "id": "44208f44-057a-41d3-a070-c4688944c22a",
+      "name": "lane = historia",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=CONTEXT:\n{{ $json.world_context || \"\" }}\n\nINPUT TEXTS:\nZnajomi/przyjaciele/wrogowie:\n{{ $json.all_fields['Znajomi, przyjaciele i wrogowie'] || \"\" }}\n\nRAW:\n{{ $json.value || \"\" }}\n\nTASK:\nExtract all RELATIONSHIPS mentioned, combining character text with world context.\nFill out the structure:\n\n{\n  \"relationships\": {\n    \"major_contacts\": [\n      { \"name\": null, \"faction_status\": null, \"relationship_type\": null, \"details\": null }\n    ],\n    \"allies_supporters\": [],\n    \"enemies_antagonists\": []\n  }\n}\n\nRules:\n- major_contacts: list each person or role explicitly mentioned. Always include all four keys:\n  - \"name\": the personal name if given; if only a role/title is mentioned, put that text.\n  - \"faction_status\": guild, faction or rank if possible (e.g., \"Bractwo Śniącego – Nowicjusz\"). Use world context for inference.\n  - \"relationship_type\": short classifier (\"ally\",\"supporter\",\"enemy\",\"mentor\",\"student\",\"family\",\"trader\",\"cook\",\"priest\", etc.). If unclear → null.\n  - \"details\": 1–2 short clauses summarizing context of the relation (e.g., \"helped in trade\", \"conflicted over zeal\").\n- allies_supporters: collect names or labels of allies/supporters explicitly mentioned. Strings only.\n- enemies_antagonists: collect names or labels of enemies/conflicted parties explicitly mentioned. Strings only.\n- Use [] for empty lists, never omit keys.\n- Do not invent new proper names not present in input or context.\n",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        944,
+        -720
+      ],
+      "id": "e944cee2-56fb-416a-b89b-1d3bd04acfc8",
+      "name": "lane = relacje",
+      "alwaysOutputData": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=JSON ONLY. Unknown → null/[].\n\nFORM:\nAspirations: {{ $json.all_fields['Kim chce zostac'] }}\nOngoing tasks: {{ $json.all_fields['Jakie zadania bedziesz kontynuowac'] }}\n\nRAW:\n{{ $json.value }}\n\nCONTEXT:\n{{ $json.world_context }}\n\nRULES:\n- Derive personal_goals_* from explicit aspirations/tasks.\n- Add narrative_hooks only if clearly implied (e.g., „zwalczanie węży” → short quest; „Nowicjusz” → faction_alignment „Bractwo Śniącego”).\n- No invented names.\n\nSCHEMA (exact keys):\n{ \"biography_and_traits\": { \"personal_goals_long_term\":string|null, \"personal_goals_short_term\":string[] }, \"narrative_hooks\": { \"faction_alignment\":string|null, \"major_conflicts\":string[], \"specific_quests_tasks\":[{ \"quest_name\":string|null, \"description\":string|null, \"client\":string|null, \"involved_factions\":string[], \"required_items\":string[], \"potential_reward\":string|null }], \"player_desired_plots\":string[] } }\n",
+        "hasOutputParser": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1296,
+        -528
+      ],
+      "id": "eb364b35-cc6b-4643-9bf2-ce7fb38ec3aa",
+      "name": "lane = aspiracje",
+      "alwaysOutputData": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=JSON ONLY. Unknown → [].\n\nFORM Weaknesses: {{ $json.all_fields.Slabosci }}\nRAW:\n{{ $json.value }}\n\nExtract ONLY weaknesses/conflicts and safety triggers.\n\n",
+        "hasOutputParser": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1296,
+        -128
+      ],
+      "id": "4c50b028-a7af-4229-9719-cdb8fa45db87",
+      "name": "lane = slabosci",
+      "alwaysOutputData": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=JSON ONLY. Unknown → null/[].\n\nFORM skills: {{ $json.all_fields.Umiejetnosci }}\nRAW:\n{{ $json.value }}\n\nRULES:\n- Separate hard mechanical skills (np. alchemia, szycie ran) vs. miękkie/niemechaniczne (handel, mediacje itp.).\n- If no evidence of level/rank → level_rank_status = null.\n\n",
+        "hasOutputParser": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1296,
+        272
+      ],
+      "id": "f63687c0-2373-4cbb-a02e-6dea4582d5f7",
+      "name": "lane = umiejetnosci",
+      "alwaysOutputData": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=JSON ONLY.\n\nFORM:\nRegion: {{ $json.all_fields.Region }}\nTown: {{ $json.all_fields.Miejscowosc }}\nGuild: {{ $json.all_fields.Gildia }}\n\nCONTEXT:\n{{ $json.world_context }}\n\nTASK:\n- Normalize origin: if Region and Town present → origin_general=Region, origin_detailed=Town; if only one present → copy to the other; else nulls.\n- Infer current_group_band from Guild and CONTEXT (e.g., Nowicjusz → Bractwo Śniącego). If unclear → null.\n",
+        "hasOutputParser": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1296,
+        776
+      ],
+      "id": "f7aaeea6-96fe-4cce-8f08-a9e85bd3a043",
+      "name": "lane = geolore",
+      "alwaysOutputData": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\":\"object\",\n  \"additionalProperties\": false,\n  \"properties\":{\n    \"core_identity\":{\n      \"type\":\"object\",\"additionalProperties\": false,\n      \"properties\":{\n        \"origin_general\":{\"type\":[\"string\",\"null\"]},\n        \"origin_detailed\":{\"type\":[\"string\",\"null\"]},\n        \"current_group_band\":{\"type\":[\"string\",\"null\"]}\n      },\n      \"required\":[\"origin_general\",\"origin_detailed\",\"current_group_band\"]\n    }\n  },\n  \"required\":[\"core_identity\"]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1368,
+        1000
+      ],
+      "id": "38146874-28d8-4a81-8c6b-436413525e37",
+      "name": "Structured Output Parser2"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\":\"object\",\n  \"additionalProperties\": false,\n  \"properties\":{\n    \"mechanical_links\":{\n      \"type\":\"object\",\"additionalProperties\": false,\n      \"properties\":{\n        \"mechanical_skills\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":0},\n        \"non_mechanical_skills_abilities\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":0},\n        \"level_rank_status\":{\"type\":[\"string\",\"null\"]},\n        \"current_assets_items\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":0}\n      },\n      \"required\":[\"mechanical_skills\",\"non_mechanical_skills_abilities\",\"level_rank_status\",\"current_assets_items\"]\n    }\n  },\n  \"required\":[\"mechanical_links\"]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1368,
+        496
+      ],
+      "id": "88c2088f-fa07-4da5-9b74-8c166fc7725f",
+      "name": "Structured Output Parser3"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\":\"object\",\n  \"additionalProperties\": false,\n  \"properties\":{\n    \"biography_and_traits\":{\n      \"type\":\"object\",\"additionalProperties\": false,\n      \"properties\":{\n        \"weaknesses_internal_conflicts\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":0},\n        \"triggers_sensitivities\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":0}\n      },\n      \"required\":[\"weaknesses_internal_conflicts\",\"triggers_sensitivities\"]\n    }\n  },\n  \"required\":[\"biography_and_traits\"]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1368,
+        96
+      ],
+      "id": "9bceb988-0ab7-4f13-b2a1-52e644cb77f9",
+      "name": "Structured Output Parser4"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\n  \"type\":\"object\",\n  \"additionalProperties\": false,\n  \"properties\":{\n    \"biography_and_traits\":{\n      \"type\":\"object\",\"additionalProperties\": false,\n      \"properties\":{\n        \"personal_goals_long_term\":{\"type\":[\"string\",\"null\"]},\n        \"personal_goals_short_term\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":0}\n      },\n      \"required\":[\"personal_goals_long_term\",\"personal_goals_short_term\"]\n    },\n    \"narrative_hooks\":{\n      \"type\":\"object\",\"additionalProperties\": false,\n      \"properties\":{\n        \"faction_alignment\":{\"type\":[\"string\",\"null\"]},\n        \"major_conflicts\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":0},\n        \"specific_quests_tasks\":{\n          \"type\":\"array\",\"minItems\":0,\n          \"items\":{\n            \"type\":\"object\",\"additionalProperties\": false,\n            \"properties\":{\n              \"quest_name\":{\"type\":[\"string\",\"null\"]},\n              \"description\":{\"type\":[\"string\",\"null\"]},\n              \"client\":{\"type\":[\"string\",\"null\"]},\n              \"involved_factions\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":0},\n              \"required_items\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":0},\n              \"potential_reward\":{\"type\":[\"string\",\"null\"]}\n            },\n            \"required\":[\"quest_name\",\"description\",\"client\",\"involved_factions\",\"required_items\",\"potential_reward\"]\n          }\n        },\n        \"player_desired_plots\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":0}\n      },\n      \"required\":[\"faction_alignment\",\"major_conflicts\",\"specific_quests_tasks\",\"player_desired_plots\"]\n    }\n  },\n  \"required\":[\"biography_and_traits\",\"narrative_hooks\"]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1368,
+        -304
+      ],
+      "id": "e9b4e151-c1c5-4473-bef7-042572b0f1c8",
+      "name": "Structured Output Parser5"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"additionalProperties\": false,\n  \"properties\": {\n    \"core_identity\": {\n      \"type\": \"object\",\n      \"additionalProperties\": true,\n      \"properties\": {\n        \"character_name\": { \"type\": [\"string\",\"null\"] },\n        \"status_class\": { \"type\": [\"string\",\"null\"] },\n        \"current_group_band\": { \"type\": [\"string\",\"null\"] },\n        \"short_description\": { \"type\": [\"string\",\"null\"] },\n        \"keywords\": { \"type\": [\"array\",\"null\"], \"items\": { \"type\": \"string\" }, \"minItems\": 0 }\n      },\n      \"required\": [\n        \"character_name\",\n        \"status_class\",\n        \"current_group_band\",\n        \"short_description\",\n        \"keywords\"\n      ]\n    },\n    \"biography_and_traits\": {\n      \"type\": \"object\",\n      \"additionalProperties\": true,\n      \"properties\": {\n        \"backstory_summary\": { \"type\": [\"string\",\"null\"] },\n        \"key_past_events\": { \"type\": [\"array\",\"null\"], \"items\": { \"type\": \"string\" }, \"minItems\": 0 }\n      },\n      \"required\": [\n        \"backstory_summary\",\n        \"key_past_events\"\n      ]\n    }\n  },\n  \"required\": [\n    \"core_identity\",\n    \"biography_and_traits\"\n  ]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1432,
+        -896
+      ],
+      "id": "6e279551-7bcb-4d4d-a28a-ffab3992aa0c",
+      "name": "Structured Output Parser7"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1) Weź surowy wynik – czasem przychodzi jako wrapper z .response.generations[0][0].text\nlet candidate = $json;\nlet txt = candidate?.response?.generations?.[0]?.[0]?.text;\nif (typeof txt === \"string\") {\n  try { candidate = JSON.parse(txt); } catch (e) { candidate = {}; }\n}\n\n// 2) Upewnij się, że mamy obiekt relationships\nconst out = candidate && typeof candidate === \"object\" ? candidate : {};\nout.relationships = out.relationships && typeof out.relationships === \"object\" ? out.relationships : {};\n\n// 3) Normalizacja tablic\nfunction toArray(x) { return Array.isArray(x) ? x : (x == null ? [] : [x]); }\n\n// allies_supporters/enemies_antagonists muszą być tablicą STRINGÓW\nfunction toNameStrings(arr) {\n  return toArray(arr).map(v => {\n    if (typeof v === \"string\") return v.trim();\n    if (v && typeof v === \"object\") return String(v.name ?? \"\").trim();\n    return \"\";\n  }).filter(Boolean);\n}\n\nout.relationships.allies_supporters = toNameStrings(out.relationships.allies_supporters);\nout.relationships.enemies_antagonists = toNameStrings(out.relationships.enemies_antagonists);\n\n// 4) major_contacts: tablica obiektów z 4 kluczami (null-safe)\nconst mc = toArray(out.relationships.major_contacts).filter(v => v && typeof v === \"object\");\nout.relationships.major_contacts = mc.map(v => ({\n  name: v.name ?? null,\n  faction_status: v.faction_status ?? null,\n  relationship_type: v.relationship_type ?? null,\n  details: v.details ?? null,\n}));\n\n// 5) Zwróć\nreturn [{ json: out }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        -720
+      ],
+      "id": "91967579-aafe-4b02-a3c1-4388be4a8cda",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        2544,
+        784
+      ],
+      "id": "3045095a-2f15-47b6-869f-4f380f024b19",
+      "name": "quest_examples_filled_text"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        2544,
+        60
+      ],
+      "id": "1d871947-8917-41cf-b466-670bbdad182c",
+      "name": "quest_examples_text"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.type }}",
+                    "rightValue": "quest",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f484ac6a-64b5-4d63-bcb7-eeefea94c60a"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "=quest"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "40e73396-9a74-4e4a-94f1-3d2d31bf957d",
+                    "leftValue": "={{ $json.type }}",
+                    "rightValue": "conflict",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "conflict"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d76b1fcf-1ad2-4376-8a2e-942a3921babb",
+                    "leftValue": "={{ $json.type }}",
+                    "rightValue": "contact",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "contact"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4218592a-49dd-4e69-9086-cab89a46e908",
+                    "leftValue": "={{ $json.type }}",
+                    "rightValue": "goal_short",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "goal_short"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "037701b8-4e26-4258-a605-a4a523f614a4",
+                    "leftValue": "={{ $json.type }}",
+                    "rightValue": "goal_long",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "goal_long"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b7110a22-4be8-4860-8754-1f40cee2cbef",
+                    "leftValue": "={{ $json.type }}",
+                    "rightValue": "trigger",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "trigger"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "215c183d-c087-4561-9599-331ee203770a",
+                    "leftValue": "={{ $json.type }}",
+                    "rightValue": "noop",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Noop"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        2992,
+        -608
+      ],
+      "id": "e9da3a0e-d271-4e66-b442-f3aaf6b97b25",
+      "name": "rozdzielnia wątków"
+    },
+    {
+      "parameters": {
+        "numberInputs": 6
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1648,
+        -112
+      ],
+      "id": "4c73b6cb-0fe7-46db-b5af-acaf220327c8",
+      "name": "scalenie opracowania",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Reduce mixed-shape items into a single { output: acc } object.\n\nconst A = x => Array.isArray(x) ? x : (x == null ? [] : [x]);\nconst uniq = arr => [...new Set(arr.filter(v => v != null))];\n\nconst isBlank = v => v == null || (typeof v === 'string' && v.trim() === '');\nconst coalesce = (dstVal, srcVal) => isBlank(dstVal) ? srcVal : dstVal;\n\nconst acc = {\n  core_identity: {\n    character_name: null,\n    status_class: null,\n    current_group_band: null,\n    short_description: null,\n    keywords: [],\n    origin_general: null,\n    origin_detailed: null,\n  },\n  biography_and_traits: {\n    backstory_summary: null,\n    key_past_events: [],\n    personal_goals_long_term: null,\n    personal_goals_short_term: [],\n    weaknesses_internal_conflicts: [],\n    triggers_sensitivities: [],\n  },\n  mechanical_links: {\n    mechanical_skills: [],\n    non_mechanical_skills_abilities: [],\n    level_rank_status: null,\n    current_assets_items: [],\n  },\n  narrative_hooks: {\n    faction_alignment: null,\n    major_conflicts: [],\n    specific_quests_tasks: [],\n    player_desired_plots: [],\n  },\n  relationships: {\n    major_contacts: [],\n    allies_supporters: [],\n    enemies_antagonists: [],\n  },\n};\n\nfunction mergeNoBlank(dst, src) {\n  if (!src || typeof src !== 'object') return;\n  for (const [k, v] of Object.entries(src)) {\n    if (Array.isArray(v)) {\n      dst[k] = uniq((dst[k] || []).concat(v));\n    } else {\n      dst[k] = coalesce(dst[k], v);\n    }\n  }\n}\n\nfor (const it of items) {\n  const raw = it.json || {};\n  // akceptuj oba kształty\n  let j = raw.output ? raw.output : raw;\n\n  // czasem LLM zwraca wrappera – spróbuj odczytać tekst i zparse’ować\n  if (j?.response?.generations?.[0]?.[0]?.text) {\n    try { j = JSON.parse(j.response.generations[0][0].text); } catch {}\n  }\n\n  if (j.core_identity) {\n    const ci = j.core_identity;\n    for (const k of Object.keys(acc.core_identity)) {\n      acc.core_identity[k] = coalesce(acc.core_identity[k], ci[k]);\n    }\n    if (ci.keywords) {\n      const kw = Array.isArray(ci.keywords) ? ci.keywords : [];\n      acc.core_identity.keywords = uniq((acc.core_identity.keywords || []).concat(kw));\n    }\n  }\n\n  if (j.biography_and_traits) mergeNoBlank(acc.biography_and_traits, j.biography_and_traits);\n  if (j.mechanical_links)    mergeNoBlank(acc.mechanical_links,    j.mechanical_links);\n\n  if (j.narrative_hooks) {\n    const nh = j.narrative_hooks;\n    acc.narrative_hooks.faction_alignment = coalesce(acc.narrative_hooks.faction_alignment, nh.faction_alignment);\n    acc.narrative_hooks.major_conflicts      = uniq(acc.narrative_hooks.major_conflicts.concat(A(nh.major_conflicts)));\n    acc.narrative_hooks.player_desired_plots = uniq(acc.narrative_hooks.player_desired_plots.concat(A(nh.player_desired_plots)));\n    acc.narrative_hooks.specific_quests_tasks = (acc.narrative_hooks.specific_quests_tasks || []).concat(A(nh.specific_quests_tasks));\n  }\n\n  const rel = j.relationships || raw.relationships;\n  if (rel) {\n    acc.relationships.allies_supporters   = uniq(acc.relationships.allies_supporters.concat(A(rel.allies_supporters)));\n    acc.relationships.enemies_antagonists = uniq(acc.relationships.enemies_antagonists.concat(A(rel.enemies_antagonists)));\n\n    const incoming = A(rel.major_contacts).filter(Boolean).map(x => ({\n      name: x?.name ?? null,\n      faction_status: x?.faction_status ?? null,\n      relationship_type: x?.relationship_type ?? null,\n      details: x?.details ?? null,\n    }));\n\n    // dedup po znormalizowanej nazwie\n    const keyOf = m => String(m?.name || '').normalize('NFD').replace(/\\p{Diacritic}/gu,'').trim().toLowerCase();\n    const byName = new Map(acc.relationships.major_contacts.map(m => [keyOf(m), m]));\n    for (const m of incoming) {\n      const k = keyOf(m);\n      if (!byName.has(k)) byName.set(k, m);\n    }\n    acc.relationships.major_contacts = Array.from(byName.values());\n  }\n}\n\n// sanity: typy i deduplikacje\nacc.core_identity.keywords = Array.isArray(acc.core_identity.keywords) ? acc.core_identity.keywords : [];\nacc.biography_and_traits.key_past_events = uniq(acc.biography_and_traits.key_past_events);\nacc.biography_and_traits.personal_goals_short_term = uniq(acc.biography_and_traits.personal_goals_short_term);\n\nreturn [{ json: { output: acc } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1872,
+        -48
+      ],
+      "id": "572a25e6-01d9-4d91-b5de-58c1e2d93589",
+      "name": "reduce_profile_from_lanes"
+    },
+    {
+      "parameters": {
+        "jsCode": "const o = items[0]?.json?.output || {};\nconst out = [];\nconst add = (h) => out.push({ json: h });\nconst pid = o?.core_identity?.character_name || \"unknown\";\nconst A = (x) => Array.isArray(x) ? x : (x ? [x] : []);\n\n// QUESTS\nA(o.narrative_hooks?.specific_quests_tasks).forEach((q,i)=>{\n  const isObj = q && typeof q==='object';\n  add({\n    type:\"quest\",\n    id:`Q${i+1}`,\n    label:(isObj?(q.quest_name||q.title):q)||\"Zadanie\",\n    description:isObj?(q.description||\"\"):\"\",\n    client:isObj?(q.client||null):null,\n    involved_factions:isObj?(q.involved_factions||[]):[],\n    reward_hint:isObj?(q.potential_reward||\"\"):\"\",\n    derived_from:[\"narrative_hooks.specific_quests_tasks\"],\n    priority:\"medium\",\n    postac:pid\n  });\n});\n\n// ENEMIES → conflicts\nA(o.relationships?.enemies_antagonists).forEach((r,i)=>{\n  const name = typeof r==='string' ? r : (r?.name || \"Nieznany\");\n  add({\n    type:\"conflict\",\n    id:`C_EN_${i+1}`,\n    label:`Konflikt z ${name}`,\n    antagonist:name,\n    risk_level:\"medium\",\n    reward_hint:\"status w grupie / łaska przełożonych\",\n    derived_from:[\"relationships.enemies_antagonists\"],\n    postac:pid\n  });\n});\n\n// MAJOR CONFLICTS\nA(o.narrative_hooks?.major_conflicts).forEach((c,i)=>{\n  add({\n    type:\"conflict\",\n    id:`C_MJ_${i+1}`,\n    label: typeof c==='string' ? c : (c?.title||\"Konflikt\"),\n    risk_level:\"high\",\n    reward_hint:\"oczyszczenie reputacji\",\n    derived_from:[\"narrative_hooks.major_conflicts\"],\n    postac:pid\n  });\n});\n\n// CONTACTS\nA(o.relationships?.major_contacts).forEach((c,i)=>{\n  const name = (c && typeof c === 'object') ? (c.name || \"Kontakt\") : String(c||\"Kontakt\");\n  add({\n    type:\"contact\",\n    id:`CT${i+1}`,\n    label:`Kontakt: ${name}`,\n    relationship_type: c?.relationship_type ?? null,\n    faction_status: c?.faction_status ?? null,\n    details: c?.details ?? null,\n    derived_from:[\"relationships.major_contacts\"],\n    postac:pid\n  });\n});\n\n// GOALS – short\nA(o.biography_and_traits?.personal_goals_short_term).forEach((g,i)=>{\n  add({\n    type:\"goal_short\",\n    id:`GS${i+1}`,\n    label: typeof g==='string' ? g : (g?.title || \"Cel krótkoterminowy\"),\n    success_criteria:\"mierzalny efekt w 1-2 sesje\",\n    derived_from:[\"biography_and_traits.personal_goals_short_term\"],\n    postac:pid\n  });\n});\n\n// GOALS – long\nconst gl = o.biography_and_traits?.personal_goals_long_term;\nif (gl) {\n  add({\n    type:\"goal_long\",\n    id:`GL1`,\n    label: typeof gl==='string' ? gl : (gl?.title || \"Cel długoterminowy\"),\n    success_criteria:\"kamień milowy fabularny / awans\",\n    derived_from:[\"biography_and_traits.personal_goals_long_term\"],\n    postac:pid\n  });\n}\n\n// TRIGGERS\nA(o.biography_and_traits?.triggers_sensitivities).forEach((t,i)=>{\n  add({\n    type:\"trigger\",\n    id:`TR${i+1}`,\n    label: typeof t==='string' ? t : (t?.label || \"trigger\"),\n    safety_note:\"delikatne prowadzenie scen, ostrzeż MG\",\n    derived_from:[\"biography_and_traits.triggers_sensitivities\"],\n    postac:pid\n  });\n});\n\nif (!out.length) add({ type:\"noop\", note:\"brak hooków\", postac:pid });\n\nreturn out;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2768,
+        -528
+      ],
+      "id": "7d3df19d-6b58-4b64-9325-2f0f692e5854",
+      "name": "splitter",
+      "executeOnce": false,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const o = $json.output || {};\nconst count = {\n  quests: (o.narrative_hooks?.specific_quests_tasks || []).length,\n  major_conflicts: (o.narrative_hooks?.major_conflicts || []).length,\n  enemies: (o.relationships?.enemies_antagonists || []).length,\n  contacts: (o.relationships?.major_contacts || []).length,\n  goals_short: (o.biography_and_traits?.personal_goals_short_term || []).length,\n  goal_long: o.biography_and_traits?.personal_goals_long_term ? 1 : 0,\n  triggers: (o.biography_and_traits?.triggers_sensitivities || []).length,\n};\nreturn [{ json: { output: o, stats: count } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2096,
+        -48
+      ],
+      "id": "94484253-b190-4688-92e9-ae5cdce92194",
+      "name": "Sanity"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2852ca05-59db-4505-ab03-38474b2d4521",
+              "leftValue": "={{ $json.stats.quests }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {
+          "ignoreCase": false
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2320,
+        -528
+      ],
+      "id": "5b9a9eef-c80e-49ba-b13d-c6532302b41d",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "const o = $json.output;\nconst pid = o?.core_identity?.character_name || \"unknown\";\nconst A = x => Array.isArray(x) ? x : (x ? [x] : []);\nconst seeded = [];\n\nA(o.biography_and_traits?.personal_goals_short_term).forEach(g => {\n  const title = typeof g === 'string' ? g : (g?.title || \"Cel krótkoterminowy\");\n  seeded.push({\n    quest_name: `Zrób krok w stronę: ${title}`,\n    description: \"Zadanie powiązane bezpośrednio z osobistym celem. Wymaga 1–2 konkretnych działań w obozie.\",\n    client: null,\n    involved_factions: [],\n    required_items: [],\n    potential_reward: \"zaufanie / reputacja\",\n  });\n});\n\nA(o.narrative_hooks?.major_conflicts).forEach(c => {\n  const label = typeof c === 'string' ? c : (c?.title || \"Konflikt\");\n  seeded.push({\n    quest_name: `Rozsupłaj konflikt: ${label}`,\n    description: \"Zidentyfikuj strony sporu, zbierz świadectwa i zaproponuj rozwiązanie akceptowalne dla obu stron.\",\n    client: \"[insert mediator or overseer]\",\n    involved_factions: [],\n    required_items: [],\n    potential_reward: \"spokój w sektorze / przychylność straży\",\n  });\n});\n\nA(o.relationships?.enemies_antagonists).forEach(enemy => {\n  const name = typeof enemy === 'string' ? enemy : (enemy?.name || \"antagonista\");\n  seeded.push({\n    quest_name: `Zmierzyć się z ${name} bez eskalacji`,\n    description: \"Zdobądź informacje, szukaj świadków, znajdź sposób na ograniczenie szkód bez otwartej bójki.\",\n    client: \"[insert guard or elder]\",\n    involved_factions: [],\n    required_items: [],\n    potential_reward: \"bezpieczeństwo / dostęp do zasobów\",\n  });\n});\n\n// dołóż do istniejących\no.narrative_hooks = o.narrative_hooks || {};\no.narrative_hooks.specific_quests_tasks = (o.narrative_hooks.specific_quests_tasks || []).concat(seeded);\n\n// wpuść dalej\nreturn [{ json: { output: o } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2544,
+        -180
+      ],
+      "id": "6b0a9761-30c6-495b-a796-a2156f1987b5",
+      "name": "Heurystyczny seeder"
+    },
+    {
+      "parameters": {
+        "jsCode": "// splitter_seeded – identyczny jak \"splitter\", ale prefiks SQ\nconst o = items[0]?.json?.output || {};\nconst out = [];\nconst add = (h) => out.push({ json: h });\nconst pid = o?.core_identity?.character_name || \"unknown\";\nconst A = (x) => Array.isArray(x) ? x : (x ? [x] : []);\n\n// QUESTS (prefiks SQ)\nA(o.narrative_hooks?.specific_quests_tasks).forEach((q,i)=>{\n  const isObj = q && typeof q==='object';\n  add({\n    type:\"quest\",\n    id:`SQ${i+1}`,\n    label:(isObj?(q.quest_name||q.title):q)||\"Zadanie\",\n    description:isObj?(q.description||\"\"):\"\",\n    client:isObj?(q.client||null):null,\n    involved_factions:isObj?(q.involved_factions||[]):[],\n    reward_hint:isObj?(q.potential_reward||\"\"):\"\",\n    derived_from:[\"narrative_hooks.specific_quests_tasks\"],\n    priority:\"medium\",\n    postac:pid\n  });\n});\n\n// ENEMIES → conflicts\nA(o.relationships?.enemies_antagonists).forEach((r,i)=>{\n  const name = typeof r==='string' ? r : (r?.name || \"Nieznany\");\n  add({\n    type:\"conflict\",\n    id:`C_EN_${i+1}`,\n    label:`Konflikt z ${name}`,\n    antagonist:name,\n    risk_level:\"medium\",\n    reward_hint:\"status w grupie / łaska przełożonych\",\n    derived_from:[\"relationships.enemies_antagonists\"],\n    postac:pid\n  });\n});\n\n// MAJOR CONFLICTS\nA(o.narrative_hooks?.major_conflicts).forEach((c,i)=>{\n  add({\n    type:\"conflict\",\n    id:`C_MJ_${i+1}`,\n    label: typeof c==='string' ? c : (c?.title||\"Konflikt\"),\n    risk_level:\"high\",\n    reward_hint:\"oczyszczenie reputacji\",\n    derived_from:[\"narrative_hooks.major_conflicts\"],\n    postac:pid\n  });\n});\n\n// CONTACTS\nA(o.relationships?.major_contacts).forEach((c,i)=>{\n  const name = (c && typeof c === 'object') ? (c.name || \"Kontakt\") : String(c||\"Kontakt\");\n  add({\n    type:\"contact\",\n    id:`CT${i+1}`,\n    label:`Kontakt: ${name}`,\n    relationship_type: c?.relationship_type ?? null,\n    faction_status: c?.faction_status ?? null,\n    details: c?.details ?? null,\n    derived_from:[\"relationships.major_contacts\"],\n    postac:pid\n  });\n});\n\n// GOALS – short\nA(o.biography_and_traits?.personal_goals_short_term).forEach((g,i)=>{\n  add({\n    type:\"goal_short\",\n    id:`GS${i+1}`,\n    label: typeof g==='string' ? g : (g?.title || \"Cel krótkoterminowy\"),\n    success_criteria:\"mierzalny efekt w 1-2 sesje\",\n    derived_from:[\"biography_and_traits.personal_goals_short_term\"],\n    postac:pid\n  });\n});\n\n// GOALS – long\nconst gl = o.biography_and_traits?.personal_goals_long_term;\nif (gl) {\n  add({\n    type:\"goal_long\",\n    id:`GL1`,\n    label: typeof gl==='string' ? gl : (gl?.title || \"Cel długoterminowy\"),\n    success_criteria:\"kamień milowy fabularny / awans\",\n    derived_from:[\"biography_and_traits.personal_goals_long_term\"],\n    postac:pid\n  });\n}\n\n// TRIGGERS\nA(o.biography_and_traits?.triggers_sensitivities).forEach((t,i)=>{\n  add({\n    type:\"trigger\",\n    id:`TR${i+1}`,\n    label: typeof t==='string' ? t : (t?.label || \"trigger\"),\n    safety_note:\"delikatne prowadzenie scen, ostrzeż MG\",\n    derived_from:[\"biography_and_traits.triggers_sensitivities\"],\n    postac:pid\n  });\n});\n\nif (!out.length) add({ type:\"noop\", note:\"brak hooków\", postac:pid });\n\nreturn out.length ? out : [{ json: { type:\"noop\", note:\"seed produced nothing\", postac:pid } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2768,
+        -180
+      ],
+      "id": "baa0a432-baec-465c-83a9-05b483aa6bf8",
+      "name": "splitter_seeder"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        2768,
+        44
+      ],
+      "id": "3a4b8344-c233-47f3-af65-7286b634eebe",
+      "name": "Merge1",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "jsCode": "// === ContextPack (Run once for all items = ON) ===\n// Wersja DYNAMIC + BEZPIECZNA: zero twardych założeń, a wszelkie $items()\n// zabezpieczone, żeby nie wywalało się na braku węzła (ExpressionError: Referenced node doesn't exist).\n\n// ---------- Helpers ----------\nconst flat = (a) => Array.isArray(a) ? a.flat() : [];\nconst clip = (s, n) => (s || '').slice(0, n);\n\nfunction walkCollect(root, predicate) {\n  const out = [];\n  (function rec(v){\n    if (!v) return;\n    if (Array.isArray(v)) { v.forEach(rec); return; }\n    if (typeof v === 'object') {\n      if (predicate(v)) out.push(v);\n      for (const val of Object.values(v)) rec(val);\n    }\n  })(root);\n  return out;\n}\n\nfunction safeItems(name){\n  try { return $items(name, 0, 0) || []; } catch(_) { return []; }\n}\n\n// ---------- 0) Root from input ----------\nconst inputItems = $input.all(0);\nconst root = (inputItems[0]?.json) || {};\n\n// ---------- 1) Zbierz HOOKI po typie ----------\nconst TYPE_SET = new Set(['quest','conflict','contact','goal_short','goal_long']);\nconst hooks = walkCollect(root, o => typeof o?.type === 'string' && TYPE_SET.has(String(o.type).toLowerCase()));\n['a','b','c','d','e','A','B','C','D','E'].forEach(k => {\n  const arr = root[k];\n  if (Array.isArray(arr)) {\n    for (const it of arr) if (TYPE_SET.has(String(it?.type||'').toLowerCase())) hooks.push(it);\n  }\n});\n\n// ---------- 2) Profil (bez parowania, bez błędów gdy node nie istnieje) ----------\nlet profile = root.profile;\nif (!profile) {\n  const profArr = safeItems('reduce_profile_from_lanes');\n  profile = (profArr[0]?.json) ?? {};\n}\n\n// ---------- 3) PDF-y (quest_examples / quest_examples_filled) ----------\nconst allPdfs = walkCollect(root, o => o?.info?.Title && typeof o?.text === 'string');\nfunction getPdfByTitleLike(reLike) {\n  return allPdfs.find(p => reLike.test(String(p.info?.Title||'')))?.text || '';\n}\nlet ctx_ex_unf  = getPdfByTitleLike(/quest[_ ]?examples(?!.*filled)/i);\nlet ctx_ex_fill = getPdfByTitleLike(/quest[_ ]?examples[_ ]?filled/i);\nif (!ctx_ex_unf || !ctx_ex_fill) {\n  const sorted = [...allPdfs].sort((a,b)=> (b.text?.length||0)-(a.text?.length||0));\n  if (!ctx_ex_unf && sorted[0]) ctx_ex_unf = sorted[0].text;\n  if (!ctx_ex_fill && sorted[1]) ctx_ex_fill = sorted[1].text;\n}\nctx_ex_unf  = clip(ctx_ex_unf,  8000);\nctx_ex_fill = clip(ctx_ex_fill, 8000);\n\n// ---------- 4) WORLD CONTEXT z { lane, world_context } ----------\nconst lanesWC = walkCollect(root, o => typeof o?.lane === 'string' && typeof o?.world_context === 'string');\nconst ctx_world = clip(lanesWC.map(x => `=== ${x.lane.toUpperCase()} ===\\n${x.world_context}`).join('\\n\\n'), 9000);\n\n// ---------- 5) Placeholder map (dynamicznie, bezpiecznie) ----------\nlet placeholderMap = root.placeholder_map;\nif (!placeholderMap) {\n  const pm = safeItems('placeholder_map');\n  if (pm[0]?.json) placeholderMap = pm[0].json;\n}\nplaceholderMap = placeholderMap || {\n  belfrem: '[insert rival enforcer]',\n  belferem: '[insert rival enforcer]',\n  cybuch: '[insert hothead novice]',\n  lorenzo: '[insert outside merchant]',\n  alwar: '[insert camp contact]',\n  morgan: '[insert novice from same group]'\n};\n\nfunction name2ph(s) {\n  if (!s) return s;\n  const low = String(s).toLowerCase();\n  for (const [kw, ph] of Object.entries(placeholderMap)) {\n    if (low.includes(kw)) return ph;\n  }\n  if (/^\\s*kontakt\\s*:/i.test(s)) return s.replace(/^\\s*kontakt\\s*:\\s*/i, '[insert ').replace(/\\]?$/, ' ]');\n  return s;\n}\n\n// ---------- 6) Normalizacja hooka ----------\nfunction normalize(it){\n  const j = { ...it };\n  j.type = String(j.type||'quest').toLowerCase();\n  j.derived_from = Array.isArray(j.derived_from) ? j.derived_from.join(', ') : (j.derived_from ?? '');\n  const client_s = j.client ? name2ph(j.client) : '';\n  const factions_s = Array.isArray(j.involved_factions) ? j.involved_factions.join(', ') : (j.involved_factions || '');\n  j.label = name2ph(j.label || '');\n  j.description = name2ph(j.description || '');\n  if (j.antagonist) j.antagonist = name2ph(j.antagonist);\n  return { ...j, profile, ctx_world, ctx_ex_unf, ctx_ex_fill, client_s, factions_s };\n}\n\n// ---------- 7) Wyjście ----------\nconst out = hooks.map(normalize);\nreturn out.map((json, idx) => ({ json, pairedItem: idx }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2992,
+        60
+      ],
+      "id": "b7c64ed2-955b-480b-a87a-ece8c6aa1110",
+      "name": "ContextPack"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "hasOutputParser": true,
+        "batching": {
+          "delayBetweenBatches": 0
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        3888,
+        -492
+      ],
+      "id": "bf1e8e38-abaf-40b0-86bb-5c2b770dfdfd",
+      "name": "Quest Maker",
+      "alwaysOutputData": false,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// === Quest Batch Maker ===\n// Generator inputów dla Quest Maker: każdy hook => osobny prompt\n\n// Helpers\nconst clip = (s,n)=> (s||'').slice(0,n);\n\n// Zbierz wszystkie wejściowe itemy (już z ContextPack)\nconst items = $input.all();\n\n// Funkcja budująca prompt dla jednego itema\nfunction makePrompt(j){\n  const { profile, ctx_world, ctx_ex_unf, ctx_ex_fill, type, label, description, client_s, factions_s, derived_from } = j;\n\n  return `You are a quest designer for a grounded, low-fantasy Gothic LARP.\nTworzysz KRÓTKIE, GRYWALNE zahaczki (blank-questy) dla MG, bez epickiej magii i bez nazw własnych — tylko PLACEHOLDERY w [kwadratowych nawiasach].\n\n=== WORLD CONTEXT (skrót) ===\n${clip(ctx_world,3000)}\n\n=== EXAMPLES (style pod placeholdery) ===\n${clip(ctx_ex_unf,1500)}\n${clip(ctx_ex_fill,1500)}\n\n=== CHARACTER SNAPSHOT ===\n${JSON.stringify(profile,null,2)}\n\n=== HOOK INPUT (lane) ===\nType: ${type}\nLabel: ${label}\nDescription: ${description||''}\nExtra: client=${client_s}, factions=${factions_s}\n\nINSTRUCTIONS BY LANE\n- If type == \"quest\": zaproponuj zahaczkę ściśle powiązaną z opisem „label/description”.\n- If type == \"conflict\": zogniskuj quest wokół mediacji/eskalacji/rozbrojenia, z wyraźnymi stawkami i ryzykami społecznymi.\n- If type == \"contact\": quest niech wykorzystuje kontakt jako zasób/przeszkodę; wstaw go jako [insert role...] bez nazwy.\n- If type == \"goal_short\": daj szybki, mierzalny krok w stronę celu (1 scenka).\n- If type == \"goal_long\": daj „kamień milowy” — jeden odcinek, który realnie przesuwa postęp.\n\nTASK\nNa podstawie SNAPSHOT + HOOK stwórz DOKŁADNIE JEDEN „quest-starter” (30–60 min, 2–5 graczy), możliwy do rozegrania tu i teraz w obozie.\nUżywaj WYŁĄCZNIE placeholderów w [insert ...] dla nazw ludzi/miejsc/ról.\nBez wyjaśnień, bez komentarzy — tylko JSON.\n\nOUTPUT (JSON ONLY, keys exactly): {...}\n\nSTRICT RULES\n- ŻADNYCH nazw własnych.\n- Beats = konkretne czynności obozowe (przekonaj/przemyć/przeszukaj/przechwyć/zaplanuj/ukryj/wymień/zwiad).\n- Jeśli nie umiesz zwrócić poprawnego JSON, zwróć dokładnie: VIOLATION.\n\nSchema enforcement active.\n`;\n}\n\n// Output: każdy item jako osobny prompt\nreturn items.map((it, idx)=> ({json:{ prompt: makePrompt(it.json), derived_from: it.json.derived_from || ''}, pairedItem: idx}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3216,
+        60
+      ],
+      "id": "a9ce0913-5871-4ff3-a98b-cbbc14656afa",
+      "name": "Quest Batch Maker"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Bierzemy wszystkie wejścia z rozdzielni i składamy w jedną listę wątków (threads)\n// Każdy item standaryzujemy: {type,id,label,description,meta:{...}}\n\nconst flat = (a) => Array.isArray(a) ? a.flat() : [];\nconst ALL = $input.all();            // lista strumieni\nconst merged = [];\n\nfor (const stream of ALL) {\n  for (const it of flat(stream)) {\n    const j = it.json || {};\n    // normalizacja pól\n    const t = (j.type || 'noop').trim();\n    const base = {\n      type: t,\n      id: j.id || null,\n      label: j.label || j.title || j.name || '(bez nazwy)',\n      description: j.description || '',\n      meta: {\n        client: j.client ?? null,\n        involved_factions: j.involved_factions ?? [],\n        antagonist: j.antagonist ?? null,\n        relationship_type: j.relationship_type ?? null,\n        faction_status: j.faction_status ?? null,\n        success_criteria: j.success_criteria ?? null,\n        reward_hint: j.reward_hint ?? ''\n      },\n      derived_from: j.derived_from || [],\n      postac: j.postac || null\n    };\n    // ignoruj puste/noop na końcu\n    if (t !== 'noop') merged.push(base);\n  }\n}\n\n// Zwróć JEDEN item z tablicą 'threads'\nreturn [{ json: { threads: merged } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3216,
+        -528
+      ],
+      "id": "985f7368-f141-4163-9c2d-9e785c35f12d",
+      "name": "Merge threads"
+    },
+    {
+      "parameters": {
+        "model": "mistral:latest",
+        "options": {
+          "temperature": 0.3,
+          "topP": 0.9,
+          "numPredict": 5000,
+          "repeatPenalty": 1.05
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmOllama",
+      "typeVersion": 1,
+      "position": [
+        3896,
+        -268
+      ],
+      "id": "1ffa0810-6882-4940-b2d1-6aed7d80d6a4",
+      "name": "mistral:latest",
+      "credentials": {
+        "ollamaApi": {
+          "id": "2Flignq24q0R9OSd",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\":\"object\",\"additionalProperties\":false,\n  \"properties\":{\n    \"title\":{\"type\":\"string\"},\n    \"synopsis\":{\"type\":\"string\"},\n    \"beats\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":3,\"maxItems\":5},\n    \"npc_placeholders\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":1,\"maxItems\":6},\n    \"risks\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":1,\"maxItems\":5},\n    \"resolution_options\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"minItems\":2,\"maxItems\":5},\n    \"logistics\":{\n      \"type\":\"object\",\"additionalProperties\":false,\n      \"properties\":{\n        \"est_time_min\":{\"type\":\"integer\"},\n        \"suggested_location\":{\"type\":\"string\"},\n        \"min_players\":{\"type\":\"integer\"},\n        \"max_players\":{\"type\":\"integer\"}\n      },\n      \"required\":[\"est_time_min\",\"suggested_location\",\"min_players\",\"max_players\"]\n    },\n    \"derived_from\":{\"type\":[\"string\",\"array\",\"null\"]}\n  },\n  \"required\":[\"title\",\"synopsis\",\"beats\",\"npc_placeholders\",\"risks\",\"resolution_options\",\"logistics\",\"derived_from\"]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        4024,
+        -268
+      ],
+      "id": "f74e662c-9119-42d2-b475-d9effb4afba5",
+      "name": "Schemat wyjścia"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        3664,
+        -228
+      ],
+      "id": "08b5fc30-48df-4f2c-99ee-554ac0db1f9e"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        3440,
+        -528
+      ],
+      "id": "b43717bf-0eaf-40ab-b975-541ba7b7c597",
+      "name": "Iterate threads"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Weź pojedynczy thread i zamapuj na input jaki Twój Quest Maker lubi.\n// Jeśli Twój aktualny \"quest maker\" oczekuje innego kształtu, to tu go dajemy.\n\nconst th = items[0].json;\nconst out = {\n  type: th.type,\n  id: th.id,\n  label: th.label,\n  description: th.description,\n  client: th.meta?.client ?? null,\n  involved_factions: th.meta?.involved_factions ?? [],\n  antagonist: th.meta?.antagonist ?? null,\n  success_criteria: th.meta?.success_criteria ?? null,\n  reward_hint: th.meta?.reward_hint ?? '',\n  derived_from: th.derived_from || [],\n  postac: th.postac || null,\n};\n\nreturn [{ json: out }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3664,
+        -624
+      ],
+      "id": "6506d1f8-f1d9-4b5c-86c1-2852d3463df9",
+      "name": "Quest Maker (adapter)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Z \"Sanity\" bierzemy acc.output, robimy płaski kontekst do template\nconst o = $json.output || {};\nconst view = {\n  name: o?.core_identity?.character_name || 'Bez_imienia',\n  status_class: o?.core_identity?.status_class || null,\n  group: o?.core_identity?.current_group_band || null,\n  origin_general: o?.core_identity?.origin_general || null,\n  origin_detailed: o?.core_identity?.origin_detailed || null,\n  short: o?.core_identity?.short_description || null,\n  keywords: o?.core_identity?.keywords || [],\n  goals_short: o?.biography_and_traits?.personal_goals_short_term || [],\n  goal_long: o?.biography_and_traits?.personal_goals_long_term || null,\n  major_conflicts: o?.narrative_hooks?.major_conflicts || [],\n  contacts: o?.relationships?.major_contacts || [],\n  enemies: o?.relationships?.enemies_antagonists || [],\n  // dorzucamy surowy acc gdyby HTML potrzebował\n  _raw: o\n};\n\nreturn [{ json: view }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4464,
+        284
+      ],
+      "id": "e8383507-1391-4d69-bec4-e4e328e20544",
+      "name": "Build Home JSON"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee595abc-2121-496a-879a-1850467e88ac",
+              "name": "=html",
+              "value": "=<!doctype html>\n<html lang=\"pl\">\n<head>\n<meta charset=\"utf-8\"/>\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/>\n<title>{{$json.name}} — Karta Gracza</title>\n<style>\n  :root{\n    --bg:#0e0c09; --panel:#15120e; --ink:#f2e5b5; --muted:#d6c48a;\n    --gold:#b88a2b; --gold-soft:#a77a1e; --gold-bright:#f4d95f;\n    --chip:rgba(184,138,43,.12); --line:rgba(244,217,95,.25);\n    --radius:16px; --shadow:0 18px 40px rgba(0,0,0,.45);\n  }\n  html,body{height:100%}\n  body{\n    margin:0; padding:28px; background:radial-gradient(1200px 1200px at 20% -10%, rgba(255,255,255,.06), transparent 60%), var(--bg);\n    color:var(--ink); font:16px/1.6 ui-serif, Georgia, \"Times New Roman\", serif;\n  }\n  .wrap{max-width:1080px; margin:0 auto; display:grid; gap:20px}\n  .card{\n    background:linear-gradient(180deg, rgba(184,138,43,.05), transparent 35%), var(--panel);\n    border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;\n  }\n  .title{\n    display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin:0 0 6px;\n    font-size:26px; letter-spacing:.5px;\n  }\n  .badge{font-size:12px; padding:4px 10px; background:var(--chip); border:1px solid var(--gold-soft); border-radius:999px; color:var(--gold-bright)}\n  .muted{color:var(--muted)}\n  .grid{display:grid; gap:16px}\n  @media (min-width:800px){ .grid{grid-template-columns:1.2fr .8fr} }\n  .chips{display:flex; gap:8px; flex-wrap:wrap}\n  .chip{font-size:12px; padding:4px 10px; background:var(--chip); border:1px dashed var(--gold-soft); border-radius:999px}\n  h3{margin:0 0 8px; font-size:16px; letter-spacing:.4px; color:var(--gold-bright)}\n  ul{margin:8px 0 0 18px; padding:0}\n  li{margin:4px 0}\n  .hr{height:1px; background:linear-gradient(90deg, transparent, var(--line), transparent); margin:12px 0}\n</style>\n</head>\n<body>\n  <main class=\"wrap\">\n    <section class=\"card\">\n      <h1 class=\"title\">\n        <span>{{$json.name}}</span>\n        <span class=\"badge\">{{$json.status_class || '—'}}</span>\n        <span class=\"badge\">{{$json.group || '—'}}</span>\n      </h1>\n      <p class=\"muted\">\n        {{ $json.origin_general ? $json.origin_general : '---' }}{{ $json.origin_detailed ? (', ' + $json.origin_detailed) : '' }}\n      </p>\n      <div class=\"hr\"></div>\n      <p>{{ $json.short || 'Brak krótkiego opisu postaci.' }}</p>\n      <div class=\"chips\">\n        {{ $json.keywords.length ? '' : '' }}\n        {{ $json.keywords.map(k => `<span class=\"chip\">${k}</span>`).join('') }}\n      </div>\n    </section>\n\n    <section class=\"grid\">\n      <div class=\"card\">\n        <h3>Cele (krótkoterminowe)</h3>\n        <ul>\n          {{ ($json.goals_short||[]).length ? '' : '<li class=\"muted\">– brak –</li>' }}\n          {{ ($json.goals_short||[]).map(g => `<li>${g}</li>`).join('') }}\n        </ul>\n        <div class=\"hr\"></div>\n        <h3>Cel długoterminowy</h3>\n        <p>{{ $json.goal_long || '<span class=\"muted\">– brak –</span>' }}</p>\n      </div>\n\n      <div class=\"card\">\n        <h3>Kontakty kluczowe</h3>\n        <ul>\n          {{ ($json.contacts||[]).length ? '' : '<li class=\"muted\">– brak –</li>' }}\n          {{ ($json.contacts||[]).map(c => `<li>${c.name||'?'}` +\n            `${c.faction_status ? ' <span class=\"muted\">(' + c.faction_status + ')</span>' : ''}` +\n            `${c.relationship_type ? ' — ' + c.relationship_type : ''}</li>`).join('') }}\n        </ul>\n        <div class=\"hr\"></div>\n        <h3>Wrogowie / Antagoniści</h3>\n        <ul>\n          {{ ($json.enemies||[]).length ? '' : '<li class=\"muted\">– brak –</li>' }}\n          {{ ($json.enemies||[]).map(e => `<li>${e.name||'?'}` +\n            `${e.faction_status ? ' <span class=\"muted\">(' + e.faction_status + ')</span>' : ''}</li>`).join('') }}\n        </ul>\n      </div>\n    </section>\n\n    <section class=\"card\">\n      <h3>Konflikty fabularne</h3>\n      <ul>\n        {{ ($json.major_conflicts||[]).length ? '' : '<li class=\"muted\">– brak –</li>' }}\n        {{ ($json.major_conflicts||[]).map(k => `<li>${k}</li>`).join('') }}\n      </ul>\n    </section>\n  </main>\n</body>\n</html>\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4688,
+        284
+      ],
+      "id": "833c8f84-95e9-4350-b728-9038daa9e025",
+      "name": "Render: Homecard"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Zbierz nazwy plików/URL-e z poprzednich node'ów.\n// Jeśli wrzucasz na GDrive, poprzednie nody mogą dodać it.json.driveUrl albo it.json.url.\n\nfunction rowsOf(inp){\n  const out = [];\n  for (const s of inp) for (const it of s) {\n    const j = it.json || {};\n    const bin = it.binary?.data;\n    const name = (bin?.fileName) || j.fileName || j.name || 'plik.html';\n    const href = j.driveUrl || j.url || name; // lokalna nazwa, jeśli nie wrzucasz\n    const kind = j.kind || j.type || (name === 'home.html' ? 'home' : 'card');\n    const title = j.label || j.title || (name === 'home.html' ? 'Home' : name);\n    out.push({ name, href, kind, title });\n  }\n  return out;\n}\n\nconst inputs = $input.all();\nconst files = rowsOf(inputs);\n\n// home.html na początek\nfiles.sort((a,b)=> (a.name==='home.html'?-1: b.name==='home.html'?1:0));\n\nreturn [{ json: { files } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4912,
+        164
+      ],
+      "id": "7d86e77c-a36c-478b-8d1b-ab5688857c45",
+      "name": "Collect HTML Paths"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee595abc-2121-496a-879a-1850467e88ac",
+              "name": "=html",
+              "value": "=<!doctype html>\n<html lang=\"pl\">\n<head>\n<meta charset=\"utf-8\"/>\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/>\n<title>{{$json.label}}</title>\n<style>\n  :root{\n    --bg:#0e0c09; --panel:#15120e; --ink:#f2e5b5; --muted:#d6c48a;\n    --gold:#b88a2b; --gold-soft:#a77a1e; --gold-bright:#f4d95f;\n    --chip:rgba(184,138,43,.12); --line:rgba(244,217,95,.25);\n    --radius:16px; --shadow:0 18px 40px rgba(0,0,0,.45);\n  }\n  body{margin:0; padding:28px; background:var(--bg); color:var(--ink); font:16px/1.6 ui-serif, Georgia, serif;}\n  .card{max-width:900px; margin:0 auto; background:linear-gradient(180deg, rgba(184,138,43,.05), transparent 35%), var(--panel);\n    border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;}\n  .title{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin:0 0 10px; font-size:24px}\n  .badge{font-size:12px; padding:4px 10px; background:var(--chip); border:1px solid var(--gold-soft); border-radius:999px; color:var(--gold-bright)}\n  .muted{color:var(--muted)}\n  .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}\n  .chip{font-size:12px; padding:4px 10px; background:var(--chip); border:1px dashed var(--gold-soft); border-radius:999px}\n  .hr{height:1px; background:linear-gradient(90deg, transparent, var(--line), transparent); margin:12px 0}\n  h3{margin:12px 0 6px; font-size:16px; color:var(--gold-bright); letter-spacing:.4px}\n</style>\n</head>\n<body>\n  <article class=\"card\">\n    <h1 class=\"title\">\n      <span>{{$json.label}}</span>\n      <span class=\"badge\">{{$json.type || 'thread'}}</span>\n    </h1>\n    <p>{{ $json.description || '<span class=\"muted\">— brak opisu —</span>' }}</p>\n    <div class=\"hr\"></div>\n\n    <h3>Meta</h3>\n    <div class=\"chips\">\n      {{ ($json.involved_factions||[]).map(f => `<span class=\"chip\">${f}</span>`).join('') }}\n      {{ $json.client ? `<span class=\"chip\">Klient: ${$json.client}</span>` : '' }}\n      {{ $json.antagonist ? `<span class=\"chip\">Antagonista: ${$json.antagonist}</span>` : '' }}\n      {{ $json.success_criteria ? `<span class=\"chip\">Sukces: ${$json.success_criteria}</span>` : '' }}\n      {{ $json.reward_hint ? `<span class=\"chip\">Nagroda: ${$json.reward_hint}</span>` : '' }}\n    </div>\n\n    {{ ($json.derived_from||[]).length ? '<div class=\"hr\"></div><h3>Pochodzenie</h3><ul>' + \n        ($json.derived_from||[]).map(s => `<li>${s}</li>`).join('') + '</ul>' : '' }}\n  </article>\n</body>\n</html>\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4688,
+        -588
+      ],
+      "id": "1cc7eb42-8214-47ff-bcb2-8e7badeae01a",
+      "name": "Render: Thread Card"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        4240,
+        -492
+      ],
+      "id": "4e139a34-f160-4c70-99a2-2a2f1d97c26c",
+      "name": "Collect Threads"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me1",
+      "typeVersion": 1,
+      "position": [
+        4688,
+        -56
+      ],
+      "id": "84d358d1-88f5-482b-8cdc-c8a72f78ae5b"
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        4464,
+        -492
+      ],
+      "id": "6c71d24b-5300-484d-aceb-46bfabfa972c",
+      "name": "Iterate Final Threads"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee595abc-2121-496a-879a-1850467e88ac",
+              "name": "=html",
+              "value": "=<!doctype html>\n<html lang=\"pl\">\n<head>\n<meta charset=\"utf-8\"/>\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/>\n<title>Index — Karta Gracza</title>\n<style>\n  :root{\n    --bg:#0e0c09; --panel:#15120e; --ink:#f2e5b5; --muted:#d6c48a;\n    --gold:#b88a2b; --gold-soft:#a77a1e; --gold-bright:#f4d95f;\n    --chip:rgba(184,138,43,.12); --line:rgba(244,217,95,.25);\n    --radius:16px; --shadow:0 18px 40px rgba(0,0,0,.45);\n  }\n  body{margin:0; padding:28px; background:var(--bg); color:var(--ink); font:16px/1.6 ui-serif, Georgia, serif;}\n  h1{font-size:28px; letter-spacing:.5px; margin:0 0 18px}\n  .grid{display:grid; gap:16px}\n  @media (min-width:780px){ .grid{grid-template-columns:repeat(2,1fr)} }\n  @media (min-width:1080px){ .grid{grid-template-columns:repeat(3,1fr)} }\n  .card{\n    background:linear-gradient(180deg, rgba(184,138,43,.05), transparent 35%), var(--panel);\n    border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px;\n  }\n  a{color:var(--ink); text-decoration:none}\n  .tag{font-size:12px; padding:4px 10px; background:var(--chip); border:1px solid var(--gold-soft); border-radius:999px; color:var(--gold-bright)}\n  .title{margin:6px 0 0; font-size:16px}\n</style>\n</head>\n<body>\n  <main>\n    <header style=\"max-width:1080px;margin:0 auto 16px;padding:0 4px;\">\n      <h1>Index kart</h1>\n    </header>\n    <section class=\"grid\" style=\"max-width:1080px;margin:0 auto;padding:0 4px;\">\n      {{ ($json.files||[]).map(f => `\n        <article class=\"card\">\n          <a href=\"${f.href}\">\n            <span class=\"tag\">${f.kind}</span>\n            <div class=\"title\">${f.title}</div>\n            <div style=\"color:var(--muted);font-size:12px;margin-top:6px\">${f.name}</div>\n          </a>\n        </article>\n      `).join('') }}\n    </section>\n  </main>\n</body>\n</html>\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        5136,
+        164
+      ],
+      "id": "495d210f-14bf-48e8-adaa-7190947df876",
+      "name": "Render: Index"
+    },
+    {
+      "parameters": {
+        "jsCode": "const o = $json.output || {};\nconst miss = [];\n\nfunction need(path, val, hint){\n  const empty = val == null || (Array.isArray(val) && val.length===0) || (typeof val==='string' && val.trim()==='');\n  if (empty) miss.push({ field: path, hint });\n}\n\n// CORE\nneed('core_identity.character_name', o?.core_identity?.character_name, 'Podaj imię postaci (robocze ok, bez własnych nazw → [placeholder])');\nneed('core_identity.status_class', o?.core_identity?.status_class, 'Wybierz/status frakcyjny (np. Nowicjusz)');\nneed('core_identity.current_group_band', o?.core_identity?.current_group_band, 'Doprecyzuj obóz/grupę');\nneed('core_identity.origin_general', o?.core_identity?.origin_general, 'Region pochodzenia');\nneed('core_identity.origin_detailed', o?.core_identity?.origin_detailed, 'Miejscowość pochodzenia');\n\nneed('biography_and_traits.backstory_summary', o?.biography_and_traits?.backstory_summary, 'Jednozdaniowe streszczenie historii');\nneed('biography_and_traits.key_past_events', o?.biography_and_traits?.key_past_events, '2–4 kluczowe zdarzenia z przeszłości');\n\nneed('biography_and_traits.personal_goals_short_term', o?.biography_and_traits?.personal_goals_short_term, '2–3 krótkoterminowe cele (mierzalne w 1–2 sesje)');\nneed('biography_and_traits.personal_goals_long_term', o?.biography_and_traits?.personal_goals_long_term, '1 długoterminowy kierunek rozwoju');\n\nneed('mechanical_links.mechanical_skills', o?.mechanical_links?.mechanical_skills, 'Skille mechaniczne (np. alchemia, szycie ran)');\nneed('mechanical_links.non_mechanical_skills_abilities', o?.mechanical_links?.non_mechanical_skills_abilities, 'Umiejętności miękkie (handel, mediacje)');\nneed('mechanical_links.level_rank_status', o?.mechanical_links?.level_rank_status, 'Stopień/poziom jeśli istnieje');\n\nneed('relationships.major_contacts', o?.relationships?.major_contacts, '2–4 ważne kontakty (rola + relacja)');\nneed('relationships.enemies_antagonists', o?.relationships?.enemies_antagonists, 'Wrogowie / napięcia');\n\nneed('narrative_hooks.major_conflicts', o?.narrative_hooks?.major_conflicts, 'Jasno nazwane konflikty fabularne');\nneed('narrative_hooks.specific_quests_tasks', o?.narrative_hooks?.specific_quests_tasks, '1–3 krótkie zahaczki (blank-questy)');\n\nreturn [{ json: { missing: miss } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4464,
+        928
+      ],
+      "id": "e9b27d03-90cd-4b0e-af5c-4d0d37a77ad8",
+      "name": "Detect Missing"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee595abc-2121-496a-879a-1850467e88ac",
+              "name": "=html",
+              "value": "=<!doctype html>\n<html lang=\"pl\">\n<head>\n<meta charset=\"utf-8\"/>\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/>\n<title>Braki i dopytania</title>\n<style>\n  :root{\n    --bg:#0e0c09; --panel:#15120e; --ink:#f2e5b5; --muted:#d6c48a;\n    --gold:#b88a2b; --gold-soft:#a77a1e; --gold-bright:#f4d95f;\n    --chip:rgba(184,138,43,.12); --line:rgba(244,217,95,.25);\n    --radius:16px; --shadow:0 18px 40px rgba(0,0,0,.45);\n  }\n  body{margin:0; padding:28px; background:var(--bg); color:var(--ink); font:16px/1.6 ui-serif, Georgia, serif;}\n  .card{max-width:900px; margin:0 auto; background:linear-gradient(180deg, rgba(184,138,43,.05), transparent 35%), var(--panel);\n    border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;}\n  h1{font-size:24px; margin:0 0 12px; letter-spacing:.4px}\n  .muted{color:var(--muted)}\n  .row{padding:12px 0; border-bottom:1px dashed var(--gold-soft)}\n  .field{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:13px; color:var(--gold-bright)}\n  .hint{margin-top:4px}\n</style>\n</head>\n<body>\n  <article class=\"card\">\n    <h1>Braki i rzeczy do doprecyzowania</h1>\n    {{ ($json.missing||[]).length\n      ? ($json.missing||[]).map(m => `\n          <div class=\"row\">\n            <div class=\"field\">${m.field}</div>\n            <div class=\"hint\">${m.hint}</div>\n          </div>\n        `).join('')\n      : '<p class=\"muted\">Brak krytycznych braków — karta wygląda na kompletną.</p>'\n    }}\n  </article>\n</body>\n</html>\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4688,
+        928
+      ],
+      "id": "32ca5b05-20c0-481a-b5fb-7ddbd2bd4792",
+      "name": "Render: Braki"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Zamień string HTML -> binarka (base64) w property \"data\"\nconst html = $json.html || '';\nreturn [{\n  binary: {\n    data: {\n      data: Buffer.from(html, 'utf8').toString('base64'),\n      mimeType: 'text/html',\n      fileName: 'quest.html',\n    }\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5360,
+        164
+      ],
+      "id": "63932be7-b735-4cfb-9b18-7a3de47e27f3",
+      "name": "string HTML ->binarka3"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "/mnt/p/Ai MG -Output/Nefryt/quest.html",
+        "options": {
+          "append": false
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        5584,
+        164
+      ],
+      "id": "65bb5d3a-8008-462f-be8f-794b73bd1f83",
+      "name": "Write Binary File3"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Weź \"tabela zgloszen\"",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "kontekst - opis świata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "lane = historia",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "lane = relacje",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "lane = aspiracje",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "lane = slabosci",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "lane = umiejetnosci",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "lane = geolore",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "quest_examples": {
+      "main": [
+        [
+          {
+            "node": "quest_examples_text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "quest_examples_filled": {
+      "main": [
+        [
+          {
+            "node": "quest_examples_filled_text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "konwersja do txt": {
+      "main": [
+        [
+          {
+            "node": "definiowanie sciezek1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Weź \"tabela zgloszen\"": {
+      "main": [
+        [
+          {
+            "node": "wez jeden wiersz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "wez jeden wiersz": {
+      "main": [
+        [
+          {
+            "node": "definiowanie sciezek",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "definiowanie sciezek": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "kontekst - opis świata": {
+      "main": [
+        [
+          {
+            "node": "konwersja do txt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "rozdziel sciezki": {
+      "main": [
+        [
+          {
+            "node": "lane = historia",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "lane = relacje",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "lane = aspiracje",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "lane = slabosci",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "lane = umiejetnosci",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "lane = geolore",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "rozdziel sciezki",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "definiowanie sciezek1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "lane = historia": {
+      "main": [
+        [
+          {
+            "node": "scalenie opracowania",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "lane = relacje": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lane = aspiracje": {
+      "main": [
+        [
+          {
+            "node": "scalenie opracowania",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "lane = slabosci": {
+      "main": [
+        [
+          {
+            "node": "scalenie opracowania",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "lane = umiejetnosci": {
+      "main": [
+        [
+          {
+            "node": "scalenie opracowania",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "lane = geolore": {
+      "main": [
+        [
+          {
+            "node": "scalenie opracowania",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "lane = geolore",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser3": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "lane = umiejetnosci",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser4": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "lane = slabosci",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser5": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "lane = aspiracje",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser7": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "lane = historia",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "scalenie opracowania",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "quest_examples_filled_text": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "quest_examples_text": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "rozdzielnia wątków": {
+      "main": [
+        [
+          {
+            "node": "Merge threads",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge threads",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge threads",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge threads",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge threads",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge threads",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge threads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "scalenie opracowania": {
+      "main": [
+        [
+          {
+            "node": "reduce_profile_from_lanes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "reduce_profile_from_lanes": {
+      "main": [
+        [
+          {
+            "node": "Sanity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "splitter": {
+      "main": [
+        [
+          {
+            "node": "rozdzielnia wątków",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sanity": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "quest_examples",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "quest_examples_filled",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Build Home JSON",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Detect Missing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "splitter",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Heurystyczny seeder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Heurystyczny seeder": {
+      "main": [
+        [
+          {
+            "node": "splitter_seeder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "splitter_seeder": {
+      "main": [
+        [
+          {
+            "node": "rozdzielnia wątków",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "ContextPack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ContextPack": {
+      "main": [
+        [
+          {
+            "node": "Quest Batch Maker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Quest Batch Maker": {
+      "main": [
+        [
+          {
+            "node": "Quest Maker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Quest Maker": {
+      "main": [
+        [
+          {
+            "node": "Collect Threads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge threads": {
+      "main": [
+        [
+          {
+            "node": "Iterate threads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mistral:latest": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Quest Maker",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schemat wyjścia": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Quest Maker",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Iterate threads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Iterate threads": {
+      "main": [
+        [
+          {
+            "node": "Quest Maker (adapter)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Quest Maker (adapter)": {
+      "main": [
+        [
+          {
+            "node": "Quest Maker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Home JSON": {
+      "main": [
+        [
+          {
+            "node": "Render: Homecard",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render: Homecard": {
+      "main": [
+        [
+          {
+            "node": "Collect HTML Paths",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect HTML Paths": {
+      "main": [
+        [
+          {
+            "node": "Render: Index",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render: Thread Card": {
+      "main": [
+        [
+          {
+            "node": "Collect HTML Paths",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect Threads": {
+      "main": [
+        [
+          {
+            "node": "Iterate Final Threads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me1": {
+      "main": [
+        [
+          {
+            "node": "Iterate Final Threads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Iterate Final Threads": {
+      "main": [
+        [
+          {
+            "node": "Render: Thread Card",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render: Index": {
+      "main": [
+        [
+          {
+            "node": "string HTML ->binarka3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Detect Missing": {
+      "main": [
+        [
+          {
+            "node": "Render: Braki",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render: Braki": {
+      "main": [
+        [
+          {
+            "node": "Collect HTML Paths",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "string HTML ->binarka3": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "6603a49e-a08b-4944-b68f-85a5b4b61216",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ea92934043da62669f6565a1fb298c07ef64889b9dd0aa67de62b0d399ac7382"
+  },
+  "id": "ZAJFyzSH9TjacfZ2",
+  "tags": []
+}

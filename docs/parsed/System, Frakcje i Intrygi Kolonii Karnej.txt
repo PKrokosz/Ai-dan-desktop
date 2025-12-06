@@ -1,0 +1,224 @@
+Źródło szczegółowo opisuje Kolonię Karną w Górniczej Dolinie, ustanowioną przez Króla Rhobara II w celu wydobycia magicznej rudy, która niefortunnie uwięziła wszystkich pod Magiczną Barierą. Wewnątrz tego brutalnego, opartego na wyzysku systemu kastowym, dominują trzy główne frakcje: Stary Obóz (kontrola i handel rudą), Nowy Obóz (dążenie do zniszczenia Bariery przez Magów Wody i Najemników) oraz Bractwo Śniącego (kult religijny i handel Bagiennym Zielem). Relacje w Kolonii opierają się na hierarchii, szpiegostwie i długach wdzięczności, a postacie stale dążą do awansu, wolności lub bogactwa, wykorzystując zarówno swoje umiejętności (walka, alchemia, intrygi), jak i słabości przeciwników (uzależnienia i wady charakteru). Tekst szczegółowo określa również zasady świata (Geolor), takie jak waluta (ruda), mechanika magii i surowe konsekwencje zdrady frakcyjnej.
+
+
+
+System, Frakcje i Intrygi Kolonii Karnej
+
+Dostarczone źródła opisują Kolonię Karną (Górniczą Dolinę w Khorinis) jako brutalny system kastowy i polityczną arenę, w której dominują trzy główne frakcje [1-3]. Poniżej znajduje się szczegółowy i kompletny opis świata, przygotowany zgodnie z wymaganym formatem.
+
+Historia
+
+Kolonia Karna, Górnicza Dolina, została otoczona Magiczną Barierą, stworzoną na rozkaz Króla Rhobara II z Myrtany [4-6]. Król potrzebował magicznej rudy do prowadzenia wojny z Orkami, a Bariera miała zapobiec ucieczce więźniów [3, 4]. Stworzenie Bariery nie poszło zgodnie z planem: więźniowie i magowie zostali uwięzieni przez własne dzieło [4].
+
+Po uwięzieniu, więźniowie przejęli kontrolę nad Doliną, a rządy objęły trzy główne frakcje, które, choć dążą do całkowitej władzy, tymczasowo tolerują swoją obecność [3-5]:
+
+1. Stary Obóz (SO): Najstarszy i najpotężniejszy [1, 7]. Zbudowany wokół kamiennej twierdzy (Zamku) [8, 9]. Kontroluje kontakt ze światem zewnętrznym i wymianę rudy na towary od Króla [1, 5]. Magowie Ognia współpracują z Królem, kontrolując barierę i dążąc do utrzymania porządku [5, 6].
+
+2. Nowy Obóz (NO): Powstał jako odpowiedź na tyranię Gomeza i elit SO [2, 10]. Magowie Wody kierują obozem, a ich głównym celem jest znalezienie sposobu na zniszczenie Bariery i ucieczkę [6, 10, 11]. Siłę militarną stanowią Najemnicy pod dowództwem byłego generała Lee [10, 11].
+
+3. Bractwo Śniącego (BŚ): Zlokalizowane na Mrocznych Bagnach [6, 12]. Kierowane przez Guru (w tym Wielkiego Mistrza Iberiona) [6, 12]. Członkowie koncentrują się na kulcie Śniącego – starożytnej istoty, która ma przynieść im wybawienie [6, 11, 12].
+
+Ważnym, ale ukrytym elementem historii jest Ksardas, były Arcymistrz Magów Ognia, który opuścił zakon i obecnie rezyduje jako Nekromanta na terytorium Orków, badając barierę [13]. Protagonista (Bezimienny) trafia do Kolonii z listem skierowanym właśnie do Ksardasa [13, 14].
+
+Relacje
+
+Relacje społeczne w Kolonii Karnej są brutalne, oparte na hierarchii, wyzysku i kalkulacji zysków, rzadziej na prawdziwej lojalności czy przyjaźni [15, 16].
+
+Hierarchia i dynamika wewnętrzna Frakcji
+
+• Stary Obóz (SO): Charakteryzuje się ścisłym systemem kastowym i autorytaryzmem Gomeza [1, 2, 7].
+
+    ◦ Magnaci i Strażnicy stanowią elitę, pociągając do odpowiedzialności Kopaczy i inne niższe klasy [7, 17, 18]. Straż dzieli się na sześć 9-osobowych oddziałów z dowódcami (np. Ulęgałke, Sverh, Jim Wiązka) [17, 19].
+
+    ◦ Cienie są klasą pośrednią, dążącą do władzy przez intrygi, handel i zbieranie informacji [19, 20]. Wśród nich działają podgrupy, np. Banda Administracyjna Andersa [21, 22] czy Gildia Złodziei [19, 23].
+
+    ◦ Kopacze są na samym dole hierarchii, traktowani jak tania siła robocza [1, 7, 18]. Są wyzyskiwani, ich urobek jest kontrolowany [24]. Wśród Kopaczy tworzą się jednak więzi (np. Chór Kopaczy Cykuty, Podziemny Krąg) [25].
+
+• Nowy Obóz (NO): Charakteryzuje się większą niezależnością i swobodą, ale zaufanie jest deficytowe [10, 11].
+
+    ◦ Najemnicy są wojskową potęgą, podzieloną na grupy z systemem rankingowym [24, 26]. Funkcjonuje tu odpowiedzialność zbiorowa za przewinienia oddziału [26]. Warchief odszedł do SO, więc trwa rywalizacja o tę pozycję [26].
+
+    ◦ Magowie Wody nagradzają Najemników Listami Polecającymi za zasługi [27].
+
+    ◦ Szkodnicy (handlarze) są niezależni, ale często muszą płacić Najemnikom (15-20 bryłek) za pomoc w sytuacjach siłowych [28].
+
+• Bractwo Śniącego (BŚ): Relacje są oparte na wspólnocie i kulcie, choć pojawiają się wątpliwości (np. Guru Null bada szerzące się zepsucie i dwulicowość) [29, 30].
+
+Relacje międzyfrakcyjne i polityka
+
+• SO vs NO: Relacje są wrogie ze względu na tyranię Gomeza i dążenie NO do zniszczenia Bariery [24, 31]. Konflikt jest jednak kontrolowany, ponieważ obozy się tolerują [5].
+
+• Dyplomacja i Negocjacje: Zaplanowane są Posiedzenia Polityczne na Zamku, mające uregulować zasady współżycia (np. handel esencjami, pakt o nieagresji z Bractwem, status kurierów) [32, 33]. W negocjacjach wezmą udział Magnaci, Magowie Ognia, Magowie Wody i Guru Bractwa, a marszałkiem będzie Arcymistrz Medus [22, 32, 33].
+
+• Relacje z Bractwem: SO i BŚ prowadzą intensywną wymianę handlową (ruda za Bagienne Ziele) [24, 31]. Magowie Ognia (Calor) planują Sympozjum Naukowe dla Magów Wody i Guru, co ma być manewrem politycznym mającym ich zająć podczas negocjacji [33, 34].
+
+• Rywalizacje wewnętrzne: Trwa Zimna Wojna między Magnatem Magnusem a Cieniami/Strażnikami, którzy chcą podważyć jego autorytet (m.in. za nazwanie Cieni "czerwonymi ścierwami") [24, 33, 35, 36].
+
+Lojalność, szpiegostwo i zdrady
+
+• Siatki Wywiadowcze: Karaluch (Cień) szpieguje dla Magnusa wewnątrz SO [22, 33, 37, 38]. Służąca Beza i Tanka są agentkami Wodnego Kręgu (NO) na Zamku, przekazującymi Magom Wody informacje w zamian za wsparcie (np. w wyścigu na Magnata) [33, 39-42].
+
+• Przemyt: Działa rozbudowana sieć przemytnicza prowadzona przez Modaresa z Khorinis, angażująca Strażników (Cain, Lengar) i Szkodników, oferująca duże zyski i ochronę, ale grożąca surową karą za zdradę [33, 36, 43, 44].
+
+• Długi Wdzięczności: W Kolonii liczą się długi i przysługi [16, 45, 46]. Siebert (Cień) dostarcza informacje Rączce w ramach długu wdzięczności wobec Faridy i Dantego [47]. Raynar (Cień) aktywnie gromadzi długi wdzięczności od innych, by wykorzystać je do zdobycia wpływów [45, 46]. Lotka (Kopacz) zyskała lżejsze traktowanie od Strażnika Denisa za uratowanie mu życia [42, 48].
+
+• Zdrada Frakcyjna: Zdrada obozu jest skrajnie ryzykowna i karana zemstą oraz groźbą otrzymania Medalionu Beliara [33, 49-51].
+
+Aspiracje
+
+Postacie w Kolonii dążą do awansu, bogactwa, bezpieczeństwa, zemsty lub odzyskania wolności, często poprzez wspinanie się po hierarchicznej drabinie [50].
+
+Wspinaczka w Hierarchii
+
+• SO:
+
+    ◦ Kopacze dążą do awansu na Cienia lub dołączenia do elitarnej grupy Łowców [42, 50, 52]. Niektórzy (Morian) chcą wykorzystać swoje umiejętności dyplomatyczne i zapaśnicze, by dostać się do Służby na Zamku i odzyskać dawną pozycję [42, 52].
+
+    ◦ Cienie (Talla, Cyra) aspirują do roli Strażnika, co wymaga siły, lojalności i dyscypliny [42, 50]. Muszą wykazać się służbą Strażnikom i Magnatom [50, 53]. Cienie dążą także do zdobycia wpływów w administracji lub w Gildii Złodziei (np. Kira, Rączka) [54-56].
+
+    ◦ Wyścig Magnacki: Beza (Służąca) i Ulęgałke (Strażnik) rywalizują o stanowisko nowego Magnata [33, 57]. Valentin (Strażnik) planuje zająć miejsce Magnata, gdy jeden z nich wypadnie z łask, poprzez podstęp i specjalizację [58]. Strażnicy z oddziału Sverha (Żurnalia) chcą zorganizować epicką imprezę, by zostać Magnatami od Rozrywki Gomeza [52, 59].
+
+• NO:
+
+    ◦ Najemnicy dążą do awansu na Warchiefa, co jest możliwe dzięki systemowi rankingowemu i zdobywaniu Długów Wdzięczności od awansujących [26, 60].
+
+    ◦ Szkodnicy (Lore) dążą do rozwoju działalności handlowej, zatrudniania ludzi i zdobycia statusu [61].
+
+• BŚ:
+
+    ◦ Nowicjusze (np. Karat) mogą dążyć do awansu na Magów Ognia (w ramach Kręgu) poprzez Próbę Ognia, wykorzystując lukę w statusie [62]. Null chce awansować na Guru, badając stan Bractwa i dążąc do racjonalności [30].
+
+Cele osobiste i motywacje
+
+• Bogactwo i Handel: Sam i Magnus dążą do prywatnej eksploatacji bogatego złoża niebieskiej rudy w Starej Kopalni, w tajemnicy przed Gomezem [33, 63, 64]. Landebert (Cień) szuka sojusznika (Magnat Sam), by rozwinąć handel towarem z Wysp Południowych [42, 65, 66].
+
+• Wolność i Ucieczka: Centralną ambicją NO jest zniszczenie Bariery [10]. Poszukiwania Magini Wiktorii i zaginionego zwoju/listu są powiązane z informacjami o metodzie ucieczki [36, 67].
+
+• Zemsta: Kira (Cień) chce się zemścić na Kopaczach (Sknera, Gringo, Belform), którzy ją wrobili [68]. Eiron (Najemnik) szuka zemsty za zabójstwo brata [69]. Rendo (Skazaniec) pragnie zemścić się na Coairo [70].
+
+• Wiedza i Oświecenie: Magowie Ognia (Dastan, Zefir) dążą do zdobycia wiedzy i sekretów Magów Ognia [62, 71]. Iberion dąży do zdobycia Kamienia Ogniskującego, by wzmocnić kontakt ze Śniącym [72].
+
+Słabości
+
+Słabości postaci w Kolonii Karnej są często wykorzystywane jako punkty nacisku i motory intryg [33].
+
+• Uzależnienia i nałogi:
+
+    ◦ Huugo jest skrajnie uzależniony od Bagiennego Ziela i wydaje na nie większość rudy [33, 73].
+
+    ◦ Strażnicy Lengar i Dalton są uzależnieni od Eliksiru Odwagi, bojąc się Orków [74, 75].
+
+    ◦ Cyna i Blint (Strażnicy) są nieobliczalni i brawurowi po alkoholu, co prowadzi do kłopotów [76, 77].
+
+    ◦ Magnus jest nałogowym hazardzistą [78].
+
+• Fizyczne i psychiczne słabości:
+
+    ◦ Rembajło (Najemnik) ma lęk przed wodą i nie umie pływać, co jest jego piętą achillesową [79]. Jest też porywczy i działa impulsywnie [79, 80].
+
+    ◦ Siebert (Cień) jest wyczulony na wszelkie plotki o ucieczce ze względu na nieudaną próbę w przeszłości [47].
+
+    ◦ Lotka ma zaburzenia depresyjno-lękowe, a Dalton ma niedoczynność tarczycy i nadciśnienie [75, 81].
+
+    ◦ Szufla (Kopacz) jest pamiętliwa i rozrzutna [51].
+
+• Wady charakteru i zobowiązania:
+
+    ◦ Landebert (Cień) jest tchórzliwy i oportunista, unika ryzyka [65].
+
+    ◦ Rączka (Cień) nie pali się do walki z silniejszymi, przez co jest postrzegany jako tchórzliwy [56].
+
+    ◦ Jurgen (Kopacz) ma problem z podwójną lojalnością, ryzykując utratę zaufania Magnatów Sama i Alvareza [82].
+
+    ◦ Mad (Strażnik) jest impulsywny, wdał się w bójkę i musi spłacić 100 bryłek grzywny, aby uniknąć degradacji do Kopacza [42, 83].
+
+    ◦ Digis (Skazaniec) jest ambitna, ale jej eksperymenty alchemiczne wymykają się spod kontroli, mogąc prowadzić do śmierci (trucizny/eliksiry) [84, 85].
+
+    ◦ Enzo (Szkodnik) i Lore (Szkodnik) gardzą bogami, wierząc tylko w pieniądz [86, 87]. Lore jest skrytym wyznawcą Beliara [87].
+
+Umiejętności
+
+Umiejętności w Kolonii Karnej są kluczowe do awansu i przetrwania (zgodnie z zasadą DKWDDK) [51, 88].
+
+• Walka i wojsko:
+
+    ◦ Strażnicy i Najemnicy to elitarni wojownicy [10]. Morian (Skazaniec/Arystokrata) zna techniki zapaśnicze [52, 89, 90]. Glodgar (Strażnik) jest szermierzem [91].
+
+• Alchemia i Medycyna:
+
+    ◦ Cor Kalom jest największym alchemikiem Bractwa, skupionym na wywarach wizyjnych [13, 22].
+
+    ◦ Farida (Cień) jest Mistrzem Alchemii i trucicielką, oferuje usługi medyczne (zszywanie ran, nastawianie kości) [92, 93].
+
+    ◦ Magowie Ognia (Sybilla) zajmują się zielarstwem i truciznami [94].
+
+    ◦ Ervin ma notatki o Procedurach leczenia starych urazów nóg u żeglarzy, wykorzystujące Bagienne Ziele i Kawę [95].
+
+• Magia i Proroctwa:
+
+    ◦ Magowie posługują się Schematami Czarów (Punkty i Wektory) na Wykresie Żywiołów (Ziemia, Ogień, Wiatr, Woda) [51, 96, 97].
+
+    ◦ Sybilla (Mag Ognia) zajmuje się badaniem języka Orków [98]. Lotka (Kopacz/Mag Wody) i Cykuta (Kopacz) mają senne wizje i sny, które mogą być prorocze [81, 99, 100].
+
+• Inżynieria i Rzemiosło:
+
+    ◦ Lizel (Kopacz) potrafi rysować karykatury i portrety [101]. Siebert (Cień) prowadzi warsztat kreślący mapy [47, 102, 103].
+
+    ◦ Ziemniak (Kret) ma ambicje konstrukcyjne i kowalskie [104].
+
+• Wywiad, Handel i Oszustwa:
+
+    ◦ Cyra (Cień) ma talent do gromadzenia informacji ("trzecie oko") [42, 105].
+
+    ◦ Hecke (Szkodnik) wykorzystuje język i podstępy, unikając bezpośredniej przemocy [106].
+
+    ◦ Rączka (Cień) jest Szefem Gildii Złodziei i ekspertem w intrygach i złodziejstwie [23, 56].
+
+    ◦ Coairo (Strażnik) jest gawędziarzem, flirciarzem i oszustem, potrafi manipulować ludźmi słowami [107, 108].
+
+    ◦ Sroka (Szkodnik) gra na instrumentach (lira korbowa, dudy), ale także para się złodziejskim fachem i oportunizmem [109].
+
+    ◦ Ogon (Skazaniec) jest kucharzem, zajmuje się oprawianiem zwierzyny i drobnymi oszustwami (np. na wadze ryb) [110].
+
+Geolor (Mechanika i Zasady Świata)
+
+Geolor obejmuje zasady rządzące symulacją świata, ekonomią, magią i konsekwencjami działań [51, 88].
+
+Zasady Larpowe
+
+• WYSIWYG (What You See Is What You Get): Wszystkie działania, w tym wydobycie rudy kilofem, muszą być literalne [51, 88].
+
+• DKWDDK (Du Kannst Was Du Darstellen Kannst): Gracz musi umieć realistycznie odegrać umiejętności swojej postaci (np. fechtunek, tworzenie zwojów) [51, 88].
+
+• Znajdźki: Przedmioty fabularne są oznaczone ZIELONĄ naklejką i muszą być noszone przy sobie, by mogły być skradzione [111, 112].
+
+• Anonymity: Używanie bandan w kolorze frakcji pozwala na anonimowe akcje (np. napady) [111]. Kolory: SO – czerwony, NO – niebieski, Bractwo – zielony, Skazańcy – brązowy [111].
+
+• Konsekwencje zdrady: Zdrada frakcji jest surowo karana i grozi otrzymaniem Medalionu Beliara [33, 49, 51].
+
+Ekonomia i Zasoby
+
+• Waluta: Ruda jest podstawową walutą Kolonii [4, 72, 113].
+
+• Przepływ Rudy: Kopacze wydobywają rudę i przekazują ją Strażnikom, ci Magnatom, którzy finansują obóz i nagrody [114].
+
+• Bagienne Ziele z Bractwa może wywoływać wizje (specjalnie oznaczone skręty z karteczką) [115, 116].
+
+Struktura Magii i Mistrzostwo
+
+• Magia zwojów: Opiera się na Schematach Czarów (Punktach i Wektorach) i czterech Esencjach Żywiołów (Ziemia, Ogień, Wiatr, Woda) [51, 96, 97]. Koszt zaklęcia jest równy połowie całkowitej mocy zwoju [117]. Magowie Magicznego Kręgu I mają 3 punkty many na scenę i mogą mieć jedną runę z podstawowym czarem [51].
+
+• Magiczne Przedmioty: Są najczęściej wielokrotnego użytku (raz na scenę) i mogą być identyfikowane runą Prawdziwego Widzenia [72, 118].
+
+• Religia i Wizje: Kapłani (Magowie) i wierni mogą doświadczać wizji (często o dyskusyjnej prawdziwości), a modlitwa/medytacja ma pewien wpływ na świat gry [99].
+
+Awans postaci w hierarchii gry
+
+• Awans wymaga nie tylko osiągnięć, ale także posiadania odpowiedniego stroju/pancerza (np. awans na Strażnika wymaga pancerza Strażnika) [50, 51]. Nieprzygotowanie stroju nie gwarantuje awansu [115].
+
+• Strażnicy są pociągani do odpowiedzialności zbiorowej za błędy oddziału [17, 119].
+
+• Wodny Krąg może wystawiać Listy Polecające Najemnikom, które wpływają na ich sławę wojenną i awans [27].
+
+
+

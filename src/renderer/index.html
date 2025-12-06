@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'">
+  <title>Agent MG - Kreator Postaci</title>
+  <link rel="stylesheet" href="styles/theme.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">⚔️</span>
+        <span class="logo-text">Agent MG</span>
+      </div>
+
+      <nav class="steps-nav">
+        <div class="step-item" data-step="1">
+          <span class="step-indicator">○</span>
+          <span class="step-label">Źródło danych</span>
+        </div>
+        <div class="step-item" data-step="2">
+          <span class="step-indicator">○</span>
+          <span class="step-label">Ekstrakcja</span>
+        </div>
+        <div class="step-item" data-step="3">
+          <span class="step-indicator">○</span>
+          <span class="step-label">AI Processing</span>
+        </div>
+        <div class="step-item" data-step="4">
+          <span class="step-indicator">○</span>
+          <span class="step-label">Scalanie</span>
+        </div>
+        <div class="step-item" data-step="5">
+          <span class="step-indicator">○</span>
+          <span class="step-label">Questy</span>
+        </div>
+        <div class="step-item" data-step="6">
+          <span class="step-indicator">○</span>
+          <span class="step-label">Eksport</span>
+        </div>
+      </nav>
+
+      <div class="sidebar-settings">
+        <div class="step-item settings-item" data-step="settings" onclick="showSettings()">
+          <span class="step-indicator">⚙️</span>
+          <span class="step-label">Ustawienia AI</span>
+        </div>
+        <div class="step-item testbench-item" data-step="testbench" onclick="showTestbench()">
+          <span class="step-indicator">🧪</span>
+          <span class="step-label">Model Testbench</span>
+        </div>
+        <div class="step-item tests-item" data-step="tests" onclick="showAdvancedTests()">
+          <span class="step-indicator">📊</span>
+          <span class="step-label">Advanced Tests</span>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="ollama-status" id="ollamaStatus">
+          <span class="status-dot offline"></span>
+          <span>Ollama: sprawdzam...</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1 id="stepTitle">Krok 1: Źródło danych</h1>
+        <div class="trace-badge" id="traceBadge">
+          Trace: <span id="traceId">---</span>
+        </div>
+      </header>
+
+      <section class="content-body" id="stepContent">
+        <!-- Step content loaded dynamically -->
+        <div class="step-placeholder">
+          <p>Ładowanie...</p>
+        </div>
+      </section>
+
+      <footer class="content-footer">
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+          </div>
+          <span class="progress-text" id="progressText">Gotowy do pracy</span>
+        </div>
+
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" id="btnPrev" disabled>◀ Wstecz</button>
+          <button class="btn btn-primary" id="btnNext">Dalej ▶</button>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Log Panel (collapsible) -->
+    <aside class="log-panel" id="logPanel">
+      <div class="log-header">
+        <span>Logi</span>
+        <button class="btn-icon" id="btnToggleLogs">▼</button>
+      </div>
+      <div class="log-content" id="logContent">
+        <div class="log-entry log-info">
+          <span class="log-time">--:--:--</span>
+          <span class="log-msg">Aplikacja uruchomiona</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="testbench-history.js"></script>
+  <script src="testbench-ui.js"></script>
+  <script src="tests-panel.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

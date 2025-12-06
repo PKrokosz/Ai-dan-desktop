@@ -1,0 +1,252 @@
+Zgodnie z Twoim życzeniem, na podstawie "Sto Reguł Kolonii Karnej" i wpisów fabularnych, opracowałem schematy zadań oraz standardy stylów twórczych. Poniżej znajduje się lista 100 formatek do stymulowania pracy kreatywnej, wykorzystujących puste nawiasy [ ] do wypełnienia detalami.
+
+
+
+Standardy i Schematy Stylów Twórczych
+
+Na podstawie analizy wpisów fabularnych, wątków i mechanik, można wyodrębnić cztery główne style narracyjne, które definiują tożsamość questów w Kolonii Karnej.
+
+Styl Twórczy
+
+Charakterystyka (Cel Fabularny)
+
+Zastosowanie (Typowe Zadania)
+
+I. Mroczna Intryga & Dworska Decepcja
+
+Skupienie na manipulacji, zdobywaniu poufnych informacji, podważaniu autorytetu i tajnych sojuszach. Często angażuje Cieni, Sługi, Magnatów i kurierów.
+
+Szpiegostwo, kontrabanda, podrzucanie fałszywych dowodów, negocjacje, awans w hierarchii poprzez intrygę.
+
+II. Mistyczna Wizja & Kultowy Dogmat
+
+Koncentracja na magii, wierzeniach, artefaktach, wizjach i rytuałach. Zadania często wiążą się z Bractwem Śniącego lub Magami (Ognia/Wody).
+
+Poszukiwanie artefaktów (Kamień Ogniskujący, zwoje), zbieranie składników alchemicznych, dekonspiracja herezji, udział w Sympozjum Naukowym.
+
+III. Osobista Ambitność & Zemsta Skazańca
+
+Wątki napędzane chciwością, długami, zemstą, dążeniem do wyższego statusu lub przetrwaniem za wszelką cenę. Często są to długoterminowe cele Gracza.
+
+Likwidacja rywali, odzyskiwanie skradzionych relikwii, ucieczka od długu, zdobycie unikalnego sprzętu (np. pancerza z pełzacza).
+
+IV. Surowy Realizm & Brutalna Egzekucja
+
+Zadania związane z fizyczną walką o byt, patroszeniem potworów, ciężką pracą, egzekwowaniem prawa lub brutalnymi zasadami. Akcent na mechaniki Łowiectwa, Kowalstwa i Kopalni.
+
+Patrole, konwojowanie rudy, naprawa infrastruktury (Tama, Kopalnia), testowanie trucizn/mikstur, walka o terytorium.
+
+
+
+100 Schematów Zadań dla Graczy
+
+I. Mroczna Intryga & Dworska Decepcja (Questy 1–25)
+
+[Mroczna Intryga]: [Wpływowy Magnat] podejrzewa [Sługa/Cień] o szpiegostwo. Musisz zdobyć [Obciążający dokument] z [Lokalizacja] i przekazać go [Magnat/Dowódca] w zamian za [Awans/Informacje].
+
+[Dworska Decepcja]: [Ambitny Cień] zleca stworzenie [Magicznego artefaktu] nasyconego [Liczba] określonymi [Typy emocji], aby użyć go do [Skompromitowanie Magnata/Dowódcy].
+
+[Mroczna Intryga]: [Guru/Mag Ognia] chce zdyskredytować [Rywal polityczny]. Musisz znaleźć dowody na to, że [Rywal] jest niegodny zaufania, by osłabić jego pozycję w [Nazwa bandy/Kręgu].
+
+[Dworska Decepcja]: [Mag Wody] musi prowadzić negocjacje w [Zamek/Świątynia]. Twoim zadaniem jest przekupić [Kluczowy Strażnik], aby uzyskać dostęp do [Tajnych dokumentów] rywala przed rozpoczęciem obrad.
+
+[Mroczna Intryga]: [Organizacja Przemytnicza] szuka zaufanych kurierów. Musisz dołączyć do siatki [Imię Przemytnika], aby zyskać [Duże profity] i [Zbrojną ochronę], lecz pod groźbą [Surowej kary] za zdradę.
+
+[Dworska Decepcja]: [Magnat/Dowódca] prosi o pomoc w ukryciu [Wybrana postać] z [Rola/Frakcja], która jest poszukiwana. Musisz zapewnić [Wybrana postać] bezpieczne [Miejsce ukrycia] w [Lokalizacja] i utrzymywać to w ścisłej tajemnicy.
+
+[Mroczna Intryga]: [Kluczowy Służący] jest szpiegiem dla [Wroga frakcja] i obawia się dekonspiracji. Musisz pomóc [Służący] w delikatnym wycofaniu się z roli szpiega, jednocześnie nie paląc za nim mostów.
+
+[Dworska Decepcja]: [Mag Ognia] chce dostać się na [Sympozjum/Posiedzenie] jako Adept. Musisz zaoferować swoje [Usługi kurierskie] Magom, by zdobyć ich zaufanie i zaproszenie na elitarne spotkanie.
+
+[Mroczna Intryga]: [Dowódca Straży] podejrzewa [Oddział Straży] o nielegalny handel [Nielegalny towar]. Musisz zebrać dowody na ten proceder, unikając konfrontacji.
+
+[Dworska Decepcja]: [Wpływowy Cień] chce zrzucić z siebie odpowiedzialność za [Ryzykowny biznes] na [Niedoświadczony Cień]. Musisz pomóc w przygotowaniu [Niedoświadczony Cień] do nowej roli, aby [Magnat/Dowódca] zaakceptował zmianę.
+
+[Mroczna Intryga]: [Mag/Guru] chce wiedzieć, jak wyglądają zwyczaje funeralne w [Wroga frakcja]. Musisz znaleźć [Postać z wiedzą] i zebrać szczegółowe informacje, aby uniknąć [Metafizyczne zagrożenie].
+
+[Dworska Decepcja]: [Arcymag] chce wykorzystać negocjacje do [Cel polityczny]. Musisz zdobyć [Skrzynie towarowe] dla [Arcymag], aby zapewnić sobie [Wpływy] w trakcie obrad.
+
+[Mroczna Intryga]: [Mag Wody] potrzebuje agenta do weryfikacji lojalności [Sługa/Skazaniec] na Zamku. Musisz poddać [Sługa/Skazaniec] próbie zaufania, a następnie przekazać swoją ocenę [Kurierowi Wodnego Kręgu].
+
+[Dworska Decepcja]: [Magnat] prosi o pomoc w przejęciu prywatnej kontroli nad [Rodzaj zasobu], z pominięciem [Główny przywódca]. Musisz zorganizować małą grupę [Wyszkoleni Kopacze/Strażnicy] do tajnego wydobycia.
+
+[Mroczna Intryga]: [Skazaniec/Szkodnik] chce wykorzystać swoją wiedzę o [Rodzaj nielegalnego hazardu] do oszukiwania [Ofiary]. Musisz zdobyć [Specjalne kafelki/Karty] i użyć ich do wygrania [Wysoka stawka rudy].
+
+[Dworska Decepcja]: [Lider Szkodników] chce wpłynąć na decyzje [Główny Dowódca] i ograniczyć patrole w pobliżu [Miejsce uprawy/Wydobycia]. Musisz użyć swoich wpływów na [Strażnik], aby przekonać [Główny Dowódca] do rezygnacji z patroli.
+
+[Mroczna Intryga]: [Cień Klasztorny] szuka [Artefakt magiczny] należący do [Mag Ognia]. Musisz go zdobyć, by poszerzyć swoją wiedzę lub uzyskać [Pozycja w Kręgu].
+
+[Dworska Decepcja]: [Sprzedawca/Kupiec] chce stworzyć nową, półmobilną [Nazwa Karczmy/Kramu] na rozdrożu między obozami. Musisz zdobyć [Pozwolenia] od [Dowódcy Straży] i [Magów Wody].
+
+[Mroczna Intryga]: [Służący] handluje plotkami z Zamku, dostarczając je [Wroga frakcja] w zamian za [Surowiec]. Musisz przechwycić [Plotki] i przekazać je [Magnatowi] w zamian za łaskę.
+
+[Dworska Decepcja]: [Magnat] chce awansować [Sługa/Strażnik] na Magnata. Musisz dyskretnie przeszkolić [Sługa/Strażnik] w [Etykieta/Ekonomia] i zebrać poparcie [Inni Magnaci] dla nominacji.
+
+[Mroczna Intryga]: [Postać z NO/Bractwa] planuje napad na transport rudy z [SO/Kopalni]. Musisz ostrzec [Dowódca konwoju] o planowanym ataku, jednocześnie zachowując anonimowość.
+
+[Dworska Decepcja]: [Cień] musi zdobyć zaufanie [Wpływowi Cienie] (np. [Diego], [Rączka], [Zły]) do przejścia [Test Zaufania] i dostępu do [Zamek].
+
+[Mroczna Intryga]: [Postać] chce, aby [Organizacja kryminalna] uznała [Obszar] za strefę wolną od kradzieży. Musisz przekonać [Gildia Złodziei/Lokalni bossowie], aby zaprzestali okradania [Apteki/Administracji].
+
+[Dworska Decepcja]: [Mag Ognia] chce przywrócić reguły zakonne i etykietę w Kręgu, lekceważone przez byłych kryminalistów. Musisz przekonać [Inni Magowie] retoryką lub sprytnym naciskiem do stosownego uproszczenia zasad.
+
+[Mroczna Intryga]: [Przywódca] potrzebuje dokładnej mapy [Wroga lokacja] (np. rozmieszczenia namiotów na Bagnach). Musisz sporządzić [Szczegółowa mapa] i dostarczyć ją [Przywódcy] za [Wysoką zapłatę].
+
+II. Mistyczna Wizja & Kultowy Dogmat (Questy 26–50)
+
+[Mistyczna Wizja]: [Guru] ma wizję, w której [Zaginiony artefakt] pomoże nawiązać kontakt ze Śniącym. Musisz odszukać [Kamień Ogniskujący] na [Teren Orków] i dostarczyć go do [Świątynia Bractwa].
+
+[Kultowy Dogmat]: [Mag Wody] chce wiedzieć, co poszło nie tak podczas [Nieudany Rytuał]. Musisz przeprowadzić śledztwo w sprawie śmierci [Magini Lux], rozmawiając z [Świadkowie] i badając [Miejsce Rytuału].
+
+[Mistyczna Wizja]: [Guru/Alchemik] pilnie potrzebuje [Wydzielina Pełzaczy] do eksperymentów. Musisz zdobyć [Wydzielina] z [Część ciała potwora] (np. Królowej Pełzaczy) i dostarczyć ją do [Laboratorium Bractwa].
+
+[Kultowy Dogmat]: [Mag Ognia] musi wykazać się w badaniach run i zwojów, aby awansować na [Wyższy Krąg Magii]. Musisz poszerzyć swoją wiedzę o [Starożytne zwoje] i przedstawić [Osiągnięcia] na [Sympozjum].
+
+[Mistyczna Wizja]: [Skazaniec/Nowicjusz] doświadcza wizji, że prawdziwą wolność odnajdzie w [Wroga frakcja]. Musisz zinterpretować [Sny/Wizje] i znaleźć [Znaki] zsyłane przez [Bóstwo], aby określić dalszą drogę.
+
+[Kultowy Dogmat]: [Mag Ognia] musi przetestować efektywność [Rodzaj zaklęcia] na Strażnikach. Musisz podawać [Strażnik] wyciągi z [Esencje] i obserwować efekty, unikając dekonspiracji Magnaterii.
+
+[Mistyczna Wizja]: [Skazaniec] trafił pod Barierę z listem do [Arcymistrza Magów Ognia]. Musisz dostarczyć [List] do [Mag Ognia], który ujawnia, że [Adresat] odszedł i mieszka na [Teren Orków].
+
+[Kultowy Dogmat]: [Nowicjusz] musi przekonać Kopaczy, że hierarchia SO to wyzysk, by zwerbować ich do [Bractwo Śniącego]. Wątek: [Nowicjusz] musi głosić nauki Śniącego wśród [Klasa robotnicza], oferując [Wspólnotę/Wybawienie].
+
+[Mistyczna Wizja]: [Mag Wody] uważa, że [Nieodszyfrowany zwój] zawiera klucz do [Ucieczki spod bariery]. Musisz odzyskać [Zwój] i [Zaginiony list] o [Magini Wiktorii] dla [Mag Wody] i [Arcymistrza].
+
+[Kultowy Dogmat]: [Mag Ognia] musi zorganizować [Sympozjum/Spotkanie] dla Magów Wody i Guru, aby rozładować napięcie polityczne. Musisz przygotować [Zaproszenia] i [Materiały naukowe] dla gości.
+
+[Mistyczna Wizja]: [Nowicjusz] chce stworzyć nową miksturę, która zwiększy [Efekty wizji Śniącego]. Musisz spotkać się z [Guru] i ustalić podział zysków oraz warunki ochrony.
+
+[Kultowy Dogmat]: [Mag Ognia] poszukuje uczonego [Nowicjusza/Cienia], który zapisywałby jego [Wizje/Sny], zanim zostaną zapomniane. Musisz zwerbować [Nowicjusza] do roli notariusza.
+
+[Mistyczna Wizja]: [Postać] chce wykorzystać swoje znajomości z [Mag Ognia] (np. [Calor]), aby uzyskać dostęp do zadań, które mogą przynieść [Artefakty magiczne].
+
+[Kultowy Dogmat]: [Mag Wody] (np. [Eridan]) poszukuje listów świadectwa Maga Wody [Statiosa], rozrzuconych po Kolonii. Musisz zebrać [Liczba] części [Notatek] i dostarczyć je [Magom Wody] za nagrodę.
+
+[Mistyczna Wizja]: [Cień] musi zdobyć z laboratorium [Guru/Alchemik] zwoje z [Receptura na miksturę uzdrawiającą]. Musisz stworzyć [Plan dywersji] (np. wysłanie [Strażnik] pod fałszywym pretekstem), aby otworzyć skrzynię.-
+
+[Kultowy Dogmat]: [Mag Ognia] chce wiedzieć, jak wyglądają zwyczaje funeralne w [Wroga frakcja] (np. Bractwie), aby uniknąć naruszenia dogmatów.
+
+[Mistyczna Wizja]: [Skazaniec] chce wykorzystać swoją wiedzę o truciznach (np. [Digis]) do stworzenia [Trucizna wyglądająca jak lekarstwo] i przemycenia jej poza Barierę, by zemścić się na [Osoba, która go zdradziła].
+
+[Kultowy Dogmat]: [Mag Ognia] (np. [Sybilla]) chce zdominować rynek esencji. Musisz wykorzystać [Banda] i [Sprytne konszachty] do zapewnienia stałego napływu [Esencje ziemi/wody/ognia] dla Kręgu.
+
+[Mistyczna Wizja]: [Mag Ognia] musi uwarzyć [Eliksir] dla [Magnat/Dowódca], który cierpi na [Przewlekła dolegliwość]. Musisz zebrać rzadkie składniki (np. [Bagienne ziele], [Orkowe ziele]) i przygotować [Okład/Miksturę].
+
+[Kultowy Dogmat]: [Mag Ognia] chce, by Gracz (jako Adept) zbadał słowa [Bóstwo/Śniący], które rzekomo kazało [Postać] niszczyć inne kulty. Wątek: Gracz musi przeprowadzić [Testy/Modły], aby sprawdzić, czy [Wizja] była prawdziwa, czy to [Podszywanie się].
+
+[Mistyczna Wizja]: [Postać] chce stworzyć w Kolonii [Przybytek artystyczny] (np. galerię, karczmę), by gromadzić ludzi, których można [Okraść/Zdobyć od nich informacje].
+
+[Kultowy Dogmat]: [Guru] musi wiedzieć, czy wątpliwości wobec [Starszy stażem Guru] (np. [Oruna]) są uzasadnione. Wątek: Gracz musi zebrać dane i plotki o [Starszy stażem Guru], by zadecydować, czy powinien nastąpić [Rozłam w Bractwie].
+
+[Mistyczna Wizja]: [Skazaniec] (np. [Borek]) musi dowiedzieć się, jak wysłać [List] poza Barierę, by sprawdzić los [Bliska osoba] (np. matki). Wątek: [Skazaniec] musi znaleźć [Mag/Przemytnik/Szkodnik], który umożliwi mu kontakt ze światem zewnętrznym.
+
+[Kultowy Dogmat]: [Mag Ognia] musi zbadać, dlaczego Magowie Wody wydają się być nękani przez [Koszmary/Traumy]. Wątek: [Mag Ognia] musi znaleźć [Receptura na antidotum] przeciw [Koszmar Beliara], które stworzy.
+
+[Mistyczna Wizja]: [Kopacz] chce przeprowadzić mroczny rytuał, by skontaktować się z duchem [Zmarły przyjaciel] i poznać prawdę o [Masakra Kopaczy]. Musisz znaleźć [Osoba/Golem], która nauczy Cię rytuału.
+
+III. Osobista Ambitność & Zemsta Skazańca (Questy 51–75)
+
+[Zemsta Skazańca]: [Skazaniec] (np. [Urs]) chce zemścić się na [Osoba z wyższej klasy] (np. [Vigdis]), która go poniża. Musisz doprowadzić do tego, że [Osoba z wyższej klasy] poczuła, co to znaczy znaleźć się na samym końcu drabiny społecznej.
+
+[Osobista Ambitność]: [Były Pirat] (np. [Merik]) ma dość wykonywania poleceń niekompetentnych oprawców. Musisz wziąć swoje losy w swoje ręce i udowodnić, że potrafisz [Osiągnąć cel] własną, ciężką pracą.
+
+[Zemsta Skazańca]: [Cień] (np. [Kira]) chce potajemnie zemścić się na [Byli wspólnicy], którzy go wrobili. Musisz użyć swoich wpływów w [Gildia Złodziei] i nowej pozycji, by subtelnie zaszkodzić rywalom.
+
+[Osobista Ambitność]: [Kopacz/Skazaniec] chce wykorzystać swoje [Umiejętności zapaśnicze], by zyskać szacunek. Musisz wziąć udział w [Podziemny Krąg Walki] Kopaczy, by udowodnić swoją siłę.
+
+[Zemsta Skazańca]: [Kopacz] szuka zaginionej [Receptura alchemiczna] Mistrza [Orenthos], by wrobić [Rywal] (np. Pasco). Musisz odnaleźć [Skrawek papieru] i użyć [Futra z bestii] do stworzenia potężnego wywaru.
+
+[Osobista Ambitność]: [Skazaniec] (np. [Morian]) chce wrócić na [Wyżyny społeczne]. Musisz wykorzystać [Wiedzę z dokumentów] i [Dyplomację], by dołączyć do [Służby Magnatów] i odzyskać status.
+
+[Zemsta Skazańca]: [Strażnik] (np. [Arne]) chce odzyskać skradzioną [Skrzyneczkę Alepha] z relikwiami Magnata Saala. Musisz wyśledzić [Cienie/Szkodników], którzy ukradli skrzynię, i odzyskać ją przed [Sprzedaż bogatemu klientowi].
+
+[Osobista Ambitność]: [Cień/Handlarz] (np. [Ebor]) planuje handel podróbkami [Magiczne mikstury/Artefakty], by się wzbogacić. Musisz znaleźć [Odpowiednią klientelę], aby nie skończyć z [Kosa pod żebrami].
+
+[Zemsta Skazańca]: [Najemnik] (np. [Rickard]) musi zdobyć kompromitujący [Dokument] obciążający [Wysoko postawiony Guru]. Musisz udowodnić, że potrafisz działać subtelnie (włamanie) lub brutalnie (przejęcie siłowe).
+
+[Osobista Ambitność]: [Cień] chce opuścić [SO/NO] i zmienić klasę na [Strażnik/Najemnik]. Musisz wykazać się [Siłą/Lojalnością/Dyscypliną] i przysłużyć się [Wroga frakcja], aby uniknąć [Medalion Beliara].
+
+[Zemsta Skazańca]: [Strażnik] (np. [Barnaba]) szuka pomsty za bestialską śmierć [Zabity Kopacz] i obmyśla plan zemsty na [Wroga frakcja] (np. Szkodnikach).
+
+[Osobista Ambitność]: [Cień] (np. [Landebert]) jest kolekcjonerem [Błyskotki i luksusowe trunki]. Musisz zdobyć dla [Landebert] [Wyjątkowy pierścień] od [Handlarz/Kopacz], zyskując jego wdzięczność i wsparcie.
+
+[Zemsta Skazańca]: [Więzień] (np. [Urs]) chce publicznie poniżyć [Osoba z wyższej klasy] (np. [Vigdis]) i doprowadzić do jej upadku w hierarchii Kolonii.
+
+[Osobista Ambitność]: [Skazaniec] (np. [Dryf]) chce uciec z kopalni i stać się [Szkodnikiem]. Musisz sporządzać [Fałszywe mapy], aby zwieść [Strażników] i ukryć [Łup] w [Jaskinie/Zakamarki].
+
+[Zemsta Skazańca]: [Najemnik] (np. [Vrak]) chce osłabić [Stary Obóz] przez alchemię. Musisz znaleźć mistrza alchemii, aby stworzyć [Truciznę] i użyć jej do sabotażu [Wybrany cel SO].
+
+[Osobista Ambitność]: [Szkodnik] (np. [Flap]) widzi, jak [Cień/Kopacz] kreśli w notatniku [Dziwne runy/Symbole nordmańskie] i chce to wykorzystać dla swojej ambicji. Musisz śledzić [Cień/Kopacz], by zdobyć wiedzę o [Nordmańska technika/Magia].
+
+[Zemsta Skazańca]: [Skazaniec] (np. [Atre]) musi zebrać dowody na to, że [Urzędnik] zaoszczędził na materiałach windy, co spowodowało [Wypadek w kopalni] i śmierć [Liczba] górników.
+
+[Osobista Ambitność]: [Strażnik] (np. [Runar]) jest uziemiony swoją pozycją, ale marzy o nowym życiu jako handlowiec. Musisz pomóc [Strażnik] w porzuceniu fachu mistrza zabezpieczeń.
+
+[Zemsta Skazańca]: [Postać] chce, aby [Rywal] (np. [Radwald]) zapłacił za [Zdrada/Wbicie noża w plecy]. Musisz sprzymierzyć się z [Wrogowie Rywala] i dopilnować, by jego [Świat runął pod stopami].
+
+[Osobista Ambitność]: [Cień/Handlarz] (np. [Ebor]) chce sprzedać Magom Ognia [Artefakty] i poszerzyć swoją wiedzę. Musisz wykorzystać [Znajomość z Magiem] do wyłudzenia [Zadania] i zdobycia [Magiczne przedmioty].
+
+[Zemsta Skazańca]: [Cień] (np. [Faran]) został napadnięty przez [Strażników/Szkodników], którzy ukradli [Cenny przedmiot]. Musisz pomóc [Cień] w odzyskaniu [Skrzynia z relikwiami], co jest kwestią honoru.
+
+[Osobista Ambitność]: [Były Czeladnik] (np. [Knecht]) chce skupić się na inkrustacji i osadzaniu [Kamienie szlachetne] w metalu. Musisz znaleźć [Mistrza Kowalstwa] lub [Składniki], aby szlifować swoje umiejętności.
+
+[Zemsta Skazańca]: [Najemnik] (np. [Rickard]) chce udowodnić, że potrafi działać subtelnie w Kolonii. Musisz odzyskać [Dokumenty] bez rozlewu krwi, by spłacić [Dług wdzięczności].
+
+[Osobista Ambitność]: [Szkodnik] (np. [Lore]) chce zostać skrytym sługą Beliara, by zyskać ochronę. Musisz pomóc mu zorganizować bluźnierstwo wymierzone w [Bóstwo] (np. kradzież i splugawienie [Posążka Innosa]).
+
+[Zemsta Skazańca]: [Postać] została skazana za [Nieumyślne otrucie] w swojej karczmie. Musisz znaleźć [Wspólnik truciciela] (np. [Einar]), by oczyścić swoje sumienie i poznać prawdę o zdarzeniu.
+
+IV. Surowy Realizm & Brutalna Egzekucja (Questy 76–100)
+
+[Surowy Realizm]: Kopalnia jest zagrożona zawałem w [Boczna odnoga]. [Brygada Kopaczy] musi zorganizować się i naprawić [Drewniana podpora] przy użyciu [Zgniłe belki i liny].
+
+[Brutalna Egzekucja]: [Strażnik] ma za zadanie zapewnić bezpieczeństwo tajnej operacji wydobycia [Niebieska ruda]. Musisz pilnować [Kopaczy-frakcyjnych] i chronić transport przed [Zagrożenie w kopalni].
+
+[Surowy Realizm]: [Najemnik] (np. [Loczas]) zlecił Kopaczom wykonanie portretu erotycznego. Musisz sprawdzić postępy [Kopacze-portreciści] i ocenić, który z nich jest lepszym artystą.
+
+[Brutalna Egzekucja]: [Dowódca Straży] musi zarządzać transportem [Towary/Ruda] i minimalizować straty, aby jego oddział otrzymał [Dodatkowe wynagrodzenie].
+
+[Surowy Realizm]: [Kopacz] (np. [Chudy]) chce skonstruować pancerz z płytek pełzacza. Musisz zebrać [Płytki z pancerzy] i znaleźć [Specjalista/Alchemik] do stworzenia receptury.
+
+[Brutalna Egzekucja]: [Najemnik] ma dość nadużywania ostrza Najemników przez Szkodników. Musisz ustalić rozsądną cenę (np. 15-20 bryłek) za pomoc siłową.
+
+[Surowy Realizm]: [Łowca] musi udowodnić, że zasługuje na dołączenie do [Cech Łowców]. Musisz upolować [Rodzaj bestii] (np. Ścierwojada) i przynieść [Mięso/Trofeum] mistrzowi Łowców.
+
+[Brutalna Egzekucja]: [Alchemik] (np. [Digis]) potrzebuje królików doświadczalnych do testowania mikstur. Musisz podać [Skazańcy] [Mikstury/Trucizny], aby zebrać dane o ich [Reakcje] i udoskonalić [Receptura].
+
+[Surowy Realizm]: [Kopacz] chce wykupywać groby na [Cmentarz], by odkopać [Relikwie zmarłego Magnata]. Musisz zdobyć [Rudę] na wykupienie kolejnych grobów i unikać [Strażników] na miejscu.
+
+[Brutalna Egzekucja]: [Strażnik] (np. [Arne]) musi odzyskać [Skradziony łup] z miejsca, w którym stoi [Namiot Strażniczy]. Musisz wykonać Skok Stulecia i odzyskać [Łup], nie budząc podejrzeń Strażników.
+
+[Surowy Realizm]: [Łowca] musi wziąć udział w konkursie na najrzadszy komponent z bestii. Musisz oprawić [Rzadka bestia] i zdobyć [Unikalny komponent] (np. z Królowej Pełzaczy).
+
+[Brutalna Egzekucja]: [Dowódca Straży] (np. [Ulęgałke]) musi szkolić oddział, aby zwiększyć ich efektywność. Musisz zdać egzamin ze szkolenia bojowego i musztry, aby otrzymać [Bonus w bryłkach].
+
+[Surowy Realizm]: [Szkodnik] (np. [Ziemniak]) musi nadzorować Krety i pilnować Tarasów Ryżowych. Musisz rozpisać zmiany, płacić Kretem [Wysokość żołdu] i nie dopuścić do zaniedbania [Obowiązki wobec Magów Wody].
+
+[Brutalna Egzekucja]: [Organizacja kryminalna] parająca się lichwą (np. Załoga [Strażnika]) szuka dłużnika. Musisz pomóc w egzekwowaniu długu i znalezieniu haków na [Dłużnik].
+
+[Surowy Realizm]: [Kopacz] (np. [Skośny]) stworzył maszynę poprawiającą wydobycie rudy. Musisz przekupić [Strażnik] lub znaleźć [Były Sztygar], by zaprezentować wynalazek Magnatom.
+
+[Brutalna Egzekucja]: [Szkodnik] musi udowodnić, że proceder podszywania się pod Kurierów Magów Wody w celu uniknięcia Straży jest uzasadniony.
+
+[Surowy Realizm]: [Rzemieślnik] (np. [Borek]) chce dorobić się na kowalstwie. Musisz udać się do [Lokalny kowal] i wynegocjować praktyki lub naukę w zamian za [Usługi/Rudę].
+
+[Brutalna Egzekucja]: [Strażnik] (np. [Paydan]) chce zostać królem areny. Musisz rywalizować na [Arena SO] z [Rywal], by udowodnić, że jesteś lepszy i wzmocnić jego/swoją reputację.
+
+[Surowy Realizm]: [Grupa Strażników] chce zorganizować imprezę, która przyćmi Magnatów. Musisz zebrać [Fundusze], [Rzadkie alkohole] i [Magiczne mikstury], by zorganizować [Epicka Uczta].
+
+[Brutalna Egzekucja]: [Dowódca/Magnat] podejrzewa, że [Skazaniec] jest zamieszany w otrucie psa pasterskiego na wolności. Musisz znaleźć [Współpracownik truciciela] (np. [Einar]) i wyciągnąć z niego prawdę.
+
+[Surowy Realizm]: [Kopacz] musi pomóc [Inżynier] w odnalezieniu i rekonstrukcji [Receptury alchemicznej], którą wiatr wyszarpał mu z rąk.
+
+[Brutalna Egzekucja]: [Dowódca] (np. [Kolen]) został wrobiony w pomoc bandzie podczas napadu na [Apteka/Magazyn]. Musisz zorganizować Cieniową Fajkę Prawdy (rytuał) lub znaleźć dowody, by oczyścić swoje imię.
+
+[Surowy Realizm]: [Strażnik] musi zebrać [Wysokość grzywny] bryłek, zanim upłynie termin, ratując [Impulsywny Strażnik] przed degradacją do kopalni.
+
+[Brutalna Egzekucja]: [Szkodnik] musi odnaleźć zaginione notatki Wilka (łowcy), by uzyskać [Wiedzę] od [Demwara/Aidana] i nauczyć się [Nowe umiejętności łowieckie].
+
+[Surowy Realizm]: [Cień] musi wykazać się talentem do wywiadu ("trzecie oko"). Musisz zebrać [Wartościowe informacje] z [Lokalizacje] i unikać pracy fizycznej, by utrzymać swoją pozycję.
+
+
+
