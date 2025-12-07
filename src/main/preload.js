@@ -24,6 +24,11 @@ contextBridge.exposeInMainWorld('electronAPI', {
         ipcRenderer.on('ollama-install-progress', (event, data) => callback(data));
     },
 
+    // Ollama Configuration
+    getModelsPath: () => ipcRenderer.invoke('ollama:get-models-path'),
+    pickModelsPath: () => ipcRenderer.invoke('ollama:pick-models-path'),
+    setModelsPath: (newPath, moveModels) => ipcRenderer.invoke('ollama:set-models-path', { newPath, moveModels }),
+
     // System Diagnostics
     getSystemSpecs: () => ipcRenderer.invoke('get-system-specs'),
 

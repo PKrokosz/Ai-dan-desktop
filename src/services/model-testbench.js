@@ -37,54 +37,29 @@ class ModelTestbench {
      */
     async getAvailableModels() {
         const traceId = getTraceId();
-        logger.info(`[${traceId}] Fetching available Ollama models`);
+        logger.info(`[${traceId}] Fetching available Ollama models (via Service)`);
 
         try {
-            return new Promise((resolve, reject) => {
-                const http = require('http');
-                const options = {
-                    hostname: '127.0.0.1',
-                    port: 11434,
-                    path: '/api/tags',
-                    method: 'GET',
-                    timeout: 3000
-                };
+            // Use unified service to get models (includes local scan)
+            const result = await ollamaService.checkConnection();
 
-                const req = http.request(options, (res) => {
-                    let data = '';
-                    res.on('data', chunk => data += chunk);
-                    res.on('end', () => {
-                        try {
-                            const parsed = JSON.parse(data);
-                            // Filtruj modele embedujące (nie nadają się do generowania tekstu)
-                            const textModels = (parsed.models || [])
-                                .filter(m => !m.name.includes('embed'))
-                                .map(m => ({
-                                    name: m.name,
-                                    size: m.size,
-                                    modified: m.modified_at
-                                }));
+            if (!result || !result.models) {
+                logger.warn(`[${traceId}] No models returned from service`);
+                return [];
+            }
 
-                            logger.info(`[${traceId}] Found ${textModels.length} text generation models`);
-                            resolve(textModels);
-                        } catch (error) {
-                            reject(new Error(`Failed to parse models: ${error.message}`));
-                        }
-                    });
-                });
+            // Filter embedding models
+            const textModels = result.models
+                .filter(m => !m.name.includes('embed'))
+                .map(m => ({
+                    name: m.name,
+                    size: m.size || 0,
+                    modified: m.modified_at || new Date().toISOString()
+                }));
 
-                req.on('error', (error) => {
-                    logger.error(`[${traceId}] Failed to fetch models:`, error);
-                    reject(error);
-                });
+            logger.info(`[${traceId}] Found ${textModels.length} text generation models`);
+            return textModels;
 
-                req.on('timeout', () => {
-                    req.destroy();
-                    reject(new Error('Request timeout'));
-                });
-
-                req.end();
-            });
         } catch (error) {
             logger.error(`[${traceId}] Error getting models:`, error);
             return [];

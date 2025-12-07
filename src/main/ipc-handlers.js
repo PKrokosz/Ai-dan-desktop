@@ -1032,3 +1032,103 @@ ipcMain.handle('tests:language-stability:load-cache', async (event) => {
     const cached = languageStabilityTest.loadCached();
     return { success: true, cached };
 });
+
+// ==========================================
+// Custom Model Path Handlers
+// ==========================================
+
+ipcMain.handle('ollama:get-models-path', async () => {
+    return process.env.OLLAMA_MODELS || '';
+});
+
+ipcMain.handle('ollama:pick-models-path', async () => {
+    const { dialog } = require('electron');
+    const result = await dialog.showOpenDialog({
+        properties: ['openDirectory'],
+        title: 'Wybierz folder na modele Ollama'
+    });
+    return result.canceled ? null : result.filePaths[0];
+});
+
+ipcMain.handle('ollama:set-models-path', async (event, { newPath, moveModels }) => {
+    return runWithTrace(async () => {
+        logger.info('Setting custom models path', { newPath, moveModels });
+
+        try {
+            // 1. Set environment variable persistently (User scope)
+            // Note: This requires a restart of the app to take full effect usually, 
+            // but we can update process.env for the current session too.
+            const { exec } = require('child_process');
+
+            await new Promise((resolve, reject) => {
+                exec(`setx OLLAMA_MODELS "${newPath}"`, (error) => {
+                    if (error) reject(error);
+                    else resolve();
+                });
+            });
+
+            // Update current process env
+            process.env.OLLAMA_MODELS = newPath;
+
+            // 2. Move models if requested
+            if (moveModels) {
+                const fs = require('fs');
+                const path = require('path');
+                const os = require('os');
+
+                // Try to find current models source
+                let sourcePath = path.join(os.homedir(), '.ollama', 'models');
+                // Check if we are currently using WSL or other custom path
+                // (Simple logic: if source has content, copy it)
+
+                // For simplicity/robustness, we'll try to copy from standard Windows location first
+                // If the user was on WSL, copying from UNC path might be slow/complex in Node, 
+                // but we can try if source exists.
+
+                // Let's assume standard migration from C:\Users\User\.ollama\models 
+                // or if OLLAMA_MODELS was already set, from there.
+
+                if (fs.existsSync(sourcePath)) {
+                    sendProgress(event, 1, 10, 'Kopiowanie modeli...');
+
+                    // We use robocopy for robust directory copying on Windows
+                    await new Promise((resolve, reject) => {
+                        // /E = recursive, /NFL /NDL = quiet logging
+                        const cmd = `robocopy "${sourcePath}" "${newPath}" /E /NFL /NDL`;
+                        exec(cmd, (error, stdout, stderr) => {
+                            // Robocopy exit codes: 0-7 are success/partial success
+                            if (error && error.code > 7) {
+                                reject(new Error(`Robocopy failed: ${error.code}`));
+                            } else {
+                                resolve();
+                            }
+                        });
+                    });
+                    sendProgress(event, 1, 90, 'Skopiowano modele');
+                }
+            }
+
+            // 3. Restart Ollama
+            sendProgress(event, 1, 95, 'Restartowanie serwisu Ollama...');
+
+            // Kill existing
+            await new Promise(r => exec('taskkill /IM ollama.exe /F', () => r()));
+            // Wait a bit
+            await new Promise(r => setTimeout(r, 1000));
+            // Start new
+            const ollamaPath = path.join(process.env.LOCALAPPDATA, 'Programs', 'Ollama', 'ollama.exe');
+            require('child_process').spawn(ollamaPath, ['serve'], {
+                detached: true,
+                stdio: 'ignore',
+                env: { ...process.env, OLLAMA_MODELS: newPath }
+            }).unref();
+
+            sendProgress(event, 1, 100, 'Gotowe');
+            return { success: true };
+
+        } catch (error) {
+            logger.error('Failed to set model path', error);
+            return { success: false, error: error.message };
+        }
+    });
+});

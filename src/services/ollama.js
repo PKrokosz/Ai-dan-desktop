@@ -1,540 +1,320 @@
-/**
- * Ollama Service
- * Real API integration with Ollama LLM
- */
-
 const http = require('http');
-const config = require('../shared/config');
+const { exec } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
 const logger = require('../shared/logger');
 const { getTraceId } = require('../shared/tracing');
 const generationLogger = require('./generation-logger');
 
 class OllamaService {
     constructor() {
-        this.baseUrl = config.ollama.host;
-        this.defaultModels = {
-            extraction: config.ollama.models.extraction,
-            generation: config.ollama.models.generation
-        };
+        this.host = '127.0.0.1';
+        this.port = 11434;
     }
 
     /**
-     * Check if Ollama is available
-     * Uses native http module for Electron compatibility
+     * Check connection to Ollama and get available models
+     * Now combines API check with local filesystem scan
      */
     async checkConnection() {
+        // 1. Try to get models from API (primary source)
+        const apiResult = await this.checkApiConnection();
+
+        // 2. Scan local filesystem (secondary source, useful if API is down or models hidden)
+        const localModels = await this.getLocalModels();
+
+        if (apiResult.connected) {
+            // Merge local models into API result if they are missing
+            // API models usually have more data (size, details), so we prefer them
+            const mergedModels = [...apiResult.models];
+            const existingNames = new Set(mergedModels.map(m => m.name));
+
+            for (const local of localModels) {
+                // Check if this model is already in the list (considering tags)
+                // Local scan returns e.g. "llama3:latest", "mistral:7b"
+                if (!existingNames.has(local.name)) {
+                    mergedModels.push(local);
+                    existingNames.add(local.name);
+                }
+            }
+
+            return { connected: true, models: mergedModels };
+        } else {
+            // If API is down, but we found local models, return them with a warning
+            if (localModels.length > 0) {
+                return {
+                    connected: false,
+                    error: 'Ollama is offline, but local models were found.',
+                    models: localModels,
+                    details: apiResult.error
+                };
+            }
+            return apiResult;
+        }
+    }
+
+    /**
+     * Internal method to check API
+     */
+    async checkApiConnection() {
         return new Promise((resolve) => {
-            // Hardcoded for debugging
-            const url = new URL('http://127.0.0.1:11434/api/tags');
-            const port = 11434;
-
-            logger.info('Check connection to:', { href: url.href });
-
             const req = http.get({
-                hostname: '127.0.0.1',
-                port: 11434,
+                hostname: this.host,
+                port: this.port,
                 path: '/api/tags',
-                timeout: 5000
+                timeout: 2000 // Short timeout
             }, (res) => {
                 let data = '';
                 res.on('data', chunk => data += chunk);
                 res.on('end', () => {
                     try {
                         const json = JSON.parse(data);
-                        logger.info('Ollama connection OK', { models: json.models?.length || 0 });
                         resolve({ connected: true, models: json.models || [] });
                     } catch (e) {
-                        logger.error('Ollama response parse error', { error: e.message });
-                        resolve({ connected: false, error: 'Invalid response', models: [] });
+                        resolve({ connected: true, error: 'Invalid JSON', models: [] });
                     }
                 });
             });
 
             req.on('error', (error) => {
-                console.error('OLLAMA CHECK ERROR:', error);
-                logger.error('Ollama connection failed', { error: error.message });
                 resolve({ connected: false, error: error.message, models: [] });
             });
 
             req.on('timeout', () => {
                 req.destroy();
-                logger.error('Ollama connection timeout');
-                resolve({ connected: false, error: 'Connection timeout', models: [] });
+                resolve({ connected: false, error: 'Timeout', models: [] });
             });
         });
     }
 
     /**
-     * Pull a model from Ollama registry with streaming progress
-     * Uses native http module for better Electron compatibility
+     * Scan local filesystem for model manifests
+     * Windows: %USERPROFILE%\.ollama\models\manifests\registry.ollama.ai\library
+     * WSL: \\wsl.localhost\Ubuntu\usr\share\ollama\.ollama\models\manifests\registry.ollama.ai\library
      */
-    async pullModel(modelName, onProgress) {
-        logger.info('Pulling model', { model: modelName });
+    async getLocalModels() {
+        try {
+            const home = os.homedir();
+            const candidatePaths = [];
 
-        return new Promise((resolve) => {
-            const url = new URL(`${this.baseUrl}/api/pull`);
-            const postData = JSON.stringify({ name: modelName, stream: true });
+            // 0. Custom Path (OLLAMA_MODELS)
+            if (process.env.OLLAMA_MODELS) {
+                candidatePaths.push(path.join(process.env.OLLAMA_MODELS, 'manifests', 'registry.ollama.ai', 'library'));
+            }
 
-            const port = parseInt(url.port) || 11434;
+            // 1. Windows Default (User profile)
+            candidatePaths.push(path.join(home, '.ollama', 'models', 'manifests', 'registry.ollama.ai', 'library'));
 
-            const options = {
-                hostname: '127.0.0.1',  // Force IPv4 to avoid ECONNREFUSED on ::1
-                port: port,
-                path: url.pathname,
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Content-Length': Buffer.byteLength(postData)
+            // 2. WSL Default (Ubuntu /usr/share/ollama - detected via investigation)
+            candidatePaths.push('\\\\wsl.localhost\\Ubuntu\\usr\\share\\ollama\\.ollama\\models\\manifests\\registry.ollama.ai\\library');
+
+            // 3. WSL User (Ubuntu /home/pkrokosz - fallback)
+            candidatePaths.push('\\\\wsl.localhost\\Ubuntu\\home\\pkrokosz\\.ollama\\models\\manifests\\registry.ollama.ai\\library');
+
+            const models = [];
+            const processedNames = new Set(); // To avoid duplicates
+
+            for (const manifestsPath of candidatePaths) {
+                if (!fs.existsSync(manifestsPath)) {
+                    continue; // Skip if path doesn't exist
                 }
-            };
 
-            logger.info('Pull request options', { hostname: options.hostname, port: options.port, path: options.path });
+                logger.info('Scanning models at:', { path: manifestsPath });
 
-            const req = http.request(options, (res) => {
-                let lastStatus = '';
-                let lastProgress = 0;
-                let hasError = false;
-                let errorMessage = '';
-                let buffer = '';
+                try {
+                    // Read main library folder
+                    const entries = fs.readdirSync(manifestsPath, { withFileTypes: true });
 
-                res.on('data', (chunk) => {
-                    buffer += chunk.toString();
-                    const lines = buffer.split('\n');
-                    buffer = lines.pop() || ''; // Keep incomplete line for next chunk
+                    for (const entry of entries) {
+                        if (entry.isDirectory()) {
+                            const modelName = entry.name;
+                            const modelPath = path.join(manifestsPath, modelName);
 
-                    for (const line of lines) {
-                        if (!line.trim()) continue;
-                        try {
-                            const data = JSON.parse(line);
+                            // Read tags (files inside the directory)
+                            try {
+                                const tags = fs.readdirSync(modelPath);
+                                for (const tag of tags) {
+                                    // Construct full model name e.g. "llama3:latest"
+                                    const fullName = `${modelName}:${tag}`;
 
-                            if (data.error) {
-                                hasError = true;
-                                errorMessage = data.error;
-                            }
+                                    if (processedNames.has(fullName)) continue; // Skip duplicates
 
-                            if (data.total && data.completed) {
-                                const percent = Math.round((data.completed / data.total) * 100);
-                                if (percent !== lastProgress) {
-                                    lastProgress = percent;
-                                    onProgress?.(percent, data.status);
-                                    logger.info('Pull progress', { model: modelName, percent, status: data.status });
+                                    // Add to list
+                                    models.push({
+                                        name: fullName,
+                                        model: fullName,
+                                        size: 0, // Unknown size without reading blobs
+                                        digest: 'local-file',
+                                        details: {
+                                            format: 'gguf',
+                                            family: modelName,
+                                            parameter_size: 'unknown',
+                                            quantization_level: 'unknown'
+                                        },
+                                        isLocalOnly: true,
+                                        sourcePath: manifestsPath // Debug info
+                                    });
+                                    processedNames.add(fullName);
                                 }
+                            } catch (e) {
+                                logger.warn(`Failed to read model tags for ${modelName}`, { error: e.message });
                             }
-
-                            lastStatus = data.status || lastStatus;
-                        } catch (e) {
-                            // Ignore JSON parse errors
                         }
                     }
-                });
+                } catch (e) {
+                    logger.warn(`Failed to scan directory ${manifestsPath}`, { error: e.message });
+                }
+            }
 
-                res.on('end', async () => {
-                    if (hasError) {
-                        logger.error('Model pull failed', { model: modelName, error: errorMessage });
-                        resolve({ success: false, error: errorMessage });
-                        return;
-                    }
+            logger.info('Total local models found:', { count: models.length });
+            return models;
 
-                    // Verify model was pulled
-                    try {
-                        const checkRes = await this.checkConnection();
-                        const modelPulled = checkRes.models?.some(m =>
-                            m.name === modelName || m.name.startsWith(modelName.split(':')[0])
-                        );
-
-                        if (!modelPulled && lastStatus !== 'success') {
-                            resolve({ success: false, error: 'Model nie pojawił się na liście' });
-                            return;
-                        }
-                    } catch (e) {
-                        // Ignore verification errors
-                    }
-
-                    logger.info('Model pulled successfully', { model: modelName, status: lastStatus });
-                    resolve({ success: true, status: lastStatus });
-                });
-
-                res.on('error', (error) => {
-                    logger.error('Pull response error', { model: modelName, error: error.message });
-                    resolve({ success: false, error: error.message });
-                });
-            });
-
-            req.on('error', (error) => {
-                logger.error('Pull request error', { model: modelName, error: error.message });
-                resolve({ success: false, error: error.message });
-            });
-
-            req.setTimeout(600000); // 10 minutes timeout for large models
-            req.write(postData);
-            req.end();
-        });
+        } catch (error) {
+            logger.error('Failed to scan local files:', error);
+            return [];
+        }
     }
 
     /**
-     * Generate completion with structured JSON output
-     * Used for character lane extraction
-     * Uses native http module for Electron compatibility
-     */
-    async generateJSON(prompt, options = {}) {
-        const model = options.model || this.defaultModels.extraction;
-        const traceId = getTraceId();
-
-        logger.info('Generating JSON', { model, traceId, promptLength: prompt.length });
-
-        return new Promise((resolve) => {
-            const url = new URL(`${this.baseUrl}/api/generate`);
-            const postData = JSON.stringify({
-                model,
-                prompt,
-                stream: false,
-                format: 'json',
-                options: {
-                    temperature: options.temperature ?? 0,
-                    top_p: options.topP ?? 0.1,
-                    num_predict: options.maxTokens ?? 2000
-                }
-            });
-
-            const reqOptions = {
-                hostname: '127.0.0.1',  // Force IPv4 to avoid ECONNREFUSED on ::1
-                port: parseInt(url.port) || 11434,
-                path: url.pathname,
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Content-Length': Buffer.byteLength(postData)
-                }
-            };
-
-            const req = http.request(reqOptions, (res) => {
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => {
-                    try {
-                        if (res.statusCode !== 200) {
-                            throw new Error(`Generate failed: ${res.statusCode}`);
-                        }
-
-                        const responseData = JSON.parse(data);
-                        let parsed = null;
-
-                        try {
-                            parsed = JSON.parse(responseData.response);
-                        } catch (e) {
-                            logger.warn('Failed to parse JSON response, returning raw', { traceId });
-                            parsed = { raw: responseData.response };
-                        }
-
-                        logger.info('JSON generation complete', {
-                            traceId,
-                            model,
-                            evalCount: responseData.eval_count,
-                            evalDuration: responseData.eval_duration
-                        });
-
-                        const stats = {
-                            evalCount: responseData.eval_count,
-                            evalDuration: responseData.eval_duration,
-                            totalDuration: responseData.total_duration
-                        };
-
-                        generationLogger.logGeneration({
-                            traceId,
-                            model,
-                            type: 'json_generation',
-                            prompt,
-                            options,
-                            response: parsed,
-                            rawResponse: responseData.response,
-                            stats
-                        });
-
-                        resolve({
-                            success: true,
-                            result: parsed,
-                            raw: responseData.response,
-                            stats
-                        });
-                    } catch (error) {
-                        logger.error('JSON generation parse error', { traceId, model, error: error.message });
-                        generationLogger.logGeneration({
-                            traceId,
-                            model,
-                            type: 'json_generation_error',
-                            prompt,
-                            options,
-                            error: error.message
-                        });
-                        resolve({ success: false, error: error.message });
-                    }
-                });
-            });
-
-            req.on('error', (error) => {
-                logger.error('JSON generation failed', { traceId, model, error: error.message });
-                resolve({ success: false, error: error.message });
-            });
-
-            req.setTimeout(120000); // 2 minutes timeout
-            req.write(postData);
-            req.end();
-        });
-    }
-
-    /**
-     * Generate creative text (for quests, narratives)
-     * Uses native http module for Electron compatibility
+     * Generate text using a model
+     * @param {string} prompt 
+     * @param {object} options 
      */
     async generateText(prompt, options = {}) {
-        const model = options.model || this.defaultModels.generation;
         const traceId = getTraceId();
 
-        logger.info('Generating text', { model, traceId, promptLength: prompt.length });
-
         return new Promise((resolve) => {
-            const url = new URL(`${this.baseUrl}/api/generate`);
+            const model = options.model || 'mistral:latest';
+
             const postData = JSON.stringify({
-                model,
-                prompt,
-                system: options.system, // Add system prompt support
+                model: model,
+                prompt: prompt,
                 stream: false,
+                system: options.system,
                 options: {
-                    temperature: options.temperature ?? 0.7,
-                    top_p: options.topP ?? 0.9,
-                    num_predict: options.maxTokens ?? 1500
+                    temperature: options.temperature || 0.7,
+                    num_ctx: options.maxTokens || 4096
                 }
             });
 
-            const reqOptions = {
-                hostname: '127.0.0.1',  // Force IPv4 to avoid ECONNREFUSED on ::1
-                port: parseInt(url.port) || 11434,
-                path: url.pathname,
+            const req = http.request({
+                hostname: this.host,
+                port: this.port,
+                path: '/api/generate',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Content-Length': Buffer.byteLength(postData)
                 }
-            };
-
-            const req = http.request(reqOptions, (res) => {
+            }, (res) => {
                 let data = '';
                 res.on('data', chunk => data += chunk);
                 res.on('end', () => {
-                    try {
-                        if (res.statusCode !== 200) {
-                            throw new Error(`Generate failed: ${res.statusCode}`);
+                    if (res.statusCode >= 200 && res.statusCode < 300) {
+                        try {
+                            const json = JSON.parse(data);
+
+                            const stats = {
+                                evalCount: json.eval_count,
+                                evalDuration: json.eval_duration,
+                                totalDuration: json.total_duration
+                            };
+
+                            // Log generation for debugging
+                            generationLogger.logGeneration({
+                                traceId,
+                                model,
+                                type: 'text_generation',
+                                prompt,
+                                system: options.system,
+                                options,
+                                response: json.response,
+                                stats
+                            });
+
+                            resolve({ success: true, text: json.response, stats });
+                        } catch (e) {
+                            resolve({ success: false, error: 'Parse error' });
                         }
-
-                        const responseData = JSON.parse(data);
-
-                        logger.info('Text generation complete', {
-                            traceId,
-                            model,
-                            responseLength: responseData.response?.length
-                        });
-
-                        const stats = {
-                            evalCount: responseData.eval_count,
-                            evalDuration: responseData.eval_duration,
-                            totalDuration: responseData.total_duration
-                        };
-
-                        // Archive generation
-                        generationLogger.logGeneration({
-                            traceId,
-                            model,
-                            type: 'text_generation',
-                            prompt,
-                            system: options.system,
-                            options,
-                            response: responseData.response,
-                            stats
-                        });
-
-                        resolve({
-                            success: true,
-                            text: responseData.response,
-                            stats
-                        });
-                    } catch (error) {
-                        logger.error('Text generation parse error', { traceId, model, error: error.message });
-                        generationLogger.logGeneration({
-                            traceId,
-                            model,
-                            type: 'text_generation_error',
-                            prompt,
-                            system: options.system,
-                            options,
-                            error: error.message
-                        });
-                        resolve({ success: false, error: error.message });
+                    } else {
+                        resolve({ success: false, error: `HTTP ${res.statusCode}` });
                     }
                 });
             });
 
-            req.on('error', (error) => {
-                logger.error('Text generation failed', { traceId, model, error: error.message });
-                resolve({ success: false, error: error.message });
+            req.on('error', (e) => {
+                resolve({ success: false, error: e.message });
             });
 
-            req.setTimeout(120000); // 2 minutes timeout
+            req.setTimeout(60000, () => { // 60s timeout for generation
+                req.destroy();
+                resolve({ success: false, error: 'Timeout' });
+            });
+
             req.write(postData);
             req.end();
         });
     }
 
     /**
-     * Process a single lane (historia, relacje, etc.)
-     * Returns structured JSON for that lane
+     * Pull a model from Ollama library
+     * @param {string} modelName 
+     * @param {function} onProgress (percent, status)
      */
-    async processLane(laneName, characterData, worldContext = '', options = {}) {
-        const prompts = {
-            historia: this.buildHistoriaPrompt,
-            relacje: this.buildRelacjePrompt,
-            aspiracje: this.buildAspiracjePrompt,
-            slabosci: this.buildSlabosciPrompt,
-            umiejetnosci: this.buildUmiejetnosciPrompt,
-            geolore: this.buildGeolorePrompt
-        };
+    async pullModel(modelName, onProgress) {
+        return new Promise((resolve) => {
+            const postData = JSON.stringify({
+                name: modelName,
+                stream: true
+            });
 
-        const buildPrompt = prompts[laneName];
-        if (!buildPrompt) {
-            return { success: false, error: `Unknown lane: ${laneName}` };
-        }
+            const req = http.request({
+                hostname: this.host,
+                port: this.port,
+                path: '/api/pull',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }, (res) => {
+                res.on('data', chunk => {
+                    const lines = chunk.toString().split('\n').filter(Boolean);
+                    for (const line of lines) {
+                        try {
+                            const json = JSON.parse(line);
+                            if (json.total && json.completed) {
+                                const percent = Math.round((json.completed / json.total) * 100);
+                                if (onProgress) onProgress(percent, json.status);
+                            } else if (json.status) {
+                                if (onProgress) onProgress(null, json.status);
+                            }
 
-        const prompt = buildPrompt.call(this, characterData, worldContext);
-        const result = await this.generateJSON(prompt, options);
-        result.prompt = prompt; // Attach prompt for debugging/history
-        return result;
-    }
+                            if (json.status === 'success') {
+                                // finished
+                            }
+                        } catch (e) {
+                            // ignore parse error for chunks
+                        }
+                    }
+                });
 
-    // =====================================
-    // Lane-specific prompt builders
-    // =====================================
+                res.on('end', () => {
+                    if (res.statusCode === 200) {
+                        resolve({ success: true });
+                    } else {
+                        resolve({ success: false, error: `HTTP ${res.statusCode}` });
+                    }
+                });
+            });
 
-    buildHistoriaPrompt(data, worldContext) {
-        return `==Return ONLY raw JSON. No code fences. No comments. No trailing commas.
-Unknown → null or [].
+            req.on('error', (e) => {
+                resolve({ success: false, error: e.message });
+            });
 
-CONTEXT:
-${worldContext || ''}
-
-FORM:
-Name: ${data['Imie postaci'] || null}
-Guild: ${data['Gildia'] || null}
-
-RAW:
-${data['Jak zarabiala na zycie, kim byla'] || ''}
-${data['Jak zarabia na zycie, kim jest'] || ''}
-${data['Jak trafila do obozu'] || ''}
-${data['Inne wydarzenia z przeszlosci'] || ''}
-
-RULES:
-- No new proper nouns beyond inputs/context.
-- Map Guild → core_identity.status_class
-- short_description: 1–2 zdania (pochodzenie/rola/motywacja).
-- keywords: lista haseł pojawiających się w inputs/context; jeśli brak → [].
-
-OUTPUT JSON:
-{
-  "core_identity": {
-    "character_name": "string",
-    "status_class": "string or null",
-    "current_group_band": "string or null",
-    "short_description": "string",
-    "keywords": []
-  },
-  "biography_and_traits": {
-    "key_past_events": [],
-    "survival_skills_methods": "string or null"
-  }
-}`;
-    }
-
-    buildRelacjePrompt(data, worldContext) {
-        return `==Return ONLY raw JSON. No code fences.
-
-CONTEXT:
-${worldContext || ''}
-
-RAW RELATIONS:
-${data['Znajomi, przyjaciele i wrogowie'] || ''}
-
-OUTPUT JSON:
-{
-  "relationships": {
-    "allies_friends": [{"name": "string", "description": "string"}],
-    "enemies_antagonists": [{"name": "string", "description": "string"}],
-    "neutral_contacts": [{"name": "string", "description": "string"}]
-  }
-}`;
-    }
-
-    buildAspiracjePrompt(data, worldContext) {
-        return `==Return ONLY raw JSON.
-
-RAW ASPIRATIONS:
-${data['Kim chce zostac'] || ''}
-${data['Jakie zadania bedziesz kontynuowac'] || ''}
-
-OUTPUT JSON:
-{
-  "biography_and_traits": {
-    "personal_goals_short_term": [],
-    "personal_goals_long_term": []
-  }
-}`;
-    }
-
-    buildSlabosciPrompt(data, worldContext) {
-        return `==Return ONLY raw JSON.
-
-RAW WEAKNESSES:
-${data['Slabosci'] || ''}
-
-OUTPUT JSON:
-{
-  "mechanical_links": {
-    "declared_weaknesses": [],
-    "phobias_or_triggers": []
-  }
-}`;
-    }
-
-    buildUmiejetnosciPrompt(data, worldContext) {
-        return `==Return ONLY raw JSON.
-
-RAW SKILLS:
-${data['Umiejetnosci'] || ''}
-
-OUTPUT JSON:
-{
-  "mechanical_links": {
-    "declared_skills": []
-  }
-}`;
-    }
-
-    buildGeolorePrompt(data, worldContext) {
-        return `==Return ONLY raw JSON.
-
-CONTEXT:
-${worldContext || ''}
-
-RAW LOCATION:
-Region: ${data['Region'] || ''}
-Miejscowość: ${data['Miejscowosc'] || ''}
-
-OUTPUT JSON:
-{
-  "core_identity": {
-    "home_region": "string or null"
-  },
-  "biography_and_traits": {
-    "regional_lore_knowledge": []
-  }
-}`;
+            req.write(postData);
+            req.end();
+        });
     }
 }
 

@@ -157,6 +157,24 @@ const stepTemplates = {
     </div>
     
     <div class="card">
+      <h3 class="card-title">📁 Lokalizacja modeli</h3>
+      <div class="form-group">
+        <label class="form-label">Folder z modelami (OLLAMA_MODELS)</label>
+        <div style="display: flex; gap: 10px;">
+          <input type="text" class="form-input" id="modelPathInput" readonly placeholder="Domyślna (Systemowa)">
+          <button class="btn btn-secondary" onclick="pickModelPath()">📂 Zmień</button>
+        </div>
+        <div style="margin-top: 10px;">
+            <label class="context-checkbox">
+            <input type="checkbox" id="moveModelsCheck" checked>
+            <span>Przenieś istniejące modele do nowego folderu</span>
+            </label>
+        </div>
+        <button class="btn btn-primary btn-sm" style="margin-top: 10px;" onclick="changeModelPath()">Zapisz i Restartuj Ollama</button>
+      </div>
+    </div>
+
+    <div class="card">
       <h3 class="card-title">🎯 Konfiguracja modeli AI</h3>
       
       <div class="form-group">
@@ -1028,6 +1046,16 @@ function showSettings() {
     // Initialize settings view
     setTimeout(async () => {
       await loadSystemSpecs();
+
+      // Load current model path
+      try {
+        const currentPath = await window.electronAPI.getModelsPath();
+        const input = document.getElementById('modelPathInput');
+        if (input) input.value = currentPath || 'Domyślna (Systemowa)';
+      } catch (e) {
+        console.error('Failed to load model path', e);
+      }
+
       renderModelCategories();
       populateModelSelects();
     }, 50);
@@ -1179,6 +1207,40 @@ const OLLAMA_MODELS = {
         .filter(m => m.sizes.length > 0);
       if (filtered.length > 0) result[catId] = { ...cat, models: filtered };
     }
+
+    // Inject Local/Custom models (bypass VRAM filter)
+    if (typeof state !== 'undefined' && state.ollamaModels && state.ollamaModels.length > 0) {
+      const knownIds = new Set();
+      // Collect known IDs
+      for (const cat of Object.values(this.categories)) {
+        cat.models.forEach(m => knownIds.add(m.id));
+      }
+
+      const customModels = state.ollamaModels.filter(m => {
+        // Check if model matches any known ID (exact or base name)
+        return !Array.from(knownIds).some(id => m.name === id || m.name.startsWith(id + ':'));
+      });
+
+      if (customModels.length > 0) {
+        result['custom'] = {
+          name: '📂 Lokalne / Inne',
+          desc: 'Modele znalezione na dysku (spoza listy oficjalnej)',
+          models: customModels.map(m => {
+            const parts = m.name.split(':');
+            const base = parts[0];
+            const tag = parts[1] || 'latest';
+            return {
+              id: base,
+              name: m.name,
+              sizes: [tag],
+              tags: ['local'],
+              desc: 'Znaleziony lokalnie'
+            };
+          })
+        };
+      }
+    }
+
     return result;
   }
 };
@@ -2414,6 +2476,12 @@ async function checkOllama() {
 
     // Update model statuses
     updateModelStatuses();
+
+    // Refresh model lists (to show discovered local models)
+    if (state.currentStep === 1 || state.currentStep === 3) {
+      renderModelCategories();
+      populateModelSelects();
+    }
   } else {
     statusEl.innerHTML = `<span class="status-dot offline"></span> <span>Ollama: offline</span>`;
     addLog('error', `Ollama niedostępne: ${result.error} `);
@@ -3645,6 +3713,49 @@ window.runLatencyTest = runLatencyTest;
 window.loadLatencyCache = loadLatencyCache;
 window.runCostEfficiencyTest = runCostEfficiencyTest;
 window.loadCostEfficiencyCache = loadCostEfficiencyCache;
+
+// ==============================
+// Custom Model Path Logic
+// ==============================
+async function pickModelPath() {
+  try {
+    const path = await window.electronAPI.pickModelsPath();
+    if (path) {
+      document.getElementById('modelPathInput').value = path;
+    }
+  } catch (error) {
+    addLog('error', 'Błąd wyboru folderu: ' + error.message);
+  }
+}
+
+async function changeModelPath() {
+  const newPath = document.getElementById('modelPathInput').value;
+  const moveModels = document.getElementById('moveModelsCheck').checked;
+
+  if (!newPath || newPath === 'Domyślna (Systemowa)') {
+    addLog('warn', 'Wybierz folder docelowy');
+    return;
+  }
+
+  // eslint-disable-next-line no-restricted-globals
+  if (!confirm(`Czy na pewno chcesz zmienić folder modeli na:\n${newPath}\n\nOllama zostanie zrestartowana.`)) {
+    return;
+  }
+
+  addLog('info', 'Zmieniam lokalizację modeli... (to może chwilę potrwać)');
+  const result = await window.electronAPI.setModelsPath(newPath, moveModels);
+
+  if (result.success) {
+    addLog('success', 'Lokalizacja modeli zmieniona! Ollama zrestartowana.');
+    // Refresh connection
+    checkOllama();
+  } else {
+    addLog('error', 'Błąd zmiany lokalizacji: ' + result.error);
+  }
+}
+
+window.pickModelPath = pickModelPath;
+window.changeModelPath = changeModelPath;
 
 init();
 
