@@ -299,9 +299,14 @@ const stepTemplates = {
         Wybierz polecenie AI żeby wygenerować treść dla tej postaci
       </p>
       
-      <!-- Sekcja: Konfigurator Promptu -->
-      <div class="ai-section" style="background: var(--bg-panel); border: 2px solid var(--gold);">
-        <h4 class="ai-section-title" style="font-size: 14px;">🎛️ Konfigurator Promptu</h4>
+      <!-- Sekcja: Konfigurator Promptu - ZWIJANĄ -->
+      <details class="ai-section-collapsible" style="margin-bottom: 15px;">
+        <summary style="cursor: pointer; padding: 12px 15px; background: var(--bg-panel); border: 1px solid var(--gold-soft); border-radius: 8px; display: flex; align-items: center; gap: 8px; font-weight: 500; color: var(--gold-bright); list-style: none;">
+          <span style="transition: transform 0.2s;">▶</span>
+          <span>🎛️ Konfigurator Promptu</span>
+          <span style="font-size: 11px; color: var(--text-dim); margin-left: auto;">Konteksty, styl, fokus...</span>
+        </summary>
+        <div class="ai-section" style="background: var(--bg-panel); border: 1px solid var(--gold-soft); border-top: none; border-radius: 0 0 8px 8px; margin-top: -1px;">
         
         <!-- Konteksty -->
         <div style="margin-bottom: 15px;">
@@ -412,10 +417,16 @@ const stepTemplates = {
           </div>
         </details>
       </div>
+      </details>
       
-      <!-- Sekcja: Konfiguracja AI (model i temperatura) -->
-      <div class="ai-section" style="background: var(--bg-panel); border: 1px solid var(--gold-soft);">
-        <h4 class="ai-section-title">⚙️ Model AI</h4>
+      <!-- Sekcja: Konfiguracja AI (model i temperatura) - ZWIJANA -->
+      <details class="ai-section-collapsible" style="margin-bottom: 15px;">
+        <summary style="cursor: pointer; padding: 12px 15px; background: var(--bg-panel); border: 1px solid var(--gold-soft); border-radius: 8px; display: flex; align-items: center; gap: 8px; font-weight: 500; color: var(--text-muted); list-style: none;">
+          <span style="transition: transform 0.2s;">▶</span>
+          <span>⚙️ Model AI</span>
+          <span style="font-size: 11px; color: var(--text-dim); margin-left: auto;">Model, temperatura...</span>
+        </summary>
+        <div class="ai-section" style="background: var(--bg-panel); border: 1px solid var(--gold-soft); border-top: none; border-radius: 0 0 8px 8px; margin-top: -1px;">
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
           <div class="form-group" style="margin: 0;">
@@ -531,74 +542,39 @@ const stepTemplates = {
           </div>
         </div>
       </div>
+      </details>
       
-      <!-- Sekcja: Ekstrakcja profilu -->
-      <div class="ai-section">
-        <h4 class="ai-section-title">📋 Ekstrakcja i analiza</h4>
-        <div class="ai-buttons">
-          <button class="ai-btn" onclick="runAI('extract_traits')" ${state.aiProcessing ? 'disabled' : ''}>
-            🔍 Wyciągnij cechy
-          </button>
-          <button class="ai-btn" onclick="runAI('analyze_relations')" ${state.aiProcessing ? 'disabled' : ''}>
-            👥 Analizuj relacje
-          </button>
-          <button class="ai-btn" onclick="runAI('summarize')" ${state.aiProcessing ? 'disabled' : ''}>
-            📝 Podsumuj w 3 zdaniach
-          </button>
+      <!-- Sekcja: Akcje AI - WSZYSTKIE W JEDNYM ROZWIJANYM PANELU -->
+      <details class="ai-section-collapsible" open style="margin-bottom: 15px;">
+        <summary style="cursor: pointer; padding: 12px 15px; background: var(--bg-panel); border: 1px solid var(--gold); border-radius: 8px; display: flex; align-items: center; gap: 8px; font-weight: 500; color: var(--gold-bright); list-style: none;">
+          <span style="transition: transform 0.2s;">▼</span>
+          <span>🎯 Akcje AI</span>
+          <span style="font-size: 11px; color: var(--text-dim); margin-left: auto;">Questy, analiza, pomysły...</span>
+        </summary>
+        <div style="padding: 15px; background: var(--bg-dark); border: 1px solid var(--gold); border-top: none; border-radius: 0 0 8px 8px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <!-- Questy -->
+            <button class="ai-btn" onclick="runAI('main_quest')" ${state.aiProcessing ? 'disabled' : ''}>⭐ Quest główny</button>
+            <button class="ai-btn" onclick="runAI('side_quest')" ${state.aiProcessing ? 'disabled' : ''}>📌 Quest poboczny</button>
+            <button class="ai-btn" onclick="runAI('redemption_quest')" ${state.aiProcessing ? 'disabled' : ''}>⚖️ Odkupienie</button>
+            <button class="ai-btn" onclick="runAI('group_quest')" ${state.aiProcessing ? 'disabled' : ''}>🤝 Grupowy</button>
+            <!-- Analiza -->
+            <button class="ai-btn" onclick="runAI('extract_traits')" ${state.aiProcessing ? 'disabled' : ''}>🔍 Cechy</button>
+            <button class="ai-btn" onclick="runAI('analyze_relations')" ${state.aiProcessing ? 'disabled' : ''}>👥 Relacje</button>
+            <button class="ai-btn" onclick="runAI('summarize')" ${state.aiProcessing ? 'disabled' : ''}>📝 Podsumuj</button>
+            <!-- Pomysły -->
+            <button class="ai-btn" onclick="runAI('story_hooks')" ${state.aiProcessing ? 'disabled' : ''}>🎣 Hooki</button>
+            <button class="ai-btn" onclick="runAI('potential_conflicts')" ${state.aiProcessing ? 'disabled' : ''}>⚔️ Konflikty</button>
+            <button class="ai-btn" onclick="runAI('npc_connections')" ${state.aiProcessing ? 'disabled' : ''}>🔗 NPC</button>
+            <!-- Szybkie -->
+            <button class="ai-btn" onclick="runAI('nickname')" ${state.aiProcessing ? 'disabled' : ''}>🏷️ Ksywka</button>
+            <button class="ai-btn" onclick="runAI('faction_suggestion')" ${state.aiProcessing ? 'disabled' : ''}>🏴 Frakcja</button>
+            <button class="ai-btn" onclick="runAI('secret')" ${state.aiProcessing ? 'disabled' : ''}>🤫 Sekret</button>
+          </div>
         </div>
-      </div>
+      </details>
       
-      <!-- Sekcja: Questy -->
-      <div class="ai-section">
-        <h4 class="ai-section-title">🎯 Generowanie questów</h4>
-        <div class="ai-buttons">
-          <button class="ai-btn" onclick="runAI('main_quest')" ${state.aiProcessing ? 'disabled' : ''}>
-            ⭐ Główny quest
-          </button>
-          <button class="ai-btn" onclick="runAI('side_quest')" ${state.aiProcessing ? 'disabled' : ''}>
-            📌 Quest poboczny
-          </button>
-          <button class="ai-btn" onclick="runAI('redemption_quest')" ${state.aiProcessing ? 'disabled' : ''}>
-            ⚖️ Quest odkupienia
-          </button>
-          <button class="ai-btn" onclick="runAI('group_quest')" ${state.aiProcessing ? 'disabled' : ''}>
-            🤝 Quest grupowy
-          </button>
-        </div>
-      </div>
-      
-      <!-- Sekcja: Pomysły dla MG -->
-      <div class="ai-section">
-        <h4 class="ai-section-title">💡 Pomysły i propozycje</h4>
-        <div class="ai-buttons">
-          <button class="ai-btn" onclick="runAI('story_hooks')" ${state.aiProcessing ? 'disabled' : ''}>
-            🎣 3 hooki fabularne
-          </button>
-          <button class="ai-btn" onclick="runAI('potential_conflicts')" ${state.aiProcessing ? 'disabled' : ''}>
-            ⚔️ Możliwe konflikty
-          </button>
-          <button class="ai-btn" onclick="runAI('npc_connections')" ${state.aiProcessing ? 'disabled' : ''}>
-            🔗 Powiązania z NPC
-          </button>
-        </div>
-      </div>
-      
-      <!-- Sekcja: Szybkie akcje -->
-      <div class="ai-section">
-        <h4 class="ai-section-title">⚡ Szybkie akcje</h4>
-        <div class="ai-buttons">
-          <button class="ai-btn" onclick="runAI('nickname')" ${state.aiProcessing ? 'disabled' : ''}>
-            🏷️ Wygeneruj ksywkę
-          </button>
-          <button class="ai-btn" onclick="runAI('faction_suggestion')" ${state.aiProcessing ? 'disabled' : ''}>
-            🏴 Zasugeruj frakcję
-          </button>
-          <button class="ai-btn" onclick="runAI('secret')" ${state.aiProcessing ? 'disabled' : ''}>
-            🤫 Wymyśl sekret
-          </button>
-        </div>
-      </div>
-      
+
       <!-- Feed wyników AI -->
       <div class="ai-results-feed" id="aiFeedContainer">
         ${state.aiResultsFeed && state.aiResultsFeed.length > 0 ?
@@ -2826,7 +2802,10 @@ async function init() {
       historyPanel.style.border = '1px solid var(--border)';
       historyPanel.style.background = 'var(--bg-dark)';
       historyPanel.innerHTML = `
-    <h3 class="card-title">📜 Historia Promptów</h3>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+      <h3 class="card-title" style="margin: 0;">📜 Historia Promptów</h3>
+      <button class="btn btn-sm" onclick="togglePromptHistory()" title="Zamknij" style="padding: 4px 10px; font-size: 16px;">✕</button>
+    </div>
     <div id="globalPromptHistoryContent" style="max-height: 500px; overflow-y: auto; padding-right: 5px;"></div>
   `;
 

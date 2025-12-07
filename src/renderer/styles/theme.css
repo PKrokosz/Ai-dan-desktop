@@ -1065,9 +1065,13 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 20px 30px;
   animation: slideUp 0.4s ease-out;
   transition: all 0.3s;
+  /* Center and limit width for readability */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ai-card-header {
@@ -1081,9 +1085,13 @@ body {
 
 .ai-card-content {
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-primary);
   white-space: pre-wrap;
+  /* Readable text width like ChatGPT */
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Glow Effect for new items */

@@ -192,9 +192,15 @@ class OllamaService {
                 prompt: prompt,
                 stream: false,
                 system: options.system,
+                context: [],  // RESET: Start with empty context - no memory from previous calls
+                keep_alive: 0,  // RESET: Immediately unload model after generation (forces clean state)
                 options: {
                     temperature: options.temperature || 0.7,
-                    num_ctx: options.maxTokens || 4096
+                    num_ctx: options.contextSize || 4096,  // Context window size
+                    num_predict: options.maxTokens || 1500,  // Max output tokens (was incorrectly using num_ctx)
+                    repeat_penalty: 1.1,  // Prevent repetitive gibberish
+                    top_k: 40,  // Limit token choices for more coherent output
+                    top_p: 0.9  // Nucleus sampling for quality
                 }
             });
 
