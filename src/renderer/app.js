@@ -32,12 +32,17 @@ const state = {
   aiProcessing: false,
   aiCommand: null,
   aiResult: null,
+  aiResultsFeed: [], // Feed of all AI results in current session
 
   // Operator / MG State
   mgProfiles: [],
   activeMgProfile: null,
   factionHistory: {},
   charHistory: {},
+  promptHistory: [],
+  showPromptHistory: false,
+  executionStatus: 'idle', // 'idle', 'running', 'paused'
+  executionQueue: [],
 
   // Prompt Configuration state
   promptParts: {
@@ -260,7 +265,18 @@ const stepTemplates = {
 
     <!-- Panel poleceń AI -->
     <div class="card" style="margin-top: 20px;">
-      <h3 class="card-title">🤖 Asystent AI dla Mistrza Gry</h3>
+      <h3 class="card-title" style="display: flex; justify-content: space-between; align-items: center;">
+        <span>🤖 Asystent AI dla Mistrza Gry</span>
+        <div style="display: flex; gap: 10px;">
+          ${state.executionStatus === 'idle' ?
+        `<button class="btn btn-sm btn-primary" onclick="runAllSequentially()" title="Uruchom wszystkie polecenia po kolei">▶ Wykonuj po kolei</button>` :
+        state.executionStatus === 'running' ?
+          `<button class="btn btn-sm btn-warning" onclick="togglePause()" title="Wstrzymaj wykonywanie">⏸ Wstrzymaj (${state.executionQueue.length})</button>` :
+          `<button class="btn btn-sm btn-success" onclick="togglePause()" title="Wznów wykonywanie">▶ Wznów (${state.executionQueue.length})</button>`
+      }
+          <button class="btn btn-sm btn-secondary" onclick="togglePromptHistory()">📜 Historia Promptów</button>
+        </div>
+      </h3>
       <p style="color: var(--text-dim); margin-bottom: 20px; font-size: 12px;">
         Wybierz polecenie AI żeby wygenerować treść dla tej postaci
       </p>
@@ -565,28 +581,35 @@ const stepTemplates = {
         </div>
       </div>
       
-      <!-- Panel wyników AI -->
-      <div class="ai-result-panel" id="aiResultPanel" style="margin-top: 25px; ${state.aiResult ? '' : 'display: none;'}">
-        <div class="ai-result-header">
-          <h4 style="margin: 0; color: var(--gold-soft);">📝 Wynik AI</h4>
-          <div class="ai-result-actions">
-            <button class="btn btn-sm" onclick="copyAIResult()" title="Kopiuj do schowka">📋 Kopiuj</button>
-            <button class="btn btn-sm btn-primary" onclick="saveAIResult()" title="Zapisz do profilu">💾 Zapisz</button>
-          </div>
-        </div>
-        <div class="ai-result-content" id="aiResultContent">
-          ${state.aiResult || ''}
-        </div>
+      <!-- Feed wyników AI -->
+      <div class="ai-results-feed" id="aiFeedContainer">
+        ${state.aiResultsFeed && state.aiResultsFeed.length > 0 ?
+        state.aiResultsFeed.map((item, index) => `
+            <div class="ai-card ${item.isNew ? 'new-result-glow' : ''}" id="ai-card-${index}">
+              <div class="ai-card-header">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                   <span style="font-size: 16px;">🤖</span>
+                   <strong style="color: var(--gold-bright); font-size: 14px;">AI: ${item.command}</strong>
+                   <span style="font-size: 11px; color: var(--text-dim); margin-left: 8px;">${new Date(item.timestamp).toLocaleTimeString()}</span>
+                </div>
+                <div class="ai-result-actions">
+                  <button class="btn btn-sm" onclick="copyToClipboard('${item.content.replace(/'/g, "\\'")}')" title="Kopiuj">📋</button>
+                  <button class="btn btn-sm btn-primary" onclick="saveSpecificResult(${index})" title="Zapisz ten wynik">💾 Zapisz</button>
+                </div>
+              </div>
+              <div class="ai-card-content">${item.content}</div>
+            </div>
+          `).join('')
+        : ''}
       </div>
-      
-      <!-- Loading indicator -->
+
+      <!-- Loading indicator (at the bottom) -->
       ${state.aiProcessing ? `
-      <div class="ai-loading" style="margin-top: 20px; text-align: center;">
+      <div class="ai-loading" id="aiLoadingIndicator" style="margin-top: 20px; text-align: center; padding: 20px;">
         <div class="spinner"></div>
         <p style="color: var(--gold-soft); margin-top: 10px;">⏳ AI przetwarza... (${state.aiCommand || ''})</p>
       </div>
       ` : ''}
-    </div>
     ` : `
     <div class="card">
       <h3 class="card-title">🤖 Asystent AI</h3>
@@ -1866,7 +1889,46 @@ async function runAI(commandType) {
 
     if (result.success) {
       state.aiResult = result.text || JSON.stringify(result.result, null, 2);
+
+      // Clear isNew flag for all previous items
+      state.aiResultsFeed.forEach(item => item.isNew = false);
+
+      // Push new result to feed
+      const newItemIndex = state.aiResultsFeed.length;
+      state.aiResultsFeed.push({
+        id: newItemIndex,
+        command: commandLabels[commandType] || commandType,
+        content: state.aiResult,
+        model: selectedModel,
+        timestamp: new Date(),
+        isNew: true // Mark for glow animation
+      });
+
+      // Save history
+      state.promptHistory.push({
+        type: 'standard',
+        command: commandLabels[commandType] || commandType,
+        model: selectedModel,
+        prompt: result.prompt,
+        response: state.aiResult,
+        timestamp: new Date()
+      });
+
       addLog('success', `✓ AI: ${commandLabels[commandType]} zakończone`);
+
+      // Refresh history if visible
+      if (state.showPromptHistory) {
+        renderPromptHistory();
+      }
+
+      // After render, auto-scroll to new card
+      setTimeout(() => {
+        const newCard = document.getElementById(`ai-card-${newItemIndex}`);
+        if (newCard) {
+          newCard.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+      }, 100);
+
     } else {
       state.aiResult = `❌ Błąd: ${result.error}`;
       addLog('error', `AI błąd: ${result.error}`);
@@ -1950,7 +2012,24 @@ async function runCustomPrompt() {
 
     if (result.success) {
       state.aiResult = result.text || JSON.stringify(result.result, null, 2);
+
+      // Save history
+      state.promptHistory.push({
+        type: 'custom',
+        command: 'Własny prompt',
+        model: selectedModel,
+        prompt: result.prompt,
+        response: state.aiResult,
+        timestamp: new Date()
+      });
+
       addLog('success', '✓ Własny prompt wykonany');
+
+      // Refresh history if visible
+      // Refresh history if visible
+      if (state.showPromptHistory) {
+        renderPromptHistory();
+      }
     } else {
       state.aiResult = `❌ Błąd: ${result.error}`;
       addLog('error', `AI błąd: ${result.error}`);
@@ -1965,6 +2044,92 @@ async function runCustomPrompt() {
   renderStep();
 }
 
+
+
+
+function syncHistoryPanelVisibility() {
+  const panel = document.getElementById('globalPromptHistoryPanel');
+  if (panel) {
+    // Force flex if showPromptHistory is true (matches CSS)
+    panel.style.display = state.showPromptHistory ? 'flex' : 'none';
+    if (state.showPromptHistory) {
+      renderPromptHistory();
+    }
+  }
+}
+
+async function runAllSequentially() {
+  if (state.aiProcessing) {
+    addLog('warn', 'AI jest zajęte...');
+    return;
+  }
+
+  // Open history panel to show progress
+  state.showPromptHistory = true;
+  syncHistoryPanelVisibility(); // NOW we actually show the panel
+
+  // Initialize Queue
+  state.executionQueue = [
+    'extract_traits', 'analyze_relations', 'summarize',
+    'main_quest', 'side_quest', 'redemption_quest', 'group_quest',
+    'story_hooks', 'potential_conflicts', 'npc_connections',
+    'nickname', 'faction_suggestion', 'secret'
+  ];
+  state.executionStatus = 'running';
+
+  addLog('info', `🚀 Rozpoczynam sekwencyjne wykonywanie ${state.executionQueue.length} poleceń...`);
+  renderStep();
+
+  await processQueue();
+}
+
+
+async function processQueue() {
+  while (state.executionQueue.length > 0 && state.executionStatus === 'running') {
+    // Safety check navigation
+    if (state.currentStep !== 3) {
+      state.executionStatus = 'idle';
+      state.executionQueue = [];
+      break;
+    }
+
+    // Get next command
+    const cmd = state.executionQueue.shift();
+    renderStep(); // Update counter in button
+
+    await runAI(cmd);
+
+    // Check if paused during execution
+    if (state.executionStatus === 'paused') {
+      addLog('info', '⏸ Wstrzymano wykonywanie kolejki.');
+      break;
+    }
+
+    // Small delay
+    await new Promise(r => setTimeout(r, 500));
+  }
+
+  if (state.executionQueue.length === 0) {
+    state.executionStatus = 'idle';
+    addLog('success', '🏁 Zakończono sekwencyjne wykonywanie poleceń!');
+  }
+
+  renderStep();
+}
+
+function togglePause() {
+  if (state.executionStatus === 'running') {
+    state.executionStatus = 'paused';
+    renderStep();
+  } else if (state.executionStatus === 'paused') {
+    state.executionStatus = 'running';
+    addLog('info', '▶ Wznawiam wykonywanie kolejki...');
+    renderStep();
+    processQueue();
+  }
+}
+
+
 function copyAIResult() {
   if (!state.aiResult) return;
 
@@ -1973,6 +2138,39 @@ function copyAIResult() {
   }).catch(err => {
     addLog('error', `Błąd kopiowania: ${err.message}`);
   });
+}
+
+// Helper function for copying specific content to clipboard
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    addLog('success', '📋 Skopiowano do schowka');
+  }).catch(err => {
+    addLog('error', `Błąd kopiowania: ${err.message}`);
+  });
+}
+
+// Helper function for saving a specific result from the feed
+function saveSpecificResult(index) {
+  const item = state.aiResultsFeed[index];
+  if (!item) return;
+
+  // Initialize profile if not exists
+  if (!state.profile) {
+    state.profile = {};
+  }
+
+  // Append AI result to profile
+  if (!state.profile.aiGeneratedContent) {
+    state.profile.aiGeneratedContent = [];
+  }
+
+  state.profile.aiGeneratedContent.push({
+    timestamp: item.timestamp.toISOString(),
+    command: item.command,
+    content: item.content
+  });
+
+  addLog('success', `💾 Zapisano wynik "${item.command}" do profilu`);
 }
 
 function saveAIResult() {
@@ -1995,6 +2193,59 @@ function saveAIResult() {
 
   addLog('success', '💾 Zapisano do profilu');
 }
+
+
+
+
+function togglePromptHistory() {
+  state.showPromptHistory = !state.showPromptHistory;
+  syncHistoryPanelVisibility();
+}
+
+
+function renderPromptHistory() {
+  if (!state.showPromptHistory) return;
+
+  const container = document.getElementById('globalPromptHistoryContent');
+  if (!container) return;
+
+  if (!state.promptHistory || state.promptHistory.length === 0) {
+    container.innerHTML = '<p style="color: var(--text-dim); font-size: 13px; text-align: center; padding: 20px;">Brak historii. Wykonaj polecenie AI.</p>';
+    return;
+  }
+
+  container.innerHTML = state.promptHistory.map((item, index) => {
+    // Show request and response
+    const date = new Date(item.timestamp).toLocaleTimeString();
+
+    // Check if collapsed (default collapsed except last)
+    const isExpanded = index === state.promptHistory.length - 1;
+
+    return `
+      <div class="history-item" style="margin-bottom: 15px; border-bottom: 1px dashed var(--border-subtle); padding-bottom: 15px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px;">
+           <span style="color: var(--gold-soft); font-weight: bold; font-size: 13px;">${item.command}</span>
+           <span style="color: var(--text-dim); font-size: 11px;">${date} (${item.model})</span>
+        </div>
+        
+        <details ${isExpanded ? 'open' : ''}>
+          <summary style="cursor: pointer; font-size: 12px; color: var(--text-muted); margin-bottom: 5px;">Pokaż szczegóły</summary>
+          
+          <div style="background: rgba(0,0,0,0.2); padding: 8px; border-radius: 4px; margin-bottom: 5px;">
+             <strong style="font-size: 11px; color: var(--text-dim);">PROMPT:</strong>
+             <pre style="white-space: pre-wrap; font-size: 11px; color: var(--text-muted); margin: 5px 0 0 0; max-height: 100px; overflow-y: auto;">${item.prompt.replace(/</g, '&lt;')}</pre>
+          </div>
+          
+          <div>
+             <strong style="font-size: 11px; color: var(--text-dim);">RESPONSE:</strong>
+             <div style="font-size: 13px; color: var(--text-primary); margin-top: 5px; white-space: pre-wrap;">${item.response.replace(/</g, '&lt;')}</div>
+          </div>
+        </details>
+      </div>
+    `;
+  }).join('');
+}
+
 
 // ==============================
 // Prompt Templates System
@@ -2365,10 +2616,30 @@ async function processAI() {
       el.querySelector('.lane-status').textContent = 'Przetwarzam...';
     }
 
-    addLog('info', `[${i + 1}/${lanes.length}]Przetwarzam: ${lane} `);
-    setProgress(Math.round((i / lanes.length) * 100), `Analizuję: ${lane} `);
+    addLog('info', `[${i + 1}/${lanes.length}]Przetwarzam: ${lane}`);
+    setProgress(Math.round((i / lanes.length) * 100), `Analizuję: ${lane}`);
 
-    await window.electronAPI.processLane(lane, state.sheetData?.rows[state.selectedRow]);
+    const result = await window.electronAPI.processLane(lane, state.sheetData?.rows[state.selectedRow]);
+
+    if (result.success) {
+      if (!state.laneResults) state.laneResults = [];
+      state.laneResults.push(result);
+
+      // Save extraction history
+      state.promptHistory.push({
+        type: 'extraction',
+        command: `Ekstrakcja: ${lane}`,
+        model: 'extraction',
+        prompt: result.prompt,
+        response: typeof result.result === 'object' ? JSON.stringify(result.result, null, 2) : result.result,
+        timestamp: new Date()
+      });
+
+      // Refresh history if visible
+      if (state.showPromptHistory) {
+        renderPromptHistory();
+      }
+    }
 
     if (el) {
       el.classList.remove('processing');
@@ -2478,6 +2749,25 @@ async function init() {
     const namesResult = await window.electronAPI.getAllCharacterNames();
     if (namesResult.success) {
       state.allCharacterNames = namesResult.names;
+      // Create persistent History Panel
+      const historyPanel = document.createElement('div');
+      historyPanel.id = 'globalPromptHistoryPanel';
+      historyPanel.className = 'card';
+      historyPanel.style.display = 'none';
+      historyPanel.style.marginTop = '20px';
+      historyPanel.style.border = '1px solid var(--border)';
+      historyPanel.style.background = 'var(--bg-dark)';
+      historyPanel.innerHTML = `
+    <h3 class="card-title">📜 Historia Promptów</h3>
+    <div id="globalPromptHistoryContent" style="max-height: 500px; overflow-y: auto; padding-right: 5px;"></div>
+  `;
+
+      // Insert after stepContent
+      const stepContent = document.getElementById('stepContent');
+      if (stepContent && stepContent.parentNode) {
+        stepContent.parentNode.insertBefore(historyPanel, stepContent.nextSibling);
+      }
+
       addLog('info', `Załadowano ${state.allCharacterNames.length} imion do linkowania.`);
     }
   } catch (e) {
@@ -3228,6 +3518,8 @@ window.runCustomPrompt = runCustomPrompt;
 window.updatePromptPart = updatePromptPart;
 window.copyAIResult = copyAIResult;
 window.saveAIResult = saveAIResult;
+window.copyToClipboard = copyToClipboard;
+window.saveSpecificResult = saveSpecificResult;
 window.runExcelSearch = runExcelSearch;
 
 async function runExcelSearch() {

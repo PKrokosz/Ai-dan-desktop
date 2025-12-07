@@ -98,7 +98,7 @@ ipcMain.handle('process-lane', async (event, lane, data) => {
 
             if (result.success) {
                 sendLog(event, 'success', `Ścieżka ${lane} przetworzona`);
-                return { success: true, lane, result: result.result };
+                return { success: true, lane, result: result.result, prompt: result.prompt };
             } else {
                 sendLog(event, 'warn', `Błąd AI dla ${lane}: ${result.error}`);
                 return { success: false, lane, error: result.error };
@@ -235,7 +235,8 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
 
                 if (result.success) {
                     sendLog(event, 'success', 'Własny prompt wykonany');
-                    return { success: true, text: result.text };
+                    // Return prompt for history tracking
+                    return { success: true, text: result.text, prompt: options.customPrompt };
                 } else {
                     return { success: false, error: result.error };
                 }
@@ -307,7 +308,8 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
 
             if (result.success) {
                 sendLog(event, 'success', `AI: ${commandType} zakończone`);
-                return { success: true, text: result.text };
+                // Return prompt for history tracking
+                return { success: true, text: result.text, prompt: prompt };
             } else {
                 return { success: false, error: result.error };
             }
