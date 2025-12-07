@@ -404,7 +404,9 @@ class OllamaService {
         }
 
         const prompt = buildPrompt.call(this, characterData, worldContext);
-        return this.generateJSON(prompt, options);
+        const result = await this.generateJSON(prompt, options);
+        result.prompt = prompt; // Attach prompt for debugging/history
+        return result;
     }
 
     // =====================================

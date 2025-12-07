@@ -122,6 +122,17 @@
         </div>
       </div>
     </aside>
+
+    <!-- Global Prompt History Panel (Added via Fix) -->
+    <div id="globalPromptHistoryPanel" style="display: none;">
+      <div class="history-header">
+        <span>📜 Historia Promptów</span>
+        <button class="btn-icon" onclick="togglePromptHistory()">✕</button>
+      </div>
+      <div id="globalPromptHistoryContent" class="history-content">
+        <!-- History items injected here -->
+      </div>
+    </div>
   </div>
 
   <script src="testbench-history.js"></script>
