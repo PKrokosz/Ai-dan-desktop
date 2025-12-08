@@ -4480,6 +4480,11 @@ window.runCustomPrompt = async function () {
       thinkStartTime: 0
     };
 
+    // Clear input immediately for user feedback
+    updatePromptPart('dod', '');
+    const inputEl = document.getElementById('mainPromptInput');
+    if (inputEl) inputEl.value = '';
+
     renderStep(); // Render initial placeholder + user message
 
     const result = await window.electronAPI.aiCommand(
@@ -4537,16 +4542,14 @@ window.runCustomPrompt = async function () {
   } catch (e) {
     state.aiResult = `❌ Błąd: ${e.message} `;
     addLog('error', `Błąd: ${e.message} `);
+    // Only reset on error - streaming success is handled by handleAIStreamChunk()
+    state.aiProcessing = false;
+    state.aiCommand = null;
+    renderStep();
   }
-
-  state.aiProcessing = false;
-  state.aiCommand = null;
-  // Clear input after success
-  updatePromptPart('dod', '');
-  const el = document.getElementById('mainPromptInput');
-  if (el) el.value = '';
-
-  renderStep();
+  // NOTE: Do NOT reset state.aiProcessing here!
+  // Streaming responses are handled by handleAIStreamChunk() which sets
+  // state.aiProcessing = false and calls renderStep() when stream completes.
 };
 
 window.copyToClipboard = function (text) {
