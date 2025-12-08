@@ -1,0 +1,71 @@
+{
+  "id": "conv-1765210392100-mf9rvw",
+  "profileName": "Lengar",
+  "stage": "DISCOVERY",
+  "createdAt": "2025-12-08T16:13:12.100Z",
+  "lastModified": 1765210701744,
+  "version": 19,
+  "questionsAsked": 5,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765210392101
+    },
+    {
+      "role": "ai",
+      "content": "Cześć! Witam ponownie. Czy Lengar Strażnik jest przygotowany na obroty z inny straże lub obcy osoby?\n\nPotwierdzam, że zrozumiałeś cele, motyw, ton i ograniczenia opisane w kontekście.",
+      "timestamp": 1765210405838
+    },
+    {
+      "role": "user",
+      "content": "Chce questa",
+      "timestamp": 1765210423016
+    },
+    {
+      "role": "ai",
+      "content": "Czy Lengar Strażnik ma na myśli konkretne zadanie lub sytuację, w której chce się z kimś obrócić? Przykład: z kim ma przeprowadzić rozmowę, czy to będzie sprawozdanie, sprawdzian itp.?",
+      "timestamp": 1765210435199
+    },
+    {
+      "role": "user",
+      "content": "sprwadzian",
+      "timestamp": 1765210489737
+    },
+    {
+      "role": "ai",
+      "content": "AI: Czy chodzi o to, że Lengar Strażnik ma przeprowadzić sprawdzian z innym strażnikiem lub osobą z zewnątrz? Tak/nie\n\nPotwierdź, co zrozumiałeś.",
+      "timestamp": 1765210547235
+    },
+    {
+      "role": "user",
+      "content": "z innym straznikiem",
+      "timestamp": 1765210585307
+    },
+    {
+      "role": "ai",
+      "content": "AI: Tak/nie, chodzi o to, że Lengar Strażnik ma przeprowadzić sprawdzian z innym strażnikiem z tego samego zameku?\n\nPotwierdź, co zrozumiałeś.",
+      "timestamp": 1765210614478
+    },
+    {
+      "role": "user",
+      "content": "tak",
+      "timestamp": 1765210680763
+    },
+    {
+      "role": "ai",
+      "content": "AI: Tak/nie, chodzi o to, że Lengar Strażnik ma przeprowadzić sprawdzian z innym strażnikiem z tego samego zamku?",
+      "timestamp": 1765210701744
+    }
+  ],
+  "recipe": {
+    "goal": {
+      "type": "NEEDS_GOAL",
+      "confidence": 0.3
+    },
+    "context_slots": {},
+    "constraints": {},
+    "currentTopic": "Witam"
+  },
+  "referenced_profiles": []
+}

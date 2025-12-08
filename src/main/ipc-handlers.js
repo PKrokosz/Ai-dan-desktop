@@ -1275,3 +1275,64 @@ ipcMain.handle('ollama:set-models-path', async (event, { newPath, moveModels }) 
         }
     });
 });
+
+// ==========================================
+// CONVERSATION FLOW HANDLERS  
+// Two-Phase AI: Discovery → Generation
+// ==========================================
+
+const conversationFlow = require('../services/conversation-flow');
+
+// Process user message through conversation flow
+ipcMain.handle('conv-flow:process', async (event, profileName, message, profileData) => {
+    return runWithTrace(async () => {
+        logger.info('Conversation Flow: Processing message', { profileName, messageLen: message?.length });
+
+        try {
+            // Get or create conversation for this profile
+            const convId = conversationFlow.getOrCreateConversation(profileName);
+
+            // Process through state machine
+            const result = await conversationFlow.processUserMessage(
+                convId,
+                message,
+                ollamaService,
+                profileData
+            );
+
+            // Send update to renderer
+            if (event?.sender && !event.sender.isDestroyed()) {
+                event.sender.send('conv-flow-update', {
+                    convId,
+                    stage: conversationFlow.getState(convId)?.stage,
+                    questionsAsked: conversationFlow.getState(convId)?.questionsAsked,
+                    ...result
+                });
+            }
+
+            return { success: true, convId, ...result };
+        } catch (error) {
+            logger.error('Conversation Flow error:', error);
+            return { success: false, error: error.message };
+        }
+    });
+});
+
+// Get conversation state
+ipcMain.handle('conv-flow:get-state', async (event, convId) => {
+    const state = conversationFlow.getState(convId);
+    return { success: true, state };
+});
+
+// Reset conversation
+ipcMain.handle('conv-flow:reset', async (event, convId) => {
+    conversationFlow.reset(convId);
+    logger.info('Conversation Flow: Reset', { convId });
+    return { success: true };
+});
+
+// Get recipe from conversation
+ipcMain.handle('conv-flow:get-recipe', async (event, convId) => {
+    const recipe = conversationFlow.getRecipe(convId);
+    return { success: true, recipe };
+});

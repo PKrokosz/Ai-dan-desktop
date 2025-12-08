@@ -1,0 +1,16 @@
+{
+  "id": "session-1765206846127",
+  "profileName": "Taner ",
+  "startTime": 1765206846127,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765206846128
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

@@ -63,6 +63,15 @@ contextBridge.exposeInMainWorld('electronAPI', {
         ipcRenderer.on('ai-status', (event, data) => callback(data));
     },
 
+    // Conversation Flow (Two-Phase AI)
+    convFlowProcess: (profileName, message, profileData) => ipcRenderer.invoke('conv-flow:process', profileName, message, profileData),
+    convFlowGetState: (convId) => ipcRenderer.invoke('conv-flow:get-state', convId),
+    convFlowReset: (convId) => ipcRenderer.invoke('conv-flow:reset', convId),
+    convFlowGetRecipe: (convId) => ipcRenderer.invoke('conv-flow:get-recipe', convId),
+    onConvFlowUpdate: (callback) => {
+        ipcRenderer.on('conv-flow-update', (event, data) => callback(data));
+    },
+
     // File operations
     saveOutput: (filename, content) => ipcRenderer.invoke('save-output', filename, content),
     openOutputFolder: () => ipcRenderer.invoke('open-output-folder'),
