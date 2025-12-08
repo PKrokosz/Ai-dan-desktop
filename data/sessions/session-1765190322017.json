@@ -1,0 +1,16 @@
+{
+  "id": "session-1765190322017",
+  "profileName": "Bofi",
+  "startTime": 1765190322017,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Co mozesz?",
+      "timestamp": 1765190322019
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

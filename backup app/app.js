@@ -707,149 +707,35 @@ const stepTemplates = {
   testbench: () => getTestbenchTemplate()
 };
 
-// Update card style for thinking (GPT-style)
+// Update card style for thinking
 const thinkingStyle = document.createElement('style');
 thinkingStyle.textContent = `
-  /* GPT-style collapsed thinking */
-  .thinking-collapsed {
-      margin: 12px 0;
-      border: none;
+  .thinking-block {
+      background: rgba(0,0,0,0.2);
+      border-left: 2px solid var(--gold-soft);
+      margin: 10px 0;
+      border-radius: 4px;
+      overflow: hidden;
   }
-  .thinking-summary {
-      cursor: pointer;
-      color: #9ca3af;
-      font-size: 13px;
-      padding: 4px 0;
-      list-style: none;
+  .thinking-header {
+      padding: 6px 10px;
+      font-size: 11px;
+      color: var(--gold-soft);
+      background: rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(255,215,0,0.1);
+      display: flex;
+      justify-content: space-between;
   }
-  .thinking-summary::-webkit-details-marker {
-      display: none;
-  }
-  .thinking-details {
-      padding: 12px;
-      margin-top: 8px;
-      background: rgba(255, 255, 255, 0.03);
-      border-left: 2px solid #4b5563;
-      color: #9ca3af;
+  .thinking-content {
+      padding: 10px;
+      color: var(--text-dim);
       font-size: 12px;
       font-style: italic;
+      font-family: monospace;
       white-space: pre-wrap;
-  }
-  
-  /* Live thinking indicator */
-  .thinking-live {
-      color: #fbbf24;
-      font-size: 13px;
-      padding: 8px 0;
-      animation: pulse 1.5s ease-in-out infinite;
-  }
-  
-  @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
   }
 `;
 document.head.appendChild(thinkingStyle);
-
-// Add message animation styles
-const messageAnimStyle = document.createElement('style');
-messageAnimStyle.textContent = `
-  @keyframes fadeSlideIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  }
-  .chat-message {
-    animation: fadeSlideIn 0.3s ease-out;
-  }
-  
-  /* Edge Navigation Arrow */
-  .edge-nav-arrow {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background: linear-gradient(90deg, transparent, rgba(180,130,50,0.5));
-    padding: 30px 10px 30px 30px;
-    cursor: pointer;
-    border-radius: 8px 0 0 8px;
-    opacity: 0.3;
-    transition: all 0.2s;
-    font-size: 24px;
-    color: var(--gold-bright);
-    z-index: 1000;
-  }
-  .edge-nav-arrow:hover {
-    opacity: 1;
-    background: linear-gradient(90deg, transparent, rgba(180,130,50,0.8));
-    padding-right: 15px;
-  }
-  
-  /* Tool Toggle - fix overlap */
-  .log-toggle-mini {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 32px;
-    height: 32px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.2s;
-    z-index: 2000; /* Higher than input bar */
-    font-size: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  }
-  .log-toggle-mini:hover { opacity: 1; border-color: var(--gold); }
-  
-  /* Standardize Send Button */
-  #btnRunAI {
-      background-color: var(--gold-dark);
-      border: 1px solid var(--gold);
-      color: var(--text-primary);
-      transition: all 0.2s ease;
-      opacity: 1 !important; /* Force opacity consistency */
-  }
-  #btnRunAI:hover {
-      background-color: var(--gold);
-      box-shadow: 0 0 10px rgba(180, 130, 50, 0.3);
-  }
-  #btnRunAI:active {
-      transform: scale(0.95);
-  }
-
-  /* Layout Spacing */
-  .chat-spacer {
-    height: 150px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-dim);
-    opacity: 0.3;
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-  .chat-spacer::before { content: '•••'; }
-  
-  /* Scroll Aware Input Bar */
-  .ai-input-bar {
-      transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  /* Keep visible if already visible (handled by JS class toggle) */
-`;
-document.head.appendChild(messageAnimStyle);
 
 // Add lane-item styles dynamically
 const laneStyles = document.createElement('style');
@@ -1151,48 +1037,9 @@ function renderStep() {
   const step = STEPS[state.currentStep - 1];
   document.getElementById('stepTitle').textContent = step.title;
 
-  // Ensure footer is visible unless on AI step (Step 3)
+  // Ensure footer is visible
   const footer = document.querySelector('.content-footer');
-  const logPanel = document.getElementById('logPanel');
-
-  // Clean up any existing edge arrow
-  const existingArrow = document.querySelector('.edge-nav-arrow');
-  if (existingArrow) existingArrow.remove();
-
-  if (state.currentStep === 3) {
-    if (footer) footer.style.display = 'none';
-    if (logPanel) logPanel.style.display = 'none'; // Default hide logs on chat step
-
-    // Add edge nav arrow
-    const arrow = document.createElement('div');
-    arrow.className = 'edge-nav-arrow';
-    arrow.innerHTML = '▶';
-    arrow.title = 'Przejdź dalej';
-    arrow.onclick = () => {
-      if (state.currentStep < state.totalSteps) {
-        state.currentStep++;
-        renderStep();
-      }
-    };
-    document.body.appendChild(arrow);
-
-    // Add small logs toggle
-    const logToggle = document.createElement('div');
-    logToggle.className = 'log-toggle-mini';
-    logToggle.innerHTML = '🔧';
-    logToggle.onclick = () => {
-      logPanel.style.display = logPanel.style.display === 'none' ? 'flex' : 'none';
-    };
-    document.body.appendChild(logToggle);
-
-  } else {
-    if (footer) footer.style.display = 'flex';
-    if (logPanel) logPanel.style.display = 'flex';
-
-    // Clean up toggles from other steps
-    const toggle = document.querySelector('.log-toggle-mini');
-    if (toggle) toggle.remove();
-  }
+  if (footer) footer.style.display = 'flex';
 
   const template = stepTemplates[step.key];
   document.getElementById('stepContent').innerHTML = template ? template() : '<p>Step not implemented</p>';
@@ -2181,8 +2028,7 @@ async function runAI(commandType) {
       setTimeout(() => {
         const newCard = document.getElementById(`ai-card-${newItemIndex}`);
         if (newCard) {
-          // Auto-scroll disabled for better UX
-          // newCard.scrollIntoView({ behavior: 'smooth', block: 'end' });
+          newCard.scrollIntoView({ behavior: 'smooth', block: 'end' });
         }
       }, 100);
 
@@ -4035,45 +3881,16 @@ function updateThinkingTimer(elapsed) {
 
 function updateStreamUI(index, fullContent, isThinking) {
   const contentEl = document.querySelector(`#ai-card-${index} .ai-card-content`);
+  const statusEl = document.querySelector(`#ai-card-${index} .stream-status`);
 
   if (contentEl) {
-    let displayHtml = fullContent;
-
-    // Check if thinking is complete (has closing tag)
-    const hasCompleteThink = /<think>[\s\S]*?<\/think>/.test(displayHtml);
-
-    if (hasCompleteThink) {
-      // Calculate thinking duration
-      const duration = state.streamData.thinkStartTime
-        ? Math.round((Date.now() - state.streamData.thinkStartTime) / 1000)
-        : 0;
-
-      // Replace complete <think>...</think> with collapsed GPT-style header
-      displayHtml = displayHtml.replace(
-        /<think>([\s\S]*?)<\/think>/g,
-        `<details class="thinking-collapsed"><summary class="thinking-summary">🧠 Myślał przez ${duration}s ›</summary><div class="thinking-details">$1</div></details>`
-      );
-    } else if (isThinking) {
-      // Still thinking - show live indicator and hide content
-      const elapsed = state.streamData.thinkStartTime
-        ? ((Date.now() - state.streamData.thinkStartTime) / 1000).toFixed(1)
-        : '0.0';
-
-      displayHtml = displayHtml.replace(
-        /<think>/g,
-        `<div class="thinking-live">🧠 Myślę... ${elapsed}s</div><!--think-start-->`
-      );
-      // Hide everything after think-start
-      const parts = displayHtml.split('<!--think-start-->');
-      if (parts.length > 1) {
-        displayHtml = parts[0] + '<div class="thinking-live">🧠 Myślę... ' + elapsed + 's</div>';
-      }
-    }
-
-    // Escape remaining HTML tags (not our components)
-    displayHtml = displayHtml
-      .replace(/<(?!(details|\/details|summary|\/summary|div|\/div|br|strong|\/strong))/g, '&lt;')
-      .replace(/(?<!(details|summary|div|br|strong))>/g, '&gt;');
+    // Simple formatter to handle <think> hiding/showing
+    // We replace <think> content with a UI block
+    let displayHtml = fullContent
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/&lt;think&gt;/g, '<div class="thinking-block"><div class="thinking-header">🧠 Myślę... <span id="thinking-timer">0.0s</span></div><div class="thinking-content">')
+      .replace(/&lt;\/think&gt;/g, '</div></div>');
 
     // Handle newlines
     displayHtml = displayHtml.replace(/\n/g, '<br>');
@@ -4082,6 +3899,10 @@ function updateStreamUI(index, fullContent, isThinking) {
     displayHtml = displayHtml.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
     contentEl.innerHTML = displayHtml;
+  }
+
+  if (statusEl) {
+    statusEl.textContent = isThinking ? '🧠 Myśli...' : '✍️ Pisze...';
   }
 }
 
@@ -4126,48 +3947,45 @@ const renderMinimalistAIPanel = () => {
 
   return `
     ${state.selectedRow !== null && state.sheetData?.rows?.[state.selectedRow] ? `
-    <!-- Karta wybranej postaci wrapper -->
-    <div style="max-width: 900px; margin: 0 auto; padding: 0 32px; width: 100%;">
-        ${renderProfileDetails(state.sheetData.rows[state.selectedRow])}
-        
-        <!-- Excel Search Panel (preserved) -->
-        <!-- Excel Search Panel (Compact) -->
-        <div class="card" style="margin-top: 20px; border-left: 2px solid var(--gold); padding: 12px 16px; background: rgba(0,0,0,0.2);">
-           <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
-               <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--gold-dim);">
-                    🔍 PRZESZUKIWANIE PODSUMOWAŃ (EXCEL)
-               </div>
-               <div style="flex: 1; display: flex; gap: 10px; align-items: center; justify-content: flex-end;">
-                  <button class="btn btn-sm btn-primary" onclick="runExcelSearch()" id="btnExcelSearch" style="padding: 4px 12px; font-size: 12px;">
-                    🔎 Szukaj wzmianek o "${state.sheetData.rows[state.selectedRow]['Imie postaci']}"
-                  </button>
-                  <span id="excelSearchStatus" style="font-size: 11px; color: var(--text-dim);"></span>
-               </div>
-           </div>
-           <div id="excelSearchResults" style="margin-top: 10px; display: none;"></div>
-        </div>
-    </div>
-
-    <!-- Breathing Space before Chat -->
-    <div class="chat-spacer"></div>
+    <!-- Karta wybranej postaci -->
+    ${renderProfileDetails(state.sheetData.rows[state.selectedRow])}
     
-    <!-- AI SECTION WRAPPER - Fixed height container with internal scroll -->
-    <div class="ai-workspace-wrapper" style="display: flex; flex-direction: column; height: calc(100vh - 120px); position: relative;">
+    <!-- Excel Search Panel (preserved) -->
+    <div class="card" style="margin-top: 20px; border-left: 4px solid var(--gold);">
+       <h3 class="card-title" style="display: flex; align-items: center; gap: 8px;">
+         🔍 Przeszukiwanie Podsumowań (Excel)
+       </h3>
+       <div style="display: flex; gap: 10px; align-items: center;">
+          <button class="btn btn-primary" onclick="runExcelSearch()" id="btnExcelSearch">
+            🔎 Szukaj wzmianek o "${state.sheetData.rows[state.selectedRow]['Imie postaci']}"
+          </button>
+          <span id="excelSearchStatus" style="font-size: 12px; color: var(--text-dim);"></span>
+       </div>
+       <div id="excelSearchResults" style="margin-top: 15px; display: none;"></div>
+    </div>
+    
+    <!-- AI SECTION WRAPPER (Fix sticky overlap) -->
+    <div class="ai-workspace-wrapper" style="position: relative; z-index: 5; margin-top: 20px;">
 
-        <!-- FEED WYNIKÓW (SCROLLABLE) -->
-        <div class="ai-results-feed" id="aiFeedContainer" style="flex: 1; overflow-y: auto; padding: 20px 0;">
+        <!-- FEED WYNIKÓW (SCROLLABLE, ABOVE INPUT BAR) -->
+        <div class="ai-results-feed" id="aiFeedContainer" style="padding-bottom: 150px; min-height: 400px; display: flex; flex-direction: column; justify-content: flex-end;">
             <!-- Centered Content Container (GPT-style) -->
             <div style="max-width: 900px; margin: 0 auto; padding: 0 32px; width: 100%;">
 
             <!-- Processing Status (dynamic) -->
-            <!-- Processing Status removed from top - moved to end of list -->
+            ${state.aiProcessing ? `
+            <div id="processingStatus" style="padding: 16px 0; color: var(--text-dim); font-size: 13px; display: flex; align-items: center; gap: 8px;">
+                <span class="spinner-small" style="width: 16px; height: 16px; border: 2px solid var(--gold-soft); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+                <span id="processingStatusText">${state.processingStatus || 'Przetwarzam...'}</span>
+            </div>
+            ` : ''}
 
             ${state.aiResultsFeed && state.aiResultsFeed.length > 0 ?
         state.aiResultsFeed.map((item, index) => `
                 ${item.type === 'user' ? `
-                <!-- USER MESSAGE: Right-aligned bubble, gold theme -->
+                <!-- USER MESSAGE: Right-aligned bubble -->
                 <div class="chat-message user-message" id="ai-card-${index}" style="display: flex; justify-content: flex-end; padding: 12px 0; margin: 8px 0;">
-                    <div style="background: linear-gradient(135deg, rgba(180, 130, 50, 0.3) 0%, rgba(140, 100, 40, 0.2) 100%); border: 1px solid rgba(200, 160, 60, 0.4); color: #e5e7eb; padding: 12px 16px; border-radius: 18px 18px 4px 18px; max-width: 70%; font-size: 14px; line-height: 1.5;">
+                    <div style="background: #2563eb; color: white; padding: 12px 16px; border-radius: 18px 18px 4px 18px; max-width: 70%; font-size: 14px; line-height: 1.5;">
                         ${item.content}
                     </div>
                 </div>
@@ -4184,30 +4002,24 @@ const renderMinimalistAIPanel = () => {
                     </div>
                     ` : ''}
                 </div>
-                </div>
                 `}`).join('')
         : `<div style="text-align: center; padding: 40px; color: var(--text-dim); opacity: 0.7;">
-                   <p style="font-size: 32px; margin-bottom: 10px;">💬</p>
-                   <p>Wybierz szybką akcję [+] lub wpisz polecenie...</p>
-             </div>`
-      }
+                 <p style="font-size: 32px; margin-bottom: 10px;">💬</p>
+                 <p>Wybierz szybką akcję [+] lub wpisz polecenie...</p>
+               </div>`}
 
-            <!-- Active Thinking Indicator at the End - GPT Style -->
+            <!-- Loading Indicator -->
             ${state.aiProcessing ? `
-            <div class="chat-message ai-message" style="padding: 12px 0; margin: 8px 0; opacity: 0.8;">
-                <div class="ai-card-content" style="color: var(--text-dim); font-size: 14px; display: flex; align-items: center; gap: 10px;">
-                     <span class="spinner-small" style="width: 14px; height: 14px; border: 2px solid var(--gold-dim); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite;"></span>
-                     <span>${state.processingStatus || 'Myślę...'}</span>
-                </div>
+            <div class="ai-loading" id="aiLoadingIndicator" style="margin: 20px 0; text-align: center;">
+              <div class="spinner"></div>
+              <p style="color: var(--gold-soft); margin-top: 10px; font-size: 12px;">Przetwarzanie... (${state.aiCommand || ''})</p>
             </div>
             ` : ''}
-
-            </div><!-- Close centered container -->
             </div><!-- Close centered container -->
         </div>
 
-        <!-- INPUT BAR - at bottom of flex container -->
-        <div class="ai-input-bar" id="aiInputBar" style="flex-shrink: 0; background: var(--bg-card); border-top: 1px solid var(--border-subtle); padding: 12px;">
+        <!-- STICKY INPUT BAR -->
+        <div class="ai-input-bar">
           <div class="ai-input-container">
             
             <!-- QUICK ACTIONS DROPDOWN [+] -->
@@ -4356,7 +4168,7 @@ const renderMinimalistAIPanel = () => {
       </button>
     </div>
     `}
-`;
+  `;
 };
 
 // ==========================================
@@ -4402,7 +4214,7 @@ window.runCustomPrompt = async function () {
 
   if (slashAction) {
     const [cmd, actionId] = slashAction;
-    addLog('info', `⚡ Wykryto skrót: ${cmd} -> ${actionId} `);
+    addLog('info', `⚡ Wykryto skrót: ${cmd} -> ${actionId}`);
 
     // Clear input
     updatePromptPart('dod', '');
@@ -4431,8 +4243,8 @@ window.runCustomPrompt = async function () {
     // Construct Structured System Prompt
     const persona = PERSONALITY_PROMPTS[state.selectedPersonality] || PERSONALITY_PROMPTS['default_mg'];
 
-    let systemPrompt = `### ROLA ###\n${persona.role} \n\n`;
-    systemPrompt += `### CEL ###\n${persona.goal} \n\n`;
+    let systemPrompt = `### ROLA ###\n${persona.role}\n\n`;
+    systemPrompt += `### CEL ###\n${persona.goal}\n\n`;
 
     systemPrompt += `### KONTEKST ###\n${persona.context || ''} `;
     if (contextConfig.geography) systemPrompt += "Używaj nazw geograficznych z Górniczej Doliny (Gothic 1). ";
@@ -4442,11 +4254,11 @@ window.runCustomPrompt = async function () {
     systemPrompt += "\n\n";
 
     if (persona.dod) {
-      systemPrompt += `### DEFINITION OF DONE(ZASADY) ###\n${persona.dod} \n\n`;
+      systemPrompt += `### DEFINITION OF DONE (ZASADY) ###\n${persona.dod}\n\n`;
     }
 
     if (persona.example) {
-      systemPrompt += `### PRZYKŁAD(ONE - SHOT) ###\n${persona.example} \n\n`;
+      systemPrompt += `### PRZYKŁAD (ONE-SHOT) ###\n${persona.example}\n\n`;
     }
 
     const modelName = state.selectedModel || (state.ollamaModels?.[0]?.name) || 'mistral:latest';
@@ -4499,14 +4311,13 @@ window.runCustomPrompt = async function () {
 
     // Scroll to placeholder
     setTimeout(() => {
-      const card = document.getElementById(`ai - card - ${newItemIndex} `);
-      // Auto-scroll disabled
-      // if (card) card.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      const card = document.getElementById(`ai-card-${newItemIndex}`);
+      if (card) card.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }, 100);
 
     /* Promise handling handled by stream events now, but we check for immediate error */
     if (!result.success && result.error) {
-      addLog('error', `Błąd startu AI: ${result.error} `);
+      addLog('error', `Błąd startu AI: ${result.error}`);
       state.aiProcessing = false;
       renderStep();
     }
@@ -4526,17 +4337,16 @@ window.runCustomPrompt = async function () {
     
           // Auto scroll
           setTimeout(() => {
-            const card = document.getElementById(`ai - card - ${ newItemIndex } `);
-            // Auto-scroll disabled
-            // if (card) card.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            const card = document.getElementById(`ai-card-${newItemIndex}`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'end' });
           }, 100);
         } else {
-          addLog('error', `Błąd AI: ${ result.error } `);
+          addLog('error', `Błąd AI: ${result.error}`);
         } 
     */
   } catch (e) {
-    state.aiResult = `❌ Błąd: ${e.message} `;
-    addLog('error', `Błąd: ${e.message} `);
+    state.aiResult = `❌ Błąd: ${e.message}`;
+    addLog('error', `Błąd: ${e.message}`);
   }
 
   state.aiProcessing = false;
@@ -4553,6 +4363,6 @@ window.copyToClipboard = function (text) {
   navigator.clipboard.writeText(text).then(() => {
     addLog('success', '📋 Skopiowano do schowka');
   }).catch(err => {
-    addLog('error', `Błąd kopiowania: ${err.message} `);
+    addLog('error', `Błąd kopiowania: ${err.message}`);
   });
 };

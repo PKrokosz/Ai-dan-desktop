@@ -56,6 +56,12 @@ contextBridge.exposeInMainWorld('electronAPI', {
 
     // AI Assistant
     aiCommand: (commandType, profile, options = {}) => ipcRenderer.invoke('ai-command', commandType, profile, options),
+    onAIStream: (callback) => {
+        ipcRenderer.on('ai-stream', (event, data) => callback(data));
+    },
+    onAIStatus: (callback) => {
+        ipcRenderer.on('ai-status', (event, data) => callback(data));
+    },
 
     // File operations
     saveOutput: (filename, content) => ipcRenderer.invoke('save-output', filename, content),

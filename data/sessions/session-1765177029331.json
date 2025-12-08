@@ -1,0 +1,14 @@
+{
+  "id": "session-1765177029331",
+  "profileName": "Avrelius",
+  "startTime": 1765177029331,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765177029332
+    }
+  ],
+  "entities": {},
+  "metadata": {}
+}

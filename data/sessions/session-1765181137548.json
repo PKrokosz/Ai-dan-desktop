@@ -1,0 +1,14 @@
+{
+  "id": "session-1765181137548",
+  "profileName": "Albert Konus",
+  "startTime": 1765181137548,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765181137549
+    }
+  ],
+  "entities": {},
+  "metadata": {}
+}

@@ -1,0 +1,26 @@
+{
+  "id": "session-1765189530765",
+  "profileName": "Borys",
+  "startTime": 1765189530765,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Opisz postać",
+      "timestamp": 1765189530768
+    },
+    {
+      "role": "user",
+      "content": "dsad",
+      "timestamp": 1765189752953
+    },
+    {
+      "role": "user",
+      "content": "tak",
+      "timestamp": 1765189772915
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

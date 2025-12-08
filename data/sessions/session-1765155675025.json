@@ -1,0 +1,34 @@
+{
+  "id": "session-1765155675025",
+  "profileName": "Kora",
+  "startTime": 1765155675025,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765155675026
+    },
+    {
+      "role": "user",
+      "content": "witam",
+      "timestamp": 1765155697243
+    },
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765155711027
+    },
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765155830393
+    },
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765155835560
+    }
+  ],
+  "entities": {},
+  "metadata": {}
+}

@@ -1,0 +1,36 @@
+{
+  "id": "session-1765183736700",
+  "profileName": "Baal Pruson",
+  "startTime": 1765183736700,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765183736701
+    },
+    {
+      "role": "user",
+      "content": "witam",
+      "timestamp": 1765183767359
+    },
+    {
+      "role": "user",
+      "content": "Daj propozycje sceny walki",
+      "timestamp": 1765183836076
+    },
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765183844437
+    },
+    {
+      "role": "user",
+      "content": "witam",
+      "timestamp": 1765184289504
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

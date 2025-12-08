@@ -1,0 +1,14 @@
+{
+  "id": "session-1765179318258",
+  "profileName": "Kora",
+  "startTime": 1765179318258,
+  "messages": [
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765179318260
+    }
+  ],
+  "entities": {},
+  "metadata": {}
+}

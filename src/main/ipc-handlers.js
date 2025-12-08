@@ -14,6 +14,10 @@ const dataExtraction = require('../modules/data-extraction');
 const profileMerge = require('../modules/profile-merge');
 const rendering = require('../modules/rendering');
 const ollamaService = require('../services/ollama');
+const vectorStore = require('../services/vector-store'); // Import Vector Store
+const sessionService = require('../services/session-service'); // Import Session Service
+const textCorrectorService = require('../services/text-corrector'); // Import Text Corrector
+const modelLimits = require('../services/model-limits');
 
 // Helper to send progress to renderer
 function sendProgress(event, step, progress, message) {
@@ -98,6 +102,18 @@ ipcMain.handle('process-lane', async (event, lane, data) => {
 
             if (result.success) {
                 sendLog(event, 'success', `Ścieżka ${lane} przetworzona`);
+
+                // --- RAG INDEXING ---
+                try {
+                    await vectorStore.addDocument(
+                        `Profile Extraction (${lane}):\n${result.result}`,
+                        { source: 'extraction', lane: lane, timestamp: Date.now() }
+                    );
+                } catch (e) {
+                    logger.warn('Failed to index lane result', { error: e.message });
+                }
+                // --------------------
+
                 return { success: true, lane, result: result.result, prompt: result.prompt };
             } else {
                 sendLog(event, 'warn', `Błąd AI dla ${lane}: ${result.error}`);
@@ -223,57 +239,74 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
         });
         sendLog(event, 'info', `AI: ${commandType}`);
 
-        // Handle custom prompt
-        if (commandType === 'custom' && options.customPrompt) {
-            try {
-                const result = await ollamaService.generateText(options.customPrompt, {
-                    model: options.model,
-                    temperature: options.temperature || 0.7,
-                    system: options.system, // Pass system prompt
-                    maxTokens: 2000
-                });
+        // --- SESSION MANAGEMENT ---
+        if (!sessionService.currentSession) {
+            sessionService.startnewSession(profile?.['Imie postaci'] || 'Unknown');
+        }
+        const userPrompt = options.customPrompt || `Command: ${commandType}`;
+        sessionService.addMessage('user', userPrompt);
+        // --------------------------
 
-                if (result.success) {
-                    sendLog(event, 'success', 'Własny prompt wykonany');
-                    // Return prompt for history tracking
-                    return { success: true, text: result.text, prompt: options.customPrompt };
-                } else {
-                    return { success: false, error: result.error };
-                }
-            } catch (error) {
-                logger.error('Custom prompt failed', { error: error.message });
-                return { success: false, error: error.message };
-            }
+        // Calculate smart limits based on model and preference
+        const responseLength = options.promptConfig?.responseLength || 'medium';
+        const limits = await modelLimits.calculateLimits(options.model, responseLength);
+
+        logger.info('Smart limits calculated', { model: options.model, limits });
+
+        // --- RAG & CONTEXT INTEGRATION ---
+        let contextInjection = "";
+
+        // 1. Get Session Context (Recent history + Entities)
+        const sessionContext = sessionService.getCurrentContext();
+        if (sessionContext) {
+            contextInjection += sessionContext;
         }
 
-        // Try to use new configurable prompt builder if config is provided
+        // 2. Get Vector Store Context (RAG)
+        // Note: sendStatus is defined later in try block, so we send log instead here
+        sendLog(event, 'info', 'Przeszukuję dokumenty...');
+        try {
+            // Determine search query: custom prompt or profile context
+            const query = options.customPrompt || `Postać: ${profile?.['Imie postaci']} ${profile?.['Gildia'] || ''}`;
+
+            // Search vector store
+            const relevantDocs = await vectorStore.search(query, 3);
+
+            if (relevantDocs.length > 0) {
+                logger.info(`Found ${relevantDocs.length} relevant docs for context.`);
+                contextInjection += "\n\n### WIEDZA DODATKOWA (RAG) ###\n" +
+                    relevantDocs.map(d => `- ${d.text} (Source: ${d.metadata.source || 'unknown'})`).join('\n');
+            }
+        } catch (e) {
+            logger.warn('RAG search failed', { error: e.message });
+        }
+
+        // Append context to system prompt if it exists
+        if (contextInjection) {
+            options.system = (options.system || "") + "\n" + contextInjection;
+        }
+        // -----------------------
+
+        // Determine Prompt
         let prompt;
-        if (options.promptConfig) {
+
+        if (commandType === 'custom') {
+            prompt = options.customPrompt;
+        } else if (options.promptConfig) {
             try {
                 const promptBuilder = require('../prompts/prompt-builder');
                 prompt = promptBuilder.buildPrompt(commandType, profile, options.promptConfig);
                 logger.info('Using configurable prompt builder', { commandType, style: options.promptConfig.style });
             } catch (err) {
                 logger.warn('Fallback to legacy prompts', { error: err.message });
-                // Fallback to legacy prompts
-                const prompts = {
-                    'summarize': buildSummarizePrompt(profile),
-                    'extract_traits': buildExtractTraitsPrompt(profile),
-                    'analyze_relations': buildRelationsPrompt(profile),
-                    'main_quest': buildMainQuestPrompt(profile),
-                    'side_quest': buildSideQuestPrompt(profile),
-                    'redemption_quest': buildRedemptionQuestPrompt(profile),
-                    'group_quest': buildGroupQuestPrompt(profile),
-                    'story_hooks': buildStoryHooksPrompt(profile),
-                    'potential_conflicts': buildConflictsPrompt(profile),
-                    'npc_connections': buildNpcConnectionsPrompt(profile),
-                    'nickname': buildNicknamePrompt(profile),
-                    'faction_suggestion': buildFactionPrompt(profile),
-                    'secret': buildSecretPrompt(profile)
-                };
-                prompt = prompts[commandType];
+                // Fallback will happen in the next else block if we set prompt to null, 
+                // but simpler to just duplicate the fallback logic or structure nicely.
+                // Let's just use the legacy map for fallback/default.
+                prompt = null;
             }
-        } else {
+        }
+
+        if (!prompt && commandType !== 'custom') {
             // Legacy mode - use old prompts
             const prompts = {
                 'summarize': buildSummarizePrompt(profile),
@@ -298,25 +331,135 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
         }
 
         try {
-            // Use text generation with selected model and temperature
-            const result = await ollamaService.generateText(prompt, {
-                model: options.model,
-                temperature: options.temperature || 0.7,
-                system: options.system, // Pass system prompt override if provided
-                maxTokens: 1500
-            });
+            // Check if streaming is requested (explicitly or default for 'chat' type commands in future)
+            const shouldStream = options.stream === true;
 
-            if (result.success) {
-                sendLog(event, 'success', `AI: ${commandType} zakończone`);
-                // Return prompt for history tracking
-                return { success: true, text: result.text, prompt: prompt };
+            // Helper to send status updates
+            const sendStatus = (status) => {
+                if (event?.sender && !event.sender.isDestroyed()) {
+                    event.sender.send('ai-status', { status });
+                }
+            };
+
+            if (shouldStream) {
+                sendStatus('Przygotowuję odpowiedź...');
+                sendLog(event, 'info', 'Inicjuję strumieniowanie...');
+
+                // Use streaming
+                const result = await ollamaService.generateText(prompt, {
+                    model: options.model,
+                    temperature: options.temperature || 0.7,
+                    system: options.system,
+                    num_predict: limits.num_predict,
+                    num_ctx: limits.num_ctx,
+                    timeout: limits.timeout,
+                    stream: true,
+                    onData: (chunk, isDone, stats) => {
+                        // Detect thinking mode and update status
+                        if (chunk && chunk.includes('<think>')) {
+                            sendStatus('Myślę...');
+                        } else if (chunk && chunk.includes('</think>')) {
+                            sendStatus('Generuję odpowiedź...');
+                        }
+                        // Send chunk to renderer
+                        if (event?.sender && !event.sender.isDestroyed()) {
+                            event.sender.send('ai-stream', {
+                                chunk,
+                                isDone,
+                                stats,
+                                commandType
+                            });
+                        }
+                    }
+                });
+
+                if (result.success) {
+                    sendLog(event, 'success', `AI: ${commandType} (Stream) zakończone`);
+
+                    // --- RAG INDEXING (STREAM) ---
+                    if (commandType === 'custom' || commandType === 'chat') {
+                        await vectorStore.addDocument(
+                            `Q: ${options.customPrompt || prompt}\nA: ${result.text}`,
+                            { source: 'user-interaction', type: 'chat', timestamp: Date.now() }
+                        );
+                    }
+                    // -----------------------------
+
+                    return { success: true, text: result.text, prompt: prompt, stats: result.stats };
+                } else {
+                    return { success: false, error: result.error };
+                }
+
             } else {
-                return { success: false, error: result.error };
+                // Use standard promise (non-streaming)
+                const result = await ollamaService.generateText(prompt, {
+                    model: options.model,
+                    temperature: options.temperature || 0.7,
+                    system: options.system,
+                    num_predict: limits.num_predict,
+                    num_ctx: limits.num_ctx,
+                    timeout: limits.timeout
+                });
+
+                if (result.success) {
+                    sendLog(event, 'success', `AI: ${commandType} zakończone`);
+                    return { success: true, text: result.text, prompt: prompt };
+                } else {
+                    return { success: false, error: result.error };
+                }
             }
         } catch (error) {
             logger.error('AI Command failed', { commandType, error: error.message });
+
+            // --- MODEL FALLBACK ---
+            // Try with a smaller/faster model if the original failed
+            const fallbackModels = ['gemma:2b', 'phi3:3.8b', 'orca-mini:3b'];
+            const currentModel = options.model || 'unknown';
+
+            // Don't fallback if we're already using a fallback model
+            if (!fallbackModels.includes(currentModel)) {
+                for (const fallbackModel of fallbackModels) {
+                    try {
+                        logger.info(`Attempting fallback to ${fallbackModel}...`);
+                        sendLog(event, 'warn', `Model ${currentModel} zawiódł. Próbuję ${fallbackModel}...`);
+
+                        const fallbackResult = await ollamaService.generateText(prompt, {
+                            model: fallbackModel,
+                            temperature: options.temperature || 0.7,
+                            system: options.system,
+                            num_predict: 1000, // Conservative limit for fallback
+                            num_ctx: 4096,
+                            timeout: 60000
+                        });
+
+                        if (fallbackResult.success) {
+                            logger.info(`Fallback to ${fallbackModel} succeeded`);
+                            sendLog(event, 'success', `Fallback ${fallbackModel} zakończony pomyślnie`);
+                            return {
+                                success: true,
+                                text: fallbackResult.text,
+                                prompt: prompt,
+                                fallbackModel: fallbackModel
+                            };
+                        }
+                    } catch (fallbackError) {
+                        logger.warn(`Fallback model ${fallbackModel} failed`, { error: fallbackError.message });
+                    }
+                }
+            }
+            // -----------------------
+
             return { success: false, error: error.message };
         }
+    });
+});
+
+// Text Correction Handler
+ipcMain.handle('ai:correct-text', async (event, text, options) => {
+    return runWithTrace(async () => {
+        logger.info('Text correction requested');
+        const corrected = await textCorrectorService.correctText(text, options);
+        return { success: true, text: corrected };
     });
 });
 

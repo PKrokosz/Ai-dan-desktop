@@ -1,0 +1,21 @@
+{
+  "id": "session-1765183338241",
+  "profileName": "Bobek",
+  "startTime": 1765183338241,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765183338243
+    },
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765183354705
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

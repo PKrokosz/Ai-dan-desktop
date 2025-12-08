@@ -1,0 +1,16 @@
+{
+  "id": "session-1765197892397",
+  "profileName": "Denton",
+  "startTime": 1765197892397,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765197892399
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

@@ -1,0 +1,19 @@
+{
+  "id": "session-1765179615389",
+  "profileName": "Arne",
+  "startTime": 1765179615389,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765179615394
+    },
+    {
+      "role": "user",
+      "content": "Co to za postać?",
+      "timestamp": 1765179649868
+    }
+  ],
+  "entities": {},
+  "metadata": {}
+}

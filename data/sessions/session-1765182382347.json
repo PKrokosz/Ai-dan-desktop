@@ -1,0 +1,26 @@
+{
+  "id": "session-1765182382347",
+  "profileName": "Pędzla",
+  "startTime": 1765182382347,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765182382348
+    },
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765182442456
+    },
+    {
+      "role": "user",
+      "content": "Command: extract_traits",
+      "timestamp": 1765182461170
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

@@ -1,0 +1,34 @@
+{
+  "id": "session-1765180730441",
+  "profileName": "Arik",
+  "startTime": 1765180730441,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765180730462
+    },
+    {
+      "role": "user",
+      "content": "hejka",
+      "timestamp": 1765180786806
+    },
+    {
+      "role": "user",
+      "content": "Rola",
+      "timestamp": 1765180801216
+    },
+    {
+      "role": "user",
+      "content": "witam",
+      "timestamp": 1765180835405
+    },
+    {
+      "role": "user",
+      "content": "fdsfsfsd",
+      "timestamp": 1765180863127
+    }
+  ],
+  "entities": {},
+  "metadata": {}
+}

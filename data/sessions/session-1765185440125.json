@@ -1,0 +1,31 @@
+{
+  "id": "session-1765185440125",
+  "profileName": "Agrest",
+  "startTime": 1765185440125,
+  "messages": [
+    {
+      "role": "user",
+      "content": "witam",
+      "timestamp": 1765185440131
+    },
+    {
+      "role": "user",
+      "content": "powiedz cos",
+      "timestamp": 1765185460165
+    },
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765185471539
+    },
+    {
+      "role": "user",
+      "content": "witam",
+      "timestamp": 1765185485353
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

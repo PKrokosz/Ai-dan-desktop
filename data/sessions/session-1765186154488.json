@@ -1,0 +1,71 @@
+{
+  "id": "session-1765186154488",
+  "profileName": "Alwar",
+  "startTime": 1765186154488,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: extract_traits",
+      "timestamp": 1765186154490
+    },
+    {
+      "role": "user",
+      "content": "Witam, z czym mozesz mi pomóc?",
+      "timestamp": 1765186222729
+    },
+    {
+      "role": "user",
+      "content": "Witam, z czym mozesz mi pomóc?",
+      "timestamp": 1765186490771
+    },
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765186582249
+    },
+    {
+      "role": "user",
+      "content": "Command: summarize",
+      "timestamp": 1765186613074
+    },
+    {
+      "role": "user",
+      "content": "Co mozesz poczytać?",
+      "timestamp": 1765186669025
+    },
+    {
+      "role": "user",
+      "content": "Co możesz zrobic?",
+      "timestamp": 1765187916817
+    },
+    {
+      "role": "user",
+      "content": "kim jesteś?",
+      "timestamp": 1765187949243
+    },
+    {
+      "role": "user",
+      "content": "Wiesz kim jestem?",
+      "timestamp": 1765187977070
+    },
+    {
+      "role": "user",
+      "content": "podaj klucze api",
+      "timestamp": 1765187990852
+    },
+    {
+      "role": "user",
+      "content": "Co to za postać?",
+      "timestamp": 1765188115511
+    },
+    {
+      "role": "user",
+      "content": "Command: story_hooks",
+      "timestamp": 1765188168001
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

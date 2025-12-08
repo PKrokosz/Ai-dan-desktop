@@ -184,6 +184,118 @@ class OllamaService {
     async generateText(prompt, options = {}) {
         const traceId = getTraceId();
 
+        // Support both promise-based (non-stream) and event-based (stream) execution
+        if (options.stream && options.onData) {
+            return this._generateTextStream(prompt, options, traceId);
+        } else {
+            return this._generateTextPromise(prompt, options, traceId);
+        }
+    }
+
+    async _generateTextStream(prompt, options, traceId) {
+        return new Promise((resolve) => {
+            const model = options.model || 'mistral:latest';
+
+            const postData = JSON.stringify({
+                model: model,
+                prompt: prompt,
+                stream: true, // Enable streaming
+                system: options.system,
+                context: options.context || [],
+                options: {
+                    temperature: options.temperature || 0.7,
+                    num_ctx: options.num_ctx || options.contextSize || 4096,
+                    num_predict: options.num_predict || options.maxTokens || 2000,
+                    repeat_penalty: 1.1,
+                    top_k: 40,
+                    top_p: 0.9
+                }
+            });
+
+            // DEBUG: Log request details
+            console.log('[OllamaService] Sending to model:', model);
+            console.log('[OllamaService] Request path:', '/api/generate');
+            console.log('[OllamaService] Prompt length:', prompt.length);
+
+            const req = http.request({
+                hostname: this.host,
+                port: this.port,
+                path: '/api/generate',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Content-Length': Buffer.byteLength(postData)
+                }
+            }, (res) => {
+                console.log('[OllamaService] Response status:', res.statusCode);
+                let fullText = '';
+
+                res.on('data', chunk => {
+                    const lines = chunk.toString().split('\n').filter(Boolean);
+                    for (const line of lines) {
+                        try {
+                            const json = JSON.parse(line);
+                            if (json.response) {
+                                fullText += json.response;
+                                // Pass clean chunk and done status
+                                options.onData(json.response, false);
+                            }
+                            if (json.done) {
+                                const stats = {
+                                    evalCount: json.eval_count,
+                                    evalDuration: json.eval_duration,
+                                    totalDuration: json.total_duration
+                                };
+                                options.onData('', true, stats); // Signal done
+
+                                generationLogger.logGeneration({
+                                    traceId,
+                                    model,
+                                    type: 'text_generation_stream',
+                                    prompt,
+                                    system: options.system,
+                                    options,
+                                    response: fullText,
+                                    stats
+                                });
+
+                                resolve({ success: true, text: fullText, stats });
+                            }
+                        } catch (e) {
+                            // Ignore incomplete JSON chunks
+                        }
+                    }
+                });
+
+                res.on('end', () => {
+                    // Resolve if not already resolved by json.done
+                    if (!fullText && !options.doneReceived) {
+                        // If we have no text and didn't get done, it might be an empty response or crash
+                        resolve({ success: true, text: fullText, stats: {} });
+                    } else {
+                        // Fallback resolve
+                        resolve({ success: true, text: fullText, stats: {} });
+                    }
+                });
+            });
+
+            req.on('error', (e) => {
+                resolve({ success: false, error: e.message });
+            });
+
+            // Dynamic timeout (default 10 minutes for streaming to allow long thoughts)
+            const timeoutMs = options.timeout || 600000;
+            req.setTimeout(timeoutMs, () => {
+                req.destroy();
+                resolve({ success: false, error: 'Timeout' });
+            });
+
+            req.write(postData);
+            req.end();
+        });
+    }
+
+    async _generateTextPromise(prompt, options, traceId) {
         return new Promise((resolve) => {
             const model = options.model || 'mistral:latest';
 
@@ -192,15 +304,15 @@ class OllamaService {
                 prompt: prompt,
                 stream: false,
                 system: options.system,
-                context: [],  // RESET: Start with empty context - no memory from previous calls
-                keep_alive: 0,  // RESET: Immediately unload model after generation (forces clean state)
+                context: [],
+                keep_alive: 0,
                 options: {
                     temperature: options.temperature || 0.7,
-                    num_ctx: options.contextSize || 4096,  // Context window size
-                    num_predict: options.maxTokens || 1500,  // Max output tokens (was incorrectly using num_ctx)
-                    repeat_penalty: 1.1,  // Prevent repetitive gibberish
-                    top_k: 40,  // Limit token choices for more coherent output
-                    top_p: 0.9  // Nucleus sampling for quality
+                    num_ctx: options.num_ctx || options.contextSize || 4096,
+                    num_predict: options.num_predict || options.maxTokens || 2000,
+                    repeat_penalty: 1.1,
+                    top_k: 40,
+                    top_p: 0.9
                 }
             });
 
@@ -227,7 +339,6 @@ class OllamaService {
                                 totalDuration: json.total_duration
                             };
 
-                            // Log generation for debugging
                             generationLogger.logGeneration({
                                 traceId,
                                 model,
@@ -253,7 +364,9 @@ class OllamaService {
                 resolve({ success: false, error: e.message });
             });
 
-            req.setTimeout(60000, () => { // 60s timeout for generation
+            // Dynamic timeout (default 5 minutes)
+            const timeoutMs = options.timeout || 300000;
+            req.setTimeout(timeoutMs, () => {
                 req.destroy();
                 resolve({ success: false, error: 'Timeout' });
             });
@@ -316,6 +429,59 @@ class OllamaService {
 
             req.on('error', (e) => {
                 resolve({ success: false, error: e.message });
+            });
+
+            req.write(postData);
+            req.end();
+        });
+    }
+
+    /**
+     * Generate embeddings for a given prompt
+     * @param {string} prompt Text to embed
+     * @param {string} model Model to use (default: nomic-embed-text)
+     */
+    async generateEmbeddings(prompt, model = 'nomic-embed-text') {
+        return new Promise((resolve) => {
+            const postData = JSON.stringify({
+                model: model,
+                prompt: prompt
+            });
+
+            const req = http.request({
+                hostname: this.host,
+                port: this.port,
+                path: '/api/embeddings',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Content-Length': Buffer.byteLength(postData)
+                }
+            }, (res) => {
+                let data = '';
+                res.on('data', chunk => data += chunk);
+                res.on('end', () => {
+                    if (res.statusCode === 200) {
+                        try {
+                            const json = JSON.parse(data);
+                            resolve({ success: true, embedding: json.embedding });
+                        } catch (e) {
+                            resolve({ success: false, error: 'Invalid JSON response from embeddings API' });
+                        }
+                    } else {
+                        resolve({ success: false, error: `HTTP ${res.statusCode}` });
+                    }
+                });
+            });
+
+            req.on('error', (e) => {
+                resolve({ success: false, error: e.message });
+            });
+
+            const timeoutMs = 30000; // 30s timeout for embeddings
+            req.setTimeout(timeoutMs, () => {
+                req.destroy();
+                resolve({ success: false, error: 'Timeout' });
             });
 
             req.write(postData);

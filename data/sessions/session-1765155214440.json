@@ -1,0 +1,24 @@
+{
+  "id": "session-1765155214440",
+  "profileName": "Sarniak",
+  "startTime": 1765155214440,
+  "messages": [
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765155214441
+    },
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765155268773
+    },
+    {
+      "role": "user",
+      "content": "Pomysl na fabule",
+      "timestamp": 1765155326264
+    }
+  ],
+  "entities": {},
+  "metadata": {}
+}

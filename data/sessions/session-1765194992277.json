@@ -1,0 +1,16 @@
+{
+  "id": "session-1765194992277",
+  "profileName": "Avrelius",
+  "startTime": 1765194992277,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Co możesz?",
+      "timestamp": 1765194992278
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

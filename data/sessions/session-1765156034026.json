@@ -1,0 +1,19 @@
+{
+  "id": "session-1765156034026",
+  "profileName": "Kolec",
+  "startTime": 1765156034026,
+  "messages": [
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765156034027
+    },
+    {
+      "role": "user",
+      "content": "witam",
+      "timestamp": 1765156065062
+    }
+  ],
+  "entities": {},
+  "metadata": {}
+}
