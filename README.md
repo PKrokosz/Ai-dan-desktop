@@ -106,10 +106,17 @@
 # 2. Uruchom Ollama
 ollama serve
 
-# 3. Pobierz zalecane modele
+# 3. Pobierz zalecane modele (wymagane)
 ollama pull phi4-mini
 ollama pull mistral
+
+# 4. Model embeddingowy (opcjonalny - dla wyszukiwania semantycznego)
+ollama pull nomic-embed-text
 ```
+
+> **💡 Uwaga o modelach embeddingowych:**  
+> Model `nomic-embed-text` jest **opcjonalny**. Bez niego aplikacja działa normalnie.  
+> Potrzebny tylko do zaawansowanego wyszukiwania podobnych treści (Vector Store).
 
 ### Dla deweloperów
 
