@@ -1,0 +1,31 @@
+{
+  "id": "session-1765207236152",
+  "profileName": "Baryła",
+  "startTime": 1765207236152,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: analyze_relations",
+      "timestamp": 1765207236154
+    },
+    {
+      "role": "user",
+      "content": "@aspiracje.Karak",
+      "timestamp": 1765207654639
+    },
+    {
+      "role": "user",
+      "content": "Command: extract_traits",
+      "timestamp": 1765208400507
+    },
+    {
+      "role": "user",
+      "content": "@gildia.Karak",
+      "timestamp": 1765208503054
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

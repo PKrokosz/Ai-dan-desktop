@@ -6,6 +6,8 @@ const os = require('os');
 const logger = require('../shared/logger');
 const { getTraceId } = require('../shared/tracing');
 const generationLogger = require('./generation-logger');
+const { getModelConfig, getRecommendedTemperature } = require('../shared/model-configs');
+
 
 class OllamaService {
     constructor() {
@@ -203,12 +205,12 @@ class OllamaService {
                 system: options.system,
                 context: options.context || [],
                 options: {
-                    temperature: options.temperature || 0.7,
-                    num_ctx: options.num_ctx || options.contextSize || 4096,
+                    temperature: options.temperature ?? getRecommendedTemperature(model, options.taskType || 'general'),
+                    num_ctx: options.num_ctx || options.contextSize || getModelConfig(model)?.recommendedParams?.num_ctx || 4096,
                     num_predict: options.num_predict || options.maxTokens || 2000,
-                    repeat_penalty: 1.1,
+                    repeat_penalty: getModelConfig(model)?.recommendedParams?.repeat_penalty || 1.1,
                     top_k: 40,
-                    top_p: 0.9
+                    top_p: getModelConfig(model)?.recommendedParams?.top_p || 0.9
                 }
             });
 
@@ -307,12 +309,12 @@ class OllamaService {
                 context: [],
                 keep_alive: 0,
                 options: {
-                    temperature: options.temperature || 0.7,
-                    num_ctx: options.num_ctx || options.contextSize || 4096,
+                    temperature: options.temperature ?? getRecommendedTemperature(model, options.taskType || 'general'),
+                    num_ctx: options.num_ctx || options.contextSize || getModelConfig(model)?.recommendedParams?.num_ctx || 4096,
                     num_predict: options.num_predict || options.maxTokens || 2000,
-                    repeat_penalty: 1.1,
+                    repeat_penalty: getModelConfig(model)?.recommendedParams?.repeat_penalty || 1.1,
                     top_k: 40,
-                    top_p: 0.9
+                    top_p: getModelConfig(model)?.recommendedParams?.top_p || 0.9
                 }
             });
 

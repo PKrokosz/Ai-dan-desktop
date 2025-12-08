@@ -1,0 +1,46 @@
+{
+  "id": "conv-1765210392100-mf9rvw",
+  "profileName": "Lengar",
+  "stage": "DISCOVERY",
+  "createdAt": "2025-12-08T16:13:12.100Z",
+  "lastModified": 1765210489737,
+  "version": 11,
+  "questionsAsked": 2,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765210392101
+    },
+    {
+      "role": "ai",
+      "content": "Cześć! Witam ponownie. Czy Lengar Strażnik jest przygotowany na obroty z inny straże lub obcy osoby?\n\nPotwierdzam, że zrozumiałeś cele, motyw, ton i ograniczenia opisane w kontekście.",
+      "timestamp": 1765210405838
+    },
+    {
+      "role": "user",
+      "content": "Chce questa",
+      "timestamp": 1765210423016
+    },
+    {
+      "role": "ai",
+      "content": "Czy Lengar Strażnik ma na myśli konkretne zadanie lub sytuację, w której chce się z kimś obrócić? Przykład: z kim ma przeprowadzić rozmowę, czy to będzie sprawozdanie, sprawdzian itp.?",
+      "timestamp": 1765210435199
+    },
+    {
+      "role": "user",
+      "content": "sprwadzian",
+      "timestamp": 1765210489737
+    }
+  ],
+  "recipe": {
+    "goal": {
+      "type": "NEEDS_GOAL",
+      "confidence": 0.3
+    },
+    "context_slots": {},
+    "constraints": {},
+    "currentTopic": "Witam"
+  },
+  "referenced_profiles": []
+}
