@@ -182,6 +182,7 @@ class LarpGothicService {
             'Discord': profile.discord || '',
             'Facebook': profile.fb || '',
             'Tags': tags, // Auto-generated tags for semantic search
+            'Edycja': profile.edition || '',
             // Raw data for AI processing
             '_raw': profile
         };

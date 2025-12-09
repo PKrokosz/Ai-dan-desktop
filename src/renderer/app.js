@@ -323,7 +323,7 @@ const stepTemplates = {
           <button class="btn btn-small ${state.sortBy === 'region' ? 'active' : ''}" onclick="sortData('region')">Region</button>
           <span style="color: var(--text-dim); font-size: 11px; margin-left: auto;">${state.sheetData.rows.length} postaci</span>
         </div>
-        <div style="max-height: 400px; overflow-y: auto;">
+        <div id="characterTableContainer" style="max-height: 400px; overflow-y: auto;">
         <table class="data-table">
           <thead>
             <tr>
@@ -1669,7 +1669,7 @@ async function preloadData() {
   try {
     const result = await window.electronAPI.fetchLarpGothic({});
     if (result.success) {
-      state.allProfiles = result.rows;
+      state.allProfiles = deduplicateProfiles(result.rows);
       addLog('success', `Pobrano ${result.rows.length} profili w tle.`);
       updateSearchStats();
       updateSuggestions();
@@ -2618,7 +2618,7 @@ function renderProfileDetails(row) {
         ${row['Znajomi, przyjaciele i wrogowie'] ? `
         <div>
           <h4 style="color: var(--gold-soft); font-size: 12px; margin-bottom: 8px; border-bottom: 1px solid var(--border-subtle);">👥 Znajomi i Wrogowie</h4>
-          <p style="color: var(--text-muted); font-size: 13px; line-height: 1.6;">${h(row['Znajomi, przyjaciele i wrogowie'])}</p>
+          <p style="color: var(--text-muted); font-size: 13px; line-height: 1.6;">${linkifyNames(row['Znajomi, przyjaciele i wrogowie'])}</p>
         </div>` : ''}
 
         ${row['Wina'] ? `
@@ -2791,7 +2791,7 @@ async function loadDataSource() {
   }
 
   if (result.success) {
-    state.sheetData = result;
+    state.sheetData = { ...result, rows: deduplicateProfiles(result.rows) };
     addLog('success', `Załadowano/przefiltrowano ${result.rows.length} wierszy`);
     setProgress(100, 'Dane gotowe');
 
@@ -2855,8 +2855,53 @@ function sortData(column) {
 }
 
 function selectRow(index) {
+  // Issue #7: Save scroll position to prevent list jump
+  const scrollContainer = document.getElementById('characterTableContainer');
+  const scrollTop = scrollContainer ? scrollContainer.scrollTop : 0;
+
+  // Issue #12: Save/Restore Character Session
+  // Save previous session if exists
+  if (state.selectedRow !== null && state.selectedRow !== index && state.sheetData?.rows) {
+    const oldChar = state.sheetData.rows[state.selectedRow];
+    if (oldChar) {
+      const oldId = oldChar.id || oldChar['Imie postaci'];
+      if (!state.characterSessions) state.characterSessions = {};
+
+      state.characterSessions[oldId] = {
+        feed: [...(state.aiResultsFeed || [])],
+        result: state.aiResult
+      };
+    }
+  }
+
+  // Switch selection
   state.selectedRow = index;
+
+  // Restore new session or clear
+  const newChar = state.sheetData.rows[index];
+  if (newChar) {
+    const newId = newChar.id || newChar['Imie postaci'];
+    if (!state.characterSessions) state.characterSessions = {};
+
+    const session = state.characterSessions[newId];
+    if (session) {
+      state.aiResultsFeed = [...session.feed];
+      state.aiResult = session.result;
+    } else {
+      // New session - clear previous context
+      state.aiResultsFeed = [];
+      state.aiResult = null;
+    }
+  }
+
   renderStep();
+
+  // Issue #7: Restore scroll position
+  const newScrollContainer = document.getElementById('characterTableContainer');
+  if (newScrollContainer) {
+    newScrollContainer.scrollTop = scrollTop;
+  }
+
   addLog('info', `Wybrano postać: ${state.sheetData.rows[index]['Imie postaci'] || 'bez nazwy'}`);
 }
 
@@ -4559,3 +4604,108 @@ window.copyToClipboard = function (text) {
     addLog('error', `Błąd kopiowania: ${err.message} `);
   });
 };
+
+// ==========================================
+// Issue Fixes Functions (#3, #5, #7, #12)
+// ==========================================
+
+function deduplicateProfiles(rows) {
+  if (!rows || rows.length === 0) return [];
+
+  // 1. Sort by ID descending (newest first) to prioritize latest entries
+  const sorted = [...rows].sort((a, b) => parseInt(b.id || 0) - parseInt(a.id || 0));
+
+  // 2. Group by Name (case-insensitive)
+  const byName = new Map();
+  sorted.forEach(row => {
+    const name = (row['Imie postaci'] || '').trim();
+    if (!name) return;
+
+    // Normalize name key
+    const key = name.toLowerCase();
+
+    if (!byName.has(key)) {
+      byName.set(key, { name: name, entries: [] });
+    }
+    byName.get(key).entries.push(row);
+  });
+
+  // 3. Process each character
+  const result = [];
+
+  for (const [key, data] of byName) {
+    const entries = data.entries;
+
+    // Group by edition (year)
+    const byEdition = new Map();
+    entries.forEach(entry => {
+      const edition = entry['Edycja'] || 'Nieznana';
+      if (!byEdition.has(edition)) {
+        byEdition.set(edition, entry);
+      }
+    });
+
+    // Get unique editions sorted descending
+    const editions = Array.from(byEdition.keys()).sort().reverse();
+
+    // Main profile is the one from the newest edition
+    const newestEdition = editions[0];
+    const mainProfile = { ...byEdition.get(newestEdition) };
+
+    // If we have history
+    if (editions.length > 0) {
+      const historyParts = [];
+      editions.forEach(ed => {
+        const p = byEdition.get(ed);
+        if (ed === 'Nieznana' && editions.length === 1) return;
+        historyParts.push(`${ed}: ${p['Gildia']}`);
+      });
+
+      if (historyParts.length > 0) {
+        if (editions.length > 1) {
+          mainProfile['Gildia'] = historyParts.join(' | ');
+        }
+        mainProfile['HistoriaEdycji'] = historyParts.join('\n');
+      }
+    }
+
+    result.push(mainProfile);
+  }
+
+  return result;
+}
+
+// Issue #3: Jump to character from text
+window.jumpToCharacter = function (name) {
+  if (!state.sheetData?.rows) return;
+
+  // Find character index (case insensitive)
+  const targetName = name.toLowerCase().trim();
+  const index = state.sheetData.rows.findIndex(p => (p['Imie postaci'] || '').toLowerCase().trim() === targetName);
+
+  if (index !== -1) {
+    selectRow(index);
+    // Scroll list to show selected
+    setTimeout(() => {
+      const row = document.querySelector(`tr[onclick="selectRow(${index})"]`);
+      if (row) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+    addLog('success', `Przeskoczono do: ${name}`);
+  } else {
+    addLog('warn', `Nie znaleziono postaci: ${name}`);
+  }
+};
+
+function linkifyNames(text) {
+  if (!text) return '';
+  if (text.length > 1000) return text;
+
+  // Matches capitalized names
+  return text.replace(/([A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+(?: [A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+)?)/g, (match) => {
+    const exists = state.allProfiles?.some(p => p['Imie postaci'] === match);
+    if (exists) {
+      return `<a href="#" onclick="event.preventDefault(); jumpToCharacter('${match}')" style="color: var(--gold-bright); text-decoration: none; border-bottom: 1px dotted var(--gold);">${match}</a>`;
+    }
+    return match;
+  });
+}
