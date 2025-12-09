@@ -99,6 +99,33 @@
 - [Ollama](https://ollama.com/) zainstalowana lokalnie
 - Minimum 8GB RAM (16GB+ zalecane dla większych modeli)
 
+### 👶 Instrukcja "Krok po Kroku" (Dla nietechnicznych / ELI5)
+
+Jeśli masz czystego Windowsa i nie wiesz od czego zacząć:
+
+1.  **Zainstaluj Node.js**
+    *   Wejdź na [nodejs.org](https://nodejs.org/)
+    *   Pobierz wersję **LTS** (Recommended for Most Users)
+    *   Zainstaluj (klikaj ciągle "Next" aż do końca)
+
+2.  **Zainstaluj Git** (opcjonalne, ale ułatwia życie)
+    *   Wejdź na [git-scm.com](https://git-scm.com/)
+    *   Pobierz i zainstaluj (zostaw wszystkie opcje domyślne)
+
+3.  **Zainstaluj AI (Ollama)**
+    *   Wejdź na [ollama.com](https://ollama.com/)
+    *   Pobierz i zainstaluj program
+    *   Po instalacji otwórz **Wiersz Polecenia** (wpisz `cmd` w menu Start)
+    *   Wpisz komendę: `ollama pull mistral` (to pobierze "mózg" dla bota, może to zająć kilka minut bo plik ma kilka GB)
+
+4.  **Uruchom Aplikację**
+    *   Pobierz ten projekt (na górze strony: zielony przycisk **Code** -> **Download ZIP**)
+    *   Rozpakuj pobrany plik ZIP
+    *   Wejdź do folderu z rozpakowanymi plikami
+    *   W pasku adresu folderu (na górze, tam gdzie ścieżka C:\...) wpisz `cmd` i wciśnij Enter - otworzy się czarre okno
+    *   Wpisz: `npm install` (zainstaluje potrzebne biblioteki, czekaj aż skończy)
+    *   Wpisz: `npm start` (uruchomi program!)
+
 ### Szybki start (Testerzy)
 
 ```bash
