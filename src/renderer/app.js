@@ -1222,6 +1222,12 @@ function renderStep() {
       document.getElementById('vramFilter')?.addEventListener('change', filterModelsByVram);
     }, 50);
   }
+
+  // Re-attach listeners for ChatUtils (Dropdowns)
+  if (window.ChatUtils) {
+    // Attempt attach immediately (for sync render)
+    window.ChatUtils.attachListeners();
+  }
 }
 
 function showSettings() {
@@ -2014,11 +2020,11 @@ function buildDynamicContext(profile, commandType) {
   // 1. Operator Style (Tone & Preferences)
   if (state.activeMgProfile) {
     const mg = state.activeMgProfile;
-    context.push(`--- GAME MASTER STYLE (${mg.name}) ---`);
-    if (mg.style_strengths) context.push(`STRENGTHS TO LEVERAGE: ${mg.style_strengths}`);
-    if (mg.style_weaknesses) context.push(`AREAS TO SUPPORT WITH AI: ${mg.style_weaknesses}`);
-    if (mg.preferences) context.push(`PREFERENCES: ${mg.preferences}`);
-    context.push('--- DIRECTIVE: Adapt the output to match the Game Master text style and preferences above ---');
+    context.push(`--- STYL MISTRZA GRY (${mg.name}) ---`);
+    if (mg.style_strengths) context.push(`MOCNE STRONY: ${mg.style_strengths}`);
+    if (mg.style_weaknesses) context.push(`OBSZARY DO WSPARCIA PRZEZ AI: ${mg.style_weaknesses}`);
+    if (mg.preferences) context.push(`PREFERENCJE: ${mg.preferences}`);
+    context.push('--- DYREKTYWA: Dopasuj output do powyższego stylu Mistrza Gry ---');
   }
 
   // 2. World Context (Lore, Weaknesses, Plots)
@@ -2029,14 +2035,14 @@ function buildDynamicContext(profile, commandType) {
     // "Czy wszystkie dokumenty są wykorzystywane odpowiednio? ... jak analziować słabosci"
     const weaknessCommands = ['extract_traits', 'potential_conflicts', 'story_hooks', 'secret', 'redemption_quest'];
     if (weaknessCommands.includes(commandType)) {
-      context.push('--- LORE CONTEXT: WEAKNESSES & THREATS ---');
+      context.push('--- KONTEKST LORE: SŁABOŚCI I ZAGROŻENIA ---');
       context.push(weaknesses); // Injects "Słabości i Zagrożenia..."
     }
 
     // B. Plot & Intrigue Context
     const plotCommands = ['main_quest', 'side_quest', 'group_quest', 'potential_conflicts'];
     if (plotCommands.includes(commandType)) {
-      context.push('--- LORE CONTEXT: PLOTS & INTRIGUES ---');
+      context.push('--- KONTEKST LORE: INTRYGI I SPISKI ---');
       context.push(plots); // Injects "Intrygi i Ambicje..."
     }
 
@@ -2046,14 +2052,14 @@ function buildDynamicContext(profile, commandType) {
       // Simple heuristic: if guild name is found in faction text, include relevant chunk?
       // For now, let's include the whole Faction System context if command is faction-related
       if (['faction_suggestion', 'main_quest', 'analyze_relations', 'potential_conflicts'].includes(commandType)) {
-        context.push('--- LORE CONTEXT: FACTIONS SYSTEM ---');
+        context.push('--- KONTEKST LORE: SYSTEM FRAKCJI ---');
         context.push(factions);
       }
     }
 
     // D. General World Context
     if (commandType === 'nickname' || commandType === 'story_hooks') {
-      context.push('--- LORE CONTEXT: WORLD & GEOGRAPHY ---');
+      context.push('--- KONTEKST LORE: ŚWIAT I GEOGRAFIA ---');
       context.push(world);
     }
   } else {
@@ -2064,7 +2070,7 @@ function buildDynamicContext(profile, commandType) {
         guild.toLowerCase().includes(k.replace('Fabuła ', '').toLowerCase())
       );
       if (relevantFactionKey && state.factionHistory[relevantFactionKey]?.length) {
-        context.push(`--- FACTION ROSTER (${relevantFactionKey}) ---`);
+        context.push(`--- SKŁAD FRAKCJI (${relevantFactionKey}) ---`);
         context.push(`(Contains list of ${state.factionHistory[relevantFactionKey].length} members)`);
       }
     }
@@ -2115,6 +2121,32 @@ async function runAI(commandType) {
   state.aiProcessing = true;
   state.aiCommand = commandLabels[commandType] || commandType;
   state.aiResult = null;
+
+  // Clear isNew flag for all previous items
+  state.aiResultsFeed.forEach(item => item.isNew = false);
+
+  // Push placeholder for streaming
+  const newItemIndex = state.aiResultsFeed.length;
+  state.aiResultsFeed.push({
+    id: newItemIndex,
+    itemType: 'ai',
+    command: commandLabels[commandType] || commandType,
+    content: '',
+    model: selectedModel,
+    timestamp: new Date(),
+    isNew: true,
+    isStreaming: true
+  });
+
+  // Initialize stream state
+  state.streamData = {
+    active: true,
+    cardIndex: newItemIndex,
+    content: '',
+    isThinking: false,
+    thinkStartTime: 0
+  };
+
   renderStep();
 
   try {
@@ -2122,10 +2154,10 @@ async function runAI(commandType) {
     const dynamicContext = buildDynamicContext(profile, commandType);
 
     const optimized = applyModelOptimization({
-      role: 'You are an expert Game Master assistant for Gothic RPG.',
-      context: `${'Gothic 1 setting, The Colony, dark fantasy atmosphere.'}\n\n${dynamicContext}`,
-      dod: 'Keep it consistent with Gothic lore.',
-      negative: '',
+      role: 'Jesteś doświadczonym Mistrzem Gry w świecie Gothic LARP. Znam Kolonię Karną od podszewki. Pomagam tworzyć angażujące wątki fabularne, ale potrafię też prowadzić luźną rozmowę w klimacie.',
+      context: `Świat gry to Górnicza Dolina z Gothic 1.\n\n${dynamicContext}`,
+      dod: 'Jeśli to ZADANIE (quest, analiza): Output musi być GRYWALNY i ustrukturyzowany (## [Typ], ### Kontekst...). Jeśli to ROZMOWA: Odpowiadaj krótko i w klimacie, bez zbędnych nagłówków. Używaj języka POLSKIEGO.',
+      negative: 'Nie używaj angielskich nazw. Nie moralizuj. Nie twórz postaci sprzecznych z lore.',
       examples: '',
       goal: commandLabels[commandType] || commandType,
       useCoT: false
@@ -2135,7 +2167,8 @@ async function runAI(commandType) {
       model: selectedModel,
       temperature: state.aiTemperature || 0.7,
       promptConfig: state.promptConfig, // Pass prompt configuration
-      system: optimized.system // Pass optimized system prompt
+      system: optimized.system, // Pass optimized system prompt
+      stream: true // Enable streaming
     };
 
     // Note: for standard commands we still depend on backend construction, 
@@ -2143,61 +2176,33 @@ async function runAI(commandType) {
 
     const result = await window.electronAPI.aiCommand(commandType, profile, options);
 
-    if (result.success) {
-      state.aiResult = result.text || JSON.stringify(result.result, null, 2);
-
-      // Clear isNew flag for all previous items
-      state.aiResultsFeed.forEach(item => item.isNew = false);
-
-      // Push new result to feed
-      const newItemIndex = state.aiResultsFeed.length;
-      state.aiResultsFeed.push({
-        id: newItemIndex,
-        command: commandLabels[commandType] || commandType,
-        content: state.aiResult,
-        model: selectedModel,
-        timestamp: new Date(),
-        isNew: true // Mark for glow animation
-      });
-
-      // Save history
-      state.promptHistory.push({
-        type: 'standard',
-        command: commandLabels[commandType] || commandType,
-        model: selectedModel,
-        prompt: result.prompt,
-        response: state.aiResult,
-        timestamp: new Date()
-      });
-
-      addLog('success', `✓ AI: ${commandLabels[commandType]} zakończone`);
-
-      // Refresh history if visible
-      if (state.showPromptHistory) {
-        renderPromptHistory();
-      }
-
-      // After render, auto-scroll to new card
-      setTimeout(() => {
-        const newCard = document.getElementById(`ai-card-${newItemIndex}`);
-        if (newCard) {
-          // Auto-scroll disabled for better UX
-          // newCard.scrollIntoView({ behavior: 'smooth', block: 'end' });
-        }
-      }, 100);
-
-    } else {
+    // Streaming success is handled by handleAIStreamChunk
+    // Check for immediate errors only
+    if (!result.success && result.error) {
       state.aiResult = `❌ Błąd: ${result.error}`;
       addLog('error', `AI błąd: ${result.error}`);
+      state.aiProcessing = false;
+      state.streamData.active = false;
+      state.streamData.cardIndex = -1;
+      renderStep();
     }
+    // Success case: streaming handler (handleAIStreamChunk) will:
+    // - Update state.aiResultsFeed[newItemIndex].content
+    // - Set isStreaming = false when done
+    // - Set state.aiProcessing = false
+    // - Call renderStep()
+
   } catch (error) {
     state.aiResult = `❌ Błąd połączenia: ${error.message}`;
     addLog('error', `AI błąd: ${error.message}`);
+    state.aiProcessing = false;
+    state.aiCommand = null;
+    state.streamData.active = false;
+    state.streamData.cardIndex = -1;
+    renderStep();
   }
-
-  state.aiProcessing = false;
-  state.aiCommand = null;
-  renderStep();
+  // NOTE: Do NOT reset state.aiProcessing or call renderStep() here!
+  // Streaming responses are handled by handleAIStreamChunk() which manages final state.
 }
 
 // Run custom prompt from user
@@ -2208,6 +2213,7 @@ function updatePromptPart(part, value) {
   }
 }
 
+// Run custom prompt from user
 // Run custom prompt from user
 async function runCustomPrompt() {
   if (state.aiProcessing) {
@@ -2250,55 +2256,97 @@ async function runCustomPrompt() {
     finalPrompt += `\n\nDANE POSTACI:\n${profileData}`;
   }
 
+  // Use ChatUtils to expand mentions (if loaded)
+  if (window.ChatUtils && profile) {
+    finalPrompt = window.ChatUtils.expandMentions(finalPrompt, profile);
+  }
+
   addLog('info', `🚀 Uruchomiam własny prompt (model: ${selectedModel})`);
 
   state.aiProcessing = true;
   state.aiCommand = 'Własny prompt';
-  state.aiResult = null;
+
+  // Clear isNew flag for all previous items
+  state.aiResultsFeed.forEach(item => item.isNew = false);
+
+  // Add User Message to Feed
+  state.aiResultsFeed.push({
+    id: Date.now(),
+    type: 'user',
+    content: parts.goal || 'Własne polecenie',
+    timestamp: new Date(),
+    isNew: true
+  });
+
+  // Add AI Placeholder to Feed
+  const newItemIndex = state.aiResultsFeed.length;
+  state.aiResultsFeed.push({
+    id: newItemIndex,
+    type: 'ai',
+    command: 'Własny prompt',
+    content: '',
+    model: selectedModel,
+    timestamp: new Date(),
+    isNew: true,
+    isStreaming: true
+  });
+
+  // Initialize stream state
+  state.streamData = {
+    active: true,
+    cardIndex: newItemIndex,
+    content: '',
+    isThinking: false,
+    thinkStartTime: 0
+  };
+
   renderStep();
 
   try {
+
+    // Build History Context
+    const historyContext = window.ChatUtils ? window.ChatUtils.getRecentChatHistory(state.aiResultsFeed) : '';
+
+    // Enhance System Prompt
+    const enhancedSystem = window.ChatUtils ? window.ChatUtils.enhanceSystemPrompt(optimized.system) : optimized.system;
+
+    // Combine for final User Prompt
+    // We prepend history to the USER prompt because 'system' is sometimes handled differently by models.
+    // Putting history in user prompt ensures the model "reads" it as part of the conversation flow.
+    const promptWithHistory = `${historyContext}\n\nAKTUALNE ZAPYTANIE:\n${finalPrompt}`;
+
     const options = {
       model: selectedModel,
       temperature: state.aiTemperature || 0.7,
-      customPrompt: finalPrompt,
-      system: optimized.system // Optimized system prompt
+      customPrompt: promptWithHistory,
+      system: enhancedSystem, // Natural & Goal-oriented instructions
+      stream: true // ENABLE STREAMING
     };
 
     const result = await window.electronAPI.aiCommand('custom', profile, options);
 
-    if (result.success) {
-      state.aiResult = result.text || JSON.stringify(result.result, null, 2);
-
-      // Save history
-      state.promptHistory.push({
-        type: 'custom',
-        command: 'Własny prompt',
-        model: selectedModel,
-        prompt: result.prompt,
-        response: state.aiResult,
-        timestamp: new Date()
-      });
-
-      addLog('success', '✓ Własny prompt wykonany');
-
-      // Refresh history if visible
-      // Refresh history if visible
-      if (state.showPromptHistory) {
-        renderPromptHistory();
-      }
-    } else {
-      state.aiResult = `❌ Błąd: ${result.error}`;
+    // Initial error check (before streaming starts)
+    if (!result.success && result.error) {
       addLog('error', `AI błąd: ${result.error}`);
+      state.aiResultsFeed[newItemIndex].content = `❌ Błąd: ${result.error}`;
+      state.aiResultsFeed[newItemIndex].isStreaming = false;
+      state.aiProcessing = false;
+      state.streamData.active = false;
+      renderStep();
     }
-  } catch (error) {
-    state.aiResult = `❌ Błąd połączenia: ${error.message}`;
-    addLog('error', `AI błąd: ${error.message}`);
-  }
 
-  state.aiProcessing = false;
-  state.aiCommand = null;
-  renderStep();
+    // Success flow is handled by handleAIStreamChunk
+
+  } catch (error) {
+    addLog('error', `AI błąd: ${error.message}`);
+    if (state.aiResultsFeed[newItemIndex]) {
+      state.aiResultsFeed[newItemIndex].content = `❌ Błąd połączenia: ${error.message}`;
+      state.aiResultsFeed[newItemIndex].isStreaming = false;
+    }
+    state.aiProcessing = false;
+    state.streamData.active = false;
+    renderStep();
+  }
 }
 
 
@@ -2388,10 +2436,17 @@ function togglePause() {
 
 
 function copyAIResult() {
-  if (!state.aiResult) return;
+  // Find last AI message in feed
+  const aiItems = state.aiResultsFeed.filter(i => i.type === 'ai');
+  const lastItem = aiItems[aiItems.length - 1];
 
-  navigator.clipboard.writeText(state.aiResult).then(() => {
-    addLog('success', '📋 Skopiowano do schowka');
+  if (!lastItem || !lastItem.content) {
+    addLog('warn', 'Brak treści do skopiowania');
+    return;
+  }
+
+  navigator.clipboard.writeText(lastItem.content).then(() => {
+    addLog('success', '📋 Skopiowano ostatnią odpowiedź');
   }).catch(err => {
     addLog('error', `Błąd kopiowania: ${err.message}`);
   });
@@ -4020,13 +4075,15 @@ if (window.electronAPI && window.electronAPI.onAIStatus) {
 }
 
 function handleAIStreamChunk(data) {
-  const { chunk, isDone, stats } = data;
+  const { chunk, isDone, stats, fullText } = data;
 
   // Safety check
   if (state.streamData.cardIndex === -1) return;
 
-  // Update raw content
-  if (!isDone && chunk) {
+  // Update content (append chunk OR replace with fullText)
+  if (fullText && fullText.length > 0) {
+    state.streamData.content = fullText;
+  } else if (!isDone && chunk) {
     state.streamData.content += chunk;
 
     // Check for <think> tags
@@ -4061,6 +4118,7 @@ function handleAIStreamChunk(data) {
     if (state.aiResultsFeed[state.streamData.cardIndex]) {
       state.aiResultsFeed[state.streamData.cardIndex].content = state.streamData.content;
       state.aiResultsFeed[state.streamData.cardIndex].isStreaming = false;
+      state.aiResultsFeed[state.streamData.cardIndex].isNew = false; // Prevent re-animation on next render
     }
 
     state.aiProcessing = false;
@@ -4116,18 +4174,51 @@ function updateStreamUI(index, fullContent, isThinking) {
     }
 
     // Escape remaining HTML tags (not our components)
-    displayHtml = displayHtml
-      .replace(/<(?!(details|\/details|summary|\/summary|div|\/div|br|strong|\/strong))/g, '&lt;')
-      .replace(/(?<!(details|summary|div|br|strong))>/g, '&gt;');
-
-    // Handle newlines
-    displayHtml = displayHtml.replace(/\n/g, '<br>');
-
-    // Bold markdown
-    displayHtml = displayHtml.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    // Use centralized basic markdown formatter
+    displayHtml = formatMarkdown(displayHtml);
 
     contentEl.innerHTML = displayHtml;
+
+    // Auto-scroll to bottom of feed
+    const feedContainer = document.getElementById('aiFeedContainer');
+    if (feedContainer) {
+      feedContainer.scrollTop = feedContainer.scrollHeight;
+    }
   }
+}
+
+// Basic Markdown Formatter (Regex-based)
+function formatMarkdown(text) {
+  if (!text) return '';
+
+  let html = text;
+
+  // Headers (### Header)
+  html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+  html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+
+  // Bold (**text**)
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+  // Italic (*text*)
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+  // Blockquotes (> text)
+  html = html.replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>');
+
+  // Code blocks (```code```)
+  html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+
+  // Unordered Lists (- item)
+  // Simple heuristic: replace start of line dashes
+  html = html.replace(/^- (.*$)/gim, '<ul><li>$1</li></ul>');
+  // Fix adjacent lists (</ul><ul>)
+  html = html.replace(/<\/ul>\s*<ul>/g, '');
+
+  // Line breaks (only if not already tags)
+  html = html.replace(/\n/g, '<br>');
+
+  return html;
 }
 
 // Initialize Operator Data
@@ -4218,17 +4309,16 @@ const renderMinimalistAIPanel = () => {
                 </div>
                 ` : `
                 <!-- AI MESSAGE: Plain text, no bubble, left-aligned -->
-                <div class="chat-message ai-message" id="ai-card-${index}" style="padding: 12px 0; margin: 8px 0;">
+                <div class="chat-message ai-message ${item.isNew ? 'chat-animate-in new-result-glow' : ''}" id="ai-card-${index}" style="padding: 12px 0; margin: 8px 0;">
                     <div class="ai-card-content" style="color: #e5e7eb; font-size: 15px; line-height: 1.7;">
-                        ${item.content || ''}
+                        ${item.isStreaming ? (item.content || '<span class="cursor-blink">|</span>') : formatMarkdown(item.content)}
                     </div>
                     ${!item.isStreaming ? `
-                    <div class="ai-message-actions" style="display: flex; gap: 8px; margin-top: 12px; opacity: 0; transition: opacity 0.2s;">
-                        <button class="btn btn-sm" onclick="copyToClipboard('${item.content.replace(/'/g, "\\'")}')">📋</button>
-                        <button class="btn btn-sm" onclick="saveSpecificResult(${index})">💾</button>
+                    <div class="ai-message-actions" style="display: flex; gap: 8px; margin-top: 12px; opacity: 0.7; transition: opacity 0.2s;">
+                        <button class="btn btn-sm" title="Kopiuj" onclick="copyToClipboard(decodeURIComponent('${encodeURIComponent(item.content)}'))">📋</button>
+                        <button class="btn btn-sm" title="Zapisz do profilu" onclick="saveSpecificResult(${index})">💾</button>
                     </div>
                     ` : ''}
-                </div>
                 </div>
                 `}`).join('')
         : `<div style="text-align: center; padding: 40px; color: var(--text-dim); opacity: 0.7;">
@@ -4429,173 +4519,7 @@ const SLASH_COMMANDS = {
 };
 
 // Override runCustomPrompt
-window.runCustomPrompt = async function () {
-  if (state.aiProcessing) {
-    addLog('warn', 'AI już przetwarza...');
-    return;
-  }
 
-  const promptText = (state.promptParts?.dod || '').trim();
-  if (!promptText) {
-    addLog('warn', 'Wpisz polecenie.');
-    return;
-  }
-
-  // Check Slash Command
-  const lower = promptText.toLowerCase();
-  const slashAction = Object.entries(SLASH_COMMANDS).find(([key]) => lower.startsWith(key));
-
-  if (slashAction) {
-    const [cmd, actionId] = slashAction;
-    addLog('info', `⚡ Wykryto skrót: ${cmd} -> ${actionId} `);
-
-    // Clear input
-    updatePromptPart('dod', '');
-    const el = document.getElementById('mainPromptInput');
-    if (el) el.value = '';
-
-    await runAI(actionId);
-    return;
-  }
-
-  // Normal Prompt Execution
-  const profile = state.sheetData?.rows?.[state.selectedRow];
-  if (!profile) {
-    addLog('error', 'Brak wybranej postaci.');
-    return;
-  }
-
-  state.aiProcessing = true;
-  state.aiCommand = "Własny prompt";
-  renderStep();
-
-  try {
-    // Prepare Context
-    const contextConfig = state.promptConfig?.contexts || {};
-
-    // Construct Structured System Prompt
-    const persona = PERSONALITY_PROMPTS[state.selectedPersonality] || PERSONALITY_PROMPTS['default_mg'];
-
-    let systemPrompt = `### ROLA ###\n${persona.role} \n\n`;
-    systemPrompt += `### CEL ###\n${persona.goal} \n\n`;
-
-    systemPrompt += `### KONTEKST ###\n${persona.context || ''} `;
-    if (contextConfig.geography) systemPrompt += "Używaj nazw geograficznych z Górniczej Doliny (Gothic 1). ";
-    if (contextConfig.system) systemPrompt += "Uwzględnij mechanikę i realia Starego, Nowego Obozu i Bractwa. ";
-    // Add context from profile metadata if available
-    if (profile['Gildia']) systemPrompt += ` Postać należy do gildii: ${profile['Gildia']}.`;
-    systemPrompt += "\n\n";
-
-    if (persona.dod) {
-      systemPrompt += `### DEFINITION OF DONE(ZASADY) ###\n${persona.dod} \n\n`;
-    }
-
-    if (persona.example) {
-      systemPrompt += `### PRZYKŁAD(ONE - SHOT) ###\n${persona.example} \n\n`;
-    }
-
-    const modelName = state.selectedModel || (state.ollamaModels?.[0]?.name) || 'mistral:latest';
-
-    // 1. Add User Message immediately
-    state.aiResultsFeed.forEach(item => item.isNew = false);
-    state.aiResultsFeed.push({
-      type: 'user',
-      content: promptText,
-      timestamp: new Date(),
-      isNew: true
-    });
-
-    // 2. Add AI Placeholder
-    const newItemIndex = state.aiResultsFeed.length;
-    state.aiResultsFeed.push({
-      itemType: 'ai',
-      command: 'Asystent',
-      content: '',
-      timestamp: new Date(),
-      isNew: true,
-      isStreaming: true
-    });
-
-    // Init Stream State
-    state.streamData = {
-      active: true,
-      cardIndex: newItemIndex,
-      content: '',
-      isThinking: false,
-      thinkStartTime: 0
-    };
-
-    // Clear input immediately for user feedback
-    updatePromptPart('dod', '');
-    const inputEl = document.getElementById('mainPromptInput');
-    if (inputEl) inputEl.value = '';
-
-    renderStep(); // Render initial placeholder + user message
-
-    const result = await window.electronAPI.aiCommand(
-      'custom',
-      profile,
-      {
-        customPrompt: promptText,
-        model: modelName,
-        system: systemPrompt,
-        promptConfig: { responseLength: 'medium' },
-        stream: true,
-        temperature: state.aiTemperature || 0.7
-      }
-    );
-
-    renderStep(); // Render initial placeholder
-
-    // Scroll to placeholder
-    setTimeout(() => {
-      const card = document.getElementById(`ai - card - ${newItemIndex} `);
-      // Auto-scroll disabled
-      // if (card) card.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }, 100);
-
-    /* Promise handling handled by stream events now, but we check for immediate error */
-    if (!result.success && result.error) {
-      addLog('error', `Błąd startu AI: ${result.error} `);
-      state.aiProcessing = false;
-      renderStep();
-    }
-    /* 
-        if (result.success) {
-          // Clear old new flags
-          state.aiResultsFeed.forEach(item => item.isNew = false);
-    
-          const newItemIndex = state.aiResultsFeed.length;
-          state.aiResultsFeed.push({
-            command: promptText,
-            content: result.text,
-            timestamp: new Date(),
-            isNew: true
-          });
-          addLog('success', '✓ Wygenerowano odpowiedź');
-    
-          // Auto scroll
-          setTimeout(() => {
-            const card = document.getElementById(`ai - card - ${ newItemIndex } `);
-            // Auto-scroll disabled
-            // if (card) card.scrollIntoView({ behavior: 'smooth', block: 'end' });
-          }, 100);
-        } else {
-          addLog('error', `Błąd AI: ${ result.error } `);
-        } 
-    */
-  } catch (e) {
-    state.aiResult = `❌ Błąd: ${e.message} `;
-    addLog('error', `Błąd: ${e.message} `);
-    // Only reset on error - streaming success is handled by handleAIStreamChunk()
-    state.aiProcessing = false;
-    state.aiCommand = null;
-    renderStep();
-  }
-  // NOTE: Do NOT reset state.aiProcessing here!
-  // Streaming responses are handled by handleAIStreamChunk() which sets
-  // state.aiProcessing = false and calls renderStep() when stream completes.
-};
 
 window.copyToClipboard = function (text) {
   navigator.clipboard.writeText(text).then(() => {

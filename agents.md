@@ -513,4 +513,36 @@ copyToClipboard() [4401-4407]     → Helper kopiowania
 
 ---
 
+## 🔧 ConfigHub - Centralna Konfiguracja
+
+**Nowy moduł (2025-12-10)**
+
+### Pliki:
+| Plik | Opis |
+|------|------|
+| `src/shared/config-hub.js` | Backend serwis (singleton), persystuje w `data/config.json` |
+| `src/main/ipc-handlers.js` | IPC handlers: `config:get`, `config:set`, `config:getAll`, `config:reset` |
+| `src/main/preload.js` | API: `configGet`, `configSet`, `configGetAll`, `configReset`, `configExport`, `configImport` |
+| `src/renderer/confighub-panel.js` | Panel GUI dostępny z sidebara |
+
+### Użycie w kodzie:
+```javascript
+// Backend (main process)
+const configHub = require('../shared/config-hub');
+const temp = configHub.get('generation.temperature', 0.7);
+
+// Frontend (renderer)
+const result = await window.electronAPI.configGetAll();
+await window.electronAPI.configSet('generation.temperature', 0.8);
+```
+
+### Sekcje konfiguracji:
+- `models` - domyślny model, fallback chain
+- `generation` - temperature, num_predict, num_ctx, top_p, top_k
+- `prompts` - język, konteksty, styl, few-shot
+- `timeouts` - bazowy timeout, mnożniki
+- `features` - feature flags (conversationFlow, RAG, streaming)
+
+---
+
 *Wygenerowano automatycznie przez Antigravity AI*
