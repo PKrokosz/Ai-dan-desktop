@@ -1,80 +1,66 @@
 /**
- * @module operator-functions
- * @description Funkcje Operatora/Mistrza Gry - profile MG, modal wyboru
- * ES6 Module - Faza 5 modularizacji
+ * @module operator-manager
+ * @description Manages Game Master (Operator) profiles and selection UI.
  */
 
-import { state } from './state.js';
-import { addLog } from './ui-helpers.js';
-
 // ==============================
-// MG Profile Management
+// Operator / Game Master Functions
 // ==============================
 
-/**
- * Load MG profiles from data store
- */
 export async function loadMgProfiles() {
+    if (!window.electronAPI) return;
+
     const result = await window.electronAPI.dataLoadMgProfiles();
     if (result.success) {
-        state.mgProfiles = result.profiles;
-
-        // Try to restore last used profile
+        window.state.mgProfiles = result.profiles;
+        // Try to restore last used profile or set default
         const savedId = localStorage.getItem('activeMgProfileId');
         if (savedId) {
-            const profile = state.mgProfiles.find(p => String(p.id) === String(savedId));
+            const profile = window.state.mgProfiles.find(p => String(p.id) === String(savedId));
             if (profile) setOperator(profile);
         }
 
-        // Load histories in background
+        // Also load histories in background
         window.electronAPI.dataLoadFactionHistory().then(r => {
-            if (r.success) state.factionHistory = r.history;
+            if (r.success) window.state.factionHistory = r.history;
         });
         window.electronAPI.dataLoadCharHistory().then(r => {
-            if (r.success) state.charHistory = r.history;
+            if (r.success) window.state.charHistory = r.history;
         });
         window.electronAPI.dataLoadWorldContext().then(r => {
-            if (r.success) state.worldContext = r.context;
+            if (r.success) window.state.worldContext = r.context;
         });
 
     } else {
-        addLog('error', 'Błąd ładowania profili MG: ' + result.error);
+        if (window.addLog) window.addLog('error', 'Błąd ładowania profili MG: ' + result.error);
     }
 }
 
-/**
- * Set active operator/MG profile
- * @param {Object} profile - MG profile object
- */
 export function setOperator(profile) {
-    state.activeMgProfile = profile;
+    if (!window.state) return;
+
+    window.state.activeMgProfile = profile;
     localStorage.setItem('activeMgProfileId', profile.id);
 
-    const widgetEl = document.getElementById('currentOperatorName');
-    if (widgetEl) widgetEl.textContent = profile.name;
+    const widthEl = document.getElementById('currentOperatorName');
+    if (widthEl) widthEl.textContent = profile.name;
 
-    addLog('info', `Zmieniono operatora na: ${profile.name}`);
+    if (window.addLog) window.addLog('info', `Zmieniono operatora na: ${profile.name}`);
 }
 
-// ==============================
-// Operator Modal
-// ==============================
-
-/**
- * Open operator selection modal
- */
 export function openOperatorModal() {
     const modalId = 'operatorModal';
     let modal = document.getElementById(modalId);
 
     if (!modal) {
+        // Create modal if not exists
         modal = document.createElement('div');
         modal.id = modalId;
         modal.className = 'modal-overlay';
         modal.style.cssText = `
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 2000;
-      backdrop-filter: blur(5px);
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 2000;
+        backdrop-filter: blur(5px);
     `;
         modal.innerHTML = `
       <div class="modal-window" style="width: 800px; max-width: 90vw; background: var(--bg-panel); border: 1px solid var(--gold); border-radius: 8px; display: flex; flex-direction: column; height: 600px;">
@@ -108,7 +94,7 @@ export function openOperatorModal() {
         modal.querySelector('#btnApplyOperator').onclick = () => {
             const selectedId = modal.dataset.selectedId;
             if (selectedId) {
-                const profile = state.mgProfiles.find(p => String(p.id) === String(selectedId));
+                const profile = window.state.mgProfiles.find(p => String(p.id) === String(selectedId));
                 if (profile) {
                     setOperator(profile);
                     modal.remove();
@@ -119,40 +105,40 @@ export function openOperatorModal() {
 
     // Render list
     const listEl = modal.querySelector('#mgProfileList');
-    listEl.innerHTML = state.mgProfiles.map(p => `
-    <div class="matrix-item ${state.activeMgProfile?.id === p.id ? 'active' : ''}" 
-         onclick="renderMgDetails('${p.id}', this)">
+    if (window.state && window.state.mgProfiles) {
+        listEl.innerHTML = window.state.mgProfiles.map(p => `
+    <div class="matrix-item ${window.state.activeMgProfile?.id === p.id ? 'active' : ''}" 
+         onclick="window.AppModules.renderMgDetails('${p.id}', this)">
       <div style="font-weight: 600;">${p.name}</div>
       <div style="font-size: 11px; color: var(--text-dim);">${p.role || 'MG'}</div>
     </div>
   `).join('');
+    }
 
     // Select current if exists
-    if (state.activeMgProfile) {
+    if (window.state && window.state.activeMgProfile) {
+        // Find the right item
         setTimeout(() => {
-            const currentEl = Array.from(listEl.children).find(el => el.textContent.includes(state.activeMgProfile.name));
+            const currentEl = Array.from(listEl.children).find(el => el.textContent.includes(window.state.activeMgProfile.name));
             if (currentEl) currentEl.click();
         }, 50);
     }
 }
 
-/**
- * Render MG profile details in modal
- * @param {string} id - Profile ID
- * @param {HTMLElement} itemEl - Selected item element
- */
 export function renderMgDetails(id, itemEl) {
+    // Update UI active state
     document.querySelectorAll('.matrix-item').forEach(el => el.classList.remove('active'));
     itemEl.classList.add('active');
 
     const modal = document.getElementById('operatorModal');
     modal.dataset.selectedId = id;
 
-    const profile = state.mgProfiles.find(p => String(p.id) === String(id));
+    const profile = window.state.mgProfiles.find(p => String(p.id) === String(id));
     const detailsEl = modal.querySelector('#mgProfileDetails');
 
     if (!profile) return;
 
+    // Helper for tags
     const renderTags = (text, cls) => {
         if (!text) return '<span style="color:var(--text-dim)">-</span>';
         return text.split(',').map(t => `<span class="tag ${cls}">${t.trim()}</span>`).join('');
@@ -182,12 +168,4 @@ export function renderMgDetails(id, itemEl) {
       </div>
     </div>
   `;
-}
-
-// Make globally available
-if (typeof window !== 'undefined') {
-    window.loadMgProfiles = loadMgProfiles;
-    window.setOperator = setOperator;
-    window.openOperatorModal = openOperatorModal;
-    window.renderMgDetails = renderMgDetails;
 }

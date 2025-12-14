@@ -7,6 +7,7 @@
 import { state } from './state.js';
 import { addLog, renderStep } from './ui-helpers.js';
 import { codexAgent } from './codex-agent.js';
+import { applyModelOptimization } from './model-selector.js';
 
 // ==============================
 // Slash Command Definitions
@@ -50,7 +51,8 @@ export const SLASH_COMMAND_LABELS = {
 export function updatePromptPartLocal(part, value) {
     if (!state.promptParts) state.promptParts = {};
     state.promptParts[part] = value;
-    if (typeof value === 'boolean') renderStep();
+    // Mirror UI update logic from legacy app.js
+    renderStep();
 }
 
 // ==============================
@@ -78,7 +80,7 @@ export async function runCustomPrompt() {
     // 4. Pre-process Input (Mentions & Slash Commands)
     let processedText = promptText;
 
-    // Expand Mentions
+    // Expand Mentions (legacy window.expandMentions)
     if (window.expandMentions && promptText.includes('@')) {
         const allProfiles = state.sheetData?.rows || [];
         processedText = window.expandMentions(promptText, profile, allProfiles);

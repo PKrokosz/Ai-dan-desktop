@@ -4,7 +4,8 @@
  * ES6 Module - Faza 7 modularizacji
  */
 
-import { addLog } from './ui-helpers.js';
+// Adapters for Legacy App.js
+const addLog = window.addLog || ((l, m) => console.log(`[${l}] ${m}`));
 
 // ==============================
 // Ollama Setup Check
@@ -15,23 +16,23 @@ import { addLog } from './ui-helpers.js';
  * @returns {Promise<boolean>} True if ready
  */
 export async function checkOllamaSetup() {
-    addLog('info', 'Sprawdzam instalację Ollama...');
+  addLog('info', 'Sprawdzam instalację Ollama...');
 
-    const { installed, running } = await window.electronAPI.checkOllamaInstalled();
+  const { installed, running } = await window.electronAPI.checkOllamaInstalled();
 
-    if (!installed) {
-        addLog('warn', 'Ollama nie jest zainstalowana');
-        showOllamaSetupModal();
-        return false;
-    }
+  if (!installed) {
+    addLog('warn', 'Ollama nie jest zainstalowana');
+    showOllamaSetupModal();
+    return false;
+  }
 
-    if (!running) {
-        addLog('info', 'Ollama zainstalowana, uruchamiam serwis...');
-        await window.electronAPI.startOllama();
-    }
+  if (!running) {
+    addLog('info', 'Ollama zainstalowana, uruchamiam serwis...');
+    await window.electronAPI.startOllama();
+  }
 
-    addLog('success', 'Ollama gotowa');
-    return true;
+  addLog('success', 'Ollama gotowa');
+  return true;
 }
 
 // ==============================
@@ -42,9 +43,9 @@ export async function checkOllamaSetup() {
  * Show Ollama installation modal
  */
 export function showOllamaSetupModal() {
-    const modal = document.createElement('div');
-    modal.id = 'ollama-setup-modal';
-    modal.innerHTML = `
+  const modal = document.createElement('div');
+  modal.id = 'ollama-setup-modal';
+  modal.innerHTML = `
     <div class="setup-modal-backdrop">
       <div class="setup-modal">
         <div class="setup-modal-header">
@@ -73,17 +74,17 @@ export function showOllamaSetupModal() {
       </div>
     </div>
   `;
-    document.body.appendChild(modal);
+  document.body.appendChild(modal);
 
-    document.getElementById('btn-install-ollama').addEventListener('click', installOllama);
+  document.getElementById('btn-install-ollama').addEventListener('click', installOllama);
 }
 
 /**
  * Close Ollama setup modal
  */
 export function closeOllamaSetupModal() {
-    const modal = document.getElementById('ollama-setup-modal');
-    if (modal) modal.remove();
+  const modal = document.getElementById('ollama-setup-modal');
+  if (modal) modal.remove();
 }
 
 // ==============================
@@ -94,35 +95,35 @@ export function closeOllamaSetupModal() {
  * Install Ollama automatically
  */
 export async function installOllama() {
-    const buttonsEl = document.getElementById('setup-buttons');
-    const progressEl = document.querySelector('.setup-progress-container');
+  const buttonsEl = document.getElementById('setup-buttons');
+  const progressEl = document.querySelector('.setup-progress-container');
 
-    if (buttonsEl) buttonsEl.style.display = 'none';
-    if (progressEl) progressEl.style.display = 'block';
+  if (buttonsEl) buttonsEl.style.display = 'none';
+  if (progressEl) progressEl.style.display = 'block';
 
-    addLog('info', 'Rozpoczynam instalację Ollama...');
+  addLog('info', 'Rozpoczynam instalację Ollama...');
 
-    const result = await window.electronAPI.installOllama();
+  const result = await window.electronAPI.installOllama();
 
-    if (result.success) {
-        addLog('success', 'Ollama zainstalowana pomyślnie!');
-        closeOllamaSetupModal();
-        if (typeof checkOllama === 'function') {
-            await checkOllama();
-        }
-    } else {
-        addLog('error', `Błąd instalacji: ${result.error}`);
-        const statusEl = document.getElementById('ollama-setup-status');
-        if (statusEl) statusEl.textContent = `Błąd: ${result.error}`;
-        if (buttonsEl) buttonsEl.style.display = 'flex';
-        if (progressEl) progressEl.style.display = 'none';
+  if (result.success) {
+    addLog('success', 'Ollama zainstalowana pomyślnie!');
+    closeOllamaSetupModal();
+    if (typeof checkOllama === 'function') {
+      await checkOllama();
     }
+  } else {
+    addLog('error', `Błąd instalacji: ${result.error}`);
+    const statusEl = document.getElementById('ollama-setup-status');
+    if (statusEl) statusEl.textContent = `Błąd: ${result.error}`;
+    if (buttonsEl) buttonsEl.style.display = 'flex';
+    if (progressEl) progressEl.style.display = 'none';
+  }
 }
 
 // Make globally available
 if (typeof window !== 'undefined') {
-    window.checkOllamaSetup = checkOllamaSetup;
-    window.showOllamaSetupModal = showOllamaSetupModal;
-    window.closeOllamaSetupModal = closeOllamaSetupModal;
-    window.installOllama = installOllama;
+  window.checkOllamaSetup = checkOllamaSetup;
+  window.showOllamaSetupModal = showOllamaSetupModal;
+  window.closeOllamaSetupModal = closeOllamaSetupModal;
+  window.installOllama = installOllama;
 }
