@@ -1,0 +1,1339 @@
+# Fabuła Magowie Wody 2025.xlsx
+================================================================================
+
+## Arkusz: Postacie
+----------------------------------------
+
+### Wpis 1
+**L.p.**: 1
+**Imię postaci**: Antonia
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: I krąg
+**Mechaniczne umiejętności**: -
+**Krótki opis postaci**: Szkodnik tośka awansowana do rangi maga I kręgu. Przybrała imię Antonia, na znak zerwania z dawnym, szkodniczym życiem. Dopiero poznaje akrana magii, dużo nauki przed nią. Z uwagi na jej przeszłość pochwalić się może wysokimi zdolnościami interpersonalnymi w tym sprytem i załatwianiem spraw.
+**Słowa kluczowe**: Kontynuacja szkodniki nauka nowość
+
+### Wpis 2
+**L.p.**: 2
+**Imię postaci**: Azyl
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: I krąg
+**Mechaniczne umiejętności**: -
+**Krótki opis postaci**: Doświadczony uczeń, u progu drugiego kręgu. Uczeń heliosa, filozof, zamiłowany w nauce. Słabe zdolności interpersonalne.
+**Słowa kluczowe**: Uczony, Wieczny student
+
+### Wpis 3
+**L.p.**: 3
+**Imię postaci**: Eran
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: III krąg
+**Mechaniczne umiejętności**: Magia rytualna
+**Krótki opis postaci**: Najmądrzejszy z magów wody, wieloletni mag który przeszedł droge od skazańca do przywódcy magów wody niebędącym Arcymagiem. Polityk, wiecznie uwikłany w działalność Wodnego Kręgu, któremu przewodzi. Finansista magów wody, konserwatysta. 
+**Słowa kluczowe**: Przywódca, polityk
+
+### Wpis 4
+**L.p.**: 4
+**Imię postaci**: Eridan
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Vengard
+**Grupa / Profesja**: III krąg
+**Mechaniczne umiejętności**: Magia rytualna, mistrz alchemii
+**Krótki opis postaci**: Mistrz alchemii dla którego Alchemia jest całym życiem. Przewodniczący "kółka" alchemicznego międzyobozowego. Usprawnił wiele mechanik alchemicznych, autor wielu autorskich mikstur. Współpracuje z wieloma łowcami trzymając w ryzach pierwszenstwo dostępu do składników alchemicznych. Nosi amulet skrywający w sobie głos Beliara, który trzymany jest w ryzach tylko przez niezachwianą wiarę w Adanosa. 
+**Słowa kluczowe**: Alchemik
+
+### Wpis 5
+**L.p.**: 5
+**Imię postaci**: Helios
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: II krąg
+**Mechaniczne umiejętności**: Magia rytualna
+**Krótki opis postaci**: Mag Kapłan, niemobilny przez schorowane kolana. Uwielbieniec prostych ludzi, których zawsze uracza dyskusją o teologii i pokrzepia w ich krzywdach. Większość czau spędza w obozie. W tym roku robimy większy wątek, w którym Helios bedzie wyniesiony na trzeci krąg poprzez porwanie przez orków i dywagacje na nieswoim terenie
+**Słowa kluczowe**: Kapłan,
+Niemobilny
+Były szkodnik
+
+
+### Wpis 6
+**L.p.**: 6
+**Imię postaci**: Selene
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Montera
+**Grupa / Profesja**: III krąg
+**Krótki opis postaci**: Uczona pośród uczonych. Niegdyś magini ognia, opanowała do perfekcji sztukę obu kręgów, Ognia i Wody. Miłośniczka wiedzy i eksperymentów, która nie ugnie się niebezpieczeństwu jeśli w gre wchodzi rozwój nauki. Magini o największej wiedzy magicznej, zaangażowana w 20 wątków na raz, często szybko je rozwiązująca. Od lat prowadzi badania miedzy innymi nad bagiennym zielem, barierą, mechaniką magii i innymi.
+**Słowa kluczowe**: Uczona
+Była magini ognia
+Badania i eksperymenty
+
+### Wpis 7
+**L.p.**: 7
+**Imię postaci**: Vespera von Dargan
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Montera
+**Grupa / Profesja**: II krąg
+**Mechaniczne umiejętności**: Magia runiczna
+**Krótki opis postaci**: Nowa Magini, z kontynentu, butna i samodzielna. Straciła rodzinę i została za przewinienia ojca skazana do kolonii. Brzydzi się magami ognia. Boi się utraty samodzielności (bycia zależną od kogoś), unika zobowiązań i niechętnie poddaje się rozkazom. Tęskni za komfortem życia wcześniejszego. Chce się sprawdzić jako mag, alchemiczka i dyplomatka.
+**Słowa kluczowe**: Niezależność,
+Samodzielność
+Hejt na magów ognia
+
+### Wpis 8
+**L.p.**: 8
+**Imię postaci**: Karim
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Wyspy Południowe
+**Pochodzenie dokładne**: Wyspy Południowe
+**Grupa / Profesja**: I krąg
+**Krótki opis postaci**: Mag bimbrownik z wysp południowych o południowej urodzie
+
+## Arkusz: Grupy
+----------------------------------------
+
+### Wpis 1
+**L.p.**: 1
+**Nazwa grupy**: Magowie bez vespery
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Eridan, Selene, Antonia, Eran, Karin, Azyl, Helios
+
+## Arkusz: Wątki
+----------------------------------------
+
+### Wpis 1
+** **: Wniebowstąpienie
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Helios
+**Kolejność**: 31
+**Wpis fabularny**: Pewnej nocy miałeś wyraźną wizję, zesłaną od Adanosa. W wizji tej, widziałeś symbol Adanosa na niebie, który prowadził Cię na niebezpieczne tereny. Rozpoznałeś, że to ziemie orków. Na tej ziemi niewyraźne wizje przebijały się do obrazu, widziałeś duże cierpienie, poczucie wykluczenia, ale nie do końca Twojego. Czułeś, że noga Ci doskwiera, ale wiedziałeś, że masz przed sobą misję. Pośród gęstego, ciemnego lasu rozpoznajesz orkowe symbole. Będąc tam czujesz na sobie wzrok bestii, ale nie bestii jakiej znasz. Czegoś większego. W tym momencie, pośród szybkich, krótkich ujęć budzisz się. Rozumiesz, że jest to coś ważnego mimo, że do końca nie wiesz co Adanos chciał Ci przekazać. Z kolejnymi godzinami zrozumiałes, że mogły być to fragmenty rzeczywistości, która może się wydarzyć, w zależności od wyborów. A jakie te wybory podjąć? Cóż... tego najwidoczniej dowiesz się na ziemiach orków. Azyl dobrze przeczytał Twoje emocje i wydusił z Ciebie podzielenie się tą wizją. Umówiliście się, że wyruszacie w piątek o 13:00
+**Krótki opis**: Quest o wprowadzeniu Heliosa na trzeci krąg. Zaangażowani będą w niego wszyscy magowie wody poza Heliosem. Honka przygotowuje uroczystą uprząż do pasa w ramach pamiątki. Całość questu zaczyna się od zapisanej w karcie postaci wizji Heliosa o próbie na ziemiach orków. Wyruszywszy na ziemię orków z uczniem Azylem zostaja pojamni przez Szamana orków (Medus w przebraniu) i mały jedno-dwuosobowy oddział orków. Podczas pojmania, oboje rzucą na siebie nietykalność pozostając w impasie. Podczas rozmowy orka szamana z Heliosem, dojdzie do wymiany teologicznej i kulturowej. Helios zostanie wpuszczony z możliwość uleczenia rannego orka wojownika, jeśli zaufa orkom. W tym samym czasie, pozostali magowie zaczną poszukiwania Heliosa i Azyla. Moment spotkania to dobrowolne wyjscie Heliosa i Azyla spod orkowej niewoli w zamian za wyleczenie orka lub odbicie ich przez oddział magów i najemników.
+**Zleceniodawca**: Adanos
+**Zaangażowane frakcje**: Magowie Wody, Najemnicy, Szkodniki
+**Potrzebne rekwizyty**: Strój orka szamana
+1-2 orków z monster teamu
+**Nagroda**: 3 krąg wtajemniczenia w magię, uroczystość wieczorna przyznania kręgu
+
+### Wpis 2
+** **: Dwóch ich zawsze jest - mistrz i uczeń.
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magowie Wody
+**Kolejność**: 12
+**Wpis fabularny**: Kolejny rok i znowu to samo. Arcymistrz Kręgu Magów Wody Medus przypomina, że bracia i siostry pierwszego kręgu zobligowani są podjąć naukę u mistrzów wyższych kręgów, (niekoniecznie trzeciego). Ci wybrani mistrzowie natomiast zobligowani są do raportowania o postępach swoich uczniów. Na tej podstawie wyciągane są następnie wnioski do wyniesienia na wyższy krąg (zarówno uczniów jak i mistrzów!). Mądrość to największy dar od Adanosa dla ludzkości, dlatego miłujmy ją wzajemnie.
+**Krótki opis**: Kontynuacja klasycznego podziału Mistrz-uczeń. Magowie 1 kręgu uczą się od drugiego i trzeciego kręgu.
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: brak
+**Nagroda**: brak
+
+### Wpis 3
+** **: Lekcja Anatomii
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magowie Wody
+**Kolejność**: 13
+**Wpis fabularny**: Arcymistrz Kręgu Wody Medus zaprasza na lekcję anatomii...ścierwojada! Mile widziani są magowie wody z zacięciem naukowym, jednakże nie jest to zamknięte spotkanie. Wszyscy miłośnicy przyrody, nauki i fizjologii są zaproszeni. Lekcja odbędzie się w piątek o godzinie 16:00, w przyczółku Nowego Obozu. Szkodnicy są uproszeni o rozwieszenie ogłoszeń po całej kolonii. Kurierzy magów, rozniosą listy zapraszające do Magów Ognia i Guru bractwa.
+**Krótki opis**: Lekcja anatomii na zwłokach ścierwojada. Do dyspozycji, będą schematy układu szkieletowego i mięśniowo-naczyniowego ścierwojada, przygotowane przez Honkę.
+Listy dla kurtierów, rozdane w piątek rano: Zaproszenie dla Magów Ognia Zaproszenie dla Guru
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody, Skazańcy, Kopacze, Służący, Cienie, Strażnicy, Magowie Ognia, Magnaci, Krety, Szkodniki, Najemnicy, Nowicjusze, Strażnicy Świątynni, Guru
+**Potrzebne rekwizyty**: Tablice anatomiczne przygotowane przez Honkę
+**Nagroda**: Brak
+
+### Wpis 4
+** **: Słowo niech będzie waszym orężem
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magowie Wody
+**Kolejność**: 10
+**Wpis fabularny**: List od Arcymistrza Saturasa:
+Tym razem, powodem waszej obecości w Starym Obozie oraz dlaczego proszę was o zbudowanie tak dużego przyczółka dla nowo-obozowej braci to...posługa dyplomatyczna. Wysyłam was z misją ustalenia statutu "współżycia pod barierą" Większość dotychczas ustalonych zasad, to ustne umowy. Niektóre z nich wymagają renowacji, inne renegocjacji, jeszcze inne całkowitego zniesienia. Magnaci zgodzili się przyjąć nas na serię spotkań na zamku, gdzie w towarzystwie Magów Ognia (jako organu doradczego) i Guru z Bractwa dojdzie do pierwszych Posiedzeń Politycznych pod barierą. W mojej wymianie listownej z Gomezem, zawarłem porozumienie o wyznaczeniu postaci Marszałka tego wydarzenia - osoby prowadzącej dyskusję, nie biorącej bezpośrednio udziału w niej. Z uwagi na duże zasługi dla ludności Starego Obozu, przystał on (Gomez) na mianowanie Arcymistrza Kręgu Magów Wody Medusa na to stanowisko, wierząc w jego bezstronność. Z tego względu, ciężar negocjacji spoczywa na was, drodzy magowie. Wybierzcie dwójkę spośród was, którzy będą nas reprezentować.
+Plan jest następujący. Spotkanie pierwsze w czwartek o godzinie 18:30. Na nim przedstawcie i przedyskutujcie tematy. Następnego dnia, o godzinie 17:30 będzie drugie spotkanie i podjęcie decyzji, które spisane zostaną na papier. Od tego momentu będą obowiązywać.
+Tematy, jakie z mistrzem Medusem ustaliliśmy i chcielibyśmy, abyście poruszyli to:
+1. Uzyskanie skrzyń towarowych
+2. Regulacja handlu esencjami
+3. Strefa wolnego handlu w slumsach pod kopalnią
+4. Pakt o nieagresji z obozem na Bagnie
+5. Podział towarów ze świata zewnętrznego dla Starego Obozu
+6. Przeniesienie aparatury alchemicznej ze Starego Obozu do Przyczółka Nowego Obozu
+7. Status Kurierów, dyplomatów i innych przedstawicieli. Domniemanie niewinności, brak konfiskaty broni na bramie
+8. Kanonizacja Rayileya Męcznnika, uznanie w oczach SO i OnB.
+**Krótki opis**: WSTĘP FABULARNY MAGÓW WODY
+
+
+
+
+
+
+NARADA NA ZAMKU I, II i III. 
+Ustalenie status quo pod barierą + otrucie Gomeza. Całość tutaj:
+Dyplomacja z innymi obozami 
+
+### Wpis 5
+** **: Co z tym amuletem Eridan?
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Eridan
+**Kolejność**: 32
+**Wpis fabularny**: Wszyscy dokładnie pamiętamy wydarzenia sprzed 3 miesięcy. Amulet wymknął się spod kontroli w momencie słabości. Kiedy tylko mu się na to pozwoli, nie zatrzyma się przed niczym. Wraz z kręgiem wody wspólnie uznaliście, że trzeba się nim zająć. Mistrzyni Selene zgodziła się pomóc. Czas wziąc się do pracy... ale cóż to. Amulet.... zniknął?! Mógłbyś przysiąc, że jeszcze chwile temu leżał na stole w obozie. 
+
+Wasi kurierzy, Kayla, Baryła, Belros i Kalmur zostali powiadomieni, żeby mieć oczy szeroko otwarte. 
+Znajdź Amulet i rozwiąż sprawę raz na zawsze, zanim wyrządzi więcej krzywd.
+**Krótki opis**: Wątek dezaktywacji Amuletu Eridana. Selene i Eridan są bardzo zaangażowani w wątek. Postanowiłem dać im wolną rękę w kwestii działania i dezaktywacji. Spodziewam się rytuałów i dużej mocy magicznej aby oczyścić amulet.
+
+Dodatkowo, amulet został skradziony przez Tarę, szkodnika. Teraz ma negatywny wpływ na jej zdrowie, ale ona nie wie komu ukradła ten amulet
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: Amulet Eridana
+**Nagroda**: Oczyszczenie amuletu donowej pasywki / zniszczenie amuletu / brak powodzenia (w zależności od tego co zrobią gracze)
+
+### Wpis 6
+** **: Co z tym amuletem Selene?
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Selene
+**Kolejność**: 32
+**Wpis fabularny**: Wszyscy dokładnie pamiętamy wydarzenia sprzed 3 miesięcy. Amulet wymknął się spod kontroli w momencie słabości. Kiedy tylko mu się na to pozwoli, nie zatrzyma się przed niczym. Wraz z kręgiem wody wspólnie uznaliście, że trzeba się nim zająć. Zgodziłaś się pomóc Mistrzowi Eridanowi, jednak kiedy mieliście zasiadać do pracy, okazało się, że amulet skradziono! Eridan jest w rozsypce, ale Ty wiesz, że amuletu tej wagi nie można zostawić poza magiczną kontrolą. Wasi kurierzy, Kayla, Baryła, Belros i Kalmur zostali powiadomieni, żeby mieć oczy szeroko otwarte.
+**Krótki opis**: j/w
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: Amulet Eridana
+**Nagroda**: j/w
+
+### Wpis 7
+** **: Przewodnik ludu
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Azyl
+**Kolejność**: 38
+**Wpis fabularny**: Skoro pierwsze rytuały masz już za sobą, czas na większe wyzwanie. Sporządziwszy księgę Symboliki Bóstw, rozpocznij nauczanie wśród wiernych, którzy przyjdą poszukiwać u Ciebie wiedzy, szczególnie dotyczącej pism Dziennika Statiosa, ale także innych źródeł wiary.
+**Krótki opis**: Rozwój personalny Azyla CD
+**Zleceniodawca**: Medus
+**Potrzebne rekwizyty**: Księga Azyla, którą sam dostarcza
+**Nagroda**: 2krąg za prezentację księgi jego autorstwa
+
+### Wpis 8
+** **: Ciekawy ten pierścień, mistrzu
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Vespera von Dargan
+**Kolejność**: 31
+**Wpis fabularny**: W życiu widziałaś dużo pięknych wyrobów biżuteryjnych. Pierścienie przynależności kręgów należą z pewnością do takich wysokich jakością dóbr. Jeden pierścień, należący do Arcymistrza Medusa wyróżnia się spośród pozostałych. Przede wszystkim inkrustowany jest zółtymi szafirami, zamiast klasycznie niebieskimi, ale także bije od niego magiczna aura. Słyszałaś, że są osoby pod barierą, które są w stanie sporo za niego zapłacić (Esmira (SO), Klin (NO)), ale z drugiej strony, czy taki pierścień nie wyglądałby wspaniale w Twojej kolekcji? Możesz też poczekać, aż zainteresowane pierścieniem osoby po niego sięgną i dobrać doskonały moment. Jedno jest pewne. Mistrz Medus zdaje się niezauważać jakim przyciąganiem spojrzeń wyróżnia się jego zółty pierścień. A może by tak go o tym powiadomić? 
+**Krótki opis**: Wątek nawiązujący do gildii złodziei polujących na żółty pierścień Medusa. Vespera moze sprobowac ukrasc pierscien, dla złodziei, zostawić go dla siebie lub powiadomić Medusa
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: Zółty pierścień Medusa, zapewniany przez Medusa
+**Nagroda**: -
+
+### Wpis 9
+** **: Czemu tu jest tyle kartek?!
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Eran
+**Kolejność**: 34
+**Wpis fabularny**: Od pół roku, znajdujecie ciągle i ciągle strony z dziennika Maga Statiosa, który kiedyś chodził po Górniczej Dolinie. Nigdy w sumie nie przysiadłes porządnie, aby zaznajomić się z treścią tych notatek. Ostatnimi czasy natomiast, strony z dziennika mnożą się na potęgę. Znajdują je też postronni ludzie, a Ty nie wiesz co masz im mówić... Azyl na pewno wie więcej na ten temat. Zapytaj go i sprawdź, czy jego interpretacja między wierszami, jest zgodna z naukami Adanosa. Wszak, jest to wciąż mag 1 kręgu!
+**Krótki opis**: Znajdźki magiczne, historia pokory, Statios + współpraca z Azylem
+**Zleceniodawca**: Adanos
+**Zaangażowane frakcje**: Magowie Wody
+
+### Wpis 10
+** **: Szkodniczy przemyt naukowy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Antonia
+**Kolejność**: 39
+**Wpis fabularny**: Teraz kiedy jesteś już pełnoprawnym, początkującym magiem, masz większy dostęp do wiedzy kręgu. Wiesz od Arcymistrza Medusa, że w bibliotece kręgu ognia znajduje się księga "o artefaktach magicznych i ich transporcie" autorstwa Maga Wody Deriusa Montgomerry'ego. Chcesz zdobyć tę księgę, aby przyswoić istniejącą w niej wiedzę. Słyszałaś też, że na jej podstawie, pół roku temu krąg wody wyeksportował coś za barierę. Warto wypytać o tę historię starszych magów. No i zostaje jeszcze jedna kwestia... Leo - cyrulik, oraz Szkodnik Kosiposza też mogą być zainteresowani tą wiedzą, szczególnie, że ten drugi nie zna naszego języka dostatecznie dobrze. Magowie raczej nieprzychylnie mogą patrzeć na dystrybucję ksiąg magicznych, szczególnie za darmo, ale tak żeby chociaż mogli zerknąć...?
+**Krótki opis**: Quest generyk dla nowego maga aby poczuła vibe wiedzy i rozwoju
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: brak
+**Nagroda**: 15 bryłek rudy
+2 esencje
+
+### Wpis 11
+** **: A historii tej szaty... i tak byś nie zrozumiał
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Karim
+**Kolejność**: 38
+**Wpis fabularny**: Słyszałeś, że pod barierą jest wiele osób, które chciałby zostać kandydatem na Maga Wody. Wiesz, że prędzej czy później, jedna z tych osób zgłosi się do Magów Wody z prośbą o nauki. Świetnie się składa! Twoja stara szata Nowicjusza może w końcu się przydać. Być może, za zgodą Arcymistrza Medusa, będziesz w stanie spienieżyć ten stary kawałek tkaniny? No i właśnie. Jak dużo rzeczy jesteś w stanie spieniężyć?
+**Krótki opis**: Karin robi dodatkową szatę nowicjusza, przyda się dla nowych. Dodatkowo, zachęcam do sprzedazy jego dóbr na chwałę kopca
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: Zapewniane przez Iblisa dobra w tym szata nowicjusza wody
+**Nagroda**: Esencje
+
+### Wpis 12
+** **: Skraplacz Lux
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Selene
+**Kolejność**: 38
+**Wpis fabularny**: Dalej nie możesz pogodzić się z tym co się stało. Lux była Twoją dobrą przyjaciółką, jeszcze w Kręgu Ognia, a teraz nie żyje. Musisz zdobyć informacje na temat rytuału, który chcieli przeprowadzić magowie ognia, a który zakończył się tragicznie. Masz pewną teorię co mogło pójść nie tak, ale trzeba sprawdzić liczby. Mistrz Medus wspominał, że jest jakiś sposób na porozumienie ze zmarłymi, którzy mają niedokończone sprawy. Może uda się to z Lux, bo pewnie jej duch jest też ciekawy, co poszło nie tak. No i magowie ognia... oni przede wszystkim chcieliby dowiedzieć się, co tam się wydarzyło. Podejść trzeba jednak delikatnie do sprawy
+**Krótki opis**: Wątek zrozumienia co poszło nie tak, że Honka została wysłana w stratosferę. Kontynuacja badań magów ognia które poszły nie tak.
+Zaplanowaliśmy że Honka ostatni raz nałozy szatę ognia w poświecie sugerujacej, że jest duchem. Da to ciekawy wątek i pożegnanie Lux z Selene
+**Zleceniodawca**: Selene
+**Zaangażowane frakcje**: Magowie Wody
+
+### Wpis 13
+** **: Zagadka zółtego pierścienia.
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magowie bez vespery
+**Kolejność**: 28
+**Wpis fabularny**: Jeden sposród pierścieni Arcymistrza Medusa przykuwa specjalną uwagę. Ten, który zamiast klasycznie niebieskich kamieni, ma w sobie żółty szafir w centralnej części i kilkanaście mniejszych równie żółtych szafirów. Ten wybór może dziwić, wszak dotychczas, pierścienie kręgu wody były tylko niebieskie w różnych odcieniach. Co gorsza, zauważasz także, że rzucający się w oczy pierścień, widoczny jest dla wszystkich, nawet nie związanych ze sprawami magicznymi ludzi. Doszły Cię pogłoski, że ktoś w kolonii wyznaczył sporą nagrodę za ten pierścień, jednak nie wiesz ile w tym prawdy. Inne głosy mówią, żę drzemie w nim magiczna moc. Ludzie zawsze gadają, a Mistrz Medus..? No cóż... on jak zwykle zdaje się bagatelizować tę sprawę. Warto co najmniej przedyskutować ten temat wewnątrz kręgu.
+**Krótki opis**: Quest przeciwdziałania kradzieży pierścienia. Gracze będą mogli ostrzec Medusa, lub sami uniemożliwić kradzież. Medus natomiast będzie bagatelizował
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: Zółty pierścień Medusa, zapewniany przez Medusa
+**Nagroda**: -
+
+### Wpis 14
+** **: Nawrócenie dusz
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Eridan
+**Kolejność**: 34
+**Wpis fabularny**: Adanos ukazał Ci wizję. Pośród trudu dnia codziennego i kopalnianego zgiełku widziałeś postać Strażnika, którego duch unoszący się nad barkami, rozdarty był na dwoje. Nad nimi, trzeci, mocniejszy duch o złowrogiej aurze rozpościerał swe ramiona. Strażnik, mimo przebywania w grupie, wydawał się samotny i zagubiony. Czułeś, że trzeci duch mocno nagina rzeczywistość wokół tej postaci, sprawiając, że mniej widzi rzeczy jakie są, a jakie ten duch podsuwa mu. Podszedłeś bliżej, wyłoniłeś się spośród tłumu, i zobaczyłeś twarz strażnika. Jest Ci dobrze znana, ale nie potrafisz przypomnieć sobie za nic imienia. Pozdrowił Cię jak starego przyjaciela, zapytał czy masz jakieś słowa dla niego. Wnet dostrzegłeś, że oprócz słuchającego, uszu nadstawia także ten trzeci, ponury duch. Spojrzałeś w górę i ujrzałeś straszną postać, która zlękła Cię tak, że się obudziłeś. Teraz wiesz, że ciemne chmury zbierają się nad tą postacią. Musisz znaleźć tego strażnika spod kopalni. Jak on się nazywał?
+**Krótki opis**: Quest o Duszę Nolana, zagubioną między bóstwami
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: -
+**Nagroda**: -
+
+### Wpis 15
+** **: Czy to...podróbka?
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Eridan
+**Kolejność**: 35
+**Wpis fabularny**: Ostatnio przechwyciłeś dziwną miksturę. Dziwną, bo co prawda nalaną do alchemicznego flakoniku, ale od razu rozpoznałeś, że to tania podróba bez mocy magicznej. W smaku słodka, z koloru pomarańczowa, a efektu jak nie było tak nie ma! Ową miksturę pochwyciłeś ze stołu gdzie urzędowali szkodnicy, ale żaden się do tego nie przyznał. Ty wiesz jednak, że wsród tych ludzi to jeden z nich ją wytworzył, bo korek wyglądał na dopiero co zaciśnięty, a flakon zbyt czysty, jeszcze ociekając z zewnątrz pomarańczowymi kroplami. Oj chyba kolegium alchemiczne powinno się zainteresować, czy nie rośnie nam tu domorosły alchemik podróbek? No i co z tym faktem można zrobić?
+**Krótki opis**: wątek wspólny z Baryłą, zeby Eridan deptał mu po piętach. Baryła rozprowadza fejkowe muikstury za hajs
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: -
+**Nagroda**: Wiele możliwości rozwiązań Questa. Może dojsc kto to rozprowadza i go ukarać, zatrudnić, przyjac na ucznia lub dobić targu
+
+### Wpis 16
+** **: Co powie ryba?
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Karim
+**Kolejność**: 39
+**Wpis fabularny**: Każdy w Kolonii słyszał o Śledziowym Baronie. O tym, któremu los bliźniego nie był obojętny. Jedni prychali z wzgardą na to miano, inni powtarzali je z szacunkiem. Mówią, że pomagał biedakom, zostawiając monety, kartki, rudę – ukryte w śledziach z kuchni lub paczkach z dostaw. Znikały, zanim ktoś się połapał. Zostawała tylko ryba i cień nadziei, że w tym zasranym miejscu ktoś jeszcze ma serce.
+
+Aż w końcu go złapali. Wiadomo było co go czeka - publiczna egzekucja. Jako przykład. Jako przestroga. Za pomoc biedocie. Za bunt przeciwko porządkowi Magnatów. Za próbę zrobienia czegoś… innego. Mówi się jednak, że nie działał sam. Że miał wspólnika – cichego, niewidocznego, sprytnego. I że ten drugi nadal tu jest. Gdzieś pod Barierą czeka na tych, co naprawdę potrzebują pomocy. Na tych, co wiedzą, jak zapytać. Podobno wystarczy tylko znaleźć odpowiedniego człowieka i poprosić go o „bardzo specjalną rybę.” Jako sługa Adanosa bardzo chciałbyś poznać tego człowieka. Odkryć czające się w nim dobro, poznać motywację, a może, kto wie? Współpracować, by pomagać wszystkim. W końcu to twoja misja…
+
+Tylko że problem jest taki - to może być każdy. Kucharz. Kopacz. Starzec pod ścianą.Jako mag wody masz zdecydowanie za dużo na glowie, żeby biegać za maluczkimi. Ale hej, od czego masz najemników? Jeśli każesz im go szukać… Możesz być pierwszym, który go znajdzie.Pierwszy, który  odkryje, że Baron to nie tylko jeden człowiek. To idea.
+
+**Krótki opis**: Karim zleci kilku najemnikom znalezienie Śledziowego Barona, może będzie z nim współpracował.
+**Zaangażowane frakcje**: Magowie Wody, Najemnicy
+
+### Wpis 17
+** **: Wiktoria... ciągle ta Wiktoria....
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Selene
+**Kolejność**: 36
+**Wpis fabularny**: Trzy miesiące temu, najemnik Oliwer pokazał Ci fragment listu który znalazł. Traktuje on o zaginionej Maginii Wiktorii. To pierwszy raz kiedy pojawiło się coś nowego na jej temat od czasu jej zaginięcia.Oliwer wydawał się także zainteresowany, tym bardziej, że w liście znajdują się informacje na temat ewentualnej ucieczki poza barierę. Niestety, jak to w kolonii bywa, ktoś ukradł ten list i ślad po odnalezieniu Wiktorii zaginął. Ale czy na pewno? Ostatnio doszły Cię słuchy, że oprócz listu, krąży także specyficzny zwój, zapisany w języku którego nikt nie potrafi odszyfrować. Musisz otrzymać ten list i zwój wszelkimi sposobami. Dobrym pomysłem jest poprosić także Mistrza Medusa o pomoc, w końcu cała wiedza wieków budowniczych spoczywa w nim. On co prawda od ostatnich 3 miesięcy niechętnie o tym mówi i bączy coś o drodze, zamiast celu... ale tu cel chyba powinien zainteresować nas wszystkich! Toż to ucieczka spod bariery!
+**Krótki opis**: Quest zakonczenia postaci Magini Wiktorii
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody, Najemnicy
+**Potrzebne rekwizyty**: Kościotrup, małe piro, moja stara szata wody, 
+ list dostarczane przez keire, zwój przeze mnie
+**Nagroda**: Zamknięcie wątku Wiktorii + ruda dla Najemnika
+
+### Wpis 18
+** **: List polecający
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magowie Wody
+**Kolejność**: 16
+**Wpis fabularny**: Arcymistrz Medus wraz z najemnikiem Ivirem zawarli porozumienie, na mocy którego Magowie Wody, moga wystawiać najemnikom Listy Polecające jeśli Ci uznają ich zasługi za okazałe. Listy te powinny być kierowane do Ivira, mówiące o tym, jak przysłużyli się Ci najemnicy Magom. Sprawa jest o tyle ważna, że na podstawie tych listów, będzie dobierana sława wojenna, reputacja i awanse między wojownikami. Magów uprasza się więc o nieszastanie listami polecającymi na lewo i prawo. Na pewno list polecający od kapłana/ki, który prawie nigdy ich nie rozdaje, będzie miał większą wagę, od tego który za każde przyniesienie wody wystawi taką przysługę! Ivir zbierać będzie te listy na bieżąco przez całość trwania ekspedycji do Starego Obozu.
+**Krótki opis**: Wprowadzenie systemu nagradzania najemników czymś więcej niż rudą
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: Listy polecające pisane przez Magów
+**Nagroda**: -
+
+### Wpis 19
+** **: Jak nie drzwiami to oknem
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Azyl
+**Kolejność**: 39
+**Wpis fabularny**: Jesteś gorliwym wyznawcą Adanosa. Nie znaczy to, że nie jesteś pasjonatem studiowania magii. Oczywiście, wiele z jej gatunków jest zakazanych, lub wręcz szkodliwych... Ale lubisz wiedzieć, co w trawie piszczy. Przykładowo - od lat łamiecie sobie głowy, w jaki sposób obóz Sekty posługuje się magią. Zbyt bliskie studiowanie jej może nie być bezpieczne, ale wydaje ci się, że mogłeś znaleźć przedmiot analiz, który nie sprowadzi na nikogo nieszczęścia. Podczas jednej z twoich wizyt, twoją uwagę przykuł szczególny amulet Śniącego. Od razu go zauważyłeś gdyż zdawał się emanować dość silną jak na taki mały przedmiot i dość unikatową magią. Byłby to wprost idealny obiekt do badań. jest tylko jedno ale... Właściciel za żadną cenę nie chciał się z nim rozstać. Na szczęście należysz do uprzywilejowanych - masz ludzi, którzy wykonują trudne zadania zgodnie z wolą Adanosa. Wyznaczyłeś więc nagrodę za amulet, a najemnik Werez od razu zgłosił się do zadania. Masz tylko nadzieję, że nie potrwa to specjalnie długo - wzbiera w tobie ciekawość i żądza wiedzy, którą trzeba zaspokoić!
+**Krótki opis**: queścik z pozyskaniem amultu przez Wereza, jakieś magiczne pierdololo do badań, Medus wymyśl jakiś fluff
+
+### Wpis 20
+** **: Przeklęty miecz
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magowie Wody
+**Kolejność**: 17
+**Wpis fabularny**: Doszły was słuchy, że strażnik Garhax posiada magiczny miecz, który rani go w dotkliwy sposób. Jest duża szansa, że sam zgłosi się do was z pytaniem o pomoc. Jeśli tak się stanie, zachowajcie nalezytą ostrożność. Mistrz Medus ostrzega, że ostrze to może być bardzo niebezpieczne, szczególnie dla magów niższych kręgów. W końcu po tym, co działo się niedawno z Mistrzem Eridanem, lepiej zachować specjalną ostrożność i nie podejmować zbyt pochopnie żadnych kroków.
+**Krótki opis**: Quest na życzenie Pargana, któego magiczny miecz z czarnej rudy rani Garhaxa co dziennie odejmujac mu punkt zycia. Magowie Wody są w stanie powstrzymac działanie klątwy przez jeden dzien, ale nie więcej. Miecz finalnie ma trafić na bagno gdzie zostanie relikwią Śniącego
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody, Strażnicy
+**Potrzebne rekwizyty**: Miecz garhaxa, dostarczony przez Garhaxa
+**Nagroda**: -
+
+### Wpis 21
+** **: Niemilewidziani
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magowie Wody
+**Kolejność**: 16
+**Wpis fabularny**: Magowie Ognia ogłosili Sympozjum naukowe, na które... nas nie zaprosili. Motywem przewodnim jest przedstawienie osiągnięć kręgu i ludzi związanych z kręgiem ognia. Lekcja anatomii Mistrza Medusa, stanowi niejako przeciwwagę, ale nie zaprosić miłośników mądrości i wiedzy na sympozjum naukowe? Arcymistrz Domingo chyba musi usłyszeć co mamy na ten temat do powiedzenia. 
+**Krótki opis**: Domingo upadł na łeb i uwaza ze zdolnosci umysłowe kręgu ognia przewyższają te magów wody xdddd
+Delulu chłopak nie zaprosił magów wody na sympozjum
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: -
+**Nagroda**: -
+
+### Wpis 22
+** **: Splamione sumienie
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Azyl
+**Kolejność**: 30
+**Wpis fabularny**: Trzy miesiące temu miało miejsce wydarzenie bezprecedensowe. Joplin przekonał Cię do poświadczenia przed Gomezem nieprawdy, co doprowadziło do fatalnych skutków dla pewnej służki. Tylko i wyłącznie dzięki działaniom Kalmura, śmierć dla tej służki nie nadeszła od razu. Została zesłana do kopalni. Niestety, Adanos chyba wiedział co robi, kierując Joplinem, gdyż po krótkim czasie, została zabita przez kilka pełzaczy. Niemniej jednak, bije to w Twoje sumienie. Co więc dalej z tym zrobić? Musisz znaleźć sposób na odpracowanie krzywd, albo chociaż zrozumienie tego co się wydarzyło. Ty jesteś magiem, więc na pewno wiesz co należy uczynić, albo chociaż gdzie odnaleźć odpowiedź na to pytanie. No i zostaje ten Kalmur. Czyżby on wiedział coś, czego Ty nie wiesz?
+**Krótki opis**: Kontynuacja wątku z końca poprzedniej edycji, gdzie służka trafiła do kopalni. Przed smiercią uchronił ją Kalmur niepodrzucając jej Czarnego Jęzora, tak jak chciał to zrobić Joplin
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody, Szkodniki
+**Potrzebne rekwizyty**: -
+**Nagroda**: -
+
+### Wpis 23
+** **: Jak pączek w maśle
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Vespera von Dargan
+**Kolejność**: 38
+**Wpis fabularny**: Kolonia kolonią, ale Ty, Magini Wody z doniosłego Rodu nie będziesz żyć w brudzie i ubóstwie. W końcu pełnisz posługe dyplomatyczną, tak? Należy Ci się więc traktowanie jak dla prawdziwego dyplomaty. Począwszy od kretów, szkodników czy najemników. Kończywszy nawet na Magach Ognia. Intrygą, bryłkami, przysługami czy magią, w ten czy inny sposób zmusisz ludzi do usługiwania Ci. Wodę szanownej ręce podać. Krzesło pod szanowny kuper przetrzeć. Wszystko, co spowoduje, że w Twoim życiu znów zawita smak dawnej wygody.  Dość ukrywania swojego statusu. Kolonia będzie Twoja.
+**Krótki opis**: Quest dla Honki zeby zrobić sobie podnóżki z kretów
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+
+### Wpis 24
+** **: Coś, co zostało pod skórą
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Antonia
+**Kolejność**: 39
+**Wpis fabularny**: To miało być tylko przejście przez zarośla.
+Nic niezwykłego.
+Kilka suchych gałęzi, trochę chaszczy, poranny chłód.
+A potem — ból.
+
+Coś cię zraniło. Może gałąź, może trujący liść, może coś… mniej oczywistego.
+Skóra na nodze zaczęła piec, jakby dotknęła gorącego metalu.
+Pojawiło się zaczerwienienie, potem bąble. Potem ból, który potrafi cię zgiąć w pół, nagły, szarpany, nie do zniesienia.
+A potem… znika.
+Bez śladu. Jakby nigdy go nie było.
+Ale zawsze wraca.
+
+Próbowałaś leczyć się sama — magicznie. Uśmierzyć, oczyścić, zregenerować. Ale efekt jest chwilowy, powierzchowny.
+Leo też próbował — jego mikstury łagodzą ból, ale tylko na moment.
+Nikt nie potrafi powiedzieć, co tak naprawdę siedzi w tej ranie.
+
+To nie jest zwykłe oparzenie. Nie wygląda jak znane trucizny.
+I najgorsze — czujesz, że się pogłębia. Coś się dzieje pod skórą.
+Nie wiesz, czy to infekcja, magia, klątwa — czy coś, czego nikt jeszcze nie nazwał.
+
+Ale wiesz jedno:
+To nie przejdzie samo.
+A jeśli nie znajdziesz rozwiązania… może nadejść dzień, w którym ten ból nie zniknie już wcale.
+**Krótki opis**: Quest medyczny wiazacy szkodniki,cienie
+**Zaangażowane frakcje**: Szkodniki, Cienie, Magowie Wody
+
+### Wpis 25
+** **: Czemu tu jest tyle kartek?!
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Helios
+**Kolejność**: 35
+**Wpis fabularny**: Od pół roku, znajdujecie ciągle i ciągle strony z dziennika Maga Statiosa, który kiedyś chodził po Górniczej Dolinie. Nigdy w sumie nie przysiadłes porządnie, aby zaznajomić się z treścią tych notatek. Ostatnimi czasy natomiast, strony z dziennika mnożą się na potęgę. Znajdują je też postronni ludzie, a Ty nie wiesz co masz im mówić... Azyl na pewno wie więcej na ten temat. Zapytaj go i sprawdź, czy jego interpretacja między wierszami, jest zgodna z naukami Adanosa. Wszak, jest to wciąż mag 1 kręgu!
+**Krótki opis**: Quest po Eranie który nie jedzie jednak
+**Zleceniodawca**: Medus
+**Zaangażowane frakcje**: Magowie Wody
+**Potrzebne rekwizyty**: -
+**Nagroda**: -
+
+## Arkusz: Data_Validation
+----------------------------------------
+
+### Wpis 1
+**Klasa**: Grupa
+**Nie**: Tak
+**#REF!**: Nie
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+**Antonia**: Azyl
+
+### Wpis 2
+**Klasa**: Postać
+**Nie**: Nie
+**#REF!**: Nie
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+**Antonia**: Eran
+
+### Wpis 3
+**#REF!**: Nie
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+**Antonia**: Eridan
+
+### Wpis 4
+**Klasa**: Magowie Wody
+**#REF!**: Nie
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+**Antonia**: Helios
+
+### Wpis 5
+**#REF!**: Nie
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+**Antonia**: Selene
+
+### Wpis 6
+**Klasa**: Skazańcy
+**#REF!**: Nie
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+**Antonia**: Vespera von Dargan
+
+### Wpis 7
+**Klasa**: Kopacze
+**#REF!**: Nie
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+**Antonia**: Karim
+
+### Wpis 8
+**Klasa**: Służący
+**#REF!**: Nie
+
+### Wpis 9
+**Klasa**: Cienie
+**#REF!**: Nie
+
+### Wpis 10
+**Klasa**: Strażnicy
+**#REF!**: Nie
+
+### Wpis 11
+**Klasa**: Magowie Ognia
+**#REF!**: Nie
+
+### Wpis 12
+**Klasa**: Magnaci
+**#REF!**: Nie
+
+### Wpis 13
+**Klasa**: Krety
+**#REF!**: Tak
+
+### Wpis 14
+**Klasa**: Szkodniki
+**#REF!**: Nie
+
+### Wpis 15
+**Klasa**: Najemnicy
+**#REF!**: Nie
+
+### Wpis 16
+**Klasa**: Magowie Wody
+**#REF!**: Nie
+
+### Wpis 17
+**Klasa**: Nowicjusze
+**#REF!**: Nie
+
+### Wpis 18
+**Klasa**: Strażnicy Świątynni
+**#REF!**: Nie
+
+### Wpis 19
+**Klasa**: Guru
+**#REF!**: Nie
+
+### Wpis 20
+**#REF!**: Nie
+
+### Wpis 21
+**Klasa**: Khorinis
+**Nie**: Miasto Khorinis
+**#REF!**: Nie
+
+### Wpis 22
+**Nie**: Farmy
+**#REF!**: Nie
+
+### Wpis 23
+**Klasa**: Myrtana
+**Nie**: Ardea
+**#REF!**: Nie
+
+### Wpis 24
+**Nie**: Cape Dun
+**#REF!**: Nie
+
+### Wpis 25
+**Nie**: Montera
+**#REF!**: Nie
+
+### Wpis 26
+**Nie**: Vengard
+**#REF!**: Nie
+
+### Wpis 27
+**Nie**: Silden
+**#REF!**: Nie
+
+### Wpis 28
+**Nie**: Geldern
+**#REF!**: Nie
+
+### Wpis 29
+**Nie**: Faring
+**#REF!**: Nie
+
+### Wpis 30
+**Nie**: Gotha
+**#REF!**: Nie
+
+### Wpis 31
+**Nie**: Trelis
+**#REF!**: Nie
+
+### Wpis 32
+**Klasa**: Varant
+**Nie**: Ishtar
+**#REF!**: Nie
+
+### Wpis 33
+**Nie**: Mora Sul
+**#REF!**: Nie
+
+### Wpis 34
+**Nie**: Bakaresh
+**#REF!**: Nie
+
+### Wpis 35
+**Nie**: Braga
+**#REF!**: Nie
+
+### Wpis 36
+**Nie**: Ben Erai
+**#REF!**: Nie
+
+### Wpis 37
+**Nie**: Lago
+**#REF!**: Nie
+
+### Wpis 38
+**Nie**: Ben Sala
+**#REF!**: Nie
+
+### Wpis 39
+**Klasa**: Archolos
+**Nie**: Miasto Archolos
+**#REF!**: Nie
+
+### Wpis 40
+**Nie**: Silbach
+**#REF!**: Nie
+
+### Wpis 41
+**Nie**: Wilcze Leże
+**#REF!**: Nie
+
+### Wpis 42
+**Nie**: Winnica Rity
+**#REF!**: Nie
+
+### Wpis 43
+**Nie**: Winnica Valerio
+**#REF!**: Nie
+
+### Wpis 44
+**Klasa**: Nordmar
+**Nie**: Klan Młota
+**#REF!**: Nie
+
+### Wpis 45
+**Nie**: Klan Ognia
+**#REF!**: Nie
+
+### Wpis 46
+**Nie**: Klan Wilka
+**#REF!**: Nie
+
+### Wpis 47
+**Klasa**: Wyspy Południowe
+**Nie**: Wyspy Południowe
+**#REF!**: Nie
+
+### Wpis 48
+**Klasa**: Wschodni Archipelag
+**Nie**: Wschodni Archipelag
+**#REF!**: Nie
+
+### Wpis 49
+**#REF!**: Nie
+
+### Wpis 50
+**#REF!**: Nie
+
+### Wpis 51
+**#REF!**: Nie
+
+### Wpis 52
+**#REF!**: Nie
+
+### Wpis 53
+**#REF!**: Nie
+
+### Wpis 54
+**#REF!**: Nie
+
+### Wpis 55
+**#REF!**: Nie
+
+### Wpis 56
+**#REF!**: Nie
+
+### Wpis 57
+**#REF!**: Nie
+
+### Wpis 58
+**#REF!**: Nie
+
+### Wpis 59
+**#REF!**: Nie
+
+### Wpis 60
+**#REF!**: Nie
+
+### Wpis 61
+**#REF!**: Nie
+
+### Wpis 62
+**#REF!**: Nie
+
+### Wpis 63
+**#REF!**: Nie
+
+### Wpis 64
+**#REF!**: Nie
+
+### Wpis 65
+**#REF!**: Nie
+
+### Wpis 66
+**#REF!**: Nie
+
+### Wpis 67
+**#REF!**: Nie
+
+### Wpis 68
+**#REF!**: Nie
+
+### Wpis 69
+**#REF!**: Nie
+
+### Wpis 70
+**#REF!**: Nie
+
+### Wpis 71
+**#REF!**: Nie
+
+### Wpis 72
+**#REF!**: Nie
+
+### Wpis 73
+**#REF!**: Nie
+
+### Wpis 74
+**#REF!**: Nie
+
+### Wpis 75
+**#REF!**: Nie
+
+### Wpis 76
+**#REF!**: Nie
+
+### Wpis 77
+**#REF!**: Nie
+
+### Wpis 78
+**#REF!**: Nie
+
+### Wpis 79
+**#REF!**: Nie
+
+### Wpis 80
+**#REF!**: Nie
+
+### Wpis 81
+**#REF!**: Nie
+
+### Wpis 82
+**#REF!**: Nie
+
+### Wpis 83
+**#REF!**: Nie
+
+### Wpis 84
+**#REF!**: Nie
+
+### Wpis 85
+**#REF!**: Nie
+
+### Wpis 86
+**#REF!**: Nie
+
+### Wpis 87
+**#REF!**: Nie
+
+### Wpis 88
+**#REF!**: Nie
+
+### Wpis 89
+**#REF!**: Nie
+
+### Wpis 90
+**#REF!**: Nie
+
+### Wpis 91
+**#REF!**: Nie
+
+### Wpis 92
+**#REF!**: Nie
+
+### Wpis 93
+**#REF!**: Nie
+
+### Wpis 94
+**#REF!**: Nie
+
+### Wpis 95
+**#REF!**: Nie
+
+### Wpis 96
+**#REF!**: Nie
+
+### Wpis 97
+**#REF!**: Nie
+
+### Wpis 98
+**#REF!**: Nie
+
+### Wpis 99
+**#REF!**: Nie
+
+### Wpis 100
+**#REF!**: Nie
+
+### Wpis 101
+**#REF!**: Nie
+
+### Wpis 102
+**#REF!**: Nie
+
+### Wpis 103
+**#REF!**: Nie
+
+### Wpis 104
+**#REF!**: Nie
+
+### Wpis 105
+**#REF!**: Nie
+
+### Wpis 106
+**#REF!**: Nie
+
+### Wpis 107
+**#REF!**: Nie
+
+### Wpis 108
+**#REF!**: Nie
+
+### Wpis 109
+**#REF!**: Nie
+
+### Wpis 110
+**#REF!**: Nie
+
+### Wpis 111
+**#REF!**: Nie
+
+### Wpis 112
+**#REF!**: Nie
+
+### Wpis 113
+**#REF!**: Nie
+
+### Wpis 114
+**#REF!**: Nie
+
+### Wpis 115
+**#REF!**: Nie
+
+### Wpis 116
+**#REF!**: Nie
+
+### Wpis 117
+**#REF!**: Nie
+
+### Wpis 118
+**#REF!**: Nie
+
+### Wpis 119
+**#REF!**: Nie
+
+### Wpis 120
+**#REF!**: Nie
+
+### Wpis 121
+**#REF!**: Nie
+
+### Wpis 122
+**#REF!**: Nie
+
+### Wpis 123
+**#REF!**: Nie
+
+### Wpis 124
+**#REF!**: Nie
+
+### Wpis 125
+**#REF!**: Nie
+
+### Wpis 126
+**#REF!**: Nie
+
+### Wpis 127
+**#REF!**: Nie
+
+### Wpis 128
+**#REF!**: Nie
+
+### Wpis 129
+**#REF!**: Nie
+
+### Wpis 130
+**#REF!**: Nie
+
+### Wpis 131
+**#REF!**: Nie
+
+### Wpis 132
+**#REF!**: Nie
+
+### Wpis 133
+**#REF!**: Nie
+
+### Wpis 134
+**#REF!**: Nie
+
+### Wpis 135
+**#REF!**: Nie
+
+### Wpis 136
+**#REF!**: Nie
+
+### Wpis 137
+**#REF!**: Nie
+
+### Wpis 138
+**#REF!**: Nie
+
+### Wpis 139
+**#REF!**: Nie
+
+### Wpis 140
+**#REF!**: Nie
+
+### Wpis 141
+**#REF!**: Nie
+
+### Wpis 142
+**#REF!**: Nie
+
+### Wpis 143
+**#REF!**: Nie
+
+### Wpis 144
+**#REF!**: Nie
+
+### Wpis 145
+**#REF!**: Nie
+
+### Wpis 146
+**#REF!**: Nie
+
+### Wpis 147
+**#REF!**: Nie
+
+### Wpis 148
+**#REF!**: Nie
+
+### Wpis 149
+**#REF!**: Nie
+
+### Wpis 150
+**#REF!**: Nie
+
+### Wpis 151
+**#REF!**: Nie
+
+### Wpis 152
+**#REF!**: Nie
+
+### Wpis 153
+**#REF!**: Nie
+
+### Wpis 154
+**#REF!**: Nie
+
+### Wpis 155
+**#REF!**: Nie
+
+### Wpis 156
+**#REF!**: Nie
+
+### Wpis 157
+**#REF!**: Nie
+
+### Wpis 158
+**#REF!**: Nie
+
+### Wpis 159
+**#REF!**: Nie
+
+### Wpis 160
+**#REF!**: Nie
+
+### Wpis 161
+**#REF!**: Nie
+
+### Wpis 162
+**#REF!**: Nie
+
+### Wpis 163
+**#REF!**: Nie
+
+### Wpis 164
+**#REF!**: Nie
+
+### Wpis 165
+**#REF!**: Nie
+
+### Wpis 166
+**#REF!**: Nie
+
+### Wpis 167
+**#REF!**: Nie
+
+### Wpis 168
+**#REF!**: Nie
+
+### Wpis 169
+**#REF!**: Nie
+
+### Wpis 170
+**#REF!**: Nie
+
+### Wpis 171
+**#REF!**: Nie
+
+### Wpis 172
+**#REF!**: Nie
+
+### Wpis 173
+**#REF!**: Nie
+
+### Wpis 174
+**#REF!**: Nie
+
+### Wpis 175
+**#REF!**: Nie
+
+### Wpis 176
+**#REF!**: Nie
+
+### Wpis 177
+**#REF!**: Nie
+
+### Wpis 178
+**#REF!**: Nie
+
+### Wpis 179
+**#REF!**: Nie
+
+### Wpis 180
+**#REF!**: Nie
+
+### Wpis 181
+**#REF!**: Nie
+
+### Wpis 182
+**#REF!**: Nie
+
+### Wpis 183
+**#REF!**: Nie
+
+### Wpis 184
+**#REF!**: Nie
+
+### Wpis 185
+**#REF!**: Nie
+
+### Wpis 186
+**#REF!**: Nie
+
+### Wpis 187
+**#REF!**: Nie
+
+### Wpis 188
+**#REF!**: Nie
+
+### Wpis 189
+**#REF!**: Nie
+
+### Wpis 190
+**#REF!**: Nie
+
+### Wpis 191
+**#REF!**: Nie
+
+### Wpis 192
+**#REF!**: Nie
+
+### Wpis 193
+**#REF!**: Nie
+
+### Wpis 194
+**#REF!**: Nie
+
+### Wpis 195
+**#REF!**: Nie
+
+### Wpis 196
+**#REF!**: Nie
+
+### Wpis 197
+**#REF!**: Nie
+
+### Wpis 198
+**#REF!**: Nie
+
+### Wpis 200
+**Klasa**: Miasto Khorinis
+**Nie**: Miasto Khorinis
+**#REF!**: Ardea
+**#REF!**: Ardea
+**Antonia**: Ardea
+**Magowie Wody**: Wyspy Południowe
+**Magowie Wody**: false
+**Magowie Wody**: false
+**Antonia**: false
+**Antonia**: false
+**Antonia**: false
+**Antonia**: false
+**Antonia**: false
+**Antonia**: false
+**Antonia**: false
+**Antonia**: false
+**Magowie bez vespery**: false
+**Antonia**: false
+**Antonia**: false
+**Antonia**: false
+**Antonia**: false
+**Magowie Wody**: false
+**Antonia**: false
+**Magowie Wody**: false
+**Magowie Wody**: false
+**Antonia**: false
+**Antonia**: false
+**Antonia**: false
+**Antonia**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+
+### Wpis 201
+**Klasa**: Farmy
+**Nie**: Farmy
+**#REF!**: Cape Dun
+**#REF!**: Cape Dun
+**Antonia**: Cape Dun
+
+### Wpis 202
+**#REF!**: Montera
+**#REF!**: Montera
+**Antonia**: Montera
+
+### Wpis 203
+**#REF!**: Vengard
+**#REF!**: Vengard
+**Antonia**: Vengard
+
+### Wpis 204
+**#REF!**: Silden
+**#REF!**: Silden
+**Antonia**: Silden
+
+### Wpis 205
+**#REF!**: Geldern
+**#REF!**: Geldern
+**Antonia**: Geldern
+
+### Wpis 206
+**#REF!**: Faring
+**#REF!**: Faring
+**Antonia**: Faring
+
+### Wpis 207
+**#REF!**: Gotha
+**#REF!**: Gotha
+**Antonia**: Gotha
+
+### Wpis 208
+**#REF!**: Trelis
+**#REF!**: Trelis
+**Antonia**: Trelis
+

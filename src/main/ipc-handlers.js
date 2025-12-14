@@ -1,5 +1,36 @@
 /**
- * IPC Handlers for pipeline operations
+ * ═══════════════════════════════════════════════════════════════════════════════
+ * IPC HANDLERS - Główny plik obsługi komunikacji IPC między main a renderer
+ * ═══════════════════════════════════════════════════════════════════════════════
+ * 
+ * STRUKTURA PLIKU (sekcje):
+ * ─────────────────────────────────────────────────────────────────────────────
+ * 1. IMPORTS & DEPENDENCIES        (linie 1-40)      - Moduły i serwisy
+ * 2. HELPER FUNCTIONS              (linie 41-60)     - sendProgress, sendLog
+ * 3. DATA SOURCE HANDLERS          (linie 61-130)    - Google Sheets, LarpGothic API
+ * 4. PIPELINE HANDLERS             (linie 131-230)   - Lanes, Profile, Quests, Rendering
+ * 5. AI COMMAND HANDLER            (linie 231-540)   - ⭐ GŁÓWNY handler AI (streaming, RAG)
+ * 6. TEXT CORRECTION               (linie 541-550)   - Korekta tekstu przez AI
+ * 7. CONFIGHUB HANDLERS            (linie 551-600)   - Konfiguracja aplikacji
+ * 8. CONVERSATION FLOW             (linie 601-620)   - Przepływ konwersacji
+ * 9. PROMPT BUILDERS (Legacy)      (linie 621-870)   - Stare builderzy promptów
+ * 10. DATA LOADING HANDLERS        (linie 871-950)   - Profile MG, Historia, Kontekst
+ * 11. MODEL TESTBENCH              (linie 951-1340)  - Testy modeli AI
+ * 12. CUSTOM MODEL PATH            (linie 1341-1440) - Zarządzanie ścieżką modeli
+ * 13. QUALITY CONTROL              (linie 1441-1459) - Walidacja odpowiedzi AI
+ * 
+ * WAŻNE NIUANSE:
+ * ─────────────────────────────────────────────────────────────────────────────
+ * - Handler 'ai-command' (sekcja 5) to serce AI - obsługuje streaming, RAG, fallback
+ * - Prompt Builders (sekcja 9) to legacy code - nowe prompty idą przez prompt-builder.js
+ * - Wszystkie handlery używają runWithTrace() dla tracingu request/response
+ * - RAG (Vector Store) jest opcjonalny - błędy nie blokują głównego flow
+ * 
+ * @module ipc-handlers
+ * @requires electron
+ * @requires ../services/ollama-client - Główny klient AI (wrapper na ollama npm)
+ * @requires ../services/vector-store - RAG embeddings (mxbai-embed-large)
+ * @requires ../shared/config-hub - Centralna konfiguracja
  */
 
 const { ipcMain, shell } = require('electron');
@@ -9,15 +40,34 @@ const logger = require('../shared/logger');
 const config = require('../shared/config');
 const { runWithTrace, getTraceId } = require('../shared/tracing');
 
-// Pipeline modules
-const dataExtraction = require('../modules/data-extraction');
-const profileMerge = require('../modules/profile-merge');
-const rendering = require('../modules/rendering');
-const ollamaService = require('../services/ollama');
-const vectorStore = require('../services/vector-store'); // Import Vector Store
-const sessionService = require('../services/session-service'); // Import Session Service
-const textCorrectorService = require('../services/text-corrector'); // Import Text Corrector
-const modelLimits = require('../services/model-limits');
+// ═══════════════════════════════════════════════════════════════════════════════
+// PIPELINE MODULES - Moduły przetwarzania danych postaci
+// ═══════════════════════════════════════════════════════════════════════════════
+const dataExtraction = require('../modules/data-extraction');      // Ekstrakcja danych z API
+const profileMerge = require('../modules/profile-merge');          // Łączenie profili z różnych źródeł
+const rendering = require('../modules/rendering');                 // Renderowanie HTML kart
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// AI SERVICES - Serwisy sztucznej inteligencji
+// ═══════════════════════════════════════════════════════════════════════════════
+const ollamaService = require('../services/ollama-client');        // ⭐ Główny klient Ollama (streaming, embeddings)
+const vectorStore = require('../services/vector-store');           // RAG - przeszukiwanie dokumentów
+const sessionService = require('../services/session-service');     // Zarządzanie sesją użytkownika
+const textCorrectorService = require('../services/text-corrector');// Auto-korekta tekstu
+const modelLimits = require('../services/model-limits');           // Limity tokenów per model
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// CONFIGURATION & SCHEMAS
+// ═══════════════════════════════════════════════════════════════════════════════
+const configHub = require('../shared/config-hub');                 // Centralna konfiguracja (data/config.json)
+const schemaLoader = require('../schemas/schema-loader');          // JSON Schemas dla structured output
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 2: HELPER FUNCTIONS
+// ═══════════════════════════════════════════════════════════════════════════════
+// Funkcje pomocnicze do komunikacji z renderer process
+// sendProgress - aktualizuje pasek postępu w UI (step, procent, wiadomość)
+// sendLog - dodaje wpis do konsoli logów w UI
 
 // Helper to send progress to renderer
 function sendProgress(event, step, progress, message) {
@@ -32,6 +82,14 @@ function sendLog(event, level, message) {
         event.sender.send('log', { level, message, timestamp: new Date().toISOString(), traceId: getTraceId() });
     }
 }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 3: DATA SOURCE HANDLERS
+// ═══════════════════════════════════════════════════════════════════════════════
+// Handlery pobierania danych z zewnętrznych źródeł:
+// - fetch-sheets: Google Sheets (tabela postaci)
+// - fetch-larpgothic: LarpGothic API (profile postaci z bazy LARP)
+// - fetch-world-context: Google Drive + PDF (opis świata) - TODO
 
 // Fetch data from Google Sheets
 ipcMain.handle('fetch-sheets', async (event) => {
@@ -90,6 +148,18 @@ ipcMain.handle('fetch-world-context', async (event) => {
         };
     });
 });
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 4: PIPELINE HANDLERS
+// ═══════════════════════════════════════════════════════════════════════════════
+// Przetwarzanie danych postaci przez "lanes" (ścieżki analizy):
+// - process-lane: Przetwarza pojedynczą ścieżkę przez AI + indeksuje do RAG
+// - process-all-lanes: Batch processing wszystkich ścieżek
+// - reduce-profile: Łączy wyniki z lanes w finalny profil
+// - generate-quests: Generuje questy dla postaci
+// - render-cards: Renderuje karty HTML
+// - save-output: Zapisuje plik wyjściowy
+// - open-output-folder: Otwiera folder z wynikami
 
 // Process a single lane through AI
 ipcMain.handle('process-lane', async (event, lane, data) => {
@@ -228,7 +298,31 @@ ipcMain.handle('open-output-folder', async () => {
     return { success: true };
 });
 
-// AI Command handler - process different AI commands on profile data
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 5: AI COMMAND HANDLER ⭐ GŁÓWNY HANDLER AI
+// ═══════════════════════════════════════════════════════════════════════════════
+// To jest SERCE całej aplikacji AI. Obsługuje wszystkie komendy AI:
+// 
+// FLOW PRZETWARZANIA:
+// 1. Session Management - tworzy/aktualizuje sesję użytkownika
+// 2. Smart Limits - oblicza limity tokenów na podstawie modelu
+// 3. RAG Context - przeszukuje Vector Store po kontekst (opcjonalne)
+// 4. Prompt Building:
+//    - commandType === 'custom' → bezpośredni prompt użytkownika
+//    - options.promptConfig → nowy prompt-builder.js
+//    - default → legacy prompts (funkcje build*Prompt poniżej)
+// 5. AI Generation - wywołuje Ollama (streaming lub synchronicznie)
+// 6. Quality Control:
+//    - Walidacja odpowiedzi (validateResponse)
+//    - Auto-korekta tekstu (textCorrectorService)
+// 7. RAG Indexing - zapisuje odpowiedź do Vector Store
+// 8. Fallback - próbuje mniejszych modeli jeśli główny zawiedzie
+//
+// WAŻNE NIUANSE:
+// - stream: true → chunki wysyłane przez event.sender.send('ai-stream')
+// - format: schema → wymusza JSON Schema output (structured output)
+// - Błędy RAG NIE blokują głównego flow (try/catch wewnętrzny)
+
 ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) => {
     return runWithTrace(async () => {
         logger.info('AI Command received', {
@@ -323,7 +417,46 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
                 'faction_suggestion': buildFactionPrompt(profile),
                 'secret': buildSecretPrompt(profile)
             };
+
+            // Special handling for Correction
+            if (commandType === 'correct_text') {
+                // If profile is passed, we correct the Profile's Description or History?
+                // Or maybe we treat the "customPrompt" option as the text to correct if provided?
+                // Standard usage in Quick Actions usually works on the profile context.
+                // Let's correct the "Teraźniejszość" or "Historia" if available, or just a generic prompt.
+                // But wait, the user likely wants to correct specific text they entered?
+                // "Szybkie Akcje" -> "Korekta" -> What does it correct?
+                // Usually it corrects the Profile content.
+                // Let's assume it corrects the concatenated field "Historia" + "Terniejszość".
+                // OR, checking TextCorrector usage, it usually takes text.
+                // Let's create a prompt that asks to correct the profile description.
+                const textToCorrect = (profile['Historia'] || '') + '\n' + (profile['Terazniejszosc'] || '');
+                if (textToCorrect.trim()) {
+                    // We use the service directly instead of prompt builder
+                    try {
+                        const corrected = await textCorrectorService.correctText(textToCorrect, { model: options.model });
+                        return { success: true, text: corrected, commandType };
+                    } catch (err) {
+                        return { success: false, error: err.message };
+                    }
+                } else {
+                    return { success: false, error: "Brak tekstu do korekty w profilu." };
+                }
+            }
+
             prompt = prompts[commandType];
+
+            // Use JSON Schema if available, otherwise fall back to 'json'
+            const schema = schemaLoader.getSchemaForCommand(commandType);
+            if (schema) {
+                options.format = schema; // Pass full JSON Schema object
+                logger.info('[AI] Using structured JSON Schema for:', commandType);
+            } else if (['extract_traits', 'analyze_relations', 'main_quest', 'side_quest', 'redemption_quest', 'group_quest', 'story_hooks', 'potential_conflicts', 'npc_connections', 'secret'].includes(commandType)) {
+                options.format = 'json'; // Fallback to basic JSON mode
+            }
+        } else if (commandType === 'custom') {
+            // Re-enabled strict JSON format if requested, as per user requirement (parsed by frontend)
+            // if (options.format === 'json') delete options.format;
         }
 
         if (!prompt) {
@@ -375,6 +508,51 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
 
                 if (result.success) {
                     sendLog(event, 'success', `AI: ${commandType} (Stream) zakończone`);
+
+                    // 1. Validate Response Quality
+                    const validation = validateResponse(result.text);
+                    if (!validation.valid) {
+                        logger.warn('Response invalidated', { error: validation.error });
+                        if (event?.sender && !event.sender.isDestroyed()) {
+                            event.sender.send('ai-status', { status: `⚠️ ${validation.error}` });
+                        }
+                    }
+
+                    // --- QUALITY CONTROL (Auto-Correction) ---
+                    // Fix typos and formatting using small model
+                    // We check config, defaulting to true if not set
+                    const autoCorrect = true; // TODO: Load from configHub.get('features.autoCorrection', true);
+
+                    if (autoCorrect && result.text && result.text.length > 20) {
+                        try {
+                            // Notify UI about correction phase
+                            if (event?.sender && !event.sender.isDestroyed()) {
+                                event.sender.send('ai-status', { status: 'Korekta językowa...' });
+                            }
+
+                            const corrected = await textCorrectorService.correctText(result.text);
+                            if (corrected && corrected !== result.text) {
+                                logger.info('Auto-Correction applied', {
+                                    original_len: result.text.length,
+                                    corrected_len: corrected.length
+                                });
+                                result.text = corrected;
+
+                                // Send REPLACEMENT update to frontend
+                                if (event?.sender && !event.sender.isDestroyed()) {
+                                    event.sender.send('ai-stream', {
+                                        isDone: true,
+                                        fullText: corrected, // This triggers replacement in app.js
+                                        commandType
+                                    });
+                                }
+                            }
+                        } catch (err) {
+                            // Don't fail the request if corrector fails
+                            logger.error('Auto-correction failed', { error: err.message });
+                        }
+                    }
+                    // ------------------------------------------
 
                     // --- RAG INDEXING (STREAM) ---
                     if (commandType === 'custom' || commandType === 'chat') {
@@ -463,9 +641,100 @@ ipcMain.handle('ai:correct-text', async (event, text, options) => {
     });
 });
 
-// ==============================
-// AI Prompt Builders
-// ==============================
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 7: CONFIGHUB HANDLERS
+// ═══════════════════════════════════════════════════════════════════════════════
+// Centralna konfiguracja aplikacji (persisted w data/config.json)
+// Sekcje: models, generation, prompts, timeouts, features
+// Użycie w renderer: window.electronAPI.configGet/configSet/configGetAll
+
+// Get a single config value
+ipcMain.handle('config:get', async (event, configPath, defaultValue) => {
+    return { success: true, value: configHub.get(configPath, defaultValue) };
+});
+
+// Set a config value
+ipcMain.handle('config:set', async (event, configPath, value) => {
+    try {
+        configHub.set(configPath, value);
+        return { success: true };
+    } catch (e) {
+        return { success: false, error: e.message };
+    }
+});
+
+// Get entire config
+ipcMain.handle('config:getAll', async () => {
+    return { success: true, config: configHub.getAll() };
+});
+
+// Reset config (entire or section)
+ipcMain.handle('config:reset', async (event, section) => {
+    try {
+        configHub.reset(section || null);
+        return { success: true };
+    } catch (e) {
+        return { success: false, error: e.message };
+    }
+});
+
+// Export config as JSON string
+ipcMain.handle('config:export', async () => {
+    return { success: true, json: configHub.export() };
+});
+
+// Import config from JSON string
+ipcMain.handle('config:import', async (event, jsonString) => {
+    return configHub.import(jsonString);
+});
+
+// Get default config (for comparison)
+ipcMain.handle('config:getDefaults', async () => {
+    return { success: true, defaults: configHub.getDefaults() };
+});
+
+const conversationFlowService = require('../services/conversation-flow');
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 8: CONVERSATION FLOW HANDLER
+// ═══════════════════════════════════════════════════════════════════════════════
+// Obsługuje konwersacyjny tryb AI - pozwala na naturalną rozmowę z AI
+// w kontekście wybranej postaci (feature flag: features.conversationFlow)
+
+ipcMain.handle('conv-flow:process', async (event, charName, text, profile, options = {}) => {
+    return runWithTrace(async () => {
+        logger.info('Processing conversation flow', { charName, textLength: text.length, model: options.model });
+        try {
+            const result = await conversationFlowService.processMessage(charName, text, profile, options.model);
+            return result;
+        } catch (error) {
+            logger.error('Conversation flow error', error);
+            return { success: false, error: error.message };
+        }
+    });
+});
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 9: AI PROMPT BUILDERS (LEGACY)
+// ═══════════════════════════════════════════════════════════════════════════════
+// ⚠️ LEGACY CODE - Stare builderzy promptów
+// Nowe prompty powinny iść przez src/prompts/prompt-builder.js
+// Te funkcje są fallbackiem gdy promptConfig nie jest ustawiony
+//
+// Dostępne builderzy:
+// - buildSummarizePrompt: Podsumowanie postaci (3 zdania)
+// - buildExtractTraitsPrompt: Ekstrakcja cech (JSON)
+// - buildRelationsPrompt: Analiza relacji (JSON)
+// - buildMainQuestPrompt: Główny quest (JSON)
+// - buildSideQuestPrompt: Quest poboczny (JSON)
+// - buildRedemptionQuestPrompt: Quest odkupienia (JSON)
+// - buildGroupQuestPrompt: Quest grupowy (JSON)
+// - buildStoryHooksPrompt: Hooki fabularne (JSON)
+// - buildConflictsPrompt: Potencjalne konflikty (JSON)
+// - buildNpcConnectionsPrompt: Powiązania z NPC (JSON)
+// - buildNicknamePrompt: Generowanie ksywki
+// - buildFactionPrompt: Sugestia frakcji
+// - buildSecretPrompt: Sekret postaci (JSON)
 
 function buildSummarizePrompt(profile) {
     return `Jesteś Mistrzem Gry w gotyckiej grze fabularnej.
@@ -493,7 +762,15 @@ WYPISZ:
 1. Główne cechy charakteru (3-5 punktów)
 2. Mocne strony
 3. Słabe strony
-4. Potencjalne motywacje`;
+4. Potencjalne motywacje
+
+FORMAT DANYCH (JSON):
+{
+    "traits": ["cecha 1", "cecha 2", ...],
+    "strengths": ["mocna strona 1", ...],
+    "weaknesses": ["słaba strona 1", ...],
+    "motivations": ["motywacja 1", ...]
+}`;
 }
 
 function buildRelationsPrompt(profile) {
@@ -506,7 +783,14 @@ HISTORIA: ${profile['O postaci'] || 'Brak'}
 WYPISZ:
 1. SOJUSZNICY - kto i dlaczego
 2. WROGOWIE - kto i dlaczego
-3. NEUTRALNE KONTAKTY - potencjalne relacje do rozwinięcia`;
+3. NEUTRALNE KONTAKTY - potencjalne relacje do rozwinięcia
+
+FORMAT DANYCH (JSON):
+{
+    "allies": [ {"name": "...", "reason": "..."} ],
+    "enemies": [ {"name": "...", "reason": "..."} ],
+    "neutral": [ {"name": "...", "potential": "..."} ]
+}`;
 }
 
 function buildMainQuestPrompt(profile) {
@@ -527,16 +811,13 @@ Quest powinien:
 - Angażować inne frakcje w obozie
 - Mieć jasną nagrodę
 
-FORMAT:
-# [Nazwa questa]
-## Opis
-[2-3 zdania]
-## Kroki
-1. [krok]
-2. [krok]
-...
-## Nagroda
-[co postać zyskuje]`;
+FORMAT (JSON):
+{
+    "title": "Nazwa questa",
+    "description": "Opis...",
+    "steps": ["krok 1", "krok 2", ...],
+    "reward": "Nagroda..."
+}`;
 }
 
 function buildSideQuestPrompt(profile) {
@@ -548,14 +829,13 @@ UMIEJĘTNOŚCI: ${profile['Umiejetnosci'] || 'Brak'}
 
 Quest poboczny powinien być krótki (1-2 sesje), wykorzystywać umiejętności postaci i dawać małą, ale użyteczną nagrodę.
 
-FORMAT:
-# [Nazwa]
-## Zleceniodawca
-[kto daje quest]
-## Zadanie
-[co trzeba zrobić]
-## Nagroda
-[co się zyskuje]`;
+FORMAT (JSON):
+{
+    "title": "Nazwa",
+    "giver": "Zleceniodawca",
+    "task": "Zadanie",
+    "reward": "Nagroda"
+}`;
 }
 
 function buildRedemptionQuestPrompt(profile) {
@@ -567,16 +847,14 @@ HISTORIA: ${profile['O postaci'] || 'Brak'}
 
 Quest odkupienia powinien pozwolić postaci zadośćuczynić za swoją winę lub zmazać przeszłość. Może być trudny i wymagający poświęceń.
 
-FORMAT:
-# [Nazwa questa odkupienia]
-## Wina do zmazania
-[co postać musi odkupić]
-## Sposób odkupienia
-[jak może to zrobić]
-## Cena / Poświęcenie
-[czego to kosztuje]
-## Nagroda duchowa
-[jak zmieni to postać]`;
+FORMAT (JSON):
+{
+    "title": "Nazwa questa odkupienia",
+    "sin": "Wina do zmazania",
+    "redemption": "Sposób odkupienia",
+    "cost": "Cena / Poświęcenie",
+    "spiritualReward": "Nagroda duchowa"
+}`;
 }
 
 function buildGroupQuestPrompt(profile) {
@@ -588,16 +866,14 @@ RELACJE: ${profile['Znajomi, przyjaciele i wrogowie'] || 'Brak'}
 
 Quest powinien wymagać współpracy 3-5 graczy o różnych umiejętnościach.
 
-FORMAT:
-# [Nazwa questa grupowego]
-## Cel wspólny
-[co drużyna musi osiągnąć]
-## Rola tej postaci
-[jak ta konkretna postać może pomóc]
-## Potrzebne role
-[jakich innych specjalistów potrzeba]
-## Wyzwania
-[przeszkody do pokonania]`;
+FORMAT (JSON):
+{
+    "title": "Nazwa questa grupowego",
+    "goal": "Cel wspólny",
+    "role": "Rola tej postaci",
+    "neededRoles": "Potrzebne role",
+    "challenges": "Wyzwania"
+}`;
 }
 
 function buildStoryHooksPrompt(profile) {
@@ -610,15 +886,14 @@ SŁABOŚCI: ${profile['Slabosci'] || 'Brak'}
 
 Hook fabularny to krótka sytuacja/wydarzenie które wciąga postać w akcję.
 
-FORMAT:
-1. [Hook 1 - nazwa]
-   [1-2 zdania opisu]
-   
-2. [Hook 2 - nazwa]
-   [1-2 zdania opisu]
-   
-3. [Hook 3 - nazwa]
-   [1-2 zdania opisu]`;
+FORMAT (JSON):
+{
+    "hooks": [
+        {"title": "Hook 1", "desc": "Opis..."},
+        {"title": "Hook 2", "desc": "Opis..."},
+        {"title": "Hook 3", "desc": "Opis..."}
+    ]
+}`;
 }
 
 function buildConflictsPrompt(profile) {
@@ -631,12 +906,12 @@ SŁABOŚCI: ${profile['Slabosci'] || 'Brak'}
 
 Wymień 3-4 potencjalne konflikty z innymi frakcjami/postaciami w obozie.
 
-FORMAT:
-1. KONFLIKT Z [frakcja/osoba]
-   Powód: [dlaczego]
-   Jak może się rozwinąć: [scenariusz]
-   
-2. [kolejny konflikt...]`;
+FORMAT (JSON):
+{
+    "conflicts": [
+        {"with": "Frakcja/Osoba", "reason": "Powód", "scenario": "Scenariusz"}
+    ]
+}`;
 }
 
 function buildNpcConnectionsPrompt(profile) {
@@ -648,12 +923,12 @@ REGION: ${profile['Region'] || 'Nieznany'}
 
 Zaproponuj 3-4 NPC (niegraczy) którzy mogą być powiązani z tą postacią.
 
-FORMAT:
-1. [Imię NPC] - [rola/profesja]
-   Relacja: [jaka relacja]
-   Potencjał fabularny: [jak można to wykorzystać]
-   
-2. [kolejny NPC...]`;
+FORMAT (JSON):
+{
+    "npcs": [
+        {"name": "Imię", "role": "Rola", "relation": "Relacja", "potential": "Potencjał"}
+    ]
+}`;
 }
 
 function buildNicknamePrompt(profile) {
@@ -698,19 +973,25 @@ Zaproponuj sekret który postać skrywa. Sekret powinien:
 - Mieć potencjał fabularny (co się stanie jak wyjdzie na jaw?)
 - Motywować jej działania
 
-FORMAT:
-# SEKRET: [tytuł sekretu]
-## Co skrywa
-[opis sekretu]
-## Dlaczego to ukrywa
-[motywacja]
-## Co się stanie gdy wyjdzie na jaw
-[konsekwencje]`;
+FORMAT (JSON):
+{
+    "title": "Tytuł sekretu",
+    "secret": "Co skrywa",
+    "motivation": "Dlaczego ukrywa",
+    "consequences": "Co się stanie gdy wyjdzie na jaw"
+}`;
 }
 
-// ==============================
-// Data Loading Handlers
-// ==============================
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 10: DATA LOADING HANDLERS
+// ═══════════════════════════════════════════════════════════════════════════════
+// Ładowanie danych z plików Excel i kontekstu świata:
+// - data:load-mg-profiles: Profile Mistrzów Gry (docs/MG_Profiles.xlsx)
+// - data:load-faction-history: Historia frakcji (docs/Faction_History.xlsx)
+// - data:load-char-history: Historia postaci (docs/Char_History.xlsx)
+// - data:load-world-context: Kontekst świata (src/contexts/*.txt)
+// - get-profile-by-name: Pobiera profil postaci po imieniu
+// - get-all-character-names: Lista wszystkich imion (dla autocomplete)
 
 ipcMain.handle('data:load-mg-profiles', async (event) => {
     return runWithTrace(async () => {
@@ -790,9 +1071,20 @@ ipcMain.handle('get-all-character-names', async (event) => {
     });
 });
 
-// ==============================
-// MODEL TESTBENCH HANDLERS
-// ==============================
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 11: MODEL TESTBENCH HANDLERS
+// ═══════════════════════════════════════════════════════════════════════════════
+// System testów porównawczych modeli AI. Zawiera:
+// - testbench:get-models: Lista dostępnych modeli
+// - testbench:get-scenarios: Scenariusze testowe
+// - testbench:run-tests: Uruchomienie testów (z progress callback)
+// - testbench:cancel: Anulowanie testów
+// - testbench:export-report: Eksport raportu HTML
+//
+// ZAAWANSOWANE TESTY (tests:*):
+// - context-limits, memory-usage, consistency, prompt-sensitivity
+// - instruction-following, hallucination, latency, cost-efficiency
+// - needle-haystack, safety-limits, language-stability
 
 const modelTestbench = require('../services/model-testbench');
 const reportGenerator = require('../services/test-report-generator');
@@ -904,9 +1196,11 @@ ipcMain.handle('testbench:export-report', async (event, summary, filename) => {
     });
 });
 
-// ============================================
-// ADVANCED TESTS - Isolated handlers
-// ============================================
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 11B: ADVANCED TESTS - Izolowane handlery testów
+// ═══════════════════════════════════════════════════════════════════════════════
+// Każdy test ma dwa handlery: :run-all (uruchom) i :load-cache (załaduj cache)
+// Wyniki są cache'owane w data/test-results/
 
 const contextLimitsTest = require('../services/tests/context-limits');
 
@@ -1176,9 +1470,17 @@ ipcMain.handle('tests:language-stability:load-cache', async (event) => {
     return { success: true, cached };
 });
 
-// ==========================================
-// Custom Model Path Handlers
-// ==========================================
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 12: CUSTOM MODEL PATH HANDLERS
+// ═══════════════════════════════════════════════════════════════════════════════
+// Zarządzanie ścieżką przechowywania modeli Ollama.
+// Używane gdy użytkownik chce przenosic modele np. na inny dysk (SSD -> HDD)
+// 
+// NIUANSE:
+// - Ustawia OLLAMA_MODELS przez setx (user env variable)
+// - Może kopiować modele przez robocopy (opcjonalne)
+// - Restartuje serwis Ollama po zmianie
+// - Wymaga restartu aplikacji dla pełnego efektu
 
 ipcMain.handle('ollama:get-models-path', async () => {
     return process.env.OLLAMA_MODELS || '';
@@ -1276,63 +1578,36 @@ ipcMain.handle('ollama:set-models-path', async (event, { newPath, moveModels }) 
     });
 });
 
-// ==========================================
-// CONVERSATION FLOW HANDLERS  
-// Two-Phase AI: Discovery → Generation
-// ==========================================
+// [Legacy Conversation Flow handlers removed to avoid duplicates]
 
-const conversationFlow = require('../services/conversation-flow');
 
-// Process user message through conversation flow
-ipcMain.handle('conv-flow:process', async (event, profileName, message, profileData) => {
-    return runWithTrace(async () => {
-        logger.info('Conversation Flow: Processing message', { profileName, messageLen: message?.length });
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 13: QUALITY CONTROL HELPERS
+// ═══════════════════════════════════════════════════════════════════════════════
+// Walidacja jakości odpowiedzi AI przed zwrotem do użytkownika.
+// Wykrywa problemy jak:
+// - Zbyt krótkie odpowiedzi (<5 znaków)
+// - Surowy JSON dump (błąd modelu - nie sformatował odpowiedzi)
+// - Angielskie odmowy ("I cannot fulfill...", "as an AI language model")
 
-        try {
-            // Get or create conversation for this profile
-            const convId = conversationFlow.getOrCreateConversation(profileName);
+/**
+ * Waliduje odpowiedź AI pod kątem jakości
+ * @param {string} text - Tekst odpowiedzi do walidacji
+ * @returns {{valid: boolean, error?: string}} Wynik walidacji
+ */
+function validateResponse(text) {
+    if (!text || text.length < 5) return { valid: false, error: 'Zbyt krótka odpowiedź' };
 
-            // Process through state machine
-            const result = await conversationFlow.processUserMessage(
-                convId,
-                message,
-                ollamaService,
-                profileData
-            );
+    const trimmed = text.trim();
+    // JSON dump check (if it looks like a JSON object and is short and has no double newlines, likely a dump)
+    if (trimmed.startsWith('{') && trimmed.endsWith('}') && trimmed.length < 1000 && !trimmed.includes('\n\n')) {
+        return { valid: false, error: 'Surowy format JSON (błąd modelu)' };
+    }
 
-            // Send update to renderer
-            if (event?.sender && !event.sender.isDestroyed()) {
-                event.sender.send('conv-flow-update', {
-                    convId,
-                    stage: conversationFlow.getState(convId)?.stage,
-                    questionsAsked: conversationFlow.getState(convId)?.questionsAsked,
-                    ...result
-                });
-            }
+    // English refusal check
+    if (text.includes("I cannot fulfill") || text.includes("as an AI language model")) {
+        return { valid: false, error: 'Odmowa asystenta (model refused)' };
+    }
 
-            return { success: true, convId, ...result };
-        } catch (error) {
-            logger.error('Conversation Flow error:', error);
-            return { success: false, error: error.message };
-        }
-    });
-});
-
-// Get conversation state
-ipcMain.handle('conv-flow:get-state', async (event, convId) => {
-    const state = conversationFlow.getState(convId);
-    return { success: true, state };
-});
-
-// Reset conversation
-ipcMain.handle('conv-flow:reset', async (event, convId) => {
-    conversationFlow.reset(convId);
-    logger.info('Conversation Flow: Reset', { convId });
-    return { success: true };
-});
-
-// Get recipe from conversation
-ipcMain.handle('conv-flow:get-recipe', async (event, convId) => {
-    const recipe = conversationFlow.getRecipe(convId);
-    return { success: true, recipe };
-});
+    return { valid: true };
+}

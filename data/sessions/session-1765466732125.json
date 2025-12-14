@@ -1,0 +1,21 @@
+{
+  "id": "session-1765466732125",
+  "profileName": "Alwar",
+  "startTime": 1765466732125,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765466732149
+    },
+    {
+      "role": "user",
+      "content": "Command: extract_traits",
+      "timestamp": 1765466844958
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

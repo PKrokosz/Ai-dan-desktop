@@ -1,0 +1,16 @@
+{
+  "id": "session-1765361799627",
+  "profileName": "Albert Konus",
+  "startTime": 1765361799627,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: extract_traits",
+      "timestamp": 1765361799633
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

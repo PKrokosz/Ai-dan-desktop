@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const ollamaService = require('./ollama');
+const ollamaService = require('./ollama-client'); // Using official ollama npm library
 const logger = require('../shared/logger');
 
 class VectorStore {
@@ -41,7 +41,7 @@ class VectorStore {
      * @param {string} text Content to embed
      * @param {object} metadata Extra info (source, type, date)
      */
-    async addDocument(text, metadata = {}) {
+    async addDocument(text, metadata = {}, autoSave = true) {
         try {
             // Check for potential duplicates (simple check)
             const exists = this.documents.find(d => d.text === text && d.metadata.source === metadata.source);
@@ -58,7 +58,7 @@ class VectorStore {
                     timestamp: Date.now()
                 };
                 this.documents.push(doc);
-                await this.save();
+                if (autoSave) await this.save();
                 return doc;
             } else {
                 logger.error('Failed to generate embedding', result.error);

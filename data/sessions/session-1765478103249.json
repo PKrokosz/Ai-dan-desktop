@@ -1,0 +1,21 @@
+{
+  "id": "session-1765478103249",
+  "profileName": "Avrelius",
+  "startTime": 1765478103249,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765478103251
+    },
+    {
+      "role": "user",
+      "content": "Command: extract_traits",
+      "timestamp": 1765478607086
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

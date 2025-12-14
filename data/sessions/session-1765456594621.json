@@ -1,0 +1,21 @@
+{
+  "id": "session-1765456594621",
+  "profileName": "Denton",
+  "startTime": 1765456594621,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765456594649
+    },
+    {
+      "role": "user",
+      "content": "Command: side_quest",
+      "timestamp": 1765456669631
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

@@ -1,0 +1,1929 @@
+# Fabuła Strażnicy Świątynni 2025.xlsx
+================================================================================
+
+## Arkusz: Postacie
+----------------------------------------
+
+### Wpis 1
+**L.p.**: 1
+**Imię postaci**: Bezi
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: Łowcy
+**Mechaniczne umiejętności**: Pozyskiwanie komponentów:
+- oko ścierwojada
+- jad umarlaka
+**Krótki opis postaci**: Kolejny ateista
+**Najważniejsi znajomi**: Diego, Milten, Gorn, Lester
+**Słowa kluczowe**: walka, polowania
+**Wątki**: Ukradnij cebulę
+**Najważniejsze fakty z podsumowania**: - Ledwo co go zrzucili, zbiera znajomości w każdym z obozów
+- Został pobity przez Bullita
+
+### Wpis 2
+**L.p.**: 2
+**Imię postaci**: Gor Na Rex
+**Kontynuacja**: TAK
+
+### Wpis 3
+**L.p.**: 3
+**Imię postaci**: Gor Na Ragu
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Archolos
+**Pochodzenie dokładne**: Silbach
+**Krótki opis postaci**: Niedawno mianowany na Gor Na, wciąż pamięta dom sprzed wrzucenia pod barierę, ale powoli stawia Bractwo na właściwym miejscu.
+**Najważniejsi znajomi**: Maruda, Sztychu, Najemnicy
+**Słowa kluczowe**: pojedynek, walka z potworami, przesłuchanie, odurzenie
+
+### Wpis 4
+**L.p.**: 4
+**Imię postaci**: Gor Vikr
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Farmy
+**Krótki opis postaci**: Wierzący pragmatyk w Straży Świątynnej z kontaktami w NO
+**Najważniejsi znajomi**: Rickard, Inger, Baal Sachs, Orrin, Gor Na Rex
+**Słowa kluczowe**: walka, przesłuchania, odurzenie, wyłudzenie, hazard
+
+### Wpis 5
+**L.p.**: 5
+**Imię postaci**: Gor Han
+**Kontynuacja**: TAK
+
+### Wpis 6
+**L.p.**: 6
+**Imię postaci**: Gor Tar
+**Kontynuacja**: TAK
+
+### Wpis 7
+**L.p.**: 7
+**Imię postaci**: Gor Toth
+**Kontynuacja**: TAK
+
+### Wpis 8
+**L.p.**: 8
+**Imię postaci**: Gor Gyyrax
+**Kontynuacja**: NIE
+
+### Wpis 9
+**L.p.**: 9
+**Imię postaci**: Gor Balar
+**Kontynuacja**: NIE
+
+### Wpis 10
+**L.p.**: 10
+**Imię postaci**: Gor Ruh
+**Kontynuacja**: NIE
+
+### Wpis 11
+**L.p.**: 11
+**Imię postaci**: Gor Omba
+**Kontynuacja**: TAK
+
+### Wpis 12
+**L.p.**: 12
+**Imię postaci**: Gor Gior
+**Kontynuacja**: NIE
+
+### Wpis 13
+**L.p.**: 13
+**Imię postaci**: Gor Bács
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Archolos
+**Pochodzenie dokładne**: Miasto Archolos
+**Najważniejsi znajomi**: Omba, Cefre, szkodnicy z Archolos
+**Najważniejsze fakty z podsumowania**: Cienie, którzy go pobili jak był skazańcem: Torin(napierdalał), Daevon(odciągał Torina).
+
+### Wpis 14
+**L.p.**: 14
+**Imię postaci**: Gor Vith
+**Kontynuacja**: NIE
+
+## Arkusz: Grupy
+----------------------------------------
+
+### Wpis 1
+**L.p.**: 1
+**Nazwa grupy**: SS PL
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Na Rex,Gor Na Ragu,Gor Vikr,Gor Tar,Gor Toth,Gor Gyyrax,Gor Balar,Gor Ruh,Gor Vith,Gor Han
+
+### Wpis 2
+**L.p.**: 2
+**Nazwa grupy**: SS EN
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Omba,Gor Gior,Gor Bács
+
+### Wpis 3
+**L.p.**: 3
+**Nazwa grupy**: Gor Na
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Na Rex,Gor Na Ragu
+
+### Wpis 4
+**L.p.**: 4
+**Nazwa grupy**: New Gor PL
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Tar,Gor Gyyrax,Gor Balar,Gor Ruh,Gor Vith
+
+### Wpis 5
+**L.p.**: 5
+**Nazwa grupy**: New Gor EN
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Gior,Gor Bács
+
+### Wpis 6
+**L.p.**: 6
+**Nazwa grupy**: Dodatkowy nowicjusz
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Gyyrax,Gor Balar
+
+### Wpis 7
+**L.p.**: 7
+**Nazwa grupy**: Siatka szpiegowska
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Toth,Gor Vikr
+
+### Wpis 8
+**L.p.**: 8
+**Nazwa grupy**: Zbieranie zasobów
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Vith,Gor Ruh
+
+### Wpis 9
+**L.p.**: 9
+**Nazwa grupy**: SS Kont PL
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Na Rex,Gor Na Ragu,Gor Vikr,Gor Han,Gor Tar,Gor Toth
+
+### Wpis 10
+**L.p.**: 10
+**Nazwa grupy**: SS Kont Gor PL
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Vikr,Gor Toth,Gor Han
+
+### Wpis 11
+**L.p.**: 11
+**Nazwa grupy**: SS Kont Gor EN
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Gor Omba
+
+## Arkusz: Wątki
+----------------------------------------
+
+### Wpis 1
+**Nazwa wątku**: Czarna Szychta
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Vikr
+**Kolejność**: 33
+**Wpis fabularny**: Twoje kontakty w kolonii przynoszą efekty. Zeszłej nocy dostałeś informację, że pewien Strażnik Gomeza znany jako Szczerba prowadzi nocą w Starej Kopalni nielegalne wydobycie rudy. Cały zysk omija Gomeza i trafia przede wszystkim do tych, którzy to wydobycie organizują. Zawarłeś z nimi umowę: pomożesz w przedsięwzięciu chroniąc w nocy kopiących przed pełzaczami, a w zamian dostaniesz zapłatę. Ot prosta ruda. Dodatkowo Strażnik wspominał, że szukają dodatkowych kopaczy do tej roboty, więc jeśli przyprowadzisz ze sobą dwóch Nowicjuszy do kopania to możesz liczyć na lepszą zapłatę niż kwota za samą ochronę, a ponadto już wcześniej dałeś cynk Vik i Milo o dodatkowej robocie. Teraz tylko musisz sprawdzić ich zainteresowanie całą akcją i upewnić się, że nie upalą się zielem wieczorem jak będziecie mieli iść kopać. Jesteś umówiony ze Szczerbą na spotkanie pod kopalnią o 22.
+
+Jeśli się uda to wiesz, że masz szansę trochę się dorobić i tym samym umocnić swoja pozycję jak i przybliżyć się do awansu na Gor Na. W końcu to przedsiębiorczość Gor Na Groma sprawiła, że stał on tak wysoko pośród was.
+**Krótki opis**: Czarnach szychta Vikr
+**Zleceniodawca**: Chciwość
+**Zaangażowane frakcje**: Strażnicy Świątynni, Nowicjusze, Strażnicy, Kopacze
+**Potrzebne rekwizyty**: narzędzia dla kopiących
+**Nagroda**: ruda
+
+### Wpis 2
+**Nazwa wątku**: Ziele poza naszą kontrolą
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: SS Kont PL
+**Kolejność**: 27
+**Wpis fabularny**: Parę dni temu, kiedy patrolowaliście ścieżki w okolicy Faktorii Bractwa minęliście grupę popalających bagienne ziele Cieni wracających do Starego Obozu. Niby normalny widok jak na co dzień, ale coś w tym było nie tak, coś wam w tym śmierdziało... Wszyscy jakby słysząc rozkaz zwolniliście krok i zaczęliście patrzeć po sobie szukając potwierdzenia o podejrzeniach jakie was ogarnęły... To bagienne ziele nie pachniało jak zwykły Zielony Nowicjusz. To musiało być coś więcej... Zawróciliście i zwracając się do Cieni zaczęliście wypytywać ich o źródło pochodzenia tego ziela i niestety, ale wiele się nie dowiedzieliście. Ot, że czasem takie skręty pojawiają się u przeróżnych handlarzy i nie ma ich dużo. Banda Cieni sama była zaskoczona jak się dowiedziała, że tego gatunku ziela Faktoria Bractwa nie sprzedaje byle komu...
+
+Finalnie doszliście do wniosku, że ktoś produkuje te skręty poza Faktorią Bractwa i sprzedaje z dużym zyskiem... To nie może dłużej trwać. Trzeba odnaleźć winowajców i odpowiednio ukarać.
+**Krótki opis**: Akania ma przepis na wytworzenie mroku północy i robi z tego biznes. (To nie będzie mrok północy tylko eksperymentalne ziele Światło Poranka. Przepis pozostaje taki sam, tylko nazwa inna plus będzie zawinięte w niebieskie smakowe bletki, żeby SŚ łatwiej była w stanie prowadzić dochodzenie. Można wręczyć SŚ parę sztuk na początek larpa, zależy jak dużo pomocy potrzebują. - Joplin)
+**Zleceniodawca**: Los
+**Zaangażowane frakcje**: Strażnicy Świątynni, Szkodniki
+**Potrzebne rekwizyty**: Dostawca NPC dla Akanii
+Przepis (Domingo ogarnia)
+**Nagroda**: ruda
+
+### Wpis 3
+**Nazwa wątku**: Poprzednim razem w Faktorii Bractwa Śniącego
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: SS PL
+**Kolejność**: 20
+**Wpis fabularny**: Ostatatnie większe wydarzenie w Faktorii Bractwa polegało na zorganizowaniu i przeprowadzeniu obchodów Święta Pierwszego Słowa, co, jak się okazało, nie zostało przez władze Faktorii wykonane w stopniu zadowalającym dla Cor Kaloma. W konsekwencji Mistrz Orun został odwołany ze stanowiska zarządcy i odesłany z powrotem do obozu na bagnie. Na jego miejsce Y'Berion wysłał innych Guru, jednych z mniejszym, innych z większym doświadczeniem w kierowaniu wspólnotą. Wiesz że, oznacza to początek cichej walki o władze, względy i osiągnięcia. Jesteś tego pewny jak swojej wiary w Śniącego.
+**Krótki opis**: Podsumowanie wydarzeń polityczno-społecznych z ostatniej edycji.
+**Zleceniodawca**: Śniący
+**Zaangażowane frakcje**: Guru, Strażnicy Świątynni, Nowicjusze
+**Potrzebne rekwizyty**: brak
+**Nagroda**: brak
+
+### Wpis 4
+**Nazwa wątku**: Trwająca wojna Straży Świątynnej z orkami
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: SS PL
+**Kolejność**: 21
+**Wpis fabularny**: Poprzedni konflikt zbrojny z orkami w okolicach Faktorii Bractwa Śniącego pokazały prawdziwą siłę Straży Świątynnej. Braciom udało się odeprzeć zagrożenie ze strony orków, niestety nie dość skutecznie. Szamanowi, który zaklinał magią leśne bestie udało się zbiec. Choć jego bestie zostały pokonane, a orkowa eskorta pobita i pogoniona to pewne jest, że po zalizaniu ran, będzie chciał wziąć odwet. Niestety nawet w samych szeregach Straży Świątynnej można dostrzec straty poniesione przez tamte wyczerpujące potyczki. Część Gor Na na wezwanie Cor Kaloma musiała wrócić, aby pomóc w ochronie Obozu Bractwa przed plagą węży błotnych, które poczuły się zbyt swobodnie i zaczęły wykluwać w zastraszającym tempie. Spora część Gor nie przeżyła walk z bestiami szamana oraz orkami. Wraz z nowymi Guru przybywającymi do Faktorii mają nadejść i nowi Gor, którzy będą konkurować ze sobą aby osiągnąć tytułu Gor Na. Tylko co musi się wydarzyć, żeby odwrócić fatum nowo rozwijającej się sytuacji w Faktorii Bractwa?
+**Krótki opis**: Podsumowanie wydarzeń militarno-społecznych z ostatniej edycji.
+**Zleceniodawca**: Śniący
+**Zaangażowane frakcje**: Guru, Strażnicy Świątynni, Nowicjusze
+**Potrzebne rekwizyty**: brak
+**Nagroda**: brak
+
+### Wpis 5
+**Nazwa wątku**: Last time at Brotherhood of the Sleeper's Outpost
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: SS EN
+**Kolejność**: 20
+**Wpis fabularny**: The most recent major events at the Brotherhood Outpost involved organizing and carrying out the celebration of the Festival of the First Word — something the Outpost’s authorities failed to execute to Cor Kalom’s satisfaction. As a result, not only was Master Orun dismissed and sent back to the Swamp Camp, but new Gurus have now taken his place — some with less, others with more experience in leading our community. In your eyes, it seems as certain as the fact that the Sleeper is a god: a silent struggle for power, favor, and achievements is beginning.
+**Krótki opis**: Podsumowanie wydarzeń polityczno-społecznych z ostatniej edycji. Wersja EN
+**Zleceniodawca**: Śniący
+**Zaangażowane frakcje**: Guru, Strażnicy Świątynni, Nowicjusze
+**Potrzebne rekwizyty**: brak
+**Nagroda**: brak
+
+### Wpis 6
+**Nazwa wątku**: The ongoing war between the Temple Guard and the orcs.
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: SS EN
+**Kolejność**: 21
+**Wpis fabularny**: The previous armed conflict with the orcs near the Brotherhood Outpost revealed the true strength of the Temple Guards. The brothers managed to repel the orc threat — unfortunately, not definitely. The shaman who had been controling forest beasts with magic managed to escape. Though his beasts were defeated and his orkish escort crushed and routed, it is certain that once he licks his wounds, he will seek revenge.
+Regrettably, even within the ranks of the Temple Guards, the toll of those exhausting skirmishes is evident. Some of the Gor Na had to return at Cor Kalom’s call to help defend the Swamp Camp against a plague of swampsharks, which had grown too bold and begun hatching at an alarming rate. A significant number of Gor perished in the battles against the shaman’s beasts and his orcs.
+New Gurus are expected to arrive to the Outpost — and with them Gors who will compete against each other for the title of Gor Na. But what must happen to break the curse hanging over the unfolding events at the Brotherhood Outpost?
+**Krótki opis**: Podsumowanie wydarzeń militarno-społecznych z ostatniej edycji. Wersja EN
+**Zleceniodawca**: Śniący
+**Zaangażowane frakcje**: Guru, Strażnicy Świątynni, Nowicjusze
+**Potrzebne rekwizyty**: brak
+**Nagroda**: brak
+
+### Wpis 7
+**Nazwa wątku**: Czas próby
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: New Gor PL
+**Kolejność**: 22
+**Wpis fabularny**: Wczoraj wieczorem Cor Angar zebrał nas, początkujących Gor'ów, i zapowiedział, że w nadchodzących dniach okaże się, czy osiągnęliśmy poziom godny tytułu mistrzowskiego – Gor Na. Powiedział, że to właśnie w Faktorii Bractwa czeka na nas szereg ostatnich prób: zarówno zadań powierzonych przez Mistrzów, jak i wyzwań, które Kolonia Górnicza zdecyduje rzucić naszym braciom przebywającym na miejscu.
+
+To właściwy czas na rozwinięcie zdolności magicznych i łowieckich, a Mistrzowie z pewnością będą nas uważnie obserwować. Muszę umocnić swoją pozycję w Straży Świątynnej i tym samym zapewnić sobie awans... czuję się zdeterminowany dokonać tego za WSZELKĄ cenę.
+
+**Krótki opis**: Wstęp fabularny dla nowych Gor'ów
+**Zleceniodawca**: Cor Angar
+**Zaangażowane frakcje**: Strażnicy Świątynni
+**Potrzebne rekwizyty**: brak
+**Nagroda**: brak
+
+### Wpis 8
+**Nazwa wątku**: Time of trials
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: New Gor EN
+**Kolejność**: 22
+**Wpis fabularny**: Last evening, Cor Angar gathered us — aspiring Gors — and announced that in the coming days it would be revealed whether we have reached the level worthy of the master title — Gor Na. He said that it is in the Brotherhood Outpost a series of final trials awaits us: either tasks entrusted to us by the Masters and challenges that the Velley of Mines may choose to throw at our brothers stationed there.
+
+It is high time to develop my magical and hunting skills, and the Masters will surely be watching us closely. I must solidify my position within the Temple Guards and by doing so ensure myself a promotion... I feel determined to do it by ALL possible means.
+**Krótki opis**: Wstęp fabularny dla nowych Gor'ów
+**Zleceniodawca**: Cor Angar
+**Zaangażowane frakcje**: Strażnicy Świątynni
+**Potrzebne rekwizyty**: brak
+**Nagroda**: brak
+
+### Wpis 9
+**Nazwa wątku**: Dwa to lepiej niż jeden
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Dodatkowy nowicjusz
+**Kolejność**: 24
+**Wpis fabularny**: Po odprawie Cor Angara otrzymałem poradę od Gor Na Rana, który powiedział mi, że biorąc pod uwagę liczbę Strażników Świątynnych w faktorii, Gor Na Kagan na pewno postawi przed nami zadanie znalezienia po kandydacie do Straży Świątynnej wśród Nowicjuszy. Powiedział mi, żebym nie zwlekał z tym zadaniem i zaczął zanim Gor Na zlecą nam to zadanie. Odchodząc dodał, że na koniec dnia nie będzie to miało znaczenia czy zostaną Strażnikami, tylko czy będą z tobą wtedy, kiedy to będzie miało znaczenie.
+
+Czyżby mieliby być mi potrzebni do jakiegoś zadania, które dostaniemy po ich znalezieniu?
+**Krótki opis**: Porada dotycząca jednego z zadań rozdawanych przez MG na grze.
+**Zleceniodawca**: Gor Na Kagan
+**Zaangażowane frakcje**: Strażnicy Świątynni, Nowicjusze
+**Potrzebne rekwizyty**: brak
+**Nagroda**: Przybliżenie do awansu na Gor Na
+
+### Wpis 10
+**Nazwa wątku**: Informacja to podstawa
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Siatka szpiegowska
+**Kolejność**: 24
+**Wpis fabularny**: Trochę czasu już minęło odkąd służę w Faktorii Bractwa, a mimo tego wciąż nie zostałem awansowany do tytułu Gor Na. Wraz z nowoprzybyłymi Strażnikami Świątynnymi niewątpliwie sam będę poddawany próbom przez obecnych w Faktorii Mistrzów. Jeśli nie wykażę się czymś w oczach Gor Na to mogę wiele na tym stracić. Mogą odesłać mnie z powrotem do Obozu na bagnie na ponowne odbycie nauk i treningów pod okiem Cor Angara, a to nie będzie świadczyło dobrze o mnie w oczach Guru.
+Na szczęście przez cały czas przebywania tutaj zauważyłem jak wartościowe są w oczach Gor Na Kagana informacje. Informacje na których Bractwo może zyskać jeśli podejmie jakieś działania z nimi związane. Wiem, że jeśli wykażę się w tej kwestii to na pewno odróżnię się od pozostałych Gor'ów i tym samym przybliżę moją osobę do wywyższenia na Gor Na.
+**Krótki opis**: Porada dotycząca jednego z zadań rozdawanych przez MG na grze.
+**Zleceniodawca**: Gor Na Kagan
+**Zaangażowane frakcje**: Strażnicy Świątynni
+**Potrzebne rekwizyty**: brak
+**Nagroda**: Przybliżenie do awansu na Gor Na
+
+### Wpis 11
+**Nazwa wątku**: Wartość w oczach Bractwa
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Zbieranie zasobów
+**Kolejność**: 24
+**Wpis fabularny**: Po odprawie Cor Angara otrzymałem poradę od Gor Na Draka, który powiedział mi, że próby na Gor Na mają nie tylko sprawdzić naszą sprawność, siłę czy oddanie, ale też zasobność.
+Powiedział mi, że łatwiej będzie mi zdobyć przchylność mistrzów Straży Świątynnej jeśli w trakcie prób wykażę się umiejętnościami w pozyskiwaniu i dostarczaniu Bractwu magicznych esencji czy komponentów alchemicznych pozyskiwanych z potworów. Gor Na Drak był pewien, że Gor Na Kagan i Guru docenią takie zdolności i zwiększy to moje szanse na zostanie wywyższonym do tytułu Gor Na.
+**Krótki opis**: Porada dotycząca jednego z zadań rozdawanych przez MG na grze.
+**Zleceniodawca**: Gor Na Kagan
+**Zaangażowane frakcje**: Strażnicy Świątynni
+**Potrzebne rekwizyty**: brak
+**Nagroda**: Przybliżenie do awansu na Gor Na
+
+### Wpis 12
+**Nazwa wątku**: Nadchodzące negocjacje z Magnatami
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: Gor Na
+**Kolejność**: 28
+**Wpis fabularny**: Do Faktorii Bractwa dotarły wieści, że Magnaci zaczynają mieć kłopoty z pełzaczami w Starej Kopalni. Do tego wiemy, że pierwszego dnia Guru mają w planach spotkać się z nimi na rozmowach politycznych. To prawie oczywiste, że Magnaci będą chcieli wykorzystać cenny czas Straży Świątynnej do tego aby wzmocnić bezpieczeństwo kopaczy wydobywających rudę. W naszym interesie jest przypomnieć Guru, że nie mogą zbyt swobodnie dysponować już uszczuplonymi siłami Straży Światynnej. Bractwo musi na tej umowie zyskać naprawdę sporo, żeby było opłacalne. 
+**Krótki opis**: Porada dla Strażników Świątynnych dotycząca nadchodzących negocjacji Guru z Magnatami.
+**Zleceniodawca**: Gor Na Kagan
+**Zaangażowane frakcje**: Strażnicy Świątynni, Guru, Magnaci
+**Potrzebne rekwizyty**: Brak
+**Nagroda**: Pochwała lub opierdol słowny w tym ewentualne reperkusje
+
+### Wpis 13
+**Nazwa wątku**: Spotkanie w świątyni Innosa
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Vikr
+**Kolejność**: 31
+**Wpis fabularny**: Jakiś czas temu, gdy wracałem nocą z karczmy w Starym Obozie, coś w kaplicy Innosa przykuło moją uwagę. Była to całkiem pokaźna górka magicznej rudy usypana tuż u podnóża posągu. Dookoła było pusto więc nie musiałem się dwa razy zastanawiać. Uklękłem pod kapliczką i zacząłem czerpać z kopca cenny kruszec prosto do mojej sakwy. Kiedy już miałem się od niego oderwać usłyszałem czyiś głos za moimi plecami. "Bracie, co ty najlepszego wyprawiasz?!" Był to Nowicjusz Marmarok. "Kajasz się przed bogiem światła, który nas opuścił?!" Odwróciłem się natchmiast w stronę Nowicjusza i gestem wskazałem mu, aby ściszył głos. Szepcząc wyjaśniłem mu co robiłem i że to nie była modlitwa. Mimo wyjaśnień Marmarok był wściekły. "Jak śmiesz?! Dostąpiłeś zaszczytu zostania Strażnikiem Świątynnym, a upadlasz się kradzieżą?!" W tym samym momencie coś stuknęło pod jednym z okien kaplicy i zorientowałem się, że ktoś nas podsłuchuje. W mgnieniu oka podskoczyłem do okna, ale podsłuchiwacz zdążył dać nogę. Odwróciłem się do Marmaroka i wyciągając nóż powiedziałem do niego: "Przez twoje wrzaski, ktoś nas usłyszał. Teraz cała kolonia będzie gadać, że jakiś Strażnik Świątynny modli się jednocześnie kradnąc rudę Magów Ognia. Co możesz mi zaoferować za swoje życie?" Mamarok wyraźnie wystraszony obrotem spraw nie był w stanie szeptać widząc nóż w moich rękach... "Powiem... że to nie byłeś ty... powiem, że to Toth... nawet jeśli będą mnie przesłuchiwać." Zmarszczyłeś brwii słysząc to. Po twarzy Nowicjusza wyraźnie było widać, że ma na pieńku z Gor Tothem. Zgodziłem się na to i rzuciłem mu trochę rudy na odchodne, żeby o mnie zbyt źle nie myślał. Kto wie... Może taki głupiec jak on okaże się w czymś przydatny?
+**Krótki opis**: Marmarok przyłapał Vikra na klęczeniu w świątyni Innosa, Vikr był wtedy w trakcie kradzieży. za dyskrecję podzielili się łupem. Marmarok doniósł guru o incydencie ale powiedział że to Toth się w niej modlił. Balar (SŚ zawsze mówiący prawdę) podsłuchał jak Marmarok rozmawia z Vikrem i planuje wrobić Totha. Wątek na podstawie podsumowania marmaroka i totha. 
+**Zleceniodawca**: Gor Na Cez, Chciwość
+**Zaangażowane frakcje**: Strażnicy Świątynni, Guru, Nowicjusze
+**Potrzebne rekwizyty**: brak
+**Nagroda**: Kilka bryłek na start za zapoznanie się z wątkiem
+
+### Wpis 14
+**Nazwa wątku**: Dziwna rozmowa w Starym Obozie
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Balar
+**Kolejność**: 30
+**Wpis fabularny**: Jeszcze zanim zostałem przyjęty do Straży Świątynnej byłem pokornym Nowcjuszem. Los chciał, że wysłano mnie z dostawą do Faktorii Bractwa i tym samym noc wtedy spędzałem w karczmie Starego Obozu wraz z wieloma innymi braćmi. Tak, czasem da się tam znaleźć trochę spokoju. Kiedy już podpici wracaliśmy gromadą z powrotem do faktorii, zauważyłem, że mojego brata Nowicjusza Marmaroka brakuje. No cóż, taka z niego czasem jest porywcza głowa, że spije się, da okraść, a potem ja kretoszczur do nory - zawsze wróci. Parę kroków w kierunku bramy Starego Obozu i mój pęcherz dał o sobie znać. Powiedziałem braciom, żeby szli dalej, a ja odleję się na stronie i ich dogonie. Odwróciłem się i stwierdziłem, że wąskie przejście pomiedzy kaplicą Innosa, a czyjąś chatką będzie idealne na nadchodzącą ulgę. Wspiąłem się po skarpie, ustawiłem w miejscu i już miałem działać, a nagle słyszę przytłumiony choć wyraźny głos dobiegający z wnętrza kaplicy... "Bracie, co ty najlepszego wyprawiasz?!", zakrzyczał głos.. Po tym, usłyszałeś też drugi, ale druga osoba musiała mówić szeptem, bo nic nie zrozumiałeś. "Kajasz się przed bogiem światła, który nas opuścił?!", grzmiał ten pierwszy, ewidentnie nie kryjąć gniewu i szoku. Trochę się wtedy wzgrygnąłeś, bo to poważne oskarżenie w kierunku drugiej najprawdopodobniej innego wyznawcy Śniącego. "Jak śmiesz?! Dostąpiłeś zaszczytu zostania Strażnikiem Świątynnym, a upadlasz się kradzieżą?!", wtedy oczy prawie wyszły ci na wierzch. Nie dość, że poznałeś ten głos, był to ewidentnie Marmarok, który krzyczał w stronę jakiegoś Strażnika Świątynnego jeszcze bardziej hańbiące wyrażenia... Chciałeś podejść kawałek, w stronę okienka i spróbować wyjżeć zza framugi okna, żeby dojżeć tego Strażnika, ale nigdy nie byłeś dobry w skradaniu się. Nastąpiłeś na jakąś śliską deskę leżącą w trawie przy ścianie kaplicy i żeby się nie przewrócić odruchowo oparłeś się ręką ściany. Usłyszałeś tylko jak ktoś w kilku wyważonych susach podbiega do okna i znowu instynkty wzięły górę, a ty odtrulałeś się po trawie licząc na to, że cie nie znajdą... Leżąc w trawie usłysałeś w końcu słowa tego drugiego: "Przez twoje wrzaski, ktoś nas usłyszał. Teraz cała kolonia będzie gadać, że jakiś Strażnik Świątynny modli się jednocześnie kradnąc rudę Magów Ognia. Co możesz mi zaoferować za swoje życie?" I zarówno odpowiedź Marmaroka: "Powiem... że to nie byłeś ty... powiem, że to Toth... nawet jeśli będą mnie przesłuchiwać."
+
+Odczołgałeś sie po tym po trawie jak najdalej od kaplicy.. Ewidentnie usłyszałeś coś czego nie powinieneś był. Kajanie się przed posągiem obcego boga, kradzież rudy Magów Ognia i jeszcze próba wrobienia tego całego Totha... kimkolwiek on jest. To wszystko nie brzmiało jak rozmowa dwóch wyznawców Śniącego.. Kiedy w końcu podniosłeś się z trawy, ruszyłeś ponownie do Faktorii Bractwa. Na koniec tamtego dnia stwierdziłeś, że chyba wolałbyś zapomnieć o tym co cię spotkało, a mimo tego masz wrażenie, że Śniący postawił cię w tej sytuacji nie bez przyczyny...
+**Krótki opis**: Wątek co wyżej. 
+**Zleceniodawca**: nic
+**Zaangażowane frakcje**: Strażnicy Świątynni, Guru, Nowicjusze
+**Potrzebne rekwizyty**: nic
+**Nagroda**: nic
+
+### Wpis 15
+**Nazwa wątku**: Tęsknota za domem
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Na Rex
+**Kolejność**: 31
+**Wpis fabularny**: Sporo czasu minęło odkąd przyjąłem tytuł Gor Na... i mimo tego, że sam przyuczam młodszych braci do tego jakim człowiekiem muszą się stać, aby wiernie służyć Śniącemu to wiem, że sam zboczyłem z tej ścieżki... Mam moje poprzednie życie na sumieniu, o którym nie potrafię zapomnieć. Na domiar złego odnalezienie w tej podłej kolonii karnej ludzi, którzy dzielą mój sentyment tylko odwraca moją uwagę od tego co wiem, że powinno być dla mnie ważniejsze. Widać przywykłem do życia w cierpieniu... i Śniący o tym wie. Odkąd stałem się tak rozdarty Śniący zsyła na mnie koszmary... Koszmary, w których stoję pośród zasp śnieżnych poczas zamieci i walczę z orkami. Z wielkim trudem, jeden za drugim padają od mojego ostrza, ale ich potok nigdy się nie kończy, a ja padam od ich ciosów. Kiedy tak leżę, widzę jak mijają mnie i biegną dalej tam, gdzie nie chcę żeby dobiegli. Kiedy krew moja barwi lód na którym leżę czuję, że jestem sam. Czuję, że nie ma tu nikogo, kto mógłby mi pomóc. Nie ma tu moich Braci, nikogo z rodziny, którą odnalazłem pod Barierą. Wtedy umieram...
+Poza szokiem i niewyspaniem, które odczuwam po tym nawracającym koszmarze, pojawia się też we mnie uczucie ulgi. Ta ulga to fakt, że budzę się i widzę, że wokół mnie śpią moi Bracia. Wiem, że gdyby byli tam ze mną to nie daliby mi skonać tam na lodowych zaspach...
+
+Nie jestem Guru, żeby mieć pewność co wszystko to znaczy i dopóki nie zasięgnę ich rady to mogę się tylko domyślać czego odemnie chce Śniący. Martwię się tylko, że im dłużej waham się co z tym zrobić i im dłużej daję temu trwać... tym gorsze mogą mnie spotkać konsekwencje.
+
+(Przez powracające sny z przeszłości jesteś jeszcze bardzier rozdrażniony niż normalnie. Na każdą informację o potencjalnej zdradzie wśród swoich reagujesz wybuchowo. Jedynie rozmowa z innymi skazańcami pochodzącymi z klanów Nordmaru lub rozmowa z kimkolwiek o twojej własnej przeszłości przynosi ci tymczasową ulgę i wracasz do zmysłów [po takiej rozmowie na ok 3 godziny wracają ci zmysły]. Dzieje się tak do momentu kulminacyjnego tego wątku)
+**Krótki opis**: Wątek personalny z podsumowania. Początek wątku  prowadzącego do sądu Rexa.
+**Zleceniodawca**: Śniący, sentyment do poprzedniego życia, Gor Na Cez
+**Zaangażowane frakcje**: Strażnicy Świątynni, Strażnicy, Guru
+**Potrzebne rekwizyty**: Brak
+**Nagroda**: Paliwo do wątków przeciw Rexowi
+
+### Wpis 16
+**Nazwa wątku**: Wizje…
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Na Rex
+**Kolejność**: 33
+**Wpis fabularny**: Nie zbadane są wyroki Śniącego. Co jakiś czas okazywałem się godny, dzięki wiernej służbie i niezachwianej wierze. Zsyłał mi wizje. Jedne proste w interpretacji, inne trudne do zrozumienia nawet dla Baal Ayen. Ostatnio jednak coś się zmieniło. Te wszystkie koszmary senne. Ta jedna jedyna wizja gdy wypalę za dużo...    Nordmar... Krew... Krzyki i płacz... Wizje nigdy nie nawiedzały mnie tak często. Nigdy się też nie powtarzały. Ta jedna jednak nawiedza mnie coraz częściej i zawsze tak samo. Orkowie zbiegający ze zbocza gór. Płonąca osada. Śmierć Matki. Sigi wzywająca moje imię z całych sił "Rexxar!". Jej zimne martwe oczy chwilę później... Gdy pierwszy raz, Śniący zesłał mi to wspomnienie jako wizję, od razu omówiłem to z Mistrzynią Ayen. Rozmowa ta przyniosła mi ulgę i spokój. Jednak nie na długo. Wizja wróciła. To jedno przeklęte wspomnienie... Ostatnio wraca do mnie coraz częściej, nawet codziennie. Czy Śniący wystawia mnie na próbę? Oddałbym wszystko by zakończyć te tortury. O co w tym wszystkim chodzi? Nie zbadane są wyroki Śniącego...
+
+Do czasu złamania uroku odgrywaj następujący efekt:
+Przynajmniej raz dziennie (można więcej) odgrywaj, że ponownie przeżywasz wizję której właśnie doświadczyłeś. Podbij odgrywanie negatywnych emocji i szaleństwa. Potem na czas dwóch scen odgrywaj wyczerpanego i zmęczonego.
+**Krótki opis**: Wątek opętania Ayen.
+
+### Wpis 17
+**Nazwa wątku**: Dorwać zaskrońce
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: SS Kont PL
+**Kolejność**: 25
+**Wpis fabularny**: Wszystkie kazania Guru na temat węży wśród nas i idące za tym nieudane śledztwa czy urwane tropy zaczynają powoli sprawiać, że nowicjusze zaczynają traktować te tematy jak nieskuteczne straszydło do tego aby zmusić ich do posłuszeństwa i nieufania sobie nawzajem, co powoli zaczyna się stawać prawdą. Groźba ze strony zdrajców w naszej społeczności nie jest brana na poważnie, Nowicjusze zachowują się coraz bardziej swawolnie, a my od miesięcy nie dorwaliśmy nikogo choć wiemy, że tu są. Przez taki obrót spraw Gor Na Cez i Gor Na Kagan stali się napięci jak cięciwa w łuku jeśli tylko ktoś wspomni o tym temacie. Jeszcze chwila i to nas będą winić za taki stan rzeczy. Jeśli szybko nie wyśledzimy przynajmniej kilku z tych zdrajców i nie zaprowadzimy ich przed oblicze sprawiedliwości to nasze życie w Faktorii stanie się istnym koszmarem.
+**Krótki opis**: Jest 12 oportunistów z czego 9 to praktycznie węże. Kontynuacja fabuły wewnątrzobozowej.
+
+Jakieś tropy warto by im dać.
+**Zleceniodawca**: Gor Na Cez i Gor Na Kagan
+**Zaangażowane frakcje**: Strażnicy Świątynni, Nowicjusze
+**Potrzebne rekwizyty**: Brak
+**Nagroda**: Ruda oraz predyspozycje do awansu
+
+### Wpis 18
+**Nazwa wątku**: Czyste serce to świetlna przyszłość
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: New Gor PL
+**Kolejność**: 23
+**Wpis fabularny**: Nauki Cor Angara wyraźnie to mówiły, każdy Nowicjusz podczas mianowania na Strażnika Świątynnego porzuca dawnego siebie i staje się nowym człowiekiem. Jeśli tak się nie stanie to niemożliwe jest by mógł bezgranicznie oddać siebie w służbie Śniącemu. Cor Angar zlecił nam mieć oczy otwarte na naszych własnych braci, a mówili o tym nawet w kontekście, który nie wykluczał Guru, a nawet angażował aspirujących o awans Nowicjuszy. Jeśli zauważymy coś wskazującego na to, że wciaż oglądają się w przeszłość, mamy natychmiast zawiadomić o tym Gor Na przewodzącym Straży Świątynnej w Faktorii, którymi są Gor Na Kagan i Gor Na Cez. Trochę ciężko dziwić się takiemu podejściu, w końcu ciężkie czasy wołają o drastyczne środki... Ale czy to nie za dużo?
+**Krótki opis**: Wpis do edycji. Każdy z graczy, również guru, mają mroczną stronę swojej postaci. Należy meldować i prowadzić śledztwo w sprawie każdego podejrzenia. 
+**Zleceniodawca**: Cor Angar
+**Zaangażowane frakcje**: Strażnicy Świątynni, Nowicjusze, Guru
+**Potrzebne rekwizyty**: brak
+**Nagroda**: Bryłki rudy
+
+### Wpis 19
+**Nazwa wątku**: Wizje łowcy Wiley'a
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Toth
+**Kolejność**: 35
+**Wpis fabularny**: Minęły już prawie trzy miesiące odkąd ostatni raz rozmawiałem z Wiley'em. Jednak ciągle prześladuje mnie myśl, że mogłem zrobić dla niego więcej. Mówił mi wtedy, że ma dziwne sny, czy może nawet przebłyski wizji o Śniącym i o naszym Bractwie... Powinienem go odnaleźć i porozmawiać z nim o tym. Być może Mistrzyni Ayen byłaby w stanie wyczytać w tych snach los, który czeka tego szkodnika. Może to znak, żebym sprowadził go na właściwą ścieżkę? Guru na pewno będą zadowoleni z nowych wyznawców.
+**Krótki opis**: Na podstawie karty postaci i podsumowania obu graczy
+**Zleceniodawca**: Wątek na prośbę graczy
+**Zaangażowane frakcje**: Strażnicy Świątynni, Guru, Nowicjusze, Szkodniki
+**Potrzebne rekwizyty**: nic
+**Nagroda**: nic
+
+### Wpis 20
+**Nazwa wątku**: Mistrz i uczeń 
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Na Ragu
+**Kolejność**: 34
+**Wpis fabularny**: Witara już z nami nie ma. Teraz Gor Tar zajął jego miejsce. Według metod jakie wprowadził Gor Na Kagan powienien zostać oddany pod moje powiernictwo jako uczeń. Obawiam się, że biorąc pod uwagę jak niewielu Gor Na znajduje się obecnie w Faktorii Bractwa, to nie mam co na to liczyć. Mimo tego uważam, że jako jego mistrz, a może i przyjaciel, a za nie długo pewnie i brat, to czuję, że powinienem być dla niego wsparciem w nadchodzącej drodze do jego awansu. Na nas obu czekają wyzwania, to jasne. Dla niego to czas na naukę magii i łowiectwa… Gdyby tego było mało to przez ostatnie wydarzenia nasi Mistrzowie stali się bardzo surowi. Mimo to razem wszystkiemu podołamy.
+**Krótki opis**: Kontynuacja wątków z podsumowań na życzenie graczy.
+
+### Wpis 21
+**Nazwa wątku**: Zawsze stoi mi na drodze
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Vikr
+**Kolejność**: 35
+**Wpis fabularny**: Gor Na Rex jest znanym i szanowanym Strażnikiem Świątynnym, a przynajmniej za takiego się uważa. To zwykły uzależniony od ziela wariat, a do tego zaskarbił sobie zaufanie Mistrzów. Jestem przekonany, że nie jest taki święty jak wszystkim się zdaje. Gdybym tylko znalazł jakiegoś haka, informację, może uda mi się podkopać jego autorytet. Rex nigdy nie poprze w głosowaniu mojego awansu... Gdyby stracił w oczach pozostałych Mistrzów to jest szansa, że jego głos zostanie podważony i nie przeszkodzi mi w zostaniu Gor Na. Wiem jedno, nie będę dłużej znosił gróźb i krzyków Rexa. Nadszedł czas zapłaty.
+**Krótki opis**: Kontynuacja z podsumowania Vikra, wspólna kosa i niechęć. Rozszerzenie wątku prowadzącego do sądu rexa na grze.
+
+### Wpis 22
+**Nazwa wątku**: Clear heart is the path to future
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: New Gor EN
+**Kolejność**: 23
+**Wpis fabularny**: The teachings of Cor Angar made it clear: every Novice, upon being appointed to the Temple Guard, must abandon their former self and become a new person. If that transformation does not occur, it is impossible for them to wholly dedicate themselves in service to the Sleeper. Cor Angar instructed us to keep our eyes open — even on our own brothers — and this was spoken of in a context that did not exclude the Gurus, even implicating Novices aspiring for promotion. If we notice anything suggesting that someone is still looking back to their past, we are to report it immediately to the Gor Na in charge of the Temple Guards at the Outpost — Gor Na Kagan and Gor Na Cez. It’s hard to blame them for such an approach. After all, desperate times call for drastic measures... But isn't this going too far?
+**Krótki opis**: Wpis do edycji. Każdy z graczy, również guru, mają mroczną stronę swojej postaci. Należy meldować i prowadzić śledztwo w sprawie każdego podejrzenia. 
+**Zleceniodawca**: Cor Angar
+**Zaangażowane frakcje**: Strażnicy Świątynni, Nowicjusze, Guru
+**Potrzebne rekwizyty**: brak
+**Nagroda**: Bryłki rudy
+
+### Wpis 23
+**Nazwa wątku**: Kolega kopacz potrzebuje pomocy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Na Ragu
+**Kolejność**: 36
+**Wpis fabularny**: Mój znajomy kopacz Maruda ma zawsze coś ciekawego do powiedzenia na temat tego co dzieje się dookoła i nie oczędza w wydawaniu mi esencji magicznych w zamian za rudę, co jest nadwyraz pomocne. Ostatnio jednak miał dla mnie trochę mniej czasu, a wręcz wyglądał na zakłopotanego, gdy rozmawialiśmy pod kopalnią. Powiedział mi, że ma ważną sprawę, którą musi załatwić w związku z innym kopaczem. Nie zastanawiałem się nad tym ani trochę no bo w końcu wszyscy mamy jakieś rzeczy do zrobienia, mniej lub bardziej palące. Jednakże zanim się pożegnalimy zapytał się mnie czy gdyby mnie poprosił o nietypową przysługę, okupioną sowicie rudą czy esencją, to czy chociaż rozważyłbym ją... Wydawał się mocno zakłopotany samym wystosowaniem takiej prośby wobec mnie. Na odchodne powiedziałem mu, że musiałby powiedzieć mi o co chodzi dokładnie i wtedy mógłby się spodziewać mojej odpowiedzi. Maruda wtedy tylko kiwnął głową i w ewidentnym zamyśleniu ruszył w swoim kierunku. 
+
+Cokolwiek by to nie było, za przysługę tego typu pewnie mogę uzyskać więcej niż rudę czy esencję. Pytanie tylko z jakim ryzykiem wiąże się angażowanie w tą sprawę... A to chyba będę musiał wybadać i ocenić już sam.
+
+### Wpis 24
+**Nazwa wątku**: Tęsknota, czy wiara
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Balar
+**Kolejność**: 31
+**Wpis fabularny**: Minęło już dużo czasu odkąd mnie tutaj zrzucili. Znalazłem tu wszystko czego potrzebowałem. Nowych braci, miejsce do życia, cel. A jednak, mimo wszystko, pojawia się w głowie ta myśl. Rodzina... Dom... Czy żyją? Czy sobie radzą? Kto się teraz nimi opiekuje kiedy mnie zabrakło? Mam nadzieję, że moja siostra Ellie dba dobrze o Ojca. Biedny staruszek nie jest już tak sprawny jak dawniej... Ech, oddałbym wiele, by móc im teraz pomóc. By usłyszeć, że mają się dobrze... Jednak nie może mnie to rozpraszać od moich obecnych obowiązków. Strażnikowi Świątynnemu nie przystoi tęsknić za poprzednim życiem. Stąd i tak nie da się uciec. Jedyna nadzieja w Śniącym... Chyba muszę po prostu o nich zapomnieć... ale... nie chcę. Podczas naszego pierwszego dnia w Faktorii Bractwa ma się odbyć kolejny zrzut skazańców do Kolonii Górniczej. Może powinienem udać się tam i zobaczyć czy nie ma tam jakiś znajomych twarzy. Mógłbym wtedy od kogoś dowiedzieć się jak się sprawy mają poza Barierą.
+**Krótki opis**: Jedna ze Skazańczyń jest siostą Balara, Ellie. będzie potrzebowała jego pomocy w trakcie larpa.
+**Zleceniodawca**: Rodzina
+**Zaangażowane frakcje**: Skazańcy, Strażnicy Świątynni
+**Potrzebne rekwizyty**: list drugiego dnia, ogarnia Kazik
+**Nagroda**: szczęśliwa rodzina lub Bractwo
+
+### Wpis 25
+**Nazwa wątku**: Uszy i oczy w Nowym Obozie
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Gyyrax
+**Kolejność**: 35
+**Wpis fabularny**: Słyszałem, że w okolicach Faktorii informacje bywają często cenniejsze niż ruda. Nie zamierzam więc przybyć tam nieprzygotowany. Jeden z nowicjuszy, Zysk, ma sporo kontaktów w Nowym Obozie, a to może się okazać bardzo przydatne. Zgodził się, za niewielką zapłatą, szpiegować i donosić mi o wszystkim czego się dowie. Muszę dopilnować, żeby te informacje trafiały bezpośrednio do mnie. Jeśli dostarczę moim Mistrzom dość wiadomości to zaskarbię sobie ich zaufanie, a to z pewnością przybliży mnie do awansu.
+**Krótki opis**: jest drugi koniec u Zyska
+**Zleceniodawca**: SŚ
+**Zaangażowane frakcje**: Strażnicy Świątynni, Nowicjusze
+**Potrzebne rekwizyty**: nic 
+**Nagroda**: nic
+
+### Wpis 26
+**Nazwa wątku**: Wczorajsza wizja
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Na Ragu
+**Kolejność**: 32
+**Wpis fabularny**: Na dzień przed wyruszeniem do Faktorii Bractwa, udałeś się do świątyni Śniącego aby zebrać myśli. Było tam dość pusto, pojedynczy Nowicjusze kończyli właśnie ostatnie porządki. Wsłuchując się w ciszę i aurę tego miejsca pogrążyłeś się w modlitwie. Wtedy to ujrzałeś. Silbach. Stałeś w samym środku wioski. Ludzie dookoła świętowali, bawili się. Na uboczu zobaczyłeś pewną postać. Kobietę odtrąconą przez tłum. Spotkaliście się wzrokiem. Była smutna, a jej oczy szukały ratunku. Czułeś jak na Twojej twarzy maluje się współczucie i zrozumienie. Uśmiechnęła się lekko, a jej oczy wypełniła nadzieja. Nagle wszystko się rozpłynęło, a gdy otworzyłeś oczy znów byłeś w świątyni. "Wizja" pomyślałeś... Miałeś wrażenie, że znasz tę dziewczynę. "Digis", chyba tak miała na imię, była miejscową zielarką. "Ale co to ma wspólnego ze mną?". Myślałeś przez chwilę, ale nie znalazłeś na to pytanie odpowiedzi. Zmęczony i zamyślony postanowiłeś udać się na spoczynek. Jutro w końcu wielki dzień przybycia wiernych z Obozu Bractwa do Faktorii... i zrzutu nowych skazańców do kolonii...                      
+**Krótki opis**:  Wątek o silbach na próbę gracza, Digis będzie potrzebować pomocy Ragu
+**Zleceniodawca**: Los, Gor Na Cez
+**Zaangażowane frakcje**: Skazańcy, Strażnicy Świątynni
+**Potrzebne rekwizyty**: brak
+**Nagroda**: Nowy członek dla bractwa
+
+### Wpis 27
+**Nazwa wątku**: Niewierni przyjaciele moich braci
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Ruh
+**Kolejność**: 35
+**Wpis fabularny**: Słyszałem od Gor Na wracających z Faktorii Bractwa, że niektórzy spośród Strażników Świątynnych przebywających w Faktorii Bractwa, utrzymają bardziej niż przyjazne kontakty z niewiernymi. Zwłaszcza ze Strażnikami ze Starego Obozu. W świetle tego co słyszałem o doktrynach jakie przekazują Gor na Kagan i Gor Na Cez to moim obowiązkiem jest informowanie ich o tym. Wystarczy tylko, że usłyszę lub zobaczę na własne oczy jak i z kim te relacje wyglądają, a na pewno zostanę za te doniesienia wynagrodzony.
+**Krótki opis**: Wątek na podstawie kp, pierwszy larp. Może się połączyć z wątkami o wewnętrznych konfliktach SŚ i sądzie Rexa.
+
+Zredagowane, przepisane. Do tego zachacza o poczucie obowiązku, które gracz zapisał w karcie postaci.
+
+### Wpis 28
+**Nazwa wątku**: Enemies from the past
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Bács
+**Kolejność**: 39
+**Wpis fabularny**: I still can't forget how Shadows and Guard from Old Camp treated me when I was a newbie convict freshly thrown to the Colony. My guess is that besides that they didn't like my face they could not understand my language.. Thou I speak Old Myrthanian only it's just unforgivable that they had almost killed me. I know, I became a new man when I was taken into Temple Guard caste, but this cannot continue, not with those two.. A lot of days have past since then and I still remember their names.. Torin and Deavon.. Yet, I am torn apart between decisions. How should I retaliate so they won't do any of that again.. or should I make peace with them? Either way I must do something about it.
+**Krótki opis**: Po wrzuceniu do koloni został dotkliwie pobity przez dwóch cieni, teraz do niego należy decyzja czy wybierze zemstę, czy pojednanie
+**Zleceniodawca**: nic
+**Zaangażowane frakcje**: Strażnicy Świątynni, Cienie
+**Potrzebne rekwizyty**: nic
+**Nagroda**: nic
+
+### Wpis 29
+**Nazwa wątku**: Kto zadziera z Bractwem
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: SS Kont PL
+**Kolejność**: 26
+**Wpis fabularny**: Doszły was słuchy, że Nowicjusze notorycznie narzekają pomiędzy sobą i ostrzegają się nawzajem przed jednym Cieniem, który ma na sumieniu poważne występki przeciwko sługom Śniącego. Ponoć bez opamiętania wybiera sobie to nieporadniejszych Nowicjuszy na cel, kradnie od nich skręty bagiennego ziela oraz rudę, a tym samym urąga reputacji Bractwa jako społeczności, która chroni swoich wiernych. Pora przerwać ten proceder. Ponoć Nowicjusz Arno został przez niego osobiście napadnięty i pewnie chętnie nam go wskaże. Problem tylko jest taki, że kilka oskażeń nie wystarczy, bo Gomez i jego Strażnicy dobrze chronią swoich ludzi... Trzeba będzie tego gagatka przyłapać na kolejnym występku i dopiero wtedy działać.
+**Krótki opis**: Marko pogrywa sobie z bractwem, napada nowicjuszy, kradnie bagienne ziele i czerpie z tego korzyści. Pora przerwać ten proceder.
+
+(wpisać nowicjuszom cienia Marko w wątkach jako tego, który na nich napada. Status: Napisane Mortisowi żeby zrobił Marko wpis po swojej stronie, Mortis przekazał kwestię Lisowi)
+
+Wpisać Arno wątek, że pamieta dobrze mordę tego gościa i jego imię. Oraz, że czas z tym pójść do straży i odegrać się należycie
+**Zleceniodawca**: Gor Na Kagan, Gor Na Cez
+**Zaangażowane frakcje**: Strażnicy Świątynni, Nowicjusze, Cienie
+**Potrzebne rekwizyty**: brak
+**Nagroda**: ruda, pochwała, przybliżenie do awansu na Gor Na
+
+### Wpis 30
+**Nazwa wątku**: Inni mówią, że to rupieć. Ja nazywam to skarbem.
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Tar
+**Kolejność**: 34
+**Wpis fabularny**: Myślałeś, że los się do ciebie uśmiechnął. Znalazłeś przy zwłokach jakiegoś nieszczęśnika rozszarpanego przez dzikie bestie fragment listu. Kiedy otworzyłeś go, nie wiedziałeś czego się spodziewać, ale na pewno nie takiego bełkotu o magach, teleportach, klielichach i innych fantasmagoriach. Do tego jakiś zwój magiczny, ale równie bezużyteczny - pytałeś już o to Guru. Nie wygląda na to, żeby miał ci się na coś przydać i już miałeś go wyrzucić, ale... Pomyślałeś sobie, że jeśli miał go przy sobie jakiś obdartus to prawdopodobnie ukradł go od kogoś wpływowego. Kto wie? Może znajdzie się ktoś, kto zapłaci okrągłą sumkę za taki świstek?
+**Krótki opis**: quest od Keiry - ma fragment listu prowadzący do zgonu Maginii Wiktorii - list ogarnia Keira
+**Zleceniodawca**: Keira
+**Zaangażowane frakcje**: Strażnicy Świątynni, Magowie Wody
+**Potrzebne rekwizyty**: https://docs.google.com/document/d/15m2ZdaJyBUS_MzACpZqPqOgolPGrQzCR1-YrHf0lGRU/edit?tab=t.0
+**Nagroda**: <- list do druku ogarnia Keira
+
+### Wpis 31
+**Nazwa wątku**: Tchnienie braci moich
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Tar
+**Kolejność**: 32
+**Wpis fabularny**: Pamiętasz dobrze moment w którym Baal Sach położył swoją rękę na twojej głowie i powiedział, że staniesz się Gor Na. W tamtym momencie wiedziałeś, że to prawda ponieważ przez dotyk czułeś przepływające Tchnienie. Nie dało się tego pomylić z niczym innym. Czułeś jak Śniący przemawia przez proroka. Podczas ostatnich wielu dni treningów wśród Straży Świątynnej w obozie Bractwa nie raz śniłeś o tamtej wspaniałej chwili. A jednak kiedy we śnie rozglądasz się pośród braci, którzy byli tam wtedy z tobą widzisz jak przez wielu z nich to Tchnienie przepływa. U jednych swobodnie, z mniejszym lub większym natężeniem, a u innych stłamszone, rozdarte i niejednostajne. Jesteś pewien, że coś z nimi jest nie tak, w jednym momencie patrzą na ciebie i uczestniczą w modlitwie wiernych, a w drugiej odwracają się i oglądają wstecz, patrząc daleko w tył. Wśród tych zagłuszonych duchów znajduje się Gor Na Ragu, Gor Na Rex... i wiele innych znajomych sylwetek. Choć nie widzisz ich twarzy, wiesz że to oni, a widok ten sprawia ci ból, który dobrze znasz, choćby z twoich dni bycia Nowicjuszem.
+
+Rankiem, po nocy, w której miewasz ten sen, zawsze czujesz ulgę, ale nie wiesz czemu. W końcu widok stłamszonych duchów braci, których uważasz za wzory powoduje ci tyle cierpienia... Jesteś pewien co do jednego. To znak od Śniącego, że musisz im pomóc oddać się Śniącemu całkowicie.
+
+Wiesz, że masz dar, z którego nie potrafisz jeszcze korzystać, ale który ma realny wpływ na twoje życie... Dar od Śniącego. Kiedy przebywałeś w Obozie Bractwa wśród nowych Gor'ów takich jak ty krążyło wiele plotek na temat Gor Na przebywających w Faktorii... Podobno jeden z nich, dawno temu, odprawił z Guru rytuał, za pomocą którego stał się "natchniony przez samego Śniącego". Rzekome błogosławieństwo miało objawiać się w jego oczach raz po raz i dzięki niemu miał widzieć więcej niż pozostali bracia... Nie mogę oprzeć się wrażeniu, że brzmi to bardzo podobnie do tego co ze mną się dzieje... Tylko, który z Guru mógłby pamietać tamte czasy i który z Gor Na był tym błogosławionym. Mam swoje podejrzenia, ale prawdy nie dowiem się jeśli nie będę za nią aktywnie podążał...
+**Krótki opis**: Wątek "Tchnienia" Gor Tara, który naprowadza go na nieczyste dusze znajdujące się pośród SŚ.
+
+Wątek będzie kontynuowany przez sprowadzanie wizji na Gor Tara w obecności Baal'a Mosira i Gor Na Kagana (może jeszcze Ayen, bo jest od wizji). Będzie za pomocą tego w stanie wyszukiwać zdrajców w obozie i uzyskiwać informacje na temat rzeczy ukrytych przed wzrokiem.
+**Zleceniodawca**: Śniący
+**Zaangażowane frakcje**: Strażnicy Świątynni
+**Potrzebne rekwizyty**: nic
+**Nagroda**: nic
+
+### Wpis 32
+**Nazwa wątku**: Dawny znajomy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Na Rex
+**Kolejność**: 37
+**Wpis fabularny**: Na dzień przed wyruszeniem do Faktorii, Gor Na Cez wspomniał, że ma pewną sprawę o której mi opowie jak dotrzemy na miejsce. Podobno chodzi o naszego dawnego przyjaciela. Nie chciał mi powiedzieć niestety nic więcej... Ciekawe o co chodzi.
+**Krótki opis**: Zahaczka żeby wciągnąć Rexa do exhumacji Kennetha
+**Zleceniodawca**: Gor Na Cez
+**Zaangażowane frakcje**: Strażnicy Świątynni, Guru, Nowicjusze
+**Potrzebne rekwizyty**: kukła Kennetha, moderowana scena exhumacji. (zgłoszone organizacji)
+**Nagroda**: Ostatnia przygoda z Kennethem.
+
+### Wpis 33
+**Nazwa wątku**: Artefakt dla bractwa
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Na Rex
+**Kolejność**: 35
+**Wpis fabularny**: Kolonia Górnicza to małe miejsce. Wieści i plotki szybko się roznoszą, a najciekawsze informacje docierają nawet do nas na bagno. Pewien Nowicjusz doniósł mi, że Garhax, Strażnik którego z resztą dobrze znam, wszedł w posiadanie pewnego przedmiotu. Jest to podobno nowa broń. Ostrze o magicznej mocy. Czy to możliwe żeby zwykły Strażnik zdobył sam coś takiego? A magiczne właściwości tego ostrza? Taki artefakt nie powinien się znajdować w rękach Starego Obozu. Muszę porozmawiać z Garhaxem i dowiedzieć się czegoś więcej. Baalowie na pewno chętnie usłyszą o tych magicznych właściwościach, a przysłużę się jeszcze bardziej jeśli sprawię, że to ostrze będzie służyło Bractwu. Ta broń musi trafić przed oblicze Guru. Taki artefakt musi zostać przez nich zbadany. Dopilnuję tego.
+**Krótki opis**: Wątek personalny Garhaxa
+**Zleceniodawca**: Fanatyzm
+**Zaangażowane frakcje**: Strażnicy, Strażnicy Świątynni
+**Potrzebne rekwizyty**: Miecz Garhaxa (ogarnia gracz)
+**Nagroda**: Uznanie Guru, możliwy nowy członek dla Bractwa
+
+### Wpis 34
+**Nazwa wątku**: To wizje? Koszmary? Czy może wspomnienia?
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Vith
+**Kolejność**: 35
+**Wpis fabularny**: Śniący okazjonalnie zsyła mi różne wizje. Jednak ostatnio widzę je częściej, dokładniej jedną. Jesteśmy w środku napadu, rabujemy zwykły transport narzędzi na głównym trakcie między miastami. Gdy są wystarczająco blisko wyskakuję z ukrycia i zadaję pierwsze ciosy. Gdy członkowie karawany padają na ziemię, widzę ich zakrwawione twarze i zimne pobielałe oczy. Podnoszę wzrok i przeszywa mnie dreszcz. Przede mną stoją tłumy. Zapłakane żony ofiar, całe rodziny. Nie mogę się ruszyć. Z bezruchu wyrywa mnie dopiero uderzenie strażnika miejskiego, który z całym oddziałem łapie mnie i morduje moich towarzyszy. Wleczony do więzienia tracę przytomność. Budzę się znowu w kolonii. Nie mam pojęcia czemu ta wizja tak często mnie teraz nawiedza. Gdy pojawiła się po raz pierwszy poszedłem porozmawiać z Baal Ayen, naszą Mistrzynią. Jednak wizja zaczęła wracać do mnie coraz częściej. Nie pamiętam bym miał choć dzień wytchnienia... Co to wszystko znaczy? Czy Śniący chce mi coś przekazać?
+
+Do czasu złamania uroku odgrywaj następujący efekt:
+Przynajmniej raz dziennie (można więcej) odgrywaj, że ponownie przeżywasz wizję której właśnie doświadczyłeś. Podbij odgrywanie negatywnych emocji i szaleństwa. Potem na czas dwóch scen odgrywaj wyczerpanego i zmęczonego.
+
+### Wpis 35
+**Nazwa wątku**: Ruda za moje oddanie
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: SS PL
+**Kolejność**: 29
+**Wpis fabularny**: Magiczna ruda... krew w żyłach organizmu jakim jest Górnicza Dolina zamknięta pod Barierą. Za wypełnianie obowiązków Straży Świątynnej mogę zgosić się każdego poranka do Gor Na Kagana lub Gor Na Ceza, aby odebrać Trybut. Dla Gor jest to 15 bryłek, dla Gor Na — 30... Za udział w zbrojnych zadaniach, na których narażamy nasze życia, również otrzymuję zapłatę, Gor otrzymują 20, z kolei Gor Na — 40 za każdą taką misję. Oczywiście, wypełniając zadania Gor Na ponad te wymagające zbrojnej ręki, otrzymujemy nagrodę, ale tu jej wysokość zależy od tego jak trudne są i od kosztu ich realizacji. Dla szukających kolejnego pewnego źródła rudy są jeszcze Guru, którym i tak już służymy, ale żeby zostać przez nich obdarowanym trzeba czuwać przy nich dzień i noc, a co za tym idzie, zrezygnować z innch zadań. No, ale to już do mnie należy decyzja jakim sprawom w ciągu dnia się oddam.
+**Krótki opis**: Wątek informujący o źródłach finansowania SŚ
+**Zleceniodawca**: Gor Na Kagan, Gor Na Cez
+**Zaangażowane frakcje**: Strażnicy Świątynni, Guru
+**Potrzebne rekwizyty**: ruda od Karola
+**Nagroda**: ruda
+
+### Wpis 36
+**Nazwa wątku**: Ore for my devotion
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: SS EN
+**Kolejność**: 29
+**Wpis fabularny**: Magic ore… the blood coursing through the veins of the organism that is the Valley of Mines, sealed beneath the Barrier. For fulfilling the duties of the Temple Guard, I can report every morning to Gor Na Kagan or Gor Na Cez to receive my Tribute. For a Gor, it's 15 ore, for a Gor Na — 30... For participating in armed missions, where we risk our lives, I also receive payment — 20 for a Gor, and 40 for a Gor Na per mission. Of course, when carrying out tasks from the Gor Na beyond those that require a strong arm, we receive a reward as well, but its amount depends on how difficult the task is and how costly it is to complete. For those seeking another steady source of ore, there are also the Gurus — whom we already serve — but to be granted their favor, one must remain by their side day and night. And that means giving up other duties. Well, in the end, it’s up to me to decide which matters I take upon myself each day.
+**Krótki opis**: Wątek informujący o źródłach finansowania SŚ
+**Zleceniodawca**: Gor Na Kagan, Gor Na Cez
+**Zaangażowane frakcje**: Strażnicy Świątynni, Guru
+**Potrzebne rekwizyty**: ruda od Karola
+**Nagroda**: ruda
+
+### Wpis 37
+**Nazwa wątku**: Niech Śniący ma mnie w swojej opiece
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: SS Kont Gor PL
+**Kolejność**: 22
+**Wpis fabularny**: Jestem Strażnikiem Świątynnym od dłuższego czasu, a mimo to wciąż nie udało mi się otrzymać tytułu Gor Na. Nie pamiętam już, czy stało się tak przez to, że za mało się starałem, czy przez to, że zająłem się zadaniami, które w oczach tamtych Gor Na były mniej wartościowe... W każdym razie, od pewnego czasu Gor Na Kagan patrzy na ten stan rzeczy podejrzliwym wzrokiem. Na początku, od czasu do czasu, wyrażał zdziwienie, że pomimo tak długiej służby wciąż ktoś mnie w tym awansie ubiega... Mówił, że jeszcze przyjdzie na mnie pora lub że wobec kogoś Śniący był szczodrzejszy... Ostatnio w jego głosie pojawiło się wyraźne zirytowanie, kiedy o tym mówił, a potem – podejrzliwość w oczach... Widzę to jasno – ma wobec mnie pewne oczekiwania i jeśli ich nie spełnię, nie pokażę, że naprawdę się staram, że to wszystko jest złe fatum, to mogę stracić coś więcej niż moją pozycję w Bractwie...
+**Krótki opis**: Wątek zapalający ognisko pod dupą Gora z kontynuacją
+**Zleceniodawca**: Gor Na Kagan
+**Zaangażowane frakcje**: Strażnicy Świątynni
+**Potrzebne rekwizyty**: nóż
+**Nagroda**: zachowanie życia
+
+### Wpis 38
+**Nazwa wątku**: May the Sleeper watch over me
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: SS Kont Gor EN
+**Kolejność**: 22
+**Wpis fabularny**: I’ve been a Temple Guard for quite some time now, and yet I still haven’t managed to earn the title of Gor Na. I can no longer remember whether it’s because I didn’t try hard enough, or because I took on tasks that, in the eyes of those Gor Na, were of lesser value... In any case, for some time now, Gor Na Kagan has been eyeing this situation with suspicion. At first, from time to time, he would express surprise that despite such long service, someone else always manages to outrun me in promotion... He said my time would come, or that the Sleeper had been more generous to someone else... Lately, there's been clear irritation in his voice when he speaks of it — and then, suspicion in his eyes... I see it clearly now — he has certain expectations of me, and if I don’t meet them, if I don’t prove that I’m truly making an effort, that it’s all just a matter of cruel fate, then I may lose something more than just my position within the Brotherhood...
+**Krótki opis**: Wątek zapalający ognisko pod dupą Gora z kontynuacją
+**Zleceniodawca**: Gor Na Kagan
+**Zaangażowane frakcje**: Strażnicy Świątynni
+**Potrzebne rekwizyty**: nóż
+**Nagroda**: zachowanie życia
+
+### Wpis 39
+**Nazwa wątku**: Problems of my people
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Omba
+**Kolejność**: 35
+**Wpis fabularny**: I recently heard that my Temple Guard brothers have come in contact with swamp weed smokes which were manufactured in the New Camp rice field outpost... I'm sure that they'll use whatever means nessesary to find and shut down this business that harms brotherhood main source of ore. I should try to outrun them and use my contacts in there and take this matter into my hands. If I manage to do so I'll certainly prove myself useful to the rest of the Temple Guards and thus take some heat off my shoulders.
+
+### Wpis 40
+**Nazwa wątku**: They are not faithful enought
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Gior
+**Kolejność**: 35
+**Wpis fabularny**: I know for a fact that Novices duties in the Brotherhood Outpost are mainly conected to dealing swamp weed. Which is fine and I have no problem with that. But besides that and taking part in obligatory ceremonies organized by Gurus it is not enough in my book... I should encourage them to pray more and show their devotion to the Sleeper. They should be thankful that they are part of this wonderful religion and I'll help them prove it to us. I should set up designated offering station in the Brotherhood Outpost and look closely which of them make offes and which do not. Information about that will certainly be useful to Gurus and moreover that ore coming from offerings will most definitaly help our Temple Guard missions.
+
+### Wpis 41
+**Nazwa wątku**: Since I am doing mostly guard duties
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Omba
+**Kolejność**: 33
+**Wpis fabularny**: Since I am doing mostly guard duties I should use that to my advantage. Discipline among Novices is a thing that Gor Na Kagan speaks oftenly from some time now. I know for a fact what he means by that: I ought to keep peace and silence in the Brotherhood Outpost to make this place proper for meditation, I should watch over Novices so they don't steal either from each other as well as watch over any incoming guests. So there's that. No stealing, no screaming and making ruckus. Maybe if I add to this organisation of fighting lessons for other Temple Guards and Novices I'll make myself even more useful. Gor Na will certainly notice my deviotion if manage to pull this off.
+
+### Wpis 42
+**Nazwa wątku**: Since I am doing mostly guard duties
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Gor Gior
+**Kolejność**: 37
+**Wpis fabularny**: Since I speak only in Old Myrthanian language I know that a lot of what others say will be indecipherable. This will probably result in me having different duties than other Temple Guards but I am sure that I'll be given tasks focused on keeping peace in the Brotherhood Outpost. I should use that situation to my advantage. This duties, to my knowleadge are: I ought to keep peace and silence in the Brotherhood Outpost to make this place proper for meditation, I should watch over Novices so they don't steal either from each other as well as watch over any incoming guests. So there's that. No stealing, no screaming and making ruckus. Maybe if I forge some accusation over "despicable" behaviour like not bowing when walking past Sleeper monument or not bowing when speaking to Gurus I can make some Novices pay compensation for their misdemeanors which will certainly prove useful to accomodate Temple Guards expences. Gor Na will most definitely admire my devotion and see me as disciplined and true Sleeper's beliver.
+
+### Wpis 43
+**Nazwa wątku**: We should stick together
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: SS EN
+**Kolejność**: 25
+**Wpis fabularny**: It probably seems to many that us speaking only in Old Myrthanian language is some kind of set back. But they are wrong and we will prove them that. We should stick together, work together, take action toghether and in result whatever task will be given will carry out like we should. Gor Na Kagan will cerainly have a lot of work for us and thus we'll do just fine.
+
+## Arkusz: Data_Validation
+----------------------------------------
+
+### Wpis 1
+**Klasa**: Grupa
+**Nie**: Tak
+**#REF!**: Nie
+**Bezi**: Gor Na Rex
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**SS PL**: SS EN
+**SS PL**: SS EN
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**SS PL**: SS EN
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**SS PL**: SS EN
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**SS PL**: SS EN
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**Bezi**: Gor Na Rex
+**SS PL**: SS EN
+
+### Wpis 2
+**Klasa**: Postać
+**Nie**: Nie
+**#REF!**: #REF!
+**Bezi**: Gor Na Ragu
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**SS PL**: Gor Na
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**SS PL**: Gor Na
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**SS PL**: Gor Na
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**Bezi**: Gor Na Ragu
+**SS PL**: Gor Na
+
+### Wpis 3
+**#REF!**: Tak
+**Bezi**: Gor Vikr
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**SS PL**: New Gor PL
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**SS PL**: New Gor PL
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**SS PL**: New Gor PL
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**Bezi**: Gor Vikr
+**SS PL**: New Gor PL
+
+### Wpis 4
+**Klasa**: Strażnicy Świątynni
+**#REF!**: Tak
+**Bezi**: Gor Han
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**SS PL**: New Gor EN
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**SS PL**: New Gor EN
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**SS PL**: New Gor EN
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**Bezi**: Gor Han
+**SS PL**: New Gor EN
+
+### Wpis 5
+**#REF!**: Tak
+**Bezi**: Gor Tar
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**SS PL**: Dodatkowy nowicjusz
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**SS PL**: Dodatkowy nowicjusz
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**SS PL**: Dodatkowy nowicjusz
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**Bezi**: Gor Tar
+**SS PL**: Dodatkowy nowicjusz
+
+### Wpis 6
+**Klasa**: Skazańcy
+**#REF!**: Tak
+**Bezi**: Gor Toth
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**SS PL**: Siatka szpiegowska
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**SS PL**: Siatka szpiegowska
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**SS PL**: Siatka szpiegowska
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**Bezi**: Gor Toth
+**SS PL**: Siatka szpiegowska
+
+### Wpis 7
+**Klasa**: Kopacze
+**#REF!**: Tak
+**Bezi**: Gor Gyyrax
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**SS PL**: Zbieranie zasobów
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**SS PL**: Zbieranie zasobów
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**SS PL**: Zbieranie zasobów
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**Bezi**: Gor Gyyrax
+**SS PL**: Zbieranie zasobów
+
+### Wpis 8
+**Klasa**: Służący
+**#REF!**: Tak
+**Bezi**: Gor Balar
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**SS PL**: SS Kont PL
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**SS PL**: SS Kont PL
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**SS PL**: SS Kont PL
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**Bezi**: Gor Balar
+**SS PL**: SS Kont PL
+
+### Wpis 9
+**Klasa**: Cienie
+**#REF!**: Tak
+**Bezi**: Gor Ruh
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**SS PL**: SS Kont Gor PL
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**SS PL**: SS Kont Gor PL
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**SS PL**: SS Kont Gor PL
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**Bezi**: Gor Ruh
+**SS PL**: SS Kont Gor PL
+
+### Wpis 10
+**Klasa**: Strażnicy
+**#REF!**: Tak
+**Bezi**: Gor Omba
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**SS PL**: SS Kont Gor EN
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**SS PL**: SS Kont Gor EN
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**SS PL**: SS Kont Gor EN
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**Bezi**: Gor Omba
+**SS PL**: SS Kont Gor EN
+
+### Wpis 11
+**Klasa**: Magowie Ognia
+**#REF!**: Tak
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+**Bezi**: Gor Gior
+
+### Wpis 12
+**Klasa**: Magnaci
+**#REF!**: Tak
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+**Bezi**: Gor Bács
+
+### Wpis 13
+**Klasa**: Krety
+**#REF!**: Tak
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+**Bezi**: Gor Vith
+
+### Wpis 14
+**Klasa**: Szkodniki
+**#REF!**: Nie
+
+### Wpis 15
+**Klasa**: Najemnicy
+**#REF!**: Nie
+
+### Wpis 16
+**Klasa**: Magowie Wody
+**#REF!**: Nie
+
+### Wpis 17
+**Klasa**: Nowicjusze
+**#REF!**: Nie
+
+### Wpis 18
+**Klasa**: Strażnicy Świątynni
+**#REF!**: Tak
+
+### Wpis 19
+**Klasa**: Guru
+**#REF!**: Tak
+
+### Wpis 20
+**#REF!**: Nie
+
+### Wpis 21
+**Klasa**: Khorinis
+**Nie**: Miasto Khorinis
+**#REF!**: Nie
+
+### Wpis 22
+**Nie**: Farmy
+**#REF!**: #REF!
+
+### Wpis 23
+**Klasa**: Myrtana
+**Nie**: Ardea
+**#REF!**: Nie
+
+### Wpis 24
+**Nie**: Cape Dun
+**#REF!**: Tak
+
+### Wpis 25
+**Nie**: Montera
+**#REF!**: Nie
+
+### Wpis 26
+**Nie**: Vengard
+**#REF!**: #REF!
+
+### Wpis 27
+**Nie**: Silden
+**#REF!**: Nie
+
+### Wpis 28
+**Nie**: Geldern
+**#REF!**: Nie
+
+### Wpis 29
+**Nie**: Faring
+**#REF!**: #REF!
+
+### Wpis 30
+**Nie**: Gotha
+**#REF!**: #REF!
+
+### Wpis 31
+**Nie**: Trelis
+**#REF!**: Nie
+
+### Wpis 32
+**Klasa**: Varant
+**Nie**: Ishtar
+**#REF!**: Nie
+
+### Wpis 33
+**Nie**: Mora Sul
+**#REF!**: Nie
+
+### Wpis 34
+**Nie**: Bakaresh
+**#REF!**: Tak
+
+### Wpis 35
+**Nie**: Braga
+**#REF!**: Nie
+
+### Wpis 36
+**Nie**: Ben Erai
+**#REF!**: Nie
+
+### Wpis 37
+**Nie**: Lago
+**#REF!**: Nie
+
+### Wpis 38
+**Nie**: Ben Sala
+**#REF!**: Nie
+
+### Wpis 39
+**Klasa**: Archolos
+**Nie**: Miasto Archolos
+**#REF!**: Nie
+
+### Wpis 40
+**Nie**: Silbach
+**#REF!**: Tak
+
+### Wpis 41
+**Nie**: Wilcze Leże
+**#REF!**: #REF!
+
+### Wpis 42
+**Nie**: Winnica Rity
+**#REF!**: Tak
+
+### Wpis 43
+**Nie**: Winnica Valerio
+**#REF!**: Tak
+
+### Wpis 44
+**Klasa**: Nordmar
+**Nie**: Klan Młota
+**#REF!**: Tak
+
+### Wpis 45
+**Nie**: Klan Ognia
+**#REF!**: Nie
+
+### Wpis 46
+**Nie**: Klan Wilka
+**#REF!**: Nie
+
+### Wpis 47
+**Klasa**: Wyspy Południowe
+**Nie**: Wyspy Południowe
+**#REF!**: Nie
+
+### Wpis 48
+**Klasa**: Wschodni Archipelag
+**Nie**: Wschodni Archipelag
+**#REF!**: Nie
+
+### Wpis 49
+**#REF!**: Tak
+
+### Wpis 50
+**#REF!**: Nie
+
+### Wpis 51
+**#REF!**: Nie
+
+### Wpis 52
+**#REF!**: Nie
+
+### Wpis 53
+**#REF!**: Nie
+
+### Wpis 54
+**#REF!**: Nie
+
+### Wpis 55
+**#REF!**: Nie
+
+### Wpis 56
+**#REF!**: Nie
+
+### Wpis 57
+**#REF!**: Nie
+
+### Wpis 58
+**#REF!**: Nie
+
+### Wpis 59
+**#REF!**: Nie
+
+### Wpis 60
+**#REF!**: Nie
+
+### Wpis 61
+**#REF!**: Nie
+
+### Wpis 62
+**#REF!**: Nie
+
+### Wpis 63
+**#REF!**: Nie
+
+### Wpis 64
+**#REF!**: Nie
+
+### Wpis 65
+**#REF!**: Nie
+
+### Wpis 66
+**#REF!**: Nie
+
+### Wpis 67
+**#REF!**: Nie
+
+### Wpis 68
+**#REF!**: Nie
+
+### Wpis 69
+**#REF!**: Nie
+
+### Wpis 70
+**#REF!**: Nie
+
+### Wpis 71
+**#REF!**: Nie
+
+### Wpis 72
+**#REF!**: Nie
+
+### Wpis 73
+**#REF!**: Nie
+
+### Wpis 74
+**#REF!**: Nie
+
+### Wpis 75
+**#REF!**: Nie
+
+### Wpis 76
+**#REF!**: Nie
+
+### Wpis 77
+**#REF!**: Nie
+
+### Wpis 78
+**#REF!**: Nie
+
+### Wpis 79
+**#REF!**: Nie
+
+### Wpis 80
+**#REF!**: Nie
+
+### Wpis 81
+**#REF!**: Nie
+
+### Wpis 82
+**#REF!**: Nie
+
+### Wpis 83
+**#REF!**: Nie
+
+### Wpis 84
+**#REF!**: Nie
+
+### Wpis 85
+**#REF!**: Nie
+
+### Wpis 86
+**#REF!**: Nie
+
+### Wpis 87
+**#REF!**: Nie
+
+### Wpis 88
+**#REF!**: Nie
+
+### Wpis 89
+**#REF!**: Nie
+
+### Wpis 90
+**#REF!**: Nie
+
+### Wpis 91
+**#REF!**: Nie
+
+### Wpis 92
+**#REF!**: Nie
+
+### Wpis 93
+**#REF!**: Nie
+
+### Wpis 94
+**#REF!**: Nie
+
+### Wpis 95
+**#REF!**: Nie
+
+### Wpis 96
+**#REF!**: Nie
+
+### Wpis 97
+**#REF!**: Nie
+
+### Wpis 98
+**#REF!**: Nie
+
+### Wpis 99
+**#REF!**: Nie
+
+### Wpis 100
+**#REF!**: Nie
+
+### Wpis 101
+**#REF!**: Nie
+
+### Wpis 102
+**#REF!**: Nie
+
+### Wpis 103
+**#REF!**: Nie
+
+### Wpis 104
+**#REF!**: Nie
+
+### Wpis 105
+**#REF!**: Nie
+
+### Wpis 106
+**#REF!**: Nie
+
+### Wpis 107
+**#REF!**: Nie
+
+### Wpis 108
+**#REF!**: Nie
+
+### Wpis 109
+**#REF!**: Nie
+
+### Wpis 110
+**#REF!**: Nie
+
+### Wpis 111
+**#REF!**: Nie
+
+### Wpis 112
+**#REF!**: Nie
+
+### Wpis 113
+**#REF!**: Nie
+
+### Wpis 114
+**#REF!**: Nie
+
+### Wpis 115
+**#REF!**: Nie
+
+### Wpis 116
+**#REF!**: Nie
+
+### Wpis 117
+**#REF!**: Nie
+
+### Wpis 118
+**#REF!**: Nie
+
+### Wpis 119
+**#REF!**: Nie
+
+### Wpis 120
+**#REF!**: Nie
+
+### Wpis 121
+**#REF!**: Nie
+
+### Wpis 122
+**#REF!**: Nie
+
+### Wpis 123
+**#REF!**: Nie
+
+### Wpis 124
+**#REF!**: Nie
+
+### Wpis 125
+**#REF!**: Nie
+
+### Wpis 126
+**#REF!**: Nie
+
+### Wpis 127
+**#REF!**: Nie
+
+### Wpis 128
+**#REF!**: Nie
+
+### Wpis 129
+**#REF!**: Nie
+
+### Wpis 130
+**#REF!**: Nie
+
+### Wpis 131
+**#REF!**: Nie
+
+### Wpis 132
+**#REF!**: Nie
+
+### Wpis 133
+**#REF!**: Nie
+
+### Wpis 134
+**#REF!**: Nie
+
+### Wpis 135
+**#REF!**: Nie
+
+### Wpis 136
+**#REF!**: Nie
+
+### Wpis 137
+**#REF!**: Nie
+
+### Wpis 138
+**#REF!**: Nie
+
+### Wpis 139
+**#REF!**: Nie
+
+### Wpis 140
+**#REF!**: Nie
+
+### Wpis 141
+**#REF!**: Nie
+
+### Wpis 142
+**#REF!**: Nie
+
+### Wpis 143
+**#REF!**: Nie
+
+### Wpis 144
+**#REF!**: Nie
+
+### Wpis 145
+**#REF!**: Nie
+
+### Wpis 146
+**#REF!**: Nie
+
+### Wpis 147
+**#REF!**: Nie
+
+### Wpis 148
+**#REF!**: Nie
+
+### Wpis 149
+**#REF!**: Nie
+
+### Wpis 150
+**#REF!**: Nie
+
+### Wpis 151
+**#REF!**: Nie
+
+### Wpis 152
+**#REF!**: Nie
+
+### Wpis 153
+**#REF!**: Nie
+
+### Wpis 154
+**#REF!**: Nie
+
+### Wpis 155
+**#REF!**: Nie
+
+### Wpis 156
+**#REF!**: Nie
+
+### Wpis 157
+**#REF!**: Nie
+
+### Wpis 158
+**#REF!**: Nie
+
+### Wpis 159
+**#REF!**: Nie
+
+### Wpis 160
+**#REF!**: Nie
+
+### Wpis 161
+**#REF!**: Nie
+
+### Wpis 162
+**#REF!**: Nie
+
+### Wpis 163
+**#REF!**: Nie
+
+### Wpis 164
+**#REF!**: Nie
+
+### Wpis 165
+**#REF!**: Nie
+
+### Wpis 166
+**#REF!**: Nie
+
+### Wpis 167
+**#REF!**: Nie
+
+### Wpis 168
+**#REF!**: Nie
+
+### Wpis 169
+**#REF!**: Nie
+
+### Wpis 170
+**#REF!**: Nie
+
+### Wpis 171
+**#REF!**: Nie
+
+### Wpis 172
+**#REF!**: Nie
+
+### Wpis 173
+**#REF!**: Nie
+
+### Wpis 174
+**#REF!**: Nie
+
+### Wpis 175
+**#REF!**: Nie
+
+### Wpis 176
+**#REF!**: Nie
+
+### Wpis 177
+**#REF!**: Nie
+
+### Wpis 178
+**#REF!**: Nie
+
+### Wpis 179
+**#REF!**: Nie
+
+### Wpis 180
+**#REF!**: Nie
+
+### Wpis 181
+**#REF!**: Nie
+
+### Wpis 182
+**#REF!**: Nie
+
+### Wpis 183
+**#REF!**: Nie
+
+### Wpis 184
+**#REF!**: Nie
+
+### Wpis 185
+**#REF!**: Nie
+
+### Wpis 186
+**#REF!**: Nie
+
+### Wpis 187
+**#REF!**: Nie
+
+### Wpis 188
+**#REF!**: Nie
+
+### Wpis 189
+**#REF!**: Nie
+
+### Wpis 190
+**#REF!**: Nie
+
+### Wpis 191
+**#REF!**: Nie
+
+### Wpis 192
+**#REF!**: Nie
+
+### Wpis 193
+**#REF!**: Nie
+
+### Wpis 194
+**#REF!**: Nie
+
+### Wpis 195
+**#REF!**: Nie
+
+### Wpis 196
+**#REF!**: Nie
+
+### Wpis 197
+**#REF!**: Nie
+
+### Wpis 198
+**#REF!**: Nie
+
+### Wpis 200
+**Klasa**: Miasto Khorinis
+**Nie**: false
+**#REF!**: Miasto Khorinis
+**#REF!**: false
+**Bezi**: false
+**#REF!**: false
+**SS PL**: false
+**SS PL**: false
+**SS PL**: false
+**SS PL**: false
+**SS PL**: Miasto Archolos
+**SS PL**: false
+**SS PL**: false
+**SS PL**: false
+**SS PL**: false
+**SS PL**: false
+**SS PL**: false
+**Bezi**: false
+**Bezi**: false
+**Bezi**: false
+**Bezi**: false
+**SS PL**: false
+**SS PL**: false
+**Bezi**: false
+**Bezi**: false
+**#REF!**: false
+**Bezi**: false
+**SS PL**: false
+**Bezi**: false
+**#REF!**: false
+**Bezi**: false
+**Bezi**: false
+**#REF!**: false
+**#REF!**: false
+**Bezi**: false
+**Bezi**: false
+**Bezi**: false
+**SS PL**: false
+**Bezi**: false
+**Bezi**: false
+**Bezi**: false
+**Bezi**: false
+**Bezi**: false
+**SS PL**: false
+**#REF!**: false
+**SS PL**: false
+**SS PL**: false
+
+### Wpis 201
+**Klasa**: Farmy
+**#REF!**: Farmy
+**SS PL**: Silbach
+
+### Wpis 202
+**SS PL**: Wilcze Leże
+
+### Wpis 203
+**SS PL**: Winnica Rity
+
+### Wpis 204
+**SS PL**: Winnica Valerio
+

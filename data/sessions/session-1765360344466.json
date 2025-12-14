@@ -1,0 +1,21 @@
+{
+  "id": "session-1765360344466",
+  "profileName": "Arik",
+  "startTime": 1765360344466,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hej",
+      "timestamp": 1765360344470
+    },
+    {
+      "role": "user",
+      "content": "Command: analyze_relations",
+      "timestamp": 1765360952514
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

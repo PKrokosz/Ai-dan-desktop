@@ -1,0 +1,21 @@
+{
+  "id": "session-1765454262706",
+  "profileName": "Kora",
+  "startTime": 1765454262706,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765454262727
+    },
+    {
+      "role": "user",
+      "content": "Command: extract_traits",
+      "timestamp": 1765454348354
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

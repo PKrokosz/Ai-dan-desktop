@@ -1,0 +1,1206 @@
+# Fabuła Magnaci 2025.xlsx
+================================================================================
+
+## Arkusz: Postacie
+----------------------------------------
+
+### Wpis 2
+**L.p.**: 1
+**Imię postaci**: Alvarez
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Krótki opis postaci**: Magnat będący mistrzem wywiadu Starego Obozu. Do jego obowiązków należy wypatrywanie wszelkiej działalności wywrotowej w społeczności Starego Obozu. Tworzy specjalne grupy zauszników i ptaszków, które donoszą mu o tym co dzieje się w Kolonii. Wszystko po to by zachować władzę magnatów.
+**Najważniejsi znajomi**: Gomez, Magnus, Sam
+**Słowa kluczowe**: #wywiad
+**Wątki**: Siatka szpiegowska
+
+### Wpis 3
+**L.p.**: 2
+**Imię postaci**: Sam
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Archolos
+**Pochodzenie dokładne**: Miasto Archolos
+**Krótki opis postaci**: Magnat-dyplomata. Człowiek od spraw międzyobozowych, wyposażony w wachlarz umiejętności miękkich, które pozwalają mu przekonywać do swoich racji innych ludzi. Nie jest wielkim wojownikiem, ale ma gadane i to jego największa broń. Ostatnimi czasy robi się nerwowy, gdy ktoś próbuje go oszukać
+**Najważniejsi znajomi**: Gomez, Magnus, Alvarez
+**Słowa kluczowe**: #dyplomacja
+**Wątki**: Everyman, sprawy wewnętrze i zewnętrzne
+
+### Wpis 4
+**L.p.**: 3
+**Imię postaci**: Magnus Żelazne Serce
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Montera
+**Krótki opis postaci**: Magnat- sędzia i kat. Zła twarz magnaterii. Człowiek wielkiej sily i równie wielkiego ego. Zarządza strażą żelazną ręką. Jest skonfliktowany z częścią straży, nieskory do kompromisów. Jego motto to ,,po trupach do celu"
+**Najważniejsi znajomi**: Gomez, Alvarez, Sam
+**Słowa kluczowe**: #straż #sędzia
+**Wątki**: Szef straży, sędzia starego obozu
+
+## Arkusz: Grupy
+----------------------------------------
+
+## Arkusz: Wątki
+----------------------------------------
+
+### Wpis 1
+** **: Najwyższa władza
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnaci
+**Kolejność**: 10
+**Wpis fabularny**: Jesteście magnatami - najważniejszymi ludźmi w Starym Obozie. To z Wami musi liczyć się całe Królestwo Myrtany. Król Rhobar II wysyła Wam wszystko czego potrzebujecie w zamian za magiczną rudę, której potrzebuje do prowadzenia wojny z Orkami. Macie staruszka w garści. Głównym problemem jest jednak to, że ruda to jedyne źródło Waszej gospodarczej potęgi. By Stary Obóz mógł funkcjonować bez zarzutu potrzebujecie dywersyfikacji przychodów. Każdy z Was ma swoje obowiązki, które musi wypełniać ponieważ Wasz szef - Gomez, to człowiek na wskroś okrutny i zdeterminowany do tego, by zachować swoją władzę. Nie toleruje bumelanctwa i lenistwa, a za zdradę - karze śmiercią.
+**Krótki opis**: Opis frakcji magnatów.
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 2
+** **: Puste miejsce przy stole
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnaci
+**Kolejność**: 11
+**Wpis fabularny**: Aktualnie jest Was trzech. Z Gomezem czterech. Lady Valeria ostatnio za swoje zbyt zuchwałe poczynania względem Obozu na Bagnie i zbyt głośne interesowanie się Śniącym została zamknięta w swoich komnatach do czasu przemyślenia sprawy, choc wszyscy zdajecie sobie sprawę, że to kwestia czasu aż Gomez się jej pozbędzie. Stary Obóz to wbrew pozorom wielkie miejsce, a Kolonia jeszcze większe. Czujecie, że pewne sprawy wypadają Wam z rąk i że nie jesteście w stanie być wszędzie i dopilnować każdej palącej kwestii. Wiecie, że Gomez będzie potrzebował nowego magnata i to Was będzie pytał o zdanie w tej kwestii. W najbliższych dniach z pewnością wyłonią się interesujące persony i to do Was będzie należeć obowiązek by się im dokładnie przyjrzeć. To powinien być ktoś taki jak Wy - kompetetny, silny, bezwzględny i politycznie przydatny... No i ktoś, o ironio, komu można w jakimś tam stopniu zaufać. 
+**Krótki opis**: Opis wyścigu o stołek nowego magnata. Magnaci będą pomagali Gomezowi wybrać nowego magnata pomiędzy Bezą a Ulęgałke
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 3
+** **: Szef Służących
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnaci
+**Kolejność**: 12
+**Wpis fabularny**: Zevan - będący od długiego czasu bezkonkurencyjnym ulubieńcem Gomeza dostał w końcu to na co najwyraźniej, zdaniem szefa, zasłużył - posadę Szefa Służby. Zgodnie z tym co sądzicie, teraz służba powinna działać bez zarzutów, ale znając charakter Zevana na pewno nie obędzie się bez przemocy i dramatów. Nie to żebyście mieli z tym jakiś szczególny problem, ale jedno jest pewne. Będzie się działo. 
+**Krótki opis**: Przedstawienie magnatom Zevana- szefa służących.
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 4
+** **: Pierścienie Władzy
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnaci
+**Kolejność**: 13
+**Wpis fabularny**: W Kolonii działają tylko dwie rzeczy - prawo pięści i pierścienie Gomeza. Ze względu na liczne problemy z zaufaniem i przenoszeniem informacji Gomez rozkazał wykuć sobie złote pierścienie z jego inicjałem, które wręczacie ludziom, którzy załatwiają dla Was sprawy, na które wy nie macie czasu. Wystarczy wziąć taki pierścień od Gomeza i wręczyć człowiekowi, który coś dla Was robi, a ten powinien mieć otwarte każde drzwi tak, jakby sam był magnatem. Posiadanie takiego pierścienia to wielka moc i odpowiedzialność, gdyby trafił w niewłaściwe miejsce to... cóż... lepiej żeby nie trafił. To w Waszym interesie jest wiedzieć komu wydajecie pierścień i po robocie musicie go odzyskać. Jeżeli pierścień nie wróci do końca dnia, w którym został wydany to Wasz autorytet zostanie zagrożony, To cios w potęgę zamku magnatów. Do tego dojdzie pewnie też gniew Gomeza i wstyd względem innych magnatów. Lepiej pilnować tych pierścieni. 
+**Krótki opis**: Przedstawienie mechaniki pierścieni Gomeza
+**Zaangażowane frakcje**: Magnaci
+**Potrzebne rekwizyty**: Pierścienie Gomeza- 10 sztuk
+
+### Wpis 5
+** **: Słudzy Innosa
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnaci
+**Kolejność**: 14
+**Wpis fabularny**: Co jest silniejsze od dwuręcznego miecza i zbroi płytowej? Magia. Ta wielka, niepojęta siła będąca w posiadaniu magów ognia nie powinna pozostać bez dozoru. Gomez nakazał Wam związać się bliżej z magami ognia. To Wy jesteście w pozycji władzy względem nich, lecz dobre polityczne układy z ludźmi w czerwonych szatach wyszłyby Zamkowi na dobre. Macie znaleźć sobie ulubionego maga i możliwie jak najczęściej angażować go w Wasze sprawy. Dzięki temu zbliżycie krąg ognia bliżej Zamku i poznacie mocne i słabe strony każdego z magów. Gomez będzie oczekiwał raportu w tej sprawie.
+**Krótki opis**: Magnaci mają znaleźć sobie swoich ulubionych magów ognia i wykorzystywać ich do różnych cełów- zarówno prywatnych jak i politycznych.
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 6
+** **: Krnąbrni służący
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnaci
+**Kolejność**: 15
+**Wpis fabularny**: Czym różni się służący od kopacza? Praktycznie niczym poza ładną buźką, jakimiś tam manierami i ubraniem, które dostali od Gomeza. I na tym różnice się kończą. To co zaś mają w podobieństwie to wyczuwanie słabości. Jeżeli służący pozna, że magnat ma do niego słabość to ten będzie coraz bardziej sprawdzał granice. Nie może tak być. Służba ma być zdyscyplinowana i karna. Chętnych do pracy w zamku jest mnóstwo. Za sugestią Zevana, który ma pełne błogosławieństwo Gomeza macie nie tyle prawo co obowiązek karać służących, którzy będą źle wykonywać swoje obowiązki. Niektórym z nich przyda się szybka degradacja i wysłanie ich do kopalni tak by czuli bat na plecach. Jesteście ręką, która ich karmi, ale nie należy zapominać o karceniu. To dla ich dobra. I przedewszystkim Waszego.
+**Krótki opis**: Zachęcenie magnatów do degradacji służących, gdy ci będą bumelować
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 7
+** **: Pupilkowie
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnaci
+**Kolejność**: 16
+**Wpis fabularny**: A co z tymi służącymi, którzy są wierni i lojalni? Ich należy nagradzać. Dlatego Gomez wskazując na Zevana kazał Wam wybierać teraz codziennie nowego ulubionego służącego, który dobrze Wam służy. Taka osoba będzie mogła spać nieco spokojniej będąc mniej podatna na decyzje Zevana, ale wtedy to od Was- magnatów będzie zależeć ich los. Gomez kazał Wam często wymieniać ulubionych służących. Jego zdaniem wtedy wszyscy pracują lepiej i bardziej im zależy.
+**Krótki opis**: Wyjaśnienie zagadnienia częstszej rotacji służących.
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 8
+** **: Rozmowy możnych
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnaci
+**Kolejność**: 17
+**Wpis fabularny**: Nadeszły ciekawe czasy. Oto Zamek Magnatów otworzył się na poselstwa z innych obozów. Gomez wie, że dywersyfikacja źródeł przychodów to konieczność i choć od magicznej rudy nigdy nie zamierza odejść to zapowiedział, że Stary Obóz musi otworzyć się na inne źródła surowców. Z tego powodu co jakiś czas do Zamku Magnatów będą przybywać poselstwa dyplomatyczne z innych obozów. Musicie przyjąć tych ludzi i następnie wysłuchać ich ofert i negocjować. Za żadne skarby Myrtany nie wolno Wam zgadzać się na wszystko. Targowanie się to trudna sztuka, lecz w tym przypadku absolutnie wymagana. Podczas każdego z takich spotkań musicie wytargować dla Starego Obozu możliwie najlepsze warunki. Gomez na pewno będzie na tych naradach i będzie Was obserwować. To dobra okazja, by pokazać jak silnym jest się graczem. 
+**Krótki opis**: Wprowadzenie do wątku międzyobozowych spotkań dyplomatycznych
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 9
+** **: Nowe kilofy, stare problemy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alvarez
+**Kolejność**: 31
+**Wpis fabularny**: Dzięki ciężkiemu wysiłkowi Twoich ludzi dowiedziałeś się, że gdzieś w Kolonii, a co gorsza nieopodal Starego Obozu, pracuje nowa kopalnia rudy. To niefortunne, wręcz niedopuszczalne. Taka kopalnia mogłaby zagrozić hegemonii waszej władzy, a to ostatnia rzeczy która jest wam teraz potrzebna. Dobrze by było zbadać ten temat, rozesłać ludzi i w miarę możliwości zneutralizować tę nową kopalnię... Bądź poinformować Gomeza, o tym że kopalnia nie jest żadnym problemem i samemu zyskać z faktu jej istnienia jakieś profity. Możliwości jest wiele, a ryzyko - jeszcze większe.
+**Krótki opis**: Wątek nowej kopalni
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 10
+** **: Pańskie oko kretoszczura tuczy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alvarez
+**Kolejność**: 32
+**Wpis fabularny**: Gomez to dobry szef. Ewidentnie ci też ufa i pozwala na różne ruchy poza jego wiedzą. Dzięki temu mogłeś zająć się kwestią swojej własnej kontrabandy. Z każdym rokiem skazańcy z Kolonii stają się coraz bardziej przedsiębiorczy, a to sprawia, że można trochę dorobić się na ich talentach i potrzebach. Odśwież swoje kontakty i zaangażuj zaufanych sobie ludzi w transport towarów spoza bariery, by zarobić więcej rudy i zaznaczyć swoją obecność w półświatku Kolonii, nawet jeżeli trzeba będzie obić parę mord czy wjechać komuś na konwój. Najważniejsze tylko, by szef się nie dowiedział.
+**Krótki opis**: Kontrabanda Alvareza
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 11
+** **: Śmierć przyjdzie po każdego
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alvarez
+**Kolejność**: 34
+**Wpis fabularny**: Gnębiący cię kaszel był do tej pory uciążliwy, ale teraz, gdy przybrał na sile, zrobił się zwyczajnie irytujący. Jakby tego było mało, niedawno zauważyłeś wypadające włosy, a powtarzające się bóle głowy to więcej niż tylko kac po zamkowych biesiadach. Nasilające się dolegliwości to niechybny znak gwałtownie postępującej choroby.
+
+To przeklęte choróbsko przyprawia o nieznośną frustrację. Jesteś w końcu magnatem - nie byle szlachetką, który nigdy nie ubrudził sobie rąk ani bezmyślnym trepem, który za sukces uważa nieumieranie. Magnatem! Lawirujesz pod nosem Gomeza i trzymasz ten cholerny grajdołek w ryzach - i miałbyś stracić życie przez ślepe zrządzenie losu, przez jakiś niewidzialny karpys bogów?
+
+Być może wreszcie teraz dysponujesz zasobami, które pozwolą ci rozwiązać ten problem raz na zawsze. Zresztą nie masz wyboru.
+
+Stary Obóz posiada kilkoro uzdolnionych alchemików, takich jak alchemiczna Mistrzyni Farida, pracujące przy Aptece Noel i Klara, czy Magini Ognia Sybilla. Być może na Cieni łatwiej wywrzeć presję, ale bywają one przebiegłe. Magini zapewne dysponuje nieco większymi zasobami, ale Magom zapewne można ufać jeszcze mniej, bo nie kierują się klarownymi pobudkami.
+Inny Mistrz Alchemii przebywa w Nowym Obozie. Eridan jest Magiem Wody, a jako taki jest twoim naturalnym rywalem, który z pewnością nie przepuści okazji w kontekście zbliżających się negocjacji. Poza nim z pewnością są jeszcze inni utalentowani alchemicy, zarówno w Nowym Obozie, jak i Obozie Bractwa. Kiedyś obiła ci się o uszy nazwa Kolegium Alchemicznego, ale nie byli do tej pory dość interesujący, by ich długo szpiegować i poznać.
+
+Może uda ci się ugrać prywatę przy obradach? Nowy Obóz to nie tylko Eridan, ale i wykopaliska sprzed kilku miesięcy, podczas których wykopano liczne kamienne tablice. Niektóre z nich miały zawierać alchemiczne receptury dawno zapomnianego ludu, może więc jest tam coś, co by ci się przydało. Negocjacje zresztą nie są jedynym sposobem zdobycia tablic, skoro wśród Cieni nie brakuje złodziei - ale w dalszym ciągu potrzebowałbyś kogoś, kto te tablice zrozumie. Zarówno jeden, jak i drugi sposób oznaczają wtajemniczenie w twój problem niebezpiecznie wielu osób, które mogłyby wykorzystać twoją słabość.
+
+Niepokój, wręcz odór zbliżającej się śmierci przyprawia cię o desperackie pomysły. Poza ludźmi są w Kolonii przecież również i Orkowie - Orkowie, którzy niejednokrotnie okazali się bestiami szczwanymi, nieustępliwymi. Skoro są dość umyślni, by wytwarzać oręż, władać magią i stwarzać realne problemy całemu Myrtańskiemu imperium, to nietrudno sobie wyobrazić, by i o alchemii co nieco wiedzieli. Nie sposób polegać na komunikacji, ale być może konsekwentnie używana przemoc i plądrowanie ich ruin przyniosą jakieś efekty.
+**Krótki opis**: Choroba Alvareza
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 12
+** **: Czy się nadaje?
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alvarez
+**Kolejność**: 37
+**Wpis fabularny**: Gomezowi przydałby się nowy magnat, w szczególności po ostatnich ekscesach Valerii. Na pierwszy plan wysunęli się Beza, zasugerowana przez Sama i Ulęgałke, zaproponowany przez Magnusa. Ciekawy wybór, to na pewno. Próżna dziewucha obwieszona złotem od Gomeza i łysy strażnik słynący z nadmiernej przemocy. Oboje jednak pomimo swoich ewidentnych wad funkcjonują doskonale w swoich środowiskach. Beza nic nie robi poza wyglądaniem, a Gomez jeszcze jej nie przeciął w pół. Z kolei Ulęgałke nadmiernie krzywdzi kopaczy - cenny zasób ludzki Starego Obozu, i tak jak Beza - żyje i ponoć sam Gomez go ceni. Twoim zdaniem warto ich sprawdzić. Sprawdzić ich motywy, to czego pragną i chcą osiągnąć, gdy już zostaną magnatami, a jeżeli odkryjesz coś niepokojącego - nie pozwolić na ich awans. Możesz się założyć, że Sam i Magnus przypełzną do Ciebie byś wsparł jedno z nich. Są ślepi na ewentualne winy swoich kandydatów.
+**Krótki opis**: Alvareza stosunek do kandydatów na magnata
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 13
+** **: Mój mały Mag Ognia - Alvarez
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alvarez
+**Kolejność**: 36
+**Wpis fabularny**: W kolonii niczego się samemu nie osiągnie. Ale jeśli chce się grać o najwyższą stawkę - potrzebni są szczególni pomocnicy. Jako magnatowi, potrzebny ci jest szczególny wgląd w problemy natury magicznej i nie do końca możesz sobie pozwolić na poleganie na "szarym tłumie" Magów Ognia jako grupie eksperckiej. Potrzebujesz jednego, ale takiego, któremu możesz zaufać. Od jakiegoś czasu przyglądałeś się uważnie wszystkim noszącym czerwone szaty sług Innosa i masz wrażenie, że znalazłeś odpowiednią osobę. Magiczka Taida przejawia silne aspiracje polityczne i wyraźną ambicję. Jeśli zapewnisz jej odpowiednie poparcie i pomoc w karierze strukturach zakonu, napewno odwdzięczy ci się odpowiednio.
+
+### Wpis 14
+** **: W chwilach zwątpienia przyda się zastępstwo
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alvarez
+**Kolejność**: 35
+**Wpis fabularny**: Ze względu postępującą chorobę coraz częściej czujesz się niedysponowalny, przez co wywiad działa gorzej. Uznałeś, że potrzebujesz kogoś kto w takich chwilach będzie w stanie przyjmować raporty i podejmować proste decyzje w razie konieczności. Z polecenia Thorusa i Caina zaproponowali ci Strażnika Lengada z oddziału Jima Wiązki. Ten pochwalił się, że udało mu się zbudować siatkę ludzi, którzy donoszą mu o wielu rzeczach. Dobrze, widać zna się na fachu. Jego lojalność będziesz musiał zweryfikować oraz to czy faktycznie można mu powierzyć co ważniejsze zadania. Choć dostrzegasz w nim nieco siebie, nie tak dobrego, ale ma chłopak potencjał. Oczywiście zabroniłeś mu się afiszować ze swoją funkcją. 
+**Krótki opis**: O Lengarze jako prawej ręce
+**Zleceniodawca**: Thorus
+
+### Wpis 15
+** **: Siatka wywiadowcza
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alvarez
+**Kolejność**: 33
+**Wpis fabularny**: W ostatnich miesiącach coraz częściej masz wrażenie, że Stary Obóz robi się zbyt miękki. Cwaniaki z Nowego Obózu i bagienne świry czują się zbyt pewnie. Nawet bezkastowi potrafią coś odwalić, i to bez większych konsekwencji – tylko dlatego, że jakiś strażnik gapił się w dno butelki zamiast patrzeć, co się dzieje. A przecież kara, nawet jeśli nie przychodzi od razu, w końcu musi spaść. I to taka, żeby nie zapomnieli.
+
+Od dłuższego czasu nosiłeś się z pomysłem stworzenia specjalnej grupy. Oddziału, który nie będzie świecił się jak zbroja Gomeza na słońcu, tylko działał w cieniu. Dyskretni, ale wszechobecni. Niewidzialni, ale skuteczni. Twoi ludzie – agenci, których nikt nie zna, ale każdy się ich boi.
+
+Dlatego zacząłeś się przyglądać. Obserwujesz członków Starego Obozu, wyłapując tych, którzy mają w sobie odpowiednie cechy. Jedni lubią węszyć. Inni po prostu lubią sprawiać ból. Ważne, żeby byli lojalni, posłuszni i gotowi do działania – szybko, cicho i bez zbędnych pytań. Masz już kilku kandydatów, wysłałeś po nich gońców. Nie razem. Osobno. Niech myślą, że to audiencja, może przesłuchanie, a może wyrok. Niech srają po portkach, bo sam Alvarez wezwał ich na rozmowę w cztery oczy, choć wiesz, że po prostu chcesz ich rekrutować, ale najpierw sprawdzić.
+
+Agenci działają najlepiej, kiedy nie znają siebie nawzajem. A tym, co będą działać jawnie – twoim wiernym psom spuszczanym ze smyczy, kiedy trzeba zrobić szybkie lanie – przyda się też ostrzeżenie. Niech każdy w obozie wie, że jeśli spróbuje zaszkodzić Staremu Obozowi, grom spadnie z nieba. Grom sygnowany twoim imieniem.
+
+Warto będzie przemyśleć, czy nie pogadać o tym z Gomezem i resztą chłopaków przy stole magnatów. Może dorzucą swoich ludzi, może dadzą ci więcej swobody. Ale jedno jest pewne – ten plan musi wejść w życie. Cienie Alvareza i jego Psy. Niech cały obóz zacznie znowu bać się ciemności.
+
+Potencjalni kandydaci: Cień Zara, Kopacze: Jurgen, Lizel, Sójka
+
+Obecnie już pracujący dla ciebie: Cień Blef, Cień Selgar
+**Krótki opis**: O siatce wywiadowczej
+**Zleceniodawca**: Thorus
+
+### Wpis 16
+** **: Przyjaciel Cieni
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sam
+**Kolejność**: 31
+**Wpis fabularny**: Im dłużej siedzisz na zamku tym bardziej przyzwyczajasz się do tego jak to teraz wygląda. Pokazujesz palcem i rzeczy same się - z większym lub mniejszym skutkiem - dzieją. To wygodne, satysfakcjonujące i nierzadko bardzo opłacalne, ale masz wrażenie, że oddalasz się trochę od swoich korzeni - Cieni. Dobrze by było pokazać szefom band Cieni, że wciąż jesteś ,,swój chłop". Zaangażuj się w tematy z cieniami i pokaż im, że potrafisz rozwiązywać i zawiązywać tematy tak jak za dawnych czasów kiedy sam jeszcze byłeś cieniem magnatów. 
+**Krótki opis**: Sam nadal romansuje z cieniami
+**Zaangażowane frakcje**: Cienie
+
+### Wpis 17
+** **: Tu jest kopalnia. Tutaj rządzę Ja!
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sam
+**Kolejność**: 32
+**Wpis fabularny**: Ostatnio odkryłeś, że Ian - zarządca kopalni, czuje się w niej trochę zbyt swobodnie i zdarza mu się podbierać rudę w kieszeń. Normalnie uznałbyś to za nic niezwykłego, każdy z Was coś podbiera Gomezowi, ale taka samowolka ,,bez zgody" może spowodować zgnuśnienie naszego uroczego sztygara. Ian może i jest niesympatycznym gburem - ale to świetny specjalista i Stara Kopalnia go potrzebuje. Dobrze by było gbybyś przekonał go, że nie warto brać w kieszeń zbyt wiele, bo kiedyś całkowicie przypadkowo może coś mu się stać. Nie wiesz, czy taka groźba zadziała, ale znając jego poczucie humoru to raczej nie załapie tego ani jako groźbę, ani tym bardziej jako żart. Raczej jako próbę wywołania wojny między Wami. Musisz wymyśleć coś, jakąś pętlę wokół szyi tego cwaniaka, która będzie zaciskać się za każdym razem, gdy porządzi się trochę za bardzo... Z drugiej strony możesz pójść z nim na sympatyczny, koleżeński układ i podzielić się podkradaną rudą w zamian za ciszę. W końcu do swoich operacji potrzebujesz dużo rudy, a jeżeli chcesz pozostać przyjacielem band Cieni to regularne podrzucanie im rudy będzie na pewno bardzo mile widziane i staniesz się pośród Cieni prawdziwą legendą. Może nawet zaczną kochać cię bardziej niż Gomeza? Brzmi kusząco
+**Krótki opis**: Sam dowiedział się o podbieraniu rudy przez Iana
+**Zaangażowane frakcje**: Kopacze
+
+### Wpis 18
+** **: Nowe kilofy, stare problemy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sam
+**Kolejność**: 33
+**Wpis fabularny**: Dzięki ciężkiemu wysiłkowi Twoich ludzi dowiedziałeś się, że gdzieś w Kolonii, a co gorsza nieopodal Starego Obozu, pracuje nowa kopalnia rudy. To niefortunne, wręcz niedopuszczalne. Taka kopalnia mogłaby zagrozić hegemonii waszej władzy, a to ostatnia rzeczy która jest wam teraz potrzebna. Dobrze by było zbadać ten temat, rozesłać ludzi i w miarę możliwości zneutralizować tę nową kopalnię... Bądź poinformować Gomeza, o tym że kopalnia nie jest żadnym problemem i samemu zyskać z faktu jej istnienia jakieś profity. Możliwości jest wiele, a ryzyko - jeszcze większe.
+**Krótki opis**: Wątek nowej kopalni
+**Zaangażowane frakcje**: Kopacze
+
+### Wpis 19
+** **: Ruda musi płynąć
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sam
+**Kolejność**: 34
+**Wpis fabularny**: Zajmowanie się ekonomią Starego Obozu to zajęcia bardzo potrzebne, ale koszmarnie wycieńczające. Masz cholernie wiele talentów i na tym też się znasz, ale znać się na czymś a robić to z przyjemnością to dwie różne rzeczy. Wiesz, że dla Gomeza nie ma nic ważniejszego niż ruda i rozumiesz jego motywacje, ale nie wiesz czy chcesz się tym dłużej zajmować. Oczywiście, nie powiesz mu tego wprost bo wypruje Ci flaki Gniewem Innosa tam gdzie stoisz, dlatego musisz całą tę kwestię potraktować wyjątkowo ostrożnie. Zrzucić z siebie kwestię ekonomiczną tak by szef nie zauważył, najlepiej na kogoś innego. W dużej mierze zajmuje się tym banda Administracyjna prowadzona przez Cienia Andersa. Ale potrzeba często osoby decyzyjnej. Oczywiście najważniejsze decyzje możesz sobie zostawić, by mieć wpływ na istotne rzeczy, ale tę całą drobnicę z chęcią byś zrzucił. Może na Ulęgałke? Nie...O nim mówią, że ma więcej przemocy niż rozumu w głowie. Być może Beza? Lepiej, chociaż tu obawiasz się, że z jej zamiłowaniem do błyskotek może sobie za dużo podbierać do własnej sakwy. Tak czy inaczej - potrzebujesz zaufanego, naprawdę zaufanego człowieka. Jednak najpierw musisz uśpić czujność Gomeza. By to zrobić musisz zapewnić potężny strumień rudy, wypełnić skrzynki, które pojadą do króla i przysposobić wybrańca do nowej roli, a później wcisnąć go w zbroję magnata. To sporo roboty, ale jak już uda Ci się zdobyć uznanie Cieni to można spróbować skorzystać z ich pomocy w tej sprawie? 
+**Krótki opis**: Sam chce zrzucić sprawy ekonomii na Bezę
+**Zaangażowane frakcje**: Magnaci, Służący
+
+### Wpis 20
+** **: Przyroda nie cierpi pustki
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sam
+**Kolejność**: 35
+**Wpis fabularny**: Gomezowi przydałby się nowy magnat, w szczególności po ostatnich ekscesach Valerii. Zasugerowałeś służkę Bezę - po pierwsze myślisz, że się nadaje bo to zaradna i obrotna kobieta, a po drugie żeby ustrzyknąć w nos Magnusa, bo w końcu to jego ulubienica. Magnus z kolei jako kontrkandydata zaproponował dowódcę jednego z oddziałów - Ulęgałkę - łysy strażnik słynący z nadmiernej przemocy. Oboje jednak pomimo swoich ewidentnych lub domniemanych wad funkcjonują doskonale w swoich środowiskach. Beza ma na pewno trudniejsze zadanie przed sobą, jednak awans z pozycji Służącej jeszcze się nie zdażył, ale przecież liczą się zasługi i przydatność dla Starego Obozu, a nie staż w Koloni. Dystyngowana dama z charyzmą i językiem jak sztylet wprowadziłaby na dwór magnatów trochę świeżości i ułatwiła i tak trudne już kontakty z pozostałymi Obozami. Na pewno będzie potrzebowała nielada wsparcia, ale za to wdzięczność będzie ci zapewniać do końca swoich dni. Umocji to także twoja pozycję jako najświeższego Magnata. Równolegle mozesz próbować znaleźć coś na tego całego Ulęgałke i utrudnić mu wyścig o stołek. Trzeba mu się przyjrzeć. Najlepiej połączyć siły z Alvarezem w tej kwestii.
+**Krótki opis**: O wsparciu Bezy jako magnatki
+**Zleceniodawca**: Thorus
+**Zaangażowane frakcje**: Magnaci, Służący
+
+### Wpis 21
+** **: Mój mały Mag Ognia - Sam
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sam
+**Kolejność**: 36
+**Wpis fabularny**: W kolonii niczego się samemu nie osiągnie. Ale jeśli chce się grać o najwyższą stawkę - potrzebni są szczególni pomocnicy. Jako magnatowi, potrzebny ci jest szczególny wgląd w problemy natury magicznej i nie do końca możesz sobie pozwolić na poleganie na "szarym tłumie" Magów Ognia jako grupie eksperckiej. Potrzebujesz jednego,  ale takiego, któremu możesz zaufać. Od jakiegoś czasu przyglądałeś się uważnie wszystkim noszącym czerwone szaty sług Innosa i masz wrażenie, że znalazłeś odpowiednią osobę. Sybillę znałeś jeszcze z czasów, gdy oboje byliście Cieniami i już wtedy dogadywaliście się dobrze. Dlaczegożby nie wznowić współpracy teraz, gdy oboje jesteście na wyższych stanowiskach? Wiesz, że Sybilla bardzo potrzebuje esencji do swoich badań - to niezłe otwarcie do zyskownej współpracy.
+
+### Wpis 22
+** **: Rączka rączkę myje
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sam
+**Kolejność**: 37
+**Wpis fabularny**: Twój dawny współpracownik, paser Rączka, od jakiegoś bardzo stara się wkręcić na Zamek. Proponował ci bycie twoim pomocnikiem, ale miałeś już wystarczająco wielu bardziej zaufanych cieni do dyspozycji. Ale potem przyszedł ci do głowy pomysł - a co, jeśli wysłać go do pomocy komuś innemu, czyniąc z niego swojego szpiega? Doskonale widzisz, że ambicje Bezy sięgają dużo dalej niż bycie zwykłą służką i dałbyś sobie rękę uciąć, że będzie starała się wejść w buty po lady Valerii. Ktoś taki jak Rączka z pewnością będzie dla niej dużą pomocą, a tobie dostarczy wglądu w to, co naprawdę dzieje się w jej otoczeniu. Musisz jeszcze tylko przekonać do tego pomysłu Rączkę...
+
+### Wpis 23
+** **: Intrygujący raport z Kopalni
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sam
+**Kolejność**: 38
+**Wpis fabularny**: Nieco ponad tydzień temu, późną nocą kiedy większość już smacznie spała, trafił na twój stół niezwykle interesujący raport. Wspominał on, o zawaleniu się jednego z nowych, eksperymentalnie drążonych szybów w kopalni. Jednak to co przykuło twoją uwagę to opis tego co ujrzano tuż przed zawaleniem. Ogień pochodni odbijał się tak, że wydawało się, że ściany mienią się wręcz na niebiesko - a to może oznaczać, że to niezwykle bogate złoże. Niestety były też spore wady - bardzo niestabilny szyb oraz odnotowana spora liczba pełzaczy. Wydobycie na pełną skale będzie praktycznie niemożliwe. Ale... mała grupka wyszkolonych Kopaczy i paru Strażników? To by się mogło udać. Niestety masz zdecydowanie informacji, a w dodatku wiedza o tym jest praktycznie niepowszechna. To się dobrze składa, bo ostatnimi czasy Gomez coraz częściej wylicza wam budżet bryłek, więc prywatne źródło dochodów byłoby ci bardzo na rękę. Oczywiście Gomez nie mógłby się o niczym dowiedzieć i musiałbyś działać tak, by nie dało się w razie problemów powiązać cię z tym całym przedsięwzięciem. Ale kto jak nie ty miałby sobie z czymś takim poradzić. 
+
+Oddaliłeś się na chwile za potrzebą, tam dokąd nawet sam król Rhobar piechotą chadza. Wielkie było twoje zdziwienie, kiedy wróciwszy widziałeś dopalające się resztki tego raportu. Któż były tak bezczelny żeby to zrobić? Najpewniej ktoś ze służby, choć oczywiście żaden się nie przyznał. To by mogło oznaczać, że któreś z nich jest szpiegiem. Chyba że ktoś się niepostrzeżenie zakradł się - ale wtedy by raport skradł, a nie spalił. A może jeden z Magnatów?
+
+Parę dni temu dotarła do ciebie plotka, że grupa postaci uciekała z kopalni późną nocą, na tyle późną, że o regularnych szychtach nie było mowy. Nie rozpoznano za bardzo ani twarzy, ani nawet frakcji. Czyżby ktoś kopał rudę po nocach? Czy w dodatku to może być jakkolwiek powiązane z tą żyłą rudy z raportu? Wysłałeś swoich ludzi by obserwowali nocą kopalnię, ale przez ostatnie dni nikt nie dostrzegł niczego podejrzanego. Może warto zacząć zadawć pytania?
+
+
+**Krótki opis**: Czarna szychta
+**Zleceniodawca**: Thorus
+
+### Wpis 24
+** **: To nie człowiek był, to Furia albo Bestia
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnus Żelazne Serce
+**Kolejność**: 34
+**Wpis fabularny**: W czasach, gdy budowałeś umocnienia przeciwko Orkom, byłeś zwykłym kopaczem z zaciągu — nikt ważny, nikt godny zapamiętania. Robota była ciężka, strażnicy surowi. Dzień za dniem targałeś kamienie, słuchałeś wrzasków przełożonych i modliłeś się, żeby topór Orka nie spadł na ciebie, zanim wypłacą ci chociaż pierwszy żołd.. Ale właśnie wtedy poznałeś jego — Grimma.
+
+Grimm był sierżantem w Królewskiej armii. Nie przypominał tych zadufanych w sobie wojaków, co to tylko potrafią wrzeszczeć rozkazy i wymachiwać pałką. Był inny. Miał w oczach coś dzikiego, jakby wojna go nie złamała, tylko na nowo ulepiła. Obserwowałeś go z daleka, jak ćwiczył młodych rekrutów, jak w nocy siadał sam przy ognisku i ostrzył swój topór z miną, jakby rozmawiał z bestią. I chyba rozmawiał — z tą, którą trzymał w sobie.
+
+Poznaliście się przez hazard. Grałeś w kości z paroma chłopakami z brygady. Grimm podszedł, popatrzył chwilę, usiadł. Myślałeś, że zdzieli cię w łeb za to, że jednemu z jego ludzi ograłeś żołd. A on... dołączył do gry. Przegrał, wygrał, znowu przegrał, a potem zaproponował dzban piwa. Od tamtej nocy graliście niemal codziennie. On opowiadał o walkach z Orkami, ty o kombinacjach, jak się nie narobić, a przeżyć. Mówił niewiele, ale słowa miał ciężkie jak stal.
+
+Grimm był wojownikiem, jakich już nie robią. Gdy Orkowie przypuścili szturm, strażnicy spanikowali, a ty myślałeś, że to twój koniec. Grimm nie. Stał pośrodku zamieszania jak skała. Topór w jednej dłoni, tarcza w drugiej — cios za ciosem, krew na twarzy, krzyk tak dziki, że samym głosem mógłby złamać szarżę. Widziałeś, jak rozwalał Orka jednym uderzeniem, jakby to była snopka siana. Wtedy rzuciłeś mu łopatę, kiedy zabrakło mu broni — i nawet z łopatą w ręku był bardziej niebezpieczny niż pół oddziału zbrojnych.
+
+Od tamtego dnia wiedziałeś, że Grimm to nie tylko wojownik. To żywa furia w ludzkiej skórze. Ale też ktoś, komu możesz zaufać, gdy wszystko inne się wali. Przyjaciel. A może nawet coś więcej — ostatni z tych, co nie walczą dla chwały, tylko dlatego, że świat jest pełen potworów i ktoś musi im patrzeć prosto w oczy. Niestety wojna rozdzieliła was na zawsze. Później słyszałeś plotki o gladiatorze w Varancie, który był niczym bestia na arenie. Zastanawiałeś się czasem czy to nie ten sam, ale nigdy nie było ci dane się tego dowiedzieć.
+**Krótki opis**: Spotkanie Magnusa i Grimma
+**Zleceniodawca**: Thorus
+
+### Wpis 25
+** **: Lojalność Straży
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnus Żelazne Serce
+**Kolejność**: 30
+**Wpis fabularny**: Twoje słowa dalej rozbrzmiewają echem w Starym Obozie - donoszą ci o tym twoi zaufani ludzie, którzy słyszą co się szepcze po kątach lub co wykrzykuje się po pijaku w karczmie. Sytuacja już nie jest tak krytyczna jak była pare miesięcy temu, ale zdajesz sobie sprawę, że istnieją środowiska, które tylko marzą o tym byś spadł z magnackiego fotela. Ale po twoim trupie! Po prostu musisz zacieśnić więzy ze Strażą - bo jeśli oni będą stać za tobą murem, to nikt (oprócz Gomeza oczywiście) cię nie ruszy. Masz dobre układy z kapitanem Straży, Thorusem, a także dowódcą jednego z oddziałów - Ulęgałke. Ale zdajesz sobie że to mało. Im więcej strażników przekona się i stanie za tobą tym silniej będziesz stać na stanowisku. Ale też zdajesz sobie sprawę, że tak naprawdę jedyną osobą, od której zależy twoja pozycja to Gomez. Choć w przypadku otwartego buntu Straży, kto wie... może nawet on cię poświęci, by utrzymać spokój w Starym Obozie.
+
+Isa, kiedyś jedna z twoich ulubienic, teraz maniakalnie próbuje cię obalić. Próbuje zebrać wokół siebie sojuszników, jednak otwarte starcie z nią zrobi z niej męczennika. Musisz działać sprytnie. Ostatnia rzecz, której teraz potrzebujesz to utrata zaufania wśród Straży, na co pracowałeś od paru miesięcy. Z kim jeszcze współpracuje? Jak rozległa jest jej siatka? Nad tym warto poprawcować. Możesz też próbować uderzać bezpośrednio w jej dowódcę - Udara. Ten wydaje się być twarzą co odważniejszych Strażników. W końcu dowodzi oddziałem specjalizującym się w walce z Orkami i potworami. A takie męstwo (choć daleko nie ma od jawnego samobóstwa) być może powinno być nagradzane.
+
+Thorus doniósł ci także, że legenda areny, Jim Wiązka, również był wielokrotnie strofowany przez niego. Dowódca zbyt często pozwalał sobie na niechlubne komentarze. Czy spróbujesz go do siebie przekonać czy może będziesz próbował z nim walczyć i go stłamsić albo zastraszyć?
+**Krótki opis**: o istotności lojalności Straży oraz o działaniach Isy
+**Zleceniodawca**: Thorus
+
+### Wpis 26
+** **: Twój druh, Ulęgałke
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnus Żelazne Serce
+**Kolejność**: 31
+**Wpis fabularny**: Gomezowi przydałby się nowy magnat. Sam przebąkuje coś o służce Bezie, twojej ulubienicy. Z jednej strony ją lubisz, ale jakim prawem służka miałaby stanać na takim zaszczytnym miejscu z tak niskiej pozycji. Ty musiałeś się bardziej postarać. Poza tym wolisz ją w obecnej roli, kiedy biega dookoła ciebie spełniając twoje zachcianki. Musiałeś zastanowić się nad kontrkandydatem - nie zajęło ci długo aż pomyślałeś o twoim najbardziej oddanym Strażniku - Ulęgałkę. Ciekawy wybór, to na pewno. A zatem kandydatami są próżna dziewucha obwieszona złotem od Gomeza i łysy strażnik słynący z nadmiernej przemocy. Oboje jednak pomimo swoich ewidentnych lub domniemanych wad funkcjonują doskonale w swoich środowiskach. Beza niestety nie robi nic poza wyglądaniem, a mimo to Gomez jeszcze jej nie przeciął w pół. To dobrze wróży. Z kolei Ulęgałke nadmiernie krzywdzi kopaczy - cenny zasób ludzki Starego Obozu, i tak jak Beza - żyje i ponoć sam Gomez go ceni. Twoim zdaniem Ulęgałke nadawałby się na magnata dużo bardziej niż jakaś służąca. Co właściwie ona miałaby robić jako magnatka? Nawet wina nie umie nalewać. Podejrzewasz, że Gomez trzyma ją z czystej próżności, ponieważ urody nie można jej odmówić, ale nic poza tym. Może udałoby ci się znaleźć coś na nią i utrudnić jej wyścig o tron magnata? Trzeba jej się przyjrzeć. Alternatywnie wspomóc Ulęgałkę w jego staraniach. Na pewno miałby u ciebie dług wdzięczności i wzmocniłby twoją pozycję jako Magnata. Cieszy się jak nie szacunkiem to postrachem wśród innych Strażników i niższych warstw.
+**Krótki opis**: o wyscigu na magnacki tron
+**Zleceniodawca**: Thorus
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 27
+** **: Mój mały Mag Ognia - Magnus
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnus Żelazne Serce
+**Kolejność**: 33
+**Wpis fabularny**: W kolonii niczego się samemu nie osiągnie. Ale jeśli chce się grać o najwyższą stawkę - potrzebni są szczególni pomocnicy. Jako magnatowi, potrzebny ci jest szczególny wgląd w problemy natury magicznej i nie do końca możesz sobie pozwolić na poleganie na "szarym tłumie" Magów Ognia jako grupie eksperckiej. Potrzebujesz jednego, ale takiego, któremu możesz zaufać. Od jakiegoś czasu przyglądałeś się uważnie wszystkim noszącym czerwone szaty sług Innosa i masz wrażenie, że znalazłeś odpowiednią osobę. Calor to mag, który, jak się wydaje, utknął na drugim kręgu wtajemniczenia (cokolwiek to znaczy). Co prawda nie wydaje się darzyć Magnatów wielką miłością, ale nie szukasz w końcu kochanka, tylko skutecznego pomocnika. Z tego co słyszałeś, dysponuje on unikalną runą Rozkazu - choćby z tego powodu warto polepszyć wasze wzajemne stosunki.
+
+### Wpis 28
+** **: Nowe kilofy, stare problemy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnus Żelazne Serce
+**Kolejność**: 32
+**Wpis fabularny**: Dzięki ciężkiemu wysiłkowi Twoich ludzi dowiedziałeś się, że gdzieś w Kolonii, a co gorsza nieopodal Starego Obozu, pracuje nowa kopalnia rudy. To niefortunne, wręcz niedopuszczalne. Taka kopalnia mogłaby zagrozić hegemonii waszej władzy, a to ostatnia rzeczy która jest wam teraz potrzebna. Dobrze by było zbadać ten temat, rozesłać ludzi i w miarę możliwości zneutralizować tę nową kopalnię... Bądź poinformować Gomeza, o tym że kopalnia nie jest żadnym problemem i samemu zyskać z faktu jej istnienia jakieś profity. Możliwości jest wiele, a ryzyko - jeszcze większe.
+**Krótki opis**: Wątek nowej kopalni Nowego Obozu
+**Zleceniodawca**: Gomez
+
+### Wpis 29
+** **: Ten co się wszędzie wciśnie
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnus Żelazne Serce
+**Kolejność**: 35
+**Wpis fabularny**: Nie jest tajemnicą, że nie cieszysz się popularnością wśród Cieni, ale też nie uważasz, że zasługują na twój szacunek. No chyba że trafi się jakiś, który jest faktycznie przydatny - a takich mało. Wyjątkiem potwierdzającym tę regułę jest Cień o dosyć specyficznym przezwisku nomen omen - Karaluch. Przyszedł do ciebie kiedyś i oświadczył, że nie zgadza się z powszechną opinią na twój temat i że z chęcią okaże się dla ciebie przydatny. Przynosi ci od czasu do czasu informacje, głównie z wewnątrz obozu, choć ostatnio uznałeś, że powinien rozszerzyć nieco swoją działalność. W zamian ma od ciebie protekcje oraz dodatkowe honorarium - zależnie od wartości informacji. Dobrze mieć wtyczkę wśród niepochlebnych ci Cieni.
+**Krótki opis**: wątek z Karaluchem, który jest jego oczami i uszami wśród Cieni
+**Zleceniodawca**: Thorus
+
+### Wpis 30
+** **: Cień od brudnej roboty
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnus Żelazne Serce
+**Kolejność**: 36
+**Wpis fabularny**: Czasem bywają sprawy, które lepiej załatwić po cichu, ale zarazem skutecznie. Gdzie Strażnik się nie nada tam bandę Cienia Pasco wyślesz. Są to spece od brudnej roboty, ale tak by nie zostawić rozgłosu i śladu. Jednak ostatnimi czasy dostrzegasz coraz większy grymas na twarzy Pasco, kiedy zlecasz mu kolejne zadanie. Czyżby mu była nie wsmak praca dla ciebie? Chyba mu warto przypomnieć kto jest tu Panem, a kto narzędziem wykonującym rozkazy. Jeszcze sobie zaraz wymyśli, że może ci odmówić?! To czy wymienisz go na kogoś innego czy wyjaśnisz go to już leży w twojej gestii.
+**Krótki opis**: o buntowniczym podejściu Pasco
+**Zleceniodawca**: Thorus
+
+### Wpis 31
+** **: Resztki z Piątek Brygady
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnus Żelazne Serce
+**Kolejność**: 37
+**Wpis fabularny**: Udało ci się rozpracować pozostałości Piątek Brygady - byli nimi kopacze Cykuta (z Trzeciej) oraz Olga (z Czwartej). Wziąłeś ich na słowo i wyjaśniłeś jak się mają rzeczy - pytanie na jak długo? Poza tym sam się nie będziesz zajmował brudnymi kopaczami. Może lepiej jakby któryś ze Strażników miał na nich oko i ucho? Jest jeszcze Kati, brygadzistka Czwartej, która zadeklarowała, że będzie cię informować na bieżąco. Lepiej żeby tego dopilnowała, bo dwie szansy już miała, trzecich nie dajesz...
+
+**Krótki opis**: O Piątej i Kati
+**Zleceniodawca**: Thorus
+
+### Wpis 32
+** **: Drogi ale skuteczny
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnus Żelazne Serce
+**Kolejność**: 38
+**Wpis fabularny**: Irytuje cię nieco, że usługi Marko należą do wyjąkowo drogich. Służba Magnatom to zaszczyt i obowiązek, a nie sposób na zarobek. Z drugiej strony, pomimo twojej opinii pośród Cieni, Marko nadal wiernie ci służy, co mu się chwali. Niby lepszy wróbel w garści niż gołąb na dachu, ale nie po to jesteś Magnatem, żeby zastanawiać się co możesz, a czego nie!
+**Krótki opis**: O interesach z cieniem Marko
+**Zleceniodawca**: Thorus
+
+### Wpis 33
+** **: Intrygujący raport z Kopalni
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magnus Żelazne Serce
+**Kolejność**: 39
+**Wpis fabularny**: Nieco ponad tydzień temu dosyć późną nocą wracałeś do swoich komnat napruty bagiennym zielem jak szpadel, kiedy dostrzegłeś pergamin przy stole magnackim. Nie był on zbyt obszerny, więc szybko przewertowałeś jego zawartość. Być może zostawił go jakiś goniec i poszedł w cholerę. Raport wspominał o zawaleniu się jednego z nowych, eksperymentalnie drążonych szybów w kopalni. Jednak to co przykuło twoją uwagę to opis tego co ujrzano tuż przed zawaleniem. Ogień pochodni odbijał się tak, że wydawało się, że ściany mienią się wręcz na niebiesko - a to może oznaczać, że to niezwykle bogate złoże. Niestety były też spore wady - bardzo niestabilny szyb oraz odnotowana spora liczba pełzaczy. Wydobycie na pełną skale będzie praktycznie niemożliwe. Ale... mała grupka wyszkolonych Kopaczy i paru Strażników? To by się mogło udać. Niestety masz zdecydowanie zbyt mało dokłądnych informacji, a w dodatku wiedza o tym jest praktycznie niepowszechna. To się dobrze składa, bo ostatnimi czasy Gomez coraz częściej ciasno wylicza wam budżet bryłek, więc prywatne źródło dochodów byłoby ci bardzo na rękę - w szczególności na premie dla Strażników, ale przede wszystkim własne potrzeby i luksusy. Oczywiście Gomez nie mógłby się o niczym dowiedzieć i musiałbyś działać tak, by nie dało się w razie problemów powiązać cię z tym całym przedsięwzięciem. Ale kto jak nie ty miałby sobie z czymś takim poradzić. Tak czy inaczej, nie chciałeś by ktokolwiek dowiedział się o tym raporcie, więc podpaliłeś go w płomieniu świecy mając nadzieję, że byłeś jedynym który się z nim zapoznał. Następnie szybko udałeś się na spoczynek, by nikt nie obserwował cię w takim stanie.
+
+Parę dni temu dotarła do ciebie plotka, że grupa postaci uciekała z kopalni późną nocą, na tyle późną, że o regularnych szychtach nie było mowy. Nie rozpoznano za bardzo ani twarzy, ani nawet frakcji. Czyżby ktoś kopał rudę po nocach? Czy w dodatku to może być jakkolwiek powiązane z tą żyłą rudy z raportu? Wysłałeś swoich ludzi by obserwowali nocą kopalnię, ale przez ostatnie dni nikt nie dostrzegł niczego podejrzanego. Może warto zacząć zadawć pytania?
+
+**Krótki opis**: o czarnej szychcie
+**Zleceniodawca**: Thorus
+
+## Arkusz: Data_Validation
+----------------------------------------
+
+### Wpis 1
+**Klasa**: Grupa
+**Nie**: Tak
+**#REF!**: #REF!
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+****: Alvarez
+
+### Wpis 2
+**Klasa**: Postać
+**Nie**: Nie
+**#REF!**: Nie
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+****: Sam
+
+### Wpis 3
+**#REF!**: Nie
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+****: Magnus Żelazne Serce
+
+### Wpis 4
+**Klasa**: Magnaci
+**#REF!**: Nie
+
+### Wpis 5
+**#REF!**: Nie
+
+### Wpis 6
+**Klasa**: Skazańcy
+**#REF!**: Nie
+
+### Wpis 7
+**Klasa**: Kopacze
+**#REF!**: Nie
+
+### Wpis 8
+**Klasa**: Służący
+**#REF!**: Nie
+
+### Wpis 9
+**Klasa**: Cienie
+**#REF!**: Nie
+
+### Wpis 10
+**Klasa**: Strażnicy
+**#REF!**: #REF!
+
+### Wpis 11
+**Klasa**: Magowie Ognia
+**#REF!**: Nie
+
+### Wpis 12
+**Klasa**: Magnaci
+**#REF!**: Nie
+
+### Wpis 13
+**Klasa**: Krety
+**#REF!**: #REF!
+
+### Wpis 14
+**Klasa**: Szkodniki
+**#REF!**: Nie
+
+### Wpis 15
+**Klasa**: Najemnicy
+**#REF!**: Nie
+
+### Wpis 16
+**Klasa**: Magowie Wody
+**#REF!**: Nie
+
+### Wpis 17
+**Klasa**: Nowicjusze
+**#REF!**: Nie
+
+### Wpis 18
+**Klasa**: Strażnicy Świątynni
+**#REF!**: Nie
+
+### Wpis 19
+**Klasa**: Guru
+**#REF!**: Nie
+
+### Wpis 20
+**#REF!**: Nie
+
+### Wpis 21
+**Klasa**: Khorinis
+**Nie**: Miasto Khorinis
+**#REF!**: Nie
+
+### Wpis 22
+**Nie**: Farmy
+**#REF!**: Nie
+
+### Wpis 23
+**Klasa**: Myrtana
+**Nie**: Ardea
+**#REF!**: Nie
+
+### Wpis 24
+**Nie**: Cape Dun
+**#REF!**: Nie
+
+### Wpis 25
+**Nie**: Montera
+**#REF!**: Nie
+
+### Wpis 26
+**Nie**: Vengard
+**#REF!**: Nie
+
+### Wpis 27
+**Nie**: Silden
+**#REF!**: Nie
+
+### Wpis 28
+**Nie**: Geldern
+**#REF!**: Nie
+
+### Wpis 29
+**Nie**: Faring
+**#REF!**: #REF!
+
+### Wpis 30
+**Nie**: Gotha
+**#REF!**: #REF!
+
+### Wpis 31
+**Nie**: Trelis
+**#REF!**: #REF!
+
+### Wpis 32
+**Klasa**: Varant
+**Nie**: Ishtar
+**#REF!**: Nie
+
+### Wpis 33
+**Nie**: Mora Sul
+**#REF!**: Nie
+
+### Wpis 34
+**Nie**: Bakaresh
+**#REF!**: Nie
+
+### Wpis 35
+**Nie**: Braga
+**#REF!**: Nie
+
+### Wpis 36
+**Nie**: Ben Erai
+**#REF!**: Nie
+
+### Wpis 37
+**Nie**: Lago
+**#REF!**: Nie
+
+### Wpis 38
+**Nie**: Ben Sala
+**#REF!**: Nie
+
+### Wpis 39
+**Klasa**: Archolos
+**Nie**: Miasto Archolos
+**#REF!**: Nie
+
+### Wpis 40
+**Nie**: Silbach
+**#REF!**: Nie
+
+### Wpis 41
+**Nie**: Wilcze Leże
+**#REF!**: Nie
+
+### Wpis 42
+**Nie**: Winnica Rity
+**#REF!**: Nie
+
+### Wpis 43
+**Nie**: Winnica Valerio
+**#REF!**: Nie
+
+### Wpis 44
+**Klasa**: Nordmar
+**Nie**: Klan Młota
+**#REF!**: Nie
+
+### Wpis 45
+**Nie**: Klan Ognia
+**#REF!**: Nie
+
+### Wpis 46
+**Nie**: Klan Wilka
+**#REF!**: Nie
+
+### Wpis 47
+**Klasa**: Wyspy Południowe
+**Nie**: Wyspy Południowe
+**#REF!**: Nie
+
+### Wpis 48
+**Klasa**: Wschodni Archipelag
+**Nie**: Wschodni Archipelag
+**#REF!**: Nie
+
+### Wpis 49
+**#REF!**: Nie
+
+### Wpis 50
+**#REF!**: Nie
+
+### Wpis 51
+**#REF!**: Nie
+
+### Wpis 52
+**#REF!**: Nie
+
+### Wpis 53
+**#REF!**: Nie
+
+### Wpis 54
+**#REF!**: Nie
+
+### Wpis 55
+**#REF!**: Nie
+
+### Wpis 56
+**#REF!**: Nie
+
+### Wpis 57
+**#REF!**: Nie
+
+### Wpis 58
+**#REF!**: Nie
+
+### Wpis 59
+**#REF!**: Nie
+
+### Wpis 60
+**#REF!**: Nie
+
+### Wpis 61
+**#REF!**: Nie
+
+### Wpis 62
+**#REF!**: Nie
+
+### Wpis 63
+**#REF!**: Nie
+
+### Wpis 64
+**#REF!**: Nie
+
+### Wpis 65
+**#REF!**: Nie
+
+### Wpis 66
+**#REF!**: Nie
+
+### Wpis 67
+**#REF!**: Nie
+
+### Wpis 68
+**#REF!**: Nie
+
+### Wpis 69
+**#REF!**: Nie
+
+### Wpis 70
+**#REF!**: Nie
+
+### Wpis 71
+**#REF!**: Nie
+
+### Wpis 72
+**#REF!**: Nie
+
+### Wpis 73
+**#REF!**: Nie
+
+### Wpis 74
+**#REF!**: Nie
+
+### Wpis 75
+**#REF!**: Nie
+
+### Wpis 76
+**#REF!**: Nie
+
+### Wpis 77
+**#REF!**: Nie
+
+### Wpis 78
+**#REF!**: Nie
+
+### Wpis 79
+**#REF!**: Nie
+
+### Wpis 80
+**#REF!**: Nie
+
+### Wpis 81
+**#REF!**: Nie
+
+### Wpis 82
+**#REF!**: Nie
+
+### Wpis 83
+**#REF!**: Nie
+
+### Wpis 84
+**#REF!**: Nie
+
+### Wpis 85
+**#REF!**: Nie
+
+### Wpis 86
+**#REF!**: Nie
+
+### Wpis 87
+**#REF!**: Nie
+
+### Wpis 88
+**#REF!**: Nie
+
+### Wpis 89
+**#REF!**: Nie
+
+### Wpis 90
+**#REF!**: Nie
+
+### Wpis 91
+**#REF!**: Nie
+
+### Wpis 92
+**#REF!**: Nie
+
+### Wpis 93
+**#REF!**: Nie
+
+### Wpis 94
+**#REF!**: Nie
+
+### Wpis 95
+**#REF!**: Nie
+
+### Wpis 96
+**#REF!**: Nie
+
+### Wpis 97
+**#REF!**: Nie
+
+### Wpis 98
+**#REF!**: Nie
+
+### Wpis 99
+**#REF!**: Nie
+
+### Wpis 100
+**#REF!**: Nie
+
+### Wpis 101
+**#REF!**: Nie
+
+### Wpis 102
+**#REF!**: Nie
+
+### Wpis 103
+**#REF!**: Nie
+
+### Wpis 104
+**#REF!**: Nie
+
+### Wpis 105
+**#REF!**: Nie
+
+### Wpis 106
+**#REF!**: Nie
+
+### Wpis 107
+**#REF!**: Nie
+
+### Wpis 108
+**#REF!**: Nie
+
+### Wpis 109
+**#REF!**: Nie
+
+### Wpis 110
+**#REF!**: Nie
+
+### Wpis 111
+**#REF!**: Nie
+
+### Wpis 112
+**#REF!**: Nie
+
+### Wpis 113
+**#REF!**: Nie
+
+### Wpis 114
+**#REF!**: Nie
+
+### Wpis 115
+**#REF!**: Nie
+
+### Wpis 116
+**#REF!**: Nie
+
+### Wpis 117
+**#REF!**: Nie
+
+### Wpis 118
+**#REF!**: Nie
+
+### Wpis 119
+**#REF!**: Nie
+
+### Wpis 120
+**#REF!**: Nie
+
+### Wpis 121
+**#REF!**: Nie
+
+### Wpis 122
+**#REF!**: Nie
+
+### Wpis 123
+**#REF!**: Nie
+
+### Wpis 124
+**#REF!**: Nie
+
+### Wpis 125
+**#REF!**: Nie
+
+### Wpis 126
+**#REF!**: Nie
+
+### Wpis 127
+**#REF!**: Nie
+
+### Wpis 128
+**#REF!**: Nie
+
+### Wpis 129
+**#REF!**: Nie
+
+### Wpis 130
+**#REF!**: Nie
+
+### Wpis 131
+**#REF!**: Nie
+
+### Wpis 132
+**#REF!**: Nie
+
+### Wpis 133
+**#REF!**: Nie
+
+### Wpis 134
+**#REF!**: Nie
+
+### Wpis 135
+**#REF!**: Nie
+
+### Wpis 136
+**#REF!**: Nie
+
+### Wpis 137
+**#REF!**: Nie
+
+### Wpis 138
+**#REF!**: Nie
+
+### Wpis 139
+**#REF!**: Nie
+
+### Wpis 140
+**#REF!**: Nie
+
+### Wpis 141
+**#REF!**: Nie
+
+### Wpis 142
+**#REF!**: Nie
+
+### Wpis 143
+**#REF!**: Nie
+
+### Wpis 144
+**#REF!**: Nie
+
+### Wpis 145
+**#REF!**: Nie
+
+### Wpis 146
+**#REF!**: Nie
+
+### Wpis 147
+**#REF!**: Nie
+
+### Wpis 148
+**#REF!**: Nie
+
+### Wpis 149
+**#REF!**: Nie
+
+### Wpis 150
+**#REF!**: Nie
+
+### Wpis 151
+**#REF!**: Nie
+
+### Wpis 152
+**#REF!**: Nie
+
+### Wpis 153
+**#REF!**: Nie
+
+### Wpis 154
+**#REF!**: Nie
+
+### Wpis 155
+**#REF!**: Nie
+
+### Wpis 156
+**#REF!**: Nie
+
+### Wpis 157
+**#REF!**: Nie
+
+### Wpis 158
+**#REF!**: Nie
+
+### Wpis 159
+**#REF!**: Nie
+
+### Wpis 160
+**#REF!**: Nie
+
+### Wpis 161
+**#REF!**: Nie
+
+### Wpis 162
+**#REF!**: Nie
+
+### Wpis 163
+**#REF!**: Nie
+
+### Wpis 164
+**#REF!**: Nie
+
+### Wpis 165
+**#REF!**: Nie
+
+### Wpis 166
+**#REF!**: Nie
+
+### Wpis 167
+**#REF!**: Nie
+
+### Wpis 168
+**#REF!**: Nie
+
+### Wpis 169
+**#REF!**: Nie
+
+### Wpis 170
+**#REF!**: Nie
+
+### Wpis 171
+**#REF!**: Nie
+
+### Wpis 172
+**#REF!**: Nie
+
+### Wpis 173
+**#REF!**: Nie
+
+### Wpis 174
+**#REF!**: Nie
+
+### Wpis 175
+**#REF!**: Nie
+
+### Wpis 176
+**#REF!**: Nie
+
+### Wpis 177
+**#REF!**: Nie
+
+### Wpis 178
+**#REF!**: Nie
+
+### Wpis 179
+**#REF!**: Nie
+
+### Wpis 180
+**#REF!**: Nie
+
+### Wpis 181
+**#REF!**: Nie
+
+### Wpis 182
+**#REF!**: Nie
+
+### Wpis 183
+**#REF!**: Nie
+
+### Wpis 184
+**#REF!**: Nie
+
+### Wpis 185
+**#REF!**: Nie
+
+### Wpis 186
+**#REF!**: Nie
+
+### Wpis 187
+**#REF!**: Nie
+
+### Wpis 188
+**#REF!**: Nie
+
+### Wpis 189
+**#REF!**: Nie
+
+### Wpis 190
+**#REF!**: Nie
+
+### Wpis 191
+**#REF!**: Nie
+
+### Wpis 192
+**#REF!**: Nie
+
+### Wpis 193
+**#REF!**: Nie
+
+### Wpis 194
+**#REF!**: Nie
+
+### Wpis 195
+**#REF!**: Nie
+
+### Wpis 196
+**#REF!**: Nie
+
+### Wpis 197
+**#REF!**: Nie
+
+### Wpis 198
+**#REF!**: Nie
+
+### Wpis 200
+**Klasa**: false
+**Nie**: Miasto Khorinis
+**#REF!**: Ardea
+**#REF!**: false
+**#REF!**: false
+**Magnaci**: false
+**Magnaci**: false
+**Magnaci**: false
+**Magnaci**: false
+**Magnaci**: false
+**Magnaci**: false
+**Magnaci**: false
+**Magnaci**: false
+**#REF!**: false
+****: false
+****: false
+**#REF!**: false
+****: false
+****: false
+****: false
+****: false
+****: false
+****: false
+****: false
+****: false
+****: false
+****: false
+****: false
+****: false
+****: false
+****: false
+****: false
+**#REF!**: false
+**#REF!**: false
+**#REF!**: false
+****: false
+****: false
+****: false
+****: false
+****: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+**false**: false
+
+### Wpis 201
+**Nie**: Farmy
+**#REF!**: Cape Dun
+
+### Wpis 202
+**#REF!**: Montera
+
+### Wpis 203
+**#REF!**: Vengard
+
+### Wpis 204
+**#REF!**: Silden
+
+### Wpis 205
+**#REF!**: Geldern
+
+### Wpis 206
+**#REF!**: Faring
+
+### Wpis 207
+**#REF!**: Gotha
+
+### Wpis 208
+**#REF!**: Trelis
+

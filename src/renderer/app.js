@@ -56,6 +56,7 @@ const state = {
     thinkDuration: 0,
     timerInterval: null
   },
+  thinkingParser: typeof ThinkingParser !== 'undefined' ? new ThinkingParser() : null,
 
   // Prompt Configuration state
   promptParts: {
@@ -109,7 +110,8 @@ const QUICK_ACTIONS = [
   {
     group: 'Analiza', items: [
       { id: 'extract_traits', icon: '🔍', label: 'Cechy' },
-      { id: 'analyze_relations', icon: '👥', label: 'Relacje' },
+      { id: 'analyze_relations', icon: '👥', label: 'Relacje (Tekst)' },
+      { id: 'map_relations', icon: '🕸️', label: 'Mapa Relacji' },
       { id: 'summarize', icon: '📝', label: 'Podsumuj' },
     ]
   },
@@ -125,6 +127,7 @@ const QUICK_ACTIONS = [
       { id: 'nickname', icon: '🏷️', label: 'Ksywka' },
       { id: 'faction_suggestion', icon: '🏴', label: 'Frakcja' },
       { id: 'secret', icon: '🤫', label: 'Sekret' },
+      { id: 'correct_text', icon: '✍️', label: 'Korekta' },
     ]
   },
 ];
@@ -352,300 +355,10 @@ const stepTemplates = {
   `,
 
   ai: () => renderMinimalistAIPanel(),
-  _legacy_ai: () => `
-    ${state.selectedRow !== null && state.sheetData?.rows?.[state.selectedRow] ? `
-    <!-- Karta wybranej postaci -->
-    ${renderProfileDetails(state.sheetData.rows[state.selectedRow])}
-    
-    <!-- Panel Wyszukiwania Wzmianek (Excel) -->
-    <div class="card" style="margin-top: 20px; border-left: 4px solid var(--gold);">
-      <h3 class="card-title" style="display: flex; align-items: center; gap: 8px;">
-        🔍 Przeszukiwanie Podsumowań (Excel)
-      </h3>
-      <p style="color: var(--text-dim); margin-bottom: 15px; font-size: 12px;">
-        Sprawdź czy inne postacie wspominają o tej postaci w swoich podsumowaniach.
-      </p>
-      
-      <div style="display: flex; gap: 10px; align-items: center;">
-         <button class="btn btn-primary" onclick="runExcelSearch()" id="btnExcelSearch">
-           🔎 Szukaj wzmianek o "${state.sheetData.rows[state.selectedRow]['Imie postaci']}"
-         </button>
-         <span id="excelSearchStatus" style="font-size: 12px; color: var(--text-dim);"></span>
-      </div>
 
-      <div id="excelSearchResults" style="margin-top: 15px; display: none;">
-        <!-- Results will be injected here -->
-      </div>
-    </div>
-
-    <!-- Panel poleceń AI -->
-    <div class="card" style="margin-top: 20px;">
-      <h3 class="card-title" style="display: flex; justify-content: space-between; align-items: center;">
-        <span>🤖 Asystent AI dla Mistrza Gry</span>
-        <div style="display: flex; gap: 10px;">
-          ${state.executionStatus === 'idle' ?
-        `<button class="btn btn-sm btn-primary" onclick="runAllSequentially()" title="Uruchom wszystkie polecenia po kolei">▶ Wykonuj po kolei</button>` :
-        state.executionStatus === 'running' ?
-          `<button class="btn btn-sm btn-warning" onclick="togglePause()" title="Wstrzymaj wykonywanie">⏸ Wstrzymaj (${state.executionQueue.length})</button>` :
-          `<button class="btn btn-sm btn-success" onclick="togglePause()" title="Wznów wykonywanie">▶ Wznów (${state.executionQueue.length})</button>`
-      }
-          <button class="btn btn-sm btn-secondary" onclick="togglePromptHistory()">📜 Historia Promptów</button>
-        </div>
-      </h3>
-      <p style="color: var(--text-dim); margin-bottom: 20px; font-size: 12px;">
-        Wybierz polecenie AI żeby wygenerować treść dla tej postaci
-      </p>
-      
-
-        
-
-
-        <!-- Styl narracyjny -->
-        <div style="margin-bottom: 15px;">
-          <label class="form-label" style="margin-bottom: 8px; display: block;">🎭 Styl narracyjny</label>
-          <div class="style-radios">
-            <label class="style-radio ${state.promptConfig?.style === 'political' ? 'active' : ''}">
-              <input type="radio" name="narrativeStyle" value="political" ${state.promptConfig?.style === 'political' ? 'checked' : ''} onchange="updatePromptConfig('style', 'political')">
-              <span>🕵️ Intryga Polityczna</span>
-            </label>
-            <label class="style-radio ${state.promptConfig?.style === 'mystical' ? 'active' : ''}">
-              <input type="radio" name="narrativeStyle" value="mystical" ${state.promptConfig?.style === 'mystical' ? 'checked' : ''} onchange="updatePromptConfig('style', 'mystical')">
-              <span>🔮 Magia i Kulty</span>
-            </label>
-            <label class="style-radio ${state.promptConfig?.style === 'personal' ? 'active' : ''}">
-              <input type="radio" name="narrativeStyle" value="personal" ${state.promptConfig?.style === 'personal' ? 'checked' : ''} onchange="updatePromptConfig('style', 'personal')">
-              <span>💰 Osobiste Cele</span>
-            </label>
-            <label class="style-radio ${state.promptConfig?.style === 'action' ? 'active' : ''}">
-              <input type="radio" name="narrativeStyle" value="action" ${state.promptConfig?.style === 'action' ? 'checked' : ''} onchange="updatePromptConfig('style', 'action')">
-              <span>⚔️ Akcja i Przetrwanie</span>
-            </label>
-            <label class="style-radio ${!state.promptConfig?.style || state.promptConfig?.style === 'auto' ? 'active' : ''}">
-              <input type="radio" name="narrativeStyle" value="auto" ${!state.promptConfig?.style || state.promptConfig?.style === 'auto' ? 'checked' : ''} onchange="updatePromptConfig('style', 'auto')">
-              <span>🎲 Automatyczny</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Parametry -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 15px;">
-          <div>
-            <label class="form-label" style="font-size: 11px;">Przykłady (few-shot)</label>
-            <select class="form-select" style="font-size: 12px;" onchange="updatePromptConfig('fewShotCount', parseInt(this.value))">
-              <option value="0" ${state.promptConfig?.fewShotCount === 0 ? 'selected' : ''}>0</option>
-              <option value="1" ${state.promptConfig?.fewShotCount === 1 ? 'selected' : ''}>1</option>
-              <option value="2" ${!state.promptConfig?.fewShotCount || state.promptConfig?.fewShotCount === 2 ? 'selected' : ''}>2</option>
-              <option value="3" ${state.promptConfig?.fewShotCount === 3 ? 'selected' : ''}>3</option>
-            </select>
-          </div>
-          <div>
-            <label class="form-label" style="font-size: 11px;">Długość odpowiedzi</label>
-            <select class="form-select" style="font-size: 12px;" onchange="updatePromptConfig('responseLength', this.value)">
-              <option value="short" ${state.promptConfig?.responseLength === 'short' ? 'selected' : ''}>Krótka</option>
-              <option value="medium" ${!state.promptConfig?.responseLength || state.promptConfig?.responseLength === 'medium' ? 'selected' : ''}>Średnia</option>
-              <option value="long" ${state.promptConfig?.responseLength === 'long' ? 'selected' : ''}>Długa</option>
-            </select>
-          </div>
-          <div>
-            <label class="form-label" style="font-size: 11px;">Placeholdery</label>
-            <label class="context-checkbox" style="margin-top: 6px;">
-              <input type="checkbox" ${state.promptConfig?.usePlaceholders !== false ? 'checked' : ''} onchange="updatePromptConfig('usePlaceholders', this.checked)">
-              <span style="font-size: 11px;">[insert ...]</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Fokus opcjonalny -->
-        <details style="margin-top: 10px;">
-          <summary style="cursor: pointer; color: var(--gold-soft); font-size: 12px;">🎯 Fokus (opcjonalne zawężenie)</summary>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; padding: 10px; background: var(--bg-dark); border-radius: 6px;">
-            <div>
-              <label class="form-label" style="font-size: 11px;">Frakcja</label>
-              <select class="form-select" style="font-size: 11px;" onchange="updatePromptConfig('focus.faction', this.value || null)">
-                <option value="">-- Dowolna --</option>
-                <option value="SO" ${state.promptConfig?.focus?.faction === 'SO' ? 'selected' : ''}>Stary Obóz</option>
-                <option value="NO" ${state.promptConfig?.focus?.faction === 'NO' ? 'selected' : ''}>Nowy Obóz</option>
-                <option value="BS" ${state.promptConfig?.focus?.faction === 'BS' ? 'selected' : ''}>Bractwo Śniącego</option>
-              </select>
-            </div>
-            <div>
-              <label class="form-label" style="font-size: 11px;">Motyw</label>
-              <select class="form-select" style="font-size: 11px;" onchange="updatePromptConfig('focus.theme', this.value || null)">
-                <option value="">-- Dowolny --</option>
-                <option value="revenge" ${state.promptConfig?.focus?.theme === 'revenge' ? 'selected' : ''}>🗡️ Zemsta</option>
-                <option value="wealth" ${state.promptConfig?.focus?.theme === 'wealth' ? 'selected' : ''}>💰 Bogactwo</option>
-                <option value="power" ${state.promptConfig?.focus?.theme === 'power' ? 'selected' : ''}>👑 Władza</option>
-                <option value="escape" ${state.promptConfig?.focus?.theme === 'escape' ? 'selected' : ''}>🚪 Ucieczka</option>
-                <option value="redemption" ${state.promptConfig?.focus?.theme === 'redemption' ? 'selected' : ''}>⚖️ Odkupienie</option>
-              </select>
-            </div>
-          </div>
-        </details>
-      </div>
-      </details>
-      
-
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
-          <div class="form-group" style="margin: 0;">
-            <label class="form-label">Model Ollama</label>
-            <select class="form-select" id="aiModelSelect" onchange="state.selectedModel = this.value">
-              ${state.ollamaModels && state.ollamaModels.length > 0
-        ? state.ollamaModels.map(m => `
-                    <option value="${m.name}" ${state.selectedModel === m.name ? 'selected' : ''}>${m.name}</option>
-                  `).join('')
-        : '<option value="">Brak modeli - zainstaluj w Ollama</option>'
-      }
-            </select>
-            <div class="model-hint">Wybierz model do wykonania zadania</div>
-          </div>
-          
-          <div class="form-group" style="margin: 0;">
-            <label class="form-label">Temperatura</label>
-            <input type="range" id="aiTemperature" min="0" max="100" value="${(state.aiTemperature || 0.7) * 100}" 
-                   style="width: 100%;" onchange="state.aiTemperature = this.value / 100; document.getElementById('tempValue').textContent = (this.value / 100).toFixed(1)">
-            <div class="model-hint">Kreatywność: <span id="tempValue">${(state.aiTemperature || 0.7).toFixed(1)}</span> (0 = precyzyjny, 1 = kreatywny)</div>
-          </div>
-        </div>
-        
-        <div class="form-group" style="margin: 0; background: var(--bg-dark); padding: 10px; border-radius: 6px; border: 1px solid var(--border-subtle);">
-          <label class="form-label" style="color: var(--gold-soft); margin-bottom: 10px;">🛠️ Konstruktor Promptu</label>
-          
-          
-          <!-- Templates -->
-          <div style="margin-bottom: 15px; border-bottom: 1px dashed var(--border-subtle); padding-bottom: 10px;">
-            <div style="display: flex; gap: 5px; align-items: flex-end;">
-              <div style="flex: 1;">
-                <label class="form-label" style="font-size: 11px;">📂 Szablony</label>
-                <select class="form-select" style="font-size: 12px; padding: 4px;" onchange="applyPromptTemplate(this.value)">
-                  <option value="">-- Wybierz szablon --</option>
-                  ${(state.promptTemplates || []).map((t, i) => `<option value="${i}">${t.name}</option>`).join('')}
-                </select>
-              </div>
-              <button class="btn btn-sm" onclick="savePromptTemplate()" title="Zapisz obecny jako nowy szablon">💾</button>
-              <button class="btn btn-sm btn-danger" onclick="deletePromptTemplate(document.querySelector('select[onchange^=applyPromptTemplate]').value)" title="Usuń wybrany">🗑️</button>
-            </div>
-          </div>
-
-          <!-- Role -->
-          <div style="margin-bottom: 8px;">
-            <label class="form-label" style="font-size: 11px;">🎭 Rola (Kim jest AI?)</label>
-            <input type="text" class="form-input" placeholder="Np. Jesteś ekspertem od lore Gothic, cynicznym magiem wody..." 
-                   value="${state.promptParts?.role || ''}" 
-                   oninput="updatePromptPart('role', this.value)"
-                   style="font-size: 12px;">
-          </div>
-
-          <!-- Context -->
-          <div style="margin-bottom: 8px;">
-            <label class="form-label" style="font-size: 11px;">🌍 Kontekst (Tło sytuacyjne)</label>
-            <textarea class="form-input" rows="2" placeholder="Np. Postać należy do Starego Obozu, trwa wojna z orkami..."
-                      oninput="updatePromptPart('context', this.value)"
-                      style="font-size: 12px; resize: vertical;">${state.promptParts?.context || ''}</textarea>
-          </div>
-
-          <!-- Goal -->
-          <div style="margin-bottom: 8px;">
-            <label class="form-label" style="font-size: 11px;">🎯 Cel (Co ma zrobić?)</label>
-            <textarea class="form-input" rows="2" placeholder="Np. Stwórz opis wyglądu, napisz dialog, wymyśl quest..."
-                      oninput="updatePromptPart('goal', this.value)"
-                      style="font-size: 12px; resize: vertical;">${state.promptParts?.goal || ''}</textarea>
-          </div>
-
-          <!-- DoD -->
-          <div style="margin-bottom: 10px;">
-            <label class="form-label" style="font-size: 11px;">✅ Definition of Done (Wymagania)</label>
-            <textarea class="form-input" rows="2" placeholder="Np. Odpowiedź w punktach, styl mroczny, max 500 znaków..."
-                      oninput="updatePromptPart('dod', this.value)"
-                      style="font-size: 12px; resize: vertical;">${state.promptParts?.dod || ''}</textarea>
-          </div>
-
-          <!-- Advanced / Optimizations -->
-          <details style="margin-bottom: 15px; border-top: 1px solid var(--border-subtle); padding-top: 10px;">
-             <summary style="cursor: pointer; color: var(--gold-soft); font-size: 12px; font-weight: 500;">⚡ Zaawansowane / Optymalizacja (dla małych modeli)</summary>
-             <div style="padding-top: 10px;">
-               
-               <!-- CoT Toggle -->
-               <div style="margin-bottom: 10px;">
-                 <label class="context-checkbox">
-                   <input type="checkbox" onchange="updatePromptPart('useCoT', this.checked)" ${state.promptParts?.useCoT ? 'checked' : ''}>
-                   <span style="font-size: 11px;">🧠 Włącz "Chain of Thought" (Myśl krok po kroku)</span>
-                 </label>
-                 <div class="model-hint">Pomaga małym modelom (np. Phi-3, Mistral) w logice i rozumowaniu.</div>
-               </div>
-
-               <!-- Negative Prompt -->
-               <div style="margin-bottom: 10px;">
-                 <label class="form-label" style="font-size: 11px;">🚫 Negatywny Prompt (Czego unikać?)</label>
-                 <textarea class="form-input" rows="1" placeholder="Np. Nie używaj list, nie bądź uprzejmy, bez wstępu..."
-                           oninput="updatePromptPart('negative', this.value)"
-                           style="font-size: 12px; resize: vertical;">${state.promptParts?.negative || ''}</textarea>
-               </div>
-
-               <!-- Examples -->
-               <div style="margin-bottom: 5px;">
-                  <label class="form-label" style="font-size: 11px;">🧪 Przykłady (Few-Shot)</label>
-                  <textarea class="form-input" rows="2" placeholder="Input: Pytanie... Output: Odpowiedź..."
-                            oninput="updatePromptPart('examples', this.value)"
-                            style="font-size: 12px; resize: vertical;">${state.promptParts?.examples || ''}</textarea>
-                  <div class="model-hint">Podanie 1-2 przykładów drastycznie poprawia jakość słabych modeli.</div>
-               </div>
-             </div>
-          </details>
-
-          <div style="display: flex; justify-content: flex-end;">
-            <button class="btn btn-primary btn-sm" onclick="runCustomPrompt()" ${state.aiProcessing ? 'disabled' : ''}>
-              🚀 Uruchom prompt
-            </button>
-          </div>
-        </div>
-      </div>
-      </details>
-      
-
-      
-
-      <!-- Feed wyników AI -->
-      <div class="ai-results-feed" id="aiFeedContainer">
-        ${state.aiResultsFeed && state.aiResultsFeed.length > 0 ?
-        state.aiResultsFeed.map((item, index) => `
-            <div class="ai-card ${item.isNew ? 'new-result-glow' : ''}" id="ai-card-${index}">
-              <div class="ai-card-header">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                   <span style="font-size: 16px;">🤖</span>
-                   <strong style="color: var(--gold-bright); font-size: 14px;">AI: ${item.command}</strong>
-                   <span style="font-size: 11px; color: var(--text-dim); margin-left: 8px;">${new Date(item.timestamp).toLocaleTimeString()}</span>
-                </div>
-                <div class="ai-result-actions">
-                  <button class="btn btn-sm" onclick="copyToClipboard('${item.content.replace(/'/g, "\\'")}')" title="Kopiuj">📋</button>
-                  <button class="btn btn-sm btn-primary" onclick="saveSpecificResult(${index})" title="Zapisz ten wynik">💾 Zapisz</button>
-                </div>
-              </div>
-              <div class="ai-card-content">${item.content}</div>
-            </div>
-          `).join('')
-        : ''}
-      </div>
-
-      <!-- Loading indicator (at the bottom) -->
-      ${state.aiProcessing ? `
-      <div class="ai-loading" id="aiLoadingIndicator" style="margin-top: 20px; text-align: center; padding: 20px;">
-        <div class="spinner"></div>
-        <p style="color: var(--gold-soft); margin-top: 10px;">⏳ AI przetwarza... (${state.aiCommand || ''})</p>
-      </div>
-      ` : ''}
-    ` : `
-    <div class="card">
-      <h3 class="card-title">🤖 Asystent AI</h3>
-      <p style="color: var(--text-muted);">
-        ⚠️ Najpierw wybierz postać w Kroku 2 (Ekstrakcja).
-      </p>
-      <button class="btn btn-secondary" onclick="state.currentStep = 2; renderStep();">
-        ← Wróć do Kroku 2
-      </button>
-    </div>
-    `}
-  `,
+  // NOTE: Legacy AI panel template removed (2025-12-12)
+  // Previously ~293 lines of unused code (lines 357-650)
+  // The current implementation uses renderMinimalistAIPanel() above
 
   merge: () => `
     <div class="card">
@@ -1185,6 +898,10 @@ function renderStep() {
     };
     document.body.appendChild(logToggle);
 
+    // STATIC SHELL: Delegate to specialized renderer
+    // This function handles its own DOM updates and won't destroy the shell if it exists
+    renderMinimalistAIPanel();
+
   } else {
     if (footer) footer.style.display = 'flex';
     if (logPanel) logPanel.style.display = 'flex';
@@ -1192,10 +909,11 @@ function renderStep() {
     // Clean up toggles from other steps
     const toggle = document.querySelector('.log-toggle-mini');
     if (toggle) toggle.remove();
-  }
 
-  const template = stepTemplates[step.key];
-  document.getElementById('stepContent').innerHTML = template ? template() : '<p>Step not implemented</p>';
+    // Standard Template Rendering for other steps
+    const template = stepTemplates[step.key];
+    document.getElementById('stepContent').innerHTML = template ? template() : '<p>Step not implemented</p>';
+  }
 
   // Update sidebar
   document.querySelectorAll('.step-item').forEach((el, i) => {
@@ -2095,7 +1813,8 @@ async function runAI(commandType) {
   const modelSelect = document.getElementById('aiModelSelect');
   const selectedModel = modelSelect?.value || state.selectedModel || (state.ollamaModels?.[0]?.name);
 
-  if (!selectedModel) {
+  // Special handling for local/map commands that don't need a model
+  if (!selectedModel && commandType !== 'map_relations') {
     addLog('error', 'Brak modelu AI. Zainstaluj model w Ollama.');
     return;
   }
@@ -2103,6 +1822,7 @@ async function runAI(commandType) {
   const commandLabels = {
     'extract_traits': 'Wyciąganie cech',
     'analyze_relations': 'Analiza relacji',
+    'map_relations': 'Mapa Relacji',
     'summarize': 'Podsumowanie',
     'main_quest': 'Główny quest',
     'side_quest': 'Quest poboczny',
@@ -2148,6 +1868,15 @@ async function runAI(commandType) {
   };
 
   renderStep();
+
+  // SPECIAL HANDLER: Map Relations (Modular execution)
+  if (commandType === 'map_relations') {
+    // Adding small delay to allow UI to settle
+    setTimeout(() => {
+      AppModules.relationshipAnalyzer.renderRelationshipMap(newItemIndex);
+    }, 100);
+    return; // Exit normal flow
+  }
 
   try {
     // Build Dynamic Context (Operator + Faction + Char History)
@@ -2217,9 +1946,17 @@ function updatePromptPart(part, value) {
 // Run custom prompt from user
 async function runCustomPrompt() {
   if (state.aiProcessing) {
-    addLog('warn', 'AI już przetwarza poprzednie polecenie...');
-    return;
+    // Safety check: if stuck for > 10s, allow reset
+    const lastStart = state.streamData?.startTime || 0;
+    if (Date.now() - lastStart > 10000) {
+      addLog('warn', 'Resetuję zablokowany stan AI...');
+      state.aiProcessing = false;
+    } else {
+      addLog('warn', 'AI już przetwarza poprzednie polecenie...');
+      return;
+    }
   }
+  state.streamData.startTime = Date.now();
 
   const profile = state.sheetData?.rows?.[state.selectedRow];
   if (!profile) {
@@ -4084,31 +3821,58 @@ function handleAIStreamChunk(data) {
   if (fullText && fullText.length > 0) {
     state.streamData.content = fullText;
   } else if (!isDone && chunk) {
-    state.streamData.content += chunk;
+    // Robust Parsing using ported Ollama Logic
+    if (state.thinkingParser) {
+      const { thinking, content } = state.thinkingParser.process(chunk);
 
-    // Check for <think> tags
-    if (chunk.includes('<think>')) {
-      state.streamData.isThinking = true;
-      state.streamData.thinkStartTime = Date.now();
-      // Start timer
-      if (state.streamData.timerInterval) clearInterval(state.streamData.timerInterval);
-      state.streamData.timerInterval = setInterval(() => {
-        const elapsed = ((Date.now() - state.streamData.thinkStartTime) / 1000).toFixed(1);
-        updateThinkingTimer(elapsed);
-      }, 100);
-    }
+      // Handle Thoughts
+      if (thinking) {
+        state.streamData.thoughtContent += thinking;
 
-    if (chunk.includes('</think>')) {
-      state.streamData.isThinking = false;
-      if (state.streamData.timerInterval) {
-        clearInterval(state.streamData.timerInterval);
-        state.streamData.timerInterval = null;
+        // Logic to start timer if we just entered thinking state
+        if (!state.streamData.isThinking) {
+          state.streamData.isThinking = true;
+          state.streamData.thinkStartTime = Date.now();
+          if (state.streamData.timerInterval) clearInterval(state.streamData.timerInterval);
+          state.streamData.timerInterval = setInterval(() => {
+            if (window.updateThinkingTimer && state.streamData.isThinking) {
+              const elapsed = ((Date.now() - state.streamData.thinkStartTime) / 1000).toFixed(1);
+              window.updateThinkingTimer(elapsed);
+            }
+          }, 100);
+        }
       }
+
+      // Handle Content
+      if (content) {
+        state.streamData.content += content;
+
+        // If we have content, we are likely done thinking or in between thoughts
+        // But Ollama parser separates them clearly.
+        // If we are outputting content, we are NOT thinking (at that moment)
+        // But we might be in state DONE or LOOKING_FOR_OPEN.
+
+        // Check parser state to update UI indicator
+        // If parser state is THINKING(2) or EATING(1/3), we are thinking.
+        // If parser state is DONE(4) or LOOKING(0), we are not.
+        const parserState = state.thinkingParser.state;
+        const isThinkingState = (parserState === 1 || parserState === 2 || parserState === 3);
+
+        if (!isThinkingState && state.streamData.isThinking) {
+          state.streamData.isThinking = false;
+          if (state.streamData.timerInterval) clearInterval(state.streamData.timerInterval);
+        }
+      }
+    } else {
+      // Fallback for safety
+      state.streamData.content += chunk;
     }
   }
 
   // Update UI directly (DOM manipulation for performance)
-  updateStreamUI(state.streamData.cardIndex, state.streamData.content, state.streamData.isThinking);
+  if (window.updateStreamUI) {
+    window.updateStreamUI(state.streamData.cardIndex, state.streamData.content, state.streamData.isThinking);
+  }
 
   if (isDone) {
     // Finalize
@@ -4132,8 +3896,8 @@ function handleAIStreamChunk(data) {
 }
 
 function updateThinkingTimer(elapsed) {
-  const timerEl = document.getElementById('thinking-timer');
-  if (timerEl) timerEl.textContent = elapsed + 's';
+  const timerEl = document.getElementById('thinking-timer-display');
+  if (timerEl) timerEl.textContent = `(${elapsed}s)`;
 }
 
 function updateStreamUI(index, fullContent, isThinking) {
@@ -4173,8 +3937,21 @@ function updateStreamUI(index, fullContent, isThinking) {
       }
     }
 
-    // Escape remaining HTML tags (not our components)
-    // Use centralized basic markdown formatter
+    // Try to render as structured card first (Quest/Traits/NPC)
+    if (window.StructuredCardRenderer && !isThinking) {
+      const cardHtml = window.StructuredCardRenderer.tryRenderStructuredCard(displayHtml);
+      if (cardHtml) {
+        contentEl.innerHTML = cardHtml;
+        // Auto-scroll to bottom of feed
+        const feedContainer = document.getElementById('aiFeedContainer');
+        if (feedContainer) {
+          feedContainer.scrollTop = feedContainer.scrollHeight;
+        }
+        return; // Early return - card rendered successfully
+      }
+    }
+
+    // Fallback: Use centralized basic markdown formatter
     displayHtml = formatMarkdown(displayHtml);
 
     contentEl.innerHTML = displayHtml;
@@ -4255,244 +4032,319 @@ function toggleDropdown(name, forceState = null) {
 // Make it global
 window.toggleDropdown = toggleDropdown;
 
+// ==========================================
+// RENDER AI PANEL (STATIC SHELL PATTERN)
+// ==========================================
+
 const renderMinimalistAIPanel = () => {
   // Ensure UI state exists
   if (!state.ui) state.ui = { dropdowns: {} };
-  if (!state.ui.dropdowns) state.ui.dropdowns = {};
+  if (!state.ui.dropdowns) state.ui.dropdowns = { quickActions: false, model: false, context: false };
 
-  return `
-    ${state.selectedRow !== null && state.sheetData?.rows?.[state.selectedRow] ? `
-    <!-- Karta wybranej postaci wrapper -->
-    <div style="max-width: 900px; margin: 0 auto; padding: 0 32px; width: 100%;">
-        ${renderProfileDetails(state.sheetData.rows[state.selectedRow])}
-        
-        <!-- Excel Search Panel (preserved) -->
-        <!-- Excel Search Panel (Compact) -->
-        <div class="card" style="margin-top: 20px; border-left: 2px solid var(--gold); padding: 12px 16px; background: rgba(0,0,0,0.2);">
-           <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
-               <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--gold-dim);">
-                    🔍 PRZESZUKIWANIE PODSUMOWAŃ (EXCEL)
-               </div>
-               <div style="flex: 1; display: flex; gap: 10px; align-items: center; justify-content: flex-end;">
-                  <button class="btn btn-sm btn-primary" onclick="runExcelSearch()" id="btnExcelSearch" style="padding: 4px 12px; font-size: 12px;">
-                    🔎 Szukaj wzmianek o "${state.sheetData.rows[state.selectedRow]['Imie postaci']}"
-                  </button>
-                  <span id="excelSearchStatus" style="font-size: 11px; color: var(--text-dim);"></span>
-               </div>
-           </div>
-           <div id="excelSearchResults" style="margin-top: 10px; display: none;"></div>
-        </div>
-    </div>
+  // 1. Check if Shell Exists
+  const stepContent = document.getElementById('stepContent');
+  let feedContainer = document.getElementById('aiFeedContainer');
 
-    <!-- Breathing Space before Chat -->
-    <div class="chat-spacer"></div>
-    
-    <!-- AI SECTION WRAPPER - Fixed height container with internal scroll -->
-    <div class="ai-workspace-wrapper" style="display: flex; flex-direction: column; height: calc(100vh - 120px); position: relative;">
+  if (!feedContainer) {
+    // CLONE TEMPLATE
+    const template = document.getElementById('ai-panel-template');
+    if (!template) {
+      console.error('Missing #ai-panel-template in index.html');
+      return '<div class="error">Błąd: Brak szablonu panelu AI</div>';
+    }
 
-        <!-- FEED WYNIKÓW (SCROLLABLE) -->
-        <div class="ai-results-feed" id="aiFeedContainer" style="flex: 1; overflow-y: auto; padding: 20px 0;">
-            <!-- Centered Content Container (GPT-style) -->
-            <div style="max-width: 900px; margin: 0 auto; padding: 0 32px; width: 100%;">
+    stepContent.innerHTML = '';
+    const clone = template.content.cloneNode(true);
+    stepContent.appendChild(clone);
 
-            <!-- Processing Status (dynamic) -->
-            <!-- Processing Status removed from top - moved to end of list -->
+    // BIND EVENTS (ONCE)
+    const inp = document.getElementById('mainPromptInput');
+    const sendBtn = document.getElementById('btn-send-prompt');
+    const btnQuick = document.getElementById('btn-quick-actions');
+    const btnModel = document.getElementById('btn-model-select');
+    const btnContext = document.getElementById('btn-context-settings');
 
-            ${state.aiResultsFeed && state.aiResultsFeed.length > 0 ?
-        state.aiResultsFeed.map((item, index) => `
-                ${item.type === 'user' ? `
-                <!-- USER MESSAGE: Right-aligned bubble, gold theme -->
-                <div class="chat-message user-message" id="ai-card-${index}" style="display: flex; justify-content: flex-end; padding: 12px 0; margin: 8px 0;">
-                    <div style="background: linear-gradient(135deg, rgba(180, 130, 50, 0.3) 0%, rgba(140, 100, 40, 0.2) 100%); border: 1px solid rgba(200, 160, 60, 0.4); color: #e5e7eb; padding: 12px 16px; border-radius: 18px 18px 4px 18px; max-width: 70%; font-size: 14px; line-height: 1.5;">
-                        ${item.content}
-                    </div>
-                </div>
-                ` : `
-                <!-- AI MESSAGE: Plain text, no bubble, left-aligned -->
-                <div class="chat-message ai-message ${item.isNew ? 'chat-animate-in new-result-glow' : ''}" id="ai-card-${index}" style="padding: 12px 0; margin: 8px 0;">
-                    <div class="ai-card-content" style="color: #e5e7eb; font-size: 15px; line-height: 1.7;">
-                        ${item.isStreaming ? (item.content || '<span class="cursor-blink">|</span>') : formatMarkdown(item.content)}
-                    </div>
-                    ${!item.isStreaming ? `
-                    <div class="ai-message-actions" style="display: flex; gap: 8px; margin-top: 12px; opacity: 0.7; transition: opacity 0.2s;">
-                        <button class="btn btn-sm" title="Kopiuj" onclick="copyToClipboard(decodeURIComponent('${encodeURIComponent(item.content)}'))">📋</button>
-                        <button class="btn btn-sm" title="Zapisz do profilu" onclick="saveSpecificResult(${index})">💾</button>
-                    </div>
-                    ` : ''}
-                </div>
-                `}`).join('')
-        : `<div style="text-align: center; padding: 40px; color: var(--text-dim); opacity: 0.7;">
-                   <p style="font-size: 32px; margin-bottom: 10px;">💬</p>
-                   <p>Wybierz szybką akcję [+] lub wpisz polecenie...</p>
-             </div>`
+    if (inp) {
+      inp.value = state.promptParts?.goal || '';
+      // Auto-resize logic
+      inp.addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+        updatePromptPart('goal', this.value);
+      });
+      inp.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          window.runCustomPrompt();
+        }
+      });
+
+      // Restore focus if needed
+      setTimeout(() => inp.focus(), 50);
+    }
+
+    if (sendBtn) {
+      sendBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (state.aiProcessing) {
+          // STOP LOGIC
+          state.aiProcessing = false;
+          state.streamData.active = false;
+          if (state.streamData.timerInterval) clearInterval(state.streamData.timerInterval);
+          addLog('info', 'Zatrzymano generowanie.');
+          renderStep();
+        } else {
+          window.runCustomPrompt();
+        }
+      });
+    }
+  }
+
+  // 2. Update Profile Section (Dynamic)
+  const profileDetailsContainer = document.getElementById('ai-profile-details');
+  if (profileDetailsContainer && state.selectedRow !== null && state.sheetData?.rows?.[state.selectedRow]) {
+    // Only update if changed (simple check could be added here)
+    profileDetailsContainer.innerHTML = renderProfileDetails(state.sheetData.rows[state.selectedRow]);
+
+    // Update Excel Search Panel visibility
+    const searchPanel = document.getElementById('excel-search-panel');
+    if (searchPanel) {
+      searchPanel.style.display = 'block';
+      const searchBtn = document.getElementById('btnExcelSearch');
+      if (searchBtn) {
+        // Update button text with name
+        searchBtn.innerHTML = `🔎 Szukaj wzmianek o "${state.sheetData.rows[state.selectedRow]['Imie postaci']}"`;
       }
+    }
+  } else if (profileDetailsContainer) {
+    profileDetailsContainer.innerHTML = '';
+    const searchPanel = document.getElementById('excel-search-panel');
+    if (searchPanel) searchPanel.style.display = 'none';
+  }
 
-            <!-- Active Thinking Indicator at the End - GPT Style -->
-            ${state.aiProcessing ? `
-            <div class="chat-message ai-message" style="padding: 12px 0; margin: 8px 0; opacity: 0.8;">
-                <div class="ai-card-content" style="color: var(--text-dim); font-size: 14px; display: flex; align-items: center; gap: 10px;">
-                     <span class="spinner-small" style="width: 14px; height: 14px; border: 2px solid var(--gold-dim); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite;"></span>
-                     <span>${state.processingStatus || 'Myślę...'}</span>
-                </div>
-            </div>
-            ` : ''}
+  // 3. Update Feed Content
+  const feedContentEl = document.getElementById('ai-feed-content');
+  if (feedContentEl) {
+    if (!state.aiResultsFeed || state.aiResultsFeed.length === 0) {
+      if (!feedContentEl.querySelector('.empty-state-icon')) {
+        feedContentEl.innerHTML = `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px; color: var(--text-dim); opacity: 0.6;">
+                   <div style="font-size: 48px; margin-bottom: 20px;" class="empty-state-icon">🦅</div>
+                   <h3>Gothic AI Assistant</h3>
+                   <p>Wybierz tryb lub wpisz polecenie...</p>
+               </div>`;
+      }
+    } else {
+      // Render Feed Items
+      const feedHTML = state.aiResultsFeed.map((item, index) => {
+        const isUser = item.type === 'user';
+        let contentHtml = item.content;
 
-            </div><!-- Close centered container -->
-            </div><!-- Close centered container -->
-        </div>
+        if (!isUser) {
+          if (item.isStreaming) {
+            contentHtml = item.content || '<span class="cursor-blink">|</span>';
+          } else if (window.StructuredCardRenderer && window.StructuredCardRenderer.tryRenderStructuredCard) {
+            const card = window.StructuredCardRenderer.tryRenderStructuredCard(item.content);
+            contentHtml = card || formatMarkdown(item.content);
+          } else {
+            contentHtml = formatMarkdown(item.content);
+          }
+        }
 
-        <!-- INPUT BAR - at bottom of flex container -->
-        <div class="ai-input-bar" id="aiInputBar" style="flex-shrink: 0; background: var(--bg-card); border-top: 1px solid var(--border-subtle); padding: 12px;">
-          <div class="ai-input-container">
-            
-            <!-- QUICK ACTIONS DROPDOWN [+] -->
-            <div class="ai-dropdown-menu ${state.ui.dropdowns?.quickActions ? 'show' : ''}" style="bottom: 70px; left: 0;">
-              <div class="ai-dropdown-header">Szybkie Akcje</div>
-              ${QUICK_ACTIONS.map(group => `
-                <div class="ai-dropdown-section">
-                  <div class="ai-dropdown-header" style="color: var(--gold-dim); font-size: 10px; padding-left: 8px;">${group.group}</div>
-                  ${group.items.map(item => `
-                    <div class="ai-dropdown-item" onclick="runAI('${item.id}'); toggleDropdown('quickActions', false);">
-                      <span class="ai-item-icon">${item.icon}</span>
-                      <span class="ai-item-label">${item.label}</span>
-                    </div>
-                  `).join('')}
+        return `
+                  <div class="ai-message ${isUser ? 'user' : 'bot'} ${item.isNew ? 'animate-fade-in' : ''}" id="ai-card-${index}">
+                     <div class="ai-avatar">${isUser ? '👤' : '🤖'}</div>
+                     <div class="ai-message-content">
+                        ${contentHtml}
+                     </div>
+                     ${!isUser && !item.isStreaming ? `
+                        <div class="ai-actions" style="opacity: 0; transition: opacity 0.2s; position: absolute; right: 10px; top: 10px;">
+                            <button class="btn-icon" onclick="copyToClipboard(decodeURIComponent('${encodeURIComponent(item.content)}'))" title="Kopiuj">📋</button>
+                        </div>
+                     ` : ''}
+                  </div>
+              `;
+      }).join('');
+
+      // ALWAYS update if content differs (Fixing the user bubble missing issue)
+      if (feedContentEl.innerHTML !== feedHTML) {
+        const currentChildren = feedContentEl.children.length;
+        const newChildrenCount = state.aiResultsFeed.length;
+
+        feedContentEl.innerHTML = feedHTML;
+
+        // Clear new flags only after render
+        state.aiResultsFeed.forEach(i => i.isNew = false);
+
+        // Scroll to bottom only if new item added or explicit request
+        if (currentChildren !== newChildrenCount || state.aiProcessing) {
+          feedContainer = document.getElementById('aiFeedContainer');
+          if (feedContainer) feedContainer.scrollTop = feedContainer.scrollHeight;
+        }
+      }
+    }
+  }
+
+  // 4. Update Loading Indicator & Timer
+  const loadingInd = document.getElementById('ai-loading-indicator');
+  const timerDisplay = document.getElementById('thinking-timer-display');
+
+  // Calculate elapsed time locally if timer is active
+  let elapsedStr = '0.0';
+  if (state.streamData?.isThinking && state.streamData.thinkStartTime) {
+    const elapsed = (Date.now() - state.streamData.thinkStartTime) / 1000;
+    elapsedStr = elapsed.toFixed(1);
+  }
+
+  if (loadingInd) {
+    if (state.aiProcessing) {
+      loadingInd.style.display = 'flex';
+      // Force update timer text directly
+      if (timerDisplay) timerDisplay.textContent = `(${elapsedStr}s)`;
+
+      // Ensure container is scrolled during thinking
+      feedContainer = document.getElementById('aiFeedContainer');
+      if (feedContainer && state.streamData?.isThinking) {
+        feedContainer.scrollTop = feedContainer.scrollHeight;
+      }
+    } else {
+      loadingInd.style.display = 'none';
+    }
+  }
+
+  // 5. Update Input Area State
+  const sendBtn = document.getElementById('btn-send-prompt');
+  if (sendBtn) {
+    if (state.aiProcessing) {
+      sendBtn.textContent = '⏹️';
+      sendBtn.title = 'Zatrzymaj (lub zresetuj)';
+      sendBtn.classList.add('processing');
+    } else {
+      sendBtn.textContent = '▶';
+      sendBtn.title = 'Wyślij wiadomość';
+      sendBtn.classList.remove('processing');
+    }
+  }
+
+  // 6. Update Tools & Dropdowns
+  const btnQuick = document.getElementById('btn-quick-actions');
+  const btnModel = document.getElementById('btn-model-select');
+  const btnContext = document.getElementById('btn-context-settings');
+
+  if (btnQuick) {
+    btnQuick.classList.toggle('active', !!state.ui.dropdowns.quickActions);
+    renderQuickActionsDropdown();
+  }
+
+  if (btnModel) {
+    btnModel.classList.toggle('active', !!state.ui.dropdowns.model);
+    const modelName = state.selectedModel ? state.selectedModel.split(':')[0] : 'Model';
+    btnModel.textContent = `🧠 ${modelName}`;
+    renderModelDropdown();
+  }
+
+  if (btnContext) {
+    btnContext.classList.toggle('active', !!state.ui.dropdowns.context);
+    renderContextDropdown();
+  }
+
+  // Return empty string as we handled DOM directly
+  return '';
+};
+
+// HELPER: Render Dropdowns (Only updates internal HTML of containers)
+function renderQuickActionsDropdown() {
+  const container = document.getElementById('dropdown-quick-actions-container');
+  if (!container) return;
+
+  if (!state.ui.dropdowns.quickActions) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const html = `
+      <div class="ai-dropdown-menu show" style="bottom: 80px; left: 20px;">
+        <div class="ai-dropdown-header">Szybkie Akcje</div>
+          ${QUICK_ACTIONS.map(group => `
+            <div class="ai-dropdown-section">
+              <div class="ai-dropdown-header" style="color: var(--gold-dim); font-size: 10px;">${group.group}</div>
+              ${group.items.map(item => `
+                <div class="ai-dropdown-item" onclick="runAI('${item.id}'); toggleDropdown('quickActions', false);">
+                  <span class="ai-item-icon">${item.icon}</span>
+                  <span class="ai-item-label">${item.label}</span>
                 </div>
               `).join('')}
             </div>
-
-            <!-- CONTEXT DROPDOWN [📚] -->
-            <div class="ai-dropdown-menu ${state.ui.dropdowns?.context ? 'show' : ''}" style="bottom: 70px; left: 40px; width: 280px;">
-              <div class="ai-dropdown-header">Kontekst i Ustawienia</div>
-              
-              <div class="ai-dropdown-section">
-                <label class="ai-dropdown-item" onclick="event.stopPropagation()">
-                  <input type="checkbox" ${state.promptConfig?.contexts?.geography !== false ? 'checked' : ''} onchange="updatePromptConfig('contexts.geography', this.checked)">
-                  <span>🌍 Geografia i Lore</span>
-                </label>
-                <label class="ai-dropdown-item" onclick="event.stopPropagation()">
-                  <input type="checkbox" ${state.promptConfig?.contexts?.system !== false ? 'checked' : ''} onchange="updatePromptConfig('contexts.system', this.checked)">
-                  <span>⚖️ System i Frakcje</span>
-                </label>
-                <label class="ai-dropdown-item" onclick="event.stopPropagation()">
-                  <input type="checkbox" ${state.promptConfig?.contexts?.quests !== false ? 'checked' : ''} onchange="updatePromptConfig('contexts.quests', this.checked)">
-                  <span>📜 Schematy Questów</span>
-                </label>
-              </div>
-
-              <div class="ai-dropdown-section">
-                 <div class="ai-dropdown-header" style="padding-left: 0;">Styl Narracji</div>
-                 <select class="form-select" style="font-size: 11px; margin-bottom: 5px;" onchange="updatePromptConfig('style', this.value)">
-                    <option value="auto" ${!state.promptConfig?.style || state.promptConfig?.style === 'auto' ? 'selected' : ''}>Automatyczny</option>
-                    <option value="political" ${state.promptConfig?.style === 'political' ? 'selected' : ''}>Intryga Polityczna</option>
-                    <option value="mystical" ${state.promptConfig?.style === 'mystical' ? 'selected' : ''}>Magia i Kulty</option>
-                    <option value="action" ${state.promptConfig?.style === 'action' ? 'selected' : ''}>Akcja</option>
-                 </select>
-              </div>
-
-              <div class="ai-dropdown-section">
-                <div class="ai-dropdown-header">Temperatura: <span id="tempValue">${(state.aiTemperature || 0.7).toFixed(1)}</span></div>
-                <div class="ai-range-container">
-                  <input type="range" min="0" max="100" value="${(state.aiTemperature || 0.7) * 100}" 
-                         style="width: 100%;" 
-                         oninput="document.getElementById('tempValue').textContent = (this.value/100).toFixed(1)"
-                         onchange="state.aiTemperature = this.value / 100; renderStep();">
-                </div>
-                <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-dim);">
-                   <span>Precyzja</span><span>Kreatywność</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- MODEL DROPDOWN [🧠] -->
-            <div class="ai-dropdown-menu ${state.ui.dropdowns?.model ? 'show' : ''}" style="bottom: 70px; left: 100px;">
-              <div class="ai-dropdown-header">Wybierz Model</div>
-              <div class="ai-dropdown-section">
-                ${state.ollamaModels && state.ollamaModels.length > 0
-        ? state.ollamaModels.map(m => `
-                    <div class="ai-dropdown-item ${state.selectedModel === m.name ? 'active' : ''}" 
-                         onclick="state.selectedModel = '${m.name}'; toggleDropdown('model', false); renderStep();">
-                      <span class="ai-item-icon">🧠</span>
-                      <span class="ai-item-label">${m.name}</span>
-                      ${state.selectedModel === m.name ? '✓' : ''}
-                    </div>
-                  `).join('')
-        : '<div style="padding: 10px; color: var(--text-dim);">Brak modeli</div>'}
-              </div>
-            </div>
-
-
-
-            <!-- PERSONALITY DROPDOWN [🎭] -->
-            <div class="ai-dropdown-menu ${state.ui.dropdowns?.personality ? 'show' : ''}" style="bottom: 70px; left: 180px;">
-              <div class="ai-dropdown-header">Osobowość AI</div>
-              <div class="ai-dropdown-section">
-                ${Object.entries(PERSONALITY_PROMPTS).map(([key, p]) => `
-                    <div class="ai-dropdown-item ${state.selectedPersonality === key ? 'active' : ''}" 
-                         onclick="state.selectedPersonality = '${key}'; toggleDropdown('personality', false); renderStep();">
-                      <span class="ai-item-icon">${p.icon}</span>
-                      <span class="ai-item-label">${p.name}</span>
-                      ${state.selectedPersonality === key ? '✓' : ''}
-                    </div>
-                  `).join('')}
-              </div>
-            </div>
-
-            <!-- INPUT AREA -->
-            <textarea class="ai-prompt-input" id="mainPromptInput"
-                      placeholder="Wpisz polecenie... (/ dla skrótów)"
-                      rows="1"
-                      oninput="this.style.height = 'auto'; this.style.height = (this.scrollHeight) + 'px'; updatePromptPart('dod', this.value);"
-                      onkeydown="if(event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); runCustomPrompt(); }">${state.promptParts?.dod || ''}</textarea>
-            
-            <!-- TOOLBAR -->
-            <div class="ai-toolbar">
-              <div class="ai-toolbar-left">
-                <button class="ai-quick-btn ${state.ui.dropdowns?.quickActions ? 'active' : ''}" 
-                        onclick="toggleDropdown('quickActions')" title="Szybkie akcje">
-                  +
-                </button>
-                
-                <button class="ai-tool-btn ${state.ui.dropdowns?.context ? 'active' : ''}" 
-                        onclick="toggleDropdown('context')" title="Kontekst">
-                  <span>📚 Kontekst</span>
-                </button>
-
-                <button class="ai-tool-btn ${state.ui.dropdowns?.model ? 'active' : ''}" 
-                        onclick="toggleDropdown('model')" title="Model">
-                  <span>🧠 ${state.selectedModel ? state.selectedModel.split(':')[0] : 'Model'}</span>
-                </button>
-
-                <button class="ai-tool-btn ${state.ui.dropdowns?.personality ? 'active' : ''}" 
-                        onclick="toggleDropdown('personality')" title="Osobowość">
-                  <span>${PERSONALITY_PROMPTS[state.selectedPersonality]?.icon || '🎭'} ${PERSONALITY_PROMPTS[state.selectedPersonality]?.name || 'Osobowość'}</span>
-                </button>
-              </div>
-
-              <button class="ai-submit-btn ${state.promptParts?.dod ? 'ready' : ''}" 
-                      onclick="runCustomPrompt()" title="Wyślij">
-                ▶
-              </button>
-            </div>
-
-          </div>
+          `).join('')}
         </div>
+    `;
+  container.innerHTML = html;
+}
 
-    </div> <!-- WRAPPER END -->
+function renderModelDropdown() {
+  const container = document.getElementById('dropdown-model-container');
+  if (!container) return;
 
-    ` : `
-    <div class="card">
-      <h3 class="card-title">🤖 Asystent AI</h3>
-      <p style="color: var(--text-muted);">
-        ⚠️ Najpierw wybierz postać w Kroku 2 (Ekstrakcja).
-      </p>
-      <button class="btn btn-secondary" onclick="state.currentStep = 2; renderStep();">
-        ← Wróć do Kroku 2
-      </button>
-    </div>
-    `}
-`;
-};
+  if (!state.ui.dropdowns.model) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const html = `
+      <div class="ai-dropdown-menu show" style="bottom: 80px; left: 100px;">
+          <div class="ai-dropdown-header">Wybierz Model</div>
+          <div class="ai-dropdown-section">
+            ${state.ollamaModels && state.ollamaModels.length > 0
+      ? state.ollamaModels.map(m => `
+                <div class="ai-dropdown-item ${state.selectedModel === m.name ? 'active' : ''}" 
+                     onclick="state.selectedModel = '${m.name}'; toggleDropdown('model', false); renderStep();">
+                  <span class="ai-item-icon">🧠</span>
+                  <span class="ai-item-label">${m.name}</span>
+                  ${state.selectedModel === m.name ? '✓' : ''}
+                </div>
+              `).join('')
+      : '<div style="padding: 10px; color: var(--text-dim);">Brak modeli</div>'}
+          </div>
+      </div>
+    `;
+  container.innerHTML = html;
+}
+
+function renderContextDropdown() {
+  const container = document.getElementById('dropdown-context-container');
+  if (!container) return;
+
+  if (!state.ui.dropdowns.context) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const html = `
+      <div class="ai-dropdown-menu show" style="bottom: 80px; left: 150px; width: 260px;">
+          <div class="ai-dropdown-header">Kontekst</div>
+          <div class="ai-dropdown-section">
+             <label class="ai-dropdown-item" onclick="event.stopPropagation()">
+               <input type="checkbox" ${state.promptConfig?.contexts?.geography !== false ? 'checked' : ''} onchange="updatePromptConfig('contexts.geography', this.checked)">
+               <span>🌍 Lore Świata</span>
+             </label>
+             <label class="ai-dropdown-item" onclick="event.stopPropagation()">
+               <input type="checkbox" ${state.promptConfig?.contexts?.system !== false ? 'checked' : ''} onchange="updatePromptConfig('contexts.system', this.checked)">
+               <span>⚖️ System Gry</span>
+             </label>
+          </div>
+           <div class="ai-dropdown-section">
+                 <div class="ai-dropdown-header">Temperatura: <span id="tempValue">${(state.aiTemperature || 0.7).toFixed(1)}</span></div>
+                 <div class="ai-range-container">
+                   <input type="range" min="0" max="100" value="${(state.aiTemperature || 0.7) * 100}" 
+                          style="width: 100%;" 
+                          oninput="document.getElementById('tempValue').textContent = (this.value/100).toFixed(1)"
+                          onchange="state.aiTemperature = this.value / 100; renderStep();">
+                 </div>
+           </div>
+      </div>
+    `;
+  container.innerHTML = html;
+}
 
 // ==========================================
 // Slash Commands Logic & Overrides
@@ -4518,20 +4370,192 @@ const SLASH_COMMANDS = {
   '/ksywka': 'nickname'
 };
 
-// Override runCustomPrompt
+// ==========================================
+// UNIFIED PROMPT EXECUTION LOGIC
+// ==========================================
 
+window.runCustomPrompt = async function () {
+  // 1. Validation
+  if (state.aiProcessing) return;
 
-window.copyToClipboard = function (text) {
-  navigator.clipboard.writeText(text).then(() => {
-    addLog('success', '📋 Skopiowano do schowka');
-  }).catch(err => {
-    addLog('error', `Błąd kopiowania: ${err.message} `);
+  // 2. Get Input
+  // Read from 'goal' (set by input listener) OR fallback to DOM value
+  const promptText = (state.promptParts?.goal || '').trim() || document.getElementById('mainPromptInput')?.value.trim();
+  if (!promptText) return;
+
+  // 3. Get Profile
+  const profile = state.sheetData?.rows?.[state.selectedRow];
+  if (!profile) {
+    if (typeof addLog === 'function') addLog('error', 'Wybierz najpierw postać.');
+    return;
+  }
+
+  // 4. Pre-process Input (Mentions & Slash Commands)
+  let processedText = promptText;
+
+  // Expand Mentions (using helper from extension if available)
+  if (window.expandMentions && promptText.includes('@')) {
+    const allProfiles = state.sheetData?.rows || [];
+    processedText = window.expandMentions(promptText, profile, allProfiles);
+  }
+
+  // Handle Slash Commands
+  if (window.SLASH_COMMAND_LABELS) {
+    const slashMatch = Object.entries(window.SLASH_COMMAND_LABELS).find(([key]) =>
+      processedText.toLowerCase().startsWith(key)
+    );
+    if (slashMatch) {
+      const [cmd] = slashMatch;
+      processedText = processedText.substring(cmd.length).trim() || `Chcę ${cmd.substring(1)}`;
+      console.log('🎯 Slash goal:', cmd, '→', processedText);
+    }
+  }
+
+  // 5. Update UI (Feed & Input)
+  if (!state.aiResultsFeed) state.aiResultsFeed = [];
+  state.aiResultsFeed.push({
+    type: 'user',
+    content: processedText,
+    isNew: true,
+    timestamp: new Date()
   });
+
+  // Clear UI Input (both state and DOM)
+  if (typeof updatePromptPart === 'function') updatePromptPart('goal', '');
+  const inp = document.getElementById('mainPromptInput');
+  if (inp) inp.value = '';
+
+  // Set Processing State
+  state.aiProcessing = true;
+  state.processingStatus = 'Analizuję...';
+  if (typeof renderStep === 'function') renderStep();
+
+  try {
+    // 6. Conversation Flow Routing
+    let useConversationFlow = false;
+
+    // Check feature flag (loaded in extension or config)
+    if (window.electronAPI?.configGet) {
+      // We assume flag is loaded. For now, check if API exists.
+      useConversationFlow = (window.electronAPI.convFlowProcess !== undefined);
+    }
+
+    if (useConversationFlow) {
+      // Model is stored in state by the dropdown
+      const selectedModel = state.selectedModel || 'gemma2:2b';
+
+      const result = await window.electronAPI.convFlowProcess(
+        profile['Imie postaci'],
+        processedText,
+        profile,
+        { model: selectedModel }
+      );
+
+      state.aiProcessing = false;
+
+      if (result.success) {
+        // Add AI response to feed
+        state.aiResultsFeed.push({
+          type: 'ai',
+          content: result.message,
+          metadata: { stage: result.stage, type: result.type },
+          isNew: true
+        });
+
+        // Update Flow State
+        if (!state.conversationFlow) state.conversationFlow = {};
+        state.conversationFlow.convId = result.convId;
+        state.conversationFlow.stage = result.stage;
+        state.conversationFlow.active = true;
+
+        // FORCE GENERATE CHECK
+        if (result.type === 'FORCE_GENERATE') {
+          // Trigger actual generation
+          await runLegacyAICommand('custom', profile, {
+            customPrompt: result.recipe,
+            model: selectedModel,
+            stream: true
+          });
+        }
+      } else {
+        state.aiResultsFeed.push({ type: 'ai', content: `❌ Błąd flow: ${result.error}` });
+      }
+    } else {
+      // Legacy Path (Direct execution)
+      await runLegacyAICommand('custom', profile, {
+        customPrompt: processedText,
+        stream: true
+      });
+    }
+
+  } catch (error) {
+    state.aiProcessing = false;
+    state.aiResultsFeed.push({ type: 'ai', content: `❌ Błąd krytyczny: ${error.message}` });
+    console.error('RunCustomPrompt Error:', error);
+  } finally {
+    // Safety unlock in case something missed
+    if (state.aiProcessing && !state.streamData?.active) {
+      state.aiProcessing = false;
+      if (typeof renderStep === 'function') renderStep();
+    }
+  }
 };
 
-// ==========================================
-// Issue Fixes Functions (#3, #5, #7, #12)
-// ==========================================
+// Helper for Legacy/Direct Command Execution
+async function runLegacyAICommand(type, profile, options) {
+  // UI Setup for Streaming
+  const newItemIndex = state.aiResultsFeed.length;
+  state.aiResultsFeed.push({
+    id: newItemIndex,
+    type: 'ai',
+    command: options.customPrompt || type,
+    content: '',
+    model: options.model || state.selectedModel,
+    timestamp: new Date(),
+    isNew: true,
+    isStreaming: true
+  });
+
+  state.streamData = {
+    active: true,
+    cardIndex: newItemIndex,
+    content: '',
+    isThinking: true, // Start as "thinking" immediately
+    thinkStartTime: Date.now(), // Record start time
+    timerInterval: null
+  };
+
+  // Reset parser
+  if (state.thinkingParser) {
+    state.thinkingParser = typeof ThinkingParser !== 'undefined' ? new ThinkingParser() : null;
+  }
+
+  // START TIMER UNCONDITIONALLY
+  if (state.streamData.timerInterval) clearInterval(state.streamData.timerInterval);
+  state.streamData.timerInterval = setInterval(() => {
+    if (state.aiProcessing && state.streamData.thinkStartTime) {
+      const elapsed = ((Date.now() - state.streamData.thinkStartTime) / 1000).toFixed(1);
+      const timerEl = document.getElementById('thinking-timer-display');
+      if (timerEl) timerEl.textContent = `(${elapsed}s)`;
+    }
+  }, 100);
+
+  state.aiProcessing = true;
+  if (typeof renderStep === 'function') renderStep();
+
+  const aiResult = await window.electronAPI.aiCommand(type, profile, options);
+
+  if (!aiResult.success) {
+    // Clean up timer on error
+    if (state.streamData.timerInterval) clearInterval(state.streamData.timerInterval);
+
+    state.aiResultsFeed[newItemIndex].content = `❌ Błąd: ${aiResult.error}`;
+    state.aiResultsFeed[newItemIndex].isStreaming = false;
+    state.aiProcessing = false;
+    state.streamData.active = false;
+    if (typeof renderStep === 'function') renderStep();
+  }
+}
 
 function deduplicateProfiles(rows) {
   if (!rows || rows.length === 0) return [];
@@ -4582,7 +4606,7 @@ function deduplicateProfiles(rows) {
       editions.forEach(ed => {
         const p = byEdition.get(ed);
         if (ed === 'Nieznana' && editions.length === 1) return;
-        historyParts.push(`${ed}: ${p['Gildia']}`);
+        historyParts.push(`${ed}: ${p['Gildia']} `);
       });
 
       if (historyParts.length > 0) {
@@ -4611,12 +4635,12 @@ window.jumpToCharacter = function (name) {
     selectRow(index);
     // Scroll list to show selected
     setTimeout(() => {
-      const row = document.querySelector(`tr[onclick="selectRow(${index})"]`);
+      const row = document.querySelector(`tr[onclick = "selectRow(${index})"]`);
       if (row) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 100);
     addLog('success', `Przeskoczono do: ${name}`);
   } else {
-    addLog('warn', `Nie znaleziono postaci: ${name}`);
+    addLog('warn', `Nie znaleziono postaci: ${name} `);
   }
 };
 
@@ -4633,3 +4657,19 @@ function linkifyNames(text) {
     return match;
   });
 }
+
+// ==========================================
+// Expose Global Functions
+// ==========================================
+window.runCustomPrompt = runCustomPrompt;
+window.updatePromptPart = updatePromptPart;
+window.toggleDropdown = function (type) {
+  if (!state.ui.dropdowns) state.ui.dropdowns = {};
+  state.ui.dropdowns[type] = !state.ui.dropdowns[type];
+  renderStep();
+};
+
+// Expose state for extensions
+window.state = state;
+
+init();

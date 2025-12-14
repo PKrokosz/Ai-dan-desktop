@@ -1,0 +1,16 @@
+{
+  "id": "session-1765361228297",
+  "profileName": "Boron",
+  "startTime": 1765361228297,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: extract_traits",
+      "timestamp": 1765361228323
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

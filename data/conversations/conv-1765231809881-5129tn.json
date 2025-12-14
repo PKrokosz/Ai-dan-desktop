@@ -1,0 +1,61 @@
+{
+  "id": "conv-1765231809881-5129tn",
+  "profileName": "Kora",
+  "stage": "DISCOVERY",
+  "createdAt": "2025-12-08T22:10:09.881Z",
+  "lastModified": 1765231871575,
+  "version": 16,
+  "questionsAsked": 4,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Na podstawie [@relacje?] Kory i [Benek opracuj questa?].",
+      "timestamp": 1765231809883
+    },
+    {
+      "role": "ai",
+      "content": "Przepraszam, coś poszło nie tak.",
+      "timestamp": 1765231809930
+    },
+    {
+      "role": "user",
+      "content": "Na podstawie [[@relacje?]?] Kory i [Benek opracuj questa?].",
+      "timestamp": 1765231830003
+    },
+    {
+      "role": "ai",
+      "content": "Przepraszam, coś poszło nie tak.",
+      "timestamp": 1765231830037
+    },
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765231844674
+    },
+    {
+      "role": "ai",
+      "content": "Przepraszam, coś poszło nie tak.",
+      "timestamp": 1765231844709
+    },
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765231871534
+    },
+    {
+      "role": "ai",
+      "content": "Przepraszam, coś poszło nie tak.",
+      "timestamp": 1765231871575
+    }
+  ],
+  "recipe": {
+    "goal": {
+      "type": "UNKNOWN",
+      "confidence": 0.8
+    },
+    "context_slots": {},
+    "constraints": {},
+    "currentTopic": "Na podstawie [@relacje?] Kory i [Benek opracuj que"
+  },
+  "referenced_profiles": []
+}

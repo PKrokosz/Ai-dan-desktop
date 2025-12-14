@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "models": {
+    "default": "mistral:latest",
+    "fallbackChain": [
+      "gemma:2b",
+      "phi3:3.8b",
+      "orca-mini:3b"
+    ],
+    "overrides": {}
+  },
+  "generation": {
+    "temperature": 0.75,
+    "temperatureClassify": 0.1,
+    "temperatureCreative": 0.85,
+    "numPredict": {
+      "short": 100,
+      "medium": 300,
+      "long": 500,
+      "fallback": 1000
+    },
+    "numCtx": {
+      "default": 4096,
+      "max": 32768
+    },
+    "repeatPenalty": 1.1,
+    "topP": 0.9,
+    "topK": 40
+  },
+  "prompts": {
+    "language": "pl",
+    "contexts": {
+      "geography": true,
+      "system": false,
+      "quests": false,
+      "aspirations": false,
+      "weaknesses": false
+    },
+    "style": "auto",
+    "responseLength": "medium",
+    "fewShotCount": 2,
+    "usePlaceholders": true
+  },
+  "personality": {
+    "default": "default_mg",
+    "custom": {}
+  },
+  "timeouts": {
+    "baseMs": 300000,
+    "reasoningMultiplier": 2.5,
+    "largeModelMultiplier": 1.5
+  },
+  "features": {
+    "conversationFlow": true,
+    "ragEnabled": true,
+    "sessionContext": true,
+    "streamingDefault": true,
+    "debugLogging": true
+  }
+}

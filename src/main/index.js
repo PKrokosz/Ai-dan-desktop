@@ -47,6 +47,16 @@ app.whenReady().then(() => {
     runWithTrace(async () => {
         logger.info('Agent MG starting', { version: app.getVersion() });
         createWindow();
+
+        // Start indexing documentation in background
+        setTimeout(async () => {
+            try {
+                const knowledgeIndexer = require('../services/knowledge-indexer');
+                await knowledgeIndexer.indexDocs();
+            } catch (err) {
+                logger.error('Background indexing failed', err);
+            }
+        }, 5000);
     });
 });
 
@@ -69,14 +79,14 @@ app.on('activate', () => {
 
 // Check Ollama connection
 ipcMain.handle('check-ollama', async () => {
-    const ollamaService = require('../services/ollama');
+    const ollamaService = require('../services/ollama-client'); // Using official npm library
     logger.info('Checking Ollama connection (via Service)');
     return await ollamaService.checkConnection();
 });
 
 // Pull Ollama model
 ipcMain.handle('pull-model', async (event, modelName) => {
-    const ollamaService = require('../services/ollama');
+    const ollamaService = require('../services/ollama-client'); // Using official npm library
     logger.info('Pulling Ollama model', { model: modelName });
 
     const onProgress = (percent, status) => {

@@ -1,0 +1,26 @@
+{
+  "id": "session-1765358502000",
+  "profileName": "Alwar",
+  "startTime": 1765358502000,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765358502019
+    },
+    {
+      "role": "user",
+      "content": "Chce zadanie od Cor Kaloma",
+      "timestamp": 1765358542673
+    },
+    {
+      "role": "user",
+      "content": "Chce, żeby było to w Górczniej Dolinie i w Starym Obozie, eksploracja, zagadki",
+      "timestamp": 1765359283832
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

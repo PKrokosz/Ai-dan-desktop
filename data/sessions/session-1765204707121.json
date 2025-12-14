@@ -1,0 +1,26 @@
+{
+  "id": "session-1765204707121",
+  "profileName": "Dante",
+  "startTime": 1765204707121,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765204707124
+    },
+    {
+      "role": "user",
+      "content": "napisz questa dla tej postaci",
+      "timestamp": 1765204732659
+    },
+    {
+      "role": "user",
+      "content": "Opisz tą postać",
+      "timestamp": 1765204770174
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

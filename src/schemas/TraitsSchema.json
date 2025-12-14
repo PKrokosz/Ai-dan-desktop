@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": [
+        "cechy_charakteru",
+        "slabosci"
+    ],
+    "properties": {
+        "cechy_charakteru": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 3,
+            "maxItems": 7,
+            "description": "Główne cechy charakteru postaci"
+        },
+        "mocne_strony": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Atuty i talenty postaci"
+        },
+        "slabosci": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Słabości, wady i ograniczenia"
+        },
+        "nalogi": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "nazwa": {
+                        "type": "string"
+                    },
+                    "poziom": {
+                        "type": "string",
+                        "enum": [
+                            "lekki",
+                            "umiarkowany",
+                            "silny"
+                        ]
+                    }
+                }
+            },
+            "description": "Uzależnienia i nałogi: bagienne ziele, gorzałka, hazard"
+        },
+        "fobie": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Lęki i fobie"
+        },
+        "slowa_kluczowe": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Tagi opisujące postać: zemsta, alchemia, przemyt, religia"
+        },
+        "motywacje": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Co napędza postać do działania"
+        }
+    }
+}

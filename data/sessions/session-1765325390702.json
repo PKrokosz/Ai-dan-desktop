@@ -1,0 +1,51 @@
+{
+  "id": "session-1765325390702",
+  "profileName": "Agrest",
+  "startTime": 1765325390702,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hej",
+      "timestamp": 1765325390704
+    },
+    {
+      "role": "user",
+      "content": "Command: extract_traits",
+      "timestamp": 1765325486714
+    },
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765326436246
+    },
+    {
+      "role": "user",
+      "content": "Co słychać?",
+      "timestamp": 1765326533976
+    },
+    {
+      "role": "user",
+      "content": "Witam.",
+      "timestamp": 1765326842941
+    },
+    {
+      "role": "user",
+      "content": "hej",
+      "timestamp": 1765327315817
+    },
+    {
+      "role": "user",
+      "content": "[@slabosci?] opowiedz mi o tym",
+      "timestamp": 1765327377972
+    },
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765328074106
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

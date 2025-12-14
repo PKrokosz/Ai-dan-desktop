@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'">
-  <title>Agent MG - Kreator Postaci</title>
+  <title>Agent MG - Kreator Postaci (ES6 Modules)</title>
   <link rel="stylesheet" href="styles/theme.css">
 </head>
 
@@ -94,7 +94,7 @@
       <section class="content-body" id="stepContent">
         <!-- Step content loaded dynamically -->
         <div class="step-placeholder">
-          <p>Ładowanie...</p>
+          <p>Ładowanie modułów ES6...</p>
         </div>
       </section>
 
@@ -122,7 +122,7 @@
       <div class="log-content" id="logContent">
         <div class="log-entry log-info">
           <span class="log-time">--:--:--</span>
-          <span class="log-msg">Aplikacja uruchomiona</span>
+          <span class="log-msg">Ładowanie modułów ES6...</span>
         </div>
       </div>
     </aside>
@@ -137,15 +137,108 @@
         <!-- History items injected here -->
       </div>
     </div>
+
+    <!-- AI PANEL STATIC SHELL TEMPLATE -->
+    <template id="ai-panel-template">
+      <!-- Top Section: Profile & Excel Search -->
+      <div id="ai-panel-top-section" style="max-width: 900px; margin: 0 auto; padding: 0 32px; width: 100%;">
+        <!-- Dynamic Profile Details Injected Here -->
+        <div id="ai-profile-details"></div>
+
+        <!-- Excel Search Panel -->
+        <div class="card" id="excel-search-panel"
+          style="margin-top: 20px; border-left: 2px solid var(--gold); padding: 12px 16px; background: rgba(0,0,0,0.2); display: none;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <div
+              style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--gold-dim);">
+              🔍 PRZESZUKIWANIE PODSUMOWAŃ (EXCEL)
+            </div>
+            <div style="flex: 1; display: flex; gap: 10px; align-items: center; justify-content: flex-end;">
+              <button class="btn btn-sm btn-primary" onclick="runExcelSearch()" id="btnExcelSearch"
+                style="padding: 4px 12px; font-size: 12px;">
+                🔎 Szukaj wzmianek
+              </button>
+              <span id="excelSearchStatus" style="font-size: 11px; color: var(--text-dim);"></span>
+            </div>
+          </div>
+          <div id="excelSearchResults" style="margin-top: 10px; display: none;"></div>
+        </div>
+      </div>
+
+      <div class="ai-chat-layout">
+        <!-- MESSAGES FEED -->
+        <div class="ai-feed" id="aiFeedContainer">
+          <!-- Dynamic Messages Injected Here -->
+          <div id="ai-feed-content"></div>
+
+          <!-- Loading Indicator (Hidden by default) -->
+          <div id="ai-loading-indicator" class="ai-message bot" style="display: none;">
+            <div class="ai-avatar">⏳</div>
+            <div class="ai-message-content"
+              style="color: var(--text-dim); display: flex; align-items: center; gap: 8px;">
+              <span class="thinking-dots">Myślę</span>
+              <span id="thinking-timer-display"
+                style="font-size: 11px; opacity: 0.7; font-family: monospace;">(0.0s)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM INPUT AREA -->
+        <div class="ai-input-container">
+          <!-- Tool Chips Bar -->
+          <div class="ai-tools-bar">
+            <button class="ai-tool-chip" id="btn-quick-actions" onclick="toggleDropdown('quickActions')">
+              ⚡ Szybkie Akcje
+            </button>
+            <button class="ai-tool-chip" id="btn-model-select" onclick="toggleDropdown('model')">
+              🧠 Model
+            </button>
+            <button class="ai-tool-chip" id="btn-context-settings" onclick="toggleDropdown('context')">
+              ⚙️ Ustawienia
+            </button>
+          </div>
+
+          <!-- Floating Menus Containers -->
+          <div id="dropdown-quick-actions-container"></div>
+          <div id="dropdown-model-container"></div>
+          <div id="dropdown-context-container"></div>
+
+          <!-- Main Input Box -->
+          <div class="ai-input-box">
+            <textarea class="ai-input-textarea" id="mainPromptInput"
+              placeholder="Wpisz polecenie... (Enter aby wysłać, Shift+Enter nowa linia)" rows="1"></textarea>
+
+            <button class="ai-send-btn" id="btn-send-prompt" title="Wyślij wiadomość">
+              ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </template>
   </div>
 
+  <!-- Legacy scripts (non-module) - loaded first -->
   <script src="testbench-history.js"></script>
   <script src="testbench-ui.js"></script>
   <script src="tests-panel.js"></script>
   <script src="confighub-panel.js"></script>
   <script src="chat-utils.js"></script>
+  <script src="structured-card-renderer.js"></script>
+  <script src="stream-helpers.js"></script>
+
+  <!-- Main app.js (legacy) -->
   <script src="app.js"></script>
-  <!-- <script src="conversation-flow-extension.js"></script> DISABLED due to conflict -->
+  <script src="conversation-flow-extension.js"></script>
+
+  <!-- ES6 Modules (load after app.js for global function exposure) -->
+  <script type="module">
+    // Import all modules to expose functions globally
+    import * as modules from './modules/index.js';
+
+    // Expose to window for debugging and legacy compatibility
+    window.AppModules = modules;
+    console.log('✅ ES6 Modules loaded:', Object.keys(modules).length, 'exports');
+  </script>
 </body>
 
 </html>

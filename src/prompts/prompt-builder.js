@@ -6,11 +6,100 @@
 const fs = require('fs');
 const path = require('path');
 const { CONTEXTS, STYLES, DEFAULT_CONFIG, FACTIONS } = require('./prompt-config');
+const questTemplater = require('../services/quest-templater');
 
 const CONTEXTS_DIR = path.join(__dirname, '..', 'contexts');
 
 // Cache dla załadowanych kontekstów
 let contextCache = {};
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// VALIDATION - Walidacja danych wejściowych
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Limity długości promptów (w znakach)
+ */
+const PROMPT_LIMITS = {
+    MIN_LENGTH: 3,
+    MAX_CUSTOM_PROMPT: 8000,
+    MAX_PROFILE_FIELD: 5000,
+    MAX_CONTEXT_TOTAL: 32000  // Łączny limit kontekstu
+};
+
+/**
+ * Waliduje prompt użytkownika
+ * @param {string} text - Tekst do walidacji
+ * @param {number} maxLength - Maksymalna długość (domyślnie MAX_CUSTOM_PROMPT)
+ * @returns {{valid: boolean, text?: string, error?: string}} Wynik walidacji
+ */
+function validatePromptInput(text, maxLength = PROMPT_LIMITS.MAX_CUSTOM_PROMPT) {
+    // Null/undefined check
+    if (text == null) {
+        return { valid: false, error: 'Brak tekstu promptu' };
+    }
+
+    // Type check
+    if (typeof text !== 'string') {
+        return { valid: false, error: 'Prompt musi być tekstem' };
+    }
+
+    // Trim whitespace
+    const trimmed = text.trim();
+
+    // Min length check
+    if (trimmed.length < PROMPT_LIMITS.MIN_LENGTH) {
+        return { valid: false, error: `Prompt zbyt krótki (min ${PROMPT_LIMITS.MIN_LENGTH} znaki)` };
+    }
+
+    // Max length check
+    if (trimmed.length > maxLength) {
+        return {
+            valid: false,
+            error: `Prompt zbyt długi (${trimmed.length}/${maxLength} znaków)`
+        };
+    }
+
+    // Sanitize - remove potential injection patterns (basic)
+    const sanitized = trimmed
+        .replace(/\x00/g, '')  // Null bytes
+        .replace(/[\u200B-\u200D\uFEFF]/g, '');  // Zero-width characters
+
+    return { valid: true, text: sanitized };
+}
+
+/**
+ * Waliduje profil postaci przed budowaniem promptu
+ * @param {object} profile - Profil do walidacji
+ * @returns {{valid: boolean, error?: string}}
+ */
+function validateProfile(profile) {
+    if (!profile || typeof profile !== 'object') {
+        return { valid: false, error: 'Brak profilu postaci' };
+    }
+
+    // Check for at least one meaningful field
+    const meaningfulFields = ['Imie postaci', 'O postaci', 'Gildia', 'Wina'];
+    const hasContent = meaningfulFields.some(field =>
+        profile[field] && String(profile[field]).trim().length > 0
+    );
+
+    if (!hasContent) {
+        return { valid: false, error: 'Profil nie zawiera wymaganych danych' };
+    }
+
+    // Check field lengths
+    for (const [key, value] of Object.entries(profile)) {
+        if (value && typeof value === 'string' && value.length > PROMPT_LIMITS.MAX_PROFILE_FIELD) {
+            return {
+                valid: false,
+                error: `Pole "${key}" przekracza limit (${value.length}/${PROMPT_LIMITS.MAX_PROFILE_FIELD})`
+            };
+        }
+    }
+
+    return { valid: true };
+}
 
 /**
  * Ładuje kontekst z pliku (z cache)
@@ -32,7 +121,6 @@ function loadContext(contextId, maxChars = null) {
         }
     }
 
-    let content = contextCache[cacheKey];
     if (maxChars && content.length > maxChars) {
         content = content.slice(0, maxChars) + '\n[...skrócono...]';
     }
@@ -40,39 +128,22 @@ function loadContext(contextId, maxChars = null) {
 }
 
 /**
+ * Czyści cache kontekstów
+ */
+function clearContextCache() {
+    contextCache = {};
+}
+
+/**
  * Wyciąga schematy questów dla danego zakresu
  */
+/**
+ * Wyciąga schematy questów przy użyciu QuestTemplater
+ */
 function getQuestSchemas(style, count = 2) {
-    const questContent = loadContext('quests');
-    if (!questContent) return '';
-
-    const styleConfig = STYLES[style] || STYLES.auto;
-    const [start, end] = styleConfig.questRange;
-
-    // Parsuj schematy z tekstu
-    const lines = questContent.split('\n');
-    const schemas = [];
-    let currentSchema = '';
-    let schemaNumber = 0;
-
-    for (const line of lines) {
-        // Szukaj linii zaczynających się od [Typ]
-        if (line.match(/^\[.*\]:/)) {
-            if (currentSchema) {
-                schemaNumber++;
-                if (schemaNumber >= start && schemaNumber <= end) {
-                    schemas.push(currentSchema.trim());
-                }
-            }
-            currentSchema = line;
-        } else if (currentSchema) {
-            currentSchema += '\n' + line;
-        }
-    }
-
-    // Losowo wybierz 'count' schematów
-    const shuffled = schemas.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count).join('\n\n');
+    const templates = questTemplater.getTemplates(style, count);
+    if (!templates || templates.length === 0) return '';
+    return templates.join('\n\n');
 }
 
 /**
@@ -152,10 +223,22 @@ function buildPrompt(commandType, profile, userConfig = {}) {
 
     if (config.contexts.aspirations) {
         prompt += `=== ASPIRACJE I INTRYGI ===\n${loadContext('aspirations', 2000)}\n\n`;
+
+        // Inject Active Intrigues
+        const intrigues = getRelevantIntrigues(profile.Gildia ? (FACTIONS[Object.keys(FACTIONS).find(k => FACTIONS[k].label === profile.Gildia)] ? Object.keys(FACTIONS).find(k => FACTIONS[k].label === profile.Gildia) : null) : null);
+        if (intrigues) {
+            prompt += `AKTYWNE INTRYGI W KOLONII:\n${intrigues}\n\n`;
+        }
     }
 
     if (config.contexts.weaknesses) {
         prompt += `=== SŁABOŚCI I ZAGROŻENIA ===\n${loadContext('weaknesses', 1500)}\n\n`;
+    }
+
+    // Inject NPCs
+    const npcs = getRandomNPCs(3);
+    if (npcs) {
+        prompt += `=== KLUCZOWE POSTACIE (NPC) ===\n${npcs}\n\n`;
     }
 
     // === STYL NARRACYJNY ===
@@ -233,10 +316,45 @@ function getCommandInstruction(commandType) {
 }
 
 /**
- * Czyści cache kontekstów
+ * Ładuje dane JSON z pliku
  */
-function clearContextCache() {
-    contextCache = {};
+function loadData(filename) {
+    try {
+        const filePath = path.join(__dirname, '..', 'data', filename);
+        if (fs.existsSync(filePath)) {
+            return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        }
+    } catch (e) {
+        console.error(`Failed to load ${filename}:`, e);
+    }
+    return [];
+}
+
+/**
+ * Pobiera intrygi pasujące do frakcji
+ */
+function getRelevantIntrigues(faction) {
+    const allIntrigues = loadData('intrigues.json');
+    if (!allIntrigues.length) return '';
+
+    // Filter by faction or get generic ones
+    const relevant = allIntrigues.filter(i =>
+        !faction || i.factions.includes(faction) || i.factions.length === 0
+    );
+
+    // Limit to 2-3
+    return relevant.slice(0, 3).map(i => `- ${i.name}: ${i.description}`).join('\n');
+}
+
+/**
+ * Pobiera losowych NPC
+ */
+function getRandomNPCs(count = 3) {
+    const allNpcs = loadData('npcs.json');
+    if (!allNpcs.length) return '';
+
+    const shuffled = allNpcs.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count).map(n => `- ${n.name} (${n.role}, ${n.faction}): Cel: ${n.goal}. Słabość: ${n.weakness}`).join('\n');
 }
 
 module.exports = {
@@ -245,5 +363,11 @@ module.exports = {
     getQuestSchemas,
     detectStyleFromProfile,
     clearContextCache,
-    getCommandInstruction
+    getCommandInstruction,
+    getRelevantIntrigues,
+    getRandomNPCs,
+    // Validation exports
+    validatePromptInput,
+    validateProfile,
+    PROMPT_LIMITS
 };

@@ -4,6 +4,21 @@
  */
 
 // ==========================================
+// FEATURE FLAGS
+// ==========================================
+
+// Feature flag managed by ConfigHub
+let conversationFlowEnabled = false;
+
+// Initialize flag from config
+if (window.electronAPI?.configGet) {
+    window.electronAPI.configGet('features.conversationFlow', false).then(val => {
+        conversationFlowEnabled = !!val;
+        console.log('Conversation Flow enabled:', conversationFlowEnabled);
+    });
+}
+
+// ==========================================
 // STATE EXTENSION
 // ==========================================
 
@@ -286,115 +301,11 @@ const acObserver = new MutationObserver(() => {
 if (document.body) acObserver.observe(document.body, { childList: true, subtree: true });
 
 // ==========================================
-// MAIN HOOK: Route ALL messages through Conversation Flow
+// MAIN HOOK: REMOVED (Logic moved to app.js)
 // ==========================================
+// The runCustomPrompt logic is now natively integrated into app.js
+// to avoid race conditions and monkey-patching issues.
 
-function installConversationFlowHook() {
-    if (!window.runCustomPrompt) {
-        console.log('⏳ Waiting for runCustomPrompt...');
-        return false;
-    }
-    if (window._originalRunCustomPrompt) return true;
-
-    window._originalRunCustomPrompt = window.runCustomPrompt;
-
-    window.runCustomPrompt = async function () {
-        const promptText = (state.promptParts?.dod || '').trim();
-        if (!promptText) return;
-
-        const profile = state.sheetData?.rows?.[state.selectedRow];
-        if (!profile) {
-            if (typeof addLog === 'function') addLog('error', 'Wybierz najpierw postać.');
-            return;
-        }
-
-        // Expand @mentions
-        let processedText = promptText;
-        if (promptText.includes('@')) {
-            const allProfiles = state.sheetData?.rows || [];
-            processedText = expandMentions(promptText, profile, allProfiles);
-            console.log('✅ Expanded mentions:', processedText);
-        }
-
-        // Check for slash command → set goal type but still go through flow
-        const slashMatch = Object.entries(SLASH_COMMAND_LABELS).find(([key]) =>
-            processedText.toLowerCase().startsWith(key)
-        );
-        if (slashMatch) {
-            const [cmd] = slashMatch;
-            processedText = processedText.substring(cmd.length).trim() || `Chcę ${cmd.substring(1)}`;
-            console.log('🎯 Slash goal:', cmd, '→', processedText);
-        }
-
-        // Add user message to feed immediately
-        if (!state.aiResultsFeed) state.aiResultsFeed = [];
-        state.aiResultsFeed.push({ type: 'user', content: processedText });
-
-        // Clear input
-        if (typeof updatePromptPart === 'function') updatePromptPart('dod', '');
-        const inp = getInput();
-        if (inp) inp.value = '';
-
-        state.aiProcessing = true;
-        state.processingStatus = 'Analizuję...';
-        if (typeof renderStep === 'function') renderStep();
-
-        try {
-            // Route through Conversation Flow IPC
-            if (window.electronAPI?.convFlowProcess) {
-                const result = await electronAPI.convFlowProcess(
-                    profile['Imie postaci'],
-                    processedText,
-                    profile
-                );
-
-                state.aiProcessing = false;
-
-                if (result.success) {
-                    // Add AI response to feed
-                    state.aiResultsFeed.push({
-                        type: 'ai',
-                        content: result.message,
-                        metadata: { stage: result.stage, type: result.type }
-                    });
-
-                    // Store conv state
-                    state.conversationFlow.convId = result.convId;
-                    state.conversationFlow.stage = result.stage;
-                    state.conversationFlow.active = true;
-
-                    // Handle FORCE_GENERATE → trigger actual generation
-                    if (result.type === 'FORCE_GENERATE') {
-                        console.log('🚀 Force generate triggered with recipe:', result.recipe);
-                        // TODO: Call actual generation with recipe
-                    }
-                } else {
-                    state.aiResultsFeed.push({ type: 'ai', content: `❌ Błąd: ${result.error}` });
-                }
-            } else {
-                // Fallback to original if IPC not available
-                console.warn('⚠️ electronAPI.convFlowProcess not available, using legacy');
-                state.promptParts.dod = processedText;
-                state.aiProcessing = false;
-                return window._originalRunCustomPrompt.apply(this, arguments);
-            }
-        } catch (error) {
-            state.aiProcessing = false;
-            state.aiResultsFeed.push({ type: 'ai', content: `❌ Błąd: ${error.message}` });
-            console.error('Conversation flow error:', error);
-        }
-
-        if (typeof renderStep === 'function') renderStep();
-    };
-
-    console.log('✅ runCustomPrompt hooked → Conversation Flow (primary mode)');
-    return true;
-}
-
-function tryInstallHook() {
-    if (!installConversationFlowHook()) setTimeout(tryInstallHook, 1000);
-}
-setTimeout(tryInstallHook, 1000);
 
 // Listen for conv-flow updates from main process
 if (window.electronAPI?.onConvFlowUpdate) {
@@ -414,7 +325,7 @@ Object.assign(window, {
     getFilteredSlashCommands, renderSlashDropdown, handleSlashInput, selectSlashCommand,
     getFilteredMentionFields, renderMentionDropdown, handleMentionInput, selectMentionField, selectMentionCharacter, expandMentions,
     hideDropdown, updateDropdownHighlight, handleKeydown,
-    checkEscapeIntent, checkQuestionLimit, resetConversationFlow, attachAutocomplete, installConversationFlowHook
+    checkEscapeIntent, checkQuestionLimit, resetConversationFlow, attachAutocomplete
 });
 
 console.log('✅ ConversationFlowExtension v6 loaded (primary conversation mode)');

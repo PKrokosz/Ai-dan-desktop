@@ -1,4 +1,4 @@
-const http = require('http');
+// Model Limits Service - uses ollama-client for API calls
 const logger = require('../shared/logger');
 
 // Cache for model capabilities to avoid repeated API calls
@@ -180,41 +180,23 @@ class ModelLimitsService {
     }
 
     /**
-     * Fetch raw model info from Ollama API
+     * Fetch raw model info from Ollama API using ollama-client
      */
     async fetchModelInfo(modelName) {
-        return new Promise((resolve) => {
-            const postData = JSON.stringify({ name: modelName });
-            const req = http.request({
-                hostname: this.host,
-                port: this.port,
-                path: '/api/show',
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Content-Length': Buffer.byteLength(postData)
-                }
-            }, (res) => {
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => {
-                    try {
-                        const parsed = JSON.parse(data);
-                        resolve({
-                            success: true,
-                            ...parsed
-                        });
-                    } catch (e) {
-                        resolve({ success: false, error: e.message });
-                    }
-                });
-            });
+        try {
+            const ollamaClient = require('./ollama-client');
+            const result = await ollamaClient.showModel(modelName);
 
-            req.on('error', (e) => resolve({ success: false, error: e.message }));
-            req.setTimeout(5000);
-            req.write(postData);
-            req.end();
-        });
+            if (result.success) {
+                return {
+                    success: true,
+                    ...result.info
+                };
+            }
+            return { success: false, error: result.error };
+        } catch (e) {
+            return { success: false, error: e.message };
+        }
     }
 }
 

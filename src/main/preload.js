@@ -64,7 +64,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     },
 
     // Conversation Flow (Two-Phase AI)
-    convFlowProcess: (profileName, message, profileData) => ipcRenderer.invoke('conv-flow:process', profileName, message, profileData),
+    convFlowProcess: (profileName, message, profileData, options) => ipcRenderer.invoke('conv-flow:process', profileName, message, profileData, options),
     convFlowGetState: (convId) => ipcRenderer.invoke('conv-flow:get-state', convId),
     convFlowReset: (convId) => ipcRenderer.invoke('conv-flow:reset', convId),
     convFlowGetRecipe: (convId) => ipcRenderer.invoke('conv-flow:get-recipe', convId),
@@ -117,5 +117,14 @@ contextBridge.exposeInMainWorld('electronAPI', {
     testsSafetyLimitsRunAll: (modelNames) => ipcRenderer.invoke('tests:safety-limits:run-all', modelNames),
     testsSafetyLimitsLoadCache: () => ipcRenderer.invoke('tests:safety-limits:load-cache'),
     testsLanguageStabilityRunAll: (modelNames) => ipcRenderer.invoke('tests:language-stability:run-all', modelNames),
-    testsLanguageStabilityLoadCache: () => ipcRenderer.invoke('tests:language-stability:load-cache')
+    testsLanguageStabilityLoadCache: () => ipcRenderer.invoke('tests:language-stability:load-cache'),
+
+    // ConfigHub - Centralized Configuration
+    configGet: (path, defaultValue) => ipcRenderer.invoke('config:get', path, defaultValue),
+    configSet: (path, value) => ipcRenderer.invoke('config:set', path, value),
+    configGetAll: () => ipcRenderer.invoke('config:getAll'),
+    configReset: (section) => ipcRenderer.invoke('config:reset', section),
+    configExport: () => ipcRenderer.invoke('config:export'),
+    configImport: (jsonString) => ipcRenderer.invoke('config:import', jsonString),
+    configGetDefaults: () => ipcRenderer.invoke('config:getDefaults')
 });

@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Zimna Wojna Magnus ↔ Cienie/Straż",
+        "description": "Napięcie między Magnusem (Magnatem) a dowództwem Straży i Cieni o kontrolę nad wydobyciem.",
+        "factions": [
+            "SO"
+        ],
+        "npcs": [
+            "Magnus",
+            "Thorus",
+            "Kruk"
+        ],
+        "status": "active",
+        "type": "political"
+    },
+    {
+        "name": "Wyścig o fotel Magnata",
+        "description": "Rywalizacja o pozycję Magnata między Bezą, Ulęgałke i Valentinem.",
+        "factions": [
+            "SO"
+        ],
+        "npcs": [
+            "Beza",
+            "Ulęgałke",
+            "Valentin"
+        ],
+        "status": "active",
+        "type": "political"
+    },
+    {
+        "name": "Tajne wydobycie niebieskiej rudy",
+        "description": "Sam i Magnus prowadzą tajne wydobycie rzadkiej, niebieskiej rudy poza wiedzą Gomeza.",
+        "factions": [
+            "SO",
+            "NO"
+        ],
+        "npcs": [
+            "Sam",
+            "Magnus"
+        ],
+        "status": "secret",
+        "type": "economic"
+    },
+    {
+        "name": "Siatka przemytnicza Modaresa",
+        "description": "Zorganizowany przemyt towarów między obozami, omijający oficjalne cła.",
+        "factions": [
+            "NO",
+            "SO"
+        ],
+        "npcs": [
+            "Modares",
+            "Sharky"
+        ],
+        "status": "active",
+        "type": "criminal"
+    },
+    {
+        "name": "Poszukiwanie Magini Wiktorii",
+        "description": "Zaginięcie Magini Wody, która może posiadać klucz do ucieczki z Kolonii lub ważny artefakt.",
+        "factions": [
+            "NO",
+            "KDW"
+        ],
+        "npcs": [
+            "Saturas",
+            "Cronos"
+        ],
+        "status": "active",
+        "type": "mystical"
+    },
+    {
+        "name": "Śledztwo w sprawie śmierci Lux",
+        "description": "Niewyjaśniona śmierć Magini Lux podczas rytuału. Podejrzenie brudnej gry.",
+        "factions": [
+            "NO",
+            "KDW"
+        ],
+        "npcs": [
+            "Riordian",
+            "Myxir"
+        ],
+        "status": "active",
+        "type": "mystical"
+    },
+    {
+        "name": "Turniej Złodziei Gildii",
+        "description": "Tajne zawody o tytuł najlepszego złodzieja w Kolonii, organizowane przez Rączkę.",
+        "factions": [
+            "SO",
+            "NO"
+        ],
+        "npcs": [
+            "Rączka",
+            "Cassia"
+        ],
+        "status": "event",
+        "type": "criminal"
+    },
+    {
+        "name": "Rywalizacja o Warchiefa w NO",
+        "description": "Walka o przywództwo wojskowe w Nowym Obozie między Lee a najemnikami.",
+        "factions": [
+            "NO"
+        ],
+        "npcs": [
+            "Lee",
+            "Gorn",
+            "Silvio"
+        ],
+        "status": "active",
+        "type": "military"
+    }
+]

@@ -1,0 +1,94 @@
+[
+    {
+        "name": "Beza",
+        "role": "Służąca",
+        "faction": "Stary Obóz",
+        "location": "Zamek",
+        "goal": "Zostać Magnatką",
+        "method": "Organizacja wystawnych uczt, budowanie poparcia politycznego",
+        "weakness": "Jest podwójną agentką Wodnego Kręgu",
+        "relations": [
+            "Tanka (sojuszniczka)",
+            "Gomez (pan)",
+            "Valentin (rywal)"
+        ]
+    },
+    {
+        "name": "Valentin",
+        "role": "Strażnik",
+        "faction": "Stary Obóz",
+        "location": "Zamek",
+        "goal": "Awans na Magnata",
+        "method": "Podstęp, eliminacja konkurencji",
+        "weakness": "Arogancja, lekceważenie niższych rangą",
+        "relations": [
+            "Beza (rywal)",
+            "Raven (przełożony)"
+        ]
+    },
+    {
+        "name": "Magnus",
+        "role": "Magnat",
+        "faction": "Stary Obóz",
+        "location": "Dom Magnatów",
+        "goal": "Utrzymanie władzy i bogactwa",
+        "method": "Tajne wydobycie niebieskiej rudy, manipulacja rynkiem",
+        "weakness": "Nałogowy hazardzista, długi u lichwiarzy",
+        "relations": [
+            "Sam (wspólnik)",
+            "Thorus (napięte relacje)"
+        ]
+    },
+    {
+        "name": "Rączka",
+        "role": "Cień",
+        "faction": "Stary Obóz",
+        "location": "Dzielnica Cieni",
+        "goal": "Odejście na emeryturę lub utrzymanie kontroli nad złodziejami",
+        "method": "Siatka szpiegowska, handel informacjami",
+        "weakness": "Zmęczenie odpowiedzialnością, sentymentalizm",
+        "relations": [
+            "Cassia (uczennica)",
+            "Diego (przyjaciel)"
+        ]
+    },
+    {
+        "name": "Null",
+        "role": "Baal",
+        "faction": "Bractwo Śniącego",
+        "location": "Obóz na Bagnie",
+        "goal": "Zostać liderem Bractwa/Zastąpić Iberiona",
+        "method": "Tajne audyty, donosy na innych Guru",
+        "weakness": "Fanatyzm, obsesja na punkcie czystości wiary",
+        "relations": [
+            "Iberion (lider)",
+            "Cor Kalom (rywal)"
+        ]
+    },
+    {
+        "name": "Sam",
+        "role": "Szkodnik",
+        "faction": "Nowy Obóz",
+        "location": "Jaskinia",
+        "goal": "Zysk z nielegalnego wydobycia",
+        "method": "Współpraca z Magnusem z wrogiego obozu",
+        "weakness": "Chciwość, ryzykowne sojusze",
+        "relations": [
+            "Magnus (wspólnik)",
+            "Lee (ukrywa prawdę przed nim)"
+        ]
+    },
+    {
+        "name": "Rembajło",
+        "role": "Najemnik",
+        "faction": "Nowy Obóz",
+        "location": "Brama",
+        "goal": "Udowodnienie siły, walka",
+        "method": "Bójki, wyzwania",
+        "weakness": "Paniczny lęk przed wodą (hydrofobia), impulsywność",
+        "relations": [
+            "Lee (dowódca)",
+            "Jarvis (rywal)"
+        ]
+    }
+]

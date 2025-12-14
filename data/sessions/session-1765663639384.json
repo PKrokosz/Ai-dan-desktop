@@ -1,0 +1,16 @@
+{
+  "id": "session-1765663639384",
+  "profileName": "Albert Konus",
+  "startTime": 1765663639384,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765663639410
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

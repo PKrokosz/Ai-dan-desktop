@@ -1,4 +1,4 @@
-const ollamaService = require('./ollama');
+const ollamaService = require('./ollama-client'); // Using official ollama npm library
 const logger = require('../shared/logger');
 
 class TextCorrectorService {

@@ -1,0 +1,1625 @@
+# Fabuła Guru 2025.xlsx
+================================================================================
+
+## Arkusz: Postacie
+----------------------------------------
+
+### Wpis 1
+**L.p.**: 1
+**Imię postaci**: Baal Mosir
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Montera
+**Grupa / Profesja**: Sędzia
+**Mechaniczne umiejętności**: 3 Krąg
+Specjalizacje do ustalenia
+**Krótki opis postaci**: Pożąda silnej wizji, jest wstanie poświęcić życie nowicjuszy w tym celu
+Słabość do bagiennego ziela - podrzędne zielone nowicjusze już go niezadowalają
+Szukanie ludzi słabej wiary
+Dążenie do uznania Śniącego za Boga przez MO i MW (?)
+
+### Wpis 2
+**L.p.**: 2
+**Imię postaci**: Baal Sach
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Farmy
+**Grupa / Profesja**: Wywiad
+**Mechaniczne umiejętności**: 2 Krąg
+Specjalizacja Runiczna
+Specjalizacja ?
+**Najważniejsi znajomi**: Baal Ayen - duchowa przewodniczka
+Baal Pruson - dobry kolega
+**Najważniejsze fakty z podsumowania**: -Szukanie węży
+-Zaczyna dystansować się od nowicjuszy i patrzeć na nich z góry
+
+### Wpis 3
+**L.p.**: 3
+**Imię postaci**: Baal Pruson
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: Polityka
+**Mechaniczne umiejętności**: 2 Krąg
+Specjalizacje do ustalenia
+**Krótki opis postaci**: Celem Prusona jest zyskanie pozycji władzy oraz uznanie i kontakty poza frakcją
+**Najważniejsze fakty z podsumowania**: Chciałby pogłebić wiedzę na temat Orków i nawiązać z nimi kontakt
+
+### Wpis 4
+**L.p.**: 4
+**Imię postaci**: Baal Torias
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: Magia
+**Mechaniczne umiejętności**: 3 Krąg
+Specjalizacja Runiczna
+Specjalizacja Kapłańska
+Specjalizacja Umysłu
+**Najważniejsi znajomi**: Baal Sach - Pomagał mu w eksperymentach magicznych
+**Najważniejsze fakty z podsumowania**: Chce uczestniczyć w wątku jęzora
+Chce uczestniczyć w poszukiwaniu węży
+Chce dowiedzieć się kto rzucił na niego czar podczas procesji śniącego
+
+### Wpis 5
+**L.p.**: 5
+**Imię postaci**: Baal Ayen
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Archolos
+**Pochodzenie dokładne**: Miasto Archolos
+**Grupa / Profesja**: Mistycyzm
+**Mechaniczne umiejętności**: 2 Krąg
+Specjalizacja Kapłańska
+?
+
+### Wpis 6
+**L.p.**: 6
+**Imię postaci**: Baal Var
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Farmy
+**Grupa / Profesja**: Bezpieczeństwo
+**Mechaniczne umiejętności**: 1 Krąg
+**Krótki opis postaci**: Były Strażnik Świątynny, mistrz Gor Na Kagana
+Konflikt z Magnatami - poza Gomezem patrzy na nich z góry
+Chce zrozumieć wizję śniącego i przygotować Bractwo na zagrożenie ze strony Orków
+Przelotne i niesprecyzowane powiązanie z gildią Araxos sprzed bariery
+
+### Wpis 7
+**L.p.**: 7
+**Imię postaci**: Baal Null
+**Kontynuacja**: NIE
+**Grupa / Profesja**: Finanse
+
+## Arkusz: Grupy
+----------------------------------------
+
+### Wpis 1
+**L.p.**: 1
+**Nazwa grupy**: Przyjaciele Oruna
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Baal Sach,Baal Mosir
+
+### Wpis 2
+**L.p.**: 2
+**Nazwa grupy**: Wrogowie Oruna
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Baal Pruson,Baal Ayen,Baal Var,Baal Null
+
+### Wpis 3
+**L.p.**: 3
+**Nazwa grupy**: Magiczne sympozjum
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Baal Mosir,Baal Torias,Baal Null,Baal Pruson
+
+### Wpis 4
+**L.p.**: 4
+**Nazwa grupy**: Specjalizacja Runiczna
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Baal Torias,Baal Sach
+
+## Arkusz: Wątki
+----------------------------------------
+
+### Wpis 1
+**Nazwa wątku**: Proroctwo zielonej zarazy
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Guru
+**Kolejność**: 10
+**Wpis fabularny**: Nastały niespokojne czasy — zwiadowcy orków pojawiają się coraz częściej i zapuszczają coraz bliżej bram Starego Obozu, nieraz w liczniejszych grupach niż dotychczas. Coraz trudniej mówić o przypadkach, a coraz łatwiej dostrzec w ich działaniach cel. Czegoś szukają? Do czegoś się szykują? Tego nie wie nikt, ale napięcie czuć w powietrzu, a niepokój ogarnia nawet tych, którzy dotąd czuli się pewnie za kamiennymi murami. Wysłannicy Bractwa próbują ostrzegać, nawoływać do czujności — jednak napotykają jedynie kpiący śmiech, zbywające gesty lub oskarżenia o sianie paniki. Śniący jednak nie pozostawia miejsca na wątpliwości.
+
+W wizjach, które zsyła na swych wyznawców, objawia się obraz zbliżającej się zagłady — zielonoskóra zaraza przetaczająca się przez dolinę, paląca, zabijająca, niszcząca wszystko, co napotka. Nie są to sny zwyczajne, lecz proroctwa — ostrzeżenia dla tych, którzy jeszcze mogą się przygotować. Ci, którzy odrzucają te znaki, sami skazują się na los ofiar. Bractwo Śniącego wie, że koniec pewnej ery nadchodzi, a jedyną nadzieją na przetrwanie jest oparcie się na jego mądrości. W cieniu nadchodzącej burzy trzeba działać — nie po to, by ratować niewiernych, ale by ochronić tych, którzy słuchają.
+**Zaangażowane frakcje**: Guru
+
+### Wpis 2
+**Nazwa wątku**: Wojna na Słowa
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Guru
+**Kolejność**: 11
+**Wpis fabularny**: Zniknięcie Oruna z faktorii okazało się czymś więcej niż tylko stratą jednej z głów Bractwa — stało się otwartym pretekstem do rozmywania dotychczasowych porozumień. Gomez i Magowie Wody, do tej pory związani umowami wypracowanymi w długich negocjacjach, zaczęli działać wybiórczo, respektując tylko te ustalenia, które im sprzyjają. To, co kiedyś było podstawą współpracy między obozami, dziś staje się przedmiotem sporów i złośliwej interpretacji.
+
+Dopóki sytuacja nie zostanie uregulowana nowymi traktatami panuje chaos – a Ty możesz próbować wykorzystać go dla zysku. Powoływanie się na dawny porządek może pomóc w łagodzeniu napięć, ale równie dobrze możesz nurzać się w niepewności i zamęcie, by osiągać swoje cele, przekładając własną wolę ponad nieczytelne prawa tymczasowości.
+**Zaangażowane frakcje**: Guru
+
+### Wpis 3
+**Nazwa wątku**: Sympozjum magów
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magiczne sympozjum
+**Kolejność**: 21
+**Wpis fabularny**: Zdążyłeś już usłyszeć o planowanym przez Magów Ognia wydarzeniu — wielkim sympozjum, na które zamierzają zaprosić najznamienitsze umysły w koloni zajmujące się sztukami magicznymi. Spotkanie to ma stać się okazją do wymiany wiedzy, debat, a być może również prezentacji nowych idei i teorii, które mogą odmienić sposób postrzegania magii pod barierą. Sympozjum ma odbyć się w karczmie starego obozu, a jego prestiż już teraz elektryzuje środowisko adeptów i czarodziejów.
+
+Nie każdy jednak będzie miał prawo uczestnictwa — na salony wstęp będą mieli jedynie ci, których nazwiska znajdą się na liście zaproszonych. Dotąd żadnych oficjalnych zaproszeń nie wydano, a Magowie Ognia zachowują milczenie w kwestii kryteriów doboru gości. Wiadomo jednak, że wsławienie się magicznym czynem lub przygotowanie porywającego wykładu może zwrócić uwagę ognistych kapłanów. Jeśli chcesz znaleźć się w gronie wybrańców — musisz zadbać, by Twoje imię nie przeszło niezauważone.
+**Krótki opis**: Sympozjum
+**Zaangażowane frakcje**: Guru, Magowie Ognia
+
+### Wpis 4
+**Nazwa wątku**: W obronie imienia Baala Oruna
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Przyjaciele Oruna
+**Kolejność**: 20
+**Wpis fabularny**: Wieść o śledztwie toczącym się w świątyni Bractwa wstrząsnęła Twoim umysłem niczym kamień wrzucony w spokojną taflę wody. Baal Orun – ten, który prowadził rozmowy z magami, który nigdy nie zwątpił w wolę Śniącego – miałby być winny? Serce nie chciało przyjąć tej myśli, a sumienie nie pozwalało milczeć. Nie mogłeś patrzeć, jak ktoś, kto z oddaniem prowadził braci ku oświeceniu, teraz staje pod oskarżeniem.
+
+Musisz działać. Czas udać się w cień zaułki kolonii, by odnaleźć tych, którzy znali Oruna z czasów, gdy był jeszcze tylko nowicjuszem, tych, którzy widzieli jego oddanie i czystość intencji. Może znajdzie się kopacz, który pamięta, jak Orun dzielił się zapasami z głodnymi. Może jakiś cień przypomni sobie nocne modlitwy, które szeptał Orun, gdy nikt nie słuchał. A jeśli nie znajdziesz ust, które przemówią – może znajdziesz pergamin. List, notatkę, zapisek – cokolwiek, co przetrwało czas i potrafi dziś przemówić mocniej niż słowa. Rada Guru waży dusze, ale waży też dowody – a Ty możesz być tym, który przyniesie ciężar, zdolny przechylić szalę.
+**Zaangażowane frakcje**: Guru
+
+### Wpis 5
+**Nazwa wątku**: Prawdziwe oblicze Baala
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Wrogowie Oruna
+**Kolejność**: 20
+**Wpis fabularny**: Nigdy nie ufałeś Baalowi Orunowi. Za jego spokojnym głosem i zgrabnie dobieranymi słowami wyczuwałeś coś więcej — chłód wyrachowania, zapach korzyści. Gdy rozniosła się wieść o śledztwie prowadzonym w jego sprawie, nie poczułeś niepokoju. Poczułeś satysfakcję. Może wreszcie przestanie skrywać się za tytułem i szatą, a rada Guru ujrzy to, co dla Ciebie było zawsze widoczne — człowieka działającego w cieniu własnych interesów, nie w świetle Śniącego.
+
+Teraz nadeszła Twoja chwila. Jeśli chcesz, by prawda wyszła na jaw, musisz działać. Znajdź świadków, którzy gotowi są mówić – tych, którzy doświadczyli jego zaniedbań, widzieli, jak rozmienia świętość na drobne przysługi. Nawet jeśli nie odważą się stanąć przed radą, ich spisane słowa mogą przemówić. A jeśli los Ci sprzyja, może trafisz na coś jeszcze – fragment korespondencji, osobiste notatki, zapiski, których nie miał ujrzeć nikt poza nim. Rada Guru nie podejmie decyzji lekkomyślnie – ale jeśli dostarczysz im prawdy w formie nie do podważenia, ich wyrok może być nieunikniony.
+**Zaangażowane frakcje**: Guru
+
+### Wpis 6
+**Nazwa wątku**: Pęknięcia świadomości
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Ayen
+**Kolejność**: 30
+**Wpis fabularny**: Od dnia święta Pierwszego Słowa coś się zmieniło — choć nie potrafisz powiedzieć co dokładnie. Pamięć zaciera się w miejscu, gdzie kończy się wspomnienie o wędrówce ku kapliczce Adanosa, a zaczyna milcząca pustka. Od tamtej chwili Twoje życie nie runęło od razu, ale zaczęło się sypać powoli — jak ściana nadszarpnięta czasem. Coraz trudniej Ci się skupić, zmęczenie dopada Cię nawet po najkrótszym wysiłku, a wizje od Śniącego, niegdyś jasne jak płomień ogniska, dziś przypominają tańczący płomień świeczki – chwiejne, słabe, niedosłyszane. Nawet Zew Nocy nie jest wstanie tego zmienić, jakby coś przesłaniało jego działanie.
+
+Najbardziej niepokoją jednak krótkie przebłyski niepamięci – chwile, w których znajdujesz się w innym miejscu, z innymi słowami na ustach, nie wiedząc, co działo się przed chwilą. Mimo to szukasz przyczyn w rzeczach przyziemnych – może to zmęczenie, może zła dieta, może jakiś nieznany cień choroby... Ale w głębi serca zaczynasz przeczuwać, że odpowiedź kryje się właśnie tam – w tamtej pustce przy kapliczce, której nie potrafisz wypełnić wspomnieniem.
+
+[Wydarzenie egzorcymu Baal Ayen przewidziane jest na trzeci dzień gry - sobotę - o godzinie 19 - o planowanym miejscu tego wydarzenia wie Twój MG (Dymek).]
+**Zaangażowane frakcje**: Guru
+
+### Wpis 7
+**Nazwa wątku**: Zmącone echo głosu
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Ayen
+**Kolejność**: 31
+**Wpis fabularny**: Byłaś przewodniczką w świętej ciszy, tą, która potrafiła otworzyć umysł nowicjusza i poprowadzić go ku głosowi Śniącego — spokojnie, łagodnie, z pokorą. Zsyłanie wizji i ich odczytywanie stało się Twoim powołaniem, Twoją dumą… aż do niedawna. Coś się zmieniło. Coraz więcej nowicjuszy, których prowadzisz ku wewnętrznemu głosowi, wychodzi z transu z oczami pełnymi lęku, z dłonią drżącą jak liść na wietrze. Nawet strażnicy świątynni, zahartowani w posłuszeństwie i wierze, reagują niepokojąco — ich wizje są nieskładne, chaotyczne, pełne mroku i niezrozumiałej złości.
+
+Niektórych trzeba było wyciszać godzinami, innych odciągać siłą, gdy wpadali w szał. Gdy pytasz ich, co widzieli, milczą… albo bredzą o szponach, pustce i wrzasku, który nie był głosem Śniącego, a czymś, co podszywa się pod Jego ton. Zaczynasz zastanawiać się, czy to z nimi coś nie tak — czy może to samej Faktorii coś dolega. Może miejsce to, dotąd święte, zaczęło rezonować innym echem. Echo Śniącego powinno przynosić zrozumienie. A tymczasem przynosi strach. Co zakłóciło przekaz? I czy jesteś gotowa to sprawdzić?
+
+[Podczas zsyłania wizji na ludzi informuj ich że coś jest nie tak, zachęcaj do odgrywania niepoczytalności oraz skrajnie silnych negatywnych emocji, wręczaj im karteczki informujące pod jakim efektem się znajdują, karteczki otrzymasz od swojego MG przed grą]
+**Zaangażowane frakcje**: Guru, Nowicjusze, Strażnicy Świątynni
+
+### Wpis 8
+**Nazwa wątku**: Światło wśród czerwieni
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Ayen
+**Kolejność**: 32
+**Wpis fabularny**: Wierzysz, że nawet ci, którzy dziś służą magicznej rudzie i przemocy, mogą pewnego dnia odnaleźć spokój w objęciach Śniącego. Nawet Gomez — dumny i potężny — mógłby kiedyś uklęknąć w pokorze, gdyby tylko usłyszał Jego głos. Ale jak mają zaufać naukom, których nie znają? Większość mieszkańców Starego Obozu nigdy nie słyszała prawdziwego kazania Bractwa, a już na pewno nie doświadczyła obecności wizji Śniącego.
+
+To musi się zmienić. Regularne kazania na terenie Starego Obozu byłyby pierwszym krokiem. Cichy głos rozbrzmiewający wśród murów pełnych gniewu i dymu. A może nawet więcej — stała kaplica, choćby najmniejsza, by Śniący mógł tam spocząć choćby cieniem swej łaski. Możesz próbować agitować Baala Prusona, by podniósł ten temat podczas nadchodzących negocjacji, lecz dobrze wiesz, że jeśli magnaci chcieliby dzielić się przestrzenią ducha — już by to zrobili.
+
+Jeśli Śniący ma przemówić do ludzi ubranych w czerwień, to tylko dlatego, że Ty uczynisz to możliwym. Musisz działać – cicho, skutecznie i z przekonaniem. Wkroczyć między ich ludzi, zdobyć zaufanie, może i poparcie tych, którym brakuje nadziei. Nie czekaj na pozwolenie.
+**Krótki opis**: Kapliczka w SO
+**Zaangażowane frakcje**: Guru, Magowie Ognia, Magnaci, Cienie, Strażnicy
+
+### Wpis 9
+**Nazwa wątku**: Naczynie dla daru Śniącego
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Ayen
+**Kolejność**: 33
+**Wpis fabularny**: Śniący w swej łasce potrafi zsyłać wizje, które rozpalają umysły i otwierają ścieżki do rzeczy, o których zwykli śmiertelnicy mogą tylko śnić. Lecz nawet najświętszy dar potrzebuje naczynia, by mógł się w nim objawić. Tak jest z magią run — potężną, skondensowaną, wymagającą nie tylko duchowego wglądu, ale i odpowiedniego materiału. Prorok Śniącego, jeśli pragnie rzucać czary przy pomocy run, musi je najpierw sam stworzyć.
+
+Pierwszym krokiem jest zdobycie pustej runy, a do tego niezbędna będzie bryła magicznej rudy wielkości zaciśniętej pięści — niezwykle rzadka i równie cenna. Tylko taka, okazała forma surowca może posłużyć jako fundament pod prawdziwe dzieło magicznego wykuwania. Gdy już znajdziesz samorodek, czeka Cię jeszcze współpraca z kowalem, który przekuje go w pustą runę — a to może wymagać zapłaty, przysługi… lub łaski Śniącego.
+
+Ale sama forma to dopiero początek. By zakląć czar w pustą runę, potrzebna Ci będzie wiedza, odpowiednie komponenty i przeprowadzenie rytuału. Czeka Cię droga pełna prób i poszukiwań — ale gdy ją przejdziesz, powstanie artefakt, który uczyni Cię prawdziwym narzędziem Śniącego na tym świecie.
+
+[Wyjąkowo wielka bryłka rudy powinna być wielkości pięści - może być ciężka do zdobycia]
+[Jeśli uda Ci się ją zdobyć i przekuć u kowala, pustą runę posiada Twój MG]
+[By zakląć zaklęcie w pustą runę skorzystaj z mechaniki tworzenia magicznych przedmiotów z podręcznika gracza]
+**Zaangażowane frakcje**: Guru
+
+### Wpis 10
+**Nazwa wątku**: Księga Szeptów
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Ayen
+**Kolejność**: 34
+**Wpis fabularny**: Śniący przemawia – nie tylko do wybranych, nie tylko do Bractwa. Jego głos przesącza się przez granice obozów, dociera do prostych kopaczy, strażników, czasem nawet do niewiernych. Są to jednak nie pełne objawienia, lecz fragmenty, obrazy, urywki przeszłości i przyszłości, tak splątane, że bez przewodnictwa potrafią jedynie wprowadzać w obłęd.
+
+By z tych szeptów wyciągnąć sens, potrzebna jest Księga – jedno miejsce, gdzie spisane zostaną wszystkie wizje, sny i objawienia, nawet te najbardziej niepozorne. Guru potrzebują takiego narzędzia, by móc analizować wzorce, badać ich źródła, odnajdywać ukryte między nimi zależności. Śniący rzadko mówi wprost – jego prawda objawia się tym, którzy potrafią patrzeć głębiej.
+
+Nie będziesz jednak sama biegać z pytaniami po kolonii – to nie jest zadanie godne kogoś noszącego Twój tytuł. Zamierzasz zlecić to zadanie nowicjuszom, którzy już doświadczyli obecności Śniącego w swoich wizjach i wykazali się choćby podstawowym zrozumieniem jego przekazów. Na oku masz kilkoro takich, którzy okazali się użyteczni w przeszłości, chociażby Aria, Emma, Malrik lub Serina.
+
+Jeśli dobrze wypełnią swoje zadanie – może warto uczynić z nich oficjalny zbór odpowiedzialny za Księgę Szeptów? Ich rola mogłaby okazać się kluczowa w nadchodzących czasach.
+
+[Weź proszę jakiś notatnik który może posłużyć za księgę szeptów]
+**Krótki opis**: Ayen, Sennik, Zbór, wizji, kolekcjonowanie snów w kolonii, Senni związany z księgą Bractwa
+Do weryfikacji wizji - medytacja.
+**Zaangażowane frakcje**: Guru, Nowicjusze
+
+### Wpis 11
+**Nazwa wątku**: Głos Bractwa
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Pruson
+**Kolejność**: 30
+**Wpis fabularny**: Poranek rozpoczął się jak każdy inny — wilgotny zapach bagna, ciche szeptanie modlitw i ospałe trzaski drewna w ogniu. A jednak to właśnie wtedy nadszedł posłaniec, niosąc list z pieczęcią Starego Obozu. Baal Widjio, po szybkim odczytaniu treści, wezwał Cię do siebie i wręczył zaproszenie – magnaci planują międzyobozowe negocjacje. Wśród zaproszonych frakcji jest i Bractwo Śniącego, a Twoim zadaniem będzie reprezentować jego interesy… nie w pojedynkę. Musisz wybrać drugiego przedstawiciela, kogoś, komu zaufasz i kto nie splami imienia Bractwa przed innymi frakcjami.
+
+Czasu jest mało, a stawka wysoka. Baal Widjio zwołał naradę Guru – każdy z nich ma przedstawić sprawy, które jego zdaniem powinny wybrzmieć na zbliżających się rozmowach. Czy będzie to kwestia przepływu towarów? Dostępu do kopalni? A może rosnące napięcia na granicach wpływów? Musisz słuchać uważnie, ważyć słowa, zapamiętywać więcej niż tylko to, co wypowiedziane. Wkrótce staniesz przed innymi frakcjami jako głos Śniącego – nie możesz pozwolić, by ten głos drżał.
+
+[Wydarzenie negocjacji międzyobozowych ma miejsce o godzinie 18:30 pierwszego dnia gry na zamku Gomeza]
+**Krótki opis**: Obrady na zamku
+**Zaangażowane frakcje**: Guru, Magowie Wody, Magnaci
+
+### Wpis 12
+**Nazwa wątku**: Szepty z głębin
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Pruson
+**Kolejność**: 31
+**Wpis fabularny**: Od kilku dni między kopaczami krąży niepokój, gęsty i ciężki niczym pył w szybie wydobywczym. Coś dzieje się w drugiej brygadzie — nocne krzyki, niepokojące majaczenia, spojrzenia pustsze niż zwykle. Plotki mówią o przekleństwie, może chorobie, może czymś starszym i ciemniejszym niż to, co kryje się w najgłębszych korytarzach kopalni. Inni górnicy, choć z reguły twardzi i małomówni, zaczęli się od nich odsuwać. Zmienili miejsca do spania, przestali dzielić posiłki, jakby obawiali się, że strach i szaleństwo mogą przechodzić jak kaszel czy zaraza.
+
+W tym całym zamęcie jedno imię wraca częściej niż inne — Sebastian. Mag ognia, który zamiast wywyższać się jak reszta kapłanów, nie boi się brudzić rąk w błocie i słuchać jęków z ciemnych zaułków. Mówią, że widziano go w pobliżu kopalni, że rozmawiał z kopaczami, że może próbował pojąć, co trapi drugą brygadę. Jeśli ktoś może rzucić światło na tę sprawę, to on — i być może właśnie Ty powinieneś pierwszy wyciągnąć do niego rękę.
+**Krótki opis**: Wątek magicznego ungudungu w kopalnii
+**Zaangażowane frakcje**: Guru, Magowie Ognia, Kopacze
+
+### Wpis 13
+**Nazwa wątku**: Orcza Notatka
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Pruson
+**Kolejność**: 32
+**Wpis fabularny**: Minęły już miesiące, odkąd czarny troll legł martwy wśród pni, a orcze wrzaski zamilkły w kniejach. Walka została wygrana, lecz jak to bywa w Kolonii – nie wszystko, co pozostaje po trupach, trafia tam, gdzie powinno. W cieniu triumfu ktoś sięgnął po drobiazgi — trofea, amulety, dokumenty, wszystko, co mogło mieć wartość większą niż magiczna ruda: wiedzę. Dopiero teraz dotarła do Ciebie wieść o istnieniu pergaminu, zapisanego w języku orków, z dołączonym szkicem czarnego trolla.
+
+Słysząc to, poczułeś jak w Twoim wnętrzu na nowo zapłonął płomień pytań. Czy to możliwe, że orkowie znaleźli sposób, by ujarzmić tak dziką siłę? Czy to był rytuał, magia, czy coś starszego, sięgającego czasów przed powstaniem kolonii? Twoje źródła mówią jasno – notatka ta ostatnio trafiła w ręce Demwara, surowego mistrza łowców z Nowego Obozu. On nie rozdaje informacji za darmo, a już na pewno nie takich, które mogą zmienić równowagę sił między obozami. Jeśli chcesz poznać sekret orczej dominacji nad potworem, musisz zdobyć pergamin… lub jego kopię.
+**Krótki opis**: Notatka wyjaśniająca skąd orkowie byli w posiadaniu czarnego trola na edycji 2024
+**Zaangażowane frakcje**: Guru
+
+### Wpis 14
+**Nazwa wątku**: Przestroga przed zdradą
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Pruson
+**Kolejność**: 33
+**Wpis fabularny**: W objęciach Zewu Nocy, gdy Twoje ciało trwało w bezruchu, Śniący zesłał Ci wizję – przestrogę, która nie chce opuścić Twoich myśli. Widziałeś nowicjusza Draga, jak z niepokojącą swobodą przekazuje pakunki szkodnikom z Nowego Obozu. Ich dłonie poklepują go po plecach, ich twarze rozświetlają uśmiechy zbyt szczere, by nie kryły zdrady. Nie potrafisz stwierdzić, czy to już się wydarzyło, czy może dopiero się wydarzy – ale instynkt podpowiada Ci jedno: musisz działać.
+
+Potrzebujesz zaufanej osoby, która zdoła dyskretnie patrzeć Dragowi na ręce. Choćby przez kilka dni. To nie miejsce na konfrontacje czy publiczne oskarżenia – to czas obserwacji i rozwagi. Jeśli wizja okaże się prawdą, zdrada zostanie udaremniona. Jeśli zaś była jedynie próbą – to Drago nawet się nie zorientuje, że był bliski upadku.
+**Krótki opis**: Wizja dragowi nie można ufać i należy go śledzić
+**Zaangażowane frakcje**: Guru, Nowicjusze
+
+### Wpis 15
+**Nazwa wątku**: Bez spoczynku dla zdrajcy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Mosir
+**Kolejność**: 30
+**Wpis fabularny**: Nieprzeniknione są ścieżki Śniącego, lecz niektóre sprawy wymagają jasności i stanowczości. Kenneth, którego niegdyś poparłeś, ręcząc za jego gotowość do przyjęcia nauk Bractwa, powrócił… ale nie w taki sposób, w jaki powraca się do światła. Plotki, jakich nie brakuje w cienistych zakamarkach Kolonii, głoszą, że widziano go jako nieumarłego błąkającego się niedaleko Starego Obozu. Mówią też, że zginął raz jeszcze — tym razem na dobre.
+
+Czy w to wierzysz, czy nie, jedno jest pewne: jeśli naprawdę stał się zdrajcą i zbezcześcił dary Śniącego, jego ciało nie może spoczywać w ziemi. Taka hańba woła o oczyszczenie. Musisz dopilnować, by ciało Kennetha zostało odnalezione i poddane rytuałowi oczyszczenia. Niech jego prochy rozwieje wiatr, by nie było po nim śladu. Tak nakazują tradycje, a Ty — jako ten, który kiedyś uznał go za brata — musisz teraz przypieczętować jego ostateczne odejście.
+
+[Z tym wątkiem związany jest event przewidziany na wieczór pierwszego dnia gry - więcej informacji udzieli Ci MG Silva, który opiekuje się tym eventem] 
+**Krótki opis**: Palenie Kennetha
+**Zaangażowane frakcje**: Guru, Nowicjusze
+
+### Wpis 16
+**Nazwa wątku**: Badając niespokojne cienie
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Mosir
+**Kolejność**: 31
+**Wpis fabularny**: W ciszy poranka, w głębi medytacji, a czasem nawet wśród codziennych zajęć – powraca. Wizja, nieprzerwanie ta sama, choć za każdym razem intensywniejsza. Widzisz postać odzianą w szaty Bractwa, ale jej tożsamość pozostaje za zasłoną mgły – jakby sam Śniący chronił Cię przed poznaniem prawdy, zanim nadejdzie właściwa chwila. Najbardziej niepokojący jest jednak cień, który rzuca ta sylwetka – cień, który rośnie z każdą wizją, stając się ciężki i niepokojąco realny.
+
+Nie jest to zwykłe złudzenie – cień tej postaci sięga innych, łączy się z nimi, a wtedy ich światło zaczyna gasnąć. Twarze postaci wokół marnieją, siły uchodzą z ich ciał, jakby sam blask Śniącego został z nich wypchnięty. Wśród niejasnych obrazów i symboli zdołałeś jednak wychwycić jeden pewnik: ta postać jest w Faktorii Bractwa. Być może nieświadoma swego losu… lub świadomie idąca ścieżką, która prowadzi w otchłań. Musisz ją odnaleźć – zanim cień wchłonie wszystko, co Śniący dał temu miejscu.
+**Krótki opis**: Foreshadowing wydarzeń związanych z Ayen
+**Zaangażowane frakcje**: Guru
+
+### Wpis 17
+**Nazwa wątku**: Zew Nocy i Zew Gniewu
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Mosir
+**Kolejność**: 32
+**Wpis fabularny**: Wczorajszy wieczór należał do tych, które kończą się przy dymiącym zewie i towarzystwie godnym zaufania. Ty i nowicjusz Marmarok długo paliliście Zewy Nocy, dzieląc się historiami, wspomnieniami i przemyśleniami, które wypływają z głębin duszy tylko wtedy, gdy ciało odpręża się w chmurach bagiennego ziela. W takiej właśnie chwili nowicjusz wyznał Ci coś, co powinien był zgłosić dużo wcześniej. Powiedział, że widział Gor Totha — Strażnika Świątynnego — klęczącego przed kaplicą Innosa, zatopionego w modlitwie do obcego boga.
+
+Marmarok przeprosił, tłumacząc się zamętem ostatnich dni i własnym zawahaniem, ale Twoja reakcja była natychmiastowa. Choć oczy miałeś przymglone dymem, umysł zapłonął jasnym gniewem. Zdrada w świętym kręgu Bractwa nie może pozostać bez odpowiedzi. Nie ma w Bractwie miejsca na tych, którzy w chwilach zwątpienia zwracają się ku światłu Innosa. Gor Toth odpokutuje, a Ty dopilnujesz, by Śniący otrzymał zadośćuczynienie.
+**Krótki opis**: Niesłuszny osąd
+**Zaangażowane frakcje**: Guru, Strażnicy Świątynni, Nowicjusze
+
+### Wpis 18
+**Nazwa wątku**: Ostrze i Obelisk
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Var
+**Kolejność**: 30
+**Wpis fabularny**: Zew nocy przyniósł Ci wizję, jakiej nie sposób było zignorować – choć zamgloną i urwaną, to jednak pełną potęgi i grozy minionych czasów. Wśród bitewnego zgiełku widziałeś orka o niespotykanej sile, władającego ostrzem, które zdawało się przecinać stal, kość i duszę z równą łatwością. Jego ciosy były szybkie, brutalne, niepowstrzymane – aż wreszcie padł, przytłoczony ciężarem liczebnych przeciwników. Wizja tchnęła echem wojny między orczymi klanami, jakiej Kolonia nie widziała od pokoleń.
+
+Zanim jednak obraz się rozpłynął, wizja ukazała Ci coś jeszcze– kamienny obelisk, z ledwo widocznym, lecz dziwnie znajomym symbolem. Nie wiesz, czym był ten znak, lecz zapadł Ci głęboko  w pamięć. To nie była jedynie wizja krwawej przeszłości – to był znak. Może Śniący wskazał Ci drogę? Ostrze być może wciąż gdzieś spoczywa… a z nim – siła, którą można wykorzystać. Jeśli zdołasz odnaleźć obelisk ze snu, może odnajdziesz także oręż, który raz już przechylił szalę bitwy.
+
+[Do tego wątku przewidziany jest rysunek obelisku który widziałeś w swojej wizji - w celu jego pozyskania zwróć się do swojego MG]
+**Zaangażowane frakcje**: Guru
+
+### Wpis 19
+**Nazwa wątku**: Spotkanie na uboczu
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Var
+**Kolejność**: 31
+**Wpis fabularny**: Bezpieczeństwo Bractwa to dla Ciebie sprawa nadrzędna — nawet jeśli oznacza to działanie poza wiedzą pozostałych Guru. Opracowałeś rytuał, który pozwala wzbudzić w człowieku szczerą, wręcz fanatyczną nienawiść wobec orków. Z pomocą zewu nocy otwierasz umysł ofiary na wizje — brutalne, sugestywne, przerażające spotkania z zielonoskórymi. To ziarno lęku i gniewu pielęgnujesz potem w odosobnieniu, stosując odpowiednie bodźce, by ukształtować lojalnego, gotowego do walki wyznawcę. Wszystko, czego Ci trzeba, trzymasz w niewielkiej, ukrytej skrzynce — Twój prywatny warsztat przemiany słabych w broń Śniącego.
+
+[Na początku gry zgłoś się do swojego MG by pokazał Ci gdzie znajduje się skrzynka zawierająca potrzebne rekwizyty]
+**Krótki opis**: Gracz chce prowadzić scenki z innymi graczami w których będzie ich zamieniał w "fanatyków" w sprawie walki z orkami
+**Zaangażowane frakcje**: Guru, Najemnicy, Strażnicy
+
+### Wpis 20
+**Nazwa wątku**: Gniew Proroka
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Var
+**Kolejność**: 32
+**Wpis fabularny**: Krótko przed Twoim wyniesienim do godności guru, miało miejsce zdarzenie, które — choć na pozór błahe — odcisnęło się w Twojej pamięci wyraźnym piętnem. Szedłeś traktem w stronę starego obozu by dostarczyć magom ognia ich zamówienie na wydzielinę pełzacza, na trakcie spotkałeś maga ognia - Mesmera - wysłanego by odebrać z Bractwa towar który niosłeś. Transakcja przebiegła pomyślnie i gdy żegnałeś się słowami "niech Śniący Ci sprzyja", Mesmer uniósł się i zaczał Tobie oraz Twojemu bogowi ubliżać.
+
+Nie pohamowałeś gniewu. Odruchem, niemal rytuałem upokorzenia, wymierzyłeś mu policzek, zanim jeszcze jego słowa dobrze wybrzmiały. Nie będzie żaden cherlawy chłopek głośno wymawiał takich słów w Twojej obecności. Na trakcie nie było żadych świadków i mimo to, że uderzenie to było słuszne, może kiedyś powrócić do Ciebie echem. W kolonii nie wszyscy zapominają zniewagi, zwłaszcza tych wypowiedzianych dłonią.
+**Krótki opis**: Zniewaga
+**Zaangażowane frakcje**: Magowie Ognia, Guru
+
+### Wpis 21
+**Nazwa wątku**: Sojusz albo Zagłada
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Var
+**Kolejność**: 33
+**Wpis fabularny**: Jako głos Śniącego odpowiedzialny za bezpieczeństwo faktorii, znasz prawdę, której wielu nie chce przyjąć — Twoi wojownicy są lojalni, oddani i gotowi umrzeć w imię Śniącego, lecz to nie wystarczy. Nadchodzi coś, z czym nie poradzi sobie sama wiara ani bagienne ziele. Orkowie gromadzą się u wrót doliny, a wizje proroków nie pozostawiają wątpliwości: wojna nadciąga, bez litości, bez zaproszenia.
+
+Nie jesteś dyplomatą. Nie masz daru układania pięknych słów ani składania pustych obietnic, które tak kochają przywódcy obozów. Ale jesteś odpowiedzialny za życie wszystkich w faktorii — i to wystarcza. Musisz wyjść z bagien i ruszyć ku sercom innych frakcji, wymusić sojusz, choćby niechętny. Czy to najemnicy Kairy, czy strażnicy Gomeza — ktoś musi stanąć z Bractwem ramię w ramię. Bo jeśli nie... zginiecie wszyscy.
+**Krótki opis**: Znalezienie sojuszników militarnych
+**Zaangażowane frakcje**: Guru, Strażnicy Świątynni, Najemnicy, Strażnicy
+
+### Wpis 22
+**Nazwa wątku**: Niepokojące symptomy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Torias
+**Kolejność**: 34
+**Wpis fabularny**: Kilka dni temu byłeś świadkiem czegoś, co zakorzeniło w Twoim sercu niepokój. Jeden z nowicjuszy – bez słowa, bez ostrzeżenia – padł na kolana i zawył z przerażenia, jakby ujrzał samego Śniącego w gniewie. Zabierając go na stronę, by zbadać źródło jego lęku, poczułeś coś... obcego. Coś, czego Twoje arkana nie potrafiły nazwać. Nim jednak skończyłeś, nowicjusz wyrwał się i zniknął w lesie – i od tej pory nie było po nim śladu.
+
+Zacząłeś obserwować innych. I dostrzegłeś wzór.
+
+Ludzie w Faktorii – zmęczeni ponad miarę, rozkojarzeni, z zacinającym się spojrzeniem, jakby wciąż walczyli z czymś w środku. Wyłapałeś trzech, u których symptomy były najbardziej widoczne – Vuka, Marsgara i Szarleja. Vuk umarł w trakcie badań – jego ciało i dusza nie wytrzymały. Marsgar rzucił się na siebie z szałem, rozgryzając własny nadgarstek. Szarlej... uciekł zanim zdążyłeś go przebadać i zaszył się gdzieś między nowicjuszami w faktorii.
+
+Cokolwiek to jest – coś nawiedza umysły wiernych. Coś, co wykańcza ich od środka, karmiąc się ich rozpaczą, strachem i bólem. I choć jego natura pozostaje niejasna, już teraz jest pewne jedno: jeśli go nie powstrzymasz – zacznie zbierać żniwo.
+
+Musisz dowiedzieć się, czym to jest… zanim nie rozsieje się dalej.
+
+[Jest to wątek śledczy, zależy nam na jego w miarę szybkim postępowaniu, trzymaj MG Dymka poinformowanego o postępach by mógł sprawnie moderować wszystkie powiązane wątki]
+**Zaangażowane frakcje**: Guru, Nowicjusze
+
+### Wpis 23
+**Nazwa wątku**: Głupota Godna Oświecenia
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Torias
+**Kolejność**: 33
+**Wpis fabularny**: Magowie ognia i wody lubują się w pięknych słowach i wyniosłych formułach – ich zdaniem tylko wybrane umysły mogą dostąpić zaszczytu zrozumienia tajemnic magii. Ty jednak wiesz, że Śniący nie zsyła daru wyłącznie tym, którzy uważają się za światłych – a prawdziwe przebudzenie może nadejść nawet w najciemniejszym umyśle.
+
+Postanowiłeś udowodnić to całej kolonii.
+
+Twój plan jest prosty: odnaleźć najgłupszego, najbardziej tępego, najprostszego człowieka w Górniczej Dolinie – i uczynić z niego maga. Nie jako żart, lecz jako żywy dowód, że moc Śniącego dostępna jest dla wszystkich, a nie tylko dla tych, co uważają się za wybranych.
+
+Zaproponowałeś swój pomysł Baalowi Widjio. Ten – z wyraźnym rozbawieniem, ale i błyskiem aprobaty w oku – doradził Ci, byś ogłosił konkurs na najgłupszego więźnia Doliny. Nagroda? Nauki magiczne u boku proroka Śniącego.
+
+Wiesz, że wielu się zgłosi – z głupoty, dla żartu, albo dla nagrody. Ale tylko jeden zostanie wybrany. I to właśnie jego umysł ma stać się areną, na której rozegra się pojedynek pomiędzy pychą ludzi a prawdziwym darem boskości.
+**Krótki opis**: Znalezienie ucznia który jest skończonym debilem
+**Zaangażowane frakcje**: Guru, Nowicjusze, Kopacze, Skazańcy, Służący, Krety
+
+### Wpis 24
+**Nazwa wątku**: Siewca niezgody
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Torias
+**Kolejność**: 34
+**Wpis fabularny**: Nie wiesz, co dokładnie doprowadziło do nagłego ochłodzenia relacji między Magami Ognia a Magami Wody, ale wyraźnie widać, że zaufanie między nimi zostało nadwątlone. Tak samo jak w przypadku niepokojącego dystansu między Gomezem a Guru, dotychczasowe porozumienia zostały wywrócone i trwają nowe, nerwowe renegocjacje. W powietrzu czuć okazję – idealny moment, by zaszczepić wątpliwości, posiać podejrzenia i sprawić, że jedna strona zacznie kwestionować intencje drugiej.
+
+Jeśli rozegrasz to umiejętnie, możesz wprowadzić do rozmów ziarno niezgody, które wykiełkuje w nieprzewidzianym kierunku – kierunku zgodnym z interesem Bractwa. Najlepiej będzie, jeśli uda Ci się działać w cieniu, tak by nikt nie skojarzył Twoich intryg z wpływami Śniącego. Bractwo musi pozostać bez skazy w oczach obu frakcji, nawet jeśli to Ty stoisz po cichu za rozbitym porozumieniem.
+**Krótki opis**: Wkurwienie magów ognia
+**Zaangażowane frakcje**: Guru, Magowie Wody, Magowie Ognia
+
+### Wpis 25
+**Nazwa wątku**: Kiedy Ogień Nie Może Płonąć
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Torias
+**Kolejność**: 35
+**Wpis fabularny**: W kaplicy Magów Ognia panuje poruszenie – wielu nowo przyjętych kandydatów przygotowuje się do przejścia na drugi stopień wtajemniczenia. Ich ścieżki różnią się między sobą, lecz każdy z nich musi wykonać ten sam krok: wykucie runy potwierdzającej ich nowy status. To akt symboliczny, ale też praktyczny – bez odpowiedniego materiału i rzemieślniczej pomocy, rytuał nie będzie możliwy do przeprowadzenia.
+
+Są jednak sposoby, by ten ogień przygasł. Wystarczy przekupić kowala, który dotychczas kuł dla nich święte znaki, lub uprzedzić ich i zagarnąć dla siebie wyjątkowo dużą bryłę magicznej rudy – idealnej do rytualnego przetopu. Nawet drobne przeszkody mogą wywołać chaos i niepokój w szeregach adeptów Innosa, szczególnie jeśli uznają, że ich droga została zakłócona przez niewidzialną rękę przeciwnika.
+**Krótki opis**: Wkurwienie magów ognia
+**Zaangażowane frakcje**: Guru, Magowie Ognia
+
+### Wpis 26
+**Nazwa wątku**: Znaleźć wprawnego złodzieja
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Null
+**Kolejność**: 30
+**Wpis fabularny**: Orun był pedantem myśli – nie istniał dzień bez kilku zdań zapisanych pismem równym i drobiazgowym. Skoro nie wrócił do świątyni, a jego dziennik nie trafił w ręce nikogo z bractwa, musiał go gdzieś ukryć... lub ktoś wszedł w jego posiadanie i nie obnosi się z tym. Szukanie go na własną rękę to strata czasu – bez wskazówek lub świadków byłoby to jak szukanie śladu oddechu w zimnej mgle.
+
+Dlatego potrzebne jest inne podejście – takie, które wymaga zręczniejszych dłoni i cichszych kroków. Plotki o istnieniu specjalistów zajmujących się pozyskiwaniem szukanych dóbr krążą po kolonii od miesięcy – ludzie, którzy potrafią zdobyć wszystko, co ukryte, strzeżone albo nieprzeznaczone dla obcych. Nie wiadomo gdzie ich szukać, ale na pewno można ich sprowokować – odpowiednią plotką, ofertą, albo zostawiając przynętę we właściwym miejscu. Czas wykorzystać cień do znalezienia światła.
+**Krótki opis**: Gidia złodziei i notatki oruna
+**Zaangażowane frakcje**: Guru
+
+### Wpis 27
+**Nazwa wątku**: Runa i Pierścień
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Null
+**Kolejność**: 30
+**Wpis fabularny**: Twoja ścieżka ku drugiemu kręgowi wiedzy Śniącego rozpoczyna się od zdobycia dwóch symboli: runy — materialnego dowodu Twojej magicznej biegłości — oraz pierścienia oznaczającego Twój nowy status wśród wybrańców. Wytworzenie runy nie jest jednak prostym rzemiosłem; to rytuał, który wymaga zarówno wiedzy, jak i duchowej gotowości. Guru tacy jak Baal Ayen, Baal Sach i Baal Torias znani są z posiadania własnoręcznie wykutych run — warto szukać u nich nauk, jeśli chcesz przejść ten etap właściwie.
+
+Nie jesteś jednak jedynym, który podąża tą drogą. W kaplicy Magów Ognia również trwają przygotowania do podobnych rytuałów – ich adepci, choć kształceni według innych zasad, także muszą wykuć własną runę, by wejść w drugi krąg. Plotki głoszą, że ich metody różnią się od tych, których uczy Śniący, być może bardziej oparte są na formule, niż wizji. Jeśli uda Ci się przyjrzeć ich rytuałom z bliska, możesz zyskać nowe spojrzenie na to, jak różne ścieżki prowadzą do podobnych prawd.
+**Krótki opis**: Tworzenie runy na ii krąg specjalizacji
+**Zaangażowane frakcje**: Guru, Magowie Ognia
+
+### Wpis 28
+**Nazwa wątku**: Skrzynie towarowe
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Null
+**Kolejność**: 31
+**Wpis fabularny**: Z polecenia Y'beriona zostałeś wysłany do Faktorii Śniącego, by zadbać o dostawę niezbędnych zasobów – żelaza dla świątynnej kuźni oraz jedzenia, którego zapasy dramatycznie się kurczą. Masz dwa dni, zanim kucharze zaczną racjonować żywność i podniosą ceny, co grozi niezadowoleniem wśród wspólnoty. Najłatwiejszą drogą jest handel z Gomezem, lecz mówi się też o przemytnikach omijających jego cła. Bez względu na ścieżkę – masz jasno wyznaczony cel: dostarczyć towary i nie przepłacić, jak czynili to Twoi poprzednicy.
+
+[Na poprzedniej edycji larp gothic bractwo negocjowało ceny w okolicach 400 bryłek rudy za skrzynię towarową]
+**Krótki opis**: Wątek ze skrzyniami towarowymi
+**Zaangażowane frakcje**: Guru
+
+### Wpis 29
+**Nazwa wątku**: Krew nie rdzewieje
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Null
+**Kolejność**: 32
+**Wpis fabularny**: Będąc dzieckiem, nieraz widziałeś, jak Twoja matka wymyka się nocą z dworu. Niosła ze sobą jedzenie, ubrania, drobne monety. Długo nie wiedziałeś, dokąd i po co chodzi. Aż pewnej nocy – nakryła Cię, gdy próbowałeś za nią podążyć. Nie rozgniewała się. Zamiast tego... zabrała Cię ze sobą.
+
+Okazało się, że potajemnie odwiedzała swoją siostrę – kobietę, która zhańbiła dobre imię rodu, wychodząc za mąż za biednego górnika. Wbrew zakazowi rodziny, matka pielęgnowała tę więź, wspierając krewną i jej dzieci.
+
+Tam, po raz pierwszy, zobaczyłeś jak wygląda bieda. I choć wtedy był to świat pełen brudu i niedostatku – był w nim też duch braterstwa, którego nie znałeś w pałacowych korytarzach.
+
+Sielanka skończyła się gwałtownie. Kuzyni – ci, z którymi zdążyłeś się zaprzyjaźnić – namówili Cię do pomocy w kradzieży na targu. Miałeś tylko zagadać sklepikarza… Ale sprawy potoczyły się zbyt szybko. Złodziejstwo wyszło na jaw, a Ty — bez namysłu — uciekłeś. Nie wiesz, co się z nimi stało. Nigdy więcej nie odwiedzałeś tej części miasta.
+
+Lata minęły.
+
+Aż tu — pod Barierą. W sercu Starego Obozu. Wśród magnatów o zatwardziałych sercach i prymitywnych zasadach… rozpoznajesz twarz.
+Nie masz co do tego wątpliwości. Ten, który teraz nosi tytuł Magnusa Żelazne Serce, to jeden z Twoich kuzynów.
+Ten sam, którego zostawiłeś na pastwę losu.
+**Krótki opis**: Magnus jako krewny Baala Nulla
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 30
+**Nazwa wątku**: "Dobrowolność" to kwestia interpretacji
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Null
+**Kolejność**: 33
+**Wpis fabularny**: Wspólnota Bractwa opiera się na wierze, wzajemnym wsparciu i — rzecz jasna — dobrowolnych darowiznach. Ale nie każdy nowicjusz rozumie słowo „dobrowolność” tak, jak powinien.
+
+Niektórzy uważają, że sam fakt przebywania w Faktorii Bractwa wystarcza za zapłatę. Że mogą korzystać z błogosławieństw Śniącego bez dawania nic w zamian. Ty jednak dobrze wiesz, że wspólnota musi się utrzymać. A to oznacza: żelazo, jedzenie, zioła, kadzidła. Wszystko kosztuje.
+
+Na szczęście, masz w zanadrzu parę narzędzi.
+
+Pasco, Huugo i Kira – troje Cieni, którzy częściej niż inni ulegają wpływowi bagiennego ziela. Lubią towar, a w zamian… chętnie „dopilnują”, by kilku opornych nowicjuszy zrozumiało głębiej sens „dobrowolności”.
+
+Zdarzają się przecież nieszczęśliwe wypadki. Skaleczenie przy ścinaniu trzciny. Potknięcie się na stromym zejściu. Oparzenie od źle zgaszonego kadzidła.
+Każdy z takich przypadków daje do myślenia.
+I — co najważniejsze — nie brudzi Ci rąk.
+**Krótki opis**: Osiłkowie za bagienne ziele
+**Zaangażowane frakcje**: Nowicjusze, Guru, Cienie
+
+### Wpis 31
+**Nazwa wątku**: Koniec z przymykaniem oka
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Null
+**Kolejność**: 34
+**Wpis fabularny**: Z pozoru niewinny dym unoszący się nad cieniową chatą nie wzbudzał niepokoju – apteka miała swoją wodną fajkę, z której korzystano po pracy, a ziele pochodziło z Faktorii Bractwa, jak przystało. Jednak ostatnimi czasy coś się zmieniło – coraz częściej dochodzą Cię szepty, że znów widać opary, a nikt z Faktorii nie dostarczał tam ziela.
+
+Wygląda na to, że jeden lub dwóch cieni z apteki postanowiło wejść w "biznes" na własną rękę, być może z pomocą nielegalnych źródeł lub kontaktów poza obozem. Mimo że to psy Gomeza i działają na jego terenie, nie mogą zapominać, kto tak naprawdę kontroluje przepływ towaru. Jeżeli chcą dalej uprawiać swoje palarniane interesy, ruda za ich ziele powinna płynąć do Bractwa, nie do ich własnych sakiewek. Czas przypomnieć im, kto w tej dolinie naprawdę rozumie, czym jest wola Śniącego.
+**Zaangażowane frakcje**: Guru, Cienie
+
+### Wpis 32
+**Nazwa wątku**: Przestroga
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Sach
+**Kolejność**: 30
+**Wpis fabularny**: Niedawno po zapaleniu Zewu Nocy doświadczyłeś wizji – gęsty, nieprzenikniony dym wypełniał przestrzeń wokół Ciebie, a wśród niego majaczyły rozmazane sylwetki. Niektóre z nich bez wątpienia nosiły szaty nowicjuszy. Widziałeś błysk bryłek magicznej rudy przekazywanej z rąk do rąk — w zamian za coś, czego nie potrafiłeś dostrzec. Dym był gryzący, ciężki, niemal duszący, ale niósł ze sobą znajomy, ziołowy aromat.
+
+Gdy wizja dobiegła końca, w Twoim sercu zagościło przeczucie. Coś tu się dzieje — poza wiedzą Guru, poza okiem Bractwa. Może to jedynie ostrzeżenie… a może wskazówka. Wiesz jedno: tam, gdzie płynie ruda bez wiedzy Przełożonych, tam pojawiają się Węże. A Ty właśnie ich śladów wypatrujesz.
+**Krótki opis**: Wężowa wizja
+**Zaangażowane frakcje**: Guru, Nowicjusze
+
+### Wpis 33
+**Nazwa wątku**: Coś śmierdzi w Nowym Obozie... i to nie chodzi o szkodników.
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Sach
+**Kolejność**: 31
+**Wpis fabularny**: Nowy Obóz rozpoczął uprawę pól ryżowych niemal pod samymi murami Starego Obozu. Widziałeś ich plantacje — ryż potrzebuje wilgoci i miękkiej, błotnistej ziemi, a teren wokół to sucha, zbita gleba, której nawet kilof nie bierze łatwo. Sprowadzili krety, przekopali ziemię, zaczęli regularnie zalewać teren wodą — ogromny nakład pracy jak na kilka worków ryżu więcej.
+
+Zbyt duży trud, by chodziło tylko o jedzenie. Czujesz, że pod powierzchnią tej sprawy kryje się coś więcej — coś, co zakopano głęboko, a może właśnie próbuje się odkopać. Coś, co nie powinno ujrzeć światła dziennego.
+**Krótki opis**: Zachęcenie Sacha do przyjżenia się motywom NO i plantacjom ryżu
+**Zaangażowane frakcje**: Guru, Magowie Wody, Krety, Szkodniki
+
+### Wpis 34
+**Nazwa wątku**: Zasianie ziarna wiary
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Sach
+**Kolejność**: 32
+**Wpis fabularny**: Pod kopalnią starego obozu tli się istny kocioł gniewu, biedy i rozczarowania – miejsce, gdzie wpływ strażników jest słaby, a resztki autorytetu Magnatów topnieją szybciej niż złudzenia tych, którzy tam trafili. To właśnie tam – pośród brudu, głodu i upokorzenia – serca są najbardziej otwarte na szept Śniącego. Tam narodzić się może nowa fala wyznawców, lojalnych nie wobec obozu, lecz wobec nowego boga.
+
+Potrzeba jednak kogoś, kto będzie tym ogniem zarządzał – niegdyś zajmował się tym Średni Jeff, lecz odkąd został przywrócony do świątyni, nie ma nikogo, kto zebrałby nowicjuszy pod wspólnym sztandarem. A ci są potrzebni – jako sprzedawcy bagiennego ziela, ale też zwiastuni nauk. Ich obecność w slumsach mogłaby być nie tylko narzędziem ekspansji wiary, lecz również sposobem na osłabienie pozycji strażników i zasianie niepokoju wśród lojalistów Gomeza.
+
+Być może czas powołać nowy zbór, który pod Twoim nadzorem regularnie zapuszczaliby się do slumsów. Głosiliby słowo Śniącego, zapraszali na wspólne modły, częstowali zielem i oferowali chwilę ukojenia w Faktorii. Slumsy mogą stać się źródłem siły – trzeba tylko podać rękę tym, którzy w ciemności szukają sensu.
+
+Masz już na oku kilku kandydatów, nowicjuszy którzy robili to już w przeszłości lub ich cechy byłyby przydatne w tej sprawie, są to chociażby: Cormac, Cefre, Milo, Traszka, Vik czy Yeelena.
+**Krótki opis**: Sach - grupa agitacyjna, która Slumsy wydają się świetnym miejscem, żeby rekrutować desperatów.
+Ulotki, napisać do Domingo, daty modłów
+**Zaangażowane frakcje**: Guru, Nowicjusze
+
+### Wpis 35
+**Nazwa wątku**: Przydatni nowicjusze
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Sach
+**Kolejność**: 35
+**Wpis fabularny**: W świecie pełnym półprawd, szemranych interesów i cieni sunących po obrzeżach ognisk – informacja jest walutą cenniejszą od rudy. Na szczęście masz narzędzia, które potrafią ją wydobywać. Nowicjusze, choć niskiego stanu, często są właśnie tam, gdzie dzieją się sprawy istotne – i potrafią słuchać uważniej niż ci, którzy już zapomnieli smak strachu przed porażką.
+
+Nowicjuszka Sardine od dawna wykazuje się bystrością i chęcią służenia sprawie Śniącego. A cały zbór Felixa – niegdyś znany pod mianem zboru Szkorbuta – Feliks, Klaus, Zysk i Lamas, to już zaufane imiona, które nieraz dowiodły swojej wartości. Jeśli w kolonii coś się dzieje, istnieje duża szansa, że jedno z nich będzie o tym wiedzieć. Trzeba tylko umieć zapytać – i odpowiednio nagrodzić.
+**Zaangażowane frakcje**: Guru, Nowicjusze
+
+### Wpis 36
+**Nazwa wątku**: Słabe Ogniwa - Kopacze
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Sach
+**Kolejność**: 36
+**Wpis fabularny**: Liziel 
+
+Liziel to kopacz o wyjątkowo luźnym języku — mówi dużo, czasem za dużo, ale wśród potoku słów potrafi rzucić coś, co może się przydać. Zasłyszane informacje wskazują, że rozważa dołączenie do Bractwa Śniącego. To okazja, by wykorzystać jego gadatliwość: stwórz sytuację, w której będzie musiał się wykazać i pokazać swoją użyteczność. Może przysłużyć się Bractwu — albo przynajmniej zasłużyć na to, by mieć go na oku.
+
+Zguba
+
+Kopaczka znana jako Zguba nie raz już korzystała z łaski Faktorii Bractwa — ukrywając się tu przed strażnikami i uciekając od ciężaru kilofa. Do tej pory nikt nie rozliczył jej z tej gościnności... ale wszystko ma swoją cenę. Nadszedł czas, by przypomnieć Zgubie, że dług wobec Bractwa nie jest czymś, co można tak po prostu zignorować. Może być użyteczna — czy to jako informator, posłaniec, czy narzędzie w rękach Śniącego.
+**Zaangażowane frakcje**: Guru, Kopacze
+
+### Wpis 37
+**Nazwa wątku**: Słabe Ogniwa - Szkodnicy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Sach
+**Kolejność**: 37
+**Wpis fabularny**: Billy
+
+Billy, znany szkodnik z Nowego Obozu, ostatnio coraz częściej zagląda do kufla, a z niego wylewa się znużenie i zawód. Mówi, że ma dość wiecznego balansowania między bandytami a wodnymi kaznodziejami, ale nie wie, gdzie indziej uderzyć. To okazja – możesz podsunąć mu nową drogę: Bractwo Śniącego, schronienie, zrozumienie, cel… w zamian za jedną, konkretną przysługę, której ciężar sam mu przedstawisz we właściwym czasie.
+
+Boron
+
+Szkodnik Boron ma renomę handlarza informacjami – śliski typ, ale jego obrotność może być przydatna. Choć nie budzi zaufania, to do tej pory utrzymywał pozytywne relacje z Bractwem. Za odpowiednią zachętą – czy to w rzemiennej sakiewce, czy w złożonej obietnicy – może być skory podzielić się tym, co wie… a podobno wie dużo. Może znać tajemnice Starego Obozu, tropy przemytników, a może nawet imiona tych, którzy za dużo mówią. To ktoś, kto nie działa z lojalności – ale potrafi rozpoznać, gdzie wieje silniejszy wiatr. 
+
+Wiley
+
+Wiley to znany w Nowym Obozie łowca — nie tyle ze skuteczności, co z desperacji. By zdobyć rudę, ryżówkę czy bagienne ziele, gotów jest przyjąć każde zlecenie, bez względu na ryzyko. Jego uzależnienia czynią go niestabilnym, ale jednocześnie podatnym na wpływ. Jeśli umiejętnie pociągniesz za sznurki, może stać się Twoim narzędziem — zwiadowcą, sabotażystą, a może nawet ofiarą złożoną w imię większego planu.
+**Zaangażowane frakcje**: Guru, Szkodniki
+
+### Wpis 38
+**Nazwa wątku**: Słabe Ogniwa - Służący
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Sach
+**Kolejność**: 38
+**Wpis fabularny**: Knot
+
+Jeden ze służących w zamku Gomeza — zwany Knotem — nie potrafił utrzymać języka za zębami, gdy wino rozwiązało mu usta. Z Twoich informacji wynika, że zieje pogardą do Magnatów, którym służy, a jego słowa ociekały goryczą lat upokorzeń. Tli się w nim wściekłość, która tylko czeka, by ktoś nadał jej kierunek.
+
+Możesz go zlekceważyć jak kolejnego pijaka... albo zrobić z niego narzędzie. Knot może nie zna wielkich sekretów, ale czasem wystarczy jeden odpowiedni gest, by ktoś taki podłożył ogień pod całą strukturę.
+
+Anik
+
+Anik — służący w zamku Gomeza — miał być jednorazowym źródłem informacji. Przynosił plotki i drobne wieści, nic istotnego, ale za zielonego nowicjusza był wdzięczny jak pies za kość. Z czasem jednak jego głód się zmienił — już nie dla przysługi, nie z lojalności, tylko dla ziela. Teraz zjawia się regularnie, bełkocząc półprawdy, domysły, własne majaki, byle tylko dostać kolejnego skręta.
+
+Zrobił się bezużyteczny. Ale może jeszcze raz uda Ci się go wykorzystać — zanim całkiem przestanie odróżniać wizje od rzeczywistości.
+
+Tanka
+
+Tanka — służąca Gomeza, a według doniesień Twoich ludzi, bardziej lojalna samej sobie niż komukolwiek w zamku. Mówią, że potrafi zniknąć między korytarzami tak cicho, jakby znała wszystkie ich sekrety. Często wysyłana do komnat Alvareza — magnata, który wie więcej niż mówi i mówi więcej, niż powinien. Jeśli dobrze rozegrasz karty i zaoferujesz jej coś, czego naprawdę potrzebuje, możesz zyskać informatora o dostępie do najcenniejszych rozmów w kolonii.
+
+Zrzuć z siebie pasożyta, jakim stał się Anik, i zajmij się czymś, co może faktycznie przynieść owoce.
+**Zaangażowane frakcje**: Służący, Guru
+
+### Wpis 39
+**Nazwa wątku**: Słabe Ogniwa - cienie
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Sach
+**Kolejność**: 39
+**Wpis fabularny**: Huugo
+
+Huugo to cień o reputacji tak chwiejnej, jak jego spojrzenie po czwartym skręcie bagiennego ziela. Mówi się, że jego lojalność nie jest kwestią przekonań czy ideologii – a wyłącznie tego, kto jest w stanie zasponsorować mu kolejną działkę. Na razie jego kieszeń dźwięczy od rudy wystarczającej, by zaspokoić głód, więc trzyma się Starego Obozu. Jednak każdy, kto zna głód pustki, wie że lojalność Huugo kończy się tam, gdzie kończy się zawartość jego sakiewki.
+
+Wystarczy, że ktoś z odpowiednią ilością dobrego towaru wskaże mu nowy kierunek – a stanie się on narzędziem gotowym do wykorzystania, plugawym, niestabilnym, ale skutecznym, jeśli poprowadzi się go z wyczuciem. Idealny pionek dla tych, którzy potrafią grać brudno, nie brudząc sobie rąk.
+**Zaangażowane frakcje**: Guru, Cienie
+
+### Wpis 40
+**Nazwa wątku**: Traszka - Medium
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Guru
+**Kolejność**: 11
+**Wpis fabularny**: „Nowicjuszka Traszka posiada wybitne zdolności alchemiczne i nietypową wrażliwość duchową, jednak cechuje się znaczną niestabilnością emocjonalną oraz nieprzewidywalnością rytualną. Jej fanatyzm może prowadzić do niekontrolowanych sytuacji, zwłaszcza w warunkach silnych rytuałów grupowych. Jeśli zostanie użyta jako medium – realne jest ryzyko trwałego uszczerbku na zdrowiu, a nawet śmierci. Należy traktować ją jako narzędzie o wysokim potencjale i równie wysokim zagrożeniu.”
+**Zaangażowane frakcje**: Guru, Nowicjusze
+
+### Wpis 41
+**Nazwa wątku**: Wykuwanie magicznych run
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Specjalizacja Runiczna
+**Kolejność**: 29
+**Wpis fabularny**: [Na grze gracze mogą się zgłosić z pytaniem dotyczących tworzenia nowych run magicznych.
+Jako specjalista w magii runicznej wiesz, że by stworzyć nową runę potrzebne jest skorzystanie z mechaniki tworzenia magicznych przedmiotów (podręcznik gracza) oraz pustej runy.
+Pustą runę można wykuć na przykład u kowala - zanosząc mu bryłę magicznej rudy o wielkości przypominającej zaciśniętą pięść]
+**Zaangażowane frakcje**: Guru
+
+### Wpis 42
+**Nazwa wątku**: Ogród w Starym Obozie... ożył?
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Baal Torias
+**Kolejność**: 36
+**Wpis fabularny**: Jakiś czas temu zostałeś zaproszony do Starego Obozu przez niejakiego Harolda. Gość dość tajemniczy, niby słyszałeś, że od lat prowadził dobrze prosperujący kram oraz ogród ale co Tobie do tego? Z ciekawości, albo na podstawie plotek o tym Cieniu poszedłeś i jakież było Twoje zdziwienie widząc na nim tatuaże Śniącego, które chyba nie wszystkim wpadły w oczy. Cośtam gadał o ziemi i swojej rzepie, a w powietrzu faktycznie czuć było aurę jedności z naturą co wręcz uderzyło Cię gdy wyciągnął jakiś stary zwój i wypowiedział niezrozumiałe do końca słowa których jak się okazało - sam nie znał. Cień w jednej chwili stał, w drugiej jakby zmienił stan skupienia i zlał się w glebę. Wydawało się, że oto byliście świadkami końca Harolda.
+Co się więc podziało w Starym Obozie, że podobno ostatnimi czasy niepielony ogród zaczął... jęczeć??? Zdarza się, że całą noc coś wyje jakby niewiernego Nowicjusza na rzeź prowadził sam Gor na Kagan. Byłeś świadkiem sytuacji która mogła być powodem aktualnych wydarzeń...
+[Jeśli ktoś przyjdzie do Ciebie prosząc o pomoc - nie odmawiaj im i zobacz co da się zrobić]
+**Krótki opis**: [Wpisał Mortis] - kontynuacja wątku Ogrodu Harolda
+**Zaangażowane frakcje**: Cienie, Guru
+
+## Arkusz: Data_Validation
+----------------------------------------
+
+### Wpis 1
+**Klasa**: Grupa
+**Nie**: Tak
+**#REF!**: Nie
+**Przyjaciele Oruna**: Wrogowie Oruna
+**Przyjaciele Oruna**: Wrogowie Oruna
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Przyjaciele Oruna**: Wrogowie Oruna
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+**Baal Mosir**: Baal Sach
+
+### Wpis 2
+**Klasa**: Postać
+**Nie**: Nie
+**#REF!**: Nie
+**Przyjaciele Oruna**: Magiczne sympozjum
+**Przyjaciele Oruna**: Magiczne sympozjum
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Przyjaciele Oruna**: Magiczne sympozjum
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+**Baal Mosir**: Baal Pruson
+
+### Wpis 3
+**#REF!**: #REF!
+**Przyjaciele Oruna**: Specjalizacja Runiczna
+**Przyjaciele Oruna**: Specjalizacja Runiczna
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Przyjaciele Oruna**: Specjalizacja Runiczna
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+**Baal Mosir**: Baal Torias
+
+### Wpis 4
+**Klasa**: Guru
+**#REF!**: Tak
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+**Baal Mosir**: Baal Ayen
+
+### Wpis 5
+**#REF!**: Tak
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+**Baal Mosir**: Baal Var
+
+### Wpis 6
+**Klasa**: Skazańcy
+**#REF!**: Nie
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+**Baal Mosir**: Baal Null
+
+### Wpis 7
+**Klasa**: Kopacze
+**#REF!**: Nie
+
+### Wpis 8
+**Klasa**: Służący
+**#REF!**: Nie
+
+### Wpis 9
+**Klasa**: Cienie
+**#REF!**: #REF!
+
+### Wpis 10
+**Klasa**: Strażnicy
+**#REF!**: #REF!
+
+### Wpis 11
+**Klasa**: Magowie Ognia
+**#REF!**: #REF!
+
+### Wpis 12
+**Klasa**: Magnaci
+**#REF!**: Nie
+
+### Wpis 13
+**Klasa**: Krety
+**#REF!**: Nie
+
+### Wpis 14
+**Klasa**: Szkodniki
+**#REF!**: Nie
+
+### Wpis 15
+**Klasa**: Najemnicy
+**#REF!**: Nie
+
+### Wpis 16
+**Klasa**: Magowie Wody
+**#REF!**: Nie
+
+### Wpis 17
+**Klasa**: Nowicjusze
+**#REF!**: Nie
+
+### Wpis 18
+**Klasa**: Strażnicy Świątynni
+**#REF!**: Nie
+
+### Wpis 19
+**Klasa**: Guru
+**#REF!**: Nie
+
+### Wpis 20
+**#REF!**: Nie
+
+### Wpis 21
+**Klasa**: Khorinis
+**Nie**: Miasto Khorinis
+**#REF!**: Nie
+
+### Wpis 22
+**Nie**: Farmy
+**#REF!**: Nie
+
+### Wpis 23
+**Klasa**: Myrtana
+**Nie**: Ardea
+**#REF!**: Nie
+
+### Wpis 24
+**Nie**: Cape Dun
+**#REF!**: Nie
+
+### Wpis 25
+**Nie**: Montera
+**#REF!**: #REF!
+
+### Wpis 26
+**Nie**: Vengard
+**#REF!**: Nie
+
+### Wpis 27
+**Nie**: Silden
+**#REF!**: #REF!
+
+### Wpis 28
+**Nie**: Geldern
+**#REF!**: #REF!
+
+### Wpis 29
+**Nie**: Faring
+**#REF!**: #REF!
+
+### Wpis 30
+**Nie**: Gotha
+**#REF!**: #REF!
+
+### Wpis 31
+**Nie**: Trelis
+**#REF!**: #REF!
+
+### Wpis 32
+**Klasa**: Varant
+**Nie**: Ishtar
+**#REF!**: Nie
+
+### Wpis 33
+**Nie**: Mora Sul
+**#REF!**: Nie
+
+### Wpis 34
+**Nie**: Bakaresh
+**#REF!**: Nie
+
+### Wpis 35
+**Nie**: Braga
+**#REF!**: Nie
+
+### Wpis 36
+**Nie**: Ben Erai
+**#REF!**: Nie
+
+### Wpis 37
+**Nie**: Lago
+**#REF!**: Nie
+
+### Wpis 38
+**Nie**: Ben Sala
+**#REF!**: Nie
+
+### Wpis 39
+**Klasa**: Archolos
+**Nie**: Miasto Archolos
+**#REF!**: Tak
+
+### Wpis 40
+**Nie**: Silbach
+**#REF!**: Nie
+
+### Wpis 41
+**Nie**: Wilcze Leże
+**#REF!**: Nie
+
+### Wpis 42
+**Nie**: Winnica Rity
+**#REF!**: Nie
+
+### Wpis 43
+**Nie**: Winnica Valerio
+**#REF!**: Nie
+
+### Wpis 44
+**Klasa**: Nordmar
+**Nie**: Klan Młota
+**#REF!**: Nie
+
+### Wpis 45
+**Nie**: Klan Ognia
+**#REF!**: Nie
+
+### Wpis 46
+**Nie**: Klan Wilka
+**#REF!**: Nie
+
+### Wpis 47
+**Klasa**: Wyspy Południowe
+**Nie**: Wyspy Południowe
+**#REF!**: Nie
+
+### Wpis 48
+**Klasa**: Wschodni Archipelag
+**Nie**: Wschodni Archipelag
+**#REF!**: Nie
+
+### Wpis 49
+**#REF!**: Nie
+
+### Wpis 50
+**#REF!**: Nie
+
+### Wpis 51
+**#REF!**: Nie
+
+### Wpis 52
+**#REF!**: Nie
+
+### Wpis 53
+**#REF!**: Nie
+
+### Wpis 54
+**#REF!**: Nie
+
+### Wpis 55
+**#REF!**: Nie
+
+### Wpis 56
+**#REF!**: Nie
+
+### Wpis 57
+**#REF!**: Nie
+
+### Wpis 58
+**#REF!**: Nie
+
+### Wpis 59
+**#REF!**: Nie
+
+### Wpis 60
+**#REF!**: Nie
+
+### Wpis 61
+**#REF!**: Nie
+
+### Wpis 62
+**#REF!**: Nie
+
+### Wpis 63
+**#REF!**: Nie
+
+### Wpis 64
+**#REF!**: Nie
+
+### Wpis 65
+**#REF!**: Nie
+
+### Wpis 66
+**#REF!**: Nie
+
+### Wpis 67
+**#REF!**: Nie
+
+### Wpis 68
+**#REF!**: Nie
+
+### Wpis 69
+**#REF!**: Nie
+
+### Wpis 70
+**#REF!**: Nie
+
+### Wpis 71
+**#REF!**: Nie
+
+### Wpis 72
+**#REF!**: Nie
+
+### Wpis 73
+**#REF!**: Nie
+
+### Wpis 74
+**#REF!**: Nie
+
+### Wpis 75
+**#REF!**: Nie
+
+### Wpis 76
+**#REF!**: Nie
+
+### Wpis 77
+**#REF!**: Nie
+
+### Wpis 78
+**#REF!**: Nie
+
+### Wpis 79
+**#REF!**: Nie
+
+### Wpis 80
+**#REF!**: Nie
+
+### Wpis 81
+**#REF!**: Nie
+
+### Wpis 82
+**#REF!**: Nie
+
+### Wpis 83
+**#REF!**: Nie
+
+### Wpis 84
+**#REF!**: Nie
+
+### Wpis 85
+**#REF!**: Nie
+
+### Wpis 86
+**#REF!**: Nie
+
+### Wpis 87
+**#REF!**: Nie
+
+### Wpis 88
+**#REF!**: Nie
+
+### Wpis 89
+**#REF!**: Nie
+
+### Wpis 90
+**#REF!**: Nie
+
+### Wpis 91
+**#REF!**: Nie
+
+### Wpis 92
+**#REF!**: Nie
+
+### Wpis 93
+**#REF!**: Nie
+
+### Wpis 94
+**#REF!**: Nie
+
+### Wpis 95
+**#REF!**: Nie
+
+### Wpis 96
+**#REF!**: Nie
+
+### Wpis 97
+**#REF!**: Nie
+
+### Wpis 98
+**#REF!**: Nie
+
+### Wpis 99
+**#REF!**: Nie
+
+### Wpis 100
+**#REF!**: Nie
+
+### Wpis 101
+**#REF!**: Nie
+
+### Wpis 102
+**#REF!**: Nie
+
+### Wpis 103
+**#REF!**: Nie
+
+### Wpis 104
+**#REF!**: Nie
+
+### Wpis 105
+**#REF!**: Nie
+
+### Wpis 106
+**#REF!**: Nie
+
+### Wpis 107
+**#REF!**: Nie
+
+### Wpis 108
+**#REF!**: Nie
+
+### Wpis 109
+**#REF!**: Nie
+
+### Wpis 110
+**#REF!**: Nie
+
+### Wpis 111
+**#REF!**: Nie
+
+### Wpis 112
+**#REF!**: Nie
+
+### Wpis 113
+**#REF!**: Nie
+
+### Wpis 114
+**#REF!**: Nie
+
+### Wpis 115
+**#REF!**: Nie
+
+### Wpis 116
+**#REF!**: Nie
+
+### Wpis 117
+**#REF!**: Nie
+
+### Wpis 118
+**#REF!**: Nie
+
+### Wpis 119
+**#REF!**: Nie
+
+### Wpis 120
+**#REF!**: Nie
+
+### Wpis 121
+**#REF!**: Nie
+
+### Wpis 122
+**#REF!**: Nie
+
+### Wpis 123
+**#REF!**: Nie
+
+### Wpis 124
+**#REF!**: Nie
+
+### Wpis 125
+**#REF!**: Nie
+
+### Wpis 126
+**#REF!**: Nie
+
+### Wpis 127
+**#REF!**: Nie
+
+### Wpis 128
+**#REF!**: Nie
+
+### Wpis 129
+**#REF!**: Nie
+
+### Wpis 130
+**#REF!**: Nie
+
+### Wpis 131
+**#REF!**: Nie
+
+### Wpis 132
+**#REF!**: Nie
+
+### Wpis 133
+**#REF!**: Nie
+
+### Wpis 134
+**#REF!**: Nie
+
+### Wpis 135
+**#REF!**: Nie
+
+### Wpis 136
+**#REF!**: Nie
+
+### Wpis 137
+**#REF!**: Nie
+
+### Wpis 138
+**#REF!**: Nie
+
+### Wpis 139
+**#REF!**: Nie
+
+### Wpis 140
+**#REF!**: Nie
+
+### Wpis 141
+**#REF!**: Nie
+
+### Wpis 142
+**#REF!**: Nie
+
+### Wpis 143
+**#REF!**: Nie
+
+### Wpis 144
+**#REF!**: Nie
+
+### Wpis 145
+**#REF!**: Nie
+
+### Wpis 146
+**#REF!**: Nie
+
+### Wpis 147
+**#REF!**: Nie
+
+### Wpis 148
+**#REF!**: Nie
+
+### Wpis 149
+**#REF!**: Nie
+
+### Wpis 150
+**#REF!**: Nie
+
+### Wpis 151
+**#REF!**: Nie
+
+### Wpis 152
+**#REF!**: Nie
+
+### Wpis 153
+**#REF!**: Nie
+
+### Wpis 154
+**#REF!**: Nie
+
+### Wpis 155
+**#REF!**: Nie
+
+### Wpis 156
+**#REF!**: Nie
+
+### Wpis 157
+**#REF!**: Nie
+
+### Wpis 158
+**#REF!**: Nie
+
+### Wpis 159
+**#REF!**: Nie
+
+### Wpis 160
+**#REF!**: Nie
+
+### Wpis 161
+**#REF!**: Nie
+
+### Wpis 162
+**#REF!**: Nie
+
+### Wpis 163
+**#REF!**: Nie
+
+### Wpis 164
+**#REF!**: Nie
+
+### Wpis 165
+**#REF!**: Nie
+
+### Wpis 166
+**#REF!**: Nie
+
+### Wpis 167
+**#REF!**: Nie
+
+### Wpis 168
+**#REF!**: Nie
+
+### Wpis 169
+**#REF!**: Nie
+
+### Wpis 170
+**#REF!**: Nie
+
+### Wpis 171
+**#REF!**: Nie
+
+### Wpis 172
+**#REF!**: Nie
+
+### Wpis 173
+**#REF!**: Nie
+
+### Wpis 174
+**#REF!**: Nie
+
+### Wpis 175
+**#REF!**: Nie
+
+### Wpis 176
+**#REF!**: Nie
+
+### Wpis 177
+**#REF!**: Nie
+
+### Wpis 178
+**#REF!**: Nie
+
+### Wpis 179
+**#REF!**: Nie
+
+### Wpis 180
+**#REF!**: Nie
+
+### Wpis 181
+**#REF!**: Nie
+
+### Wpis 182
+**#REF!**: Nie
+
+### Wpis 183
+**#REF!**: Nie
+
+### Wpis 184
+**#REF!**: Nie
+
+### Wpis 185
+**#REF!**: Nie
+
+### Wpis 186
+**#REF!**: Nie
+
+### Wpis 187
+**#REF!**: Nie
+
+### Wpis 188
+**#REF!**: Nie
+
+### Wpis 189
+**#REF!**: Nie
+
+### Wpis 190
+**#REF!**: Nie
+
+### Wpis 191
+**#REF!**: Nie
+
+### Wpis 192
+**#REF!**: Nie
+
+### Wpis 193
+**#REF!**: Nie
+
+### Wpis 194
+**#REF!**: Nie
+
+### Wpis 195
+**#REF!**: Nie
+
+### Wpis 196
+**#REF!**: Nie
+
+### Wpis 197
+**#REF!**: Nie
+
+### Wpis 198
+**#REF!**: Nie
+
+### Wpis 200
+**Klasa**: #REF!
+**Nie**: Ardea
+**#REF!**: Miasto Khorinis
+**#REF!**: Miasto Archolos
+**Guru**: Miasto Khorinis
+**Guru**: false
+**#REF!**: false
+**Przyjaciele Oruna**: false
+**Przyjaciele Oruna**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**#REF!**: false
+**#REF!**: false
+**#REF!**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**#REF!**: false
+**Baal Mosir**: false
+**#REF!**: false
+**#REF!**: false
+**#REF!**: false
+**#REF!**: false
+**#REF!**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Guru**: false
+**Przyjaciele Oruna**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+**Baal Mosir**: false
+
+### Wpis 201
+**Nie**: Cape Dun
+**#REF!**: Farmy
+**#REF!**: Silbach
+**Guru**: Farmy
+
+### Wpis 202
+**Nie**: Montera
+**#REF!**: Wilcze Leże
+
+### Wpis 203
+**Nie**: Vengard
+**#REF!**: Winnica Rity
+
+### Wpis 204
+**Nie**: Silden
+**#REF!**: Winnica Valerio
+
+### Wpis 205
+**Nie**: Geldern
+
+### Wpis 206
+**Nie**: Faring
+
+### Wpis 207
+**Nie**: Gotha
+
+### Wpis 208
+**Nie**: Trelis
+

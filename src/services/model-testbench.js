@@ -3,7 +3,7 @@
  * @description Automatyczny framework do testowania i porównywania modeli Ollama
  */
 
-const ollamaService = require('./ollama');
+const ollamaService = require('./ollama-client'); // Using official ollama npm library
 const promptBuilder = require('../prompts/prompt-builder');
 const testScenarios = require('./test-scenarios');
 const logger = require('../shared/logger');

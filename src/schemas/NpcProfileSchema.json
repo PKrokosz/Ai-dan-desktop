@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": [
+        "imie",
+        "relacje"
+    ],
+    "properties": {
+        "imie": {
+            "type": "string",
+            "description": "Imię postaci NPC"
+        },
+        "frakcja": {
+            "type": "string",
+            "enum": [
+                "Stary Obóz",
+                "Nowy Obóz",
+                "Bractwo Śniącego",
+                "Magowie Ognia",
+                "Magowie Wody",
+                "Strażnicy",
+                "Najemnicy",
+                "Szkodniki",
+                "Kopacze",
+                "Neutralni"
+            ],
+            "description": "Przynależność frakcyjna"
+        },
+        "ranga": {
+            "type": "string",
+            "description": "Pozycja w hierarchii frakcji"
+        },
+        "relacje": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "osoba": {
+                        "type": "string"
+                    },
+                    "typ": {
+                        "type": "string",
+                        "enum": [
+                            "sojusznik",
+                            "wróg",
+                            "rywal",
+                            "przyjaciel",
+                            "dłużnik",
+                            "wierzyciel",
+                            "podwładny",
+                            "przełożony"
+                        ]
+                    },
+                    "opis": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "osoba",
+                    "typ"
+                ]
+            },
+            "description": "Powiązania z innymi postaciami"
+        },
+        "znajomi": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Lista imion znajomych NPC"
+        },
+        "sekrety": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Ukryte informacje o NPC"
+        },
+        "cele": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Ambicje i dążenia NPC"
+        }
+    }
+}

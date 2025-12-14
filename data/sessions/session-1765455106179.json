@@ -1,0 +1,16 @@
+{
+  "id": "session-1765455106179",
+  "profileName": "Baal Ayen",
+  "startTime": 1765455106179,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: extract_traits",
+      "timestamp": 1765455106183
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

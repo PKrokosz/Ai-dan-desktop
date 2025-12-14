@@ -1,0 +1,71 @@
+{
+  "id": "conv-1765321035586-zmz80h",
+  "profileName": "Azyl",
+  "stage": "DISCOVERY",
+  "createdAt": "2025-12-09T22:57:15.586Z",
+  "lastModified": 1765321320688,
+  "version": 19,
+  "questionsAsked": 5,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765321035590
+    },
+    {
+      "role": "ai",
+      "content": "Maxim! Czy chciałbyś przeanalizować swoje potrzeby w czasie niepomniastej?",
+      "timestamp": 1765321056118
+    },
+    {
+      "role": "user",
+      "content": "Chce stworzyć questa",
+      "timestamp": 1765321075932
+    },
+    {
+      "role": "ai",
+      "content": "Przywitanie:\nMaxim, dziękuję za zainteresowanie naszymi discussjami!\n\nPytanie zamknięte:\nChciałbyś stworzyć Questa? Co to znaczy Questa dla ciebie, a czym się tu pojawiająca jest zawsze potrzebna?\n\nZarówno cel, jak i motywacje mamy już. Czujesz się niepokojący w czasie niepomniastego? Czy to co robiłeś przez ostatnie kilka dni lub tygodnia przypomina Cię coś, czego chciałbyś zrobić?\n\nTak, Questa jest bardzo ważnym zadaniem dla ciebie. Jako mag magnietyty jest bardzo ważne, bo zawsze to musisz znaleźć, by potrzebujesz tego, co jest w mojej Queste, a nie po prostu potrzebuje",
+      "timestamp": 1765321105499
+    },
+    {
+      "role": "user",
+      "content": "[Imię: Azyl]",
+      "timestamp": 1765321196110
+    },
+    {
+      "role": "user",
+      "content": "[Gildia: Mag Wody]",
+      "timestamp": 1765321205822
+    },
+    {
+      "role": "ai",
+      "content": "Zakładam, że Questa jest zazwyczaj bardzo ważnym zadaniem dla ciebie. Jako mag magnietyty jest bardzo ważne, bo zawsze musisz znaleźć to, co jest w mojej Queste, a nie po prostu potrzebuje.\n\nKiedyś Questa byłby napisany, chciałabyś go stworzyć? Co to znaczy Questa dla ciebie, a czym się tu pojawiająca jest zawsze potrzebna?",
+      "timestamp": 1765321241070
+    },
+    {
+      "role": "ai",
+      "content": "Pytanie zamknięte:\nOto pytanie:\n\n\"Czy Questa jest dla ciebie ważne, a czym się tu pojawiająca jest zawsze potrzebna?\"",
+      "timestamp": 1765321248944
+    },
+    {
+      "role": "user",
+      "content": "[@historia?]",
+      "timestamp": 1765321280030
+    },
+    {
+      "role": "ai",
+      "content": "Tak, Questa jest bardzo ważne dla ciebie. Jako mag magnietyty zawsze potrzebujesz tego, co jest w mojej Queste, a nie po prostu musisz znaleźć to, co jest w moim świecie. W czasie niepomniastego czujesz się niepokojący i Questa przypomina Cię coś, czego chciałbyś zrobić.",
+      "timestamp": 1765321320688
+    }
+  ],
+  "recipe": {
+    "goal": {
+      "type": "NEEDS_GOAL",
+      "confidence": 0.3
+    },
+    "context_slots": {},
+    "constraints": {},
+    "currentTopic": "Witam"
+  },
+  "referenced_profiles": []
+}

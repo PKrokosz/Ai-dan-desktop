@@ -1,0 +1,31 @@
+{
+  "id": "conv-1765457358297-ly146u",
+  "profileName": "Boron",
+  "stage": "DISCOVERY",
+  "createdAt": "2025-12-11T12:49:18.297Z",
+  "lastModified": 1765457378727,
+  "version": 7,
+  "questionsAsked": 1,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hej",
+      "timestamp": 1765457358300
+    },
+    {
+      "role": "ai",
+      "content": "Hej! Szukam jakiegoś sztucznego obrazu.",
+      "timestamp": 1765457378727
+    }
+  ],
+  "recipe": {
+    "goal": {
+      "type": "NEEDS_GOAL",
+      "confidence": 0.3
+    },
+    "context_slots": {},
+    "constraints": {},
+    "currentTopic": "Hej"
+  },
+  "referenced_profiles": []
+}
