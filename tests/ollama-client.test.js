@@ -106,6 +106,19 @@ describe('OllamaClient', () => {
 
             expect(mockPull).toHaveBeenCalledWith({ model: 'mistral:latest', stream: true });
         });
+
+        it('should call onProgress callback during download', async () => {
+            mockPull.mockImplementation(async function* () {
+                yield { status: 'downloading', completed: 50, total: 100 };
+                yield { status: 'success' };
+            });
+
+            const onProgress = jest.fn();
+            await ollamaClient.pullModel('mistral:latest', onProgress);
+
+            expect(onProgress).toHaveBeenCalledWith(50, 'downloading');
+            expect(onProgress).toHaveBeenCalledWith(null, 'success');
+        });
     });
 
     describe('generateEmbeddings', () => {
@@ -118,6 +131,50 @@ describe('OllamaClient', () => {
 
             expect(result.success).toBe(true);
             expect(result.embedding).toEqual([0.1, 0.2, 0.3]);
+        });
+    });
+
+    describe('showModel', () => {
+        it('should return model information', async () => {
+            mockShow.mockResolvedValue({
+                modelfile: 'FROM mistral\nSYSTEM "You are a helper"'
+            });
+
+            const result = await ollamaClient.showModel('mistral:latest');
+
+            expect(result.success).toBe(true);
+            expect(result.info.modelfile).toContain('FROM mistral');
+        });
+
+        it('should handle show errors', async () => {
+            mockShow.mockRejectedValue(new Error('Model not found'));
+
+            const result = await ollamaClient.showModel('invalid');
+
+            expect(result.success).toBe(false);
+            expect(result.error).toBeDefined();
+        });
+    });
+
+    describe('chat', () => {
+        it('should call chat with messages', async () => {
+            mockChat.mockResolvedValue({
+                message: { role: 'assistant', content: 'Hello' },
+                done: true
+            });
+
+            const messages = [{ role: 'user', content: 'Hi' }];
+            const result = await ollamaClient.chat(messages, { model: 'mistral' });
+
+            expect(mockChat).toHaveBeenCalledWith(expect.objectContaining({
+                model: 'mistral',
+                messages: messages,
+                stream: false,
+                options: expect.objectContaining({
+                    temperature: 0.7
+                })
+            }));
+            expect(result.text).toBe('Hello');
         });
     });
 });

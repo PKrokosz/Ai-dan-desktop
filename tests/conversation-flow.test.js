@@ -2,7 +2,6 @@
  * Tests for ConversationFlowService
  */
 
-
 const mockSearch = jest.fn();
 const mockGenerateText = jest.fn();
 
@@ -97,6 +96,38 @@ describe('ConversationFlowService', () => {
             );
 
             expect(result.type).toBe('FORCE_GENERATE');
+        });
+
+        it('should handle search errors gracefully', async () => {
+            mockSearch.mockRejectedValue(new Error('Vector store error'));
+
+            const result = await conversationFlow.processMessage(
+                'Diego',
+                'Co słychać?',
+                mockProfile,
+                'mistral'
+            );
+
+            // Should continue without context
+            expect(result.success).toBe(true);
+            expect(mockGenerateText).toHaveBeenCalled();
+        });
+
+        it('should handle AI generation error', async () => {
+            mockGenerateText.mockResolvedValue({
+                success: false,
+                error: 'Ollama offline'
+            });
+
+            const result = await conversationFlow.processMessage(
+                'Diego',
+                'Hej',
+                mockProfile,
+                'mistral'
+            );
+
+            expect(result.success).toBe(false);
+            expect(result.error).toContain('Ollama offline');
         });
     });
 

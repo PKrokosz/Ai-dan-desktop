@@ -34,8 +34,13 @@ class ConversationFlowService {
         }
 
         // 2. RAG Search - Find context relevant to user message
-        const contextDocs = await vectorStore.search(userMessage, 3);
-        const contextText = contextDocs.map(d => d.text).join('\n---\n');
+        let contextText = '';
+        try {
+            const contextDocs = await vectorStore.search(userMessage, 3);
+            contextText = contextDocs.map(d => d.text).join('\n---\n');
+        } catch (err) {
+            logger.warn('Vector store search failed, continuing without context', { error: err.message });
+        }
 
         // 3. Build System Prompt for the "Interviewer"
         const systemPrompt = `Jesteś doświadczonym Mistrzem Gry (Game Master) w systemie Gothic.
