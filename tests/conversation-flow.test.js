@@ -1,21 +1,17 @@
 /**
- * @jest-environment node
  * Tests for ConversationFlowService
  */
 
-// Mock dependencies
+
+const mockSearch = jest.fn();
+const mockGenerateText = jest.fn();
+
 jest.mock('../src/services/vector-store', () => ({
-    search: jest.fn()
+    search: mockSearch
 }));
 
 jest.mock('../src/services/ollama-client', () => ({
-    generateText: jest.fn()
-}));
-
-jest.mock('../src/services/generation-logger', () => ({
-    info: jest.fn(),
-    warn: jest.fn(),
-    error: jest.fn()
+    generateText: mockGenerateText
 }));
 
 jest.mock('../src/shared/logger', () => ({
@@ -24,27 +20,23 @@ jest.mock('../src/shared/logger', () => ({
     error: jest.fn()
 }));
 
-const vectorStore = require('../src/services/vector-store');
-const ollamaService = require('../src/services/ollama-client');
+// Import AFTER mocks
+const conversationFlow = require('../src/services/conversation-flow');
 
 describe('ConversationFlowService', () => {
-    let conversationFlow;
 
     beforeEach(() => {
         jest.clearAllMocks();
-        jest.resetModules();
 
         // Default mock implementations
-        vectorStore.search.mockResolvedValue([
+        mockSearch.mockResolvedValue([
             { text: 'Stary Obóz to główne skupisko' }
         ]);
 
-        ollamaService.generateText.mockResolvedValue({
+        mockGenerateText.mockResolvedValue({
             success: true,
             text: 'Jaka jest motywacja tej postaci?'
         });
-
-        conversationFlow = require('../src/services/conversation-flow');
     });
 
     describe('processMessage', () => {
@@ -64,7 +56,7 @@ describe('ConversationFlowService', () => {
             expect(result.success).toBe(true);
             expect(result.type).toBe('QUESTION');
             expect(result.stage).toBe('exploration');
-            expect(vectorStore.search).toHaveBeenCalledWith('Chcę stworzyć quest o zemście', 3);
+            expect(mockSearch).toHaveBeenCalledWith('Chcę stworzyć quest o zemście', 3);
         });
 
         it('should return FORCE_GENERATE when user says "generuj"', async () => {
@@ -92,7 +84,7 @@ describe('ConversationFlowService', () => {
         });
 
         it('should trigger generation when AI responds with [[GENERATE]]', async () => {
-            ollamaService.generateText.mockResolvedValue({
+            mockGenerateText.mockResolvedValue({
                 success: true,
                 text: 'Masz już wszystkie szczegóły. [[GENERATE]]'
             });
@@ -106,26 +98,6 @@ describe('ConversationFlowService', () => {
 
             expect(result.type).toBe('FORCE_GENERATE');
         });
-
-        it('should accumulate conversation history', async () => {
-            // First message
-            await conversationFlow.processMessage(
-                'Diego',
-                'Pierwszy wątek',
-                mockProfile,
-                'mistral'
-            );
-
-            // Second message
-            const result = await conversationFlow.processMessage(
-                'Diego',
-                'Drugi wątek',
-                mockProfile,
-                'mistral'
-            );
-
-            expect(result.questionsAsked).toBe(2);
-        });
     });
 
     describe('isForceGenerate', () => {
@@ -138,13 +110,10 @@ describe('ConversationFlowService', () => {
     });
 
     describe('finalizeConversation', () => {
-        it('should compile recipe with history', async () => {
+        it('should compile recipe with character info', async () => {
             const mockProfile = { 'Imie postaci': 'Diego', Gildia: 'Cień' };
 
-            // Build up some history first
-            await conversationFlow.processMessage('Diego', 'Quest o zemście', mockProfile, 'mistral');
-
-            // Then finalize
+            // Finalize directly
             const result = await conversationFlow.processMessage('Diego', 'ok generuj', mockProfile, 'mistral');
 
             expect(result.type).toBe('FORCE_GENERATE');

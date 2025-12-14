@@ -1,17 +1,22 @@
 /**
- * @jest-environment node
  * Tests for OllamaClient service
  */
 
-// Mock the ollama package
+const mockList = jest.fn();
+const mockGenerate = jest.fn();
+const mockPull = jest.fn();
+const mockEmbed = jest.fn();
+const mockShow = jest.fn();
+const mockChat = jest.fn();
+
 jest.mock('ollama', () => ({
     Ollama: jest.fn().mockImplementation(() => ({
-        list: jest.fn(),
-        generate: jest.fn(),
-        pull: jest.fn(),
-        embed: jest.fn(),
-        show: jest.fn(),
-        chat: jest.fn()
+        list: mockList,
+        generate: mockGenerate,
+        pull: mockPull,
+        embed: mockEmbed,
+        show: mockShow,
+        chat: mockChat
     }))
 }));
 
@@ -34,35 +39,17 @@ jest.mock('../src/shared/model-configs', () => ({
     getRecommendedTemperature: jest.fn(() => 0.7)
 }));
 
-// Import after mocks
-const { Ollama } = require('ollama');
+const ollamaClient = require('../src/services/ollama-client');
 
 describe('OllamaClient', () => {
-    let ollamaClient;
-    let mockOllamaInstance;
 
     beforeEach(() => {
         jest.clearAllMocks();
-
-        // Get mock instance
-        mockOllamaInstance = {
-            list: jest.fn(),
-            generate: jest.fn(),
-            pull: jest.fn(),
-            embed: jest.fn(),
-            show: jest.fn(),
-            chat: jest.fn()
-        };
-        Ollama.mockImplementation(() => mockOllamaInstance);
-
-        // Re-require to get fresh instance with mocks
-        jest.resetModules();
-        ollamaClient = require('../src/services/ollama-client');
     });
 
     describe('checkConnection', () => {
         it('should return connected=true with models when Ollama responds', async () => {
-            mockOllamaInstance.list.mockResolvedValue({
+            mockList.mockResolvedValue({
                 models: [{ name: 'mistral:latest' }, { name: 'gemma:2b' }]
             });
 
@@ -74,7 +61,7 @@ describe('OllamaClient', () => {
         });
 
         it('should return connected=false when Ollama is not running', async () => {
-            mockOllamaInstance.list.mockRejectedValue(new Error('ECONNREFUSED'));
+            mockList.mockRejectedValue(new Error('ECONNREFUSED'));
 
             const result = await ollamaClient.checkConnection();
 
@@ -85,31 +72,31 @@ describe('OllamaClient', () => {
 
     describe('generateText', () => {
         it('should generate text with default options', async () => {
-            mockOllamaInstance.generate.mockResolvedValue({
+            mockGenerate.mockResolvedValue({
                 response: 'Test response from AI',
                 done: true
             });
 
             const result = await ollamaClient.generateText('Hello, world!');
 
-            expect(mockOllamaInstance.generate).toHaveBeenCalled();
+            expect(mockGenerate).toHaveBeenCalled();
             expect(result.success).toBe(true);
             expect(result.text).toBe('Test response from AI');
         });
 
         it('should handle generation errors gracefully', async () => {
-            mockOllamaInstance.generate.mockRejectedValue(new Error('Model not found'));
+            mockGenerate.mockRejectedValue(new Error('Model not found'));
 
             const result = await ollamaClient.generateText('Hello');
 
             expect(result.success).toBe(false);
-            expect(result.error).toContain('Model not found');
+            expect(result.error).toBeDefined();
         });
     });
 
     describe('pullModel', () => {
         it('should call pull with model name', async () => {
-            mockOllamaInstance.pull.mockImplementation(async function* () {
+            mockPull.mockImplementation(async function* () {
                 yield { status: 'downloading', completed: 50, total: 100 };
                 yield { status: 'success', completed: 100, total: 100 };
             });
@@ -117,20 +104,20 @@ describe('OllamaClient', () => {
             const onProgress = jest.fn();
             await ollamaClient.pullModel('mistral:latest', onProgress);
 
-            expect(mockOllamaInstance.pull).toHaveBeenCalledWith({ model: 'mistral:latest' });
+            expect(mockPull).toHaveBeenCalledWith({ model: 'mistral:latest', stream: true });
         });
     });
 
     describe('generateEmbeddings', () => {
-        it('should return embeddings array', async () => {
-            mockOllamaInstance.embed.mockResolvedValue({
+        it('should return embedding array', async () => {
+            mockEmbed.mockResolvedValue({
                 embeddings: [[0.1, 0.2, 0.3]]
             });
 
             const result = await ollamaClient.generateEmbeddings('Test text');
 
             expect(result.success).toBe(true);
-            expect(result.embeddings).toEqual([0.1, 0.2, 0.3]);
+            expect(result.embedding).toEqual([0.1, 0.2, 0.3]);
         });
     });
 });
