@@ -12,17 +12,15 @@ export {
     QUICK_ACTIONS,
     PERSONALITY_PROMPTS,
     STEPS,
-    SLASH_COMMANDS,
     COMMAND_LABELS
 } from './config.js';
 
-// UI Helpers
+// UI Helpers (excluding renderStep - use ui-core version)
 export {
     addLog,
     setProgress,
     getCurrentStep,
     goToStep,
-    renderStep,
     setRenderStep,
     updateStepIndicators,
     updateStepTitle,
@@ -30,7 +28,7 @@ export {
     createModal
 } from './ui-helpers.js';
 
-// UI Core
+// UI Core (primary renderStep source)
 export {
     renderStep,
     showSettings,
@@ -51,9 +49,6 @@ export {
     testbenchTemplate,
     getStepTemplate
 } from './step-templates.js';
-
-// Models Database (Deprecated - use models-manager)
-// export * from './models-db.js';
 
 // Core Logic Modules
 export * as mermaidAdapter from './mermaid-adapter.js';
@@ -98,33 +93,26 @@ export {
     renderModelDropdown,
     renderContextDropdown,
     updatePromptPart,
-    renderMinimalistAIPanel,
-    // formatMarkdown exported from streaming-handler
+    renderMinimalistAIPanel
 } from './ai-panel.js';
 
-// API Functions (Deprecated)
-// export * from './api-functions.js';
-
-// Search Functions (Replaced by DataManager)
+// Data Manager (consolidated)
 export {
     updateSearchStats,
     handleSearchInput,
     selectSuggestion,
     hideSuggestions,
     searchByTag,
-    preloadData
+    preloadData,
+    loadDataSource,
+    getSortedRows,
+    sortData,
+    selectRow
 } from './data-manager.js';
-
-// Operator / MG Functions (Replaced by Operator Manager)
-// export * from './operator-functions.js';
 
 // Initialization
 export {
-    init,
-    // setupLogsPanelToggle, // These are internal to init now
-    // setupIpcListeners,
-    // setupSidebarNavigation,
-    // setupNavigationButtons
+    init
 } from './app-init.js';
 
 // Ollama Setup
@@ -143,7 +131,7 @@ export {
     showAdvancedTests
 } from './excel-search.js';
 
-// Slash Commands & Utils
+// Slash Commands & Utils (primary SLASH_COMMANDS source)
 export {
     runCustomPrompt,
     updatePromptPartLocal,
@@ -165,7 +153,7 @@ export {
     selectAllScenarios
 } from './testbench.js';
 
-// Models Manager
+// Models Manager (consolidated)
 export {
     OLLAMA_MODELS,
     filterModelsByVram,
@@ -175,7 +163,11 @@ export {
     checkOllama,
     updateModelStatuses,
     updateDownloadQueue,
-    pullModel
+    pullModel,
+    toggleCategory,
+    setExtractionModel,
+    setGenerationModel,
+    getCurrentModel
 } from './models-manager.js';
 
 // Operator Manager
@@ -191,14 +183,7 @@ export {
     loadSystemSpecs
 } from './system-diagnostics.js';
 
-// Data Processor Export
-export {
-    loadDataSource,
-    getSortedRows,
-    sortData,
-    selectRow
-} from './data-manager.js';
-
+// Data Processor
 export {
     processAI,
     generateQuests,
@@ -217,10 +202,3 @@ export {
     deletePromptTemplate,
     applyPromptTemplate
 } from './prompt-history.js';
-
-export {
-    toggleCategory,
-    setExtractionModel,
-    setGenerationModel,
-    getCurrentModel
-} from './models-manager.js';
