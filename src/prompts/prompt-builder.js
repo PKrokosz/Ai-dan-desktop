@@ -13,6 +13,15 @@ const CONTEXTS_DIR = path.join(__dirname, '..', 'contexts');
 // Cache dla załadowanych kontekstów
 let contextCache = {};
 
+function mergeConfig(userConfig = {}) {
+    return {
+        ...DEFAULT_CONFIG,
+        ...userConfig,
+        contexts: { ...DEFAULT_CONFIG.contexts, ...userConfig.contexts },
+        focus: { ...DEFAULT_CONFIG.focus, ...userConfig.focus }
+    };
+}
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // VALIDATION - Walidacja danych wejściowych
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -121,6 +130,7 @@ function loadContext(contextId, maxChars = null) {
         }
     }
 
+    let content = contextCache[cacheKey]; // FIX: Define content variable
     if (maxChars && content.length > maxChars) {
         content = content.slice(0, maxChars) + '\n[...skrócono...]';
     }
@@ -190,16 +200,12 @@ function buildFactionContext(faction, contextContent) {
 }
 
 /**
- * Główna funkcja budująca prompt
+ * Buduje BAZOWY System Prompt (Persona, Świat, Styl) - bez instrukcji zadania.
+ * Do użycia jako "System Message" w czacie.
  */
-function buildPrompt(commandType, profile, userConfig = {}) {
+function buildBaseSystemPrompt(profile, userConfig = {}) {
     // Merge z domyślną konfiguracją
-    const config = {
-        ...DEFAULT_CONFIG,
-        ...userConfig,
-        contexts: { ...DEFAULT_CONFIG.contexts, ...userConfig.contexts },
-        focus: { ...DEFAULT_CONFIG.focus, ...userConfig.focus }
-    };
+    const config = mergeConfig(userConfig);
 
     let prompt = '';
 
@@ -268,6 +274,17 @@ function buildPrompt(commandType, profile, userConfig = {}) {
     prompt += `Cele: ${profile['Przyszlosc'] || profile['Kim chce zostac'] || 'Brak'}\n`;
     prompt += `Słabości: ${profile['Slabosci'] || 'Brak'}\n`;
     prompt += `Umiejętności: ${profile['Umiejetnosci'] || 'Brak'}\n\n`;
+
+    return prompt;
+}
+
+/**
+ * Główna funkcja budująca prompt
+ */
+function buildPrompt(commandType, profile, userConfig = {}) {
+    const config = mergeConfig(userConfig);
+
+    let prompt = buildBaseSystemPrompt(profile, userConfig);
 
     // === INSTRUKCJE ===
     const lengthInstructions = {
@@ -359,6 +376,7 @@ function getRandomNPCs(count = 3) {
 
 module.exports = {
     buildPrompt,
+    buildBaseSystemPrompt, // Exported!
     loadContext,
     getQuestSchemas,
     detectStyleFromProfile,

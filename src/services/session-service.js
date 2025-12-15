@@ -81,6 +81,17 @@ class SessionService {
         this.saveSession();
     }
 
+    updateFlowState(flowState) {
+        if (!this.currentSession) return;
+        this.currentSession.flowState = flowState;
+        this.saveSession();
+    }
+
+    getFlowState() {
+        if (!this.currentSession) return null;
+        return this.currentSession.flowState || { stage: 'IDLE', data: {}, missing: [] };
+    }
+
     saveSession() {
         if (!this.currentSession) return;
         const filePath = path.join(this.sessionsDir, `${this.currentSession.id}.json`);

@@ -287,6 +287,8 @@ export async function runAI(commandType, overrideProfile = null, options = {}) {
             // User complained about "Vector store saved" (46.9s). So let's disable it for speed.
         };
 
+
+
         const result = await window.electronAPI.aiCommand(backendCommandType, profile, backendOptions);
 
         // Check for immediate errors

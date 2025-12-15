@@ -31,9 +31,10 @@
  * @requires ../services/ollama-client - Główny klient AI (wrapper na ollama npm)
  * @requires ../services/vector-store - RAG embeddings (mxbai-embed-large)
  * @requires ../shared/config-hub - Centralna konfiguracja
+ * @requires ../services/conversation-flow - Guided Conversation Flow Service
  */
 
-const { ipcMain, shell } = require('electron');
+const { ipcMain, shell, app } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const logger = require('../shared/logger');
@@ -61,6 +62,17 @@ const modelLimits = require('../services/model-limits');           // Limity tok
 // ═══════════════════════════════════════════════════════════════════════════════
 const configHub = require('../shared/config-hub');                 // Centralna konfiguracja (data/config.json)
 const schemaLoader = require('../schemas/schema-loader');          // JSON Schemas dla structured output
+const conversationFlowService = require('../services/conversation-flow'); // Guided Conversation Flow
+const flowManager = require('../services/flow-manager'); // Integrated GCF Logic
+
+// Initialize GCF with persistence path
+try {
+    const userDataPath = app.getPath('userData');
+    conversationFlowService.init(userDataPath);
+    logger.info('[GCF] Service initialized with path:', userDataPath);
+} catch (e) {
+    logger.error('[GCF] Failed to initialize persistence path', e);
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // SEKCJA 2: HELPER FUNCTIONS
@@ -395,19 +407,76 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
 
         // Determine Prompt
         let prompt;
+        // FIX: Initialize systemPrompt here to avoid ReferenceError later
+        let systemPrompt = "Jesteś asystentem AI.";
 
-        if (commandType === 'custom') {
-            prompt = options.customPrompt;
-        } else if (options.promptConfig) {
-            try {
-                const promptBuilder = require('../prompts/prompt-builder');
-                prompt = promptBuilder.buildPrompt(commandType, profile, options.promptConfig);
-                logger.info('Using configurable prompt builder', { commandType, style: options.promptConfig.style });
-            } catch (err) {
-                logger.warn('Fallback to legacy prompts', { error: err.message });
-                prompt = null;
+        // --- INTEGRATED GCF LOGIC (THE BRAIN) ---
+        // 1. Analyze Intent (Silent, Fast)
+        let flowActive = false;
+        if (commandType === 'chat' || commandType === 'custom') {
+            const flowIntent = flowManager.analyzeIntent(userPrompt);
+            const currentFlowState = sessionService.getFlowState();
+
+            // 2. Update State
+            const newFlowState = flowManager.updateState(currentFlowState, userPrompt, flowIntent);
+            sessionService.updateFlowState(newFlowState);
+
+            // 3. Override System Prompt if in Active Stage
+            if (newFlowState.stage !== 'IDLE' && newFlowState.stage !== 'DIAGNOSIS') {
+                logger.info('[GCF] Flow Active', { stage: newFlowState.stage, intent: newFlowState.intent });
+                // Override system prompt with "Gomez's Instruction"
+                const flowInstruction = flowManager.buildSystemPrompt(newFlowState, profile);
+                options.system = (options.system || "") + "\n\n" + flowInstruction;
+
+                // Ensure User Prompt is used directly
+                prompt = userPrompt;
+                flowActive = true;
             }
         }
+        // ----------------------------------------
+
+        if (!flowActive) {
+            // Standard Legacy Logic
+            if (commandType === 'custom') {
+                prompt = options.customPrompt;
+                // Custom prompts logic: Try loading dynamic system prompt
+                try {
+                    const promptBuilder = require('../prompts/prompt-builder');
+                    if (options.promptConfig) {
+                        systemPrompt = promptBuilder.buildDynamicSystemPrompt(profile, options.promptConfig);
+                        // Re-build prompt if specific builder logic exists for custom? 
+                        // No, custom usually means raw User Prompt + Dynamic System.
+                        // But existing code called buildPrompt? Let's respect preference.
+                        // The existing code line 443 implies buildPrompt is called.
+                        // prompt = promptBuilder.buildPrompt(commandType, profile, options.promptConfig);
+                        // Actually, for 'custom', options.customPrompt IS the prompt.
+                    } else {
+                        systemPrompt = promptBuilder.buildBaseSystemPrompt(profile);
+                    }
+                } catch (e) { /* fallback */ }
+
+            } else if (options.promptConfig) {
+                // Generic Configurable Command
+                try {
+                    const promptBuilder = require('../prompts/prompt-builder');
+                    systemPrompt = promptBuilder.buildDynamicSystemPrompt(profile, options.promptConfig); // FIX: Load System Prompt
+                    prompt = promptBuilder.buildPrompt(commandType, profile, options.promptConfig);
+                    logger.info('Using configurable prompt builder', { commandType, style: options.promptConfig.style });
+                } catch (err) {
+                    logger.warn('Fallback to legacy prompts', { error: err.message });
+                    prompt = null;
+                }
+            } else if (commandType === 'chat') {
+                // Explicit Chat fallback 
+                prompt = userPrompt;
+                // FIX: Load Base System Prompt for Persona
+                const promptBuilder = require('../prompts/prompt-builder');
+                systemPrompt = promptBuilder.buildBaseSystemPrompt(profile);
+            }
+        }
+
+        // Final System Prompt Update (Merge local var with options)
+        options.system = (options.system ? options.system + "\n" : "") + systemPrompt;
 
         if (!prompt && commandType !== 'custom') {
             // Legacy Prompts Block (Truncated for brevity in replacement, assuming context matches)
@@ -682,27 +751,7 @@ ipcMain.handle('config:import', async (event, jsonString) => {
 ipcMain.handle('config:getDefaults', async () => {
     return { success: true, defaults: configHub.getDefaults() };
 });
-
-const conversationFlowService = require('../services/conversation-flow');
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// SEKCJA 8: CONVERSATION FLOW HANDLER
-// ═══════════════════════════════════════════════════════════════════════════════
-// Obsługuje konwersacyjny tryb AI - pozwala na naturalną rozmowę z AI
-// w kontekście wybranej postaci (feature flag: features.conversationFlow)
-
-ipcMain.handle('conv-flow:process', async (event, charName, text, profile, options = {}) => {
-    return runWithTrace(async () => {
-        logger.info('Processing conversation flow', { charName, textLength: text.length, model: options.model });
-        try {
-            const result = await conversationFlowService.processMessage(charName, text, profile, options.model);
-            return result;
-        } catch (error) {
-            logger.error('Conversation flow error', error);
-            return { success: false, error: error.message };
-        }
-    });
-});
+// [Legacy Conversation Flow Removed]
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // SEKCJA 9: AI PROMPT BUILDERS (LEGACY)
@@ -1568,7 +1617,7 @@ ipcMain.handle('ollama:set-models-path', async (event, { newPath, moveModels }) 
     });
 });
 
-// [Legacy Conversation Flow handlers removed to avoid duplicates]
+
 
 
 // ═══════════════════════════════════════════════════════════════════════════════
