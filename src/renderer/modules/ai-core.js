@@ -7,6 +7,7 @@
 import { state } from './state.js';
 import { COMMAND_LABELS } from './config.js';
 import { addLog, renderStep } from './ui-helpers.js';
+import ContextManager from './context-manager.js';
 
 // ==============================
 // Prompt Configuration
@@ -103,67 +104,7 @@ export function applyModelOptimization(promptParts, modelName) {
  * @param {string} commandType - AI command type
  * @returns {string} Context string
  */
-export function buildDynamicContext(profile, commandType) {
-    let context = [];
-
-    // 1. Operator Style (Tone & Preferences)
-    if (state.activeMgProfile) {
-        const mg = state.activeMgProfile;
-        context.push(`--- STYL MISTRZA GRY (${mg.name}) ---`);
-        if (mg.style_strengths) context.push(`MOCNE STRONY: ${mg.style_strengths}`);
-        if (mg.style_weaknesses) context.push(`OBSZARY DO WSPARCIA PRZEZ AI: ${mg.style_weaknesses}`);
-        if (mg.preferences) context.push(`PREFERENCJE: ${mg.preferences}`);
-        context.push('--- DYREKTYWA: Dopasuj output do powyższego stylu Mistrza Gry ---');
-    }
-
-    // 2. World Context (Lore, Weaknesses, Plots)
-    if (state.worldContext) {
-        const { weaknesses, plots, world, factions } = state.worldContext;
-
-        // A. Weakness Analysis
-        const weaknessCommands = ['extract_traits', 'potential_conflicts', 'story_hooks', 'secret', 'redemption_quest'];
-        if (weaknessCommands.includes(commandType)) {
-            context.push('--- KONTEKST LORE: SŁABOŚCI I ZAGROŻENIA ---');
-            context.push(weaknesses);
-        }
-
-        // B. Plot & Intrigue Context
-        const plotCommands = ['main_quest', 'side_quest', 'group_quest', 'potential_conflicts'];
-        if (plotCommands.includes(commandType)) {
-            context.push('--- KONTEKST LORE: INTRYGI I SPISKI ---');
-            context.push(plots);
-        }
-
-        // C. Faction Context
-        const guild = profile['Gildia'] || '';
-        if (guild && factions) {
-            if (['faction_suggestion', 'main_quest', 'analyze_relations', 'potential_conflicts'].includes(commandType)) {
-                context.push('--- KONTEKST LORE: SYSTEM FRAKCJI ---');
-                context.push(factions);
-            }
-        }
-
-        // D. General World Context
-        if (commandType === 'nickname' || commandType === 'story_hooks') {
-            context.push('--- KONTEKST LORE: ŚWIAT I GEOGRAFIA ---');
-            context.push(world);
-        }
-    } else {
-        // Fallback if world context not loaded yet
-        const guild = profile['Gildia'] || '';
-        if (guild && state.factionHistory) {
-            let relevantFactionKey = Object.keys(state.factionHistory).find(k =>
-                guild.toLowerCase().includes(k.replace('Fabuła ', '').toLowerCase())
-            );
-            if (relevantFactionKey && state.factionHistory[relevantFactionKey]?.length) {
-                context.push(`--- SKŁAD FRAKCJI (${relevantFactionKey}) ---`);
-                context.push(`(Contains list of ${state.factionHistory[relevantFactionKey].length} members)`);
-            }
-        }
-    }
-
-    return context.join('\n\n');
-}
+// [REMOVED] Legacy buildDynamicContext - Replaced by ContextManager
 
 // ==============================
 // Main AI Execution
@@ -173,13 +114,19 @@ export function buildDynamicContext(profile, commandType) {
  * Run AI command with streaming support
  * @param {string} commandType - AI command type
  */
-export async function runAI(commandType) {
+/**
+ * Run AI command with streaming support
+ * @param {string} commandType - AI command type
+ * @param {Object|null} overrideProfile - Optional profile override
+ * @param {Object} options - Extra options (customGoal, etc.)
+ */
+export async function runAI(commandType, overrideProfile = null, options = {}) {
     if (state.aiProcessing) {
         addLog('warn', 'AI już przetwarza poprzednie polecenie...');
         return;
     }
 
-    const profile = state.sheetData?.rows?.[state.selectedRow];
+    const profile = overrideProfile || state.sheetData?.rows?.[state.selectedRow];
     if (!profile) {
         addLog('error', 'Brak wybranej postaci do przetworzenia.');
         return;
@@ -194,12 +141,26 @@ export async function runAI(commandType) {
         return;
     }
 
-    const commandLabel = COMMAND_LABELS[commandType] || commandType;
-    addLog('info', `🤖 Uruchamiam AI: ${commandLabel} (model: ${selectedModel})`);
+    // Determine Label and Goal
+    // If options.customGoal is present (from Chat), use it as the label
+    const commandLabel = options.customGoal || COMMAND_LABELS[commandType] || commandType;
+    addLog('info', `🤖 Uruchamiam AI: ${commandLabel.substring(0, 50)}${commandLabel.length > 50 ? '...' : ''} (model: ${selectedModel})`);
 
     state.aiProcessing = true;
     state.aiCommand = commandLabel;
+
     state.aiResult = null;
+
+    // AUTO-ACTIVATE INTELLIGENT FLOW for Chat/Custom inputs
+    if (!COMMAND_LABELS[commandType] && state.conversationFlow) {
+        if (!state.conversationFlow.active) {
+            state.conversationFlow.active = true;
+            state.conversationFlow.stage = 'IDLE';
+            state.conversationFlow.currentLayer = 0;
+            state.conversationFlow.intent = null;
+            addLog('info', '🔹 Tryb Konwersacji: Aktywowano (Stage 0 - Szybki Start)');
+        }
+    }
 
     // Clear isNew flag for all previous items
     state.aiResultsFeed.forEach(item => item.isNew = false);
@@ -223,18 +184,67 @@ export async function runAI(commandType) {
         cardIndex: newItemIndex,
         content: '',
         isThinking: false,
-        thinkStartTime: 0
+        thinkStartTime: Date.now(), // Start time for total duration
+        timerInterval: null
     };
 
     renderStep();
 
-    try {
-        // Build Dynamic Context
-        const dynamicContext = buildDynamicContext(profile, commandType);
+    // Start Live Timer
+    const loadingInd = document.getElementById('ai-loading-indicator');
+    const timerDisplay = document.getElementById('thinking-timer-display');
+    const thinkingDots = loadingInd ? loadingInd.querySelector('.thinking-dots') : null;
 
+    if (timerDisplay) {
+        state.streamData.timerInterval = setInterval(() => {
+            const elapsed = ((Date.now() - state.streamData.thinkStartTime) / 1000).toFixed(1);
+            timerDisplay.textContent = `(${elapsed}s)`;
+
+            // Dynamic Status Update
+            if (thinkingDots) {
+                if (elapsed > 2.0 && elapsed < 5.0) thinkingDots.textContent = 'Ładowanie wiedzy...';
+                else if (elapsed >= 5.0 && elapsed < 15.0) thinkingDots.textContent = 'Generowanie...';
+                else if (elapsed >= 15.0) thinkingDots.textContent = 'Wciąż pracuję...';
+            }
+        }, 100);
+    }
+
+    try {
+        // ===============================================
+        // INTELLIGENT CONTEXT LOADING (State-Based)
+        // ===============================================
+        let systemContext = '';
+
+        // Default (Layer 0 + Stats) - Fallback for Buttons
+        if (!state.conversationFlow?.active) {
+            systemContext = ContextManager.getProfileStats(profile);
+            // Optionally add Layer 1 for context richness if needed, but keep it light
+            // systemContext += await ContextManager.getLayer1_Identity(profile['Imie postaci']);
+        } else {
+            // Layer 1: Identity
+            if (state.conversationFlow.currentLayer >= 1) {
+                const identity = await ContextManager.getLayer1_Identity(profile['Imie postaci']);
+                systemContext += identity;
+            }
+            // Layer 2: Relations
+            if (state.conversationFlow.currentLayer >= 2) {
+                const relations = await ContextManager.getLayer2_Relations(profile);
+                systemContext += relations;
+            }
+            // Layer 3: World
+            if (state.conversationFlow.currentLayer >= 3 && state.conversationFlow.intent) {
+                const world = await ContextManager.getLayer3_World(state.conversationFlow.intent);
+                systemContext += world;
+            }
+        }
+
+        // STRICT LANGUAGE ENFORCEMENT (RECENCY BIAS)
+        systemContext += `\n\n[SZYBKA INSTRUKCJA KOŃCOWA]\n1. Odpowiadaj WYŁĄCZNIE w języku POLSKIM.\n2. Zachowaj klimat Gothic (brutalny, surowy).\n3. Nie używaj anglicyzmów.`;
+
+        // Optimizing Prompt
         const optimized = applyModelOptimization({
             role: 'Jesteś doświadczonym Mistrzem Gry w świecie Gothic LARP. Znam Kolonię Karną od podszewki. Pomagam tworzyć angażujące wątki fabularne, ale potrafię też prowadzić luźną rozmowę w klimacie.',
-            context: `Świat gry to Górnicza Dolina z Gothic 1.\n\n${dynamicContext}`,
+            context: `Świat gry to Górnicza Dolina z Gothic 1.\n\n${systemContext}`,
             dod: 'Jeśli to ZADANIE (quest, analiza): Output musi być GRYWALNY i ustrukturyzowany (## [Typ], ### Kontekst...). Jeśli to ROZMOWA: Odpowiadaj krótko i w klimacie, bez zbędnych nagłówków. Używaj języka POLSKIEGO.',
             negative: 'Nie używaj angielskich nazw. Nie moralizuj. Nie twórz postaci sprzecznych z lore.',
             examples: '',
@@ -242,21 +252,50 @@ export async function runAI(commandType) {
             useCoT: false
         }, selectedModel);
 
-        const options = {
+        // Context Suppression for Stage 0
+        // We force-disable all external contexts (RAG, System, Geography) to ensure raw speed.
+        const isStage0 = (!state.conversationFlow?.active) || (state.conversationFlow?.currentLayer === 0);
+
+        const effectivePromptConfig = isStage0 ? {
+            ...state.promptConfig,
+            contexts: {
+                geography: false,
+                system: false,
+                factions: false,
+                magic: false,
+                bestiary: false
+            }
+        } : state.promptConfig;
+
+        // Backend Call Preparation
+        // If commandType is 'chat', we must tell the backend it's a 'custom' prompt with specific content
+        const backendCommandType = (commandType === 'chat') ? 'custom' : commandType;
+        const backendOptions = {
+            ...options,
             model: selectedModel,
             temperature: state.aiTemperature || 0.7,
-            promptConfig: state.promptConfig,
+            promptConfig: effectivePromptConfig,
             system: optimized.system,
-            stream: true
+            stream: true,
+            // If chat/custom, pass the text as customPrompt
+            customPrompt: (commandType === 'chat' || commandType === 'custom') ? commandLabel : undefined,
+
+            // Optimization Flags for Stage 0 (Chat)
+            disableRAG: isStage0,
+            autoCorrect: isStage0 ? false : undefined, // Disable if Stage 0, else default
+            disableIndexing: isStage0 // Don't index casual chat to keep vector store clean? Or maybe we DO want to index it?
+            // User complained about "Vector store saved" (46.9s). So let's disable it for speed.
         };
 
-        const result = await window.electronAPI.aiCommand(commandType, profile, options);
+        const result = await window.electronAPI.aiCommand(backendCommandType, profile, backendOptions);
 
         // Check for immediate errors
         if (!result.success && result.error) {
             state.aiResult = `❌ Błąd: ${result.error}`;
             addLog('error', `AI błąd: ${result.error}`);
             state.aiProcessing = false;
+
+            if (state.streamData.timerInterval) clearInterval(state.streamData.timerInterval);
             state.streamData.active = false;
             state.streamData.cardIndex = -1;
             renderStep();
@@ -268,8 +307,12 @@ export async function runAI(commandType) {
         addLog('error', `AI błąd: ${error.message}`);
         state.aiProcessing = false;
         state.aiCommand = null;
-        state.streamData.active = false;
-        state.streamData.cardIndex = -1;
+
+        if (state.streamData && state.streamData.timerInterval) clearInterval(state.streamData.timerInterval);
+        if (state.streamData) {
+            state.streamData.active = false;
+            state.streamData.cardIndex = -1;
+        }
         renderStep();
     }
 }

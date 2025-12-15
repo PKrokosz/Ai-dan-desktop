@@ -61,7 +61,6 @@ export {
 } from './ai-utils.js';
 
 export {
-    buildDynamicContext,
     runAI,
     runAllSequentially,
     processQueue,
@@ -169,6 +168,8 @@ export {
     setGenerationModel,
     getCurrentModel
 } from './models-manager.js';
+export { default as ContextManager } from './context-manager.js';
+
 
 // Operator Manager
 export {

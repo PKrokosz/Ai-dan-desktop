@@ -1,5 +1,5 @@
 
-import mermaid from 'mermaid';
+import mermaid from '../../../node_modules/mermaid/dist/mermaid.esm.min.mjs';
 
 /**
  * Initializes and renders Mermaid diagrams.

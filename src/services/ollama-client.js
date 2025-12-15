@@ -262,6 +262,24 @@ class OllamaClient {
             return { success: false, error: error.message };
         }
     }
+    /**
+     * Ensure a model exists, pulling it if necessary
+     * @param {string} modelName
+     */
+    async ensureModel(modelName) {
+        try {
+            const list = await this.client.list();
+            const exists = list.models.some(m => m.name.startsWith(modelName)); // startsWith to handle tags like :latest implicitly if needed, or exact match
+            if (exists) return true;
+
+            logger.info(`[OllamaClient] Model ${modelName} not found. Attempting auto-pull...`);
+            const pullResult = await this.pullModel(modelName);
+            return pullResult.success;
+        } catch (error) {
+            logger.error(`[OllamaClient] Failed to ensure model ${modelName}`, { error: error.message });
+            return false;
+        }
+    }
 }
 
 module.exports = new OllamaClient();

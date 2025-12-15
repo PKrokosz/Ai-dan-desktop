@@ -18,17 +18,34 @@ if (window.electronAPI?.configGet) {
     });
 }
 
+
+
+
 // ==========================================
 // STATE EXTENSION
 // ==========================================
 
-if (typeof state !== 'undefined') {
-    state.conversationFlow = {
-        active: false, convId: null, stage: 'IDLE',
-        questionsAsked: 0, pendingConfirmReset: false, lastSlashCommand: null
-    };
-    state.ui.slashDropdown = { visible: false, filter: '', selectedIndex: 0 };
-    state.ui.mentionDropdown = { visible: false, level: 1, selectedField: null, filter: '', selectedIndex: 0, characters: [] };
+// ==========================================
+// STATE EXTENSION & SAFETY
+// ==========================================
+
+function getState() {
+    const s = window.AppModules?.state || window.state;
+    if (!s) return null;
+
+    // Ensure extension state exists
+    if (!s.conversationFlow) {
+        s.conversationFlow = {
+            active: false, convId: null, stage: 'IDLE',
+            questionsAsked: 0, pendingConfirmReset: false, lastSlashCommand: null,
+            currentLayer: 0, targetEntity: null, intent: null
+        };
+    }
+    if (!s.ui) s.ui = {};
+    if (!s.ui.slashDropdown) s.ui.slashDropdown = { visible: false, filter: '', selectedIndex: 0 };
+    if (!s.ui.mentionDropdown) s.ui.mentionDropdown = { visible: false, level: 1, selectedField: null, filter: '', selectedIndex: 0, characters: [] };
+
+    return s;
 }
 
 // ==========================================
@@ -77,17 +94,21 @@ function getFilteredSlashCommands(filter) {
 }
 
 function renderSlashDropdown() {
-    if (!state.ui.slashDropdown.visible) return '';
-    const items = getFilteredSlashCommands(state.ui.slashDropdown.filter);
+    const s = getState();
+    if (!s || !s.ui.slashDropdown.visible) return '';
+    const items = getFilteredSlashCommands(s.ui.slashDropdown.filter);
     if (!items.length) return '';
     return `<div id="slashDropdown" style="position:absolute;bottom:100%;left:0;width:280px;background:#1e1e1e;border:1px solid #3a3a3a;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.4);z-index:1000;max-height:200px;overflow-y:auto;margin-bottom:4px;">
-        ${items.map((c, i) => `<div class="slash-item" style="padding:10px 12px;cursor:pointer;display:flex;gap:8px;${i === state.ui.slashDropdown.selectedIndex ? 'background:#b4823a;color:#fff;' : ''}" onclick="selectSlashCommand('${c.key}')" onmouseenter="state.ui.slashDropdown.selectedIndex=${i};updateDropdownHighlight('slash')"><span style="font-family:monospace">${c.key}</span><span style="opacity:.7">${c.label.split(' ').slice(1).join(' ')}</span></div>`).join('')}
+        ${items.map((c, i) => `<div class="slash-item" style="padding:10px 12px;cursor:pointer;display:flex;gap:8px;${i === s.ui.slashDropdown.selectedIndex ? 'background:#b4823a;color:#fff;' : ''}" onclick="selectSlashCommand('${c.key}')" onmouseenter="getState().ui.slashDropdown.selectedIndex=${i};updateDropdownHighlight('slash')"><span style="font-family:monospace">${c.key}</span><span style="opacity:.7">${c.label.split(' ').slice(1).join(' ')}</span></div>`).join('')}
     </div>`;
 }
 
 function handleSlashInput(val) {
+    const s = getState();
+    if (!s) return;
+
     if (val.startsWith('/')) {
-        state.ui.slashDropdown = { visible: true, filter: val.slice(1), selectedIndex: 0 };
+        s.ui.slashDropdown = { visible: true, filter: val.slice(1), selectedIndex: 0 };
         injectDropdown('slash');
     } else {
         hideDropdown('slash');
@@ -116,27 +137,31 @@ function getFilteredMentionFields(filter) {
 }
 
 function renderMentionDropdown() {
-    if (!state.ui.mentionDropdown.visible) return '';
-    const isL2 = state.ui.mentionDropdown.level === 2;
+    const s = getState();
+    if (!s || !s.ui.mentionDropdown.visible) return '';
+    const isL2 = s.ui.mentionDropdown.level === 2;
 
     if (isL2) {
-        const chars = (state.ui.mentionDropdown.characters || [])
-            .filter(c => c.name?.toLowerCase().includes(state.ui.mentionDropdown.filter.toLowerCase())).slice(0, 12);
+        const chars = (s.ui.mentionDropdown.characters || [])
+            .filter(c => c.name?.toLowerCase().includes(s.ui.mentionDropdown.filter.toLowerCase())).slice(0, 12);
         if (!chars.length) return '';
         return `<div id="mentionDropdown" style="position:absolute;bottom:100%;left:0;width:300px;background:#1e1e1e;border:1px solid #3a3a3a;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.4);z-index:1000;max-height:220px;overflow-y:auto;margin-bottom:4px;">
-            <div style="padding:6px 12px;background:#151515;border-bottom:1px solid #3a3a3a;font-size:11px;color:#888">Wybierz postać dla ${state.ui.mentionDropdown.selectedField}</div>
-            ${chars.map((c, i) => `<div class="mention-item" style="padding:10px 12px;cursor:pointer;${i === state.ui.mentionDropdown.selectedIndex ? 'background:#b4823a;color:#fff;' : ''}" onclick="selectMentionCharacter('${c.name}')" onmouseenter="state.ui.mentionDropdown.selectedIndex=${i};updateDropdownHighlight('mention')"><b>${c.name}</b> <span style="opacity:.6;font-size:12px">${c.guild || ''}</span></div>`).join('')}
+            <div style="padding:6px 12px;background:#151515;border-bottom:1px solid #3a3a3a;font-size:11px;color:#888">Wybierz postać dla ${s.ui.mentionDropdown.selectedField}</div>
+            ${chars.map((c, i) => `<div class="mention-item" style="padding:10px 12px;cursor:pointer;${i === s.ui.mentionDropdown.selectedIndex ? 'background:#b4823a;color:#fff;' : ''}" onclick="selectMentionCharacter('${c.name}')" onmouseenter="getState().ui.mentionDropdown.selectedIndex=${i};updateDropdownHighlight('mention')"><b>${c.name}</b> <span style="opacity:.6;font-size:12px">${c.guild || ''}</span></div>`).join('')}
         </div>`;
     }
 
-    const items = getFilteredMentionFields(state.ui.mentionDropdown.filter);
+    const items = getFilteredMentionFields(s.ui.mentionDropdown.filter);
     if (!items.length) return '';
     return `<div id="mentionDropdown" style="position:absolute;bottom:100%;left:0;width:260px;background:#1e1e1e;border:1px solid #3a3a3a;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.4);z-index:1000;max-height:200px;overflow-y:auto;margin-bottom:4px;">
-        ${items.map((m, i) => `<div class="mention-item" style="padding:10px 12px;cursor:pointer;display:flex;gap:8px;${i === state.ui.mentionDropdown.selectedIndex ? 'background:#b4823a;color:#fff;' : ''}" onclick="selectMentionField('${m.key}')" onmouseenter="state.ui.mentionDropdown.selectedIndex=${i};updateDropdownHighlight('mention')">${m.icon} <span style="font-family:monospace">${m.key}</span> <span style="opacity:.7">${m.desc}</span></div>`).join('')}
+        ${items.map((m, i) => `<div class="mention-item" style="padding:10px 12px;cursor:pointer;display:flex;gap:8px;${i === s.ui.mentionDropdown.selectedIndex ? 'background:#b4823a;color:#fff;' : ''}" onclick="selectMentionField('${m.key}')" onmouseenter="getState().ui.mentionDropdown.selectedIndex=${i};updateDropdownHighlight('mention')">${m.icon} <span style="font-family:monospace">${m.key}</span> <span style="opacity:.7">${m.desc}</span></div>`).join('')}
     </div>`;
 }
 
 function handleMentionInput(val, cursorPos) {
+    const s = getState();
+    if (!s) return;
+
     const before = val.substring(0, cursorPos);
     const atIdx = before.lastIndexOf('@');
     if (atIdx === -1 || before.substring(atIdx).includes(' ')) { hideDropdown('mention'); return; }
@@ -145,18 +170,20 @@ function handleMentionInput(val, cursorPos) {
     if (mentionText.includes('.')) {
         const [field, charFilter] = mentionText.split('.');
         if (MENTION_FIELDS[field]) {
-            state.ui.mentionDropdown = {
+            s.ui.mentionDropdown = {
                 visible: true, level: 2, selectedField: field, filter: charFilter || '', selectedIndex: 0,
-                characters: state.allProfiles?.map(p => ({ name: p['Imie postaci'], guild: p['Gildia'] })) || []
+                characters: s.allProfiles?.map(p => ({ name: p['Imie postaci'], guild: p['Gildia'] })) || []
             };
             injectDropdown('mention'); return;
         }
     }
-    state.ui.mentionDropdown = { visible: true, level: 1, selectedField: null, filter: mentionText.substring(1), selectedIndex: 0, characters: [] };
+    s.ui.mentionDropdown = { visible: true, level: 1, selectedField: null, filter: mentionText.substring(1), selectedIndex: 0, characters: [] };
     injectDropdown('mention');
 }
 
 function selectMentionField(field) {
+    const s = getState();
+    if (!s) return;
     const inp = getInput();
     if (!inp) return;
     const pos = inp.selectionStart, before = inp.value.substring(0, pos), after = inp.value.substring(pos);
@@ -168,9 +195,11 @@ function selectMentionField(field) {
 }
 
 function selectMentionCharacter(name) {
+    const s = getState();
+    if (!s) return;
     const inp = getInput();
     if (!inp) return;
-    const field = state.ui.mentionDropdown.selectedField;
+    const field = s.ui.mentionDropdown.selectedField;
     const pos = inp.selectionStart, before = inp.value.substring(0, pos), after = inp.value.substring(pos);
     const atIdx = before.lastIndexOf('@');
     if (atIdx === -1) return;
@@ -209,13 +238,17 @@ function injectDropdown(type) {
 }
 
 function hideDropdown(type) {
-    if (type === 'slash') { state.ui.slashDropdown.visible = false; document.getElementById('slashDropdown')?.remove(); }
-    else { state.ui.mentionDropdown.visible = false; document.getElementById('mentionDropdown')?.remove(); }
+    const s = getState();
+    if (!s) return;
+    if (type === 'slash') { s.ui.slashDropdown.visible = false; document.getElementById('slashDropdown')?.remove(); }
+    else { s.ui.mentionDropdown.visible = false; document.getElementById('mentionDropdown')?.remove(); }
 }
 
 function updateDropdownHighlight(type) {
+    const s = getState();
+    if (!s) return;
     const cls = type === 'slash' ? '.slash-item' : '.mention-item';
-    const idx = type === 'slash' ? state.ui.slashDropdown.selectedIndex : state.ui.mentionDropdown.selectedIndex;
+    const idx = type === 'slash' ? s.ui.slashDropdown.selectedIndex : s.ui.mentionDropdown.selectedIndex;
     document.querySelectorAll(cls).forEach((el, i) => {
         el.style.background = i === idx ? '#b4823a' : '';
         el.style.color = i === idx ? '#fff' : '#e5e7eb';
@@ -223,7 +256,9 @@ function updateDropdownHighlight(type) {
 }
 
 function handleKeydown(e, type) {
-    const dd = type === 'slash' ? state.ui.slashDropdown : state.ui.mentionDropdown;
+    const s = getState();
+    if (!s) return false;
+    const dd = type === 'slash' ? s.ui.slashDropdown : s.ui.mentionDropdown;
     if (!dd.visible) return false;
     const items = type === 'slash' ? getFilteredSlashCommands(dd.filter)
         : (dd.level === 2 ? (dd.characters || []).filter(c => c.name?.toLowerCase().includes(dd.filter.toLowerCase())).slice(0, 12) : getFilteredMentionFields(dd.filter));
@@ -250,8 +285,11 @@ function handleKeydown(e, type) {
 // ==========================================
 
 function checkEscapeIntent(msg) { return ESCAPE_WORDS.some(w => msg.toLowerCase().includes(w)); }
-function checkQuestionLimit() { return state.conversationFlow.questionsAsked >= MAX_QUESTIONS; }
-function resetConversationFlow() { state.conversationFlow = { active: false, convId: null, stage: 'IDLE', questionsAsked: 0, pendingConfirmReset: false, lastSlashCommand: null }; }
+function checkQuestionLimit() { return getState()?.conversationFlow.questionsAsked >= MAX_QUESTIONS; }
+function resetConversationFlow() {
+    const s = getState();
+    if (s) s.conversationFlow = { active: false, convId: null, stage: 'IDLE', questionsAsked: 0, pendingConfirmReset: false, lastSlashCommand: null };
+}
 
 // ==========================================
 // ATTACH TO INPUT

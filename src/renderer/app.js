@@ -10,6 +10,11 @@ window.state = state;
 
 Object.assign(window, AppModules);
 
+// Wire up circular dependencies (renderStep in ui-helpers)
+if (AppModules.setRenderStep && AppModules.renderStep) {
+  AppModules.setRenderStep(AppModules.renderStep);
+}
+
 const thinkingStyle = document.createElement('style');
 thinkingStyle.textContent = `
   .thinking-collapsed {

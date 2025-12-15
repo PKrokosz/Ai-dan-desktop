@@ -104,11 +104,6 @@ ipcMain.handle('pull-model', async (event, modelName) => {
     return result;
 });
 
-// Get current trace ID
-ipcMain.handle('get-trace-id', () => {
-    const { getTraceId } = require('../shared/tracing');
-    return getTraceId();
-});
 
 // ============================================
 // Ollama Installation Handlers

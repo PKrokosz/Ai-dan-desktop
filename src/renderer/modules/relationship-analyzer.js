@@ -3,7 +3,7 @@
  * Analyzes relationships between characters and generates a Mermaid graph definition.
  */
 
-import npcs from '../../data/npcs.json';
+import npcs from '../../data/npcs.json' assert { type: 'json' };
 import * as mermaidAdapter from './mermaid-adapter.js';
 import { state } from './state.js';
 import { addLog, renderStep } from './ui-helpers.js';

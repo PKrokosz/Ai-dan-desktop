@@ -1,0 +1,21 @@
+{
+  "id": "session-1765758019324",
+  "profileName": "Sverh",
+  "startTime": 1765758019324,
+  "messages": [
+    {
+      "role": "user",
+      "content": "witam",
+      "timestamp": 1765758019326
+    },
+    {
+      "role": "user",
+      "content": "witam",
+      "timestamp": 1765758119154
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

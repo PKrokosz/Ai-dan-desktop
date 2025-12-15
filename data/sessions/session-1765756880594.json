@@ -1,0 +1,16 @@
+{
+  "id": "session-1765756880594",
+  "profileName": "Yugul",
+  "startTime": 1765756880594,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: Witam",
+      "timestamp": 1765756880595
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

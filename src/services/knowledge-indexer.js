@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const logger = require('../shared/logger');
+const ollamaService = require('./ollama-client');
 const vectorStore = require('./vector-store');
 
 class KnowledgeIndexer {
@@ -13,6 +14,16 @@ class KnowledgeIndexer {
      */
     async indexDocs() {
         try {
+            // 0. Ensure embedding model exists before starting loop
+            // Using same default as in ollama-client.generateEmbeddings
+            const embeddingModel = 'mxbai-embed-large:335m';
+            const modelReady = await ollamaService.ensureModel(embeddingModel);
+
+            if (!modelReady) {
+                logger.warn(`[KnowledgeIndexer] Embedding model ${embeddingModel} not available. Skipping indexing.`);
+                return;
+            }
+
             if (!fs.existsSync(this.docsPath)) {
                 logger.warn('[KnowledgeIndexer] docs/parsed folder not found');
                 return;

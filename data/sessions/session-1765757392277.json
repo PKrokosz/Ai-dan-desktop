@@ -1,0 +1,16 @@
+{
+  "id": "session-1765757392277",
+  "profileName": "Sarniak",
+  "startTime": 1765757392277,
+  "messages": [
+    {
+      "role": "user",
+      "content": "siema",
+      "timestamp": 1765757392278
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

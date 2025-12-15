@@ -1,0 +1,21 @@
+{
+  "id": "session-1765758347900",
+  "profileName": "Sam",
+  "startTime": 1765758347900,
+  "messages": [
+    {
+      "role": "user",
+      "content": "hejka",
+      "timestamp": 1765758347901
+    },
+    {
+      "role": "user",
+      "content": "questy",
+      "timestamp": 1765758355620
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

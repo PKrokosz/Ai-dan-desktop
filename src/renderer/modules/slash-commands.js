@@ -6,8 +6,7 @@
 
 import { state } from './state.js';
 import { addLog, renderStep } from './ui-helpers.js';
-import { codexAgent } from './codex-agent.js';
-import { applyModelOptimization } from './model-selector.js';
+import { runAI } from './ai-core.js';
 
 // ==============================
 // Slash Command Definitions
@@ -23,7 +22,6 @@ export const SLASH_COMMANDS = {
     '/cechy': 'extract_traits',
     '/frakcja': 'faction_suggestion',
     '/ksywka': 'nickname',
-    '/codex': 'codex_agent'
 };
 
 export const SLASH_COMMAND_LABELS = {
@@ -36,7 +34,6 @@ export const SLASH_COMMAND_LABELS = {
     '/cechy': '✨ Cechy',
     '/frakcja': '⚔️ Frakcja',
     '/ksywka': '🏷️ Ksywka',
-    '/codex': '🤖 Codex'
 };
 
 // ==============================
@@ -55,6 +52,13 @@ export function updatePromptPartLocal(part, value) {
     renderStep();
 }
 
+// ==============================
+// Unified Prompt Execution
+// ==============================
+
+/**
+ * Run custom prompt with unified logic
+ */
 // ==============================
 // Unified Prompt Execution
 // ==============================
@@ -93,15 +97,33 @@ export async function runCustomPrompt() {
         );
         if (slashMatch) {
             const [cmd] = slashMatch;
+            // E.g. /quest -> "Główny Quest" (passed as commandType to runAI)
+            // But runAI expects commandType. If it's a known command key, maybe map it?
+            // Actually, runAI handles raw strings.
+            // But we should probably pass the processed intent.
 
-            // SPECIAL HANDLER: Codex
-            if (cmd === '/codex') {
-                const instruction = processedText.substring(cmd.length).trim();
-                await codexAgent.run(instruction);
-                return;
+            // For now, keep existing logic: strip command, use rest as custom prompt OR command trigger
+            // If it matches a Quick Action ID, we might want to trigger that?
+            // SLASH_COMMANDS maps '/quest' -> 'quest_main'.
+
+            if (SLASH_COMMANDS[cmd]) {
+                // If there is text after command, append it as context/goal?
+                // runAI('quest_main', profile, { additionalGoal: ... })?
+                // For simplicity, let's treat everything as "Custom Prompt" for now unless it's a pure command.
+
+                // Logic:
+                const rest = processedText.substring(cmd.length).trim();
+                if (rest) {
+                    processedText = rest; // Just the goal
+                    // But we want to trigger specific mode?
+                    // Let's stick to simple pass-through for now. runAI will handle "Stage 0" for chat.
+                    // If user typed "/quest kill rats", we want Context!
+                    // This refactor focuses on "siema" (chat).
+
+                    // For "siema", no slash command.
+                }
             }
-
-            processedText = processedText.substring(cmd.length).trim() || `Chcę ${cmd.substring(1)}`;
+            // Just logging
             console.log('🎯 Slash goal:', cmd, '→', processedText);
         }
     }
@@ -120,71 +142,14 @@ export async function runCustomPrompt() {
     const inp = document.getElementById('mainPromptInput');
     if (inp) inp.value = '';
 
-    // Set Processing State
-    state.aiProcessing = true;
-    state.processingStatus = 'Analizuję...';
-    renderStep();
-
+    // 6. Execute via ai-core.runAI
+    // This ensures we use the Optimize Context / Auto-Activation logic
     try {
-        // 6. Conversation Flow Routing
-        let useConversationFlow = false;
-
-        if (window.electronAPI?.configGet) {
-            useConversationFlow = (window.electronAPI.convFlowProcess !== undefined);
-        }
-
-        if (useConversationFlow) {
-            const selectedModel = state.selectedModel || 'gemma2:2b';
-
-            const result = await window.electronAPI.convFlowProcess(
-                profile['Imie postaci'],
-                processedText,
-                profile,
-                { model: selectedModel }
-            );
-
-            state.aiProcessing = false;
-
-            if (result.success) {
-                state.aiResultsFeed.push({
-                    type: 'ai',
-                    content: result.message,
-                    metadata: { stage: result.stage, type: result.type },
-                    isNew: true
-                });
-
-                if (!state.conversationFlow) state.conversationFlow = {};
-                state.conversationFlow.convId = result.convId;
-                state.conversationFlow.stage = result.stage;
-                state.conversationFlow.active = true;
-
-                if (result.type === 'FORCE_GENERATE') {
-                    await runLegacyAICommand('custom', profile, {
-                        customPrompt: result.recipe,
-                        model: selectedModel,
-                        stream: true
-                    });
-                }
-            } else {
-                state.aiResultsFeed.push({ type: 'ai', content: `❌ Błąd flow: ${result.error}` });
-            }
-        } else {
-            // Legacy Path (Direct execution)
-            await runLegacyAICommand('custom', profile, {
-                customPrompt: processedText,
-                stream: true
-            });
-        }
-
-    } catch (error) {
+        await runAI('chat', profile, { customGoal: processedText });
+    } catch (e) {
+        addLog('error', 'Błąd uruchamiania AI: ' + e.message);
         state.aiProcessing = false;
-        state.aiResultsFeed.push({ type: 'ai', content: `❌ Błąd krytyczny: ${error.message}` });
-        console.error('RunCustomPrompt Error:', error);
-    } finally {
-        if (state.aiProcessing && !state.streamData?.active) {
-            state.aiProcessing = false;
-            renderStep();
-        }
+        renderStep();
     }
 }
 
