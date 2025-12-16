@@ -80,7 +80,15 @@ export class AiSummaryGenerator {
     static async saveArtifact(profileName, type, content) {
         const date = new Date().toISOString().split('T')[0];
         const safeName = profileName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-        const filename = `ai-dna/${safeName}_${type}_${date}.json`;
+
+        let subfolder = 'ai-dna';
+        if (type === 'note') subfolder = 'ai-dna/notes';
+
+        // Ensure folder structure exists (handled by backend ideally, but path here matters)
+        // We will just use prefix in filename and let backend handle it, or path separator.
+        // Electron 'save-output' handles recursive mkdir? Yes, ipc-handlers L326 says recursive: true.
+
+        const filename = `${subfolder}/${safeName}_${type}_${date}_${Date.now()}.json`;
 
         const artifact = {
             profile: profileName,
@@ -93,13 +101,13 @@ export class AiSummaryGenerator {
         try {
             const result = await window.electronAPI.saveOutput(filename, JSON.stringify(artifact, null, 2));
             if (result.success) {
-                console.log(`✅ AI-DNA saved: ${filename}`);
+                console.log(`✅ Artifact saved: ${filename}`);
                 // Also save to Session State for immediate UI update access
                 this._saveToSession(profileName, type, artifact);
                 return result.path;
             }
         } catch (e) {
-            console.error("Failed to save AI-DNA", e);
+            console.error("Failed to save Artifact", e);
         }
     }
 
@@ -163,7 +171,86 @@ STYL:
 
         return `Przeanalizuj poniższe dane i wygeneruj RAPORT AI-DNA:\n\n${dataBlock}`;
     }
+
+    /**
+     * Loads saved notes for a profile
+     */
+    static async loadNotes(profileName) {
+        if (!profileName) return [];
+        try {
+            const result = await window.electronAPI.invoke('list-files', 'ai-dna/notes');
+            if (result.success && result.files) {
+                // Filter by profile name
+                // Note: saved artifacts have "profile" field
+                const notes = result.files.filter(f =>
+                    f.profile === profileName && f.type === 'note'
+                );
+                // Sort by date/timestamp desc
+                return notes.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+            }
+            return [];
+        } catch (e) {
+            console.error("Failed to load notes", e);
+            return [];
+        }
+    }
+
+    /**
+     * Updates an existing note content
+     */
+    static async updateNote(noteObject, newContent) {
+        if (!noteObject || !noteObject._filename) return false;
+
+        try {
+            // Update content and timestamp
+            const updated = { ...noteObject, content: newContent, updated: Date.now() };
+            // Remove internal fields before saving
+            const filename = updated._filename;
+            const savePath = `ai-dna/notes/${filename}`;
+
+            // Create clean copy for saving
+            const toSave = { ...updated };
+            delete toSave._filename;
+            delete toSave._path;
+
+            const result = await window.electronAPI.saveOutput(savePath, JSON.stringify(toSave, null, 2));
+            return result.success;
+        } catch (e) {
+            console.error("Failed to update note", e);
+            return false;
+        }
+    }
 }
 
 // Export globally
 window.AiSummaryGenerator = AiSummaryGenerator;
+
+/**
+ * Global handler for saving chat message as note
+ */
+window.saveChatToNote = async (content) => {
+    // Get current profile
+    const profile = state.sheetData?.rows?.[state.selectedRow];
+    if (!profile) {
+        alert('Wybierz postać przed zapisaniem notatki.');
+        return;
+    }
+
+    const name = profile['Imie postaci'] || 'Nieznany';
+
+    // Add toast/log
+    if (window.addLog) window.addLog('info', `Zapisuję notatkę dla: ${name}...`);
+
+    const path = await AiSummaryGenerator.saveArtifact(name, 'note', content);
+
+    if (path) {
+        if (window.addLog) window.addLog('success', `Notatka zapisana!`);
+        // Trigger UI refresh if needed (e.g. reload profile notes section)
+        if (window.renderProfileDetails) {
+            const container = document.getElementById('ai-profile-details');
+            if (container) container.innerHTML = window.renderProfileDetails(profile);
+        }
+    } else {
+        alert('Błąd zapisu notatki.');
+    }
+};

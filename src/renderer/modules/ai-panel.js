@@ -386,8 +386,9 @@ export function renderMinimalistAIPanel() {
                             ${contentHtml}
                          </div>
                          ${!isUser && !item.isStreaming ? `
-                            <div class="ai-actions" style="opacity: 0; transition: opacity 0.2s; position: absolute; right: 10px; top: 10px;">
-                                <button class="btn-icon" onclick="copyToClipboard(decodeURIComponent('${encodeURIComponent(item.content)}'))" title="Kopiuj">📋</button>
+                            <div class="ai-message-actions">
+                                <button class="action-btn" onclick="copyToClipboard(decodeURIComponent('${encodeURIComponent(item.content)}'))" title="Kopiuj">📋</button>
+                                <button class="action-btn" onclick="saveChatToNote(decodeURIComponent('${encodeURIComponent(item.content)}'))" title="Zapisz jako notatkę">💾 Zapisz</button>
                             </div>
                          ` : ''}
                       </div>

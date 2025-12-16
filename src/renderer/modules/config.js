@@ -25,6 +25,11 @@ export const QUICK_ACTIONS = [
             { id: 'correct_text', icon: '✍️', label: 'Korekta' },
         ]
     },
+    {
+        group: 'Analiza Świata', items: [
+            { id: 'analyze_global_relations', icon: '🕸️', label: 'Globalny Graf' },
+        ]
+    },
 ];
 
 // ==============================

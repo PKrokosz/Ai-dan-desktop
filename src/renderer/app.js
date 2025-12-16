@@ -223,6 +223,17 @@ laneStyles.textContent = `
   @keyframes spin { to { transform: rotate(360deg); } }
 
   .ai-message:hover .ai-message-actions { opacity: 1 !important; }
+  
+  .ai-message-actions {
+      display: flex; gap: 5px; opacity: 0; transition: opacity 0.2s;
+      margin-top: 5px; justify-content: flex-end;
+  }
+  
+  .action-btn {
+      font-size: 10px; padding: 2px 6px; border: 1px solid var(--border-subtle);
+      background: var(--bg-dark); color: var(--text-dim); border-radius: 4px; cursor: pointer;
+  }
+  .action-btn:hover { border-color: var(--gold); color: var(--gold); }
 
   .character-overlay {
     position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);

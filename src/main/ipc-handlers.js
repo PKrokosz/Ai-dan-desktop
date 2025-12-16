@@ -57,13 +57,11 @@ const sessionService = require('../services/session-service');     // Zarządzan
 const textCorrectorService = require('../services/text-corrector');// Auto-korekta tekstu
 const modelLimits = require('../services/model-limits');           // Limity tokenów per model
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// CONFIGURATION & SCHEMAS
-// ═══════════════════════════════════════════════════════════════════════════════
 const configHub = require('../shared/config-hub');                 // Centralna konfiguracja (data/config.json)
 const schemaLoader = require('../schemas/schema-loader');          // JSON Schemas dla structured output
 const conversationFlowService = require('../services/conversation-flow'); // Guided Conversation Flow
 const flowManager = require('../services/flow-manager'); // Integrated GCF Logic
+const relationshipService = require('../services/relationship-service'); // Relationship Analysis Service
 
 // Initialize GCF with persistence path
 try {
@@ -175,6 +173,121 @@ ipcMain.handle('search-mentions', async (event, characterName) => {
         return await profileService.searchMentions(characterName);
     });
 });
+
+// Analyze relationships
+ipcMain.handle('analyze-relations', async (event, forceRefresh = false) => {
+    return runWithTrace(async () => {
+        logger.info('Analyzing relationships', { forceRefresh });
+        sendProgress(event, 5, 10, 'Budowanie grafu relacji...');
+
+        try {
+            const graph = await relationshipService.buildGraph(forceRefresh);
+            sendProgress(event, 5, 100, 'Graf zbudowany');
+            return { success: true, graph };
+        } catch (e) {
+            logger.error('Relationship analysis failed', e);
+            return { success: false, error: e.message };
+        }
+    });
+});
+
+// Analyze plot potential for a cluster around a character
+ipcMain.handle('analyze-plot-potential', async (event, characterName) => {
+    return runWithTrace(async () => {
+        logger.info('Analyzing plot potential', { characterName });
+        sendProgress(event, 5, 20, 'Analiza sąsiedztwa...');
+
+        if (!characterName) return { success: false, error: 'Brak nazwy postaci' };
+
+        // 1. Get neighbors
+        const context = await relationshipService.getContextForCharacter(characterName);
+        if (!context || !context.relations || context.relations.length === 0) {
+            return { success: false, error: 'Brak relacji dla tej postaci (samotnik).' };
+        }
+
+        // 2. Fetch profiles for neighbors (limit to top 5 strong connections)
+        sendProgress(event, 5, 40, 'Pobieranie profili powiązanych...');
+        // Sort by weight desc just in case
+        const neighbors = context.relations.sort((a, b) => b.weight - a.weight).slice(0, 5);
+        const neighborNames = neighbors.map(r => r.target);
+
+        const profileService = require('../services/profile-service');
+        const profiles = [];
+
+        // Fetch specific profiles
+        for (const name of neighborNames) {
+            // Using existing getProfiles with precise name match if possible
+            // Note: getProfiles is usually for finding rows. 
+            // We assume backend has optimized lookups or we scan. 
+            // For now, let's trust getProfiles or implement a specific getProfileByName in service if needed.
+            // Using getProfiles({ search: name }) might return multiple.
+            // Assuming we accept the first match.
+            const res = await profileService.getProfiles({ name: name });
+            if (res.success && res.rows.length > 0) {
+                profiles.push(res.rows[0]);
+            }
+        }
+
+        if (profiles.length === 0) {
+            return { success: false, error: 'Nie znaleziono profili sąsiadów w bazie.' };
+        }
+
+        // 3. Construct Semantic Prompt
+        sendProgress(event, 5, 60, 'Generowanie pomysłów fabularnych (AI)...');
+
+        let promptContext = `POSTAĆ GŁÓWNA: ${characterName}\n\n`;
+        promptContext += `SIEC RELACJI (TOP 5):\n`;
+
+        profiles.forEach(p => {
+            const name = p['Imie postaci'];
+            const desc = p['O postaci'] || p['Wątki/Cele'] || p['Historia'] || 'Brak opisu';
+            promptContext += `- ${name}: ${desc.substring(0, 300)}...\n`;
+        });
+
+        const prompt = `Jesteś Kreatorem Fabuły (Plot Weaver) dla Gothic LARP.
+Analizujesz grupę powiązanych postaci (klaster relacyjny).
+
+DANE:
+${promptContext}
+
+ZADANIE:
+Znajdź WSPÓLNY MIANOWNIK (Semantic Match) dla tej grupy. Co ich łączy? (Zemsta, handel, długi, sekta, stary konflikt?).
+Zaproponuj 3 konkretne HOOKI FABULARNE (Plot Hooks) dla Postaci Głównej, które aktywnie angażują wymienionych sąsiadów.
+Hook ma być pretekstem do napisania Listu lub przeprowadzenia rozmowy.
+
+FORMAT ODPOWIEDZI (JSON):
+{
+  "theme": "Krótki opis motywu przewodniego grupy",
+  "hooks": [
+    { 
+      "title": "Chwytliwy tytuł wątku", 
+      "description": "Opis sytuacji (2-3 zdania). Kto, co, dlaczego.", 
+      "target_letter": "Szkic treści listu/plotki, który Postać Główna mogłaby otrzymać." 
+    }
+  ]
+}
+Odpowiedz tylko JSON.`;
+
+        // 4. Call AI 
+        // We use ollamaService direct generation for speed and JSON
+        const aiResult = await ollamaService.generateText(prompt, {
+            // Use smart model selection from config if possible, or fallback
+            // We'll trust the default or 'gemma2:9b'
+            model: configHub.get('ai.defaultModel') || 'gemma2:9b',
+            format: 'json',
+            temperature: 0.7,
+            num_ctx: 4096 // Ensure enough context for multiple profiles
+        });
+
+        if (aiResult.success) {
+            sendProgress(event, 5, 100, 'Zakończono analizę.');
+            return { success: true, analysis: aiResult.text };
+        } else {
+            return { success: false, error: aiResult.error };
+        }
+    });
+});
+
 
 // Fetch world context from Google Drive
 ipcMain.handle('fetch-world-context', async (event) => {
@@ -341,6 +454,38 @@ ipcMain.handle('open-output-folder', async () => {
     }
     shell.openPath(outputDir);
     return { success: true };
+});
+
+// List files in output subfolder
+ipcMain.handle('list-files', async (event, subfolder) => {
+    try {
+        const outputDir = path.resolve(config.output.path);
+        const targetDir = path.join(outputDir, subfolder);
+
+        if (!fs.existsSync(targetDir)) {
+            return { success: true, files: [] };
+        }
+
+        const files = fs.readdirSync(targetDir).filter(f => f.endsWith('.json'));
+        const fileContents = [];
+
+        for (const file of files) {
+            try {
+                const content = fs.readFileSync(path.join(targetDir, file), 'utf-8');
+                const json = JSON.parse(content);
+                // Inject filename for updates
+                json._filename = file;
+                json._path = path.join(targetDir, file);
+                fileContents.push(json);
+            } catch (err) {
+                // Ignore bad files
+            }
+        }
+
+        return { success: true, files: fileContents };
+    } catch (e) {
+        return { success: false, error: e.message };
+    }
 });
 
 // Open specific file

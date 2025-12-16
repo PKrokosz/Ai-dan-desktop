@@ -8,6 +8,7 @@ import { state } from './state.js';
 import { COMMAND_LABELS } from './config.js';
 import { addLog, renderStep } from './ui-helpers.js';
 import ContextManager from './context-manager.js';
+import { showGlobalGraph } from './relationship-analyzer.js';
 
 // ==============================
 // Prompt Configuration
@@ -123,6 +124,12 @@ export function applyModelOptimization(promptParts, modelName) {
 export async function runAI(commandType, overrideProfile = null, options = {}) {
     if (state.aiProcessing) {
         addLog('warn', 'AI już przetwarza poprzednie polecenie...');
+        return;
+    }
+
+    // SPECIAL HANDLER: Global Relationship Graph
+    if (commandType === 'analyze_global_relations') {
+        showGlobalGraph();
         return;
     }
 

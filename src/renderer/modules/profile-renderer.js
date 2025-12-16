@@ -432,6 +432,20 @@ export function renderProfileDetails(profile) {
          <div id="timeline-container-${id}" data-name="${name}">Ładowanie historii...</div>
       </div>
       
+      <!-- NOTES SECTION -->
+      <div class="ai-notes-section" style="grid-column: span 12; margin-top: 20px; background: rgba(20, 20, 25, 0.5); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px;">
+         <div class="ai-dna-header" style="border-bottom: 1px dashed var(--border-subtle); margin-bottom: 15px; padding-bottom: 10px;">
+            <div class="ai-dna-title">
+               <span>📓 Notatnik</span>
+               <span style="font-size: 11px; color: var(--text-dim); font-weight: normal; letter-spacing: 0;">Twoje notatki i zapisy czatu</span>
+            </div>
+            <button class="btn-icon" onclick="refreshProfileNotes('${name.replace(/'/g, "\\'")}')" title="Odśwież" style="color:var(--text-dim);">🔄</button>
+         </div>
+         <div id="ai-notes-container-${id}" class="ai-notes-container" data-name="${name}">
+            <div style="text-align:center; padding:10px; color:var(--text-dim);">Inicjalizacja notatnika...</div>
+         </div>
+      </div>
+
       <!-- AI-DNA SECTION -->
       <div class="ai-dna-section">
          <div class="ai-dna-header">
@@ -441,10 +455,12 @@ export function renderProfileDetails(profile) {
             </div>
             <div class="ai-dna-controls">
                 <select id="aiModelSelect" class="ai-model-select">
-                    <option value="gemma2:9b" selected>Gemma 2 (9B) - High Quality</option>
-                    <option value="mistral:latest">Mistral - Balanced</option>
-                    <option value="phi4:latest">Phi-4 - Fast</option>
-                    <option value="llama3:latest">Llama 3</option>
+                    ${(window.state.ollamaModels && window.state.ollamaModels.length > 0)
+      ? window.state.ollamaModels.map(m => `<option value="${m.name}">${m.name}</option>`).join('')
+      : `<option value="gemma2:9b" selected>Gemma 2 (9B) - High Quality</option>
+                           <option value="mistral:latest">Mistral - Balanced</option>
+                           <option value="phi4:latest">Phi-4 - Fast</option>`
+    }
                 </select>
                 <button id="btnGenerateAiDna" onclick="window.triggerAiDna('${id}', '${name.replace(/'/g, "\\'")}')">
                    <span>⚡ Generuj Raport</span>
@@ -483,13 +499,29 @@ if (typeof document !== 'undefined') {
               const wrapper = container.querySelector('[id^="timeline-container-"]');
               if (wrapper && !wrapper.dataset.loaded) {
                 const id = wrapper.id.replace('timeline-container-', '');
-                // To get name, we need to find it in the DOM or have it in dataset
-                // Let's add data attributes to the wrapper in renderProfileDetails
                 const name = wrapper.dataset.name;
 
                 if (name && id) {
                   wrapper.dataset.loaded = 'true';
-                  loadProfileTimeline(wrapper.id, name, id);
+                  if (window.loadProfileTimeline) loadProfileTimeline(wrapper.id, name, id);
+                }
+              }
+            });
+          }
+
+          // Check for Notes Container
+          const noteContainers = node.classList?.contains('ai-notes-container')
+            ? [node]
+            : node.querySelectorAll?.('.ai-notes-container');
+
+          if (noteContainers && noteContainers.length > 0) {
+            noteContainers.forEach(nc => {
+              if (!nc.dataset.loaded) {
+                const name = nc.dataset.name;
+                if (name) {
+                  nc.dataset.loaded = 'true';
+                  // Slight delay to ensure UI ready
+                  setTimeout(() => window.refreshProfileNotes(name), 100);
                 }
               }
             });
@@ -521,6 +553,10 @@ window.triggerAiDna = async (id, name) => {
     alert('Błąd: Nie znaleziono danych profilu w pamięci.');
     return;
   }
+
+  // Get Selected Model
+  const modelSelect = document.getElementById('aiModelSelect');
+  const selectedModel = modelSelect ? modelSelect.value : 'gemma2:9b';
 
   // UI Setup
   btn.disabled = true;
@@ -1525,3 +1561,98 @@ if (typeof window !== 'undefined') {
   window.generateTimelineSummary = generateTimelineSummary;
   window.loadMentions = loadMentions;
 }
+// ==============================
+// Notes Section Logic
+// ==============================
+
+/**
+ * Refresh and render notes for a profile
+ */
+window.refreshProfileNotes = async (name) => {
+  const container = document.getElementById(`ai-notes-container-${(state.sheetData?.rows?.find(p => p['Imie postaci'] === name)?.id) || 'unknown'}`);
+  // Fallback to searching by class if ID dynamic
+  const containerAlt = document.querySelector('.ai-notes-container-active');
+
+  const target = container || containerAlt;
+  if (!target) return;
+
+  target.innerHTML = '<div style="text-align:center; padding:10px; color:var(--text-dim);">Ładowanie notatek...</div>';
+
+  const notes = await AiSummaryGenerator.loadNotes(name);
+
+  if (!notes || notes.length === 0) {
+    target.innerHTML = '<div style="text-align:center; padding:10px; font-style:italic; color:var(--text-dim);">Brak zapisanych notatek lub listów dla tej postaci.</div>';
+    return;
+  }
+
+  target.innerHTML = '';
+  notes.forEach(note => {
+    // Detect type or content tag
+    const isLetter = note.type === 'letter' || (note.content && note.content.includes('#list'));
+
+    const card = document.createElement('div');
+    card.className = `ai-card ${isLetter ? 'letter-card' : 'note-card'}`;
+
+    if (isLetter) {
+      card.style.background = '#f4e4bc'; // Parchment
+      card.style.color = '#3e2b14'; // Ink
+      card.style.fontFamily = '"Cinzel", "Georgia", serif'; // Gothic style
+      card.style.fontSize = '14px';
+      card.style.border = '1px solid #d4af37';
+      card.style.boxShadow = 'inset 0 0 30px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.3)';
+      card.style.minHeight = '150px';
+      card.style.marginTop = '15px';
+      card.style.padding = '20px';
+      card.style.position = 'relative';
+    } else {
+      card.style.borderLeftColor = '#ffd700';
+    }
+
+    const contentHtml = note.content;
+    const title = isLetter ? '📜 List / Dokument' : `📝 Notatka (${note.date || 'Nieznana data'})`;
+
+    card.innerHTML = `
+      <div class="ai-card-meta" style="display:flex; justify-content:space-between; align-items:center; ${isLetter ? 'border-bottom:1px solid rgba(62,43,20,0.2); padding-bottom:5px; margin-bottom:15px;' : ''}">
+         <span style="${isLetter ? 'font-weight:bold; font-size:16px; letter-spacing:1px;' : ''}">${title}</span>
+         <div class="note-controls">
+           <button class="btn-icon btn-save-note" style="display:none; color:${isLetter ? '#2e7d32' : '#4caf50'};" title="Zapisz zmiany">💾</button>
+           <button class="btn-icon" onclick="deleteNote('${note._filename}')" title="Usuń (BETA)" style="color:${isLetter ? '#c62828' : '#f44336'}; opacity:${isLetter ? '0.8' : '0.5'};">🗑️</button>
+         </div>
+      </div>
+      <div class="note-content" contenteditable="true" style="white-space: pre-wrap; outline:none; padding:5px; border-radius:4px; transition:background 0.2s; ${isLetter ? 'font-style:italic; line-height:1.6;' : ''}">
+         ${contentHtml}
+      </div>
+      ${isLetter ? '<div style="position:absolute; bottom:10px; right:15px; opacity:0.3; font-size:24px; pointer-events:none;">✒️</div>' : ''}
+    `;
+
+    // Event Listeners for Edit Mode
+    const contentDiv = card.querySelector('.note-content');
+    const saveBtn = card.querySelector('.btn-save-note');
+
+    contentDiv.addEventListener('input', () => {
+      saveBtn.style.display = 'inline-block';
+      contentDiv.style.background = isLetter ? 'rgba(62,43,20,0.05)' : 'rgba(255,255,255,0.05)';
+    });
+
+    saveBtn.addEventListener('click', async () => {
+      saveBtn.textContent = '⏳';
+      const success = await AiSummaryGenerator.updateNote(note, contentDiv.innerHTML);
+      if (success) {
+        saveBtn.style.display = 'none';
+        saveBtn.textContent = '💾';
+        contentDiv.style.background = 'transparent';
+        if (window.addLog) window.addLog('success', 'Zaktualizowano.');
+      } else {
+        saveBtn.textContent = '❌';
+        alert('Błąd zapisu!');
+      }
+    });
+
+    target.appendChild(card);
+  });
+};
+
+window.deleteNote = (filename) => {
+  // TODO: Implement delete functionality
+  alert('Usuwanie notatek wkrótce!');
+};

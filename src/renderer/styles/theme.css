@@ -71,7 +71,7 @@ body {
 #app {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   height: 100vh;
 }
 
@@ -345,12 +345,23 @@ body {
    Log Panel
    ============================== */
 .log-panel {
-  grid-column: 2;
+  position: fixed;
+  bottom: 0;
+  left: var(--sidebar-width);
+  right: 0;
   height: var(--log-panel-height);
   background: var(--bg-panel);
   border-top: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
+  z-index: 100;
+  transition: left 0.3s ease, height 0.3s ease;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.compact~.log-panel {
+  left: 70px;
+  /* Adjust for compact sidebar */
 }
 
 .log-panel.collapsed {
