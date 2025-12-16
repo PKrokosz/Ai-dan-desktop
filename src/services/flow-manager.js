@@ -1,4 +1,4 @@
-const { GOAL_SCHEMAS } = require('../schemas/schema-loader'); // Need to ensure path is correct
+const { GOAL_SCHEMAS, getSchemaForCommand } = require('../schemas/schema-loader');
 // If schema-loader is not CommonJS, we might need dynamic import or refactor.
 // For now assuming existing CommonJS structure of backend.
 
@@ -22,8 +22,14 @@ class FlowManager {
     analyzeIntent(message) {
         const lower = message.toLowerCase();
 
-        // Trigger words (Heuristic MVP)
-        // In full version this could be a fast LLM classification
+        // 1. One-Shot Slash Commands (Fast Path)
+        if (lower.includes('/cechy')) return 'EXTRACT_TRAITS';
+        if (lower.includes('/sekret')) return 'GENERATE_SECRET';
+        if (lower.includes('/hook')) return 'STORY_HOOKS';
+        if (lower.includes('/relacje') || lower.includes('/analiza')) return 'ANALYZE_RELATIONS';
+        if (lower.includes('/quest') || lower.includes('/q ')) return 'GENERATE_QUEST';
+
+        // 2. Trigger words (Heuristic)
         if (lower.includes('quest') || lower.includes('zadanie') || lower.includes('przygoda')) {
             return 'GENERATE_QUEST';
         }
@@ -57,10 +63,11 @@ class FlowManager {
             case 'IDLE':
                 if (intent && intent !== 'RESET') {
                     // Start Flow
-                    state.stage = 'COLLECTION';
+                    const isOneShot = ['EXTRACT_TRAITS', 'GENERATE_SECRET', 'STORY_HOOKS'].includes(intent);
+                    state.stage = isOneShot ? 'EXECUTION' : 'COLLECTION'; // Slash commands jump to EXECUTION
                     state.intent = intent;
                     state.data = {};
-                    state.missing = this._calculateMissing(intent, {});
+                    state.missing = [];
                 }
                 break;
 
@@ -114,44 +121,67 @@ class FlowManager {
         return [];
     }
 
-    /**
-     * Build Dynamic System Prompt based on State
-     * @param {Object} state - Current flow state
-     * @param {Object} profile - Character profile
-     * @returns {string} System prompt injection
-     */
-    /**
-     * Build Dynamic System Prompt based on State (Director Notes)
-     * @param {Object} state - Current flow state
-     * @param {Object} profile - Character profile
-     * @returns {string} System prompt injection
-     */
     buildSystemPrompt(state, profile) {
-        // Base Persona is already loaded by prompt-builder.
-        // Here we inject "SCENARIO DIRECTOR NOTES" (Hidden instructions)
-
         const directorPrefix = `
-=== NOTATKI REŻYSERSKIE (TYLKO DLA CIEBIE) ===
-Jesteś w trakcie odgrywania roli (Roleplay). Nie wychodź z postaci.
+=== SYSTEM MODE: DATA COLLECTION ===
 `;
 
         if (state.stage === 'COLLECTION') {
             return `${directorPrefix}
-[CEL SCENY: ${state.intent}]
-Gracz chce, abyś coś dla niego przygotował (Quest/Analizę), ale musisz to z niego "wyciągnąć" w naturalnej rozmowie.
-NIE PLANUJ wszystkiego od razu. Prowadź dialog.
-Twoim zadaniem jest dowiedzieć się co gracz ma na myśli, ale rób to subtelnie, w stylu swojej postci.
-Jeśli gracz pisze zdawkowo ("Chcę questa"), wyśmiej go lub dopytaj o szczegóły ("Dla kogo? Za ile?").
-Nie zachowuj się jak bot przyjmujący zamówienie. Zachowuj się jak ${profile['Imie postaci']}, który musi zostać przekonany.
-Gdy uznasz, że wiesz już wystarczająco dużo, zapytaj wprost czy przejść do konkretów.`;
+[CURRENT GOAL: ${state.intent}]
+User wants specific content. You need to gather missing details.
+1. ASK QUESTIONS specific to "${state.intent}".
+2. BE CONCISE. No roleplay.
+3. If you have enough info, say "READY".
+`;
         }
 
         if (state.stage === 'EXECUTION') {
-            return `${directorPrefix}
-[FISTUŁA SCENY: FINAŁ]
-Masz już wszystkie dane. Gracz czeka na wynik.
-Teraz - i tylko teraz - możesz wygenerować pełny, sformatowany opis (Quest/Analizę).
-Zrób to profesjonalnie (struktura Markdown), ale opatrz to komentarzem w stylu postaci.`;
+            // == SYSTEM OVERRIDE: ACCOUNTANT MODE ==
+            // We force the model to break character and become a JSON generator.
+
+            let schemaJson = "{}";
+            let typeInstruction = "Generic JSON";
+
+            // Map Intent to Schema Type
+            if (state.intent === 'GENERATE_QUEST') {
+                const schema = getSchemaForCommand('main_quest'); // Use generic Quest schema
+                schemaJson = JSON.stringify(schema, null, 2);
+                typeInstruction = "Quest Data";
+            } else if (state.intent === 'ANALYZE_RELATIONS') {
+                const schema = getSchemaForCommand('analyze_relations');
+                schemaJson = JSON.stringify(schema, null, 2);
+                typeInstruction = "Relationship Analysis";
+            } else if (state.intent === 'EXTRACT_TRAITS') {
+                const schema = getSchemaForCommand('extract_traits');
+                schemaJson = JSON.stringify(schema, null, 2);
+                typeInstruction = "Traits Extraction";
+            } else if (state.intent === 'GENERATE_SECRET') {
+                const schema = getSchemaForCommand('secret');
+                schemaJson = JSON.stringify(schema, null, 2);
+                typeInstruction = "Secret Generation";
+            } else if (state.intent === 'STORY_HOOKS') {
+                const schema = getSchemaForCommand('story_hooks');
+                schemaJson = JSON.stringify(schema, null, 2);
+                typeInstruction = "Story Hooks";
+            }
+
+            return `
+=== SYSTEM OVERRIDE: DATA GENERATION MODE ===
+Your task is to generate strict VALID JSON based on the user's request.
+
+[RULES]
+1. OUTPUT MUST BE RAW JSON ONLY. No markdown blocks, no fluff text.
+2. FIELDS MUST BE TECHNICAL. Do not use metaphors. Use precise language.
+3. FOLLOW THE SCHEMA EXACTLY.
+
+[SCHEMA: ${typeInstruction}]
+${schemaJson}
+
+[INPUT DATA]
+User Intent: ${state.intent}
+Context: ${JSON.stringify(state.data || {})}
+`;
         }
 
         return ""; // IDLE - Default Persona handles it.

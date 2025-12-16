@@ -203,77 +203,40 @@ function buildFactionContext(faction, contextContent) {
  * Buduje BAZOWY System Prompt (Persona, Świat, Styl) - bez instrukcji zadania.
  * Do użycia jako "System Message" w czacie.
  */
+// [PIVOT] Technical Assistant Mode
 function buildBaseSystemPrompt(profile, userConfig = {}) {
-    // Merge z domyślną konfiguracją
     const config = mergeConfig(userConfig);
-
     let prompt = '';
 
-    // === ROLA ===
-    prompt += `Jesteś Mistrzem Gry na Gothic LARP. Tworzysz wątki fabularne dla graczy w Kolonii Karnej.\n\n`;
+    // === ROLE: TECHNICAL & OBJECTIVE ===
+    prompt += `Jesteś Technicznym Asystentem bazy danych Gothic. Twoim celem jest generowanie precyzyjnych, zgodnych z lore treści.\n`;
+    prompt += `NIE JESTEŚ "Mistrzem Gry". Jesteś narzędziem. Nie używaj metafor, poetyckiego języka ani zwrotów "Witaj wietrze".\n`;
+    prompt += `Bądź zwięzły, konkretny i rzeczowy. Odpowiadaj krótko.\n\n`;
 
-    // === KONTEKSTY ===
+    // === CONTEXT AS DATA ===
     if (config.contexts.geography) {
-        prompt += `=== ŚWIAT I LOKACJE ===\n${loadContext('geography', 2000)}\n\n`;
+        prompt += `[DANE: GEOGRAFIA]\n${loadContext('geography', 2000)}\n\n`;
     }
 
     if (config.contexts.system) {
         let systemContent = loadContext('system', 3000);
-        if (config.focus.faction) {
-            prompt += `=== FRAKCJA: ${FACTIONS[config.focus.faction]?.label} ===\n`;
-            prompt += buildFactionContext(config.focus.faction, systemContent) + '\n\n';
-        } else {
-            prompt += `=== ZASADY I HIERARCHIA ===\n${systemContent}\n\n`;
-        }
+        prompt += `[DANE: SYSTEM/PRAWO]\n${systemContent}\n\n`;
     }
 
-    if (config.contexts.aspirations) {
-        prompt += `=== ASPIRACJE I INTRYGI ===\n${loadContext('aspirations', 2000)}\n\n`;
+    // === SUBJECT DATA ===
+    prompt += `[OBIEKT DOCELOWY: POSTAĆ]\n`;
+    prompt += `Imię: ${profile['Imie postaci'] || 'N/A'}\n`;
+    prompt += `Gildia: ${profile['Gildia'] || 'N/A'}\n`;
+    prompt += `Status: ${profile['Wina'] || 'N/A'}\n`;
+    prompt += `Dane Historii: ${profile['O postaci'] || profile['Jak zarabiala na zycie, kim byla'] || 'N/A'}\n`;
+    prompt += `Cele: ${profile['Przyszlosc'] || 'N/A'}\n`;
+    prompt += `Cechy: ${profile['Slabosci'] || 'N/A'}, ${profile['Umiejetnosci'] || 'N/A'}\n\n`;
 
-        // Inject Active Intrigues
-        const intrigues = getRelevantIntrigues(profile.Gildia ? (FACTIONS[Object.keys(FACTIONS).find(k => FACTIONS[k].label === profile.Gildia)] ? Object.keys(FACTIONS).find(k => FACTIONS[k].label === profile.Gildia) : null) : null);
-        if (intrigues) {
-            prompt += `AKTYWNE INTRYGI W KOLONII:\n${intrigues}\n\n`;
-        }
-    }
-
-    if (config.contexts.weaknesses) {
-        prompt += `=== SŁABOŚCI I ZAGROŻENIA ===\n${loadContext('weaknesses', 1500)}\n\n`;
-    }
-
-    // Inject NPCs
-    const npcs = getRandomNPCs(3);
-    if (npcs) {
-        prompt += `=== KLUCZOWE POSTACIE (NPC) ===\n${npcs}\n\n`;
-    }
-
-    // === STYL NARRACYJNY ===
-    let activeStyle = config.style;
-    if (activeStyle === 'auto') {
-        activeStyle = detectStyleFromProfile(profile);
-    }
-    const styleConfig = STYLES[activeStyle];
-    prompt += `=== STYL: ${styleConfig.label} ===\n`;
-    prompt += `Ton: ${styleConfig.description}\n\n`;
-
-    // === FEW-SHOT EXAMPLES ===
-    if (config.contexts.quests && config.fewShotCount > 0) {
-        const examples = getQuestSchemas(activeStyle, config.fewShotCount);
-        if (examples) {
-            prompt += `=== PRZYKŁADY SCHEMATÓW ===\n${examples}\n\n`;
-        }
-    }
-
-    // === POSTAĆ ===
-    prompt += `=== PROFIL POSTACI ===\n`;
-    prompt += `Imię: ${profile['Imie postaci'] || 'Nieznane'}\n`;
-    prompt += `Gildia: ${profile['Gildia'] || 'Brak'}\n`;
-    prompt += `Region: ${profile['Region'] || 'Nieznany'}\n`;
-    prompt += `Za co siedzi: ${profile['Wina'] || 'Nieznane'}\n`;
-    prompt += `Historia: ${profile['O postaci'] || profile['Jak zarabiala na zycie, kim byla'] || 'Brak'}\n`;
-    prompt += `Cele: ${profile['Przyszlosc'] || profile['Kim chce zostac'] || 'Brak'}\n`;
-    prompt += `Słabości: ${profile['Slabosci'] || 'Brak'}\n`;
-    prompt += `Umiejętności: ${profile['Umiejetnosci'] || 'Brak'}\n\n`;
+    // === INSTRUCTIONS ===
+    prompt += `[WYTYCZNE]\n`;
+    prompt += `1. Używaj SUCHEGO, technicznego języka.\n`;
+    prompt += `2. ZERO "klimatycznych wstawek" (np. "Ciemność otula...").\n`;
+    prompt += `3. Skup się na faktach i użyteczności dla Mistrza Gry.\n`;
 
     return prompt;
 }

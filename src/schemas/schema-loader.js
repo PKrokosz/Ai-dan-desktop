@@ -25,6 +25,52 @@ const COMMAND_SCHEMA_MAP = {
 };
 
 /**
+ * Enhanced Goal Schemas for Guided Conversation Flow
+ * Contains metadata for validation, normalization, and UI rendering.
+ */
+const GOAL_SCHEMAS = {
+    'GENERATE_QUEST': {
+        id: 'GENERATE_QUEST',
+        fields: {
+            theme: {
+                type: 'string',
+                required: true,
+                description: 'Mood/Theme like revenge, greed',
+                normalize: (val) => val ? val.toLowerCase().trim() : null
+            },
+            type: {
+                type: 'enum',
+                options: ['Main', 'Side', 'Fetch', 'Investigation'],
+                required: true,
+                default: 'Side',
+                typings: {
+                    'główny': 'Main', 'main': 'Main',
+                    'poboczny': 'Side', 'side': 'Side',
+                    'przynieś': 'Fetch', 'fetch': 'Fetch',
+                    'śledztwo': 'Investigation', 'investigation': 'Investigation'
+                }
+            },
+            difficulty: {
+                type: 'enum',
+                options: ['Easy', 'Normal', 'Hard'],
+                required: false,
+                default: 'Normal',
+                typings: {
+                    'łatwy': 'Easy', 'easy': 'Easy',
+                    'normalny': 'Normal', 'normal': 'Normal',
+                    'trudny': 'Hard', 'hard': 'Hard'
+                }
+            },
+            antagonist: {
+                type: 'string',
+                required: false,
+                description: 'Główny przeciwnik lub przeszkoda'
+            }
+        }
+    }
+};
+
+/**
  * Get JSON Schema for a specific command type
  * @param {string} commandType - AI command type
  * @returns {object|null} JSON Schema object or null if not applicable
@@ -85,5 +131,7 @@ module.exports = {
     getSchemaForCommand,
     requiresStructuredOutput,
     getAvailableSchemas,
-    clearCache
+    clearCache,
+    getGoalSchema: (id) => GOAL_SCHEMAS[id],
+    GOAL_SCHEMAS
 };

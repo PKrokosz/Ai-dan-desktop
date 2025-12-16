@@ -231,7 +231,7 @@ function injectDropdown(type) {
 
     const html = type === 'slash' ? renderSlashDropdown() : renderMentionDropdown();
     if (html) {
-        container.style.position = 'relative';
+        // container.style.position = 'relative'; // REMOVED: Breaks layout (container is absolute)
         container.insertAdjacentHTML('beforeend', html);
         console.log('✅ Injected ' + type + ' dropdown');
     }

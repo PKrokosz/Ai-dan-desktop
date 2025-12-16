@@ -1,142 +1,85 @@
 /**
  * @module DiscoveryPrompt
- * @description Prompty dla fazy diagnozy rozmowy
+ * @description Prompts for Guided Conversation Flow (GCF) stages.
  */
 
 /**
- * Prompt do klasyfikacji intencji użytkownika
+ * Diagnosis Prompt
+ * Identifies the user's goal with confidence score.
  */
-const CLASSIFICATION_PROMPT = `Klasyfikuj intencję użytkownika. Odpowiedz TYLKO jednym słowem z listy:
-- GOAL_PROVIDED (użytkownik podał konkretny cel, np. "daj questa o kopalni")
-- NEEDS_GOAL (użytkownik potrzebuje pomocy ale nie wie czego, np. "pomóż mi z postacią")
-- ASK_CAPABILITIES (pyta co możesz zrobić, np. "co umiesz?")
-- PROBLEM (opisuje problem do rozbicia, np. "mam problem z...")
-- UNKNOWN (nie można sklasyfikować)
+function buildDiagnosisPrompt({ message, history, profileName }) {
+    const historyText = history.slice(-5).map(m => `${m.role}: ${m.content}`).join('\n');
+    return `Analyze the user's intent based on the conversation.
+    Target: Character '${profileName}'
+    History:
+    ${historyText}
+    Current Message: "${message}"
 
-Wiadomość użytkownika: "{message}"
+    Classify the intent into one of the following GOALS:
+    - GENERATE_QUEST (User wants a quest, adventure, mission)
+    - UNKNOWN (Unclear, chitchat, or unrelated)
 
-Odpowiedź (TYLKO jedno słowo):`;
-
-/**
- * Prompt do zadawania pytań diagnostycznych
- */
-const DISCOVERY_PROMPT = `Jesteś asystentem MG dla Gothic LARP. Prowadzisz krótką diagnozę potrzeb użytkownika.
-
-### ZASADY ###
-1. Max 2-3 zdania + jedno pytanie zamknięte (można odpowiedzieć tak/nie)
-2. Zawsze się przywitaj przy pierwszym kontakcie
-3. Po odpowiedzi - krótko potwierdź co zrozumiałeś
-4. Zbieraj: CEL + MOTYW + TON + OGRANICZENIA
-
-### KONTEKST ###
-Postać: {profileName} ({profileGuild})
-Dotychczasowa rozmowa: {conversationHistory}
-Zebrane informacje: {recipe}
-Pytań zadanych: {questionsCount}/5
-
-### INSTRUKCJA ###
-{instruction}
-
-### ODPOWIEDŹ ###`;
-
-/**
- * Prompt interpretacji odpowiedzi TAK/NIE
- */
-const INTERPRETATION_PROMPT = `Zinterpretuj odpowiedź użytkownika jako TAK, NIE lub GOTOWY.
-
-Przykłady TAK: "tak", "jasne", "dokładnie", "no", "aha", "zgadza się", "raczej tak"
-Przykłady NIE: "nie", "niekoniecznie", "coś innego", "raczej nie", "nie do końca"  
-Przykłady GOTOWY: "generuj", "dawaj", "ok", "lecimy", "pomiń", "wystarczy"
-
-Odpowiedź użytkownika: "{response}"
-
-Interpretacja (TYLKO jedno słowo - TAK/NIE/GOTOWY):`;
-
-/**
- * Instrukcje per stan
- */
-const STAGE_INSTRUCTIONS = {
-    GREETING: 'Przywitaj się krótko i zapytaj czego użytkownik potrzebuje dla tej postaci.',
-
-    GOAL_PROVIDED: 'Użytkownik już podał cel. Przywitaj się i doprecyzuj jeden szczegół (nie pytaj o cel!).',
-
-    NEEDS_GOAL: 'Zapytaj jednym pytaniem zamkniętym o typ potrzeby: quest, analiza relacji, hook fabularny, czy coś innego?',
-
-    DISCOVERY: 'Na podstawie dotychczasowej rozmowy zadaj jedno pytanie zamknięte, żeby doprecyzować kontekst.',
-
-    CONFIRM: 'Podsumuj w 2-3 zdaniach co zrozumiałeś i zapytaj czy możesz generować.',
-
-    FORCE_GENERATE: 'Powiedz krótko że masz wystarczający kontekst i przechodzisz do generacji.',
-
-    ASK_CAPABILITIES: `Wyjaśnij krótko możliwości:
-- /quest - główne questy
-- /side - poboczne questy  
-- /hook - haczyki fabularne
-- /analiza - analiza relacji
-- /secret - sekrety postaci
-Lub po prostu opisz czego potrzebujesz.`,
-
-    PROBLEM: 'Rozbij problem użytkownika na części. Zapytaj o pierwszą konkretną rzecz do rozwiązania.',
-
-    TOPIC_CHANGE: 'Zauważyłeś zmianę tematu. Zapytaj czy użytkownik chce zmienić temat z "{oldTopic}" na "{newTopic}".'
-};
-
-/**
- * Buduje prompt diagnostyczny
- */
-function buildDiscoveryPrompt(params) {
-    const {
-        profileName,
-        profileGuild,
-        conversationHistory,
-        recipe,
-        questionsCount,
-        instruction
-    } = params;
-
-    return DISCOVERY_PROMPT
-        .replace('{profileName}', profileName || 'Nieznany')
-        .replace('{profileGuild}', profileGuild || 'Nieznana')
-        .replace('{conversationHistory}', conversationHistory || 'Brak')
-        .replace('{recipe}', JSON.stringify(recipe || {}, null, 2))
-        .replace('{questionsCount}', questionsCount || 0)
-        .replace('{instruction}', instruction || STAGE_INSTRUCTIONS.GREETING);
+    Output format: STRICT SINGLE WORD (GENERATE_QUEST or UNKNOWN).
+    `;
 }
 
 /**
- * Buduje prompt klasyfikacyjny
+ * Extraction Prompt
+ * Extracts structured data from user message based on schema.
  */
-function buildClassificationPrompt(message) {
-    return CLASSIFICATION_PROMPT.replace('{message}', message);
+function buildExtractionPrompt({ schema, message, currentData }) {
+    return `Extract data for goal: ${schema.id}.
+    Schema Fields:
+    ${Object.entries(schema.fields).map(([k, v]) => `- ${k} (${v.type}): ${v.description || ''}`).join('\n')}
+
+    Current context/data: ${JSON.stringify(currentData)}
+    User Message: "${message}"
+
+    Rules:
+    1. Extract values that match the schema fields.
+    2. Normalize values if possible (e.g. synonyms).
+    3. Return ONLY valid JSON object with extracted fields.
+    `;
 }
 
 /**
- * Buduje prompt interpretacji
+ * Collection Question Prompt
+ * Generates a natural language question for missing fields.
  */
-function buildInterpretationPrompt(response) {
-    return INTERPRETATION_PROMPT.replace('{response}', response);
+function buildCollectionQuestionPrompt({ schema, missing, currentData }) {
+    const missingFieldsDef = missing.map(key => {
+        const field = schema.fields[key];
+        return `- ${key} (${field.description || field.type})`;
+    }).join('\n');
+
+    return `You are a Game Master assistant. The user wants to generate: ${schema.id}.
+    
+    Collected Data: ${JSON.stringify(currentData)}
+    
+    MISSING information that you MUST ask for:
+    ${missingFieldsDef}
+
+    Task:
+    Ask the user a natural, thematic question to gather the missing information.
+    Focus on: ${missing.join(', ')}.
+    Keep it short (1-2 sentences). Style: Gothic, dark fantasy universe.
+    `;
 }
 
 /**
- * Pobiera instrukcję dla danego stanu
+ * Confirmation Check
+ * Simple analyzer for Yes/No/Cancel
  */
-function getInstruction(stage, params = {}) {
-    let instruction = STAGE_INSTRUCTIONS[stage] || STAGE_INSTRUCTIONS.DISCOVERY;
-
-    // Podmień placeholdery jeśli są
-    if (params.oldTopic) instruction = instruction.replace('{oldTopic}', params.oldTopic);
-    if (params.newTopic) instruction = instruction.replace('{newTopic}', params.newTopic);
-
-    return instruction;
+function isConfirmation(message) {
+    const lower = message.toLowerCase();
+    if (['tak', 'yes', 'dobrze', 'zgoda', 'ok', 'dawaj', 'rób'].some(w => lower.includes(w))) return 'YES';
+    if (['nie', 'no', 'błąd', 'zmień', 'czekaj'].some(w => lower.includes(w))) return 'NO';
+    return 'UNCLEAR';
 }
 
 module.exports = {
-    CLASSIFICATION_PROMPT,
-    DISCOVERY_PROMPT,
-    INTERPRETATION_PROMPT,
-    STAGE_INSTRUCTIONS,
-    buildDiscoveryPrompt,
-    buildClassificationPrompt,
-    buildInterpretationPrompt,
-    getInstruction
+    buildDiagnosisPrompt,
+    buildExtractionPrompt,
+    buildCollectionQuestionPrompt,
+    isConfirmation
 };
