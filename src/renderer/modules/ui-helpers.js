@@ -41,10 +41,41 @@ export function addLog(level, message) {
  * @param {string} text - Progress text to display
  */
 export function setProgress(percent, text) {
+    const container = document.getElementById('progressContainer'); // Assuming container exists
     const fill = document.getElementById('progressFill');
     const label = document.getElementById('progressText');
+
+    // Ensure visibility if likely hidden previously
+    if (container && percent < 100) {
+        container.style.opacity = '1';
+        container.style.transition = 'opacity 0.3s';
+    }
+
     if (fill) fill.style.width = `${percent}%`;
     if (label) label.textContent = text;
+
+    // Auto-hide if complete
+    if (percent >= 100) {
+        setTimeout(() => {
+            if (label && label.textContent === text) { // Check if text hasn't changed (new task started)
+                if (container) {
+                    container.style.opacity = '0';
+                } else if (fill) {
+                    // Fallback if no container ID known, fade fill/label? 
+                    // Usually progress bar is wrapped. Let's assume global footer progress.
+                    // We will try to fade the parent of fill if container not found
+                    const parent = fill.parentElement?.parentElement; // fill -> bar -> container?
+                    if (parent && parent.id === 'statusbar') {
+                        // Statusbar shouldn't disappear entirely maybe? 
+                        // User said "pasek progresu tez moglby znikac".
+                        // Let's just clear the text and width.
+                        fill.style.width = '0%';
+                        if (label) label.textContent = '';
+                    }
+                }
+            }
+        }, 3000);
+    }
 }
 
 // ==============================

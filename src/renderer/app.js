@@ -263,6 +263,30 @@ laneStyles.textContent = `
 document.head.appendChild(laneStyles);
 
 
+// Custom Navigation Listener (from Timelines/Overlays)
+window.addEventListener('navigate-to-character', (e) => {
+  const name = e.detail?.name;
+  if (!name) return;
+
+  console.log('Navigating to character:', name);
+
+  // Method 1: Use shared jumpToCharacter if available
+  if (typeof window.jumpToCharacter === 'function') {
+    window.jumpToCharacter(name);
+    return;
+  }
+
+  // Method 2: Fallback to Search Input injection
+  const searchInput = document.getElementById('searchInput') || document.getElementById('heroSearch');
+  if (searchInput) {
+    searchInput.value = name;
+    searchInput.dispatchEvent(new Event('input'));
+    // Try finding a button
+    const btn = document.getElementById('btnSearch');
+    if (btn) btn.click();
+  }
+});
+
 if (AppModules.init) {
   AppModules.init();
 } else {

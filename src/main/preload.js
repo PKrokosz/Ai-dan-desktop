@@ -46,6 +46,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
     renderCards: (profile, quests) => ipcRenderer.invoke('render-cards', profile, quests),
     searchExcelMentions: (characterName) => ipcRenderer.invoke('search-excel-mentions', characterName),
     getProfileByName: (name) => ipcRenderer.invoke('get-profile-by-name', name),
+    getProfileHistory: (criteria) => ipcRenderer.invoke('get-profile-history', criteria),
+    searchMentions: (characterName) => ipcRenderer.invoke('search-mentions', characterName),
     getAllCharacterNames: () => ipcRenderer.invoke('get-all-character-names'),
 
     // Data Loading (Excel)

@@ -147,6 +147,32 @@ ipcMain.handle('fetch-larpgothic', async (event, search = {}) => {
         }
 
         return result;
+        return result;
+    });
+});
+
+// Profile API Upgrade - History
+ipcMain.handle('get-profile-history', async (event, criteria) => {
+    return runWithTrace(async () => {
+        logger.info('Fetching profile history', { criteria });
+        const profileService = require('../services/profile-service');
+
+        // Use smart fetcher if name is available to ensure correct UserID discovery
+        // This fixes issues where local 'id' doesn't match API 'userid'
+        if (criteria.name) {
+            return await profileService.getHistoryByName(criteria.name);
+        }
+
+        return await profileService.getProfiles(criteria);
+    });
+});
+
+// Search for mentions of a character in other profiles' summaries
+ipcMain.handle('search-mentions', async (event, characterName) => {
+    return runWithTrace(async () => {
+        logger.info('Searching mentions for character', { characterName });
+        const profileService = require('../services/profile-service');
+        return await profileService.searchMentions(characterName);
     });
 });
 
@@ -249,7 +275,9 @@ ipcMain.handle('reduce-profile', async (event, laneResults) => {
             sendProgress(event, 4, 100, 'Profil scalony');
             return { success: true, profile: seededProfile };
         } catch (error) {
-            logger.error('Profile merge failed', { error: error.message });
+            logger.error('Profile merge failed', {
+                error: error.message
+            });
             return { success: false, error: error.message };
         }
     });
