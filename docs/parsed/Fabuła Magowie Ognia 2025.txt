@@ -1,0 +1,3053 @@
+# Fabuła Magowie Ognia 2025.xlsx
+================================================================================
+
+## Arkusz: Postacie
+----------------------------------------
+
+### Wpis 1
+**L.p.**: 1
+**Imię postaci**: Calor
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Faring
+**Grupa / Profesja**: II Krąg
+Asystent Alchemii
+**Mechaniczne umiejętności**: Magia Dominacji (runa rozkazu)
+Kapłaństwo
+Asystent Alchemii
+**Najważniejsi znajomi**: Ebor (?)
+**Słowa kluczowe**: magia, fanatyzm, alchemia, nauka
+
+### Wpis 2
+**L.p.**: 2
+**Imię postaci**: Cantus
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Vengard
+**Grupa / Profesja**: II Krąg
+**Mechaniczne umiejętności**: Kapłańska
+(Żywioł/Zaklinanie)
+
+### Wpis 3
+**L.p.**: 3
+**Imię postaci**: Sybilla
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: II Krąg
+Ekspert Alchemii
+**Mechaniczne umiejętności**: - Alchemia (ekspert)
+Transmutacja
+Runiczna
+**Najważniejsi znajomi**: Klara
+
+### Wpis 4
+**L.p.**: 4
+**Imię postaci**: Taida
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Vengard
+**Grupa / Profesja**: II Krąg
+**Mechaniczne umiejętności**: Mistyczna, Runiczna, Zaklinanie?
+
+### Wpis 5
+**L.p.**: 5
+**Imię postaci**: Sebastian
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: I Krąg
+**Mechaniczne umiejętności**: Kapłańska (zainteresowanie)
+
+### Wpis 6
+**L.p.**: 6
+**Imię postaci**: Hrodgir
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Nordmar
+**Pochodzenie dokładne**: Klan Ognia
+**Grupa / Profesja**: I Krąg
+
+### Wpis 7
+**L.p.**: 7
+**Imię postaci**: Mesmer
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: I Krąg
+**Mechaniczne umiejętności**: Zainteresowanie: kapłańska, magia ognia
+
+### Wpis 8
+**L.p.**: 8
+**Imię postaci**: Karat (Joahim)
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Archolos
+**Pochodzenie dokładne**: Miasto Archolos
+**Grupa / Profesja**: Cień->Mag Ognia
+**Mechaniczne umiejętności**: zaklinanie (zainteresowanie)
+
+### Wpis 9
+**L.p.**: 9
+**Imię postaci**: Dante
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Archolos
+**Pochodzenie dokładne**: Miasto Archolos
+**Grupa / Profesja**: Strażnik->Mag Ognia
+**Mechaniczne umiejętności**: kapłańska, magia ognia (zainteresowanie)
+**Najważniejsi znajomi**: Helios
+
+### Wpis 10
+**L.p.**: 10
+**Imię postaci**: Arik
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Grupa / Profesja**: Cień->Mag Ognia
+**Mechaniczne umiejętności**: mistycyzm (zainteresowanie)
+
+### Wpis 11
+**Imię postaci**: Alvarez
+**Krótki opis postaci**: magnat, wątek z Karatem i alchemią
+
+### Wpis 12
+**Imię postaci**: Akania
+**Krótki opis postaci**: alchemiczka Szkodnik, zadanie na mistrza
+
+### Wpis 13
+**Imię postaci**: Noel
+**Krótki opis postaci**: tabliczki
+
+### Wpis 14
+**Imię postaci**: Chudy
+**Krótki opis postaci**: tabliczki
+
+### Wpis 15
+**Imię postaci**: Malrik
+**Krótki opis postaci**: tabliczki
+
+### Wpis 16
+**Imię postaci**: Traszka
+**Krótki opis postaci**: tabliczki
+
+### Wpis 17
+**Imię postaci**: Digis
+**Krótki opis postaci**: skazańczyni z eksperymentami alchemicznymi
+
+## Arkusz: Grupy
+----------------------------------------
+
+### Wpis 1
+**L.p.**: 1
+**Nazwa grupy**: Pierwszy Krąg Ognia
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Mesmer,Hrodgir,Sebastian
+
+### Wpis 2
+**L.p.**: 2
+**Nazwa grupy**: Drugi Krąg Ognia
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Calor,Cantus,Taida,Sybilla
+
+### Wpis 3
+**L.p.**: 3
+**Nazwa grupy**: Spec Kapłańska
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Cantus,Mesmer,Sebastian,Dante
+
+### Wpis 4
+**L.p.**: 4
+**Nazwa grupy**: Spec Zaklinanie
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Cantus,Calor,Karat (Joahim)
+
+### Wpis 5
+**L.p.**: 5
+**Nazwa grupy**: Spec Mistyczna
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Taida
+
+### Wpis 6
+**L.p.**: 6
+**Nazwa grupy**: Spec Runiczna
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Sybilla,Sebastian,Taida
+
+### Wpis 7
+**L.p.**: 7
+**Nazwa grupy**: Spec Transmutacja
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Sybilla
+
+### Wpis 8
+**L.p.**: 8
+**Nazwa grupy**: Spec Żywiołów
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Calor,Mesmer,Dante
+
+### Wpis 9
+**L.p.**: 9
+**Nazwa grupy**: Gniew Innosa
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Cantus,Calor,Karat (Joahim),Mesmer,Sebastian,Sybilla
+**__EMPTY**: zaklinanie
+**__EMPTY_1**: kapłańska
+**__EMPTY_2**: transmutacja
+
+### Wpis 10
+**L.p.**: 10
+**Nazwa grupy**: Nawracający
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Cantus,Mesmer,Sebastian,Taida
+**__EMPTY**: kapłańska
+**__EMPTY_1**: mistyczna
+
+### Wpis 11
+**L.p.**: 11
+**Nazwa grupy**: Glifiarze
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Calor,Mesmer,Sybilla,Sebastian,Taida,Arik
+**__EMPTY**: runiczna
+**__EMPTY_1**: mistyczna
+**__EMPTY_2**: magia
+
+### Wpis 12
+**L.p.**: 12
+**Nazwa grupy**: Elementaliści
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Calor,Mesmer,Dante,Sybilla,Sebastian
+**__EMPTY**: magia
+**__EMPTY_1**: runiczna
+
+### Wpis 13
+**L.p.**: 13
+**Nazwa grupy**: Próba Magii
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Arik,Karat (Joahim), Dante
+
+### Wpis 14
+**L.p.**: 14
+**Nazwa grupy**: Archolos
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Karat (Joahim),Dante
+
+### Wpis 15
+**L.p.**: 15
+**Nazwa grupy**: Alchemia - asystent
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Calor,Noel,Drake,Chudy,Tanka,Hrodgir,Helios,Vespera von Dargan,Leo,Malrik,Szarlej,Traszka,Cormac
+
+### Wpis 16
+**L.p.**: 16
+**Nazwa grupy**: Alchemia - ekspert
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Sybilla,Klara,Selene,Akania,Boron,Alwar,Baal Mosir
+
+### Wpis 17
+**L.p.**: 17
+**Nazwa grupy**: Alchemia - Mistrz
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Eridan,Farida
+
+### Wpis 18
+**L.p.**: 18
+**Nazwa grupy**: Alchemia - nauczyciele
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Eridan,Farida,Sybilla,Klara,Selene,Akania,Boron,Alwar,Baal Mosir
+
+### Wpis 19
+**L.p.**: 19
+**Nazwa grupy**: Alchemia - Kollegium
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Eridan,Farida,Sybilla,Akania,Leo
+
+### Wpis 20
+**L.p.**: 20
+**Nazwa grupy**: Oruniaki
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Leo,Chudy,Cormac,Drake
+
+### Wpis 21
+**L.p.**: 21
+**Nazwa grupy**: Alchemia - złodzieje
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Noel,Malrik,Traszka,Calor,Chudy
+
+### Wpis 22
+**L.p.**: 22
+**Nazwa grupy**: Alchemia - farba
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Szarlej,Klara,Alwar
+
+## Arkusz: Wątki
+----------------------------------------
+
+### Wpis 1
+**Nazwa wątku**: Dalczego tu nie widzę żadnej Lux? Dlaczego?!
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magowie Ognia
+**Kolejność**: 10
+**Wpis fabularny**: Dlaczego? To pytanie zadawał sobie każdy Mag Ognia uczestniczący w rytuale prowadzonym przez Maginię Lux. Każdy członek Kręgu pomagał przy tworzeniu tego rytuału. Wszyscy byli w niego w jakiś sposób zaangażowani. Więc dlaczego?
+
+Rytuał Oczyszczenia miał uwolnić Czarną Magię Beliara zamkniętą w trzech kawałkach jednego Kamienia Ogniskującego. Ale czy ten rytuał się udał? Czy moc Beliara była tak silna, że doświadczona Magini nie była w stanie się obronić? Czy może zawiniła formuła? Albo któryś z magów nie był dostatecznie przygotowany? A może coś innego, jak interferencje z zewnątrz? Magiczne inkantacje? Religijne okrzyki? Emocje zgromadzonych podczas rytuału? A może to sama bariera zaburzyła strukturę zaklęcia, kierując magiczne wyładowanie wprost w Lux, niczym piorun w odgromnik?
+
+Liczba pytań mnoży się za każdym razem, gdy o tym myślisz. W Kręgu poruszaliście ten temat, ale nie doszliście do konkretnych wniosków. Najbardziej doświadczeni Magowie Ognia są teraz nieobecni, a Dorian zawsze unika jakichkolwiek dyskusji na ten temat. Czy ma to coś wspólnego z tą dziwną skrzynią, którą ustawił w Świątyni? Czy Arcymag Domingo wie, co się stało i uważa to za oczywiste, czy może czeka, aż ktoś, kto chce się wykazać, dostarczy mu jasnych dowodów?
+
+Najwyższy czas szukać odpowiedzi. Najlepiej zacząć w miejscach, które były istotne w życiu Lux. Tylko jak dostrzec to, czego nie widać?
+**Krótki opis**: Echa Lux – seria zagadek, znajdziek i eksploracji, mająca na celu ustalenie, co przyczyniło się do efektownego zakończenia rytuału oczyszczenia Kamieni Ogniskujących.
+**Zaangażowane frakcje**: Magowie Ognia, Magowie Wody, Cienie
+**Potrzebne rekwizyty**: Seria zagadek i rekwizytów (Przygotuje Dorian)
+
+### Wpis 2
+**Nazwa wątku**: Kaganek na zamek
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magowie Ognia
+**Kolejność**: 11
+**Wpis fabularny**: Stary Obóz pozostaje centrum życia w Kolonii, a Gomez - najpotężniejszym w niej człowiekiem. To na jego zamku, tak przecież blisko naszej świątyni, odbędą się wkrótce polityczne rozgrywki na najwyższym szczeblu. Podważające status quo Bractwo jest problematyczne nie tylko dla prawdziwie wierzących, ale i wszystkich sprawujących w tradycyjny sposób władzę. Nowy Obóz poczyna sobie coraz śmielej, przekraczając umowne granice, żerując na staroobozowych zasobach i zagrażając bezpieczeństwu.
+
+Pod żadnym pozorem nie może tam zabraknąć Magów Ognia. Chociaż Gomez polega przede wszystkim na magnatach, to potrzebny jest ktoś, kto upewni się, że magowie z innych obozów nie próbują ich zmanipulować bełkotem i swoim paramagicznym partactwem. To w dodatku okazja do wywarcia presji, podkreślenia wyższości, wymuszenia zasobów lub wygłoszenia formalnych deklaracji od innych. Nie obejdzie się zapewne bez wspomnienia wysłanego niedawno przez Cantusa donosu na Magów Wody.
+
+Osoba, która będzie podczas negocjacji reprezentować Krąg Ognia, z pewnością wiele zyska na swojej reputacji i rozpoznawalności, będzie miała okazję ucztować na zamku, a do tego zyska pobłażliwość Arcymaga i zasoby na pracę.
+Oczywiście, o ile podtrzyma godność Kręgu i osiągnie jakiekolwiek rezultaty.
+**Krótki opis**: negocjacje
+**Zaangażowane frakcje**: Magowie Ognia, Magnaci, Magowie Wody, Guru
+
+### Wpis 3
+**Nazwa wątku**: Sympozjum magów
+**Zakres wątku**: Klasa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Magowie Ognia
+**Kolejność**: 12
+**Wpis fabularny**: Domingo zarządził, że nie życzy sobie, by pod przykrywką negocjacji Magowie Wody lub Guru wałęsali się po Obozie i wszczynali zamieszanie. Ogłosił, że Magowie Ognia zorganizują w Starym Obozie sympozjum magiczne: spotkanie różnorakich mędrców i około-magicznych specjalistów. Ma to być nie tylko manewr, by trochę rozproszyć ich uwagę, ale również kolejna okazja do podkreślenia kunsztu naszego Kręgu.
+
+Oczekiwane jest, że wszyscy się w pracę tę w jakiś sposób zaangażują: jeśli nie wykładami, zagadkami i warsztatami na samej konferencji, to przygotowaniem miejsca i zaplecza... a przynajmniej oddelegowaniu tego odpowiednim Cieniom. Jeśliby miało zabraknąć wolontariuszy, to "ochotnicy" z pewnością zostaną odgórnie wyznaczeni.
+
+Nie tylko Magowie Ognia, ale i część gości przedstawi swoje wykłady i zaprezentuje osiągnięcia. Będzie to nie lada okazja do pochwalenia się swoją aktywnością, konsultacji problemów z innymi specjalistami oraz uzyskania zasobów w dalszej pracy.
+Nie ma wątpliwości, że o efekcie wystąpień dowiedzą się wszyscy najwyżsi magowie oraz guru.
+**Krótki opis**: sympozjum
+**Zaangażowane frakcje**: Magowie Ognia, Magowie Wody, Guru
+**Potrzebne rekwizyty**: seria zagadek i ew. tekstów
+
+### Wpis 4
+**Nazwa wątku**: Drugi Krąg Ognia
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Pierwszy Krąg Ognia
+**Kolejność**: 20
+**Wpis fabularny**: Chcąc awansować na drugi krąg magii musisz nie tylko pojąć stosowny materiał, ale również swą wiedzę oraz umiejętności udowodnić. Pracy i okazji nie brakuje - postęp badań w sprawie wypadku Lux, występujące ostatnio anomalie potencjalnie związane z Barierą, zbliżające się sympozjum czy polityczne manewry w Starym Obozie to obszary w których możesz się wykazać. Odniesienie wyraźnego sukcesu i należycie dumne zakomunikowanie go Kręgowi Ognia być może będzie wystarczające, by uzyskać dostęp do dodatkowych zasobów i uznania, które będą nieodzowną pomocą w twoich planach.
+
+Konieczne jest jednak znalezienie nauczyciela wewnątrz kręgu lub pozyskanie wiedzy w inny sposób. Dowiedz się, jakie są specjalizacje magiczne i czym różni się ich codzienność, a następnie zrób pierwsze duże kroki na ścieżce do opanowania jednej lub dwóch z nich.
+
+//W wypadku zainteresowania specjalizacjami niedostępnymi w Kręgu Ognia, możesz porozmawiać z postaciami Domingo lub Doriana//
+**Krótki opis**: awans I kręgu na II
+**Zaangażowane frakcje**: Magowie Ognia
+**Potrzebne rekwizyty**: pierścienie awansującym
+
+### Wpis 5
+**Nazwa wątku**: Trzeci Krąg Ognia
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Drugi Krąg Ognia
+**Kolejność**: 20
+**Wpis fabularny**: Panujesz już nad swoimi magicznymi zdolnościami, a wie o tym również reszta Kręgu Ognia. Większość magów wprawdzie pozostaje na drugim kręgu i nie ma w tym krzty hańby - dostęp do zasobów Kręgu, szacunek pobratymców i wsparcie arcymagów w swych badaniach masz już zapewnione.
+
+Może jednak warto pokusić się o dalszy rozwój kariery?
+Wstąpienie na trzeci krąg to nie byle co - musisz dokonać istotnego postępu w świętej misji lub badaniach nad magią, bądź też udowodnić swą niezachwianą skuteczność nawet w najbardziej ponurych sytuacjach. 
+Zbliżające się sympozjum to przednia okazja, by wykazać się przed najznamietniejszymi magami w Górniczej Dolinie, a także by utrzeć nosa politycznym lub dogmatycznym rywalom.
+Warto byłoby również dowieść swych umiejętności przekazywania wiedzy - nauczanie młodszych magów to obowiązek trzeciego kręgu.
+
+Trudem jest jednak, że zachowana musi być jakaś struktura i zdrowe, tradycyjne proporcje w strukturze Kręgu. Nie każdy, kto zasługuje, dostąpi tego zaszczytu - nie wystarczy być bardzo dobrym, trzeba być lepszym od innych i mieć trochę szczęścia. Każdy większy sukces twoich braci i sióstr byłby twoją małą porażką... gdyby cechowały cię zimna ambicja i wyrachowanie.
+**Krótki opis**: awans II kręgu na III
+**Zaangażowane frakcje**: Magowie Ognia
+**Potrzebne rekwizyty**: pierścienie awansującym
+
+### Wpis 6
+**Nazwa wątku**: Rząd dusz
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Nawracający
+**Kolejność**: 21
+**Wpis fabularny**: Od jakiegoś czasu nachodzi cię powracający sen, trochę wyraźniejszy i bardziej przejmujący od innych.
+
+Oto ciąg postaci kroczy wąską, zdradliwą ścieżką zawieszoną gdzieś w przestrzeni. Ponad gęstą, lepiącą się czernią otchłanią rozciąga się fantastyczny krajobraz: silny wiatr, nieomal namacalny wiatr goni po nieboskłonie twarde, gradowe chmury oraz buchające płomieniami sfery, niby małe gwiazdy. Regularnie któraś z nierozpoznawalnych postaci rozkojarza się, potyka lub ulega wiatrowi, po czym znika w jednym z niewiarygodnych zjawisk albo rozpływa się wraz z podmuchem wichru. Choć czasem wyglądają dość błogo, to większość jednak krzyczy, kuli się, miota, jakby właśnie popełniła jakiś straszliwy błąd.
+Choć większości nie rozpoznajesz, to w kilku wypadkach znajomy, choć nieokreślony głos w twojej głowie nazywa kolejno figury - wychudzoną, brudną: Cykuta, wojownicze, szorstkie: Nolan, Sznitka, kroczącą tężnie: Karintus.
+
+Po kilku tygodniach natarczywość i precyzyjność powtarzającego się snu bierzesz za cechy nadnaturalne. Jako kapłan wiesz, że czegoś się od ciebie oczekuje - może te osoby są jakimś problemem, zagrożeniem lub wręcz przeciwnie - same są zagubione? A może mają do odegrania jakąś istotną rolę?
+Upewnij się, że podążą drogą Innosa i dostaną silne błogosławieństwa: tak twoje, jak i kogoś wyższych kręgów, jak Dorian czy Domingo.
+**Krótki opis**: Specki kapłańska, mistyczna - wyścig o rząd dusz.
+Potencjalne dusze: Cykuta, Nolan, Karintus, Sznitka
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 7
+**Nazwa wątku**: Niestabilność Bariery
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Elementaliści
+**Kolejność**: 22
+**Wpis fabularny**: Od czasu do czasu pojawiają się plotki o anomaliach związanych z Barierą - może nawet wypadek Lux był z nimi powiązany?
+
+Ich źródło jest niepewne i należy zweryfikować różne tropy. Magowie relatywnie często przebywający poza Obozem, jak Sebastian czy Sybilla, ale i tacy zainteresowani konkretnymi lub niszowymi żywiołami, jak Calor czy Mesmer, otrzymali wyraźną sugestię, że to oni powinni zweryfikować tropy najpewniej wiążące się z bezpośrednim konfliktem. W sprawy mogą być jakoś zaangażowani nie tylko orkowie, ale też rzezimieszki i bandziory, które w ostatnim czasie podobno zaczęły używać zwojów! Skoro położyli łapę na czymś takim, to kto wie, czy nie mają czegoś potężniejszego i bardziej nieodpowiedzialnego?
+
+"A skoro już przy tym będziecie", powiedział wtedy Domingo, "to od razu przeprowadźcie metodyczne badania, które zaklęcia są najbardziej efektywne w naszych okolicznościach w waszych rękach, a które najbardziej poprawiłyby skuteczność oddziałów Straży".
+Wyniki tych testów nadawałyby się z pewnością na atrakcję nadchodzącego sympozjum, ale przecież nie będziecie mogli przedstawić ich wszyscy na raz. Co więcej, niektóre informacje mogą mieć znaczenie strategiczne, a ich omawianie na forum mogłyby zostać odebrane przez Alvareza czy Sama za narażanie Obozu.
+**Zaangażowane frakcje**: Magowie Ognia, Strażnicy
+
+### Wpis 8
+**Nazwa wątku**: Gniew Innosa na warsztacie
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: Gniew Innosa
+**Kolejność**: 22
+**Wpis fabularny**: W najbliższych dniach powinna mieć miejsce okresowa konserwacja artefaktu Gomeza, Gniewu Innosa, który kilka lat temu został stworzony przez Krąg Ognia na bazie odnalezionego klejnotu.
+Miecz ten - a właściwie klejnot - czerpie moc z ładunku emocjonalnego, który uzupełnia się w nietrudnym rytuale. Dla specjalistów w dziedzinie nie jest jednak wielką tajemnicą, że dobór i wywołanie właściwych emocji u obiektów rytuału jest nie bez znaczenia, bo - zwłaszcza w pierwszych godzinach - może wpłynąć na postawę i nastrój użytkownika przedmiotu.
+
+Możliwość ukierunkowania najpotężniejszego człowieka w Kolonii to nie lada gratka, nawet, jeśli wpłynęłoby to na tylko jedną jego decyzję. Cenną tajemnicą na pewno zainteresowaliby się magnaci, ale czy warto ryzykować, że was ujawnią i pozbawią życia?
+**Krótki opis**: specka zaklinania, kapłańska, mistyczna? - ładowanie Gniewu Innosa
+
+Miecz przekazujemy w piątek około południa po wyratowaniu Gomeza
+
+
+zdefiniować i podpiąć grupę po potwierdzeniu wszystkich specek
+dogadać z Zevanem, kiedy Gomez ma odebrać miecz/podjąć decyzję
+
+
+Tylko, że taki sam wątek z powodzeniem przeprowadzono na mieczu Gomeza rękami Wodnego Kręgu na edycji 2024 /Dop. Medus
+no tak, Magowie Ognia mieli być przecież w niego zaangażowani, omawialiśmy w 2024. Konserwacja Gniewu też ma być regularnym narzędziem dla MO
+**Zaangażowane frakcje**: Magowie Ognia, Magnaci
+
+### Wpis 9
+**Nazwa wątku**: Sfera sacrum
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Glifiarze
+**Kolejność**: 23
+**Wpis fabularny**: Zmiany są początkowo delikatne, właściwie niezauważalne - meble poddają się upływowi czasu, budynek wymaga remontu, gdzieniegdzie pojawiają się ubytki, a to wszystko zdaje się być naturalne. Razem z eksploatacją świątyni i pracowni starzeją się i ludzie: troszkę bardziej nerwowi, troszkę częściej ulegający kompromisom, trochę przemęczeni i podejrzliwi - ale kto by taki nie był w Kolonii Karnej?
+
+Inni jeszcze nie zwracają na to uwagi, ale ty czasem niepokoisz się, gdy kątem oka dostrzegasz w cieniu jakiś ruch, a nie jest to szczur, gdy słyszysz jakieś zwierzęce dźwięki za oknem, ale nie jest to skradający się Szkodnik. W innym miejscu nie byłoby to niecodzienne, ale lokacja taka, jak świątynia Najwyższego, powinna cieszyć się podniosłą, sakralną aurą nie tylko dzięki powadze Magów, ale też licznym glifom ochronnym i błogosławieństwom.
+
+Podniesienie tematu na forum świątyni może być niebezpieczne, bo jakiekolwiek aluzje na temat zabezpieczeń świątyni Arcymag Domingo mógłby wziąć za personalny atak. Co więcej, jeżeli się mylisz, to mogłoby oznaczać koniec twojej kariery w Kręgu, wieczne czekanie na awans na szarym końcu kolejki bardziej obiecujących - rzetelniejszych - Magów i Magiń.
+
+Regularnie obserwuj, czy wokół świątyni nie dzieje się nic niepokojącego i nadprzyrodzonego, zwłaszcza po felernym rytuale Lux. Skorzystaj z własnych kontaktów, by upewnić się, że żaden Sekciarz ani nowoobozowicz nie sabotuje wysiłków Kręgu. Zweryfikuj, czy nie jest to przypadkowe działanie Bariery, która podobno robi się niestabilna - być może w innych ważnych miejscach w Kolonii inni eksperci Twojego pokroju zauważyli coś podobnego?
+**Krótki opis**: anomalie, zabezpieczenia świątyni 
+
+wydrukować tipy do biblioteki, jak wzmocnić ochronę
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 10
+**Nazwa wątku**: Brudy Archolos
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: Archolos
+**Kolejność**: 29
+**Wpis fabularny**: Tak się złożyło, że po jednym z nabożeństw między Magami wywiązała się nieobowiązująca dyskusja o historii Archolos. Dołączyliście, dzieląc się swoimi anegdotkami i ciekawostkami z tego regionu i pojedynczych pobliskich wysp.
+
+Tego wieczoru dowiedzieliście się o pewnej historycznej postaci z poprzedniej epoki. Przybył on na Khorinis, gdy niegdyś Bergmar z Tymorisu, Burgrabia Ziem Zachodnich, rozstrzygał spór wokół podupadłego rodu, którego rządy w Górniczej Dolinie kończyły się w niefortunnych okolicznościach. Choć wtedy złoża magicznej rudy nie były jeszcze należycie eksploatowane, to i tak złoża węgla i siarki, bogate tereny łowieckie oraz dostęp do morza były nie lada gratką, które przyciągnęły wielu pretendentów.
+
+"Pielgrzym", jak jest dziś nazywana na poły legendarna postać, był zależnie od wersji nieprzyjętym Magiem Ognia, nieudanym Magiem Wody lub szczególnie naiwnym "ludowym bohaterem", a czasami nawet całą grupą zatroskanych o prawdę obywateli miasta. Tak czy inaczej przybył on z całą skrzynią różnorakich dowodów przeciw konkurentom, podważając ich wiarygodność, wyciągając na światło różnorakie brudy i trupy z ich wstydliwych szaf. 
+
+Skończył, rzecz jasna, tragicznie.
+
+Ziemie te zostały wówczas przekazane Domowi Innosa, a ten nie rozwodził się zbytnio nad epizodem Pielgrzyma o którym słuch zaginął. Przez lata różnorakie dowody zostały utracone lub celowo zniszczone, ale do dziś można jeszcze czasem natrafić na dokumenty zdające się być zupełnie wyrwanymi z kontekstu, a traktujące o haniebnych czynach z przeszłości.
+
+Waszą uwagę zwróciła szczególna wymiana zdań między Domingo a Dorianem - komentarz, że gdyby takie dowody zebrać, to nawet i dziś mogłyby posłużyć naciskowi na rodziny i gildie wywodzące się od grzesznych antenatów. Rzecz niebezpieczna, bo wzmocniłaby pozycję Gomeza - zarówno w negocjacjach przeciw Królowi, ale dzięki temu również przeciw pozostałym Obozom, może trochę zabezpieczając wydobycie rudy.
+**Krótki opis**: Karat, Dante - papiery kompromitujące niektóre rodziny z Archolos, motyw dający Gomezowi lepszą pozycję negocjacyjną
+
+Wydrukować i rozdać kilka notatek o hańbach z przeszłości Myrthany/Archolos
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 11
+**Nazwa wątku**: Próba Magii
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Próba Magii
+**Kolejność**: 20
+**Wpis fabularny**: Oto zbliża się długo wyczekiwana chwila - ogłoszenie Próby Magii!
+
+Karat i Arik, dotychczasowi adepci Magów Ognia, zbliżają się do kamienia milowego swych podróży. Po odbyciu niejednej lekcji, ale przede wszystkim wykazaniu pewnej determinacji i sumienności w powierzonych im pracach, zostali uznani za wystarczająco dojrzałych, ażeby podjąć się Próby Magii. Test ten to znacznie więcej niż jakiś stary obrządek i pusta formalność - to wyzwanie, którego sposób realizacji może zarówno otworzyć przed początkującym magiem drzwi do wielu ścieżek kariery, jak i na zawsze pogrzebać szanse na kolejne podejście do Próby. Niejednokrotnie nawet doświadczeni Nowicjusze tracą życie pośród nordmarskich klifów czy wśród dzikich ostępów Khorinis podczas swoich Prób. A przecież tamte regiony nawet nie mogą się mierzyć z Górniczą Doliną...
+
+Tradycyjną formą Próby Magii pozostaje test wiedzy bądź odbycie pielgrzymki, lecz formalnie nic nie stoi na przeszkodzie, by arcymag zdecydował się na coś innego. W końcu tak Bariera, jak i wyroki ciążące na pretendentach do tytułu Maga Ognia stwarzają niecodziennie okoliczności.
+Okaże się, gdy Domingo - lub mówiący w jego imieniu Milten bądź Dorian - zdecydują się wreszcie ogłosić oficjalny początek Próby. Stanie się to najpóźniej na wieczornym nabożeństwie, toteż lepiej dziś trzymać się tradycyjnego obrządku.
+**Krótki opis**: Próba Magii - stworzenie swojej pierwszej runy
+Kamienie runiczne do znalezienia
+- 3 kamienie runiczne do dropniecia z orków 
+- 1 do kradzieży z zamku
+- Przetop 1000 bryłek
+- 2 bryłki do zdobycia z kopaczy (kopalni)
+- 1 z wykopek kretów 
+
+Upewnić się, że kamienie runiczne trafiły na miejsce i MG o nich wiedzą
+
+### Wpis 12
+**Nazwa wątku**: Dorian, ciągle ten Dorian!
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Calor
+**Kolejność**: 32
+**Wpis fabularny**: "Innos wystawia swoje najwierniejsze sługi na próby, by wzmacniały jego potęgę na świecie."
+Takimi słowami Arcymag Domingo rozpoczął lekcję, którą będąc na pierwszym kręgu, odebrałeś wraz z bratem Dorianem. 
+
+Ale teraz słowo "Brat" jako określenie Doriana przechodzi Ci przez gardło z trudem. Jego arogancja, niepowstrzymana ambicja czy te "interesy", które prowadził z szemranymi typami, nie tylko Cię niepokoiły, ale wręcz napawały odrazą. Owszem, awansował na trzeci krąg, ale to było osiągnięcie celu po trupach. I choć nie masz dowodu, wiesz, że kryje się za tym coś więcej. 
+
+Sama nazwa, "banda świątynna", wywoływała w tobie złość, bo tylko ktoś taki jak Dorian mógł zaproponować nazwę, która łączyła degeneratów i Świątynię Innosa. 
+
+Zachowanie Doriana również jest przesiąknięte ironią. Często się z tobą zgadza i wspiera twoje badania, by zaraz potem podważać twój autorytet u młodszych magów, którzy w swej naiwności chcą iść w jego ślady.
+
+To twoje zadanie by z tym skończyć, by przywrócić Magom należną im godność. Ale nie zrobisz tego tak jak on, intrygami i działaniem w ukryciu. Magowie uznają twój autorytet, ale zrobią to sami, patrząc na twoje osiągnięcia i wiedzę. 
+**Krótki opis**: Dalsze odgrywanie konfliktu z Dorianem 
+**Zaangażowane frakcje**: Magowie Ognia, Cienie
+
+### Wpis 13
+**Nazwa wątku**: Magnat Magnus
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Calor
+**Kolejność**: 31
+**Wpis fabularny**: Wypadek siostry Lux, kłopoty mistrza Lutza, donosicielstwo na Magów Wody, kłopoty Eridana... słabną nie tylko pozycja, ale i bezpieczeństwo Magów? Niedoczekanie!
+
+Zarówno dla swego spokoju, jak i komfortu swojego kręgu, dostrzegasz pewną konieczność w nawiązaniu relacji z magnaterią. Podczas gdy Sybilla i Taida kręcą z nimi swoje interesy (lub, co gorsza, próbują ich uwieść!), ty wiesz, że to tylko zło konieczne, środek do celu. Pomimo niepokoju w jaki wprawiają cię ci nieprzewidywalni zbrodniarze Gomeza, udało ci się przynajmniej zidentyfikować najbardziej odpowiedniego dla Maga Ognia patrona: Magnusa. Magnat ten nie tylko zajmuje się sądownictwem, co jest przedsięwzięciem szlachetnym nawet - zwłaszcza? - w Kolonii Karnej, ale również był jedynym, który regularnie odwiedzał świątynię i składał ofiarę. 
+
+Co więcej, zdaje się, że jest teraz w jakichś politycznych tarapatach, a osłabiony będzie zapewne bardziej skory do polegania na twoich czarodziejskich umiejętnościach i ezoterycznej wiedzy.
+**Krótki opis**: nakierowanie na Magnusa
+**Zaangażowane frakcje**: Magowie Ognia, Magnaci
+
+### Wpis 14
+**Nazwa wątku**: Hycel dezerterów
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Calor
+**Kolejność**: 33
+**Wpis fabularny**: Porządny Mag Ognia nie może w nieskończoność znosić niesubordynacji i wichrzycielstwa, gdy w tej przeklętej Dolinie ważą się losy nie tylko królestwa, ale wręcz całej ludzkości.
+
+Ruda musi się sypać, toteż gdy kręcący się przy świątyni Strażnik Dante poprosił o chwilę rozmowy, przyjąłeś jego datek. Miał jakiś problem związany z wewnętrzną polityką ich oddziałów, ale te przyziemne detale puściłeś mimo uszu. Clue całej sprawy było dość proste: kolejni kryminaliści podnosili łeb i siali niepotrzebny zamęt zamiast pokornie zgiąć kark i zająć się kopaniem.
+
+Przydybaliście Kopaczy, gdy sądzili, że koniec szychty oznacza koniec ich pracy. Poczułeś się, jakby ktoś cię spoliczkował, gdy wśród wichrzycieli zauważyłeś Hugona - strażnika, który niegdyś w Silden rozpoznał cię jako dezertera i przez którego zniosłeś wszystkie przykrości podróży, cel, głodu i skazańczego losu.
+
+Nie wiedzieli jeszcze, co ich czeka, gdy w szybie wibrującym echem rozniosło się twoje niepodlegające dyskusji "KOP". Runa Rozkazu na bazie starego kamienia runicznego była dość innowacyjna, a nie szkodzi przy okazji obowiązków pozwolić sobie na przyjemność eksperymentów.
+
+Przyglądałeś się im, gdy kopali własnymi rękoma, zdzierając paznokcie, a potem palce. Dałeś im nauczkę, którą popamiętają na długo.
+Hugon chyba cię nie rozpoznał - w końcu skupiony był na kopaniu...?
+**Krótki opis**: "Chciałbym poeksplorować negatywne aspekty wynikające z fanatyzmu religijnego. Chętnie widziałbym moją postać w wątku dotyczącym wymierzania sprawiedliwości np.: na Lady Valerii, która jest w jej oczach jedną z najgorszych postaci w kolonii."
+Potencjalnie nadużywanie Rozkazu?
+
+KRZYWDZENIE LUDZI Z ZIOMKIEM-DANTEM
+
+Hugon rozpoznaje w Calorze dezertera, którego niegdyś złapał. Calor rozpoznaje w Hugonie gościa, który go kiedyś zesłał do Kolonii.
+**Zaangażowane frakcje**: Magowie Ognia, Kopacze
+
+### Wpis 15
+**Nazwa wątku**: Uroczy Ebor
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Calor
+**Kolejność**: 35
+**Wpis fabularny**: Cienie z bandy świątynnej całkiem ochoczo podejmują się zlecanych zadań, ale jeśli wykazują zainteresowanie jakimś tematem, to mają zwykle ukryte motywy. Możesz trzymać ich na dystans, traktować ich instrumentalnie - w końcu to przestępcy, którzy nie znaleźli się tu z poczucia patriotyzmu czy altruizmu.
+
+Jesteś jednak w nieco może lepszej pozycji niż inni Magowie, bo Ty przynajmniej znasz trochę jednego z tych ludzi Gomeza. Na Eborze niejednokrotnie już polegałeś i wygląda na to, że możesz mu zaufać. Ba, jest nawet momentami całkiem uroczy, gdy przejawia trochę dziecinny zachwyt i głębokie niezrozumienie prawdziwej natury i konstrukcji magicznych przedmiotów.
+**Krótki opis**: wpisać, że polega na swoim ziomku Eborze ze świątynnej - prośba od Jęzora
+**Zaangażowane frakcje**: Magowie Ognia, Cienie
+
+### Wpis 16
+**Nazwa wątku**: Zielnik
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Calor
+**Kolejność**: 34
+**Wpis fabularny**: Jakiś czas temu Dorian dowiedział się o twoim zainteresowaniu alchemią i przekazał Ci jakąś małą książkę o ziołach. Wyglądała jakby była napisana przez kogoś kto dopiero uczył się składać litery, a rysunki były wykonane jakby od kalki albo jakby dziecko rysowało przez papier. Uznałeś to za nieśmieszny żart i godne pożałowania zachowanie. Oddałeś tą książkę cieniowi z apteki który akurat kręciły się przy Sybilli. Noel czy Klara ? Nie pamiętasz, bo i po co ?
+**Krótki opis**: Wątek Golema, jakiś fedex
+
+### Wpis 17
+**Nazwa wątku**: Początek, nie koniec, twojej drogi
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Cantus
+**Kolejność**: 33
+**Wpis fabularny**: Pozostawałeś spowiednikiem Sebastiana i znasz niektóre z jego sekretów. Niestety, masz też świadomość, że jego różnorakie przywary mogą teraz rzutować i na ciebie, bo możesz wydawać się jedną z najbliższych mu osób w Kręgu Ognia.
+
+Wygodnie byłoby się od niego odciąć - publicznie i jednoznacznie, najlepiej z dowodami, byś mógl samodzielnie pracować na swoje imię i karierę. Gdybyś jednak wziął go pod opiekę, mógłbyś zarówno zyskać poplecznika lub przyjaciela, jak i upewnić się co do właściwej edukacji młodszego kolegi w taumaturgicznym fachu. Musiałbyś się jednak upewnić, że zachowuje godność Maga Ognia, nie ujmuje powadze szat mieszając się między plebsem, a już na pewno - że nie zadaje się z wątpliwymi osobistościami z Nowego Obozu czy Sekty.
+
+A niestety Sebastian zbytecznie długo czasu spędza poza świątynią i samym obozem, kręcąc się pod kopalnią wśród naciągającej go biedoty.
+**Krótki opis**: spowiednik Sebastiana - poprowadzić go
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 18
+**Nazwa wątku**: Pewne są śmierć i wierzyciele
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Cantus
+**Kolejność**: 32
+**Wpis fabularny**: Wypadek Lux to straszna tragedia, tak, bardzo smutne. Przyczyny wypadku również intrygujące, bardzo ciekawe, tak.
+
+Ale ty masz dodatkową motywację, by wziąć udział w śledztwie. Oscar oraz Lux chętnie korzystali z twojej szczodrości, a ta druga nie będzie już miała okazji ci tej uczynności wynagrodzić.
+Wiesz, że magini nie narzekała na brak rudy. Nie była szczególnie obrotna, ale przywileje trzeciego kręgu to nadrabiały. Nie jest to szczególnie eleganckie, ale minęły już trzy miesiące, jej ruda się już do niczego nie przyda, a tobie może przysłużyć się w zbożnym dziele. Inni może nawet o tym nie wiedzą, ale przetrzymywała ona w swej szkatule parę osobistych drobiazgów oraz pękatą sakiewkę na czarną godzinę. 
+
+Powinieneś ją odnaleźć i upomnieć się o zwrot należności... lub może doliczyć stosowny procent lichwy i zachować ją dla siebie bez robienia zbędnego zamieszania - w końcu jako Mag Ognia masz prawo do rozstrzygnięcia takiej sprawy prawnej.
+**Krótki opis**: Lux wisiała mu hajs. Jakby pierwszy zbadał, co się z nią stało, to może dorwie się do jej skarbonki
+**Zaangażowane frakcje**: Magowie Ognia
+**Potrzebne rekwizyty**: szkatuła Lux z rudą (i pewnie notatkami badań)
+
+### Wpis 19
+**Nazwa wątku**: Kamień Ogniskujący
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Cantus
+**Kolejność**: 31
+**Wpis fabularny**: Rytuał oczyszczenia miał na celu oczyszczenia Kamienia Ogniskującego, odebranemu Nekromancie i jego sługusom z mrocznej magii Beliara. Przed rytuałem dyskutowałeś w magicznym gornie między innymi z Lux i Dorianem, o tym co należy zrobić z tym kamieniem. 
+Wspólnie ustaliliście, że powinniście wspólnie spróbować go naprawić, połączyć ze sobą trzy części Kamienia i ponownie naładować go magiczną energią. 
+
+Dzięki swoim badaniom, zdobytej wiedzy myślisz że udałoby Ci opracować rytuał który złaczyłby artefakt w całość. A przy pomocy Arcymaga albo innych członków Kręgu Ognia, ponownie przywrócić mu magiczne właściwości. 
+
+Ale ani w Światyni Innosa, ani w magicznej pracowni nie znalazłeś ani jednego fragmentu Kamienia. Może warto go odszukać ? 
+**Krótki opis**: Wiedza o Kamieniu Ogniskującym i jego dalszym wykorzystaniu
+**Zaangażowane frakcje**: Magowie Ognia, Cienie
+
+### Wpis 20
+**Nazwa wątku**: Amulet Żywiołów
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Cantus
+**Kolejność**: 33
+**Wpis fabularny**: Ciągle jeszcze spoczywa w Twoich zasobach wygrany kilka miesięcy temu zwój "Zaklęcia przedmiotu". Od czasu jego zdobycia udało ci się zweryfikować, że to nie byle standardowy zwój suplementujący każdy akt zaklinania. To coś bardziej specyficznego, zapisanego w trochę tajemny, osobliwy sposób lub nietypową metodą. Nie da się go skopiować w warunkach Kolonii Karnej, ale nie powinno być problemu z jego użyciem.
+
+Zdaniem starszych magów - a ich słowa poparte zostały twoimi odkryciami w księgozbiorze - zwój może posłużyć stworzeniu Amuletu Żywiołów. Ta magiczna biżuteria pozwala noszącemu wyjątkowo intuicyjnie reagować na fluktuacje many, co sprawia, że nawet byle trep-skazaniec byłby w stanie rzucać czary z czerwonych zwojów magicznych.
+To nie lada gratka, ale... przecież nie wygrałeś tego samodzielnie. Taida i Sybilla zapewne też mają na niego chętkę.
+**Krótki opis**: Z 2024 ma zwój 'zaklęcie przedmiotu' (amulet żywiołów albo może kamień ogniskujący?)
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 21
+**Nazwa wątku**: Magnat Sam
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sybilla
+**Kolejność**: 31
+**Wpis fabularny**: Osiągnięcie trzeciego kręgu magii lub alchemicznego mistrzostwa to nie lada ambicje, które mogą kosztować wiele rudy lub przysług. Co gorsza, twoi "rówieśnicy", jak Taida czy Calor, zdają sobie radzić całkiem nieźle od kiedy zbliżyli się do magnaterii. Może i nie życzysz źle swoim pobratymcom, ale ich sukces źle rzutuje na twoją pozycję w Kręgu.
+
+Na szczęście możesz skorzystać z atutu, którego im brakuje: przeszłości w Cieniach. Krata z czerwonych spodni oplata cały obóz - w końcu praktycznie wynieśliście na pozycję magnacką Sama. Jest on teraz twoją najlepszą szansą na bogatego i wpływowego patrona, a i on z pewnością skorzystałby z twoich czarodziejskich zdolności i ezoterycznej wiedzy... Chociaż w Kolonii nie ma nic za darmo i należy mu się odpowiednio przypomnieć.
+**Krótki opis**: nakierowanie na Sama
+**Zaangażowane frakcje**: Magowie Ognia, Magnaci
+
+### Wpis 22
+**Nazwa wątku**: Jesteście poświęceniem na które jestem gotowa
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sybilla
+**Kolejność**: 32
+**Wpis fabularny**: Postęp wymaga poświęceń. Mimo wszystko może trochę lepiej jest prowadzić badania nad kryminalistami z Kolonii Karnej niż na nowicjuszach czy szanowanych obywatelach w Khorinis - czyichś mężach. Zresztą czasem nie potrzeba wiele, by ich przekonać, bo wielu z nich desperacko potrzebuje rudy, zwoju czy kolejnej działki eliksiru odwagi.
+
+Zauważyłaś, że teoria humoralna, lubiona może szczególnie przez nieco szurniętych alchemików i prowincjonalnych magów, jako-tako trzyma się pomimo upływu czasu. Traktat o niej jest gdzieś w świątynnej bibliotece, ale twoje doświadczenie kieruje cię, by raczej skorzystać z esencji, co powinno być bardziej bezpośrednie i gwałtowne niż powolna regulacja czyichś płynów.
+
+Najlepszą okazją do przedstawienia swych badań będzie sympozjum, a więc pozostało ci niewiele czasu. Najgorsze, że powinnaś eksperymenty przeprowadzić raczej na jednej frakcji, by wykluczyć różnice w diecie czy warunkach bytowania. Strażnicy wydają się najbardziej atrakcyjnym przedmiotem działań ze względu na silnie unormowaną codzienność... tylko co na to wszystko Magnateria?
+
+
+//Eksperymenty będą polegać na podawaniu graczom wyciągu z kilku esencji.
+Gracz będzie następnie losował jedną z kilku karteczek przeznaczonych danemu kolorowi esencji.
+Esencje można podać w formie "surowej" lub jako mikstura żółta niewymagająca dodatkowej receptury.//
+**Krótki opis**: Eksperymenty na strażnikach
+
+przygotować karteczki eksperymentów
+**Zaangażowane frakcje**: Magowie Ognia, Strażnicy
+**Potrzebne rekwizyty**: przygotować karteczki eksperymentów lub całe fiolki
+
+### Wpis 23
+**Nazwa wątku**: Dyferencjacja Orków
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sybilla
+**Kolejność**: 36
+**Wpis fabularny**: Wysiłki włożone w poznanie języka orków i tematy związane z Bernardem były całkiem owocne przez jakiś czas, ale nie trwało to w nieskończoność. Regularne potyczki z Orkami oraz polityczne rozgrywki bezustannie przesuwają tradycyjne, umowne granice oraz strefy wpływów i wygląda na to, że ludzie nie są w tym odosobnieni.
+Rzadko, bo rzadko, ale da się czasem trafić na orka mówiącego jakimś łamanym myrthańskim - zazwyczaj są to żyjący krótko niewolnicy. Wygląda jednak na to, że po przetasowaniach na politycznej planszy Doliny jedne grupy zielonoskórych zanikają, a inne wzrastają, analogicznie do ludzkich gangów skazańców. 
+
+W ostatnim czasie na nic ci się zdają dotychczasowe słowniki i nawyki. Wygląda na to, że wysiłki twoje, twojego mistrza Lutza i innych dzielnych ludzi osłabiły jednego nieprzyjaciela tak bardzo, że zastąpił go inny. Czy to inne plemię, klan, inny język czy zaledwie dialekt - wymagałoby to weryfikacji, ale szanse na dojście do prawdy w krótkim czasie są doprawdy nikłe. Mogłabyś jednak skorzystać ze swego doświadczenia, by przeanalizować język z jakiego korzystają i oni, i nieprzetłumaczone do tej pory orkowe relikty. Byłoby to nie tylko naukowe osiągnięcie, ale i potencjalny atut w negocjacjach na zamku- atut, za który wdzięczni byliby magnaci. Alternatywnie mogłabyś zwyczajnie poczekać i w ramach negocjacji wytargować takie tłumaczenia u sprawniejszego, żwawszego badacza. W obecnej sytuacji orkami najbardziej zainteresowani zdają się być sekciarze...
+**Krótki opis**: język orków, pamiętnik bernarda - moooże jakiś cynk o menhirach, podesłanie 
+
+### Wpis 24
+**Nazwa wątku**: Co słychać w świecie magii?
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sybilla
+**Kolejność**: 35
+**Wpis fabularny**: Pomogłaś strażnikowi Cholewie zrozumieć podarowane mu wizje. To wystarczyło, żebyś zyskała jedną z najrzadszych walut pod barierą. Lojalność. Ów strażnik stara Ci się zawsze towarzyszyć, dzieli się z tobą informacjami zasłyszanymi w kolonii.
+
+Cholewa zaskakująco często zadaje trudne pytania, o naturę egzystencji, o karę i winę, a ostatnio zadał Ci pytanie co poszło nie tak przy rytuale który był ostatnio odprawiany na środku starego 
+obozu.
+ 
+Odjęło Ci wtedy mowę. Cholewa widząc twoje zmieszanie, powiedział że jego pytanie pojawiło się tylko dlatego, że nie chce by takie coś się znowu powtórzyło, więc warto wiedzieć gdzie popełniono błąd. Zapewnił Cię też o tym, że z chęcią Ci pomoże znaleźć winnego, i uzyskać odpowiedzi każdą znaną mu metodą. 
+**Krótki opis**: Relacja ze strażnikiem Cholewa, który po pomocy Sybilli zrozumiał przeżyte przez siebie wizje 
+**Zaangażowane frakcje**: Strażnicy, Magowie Ognia
+
+### Wpis 25
+**Nazwa wątku**: Usłużna służąca
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sybilla
+**Kolejność**: 34
+**Wpis fabularny**: Przeprowadzanie różnorakich eksperymentów, dostęp do magnatów, wybieranie najwyższej jakości składników z dostaw od króla - to wszystko kręci się wokół zamku. Rządzący nim magnaci są bezwzględni i mają większe wpływy niż ty, ale służba jest na znacznie słabszej pozycji. Co więcej, dla służących zajmowanie się potrzebami Magini Ognia może być wręcz relaksujące w porównaniu do towarzystwa reszty tych oprychów.
+
+Upatrzyłaś służącą Tankę niejako swoją pomocnicę, a przynajmniej pewien kontakt na zamku. Nie tylko znajduje się we właściwym miejscu, ale także podziela twoje alchemiczne zainteresowania, toteż jej wynagrodzeniem pewnie może być parę wskazówek, porządna lekcja lub jakieś powszechniejsze receptury.
+
+Od słowa do słowa, coś mogło ci się wyrwać któregoś razu przez zmęczenie lub stres, a Tanka poskładała do kupy, że chciałabyś eksperymentować z humorami. Skoro i tak już o tym wie, to czemu nie wykorzystać jej do dyskretnego podania komuś wyciągu z esencji? Jeśli badany wie, że podlega testom, to wynik obserwacji może być niemiarodajny - co innego, gdyby badany nie wiedział o niczym.
+**Krótki opis**: branie tanki pod opiekę
+**Zaangażowane frakcje**: Magowie Ognia, Służący
+
+### Wpis 26
+**Nazwa wątku**: Rynek esencji
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sybilla
+**Kolejność**: 33
+**Wpis fabularny**: Życie było znacznie prostsze, gdy nie musiałaś przejmować się stałym napływem esencji dzięki swoim sprytnym konszachtom z Ianem. Teraz, gdy osoba na jego pozycji się zmieniła, sytuacja natrętnie się skomplikowała.
+
+Zdominowanie rynku esencji dałoby ci niemałe wpływy i możliwości: zarówno zarobek, jak i możliwość kontroli, czy surowce nie służą produkcji środków krzywdzących Stary Obóz, Magów Ognia lub dotkniętych ciężkim losem Kopaczy, którym już dość niesprawiedliwości. Twoi przyjaciele w Aptece mogą kręcić nosem na rosnący apetyt Magów Ognia lub powiązanych alchemików. Masz jednak nowe narzędzia do pracy: całą bandę świątynną, świeżą i ambitną.
+
+Do monopolu nie wystarczy jednak zapewnić sobie stałych dostaw - przede wszystkim należy pozbawić dostaw konkurentów. Głównymi źródłami esencji w najbliższej okolicy są: kopalnia Starego Obozu, pola ryżowe nieopodal niegdysiejszych wykopalisk Nowego Obozu oraz trofea pozyskiwane przez łowców.
+W ostatnich latach niemałym skandalem była magnateria umoczona w przemyt poza wzrokiem Gomeza. Choć Saal został zesłany na Ziemie Orków, to wątpliwym jest, by wyłapano wszystkich jego ludzi, a co dopiero samych przemytników po drugiej stronie Bariery...
+**Krótki opis**: Apetyt na rynek esencji i wskazówka, że przemytnicy istnieją
+
+### Wpis 27
+**Nazwa wątku**: Magnat Alvarez
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Taida
+**Kolejność**: 31
+**Wpis fabularny**: Czy chcesz, by twój dorobek magiczny został formalnie rozpoznany trzecim kręgiem magii, czy też po prostu potrzebujesz majątku i komfortu odpowiedniego do twojego statusu - osiągnięcia wymagają przygotowań i przychylnych uszu. Centrum władzy pozostaje Gomez i jego świta - i rzeczywiście, widzisz, jak twoi pobratymcy, jak Calor czy Sybilla, mają bliższe relacje z niektórymi magnatami.
+
+Ty jednak jesteś dość bystra, by zidentyfikować najbardziej wpływowego spośród nich. Pozornie mniej charakterystyczny od innych, Alvarez wydaje się być faktyczną szarą eminencją.Nie do końca wiadomo, czym się zajmuje na co dzień, a więc albo ustawił się tak dobrze, by nie musieć nic robić, albo zajmuje się czymś tajnym, a to z pewnością daje mu wiele prerogatyw.
+Bardzo ułatwiłoby ci życie, gdyby Alvarez zaczął polegać na twoich czarodziejskich usługach i ezoterycznej wiedzy... albo zwyczajnie biegłości w polityce.
+**Krótki opis**: Nakierowanie na Alvareza
+**Zaangażowane frakcje**: Magowie Ognia, Magnaci
+
+### Wpis 28
+**Nazwa wątku**: Interes
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Taida
+**Kolejność**: 32
+**Wpis fabularny**: Rośnie twój apetyt na rudę i komfortowe życie pomimo okoliczności wokół. Poleganie na wspaniałości arcymaga albo dobrym humorze magnatów jest zarówno uciążliwe, jak i uwłaczające. Czas wziąć sprawy w swoje ręce, a wygląda na to, że masz ku temu nową sposobność.
+
+Zapewnij sobie nowy, stały przypływ kapitału. Powinny pomóc ci w tym Cienie z przyświątynnej bandy - Cienie, którzy może i lepiej znają potrzeby prostych skazańców, ale którym ty możesz zaoferować nowe możliwości zależnie od swoich zainteresowań.
+
+Jest wśród nich Farida, Mistrzyni Alchemii, którą obecnie dościga - przewyższa? - jedynie Mag Wody, Eridan. Być może z jej pomocą wykolegowałabyś dominujące przeświadczenie, że to "Apteka" Cieni ma monopol na mikstury. Zdaje się, że Straż niedługo zorganizuje przetarg na stałe dostawy mikstur.
+Obrotny, dominujący bandę Marco zdaje się zawsze mieć rudę, choć nie bardzo wiadomo skąd. Być może jesteś w stanie wydusić z niego zasoby lub wejść w jakąś szczwaną spółkę i dystrybucję zwojów, których pełni możliwości raczej nie zna.
+Chester i Tony wydają się młodsi stażem, mają więc jeszcze rozgrzane ambicje i rosnący apetyt. Nie będą potrzebowali długiego namawiania, by się zakręcić wokół tematu rudy.
+
+Twoja siostra po fachu, Sybilla, chyba ma nieskończone ilości niezbędnych w waszej pracy esencji. Ma bliskie kontakty z Apteką, a podobno również bywa w slumsach i regularnie odwiedza kopalnię. Gdybyś rozpoznała i przejęła jej interes, może udałoby ci się zdominować strategiczny rynek esencji. A gdybyś choć mu zaszkodziła, to może ułatwiłoby ci to wyścig po awans.
+
+Magiczne przedmioty to towar ewidentnie luksusowy, ale nieregularność zamówień może zrekompensować budowana przy okazji relacja z bogatymi, wpływowymi klientami. Takich ludzi, jak Magnaci, Guru czy najbogatsi Magowie Wody i Najemnicy lepiej mieć po swojej stronie, chociaż stanowi to pewne ryzyko twojego wizerunku. Może podczas negocjacji na zamku ktoś mógłby przeforsować egzekwowane przez Gomeza regulacje i monopol Kręgu Ognia... lub twój.
+Dobrym startem mógłby być zwój na atrakcyjny Amulet Żywiołów pozwalający użytkownikowi używać zaawansowanych zwojów, ale pieczę nad nim, cholera, sprawuje Cantus.
+**Krótki opis**: nowy sposób zarobku, np. użycie bandy świątynnej do monopolu na produkcję zwojów, magiczne przedmioty
+**Zaangażowane frakcje**: Magowie Ognia, Cienie
+
+### Wpis 29
+**Nazwa wątku**: Komitywa Doriana
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Taida
+**Kolejność**: 33
+**Wpis fabularny**: Po spektaklu, jakim była detonacja Lux, w świątyni wiele się zmieniło. Choć Arcymag Domingo dalej emanuje stoickością i spokojem, to jesteś w stanie wyczuć napięcie panujące między magami, a szczególnie między Calorem a Dorianem. 
+
+Calor stara się przywrócić starą regułę w świątyni, taką jaka powinna w normalnych warunkach. Natomiast Dorian reprezentuje inne podejście, bardziej odpowiadające standardom panującym w kolonii. 
+Co więcej, wydaje Ci się że Dorian wie co się stało z Lux, w końcu była jego mentorką i przyjaciółką. Tylko czemu nie chce nic powiedzieć? Przecież tobie też zależy, żeby odkryć prawdę. Przypadkiem zauważyłaś go kiedyś, jak pracuje nad jakimiś dziwnymi symbolami w pracowni magicznej, kreśląc przy tym punkty na mapie. 
+
+Poświęciłaś kiedyś czas, by go śledzić i obserwować jego zachowanie. Zauważyłaś, że wyjątkowo dużo czasu spędza w pracowni, badając magiczną rudę i tworząc z niej dziwną biżuterię. Raz na kilka dni widziałaś jak spotyka się z ludźmi którzy mają amulet taki sam jaki on nosi na szyi. Ale gdy chciałaś zobaczyć gdzie idą, znikali gdzieś pomiędzy chatami. A potem widziałaś jak pijąc piwo w karczmie, wyciągnął jakiemuś nowicjuszowi bagienne ziele z sakiewki. Jak zyskać zaufanie kogoś takiego ? 
+**Krótki opis**: Naprowadzenie Taidy na ślady Lux, i potwierdzenie jej obserwacji z edycji 2024 apropo Kantoru
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 30
+**Nazwa wątku**: Poczciwy, naiwny Cantus
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Taida
+**Kolejność**: 34
+**Wpis fabularny**: Nie uszło twojej uwadze, że Cantus jest całkiem spolegliwym mistrzem magicznym - przynajmniej w stosunku do innych Magów Ognia. Kiedyś mogło się wydawać, że Oscar i Lux bardzo na nim polegają, ale ostatnio doszłaś do wniosku, że zwyczajnie go wykorzystywali.
+
+Zdaje się, że i tobie nie potrafiłby odmówić, jeśli zechcesz pożyczyć od niego rudę czy esencje. Rzadko kiedy upomina się o zwrot należności, a nawet w takich wypadkach dość łatwo go zbyć "przepraszam, jutro już nie zapomnę!".
+
+Prawdopodobnie mogłabyś również wciągnąć go w jakieś swoje gierki, choć na co dzień nie wydaje się być zainteresowany polityką.
+**Krótki opis**: nowa osoba nadużywająca Cantusa
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 31
+**Nazwa wątku**: Wykupne
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sebastian
+**Kolejność**: 34
+**Wpis fabularny**: Wiara czy wiedza nie wystarczą, by zostać Magiem Ognia - trzeba jeszcze udowodnić swoją determinację i żelazną wolę. Za przyjęcie do któregoś z klasztorów lub nauki w świątyni płaci się stawki tradycyjne za wikt, opierunek i pokrycie podstawowego wyposażenia Nowicjusza. W Kolonii sytuacja jest nawet bardziej skomplikowana - wszyscy członkowie Starego Obozu należą przecież do Gomeza. A zwłaszcza Cienie i Strażnicy, którzy o służbę zabiegali i składali mu przyrzeczenia.
+
+Krąg Ognia był gotów cię wykupić, gdy składałeś Przysięgę Ognia. Arcymag nawet był już w drodze z sakiewką w ręce, by dokonać formalności, ale podobno służka Beza nieoczekiwanie zaoferowała, że ten koszt pokryje. Za swoją szczodrość chciała jedynie przysługę od Sebastiana, ale to już Domingo nie bardzo interesowało - zgodził się w ciemno, trochę nietaktownie, jakby kupczył twoim życiem.
+
+Teraz Krąg Ognia ma może trochę dodatkowych oszczędności, ale za to ty możesz mieć problem. Trudno sobie wyobrazić, by ktoś z otoczenia bliskiego zrobił coś bezinteresownie. Co więcej, wykręcenie się od tej przysługi źle rzutowałoby na Arcymaga, który przecież poświadczył swym słowem.
+**Krótki opis**: Sebastian miał zostać wykupiony u Gomeza, ale tak naprawdę zrobiła to Beza. Teraz Sebastian jest winien jej przysługę, bo Domingo dał na to swoje słowo
+**Zaangażowane frakcje**: Magowie Ognia, Służący
+
+### Wpis 32
+**Nazwa wątku**: Zimne, mokre mury
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sebastian
+**Kolejność**: 31
+**Wpis fabularny**: Jesteś tu nowy, ale nie jesteś ślepy. Choć Innos obdarzył Cię swą łaską i zostałeś dopuszczony do Kręgu Magów Ognia dość niedawno, widzisz wyraźnie problemy trawiące Krąg od środka.
+
+Zauważasz, że drobnie niuanse - jak to kto w którym rzędzie siedzi podczas modlitwy - są pretekstami do kłotni. Dostrzegasz, że niektórych magów wyniszcza ambicja oraz wypełnia ich żal o, według nich, niesprawiedliwe traktowanie przez wyższe kręgi. 
+
+Z zewnątrz Krąg Ognia wydaje się być silną i zorganizowaną instytucją. Ale to iluzja, ułuda którą może przejrzeć każdy. Wiesz doskonale, że chaos i brak harmonii może doprowadzić do zatracenia i zagłady. Mówi się, że ryba psuje się od głowy. Calor i Dorian coraz częściej skaczą sobie do gardeł, ich konflikt się zaostrza co wpływa na cały krąg, dzieląc go i pogłębiając podział. 
+
+Dostrzegasz, że Calor stara się spoić krąg, inicjuje wspólne modły, wspiera młodszych magów swoją wiedzą. Może gdybyś wsparł go w swoich działaniach, wspólnymi siłami udało by się wam wprowadzić pokój w Świątyni. 
+**Krótki opis**: Sebastian jako najmłodszy stażem Mag dostrzega problemy trawiące świątynie. Jego działania Mogłby pomóc Calorowi w przywracaniu porządku w świątyni. 
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 33
+**Nazwa wątku**: Jajko czy kura
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sebastian
+**Kolejność**: 33
+**Wpis fabularny**: Czasem masz wrażenie, że już nigdy nie uwolnisz się od "Kuraka" i nie pomoże na to ani zmiana imienia, ani nawrócenie. Wygląda na to, że "w poprzednim życiu" obiecałeś Bractwu Śniącego własne ciało. Na bogów!
+
+Znajdujesz się w rzeczywiście nieciekawej sytuacji. Zarówno wywiązanie się z tej obietnicy, jak i unikanie odpowiedzialności, rzutować będzie przede wszystkim na ciebie, ale też i na Krąg Ognia, a nawet na całą wiarę w Innosa. Chyba lepiej, by nikt się tym nie dowiedział, bo jeszcze utrudni ci to pracę z potrzebującymi, odbierze niezbędne zasoby. Co gorsza, ktoś mógłby cię szantażować...
+
+Jakby nie dość było zagrożeniu reputacji i wizerunku, to jesteś zbyt młodym magiem, by mieć pewność metafizycznych implikacji w obliczu starych, prawdziwych bogów. Niby to Przysięgę Ognia składasz "jedynie" do czasu, aż twe ciało nie powróci do Królestwa Beliara - ale czy tak się stanie, jeśli będą nim rozporządzać heretycy?
+Z pewnością musisz dowiedzieć się, jak właściwie wyglądają zwyczaje funeralne według dogmatów Śniącego, kto je przeprowadza i czy Bractwo w ogóle się ich trzyma. Śmierć czyha w Kolonii na każdego, a tobie już nie dopisuje Kurakowe szczęście, dobrze by więc było, by ktoś nieskrępowany kościelną pozycją i reputacją, a zdolny, zobowiązał się właściwie dopilnować egzekwii po twoim odejściu. Na myśl jako pierwsi nasuwają się przyświątynni Cienie, ale silniejszą pozycję do egzekucji takiej obietnicy mieliby Strażnicy czy Najemnicy.
+
+Powinieneś również skonsultować swoje rozterki z kimś o bardziej ugruntowanej wiedzy teologicznej, by pomógł ci zrozumieć eschatologiczne konsekwencje. Być może błaganie Innosa o przebaczenie jest znacznie bardziej pilne niż te przyziemne rozterki.
+**Krótki opis**: obiecał ciało Bractwu - mieć oczy szeroko otwarte, dowiedzieć się, jak Bractwo grzebie zmarłych
+uwolnić się z umowy, jeśli to możliwe
+**Zaangażowane frakcje**: Magowie Ognia, Guru
+
+### Wpis 34
+**Nazwa wątku**: Błazna szaleństwo zdrową myśl ukrywa
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sebastian
+**Kolejność**: 32
+**Wpis fabularny**: „Zmieniłeś się.” Przez ostatnie kilka tygodni słyszałeś to wiele razy. Jeszcze parę miesięcy temu, byłeś strażnikiem o pseudonimie Kurak. Komiczną i groteskową postacią którą nikt nie traktował poważnie. No, prawie nikt. Miałeś przyjaciół, strażników. Valentino, Sznitkę i Garhaxa. 
+
+Od kiedy przypomniałeś sobie swoje stare imię, a Innos w swej mądrości pozwoli Ci dołączyć do Kręgu Ognia, przy duchowym wsparciu Arcymaga Domingo i Doriana, to twoje stare życie zniknęło. Choć często ktoś zaczepiał Cię w nadziei na „pokaz”, komedię, nie mogłeś mu tego dać. Jesteś teraz Magiem, a Ci biedni głupcy dalej tego nie dostrzegają. Przykre, że wśród nich, znajdują się twoi starzy przyjaciele. Ale wydaje Ci się że jest w tym coś więcej. Echa niedawnej przeszłości, czegoś co nie tylko poróżniło Cię z twoimi przyjaciółmi ale też poróżniło ich z samym Innosem. 
+
+Nazywasz się Sebastian. Nie Kurak. Zmieniłeś się. 
+
+### Wpis 35
+**Nazwa wątku**: Jęzor
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Sebastian
+**Kolejność**: 35
+**Wpis fabularny**: Czas mija, a trop narkotycznego jęzora wciąż się wymyka. Szkodnicy, których przepytałeś, okazali się mało przydatni – ich informacje były chaotyczne albo puste. Mimo to nie odpuszczasz. Wiesz, że ten narkotyk może być kluczem – do zrozumienia alchemicznej potęgi Nowego Obozu albo do upadku tych, którzy się nim bawią. Z drugiej strony, skoro oni nic nie wiedzą, to może faktycznie to ślepy trop?
+
+Zaczynasz się zastanawiać… Może pora porozmawiać z kimś, kto zna się na magii tak samo jak Ty? Może jeden z Magów Wody lub Guru – potrafi powiedzieć o tym coś więcej?  Pojawia się też inna myśl: skoro krążą plotki, że ktoś jeszcze podąża tropem Jęzora – to może warto go znaleźć… i wyprzedzić. Albo wciągnąć we wspólną grę. Albo wprowadzić na fałszywe tory.
+
+Kilka dni temu, przechadzając się między chatami w Starym Obozie, słyszałeś rozmowę nowicjuszy Bractwa. Ich szept był pełen niepokoju – coś o tym, że jedna z nowicjuszek, coś z imieniem na A…  coś dużo kręciła się przy składnikach alchemicznych, z których mógłby być wytworzony jakiś narkotyk. Może wie coś więcej. Może to ona jest tym „kimś”, kto również zbliża się do prawdy. Czas ją wypytać. Albo przejąć jej informacje.
+
+Dla Ciebie  jest to szansa, by pokazać, że nie jesteś tylko kolejnym teoretykiem, ale badaczem, który nie boi się ubrudzić rąk. Może w końcu Krąg Ognia dostrzeże, że oddanie to nie tylko wiedza, ale także działanie.
+Szukaj. Pytaj. Podważaj. Wymieniaj informacje lub wprowadź zamęt. Wydobądź prawdę spod popiołów kłamstw.
+**Krótki opis**: "Do Sebastiana podejdą na 100% członkowie Wk, więc będzie mógł z nimi wejść w interakcje. Do tego ma możliwość żeby poszerzyć kontakty i w razie czego nawet wywiedzieć się więcej. Tutaj czysty sandbox, ale finalnie chcę dać mu na koniec recepturę na jęzor lub antidotum. 
+Igor
+Sam powiem członkom WK na koniec, żeby go nagrodzili w stosownej chwili za informacje i współpracę." ~Ivir
+**Zaangażowane frakcje**: Magowie Ognia, Najemnicy, Nowicjusze
+
+### Wpis 36
+**Nazwa wątku**: Reguła
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Hrodgir
+**Kolejność**: 32
+**Wpis fabularny**: Mimo formalnej poprawności procesów rekrutacji, obrządków i awansów, dołączanie do Kręgu kolejnych i kolejnych byłych kryminalistów przynosi ze sobą lekceważenie wielowiekowych tradycji, obyczajów i godności naszych szat. Wypadałoby przywrócić poważanie reguły zakonnej i jakiejkolwiek etykiety. W ostatnich latach tematem tym zajmował się i Domingo, i nawet Calor, ale nigdy nie udało im się zjednać w tej sprawie Kręgu. Bez entuzjazmu uczestników przepis pozostanie martwym, więc musisz nakłonić ich retoryką lub sprytnym naciskiem.
+
+Kościół Innosa jest jeden, ale lokalna reguła może różnić się w zależności od potrzeb i specyfiki regionu. Rzeczywiście, tutejsze zasady zdają się przestarzałe nawet w odczuciu najbardziej konserwatywnych spośród kapłanów. Być może pomoże stosowne ich uproszczenie.
+**Krótki opis**: obecny krąg śmierdzi, trzeba go wziąć za mordę, np. przejąć od Calora temat reguły świątynnej
+
+ponownie wydrukować regułę zakonu 2023
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 37
+**Nazwa wątku**: Ptaszki z Vengardu
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Hrodgir
+**Kolejność**: 30
+**Wpis fabularny**: Pozostajesz tym Magiem, który ochoczo "uprzejmie donosi" jednemu ze swoich dawnych nauczycieli, wpływowemu Karrypto. Gdy kilka miesięcy temu Cantus na polecenie Domingo kompletował listę zarzutów pod adresem lokalnych Magów Wody, można się było spodziewać, że wyśle je jedynie do ich klasztoru na Archolos. Wówczas bez większego problemu udało ci się nadać własny list, by poinformować Vengard o eskalacji napięcia między czarodziejami.
+
+Nie możesz jednak polegać wyłącznie na podpinaniu się pod korespondencję arcymaga. Trudno powiedzieć, czy to on zorientuje się pierwszy, czy jednak wpadniesz, gdy magnaci bądź strażnicy dobiorą się wreszcie do Twoich listów.
+
+Jeżeli chcesz dalej skutecznie działać w podobny sposób, to musisz znaleźć alternatywę dla oficjalnych kanałów komunikacji. Od lat regularnie pojawiają się próby przemycania towarów pod nosem Gomeza i choć pół roku temu schwytano zaangażowanego w to magnata, to nie wiadomo, czy nie był to tylko manewr polityczny, walka o wpływy wśród Gomezowej świty.
+A nawet, jeśli tamto śledztwo zakończyło się powodzeniem, to prawdopodobnie ktoś próbuje wypełnić tę atrakcyjną niszę.
+
+Poprzednio w przemyt zaangażowani mieli być Magnat Saal oraz jego najwierniejszy oddział Straży składający sie głównie z piratów czy tam jakichś kłusowników... ale oni tam wszyscy wyglądają podobnie, a połowa z nich korzysta z podobnych, odzwierzęcych przydomków.
+**Krótki opis**: Hrodgir chce robić siatkę szpiegowską - dodaję tło i łączę z listami, przemytem
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 38
+**Nazwa wątku**: Trzydzieści srebrników
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Hrodgir
+**Kolejność**: 31
+**Wpis fabularny**: Karrypto w swej mądrości zwykł wynagradzać takich donosicieli przyjaciół, jak ty. Nie może wprawdzie wysłać ci pokaźnej nagrody bez wzbudzania podejrzeń, ale zdecydował się zwyczajnie wesprzeć całą świątynię, do której przecież i ty należysz. Pozostaje niewypowiedzianym, że istotna część zasobów powinna trafić tylko w twoje ręce... a masz tę przewagę, że jak na razie chyba tylko ty wiesz o nadchodzącej, nieoczekiwanej przesyłce.
+
+Przy okazji najbliższych zrzutów zostanie wysłana dodatkowa, specjalnie oznaczona, skrzynia towarowa, a jej otwarcie przez arcymaga powinno dostarczyć nieco magicznych pół-produktów. Towary na placu wymian obracane są w tak wielkiej ilości, że ich transport często trwa cały dzień - to zaś wykorzystują podgryzające konwoje Szkodniki. Jeżeli chcesz zdobyć całą skrzynię dla siebie, musisz wymyślić jakiś fortel.
+**Krótki opis**: za podjebkę kolegów może spodziewać się skrzyni towarowej z magicznymi fantami
+**Zaangażowane frakcje**: Magowie Ognia, Szkodniki, Strażnicy
+
+### Wpis 39
+**Nazwa wątku**: Zniewaga!
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Mesmer
+**Kolejność**: 31
+**Wpis fabularny**: Policzek dalej piekł. Choć może był to bardziej wstyd? Nie tak dawno temu Arcymag poprosił Cię o odebranie Wydzieliny z pełzacza, którą rzadko, ale regularnie Magowie Ognia zamawiali od Strażników Świątynnych. 
+
+Gor na Vara spotkałeś w pół drogi, to od niego miałeś odebrać towar. Wszystko szło bardzo gładko, nikt was nie niepokoił, ty przekazałeś rudę, a on fiolki z wydzieliną. Gdy już się żegnaliście, Strażnik powiedział żeby "Śniący Ci sprzyjał", uniosłeś się wtedy, nie jesteś pewny co powiedziałeś, albo stanąłeś w obronie dobrego imienia Pana Światła. Wtedy ten barbarzyńca wymierzył Ci policzek. Odebrało Ci mowę, nie wiedziałeś co powiedzieć. 
+
+Nie było nikogo kto by był przy was na trakcie. On odszedł, zostawiając Cię pełnego sprzecznych emocji. Przez ten cały czas nikomu o tym nie powiedziałeś, ale ostatnio widziałeś tego człowieka, tym razem nie w zbroi, tylko w szatach w jakie ubierają się Baalowie z Bractwa. Czujesz, że Innos oczekuje od Ciebie reakcji. To może być twoja najważniejsza próba której poddaje Cię sam Innos.
+**Krótki opis**: Zniewaga, wątek łączony z Bractwem, gdzie jeden z MO został upokorozny przez jednego z SŚ  i czuje że Innos oczekuje jego reakcji
+**Zaangażowane frakcje**: Magowie Ognia, Guru, Strażnicy Świątynni
+
+### Wpis 40
+**Nazwa wątku**: Służąca Beza
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Mesmer
+**Kolejność**: 30
+**Wpis fabularny**: Stary Obóz jest może mało bogobojny, ale nie spodziewasz się po nich wiele, a przy tym chociaż dostarcza Królowi niezbędną rudę. Nie to, co przeklęci Sekciarze.
+
+Jedna ze służących Gomeza, Beza, odwiedza od czasu do czasu świątynię i składa datki może skromne, ale zapewne dotkliwie obciążające jej kieszeń. Kilkukrotnie ją wysłuchałeś i zdaje się, że podziela zarówno bogobojność, jak i niechęć do heretyków. Mało tego! To podobno ona wzięła na siebie koszta związane z wykupieniem Sebastiana z jego dotychczasowej służby w Straży!
+
+Może być szczera lub podstępna, ale z pewnością jest niegłupia, a przede wszystkim - ma bezpośredni dostęp do magnatów. Co więcej, jako służąca zna z pewnością niejeden wstydliwy sekret i wie znacznie więcej niż rządzący Starym Obozem by chcieli.
+Jeżeli zadbasz o tę relację, to możesz zyskać bardzo cenny kontakt - może wręcz sprzymierzeńca. Mieć swoje oczy i uszy na Zamku to na co dzień cenne, ale w kontekście zbliżających się negocjacji - wręcz krytyczne! 
+**Krótki opis**: służka Beza - z Zevanem
+
+ziomeczka Beza zaczęła go już podchodzić
+**Zaangażowane frakcje**: Magowie Ognia, Służący, Magnaci
+
+### Wpis 41
+**Nazwa wątku**: Łapać złodzieja!
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Mesmer
+**Kolejność**: 33
+**Wpis fabularny**: Mag nie powinien przejmować się funduszami, lecz łaska magnatów na pstrym wierzchowcu jeździ. Nie ma zbyt wielu sposobów zarobku godnych Maga Ognia, toteż każda nieprzewidziana strata boli podwójnie.
+
+Jednym ze stałych źródeł prywatnej rudy są Strażnicy dość regularnie korzystający z niewielkiej ilości zwojów. Sprzedałeś właśnie kilka z nich Perganowi i wyszedłeś ze spotkania, kiedy zorientowałeś się, że sakwę masz lżejszą niż powinieneś. Okradziono cię! Rudy miałeś dość, ale zniknęło kilka z Twoich zwojów! Ta Kula Ognia oraz kilka pustych zwojów kosztowały łącznie kilkadziesiąt bryłek...
+
+Musiał cię oskubać ktoś z jego oddziału! Jeśli dziś ujdzie im na sucho okradanie Maga, to kto wie, co będzie jutro?
+**Krótki opis**:  jakiś strażnik ukradł Mesmerowi zwoje, wiadomo tylko, że z oddziału Pergana
+przygotować kilka pustych zwojów na start
+
+### Wpis 42
+**Nazwa wątku**: Ostracyzm
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Karat (Joahim)
+**Kolejność**: 33
+**Wpis fabularny**: Przez ostatnie kilka tygodni nie mogłeś nie zauważyć zmiany zachowania u Doriana. Choć zmiany są bardzo subtelne, to ktoś taki jak ty jest w stanie wyczuć różnicę. Coś go trapi, i nie jest to byle błahostka. 
+
+Dorian spędzał z tobą sporo czasu, przekazując ci wiedzę na temat samej magii, jej naturze i znaczeniu. Pokazał Ci też arkana tworzenia magicznych przedmiotów. Często wspominał o obowiązku jaki na nich a niedługo pewnie i na tobie, spoczywa. Król potrzebuje rudy, a Gomez jako jedyny chce mu ją dostarczać. Więc jako Magowie Ognia powinni robić wszystko by transporty rudy były nieprzerwane, a magowie wody jako zdrajcy byli ukarani. W swoje wypowiedzi wplatał też hasła, które zwracały twoją uwagę. „Jeśli robiąc coś masz obawy, że popełnisz błąd, nie rób tego. Niepewność i słaba wola doprowadzają do tragedii” albo „Nie obdarzaj zaufaniem nikogo, nawet jeśli uważasz że go bardzo dobrze znasz. Sprawdzaj, weryfikuj i pytaj. Zwłaszcza jeśli będzie od tego zależało czyjeś życie”.  Na szczęście, cały czas czujesz że masz od niego wsparcie i zawsze będzie służył Ci radą, nie ważne co się wydarzy. 
+
+Choć ty nie odwróciłeś się od niego, nie jest tajemnicą, że od Doriana odwróciła się większość Magów Ognia. Pytanie tylko czy słusznie?
+
+### Wpis 43
+**Nazwa wątku**: Dzień Matki
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Karat (Joahim)
+**Kolejność**: 30
+**Wpis fabularny**: Czujesz, że zbliżasz się do jednego z punktów zwrotnych w swoim życiu, a to skłania cię do refleksji nad dotychczasowymi wyborami. Trudno byłoby oprzeć się pokusie, by - zrealizowawszy ambicję zostania Magiem - nie pochwalić się tym przed przyjaciółmi z dzieciństwa, dawnymi nauczycielami, autorytetami ze społeczności Archolos czy własną rodziną.
+Myślami często powracasz do tych swoich najbliższych - do zaginionego przed laty brata, do ojca, który zmagał się z licznymi wyzwaniami i stresem, wreszcie do podupadłej na zdrowie matki. Z perspektywy czasu zdaje się, że to właśnie jej choroba ściągnęła na wasze głowy najczarniejsze z chmur, choć przecież nie było w tym krzty jej winy.
+
+Pomimo licznych zbrodni, których dokonali skazańcy Kolonii, trudno odmówić im talentu. Wielu z nich popełniło błędy, owszem, ale całkiem spektakularne - takie, których nie popełniliby nie mając żadnych zdolności ani determinacji. Paradoksalnie znajdujesz się w otoczeniu wielu całkiem utalentowanych - i jeszcze bardziej zdesperowanych - ludzi. Nie brakuje wśród nich alchemików, jak Farida, Sybilla czy Klara z Apteki, a przecież wkraczasz również w środowisko Magów Ognia.
+Czy chcąc zadośćuczynić matce przykrości i wstyd, których stałeś się sprawcą, byłbyś w stanie zaryzykować i oddać jej zdrowie w ręce tych przestępców? Przecież ostatnio, podczas studiów ksiąg zleconych przez Doriana, natrafiłeś na notatki alchemika opisujące liczne dolegliwości, w tym znajomo brzmiące objawy.
+
+Nikt jednak nie jest w stanie odpowiedzieć za ciebie, czy tak karkołomna próba, jak zaufanie skazańcom produkcji i wysyłce leków przez pół świata, bardziej służyłaby uzdrowieniu komuś, kto cię wychował, czy jedynie uciszeniu twojego własnego sumienia.
+**Krótki opis**: zaowalowane wspomnienia + oddzielnie przyjdą listy
+
+Wątek przeplata się z lekarstwem potrzebnym Alvarezowi
+
+wydrukować i wydać notatki alchemika
+**Zaangażowane frakcje**: Magowie Ognia, Magnaci
+
+### Wpis 44
+**Nazwa wątku**: Niespełnione inspiracje
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Karat (Joahim)
+**Kolejność**: 31
+**Wpis fabularny**: Czasem, gdy się obudzisz, aż wiruje ci w głowie, jakbyś miał kilka równoległych snów i dziesiątki pomysłów. Może to zbliżenie się do magów i twoje postępy w nauce rozbudzają wyobraźnię, a może to wszystko efekt wymęczenia przedłużającym się stresem, pilnowaniem własnych pleców, bezustannym uważaniem na każde swoje słowo w obecności kapusiów i morderców. Zapadnięcie się w szkice i teoretyczne rozważania bywa od czasu do czasu ucieczką od szarej, deszczowej rzeczywistości skazańca Górniczej Doliny.
+
+Kuszą cię bogactwa i sława, jakie wiążą się z zaklinaniem - uznanie możnych tego świata, akt twórczy, wnoszenie czegoś nowego i wywierającego wpływ na samą rzeczywistość, umykającą ograniczeniom Morgradu. Niemal perwersyjną przyjemność sprawia ci ostatnio praca ze złotem i magiczną rudą, choć jest smutne, gdy ta druga traci swój blask przez niewystarczające techniki. Chwilami łapiesz się na niebezpiecznych myślach eksplorując potencjał, jaki drzemie w rozbitym kamieniu ogniskującym przy którym zginęła Lux, co można ugrać przy okazji konserwacji Gniewu Innosa, co można by osiągnąć, gdyby wydrzeć Magom Wody ich kopiec rudy... Zdarza się nawet, że śnisz o kuszących przedmiotach, których - jeszcze - nie widziałeś, jak na przykład apetyczny Amulet Eridana, który wywołał w tobie wrażenie deja vu albo nowy-stary, chyba świeżo przekuty, miecz wznoszony ponad zwłokami ludzi i orków.
+**Krótki opis**: wieloletnie sny o magicznych przedmiotach. Po zostaniu Magiem Ognia straci te ambicje i wyobraźnię, co będzie zahaczką na 2026 do szukania inspiracji i flirtowania z przesuwaniem moralnej granicy.
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 45
+**Nazwa wątku**: Margines błędu
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Karat (Joahim)
+**Kolejność**: 32
+**Wpis fabularny**: Znasz się na rudzie wystarczająco, by dostrzegać, jak nieefektywne jest wydobycie Starego Obozu. Wiele problematycznych okoliczności jest zrozumiałych - obecność Orków i nieokiełznana dzicz pełna jaszczurów, trolli, zębaczy i ogarów, nieliczni specjaliści, a liczne konflikty. Coś jednak ci trochę nie gra - mimo wszystko nęka cię przekonanie, że ruda powinna być eksploatowana w większej ilości miejsc niż tylko Stara i "Wolna" Kopalnia. Jeśli ktoś kopie w sekrecie, to ujawnienie tego magnatom zapewne wiązałoby się z nagrodą, jeśli zaś nikt tego nie robi - to ludzie Gomeza mogliby zacząć.
+
+
+Spróbuj dyskretnie zasięgnąć języka - ktoś w Kolonii na pewno *coś* wie. Tropy, jakie mogą ci się nasuwać, to na przykład:
+- niedobitki "Załogi" Saala, który podpadł Gomezowi przemytem rudy - ciekawe skąd ją brali?
+- kopacze, którzy w poprzednich latach prowadzili prace na płytkich, powierzchniowych złożach
+- Strażnik Garhax chwalił się, że jego miecz wykonany jest z czarnej rudy. Skąd mogła się wziąć?
+- oczywiście: cwaniaki z innych Obozów, którzy chcieliby uniknąć wzroku ludzi Gomeza.
+**Krótki opis**: ekspert od rudy
+
+delikatne nakierowanie na złoża u kretów (jedna z lokacji potrzebnego mu kamienia runicznego)
+**Zaangażowane frakcje**: Magowie Ognia, Krety
+
+### Wpis 46
+**Nazwa wątku**: Próba Ognia
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Dante
+**Kolejność**: 30
+**Wpis fabularny**: Trafiłeś na to - potencjalną drogę do zbawienia.
+
+Gdy któregoś dnia po prywatnej rozmowie z Dorianem zostałeś jeszcze chwilę w bibliotece magów, przejrzałeś może kilka ksiąg, by oderwać się od skazańczej rzeczywistości. Z pewnym sentymentem oglądałeś iluminowane księgi, znajome symbole i pewien trochę arogancji, ale przepełniony klarowną determinacją, ton.
+
+A potem natrafiłeś na fragment wręcz zapierający dech w piersiach.
+
+"Nowicjusz może uważać, że jest gotowy na dołączenie do Kręgu Ognia, ale nie od razu dostąpi tego zaszczytu. Gdy dobrze się zastanowi i nadal będzie uparcie dążyć do swego celu, to może skorzystać z prawa zażądania Próby. Nie może mu odmówić żaden Mag."
+
+Emocje zabujały Tobą, jakbyś był na statku. Szansa? Na odkupienie, uniewinnienie, status? Ale tylko dla Nowicjuszy... ale przecież nie takie rzeczy...!
+
+Odkrycie zachowałeś dla siebie. Może parę pytań, może parę jeszcze rzutów oka w księgi podsunęło ci w końcu pewien fortel.
+Otóż pod Barierą nie było instytucji Nowicjuszy i nawet uczący się u Magów Ognia zwani byli adeptami, a nie Nowicjuszami, by nie rozjuszać Gomeza. Mimo to w mniej problematycznych obszarach podtrzymuje się tradycję w różnych formach: upamiętnia szczególne dni, pielęgnuje niektóre obyczaje, ale też korzysta się z ukonstytuowanego rytu nabożeństw. Podczas nich Magom Ognia asystować powinni Nowicjusze, choć nie wiedzą tego Cienie z bandy świątynnej, którzy te role zazwyczaj wypełniają - nawet, gdy sporadycznie "Nowicjuszami" podczas obrządku bywają nazywani.
+Gdyby udało ci się przyjąć taką rolę i należycie ją wypełnić, to miałbyś prawne podstawy do Próby Ognia tak silne, że nawet zacietrzewiony Domingo nie mógłby ci odmówić!
+
+Lada chwila rozpocznie się Próba Magii Karata i Arika, a i Ty taką musisz zdać jako część Próby Ognia - ale przecież czytałeś księgę. Najlepszą okazją na wygłoszenie żądań zdaje się być dzisiejsze wieczorne nabożeństwo, ale nie ustaliłeś jeszcze jaką rolę przyjmiesz. Powinieneś porozmawiać z Cantusem, który zazwyczaj przewodzi tym modłom. Inne nabożeństwa prowadzi Sebastian, dawny Kurak - ale w raczej niegodnych, slumsowych okolicznościach. Stary kompan, Dorian, też z pewnością by ci pomógł.
+**Krótki opis**: Wkręcić się na Próbę Ognia
+
+Dante będzie brał udział w zrzucie w czw, ale powinien być dostępny od około 17.00
+Planujemy jego żądanie na wieczorne nabożeństwo
+**Zaangażowane frakcje**: Magowie Ognia, Strażnicy
+
+### Wpis 47
+**Nazwa wątku**: Magia rewanżu
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Dante
+**Kolejność**: 32
+**Wpis fabularny**: Hugon, Neralis, Skośny - tych troje gnojków samych sobie na to zasłużyło. Tak sobie wmawiasz.
+
+To były pierwsze tygodnie twojej służby u Gomeza, ale skierowanych na ciebie podejrzliwych spojrzeń było ze dwa razy tyle, co twoich zaprzyjaźnionych kontaktów. Kiedy ośmieszyli cię na warcie niewybrednymi dowcipami, a potem prędko zasłonili się żetonami ochrony u Strażnika z innego oddziału, byłeś kropce. Było wiadome, że nie możesz puścić tego płazem, ale antagonizowanie całego oddziału oznaczało jeszcze większe kłopoty. Tak czy siak miałeś utracić twarz, a w Kolonii - w Straży Gomeza - to jak proszenie się o śmierć.
+
+Z pomocą przyszli Magowie Ognia. Po którymś nabożeństwie złożyłeś datek i podzieliłeś się swoim problemem z Calorem, a ten, nieoczekiwanie, zgodził się pomóc ci osobiście.
+Przydybaliście ich, gdy sądzili, że koniec szychty oznacza koniec ich pracy. Gdy w szybie wibrującym echem rozniosło się niepodlegające dyskusji "KOP", wiedziałeś, że to więcej niż autorytet kapłańskich szat - to magia.
+
+Gdy zaczęli kopać własnymi rękoma, zdziwiłeś się. Gdy zaczęli łamać paznokcie, było to zarazem satysfakcjonujące, jak i odpychające. Gdy pozdzierali sobie mięso z palców, może nawet tknęło cię na pewną dozę współczucia.
+Ale tych troje gnojków samych sobie na to zasłużyło.
+**Krótki opis**: krzywdzenie ludzi razem z fanatyzmem Calora
+**Zaangażowane frakcje**: Magowie Ognia, Strażnicy, Kopacze
+
+### Wpis 48
+**Nazwa wątku**: Dowódca Algir
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Dante
+**Kolejność**: 31
+**Wpis fabularny**: Może to jakiś niewypowiedziany konflikt między dowódcami Straży, może jakieś sekretne śledztwo, a może tak po prostu uwikłane jest w intrygi życie w Starym Obozie?
+
+Dostrzegłeś, że Algir, zwany Ulęgałke, czasem nawet zachodzi do świątyni Innosa, ale jakoś nijak nie idą mu rozmowy z Magami Ognia. Jeszcze parę miesięcy raczej go to nie zajmowało, ale w ostatnich tygodniach zdaje się rozglądać, węszyć i chyba bezskutecznie szukać do Kręgu jakiegoś dojścia.
+Znajdujesz się zatem w unikalnej sytuacji, mając wgląd w oba światy dzięki swojej obecnej przynależności oraz przeszłości, ale i kiełkujących w tobie ambicjom. Możesz okazać się wyjątkowym wsparciem Algira, a i jego reputacja z pewnością otworzy ci niejedne drzwi i może nawet przymknie oko, jeślibyś chciał zająć się Próbą Ognia.
+
+Jednak pomimo jego całkiem zabawnie brzmiącego przydomka, nie zapominasz, że kawał z niego sukinsyna.
+**Krótki opis**: Strażol Ulęgałkol - z Zevanem
+**Zaangażowane frakcje**: Magowie Ognia, Kopacze
+
+### Wpis 49
+**Nazwa wątku**: Zaciągany dług
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Arik
+**Kolejność**: 31
+**Wpis fabularny**: Prawdziwych przyjaciół poznaje się w biedzie. Choć twoja bieda jest czysto metaforyczna, bo na brak rudy specjalnie nie narzekasz, to w Kolonii cenna jest jeszcze reputacja. A tą masz słabą. 
+
+Na szczęście jakiś czas temu poznałeś Strażnika o poczciwym imieniu Maćko. To on pomógł Ci podczas bójki w karczmie, gdzie omal kopacze nie zatłukli cię kilofem. Od tego czasu jest on dla ciebie bardzo życzliwy. Wiesz, że kiedy twój problem wymaga uźycia mięśni, Maćko jest tą osobą, która Ci pomoże. Czasami gdy dostajesz od magów nagrodę, jak mikstury czy zwoje, często dajesz je właśnie jemu, bo przecież on bardziej potrzebuje mikstur zdrowia niż ty. Ale przez ten cały czas, nie poprosił Cię wprost o nic w zamian. Więc czy naprawdę jest taki poczciwy? Czy jego pomoc będzie miała cenę w przyszłości ?  
+**Krótki opis**: Zaczepka dla nowego gracza pod barierą. Strażnik który wykorzystuje jego naiwność. 
+**Zaangażowane frakcje**: Magowie Ognia, Strażnicy
+
+### Wpis 50
+**Nazwa wątku**: Alchemia - Asystent
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alchemia - asystent
+**Kolejność**: 29
+**Wpis fabularny**: Znasz podstawy alchemii i obsługi alchemicznych przyrządów. Jesteś w stanie samodzielnie stworzyć najbardziej podstawowe produkty, jeśli tylko dysponujesz odpowiednią recepturą.
+
+Jeśli zdobędziesz przepisy na mikstury leczenia, many i usypiającą oraz truciznę i "niestrawność", a także przekonasz Alchemika lub Mistrza Alchemii, by Cię podszkolił, to i Ty staniesz się pełnoprawnym Alchemikiem zdolnym tworzyć własne receptury i pracować z zaawansowanymi przepisami.
+
+//Realizację powyższego zgłoś MG Alchemii - Domingo lub Golemowi//
+**Krótki opis**: do weryfikacji czy nie poluzowujemy nauki
+
+temat poruszony, potwierdzić po paru dniach na przemyślenie
+**Zaangażowane frakcje**: Kopacze, Służący, Cienie, Magowie Ognia, Szkodniki, Magowie Wody, Nowicjusze
+
+### Wpis 51
+**Nazwa wątku**: Alchemia - Ekspert
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: Alchemia - ekspert
+**Kolejność**: 29
+**Wpis fabularny**: Masz solidną, ugruntowaną biegłość w sztuce alchemicznej. Najprostsze z mikstur (leczenia, many, truciznę, niestrawność i usypiającą) potrafisz robić nawet z pamięci, zaś do wszystkich innych wystarczy Ci stosowna, spisana zgodnie z rzemiosłem, receptura.
+
+Z pomocą Mistrza Alchemii możesz stworzyć jedną autorską recepturę - ale pierwsze próby z pewnością będą niedoskonałe i związane z nieoczekiwanymi skutkami ubocznymi. Jesteś też w stanie przyuczyć jedną inną osobą na swojego Asystenta.
+
+Obecnie sławnymi w Kolonii Karnej Mistrzami Alchemii są Mag Wody Eridan oraz Cień Farida. Rywalizacja jest jednak zacięta i być może dołączy do ich grona ktoś więcej.
+**Krótki opis**: do weryfikacji czy nie poluzowujemy nauki
+
+temat poruszony, potwierdzić po paru dniach na przemyślenie
+**Zaangażowane frakcje**: Cienie, Magowie Ognia, Magowie Wody, Szkodniki, Nowicjusze, Guru
+
+### Wpis 52
+**Nazwa wątku**: Alchemia - Mistrzostwo
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: Alchemia - Mistrz
+**Kolejność**: 29
+**Wpis fabularny**: Jesteś niepodważalnym autorytetem w dziedzinie alchemii. Musisz zmagać się z Barierą, której zmienność i wpływ magiczny może delikatnie, acz znacząco, zmieniać reguły rzemiosła na przestrzeni miesięcy, ale nie takie problemy ulegały twojej zaradności i kreatywności.
+
+Z pewnością oczekują cię liczni kandydaci na uczniów. Może należałoby wykorzystać ich zapał do sprawienia, by Twoja praca była bardziej komfortowa? Proste składniki i sprawunki może załatwić byle pachołek, ale gdyby tak udało im się świstnąć jakąś recepturę temu drugiemu "Mistrzowi" albo przeszkodzić mu w badaniach, to nie tylko ugruntowałaby się Twoja pozycja na forum alchemicznym, ale również wzrósłby prestiż Twojego Obozu.
+**Krótki opis**: Opis pozycji Mistrza
+**Zaangażowane frakcje**: Cienie, Magowie Wody
+
+### Wpis 53
+**Nazwa wątku**: Łakomy kąsek
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alchemia - nauczyciele
+**Kolejność**: 25
+**Wpis fabularny**: Zazwyczaj plotkuje się raczej o doświadczonych alchemikach, którzy wyrobili swoją reputację i mają dość zasobów, by pracować samodzielnie. Niecodziennym jest więc, że tu i ówdzie na językach pojawiło się imię Tanki - służki z Gomezowego zamku, której imię od kilku miesięcy może pojawiać się wśród łowców lub handlarzy esencją.
+
+Wygląda na to, że jest bardzo utalentowaną alchemiczką, która zdołała już pobrać lekcje u szeregu różnych nauczycieli, w tym obojga Mistrzów: i Faridy, i Eridana. Co więcej, ma unikalny wśród waszego rzemiosła dostęp do magnatów oraz samego Gomeza.
+Stanowi apetyczny kąsek na uczennicę, a oficjalne, publiczne wzięcie jej pod swoje skrzydła dodałoby nauczycielowi nie tylko prestiżu, ale też wygłodniałej, zdeterminowanej czeladniczki. Zapewne ktoś nawet spróbuje zwerbować ją do własnej grupy interesu lub całkowitej zmiany Obozu...
+**Krótki opis**: wynagrodzenie Tance słabej komunikacji z 2024 oraz docenienie jej ponadprzeciętnych wysiłków w temacie alchemii
+**Zaangażowane frakcje**: Magowie Ognia, Cienie, Służący, Magowie Wody, Nowicjusze, Szkodniki, Guru
+
+### Wpis 54
+**Nazwa wątku**: Partacze na horyzoncie
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: Alchemia - Kollegium
+**Kolejność**: 28
+**Wpis fabularny**: Może i w ostatnim czasie więzy waszego towarzystwa alchemicznego uległy erozji, ale ciągle przecież pozostajecie Kolegium - bodaj najzdolniejszymi oraz najbardziej szanującymi waszą dyscyplinę alchemikami. Kiedy więc ktoś zaczyna rozprowadzać lewe, absolutnie partackie niby-mikstury, to uderza to nie tylko w wasze interesy i reputację, ale i osobistą dumę z rzemiosła.
+
+Dotarły do was pozornie sprzeczne informacje - a to czyjeś nietypowo kolorowe produkty nie działały zupełnie, a to znowuż ktoś inny struł się, zażywając ukrywane przed Bractwem używki. Trudno powiedzieć, czy to jeden hochsztapler, czy kilku, czy może problem jest szerszy właśnie z tego powodu, że nie ma komu utrzymać standardów, jakie poza Barierą egzekwują miejskie gildie.
+**Krótki opis**: tease, że są lewe mikstury
+jedno, to pomarańczowe oshee sprzedawane w NO jako mikstury, ale mają karteczkę 'brak efektu'
+drugim, przypadkowym powiązaniem, może być Digis robiąca eksperymenty na własną rękę i czasami partacząca mikstury uzdrawiania (dosypuje sól, więc stają się truciznami - po rzucie kostką. Więcej u Samanty)
+**Zaangażowane frakcje**: Cienie, Magowie Ognia, Szkodniki, Magowie Wody, Skazańcy
+
+### Wpis 55
+**Nazwa wątku**: Nieoczekiwane brudy
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Oruniaki
+**Kolejność**: 27
+**Wpis fabularny**: Receptury alchemiczne wszędzie są cenne, a już na pewno pod Barierą. Cholerni złodzieje świstnęli ci którąś, więc w ostatnich miesiącach szukałeś okazji, by uzupełnić braki. Gdy wreszcie udało ci się zdobyć nowy przepis po jakimś popadłym w niełaskę Baalu Bractwa, nie spodziewałeś się, że przy okazji wpadnie ci coś więcej.
+Receptura była częścią notatek, które wcale niekoniecznie były związane z nią bezpośrednio, ale rzucają trochę światła na szemrane interesy autora. Może udałoby się to wcisnąć za kilka bryłek komuś zainteresowanego dobrym imieniem tego Guru... albo jego przeciwnikom?
+**Krótki opis**: 4/10 dowodów przeciw Orunowi. Wątek Bractwa/Dymka
+**Zaangażowane frakcje**: Kopacze, Cienie, Szkodniki, Nowicjusze, Strażnicy Świątynni, Guru
+
+### Wpis 56
+**Nazwa wątku**: Niezmonetyzowana farba
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alchemia - farba
+**Kolejność**: 28
+**Wpis fabularny**: Ostatnio udało ci się niemal za darmo zdobyć przepis na szczególnie wytrzymałą farbę, która powinna dobrze przyjąć się na właściwie każdy materiał. Z alchemicznego punktu widzenia nie jest to ogromne osiągnięcie, ale do zakupu przekonała cię anegdotka, że mieli z niej niegdyś korzystać śmiali, brawurowi wojownicy z Nordmaru czy zachodniej Myrthany, gdy tamte ziemie były jeszcze bardziej dzikie niż dziś.
+
+Okazało się jednak, że wymaga specyficznego składnika - krwi trolla. To znacząco podbija jej cenę, więc najpierw należałoby znaleźć nabywcę, któremu zależałoby na tym dość, by zaryzykować własne życie lub wyłożyć pełną sakwę rudy.
+**Krótki opis**: farba na sztandar Najemników
+**Zaangażowane frakcje**: Najemnicy, Cienie, Nowicjusze
+
+### Wpis 57
+**Nazwa wątku**: Przeklęta słabość
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Alvarez
+**Kolejność**: 30
+**Wpis fabularny**: Gnębiący cię kaszel był do tej pory uciążliwy, ale teraz, gdy przybrał na sile, zrobił się zwyczajnie irytujący. Jakby tego było mało, niedawno zauważyłeś wypadające włosy, a powtarzające się bóle głowy to więcej niż tylko kac po zamkowych biesiadach. Nasilające się dolegliwości to niechybny znak gwałtownie postępującej choroby.
+
+To przeklęte choróbsko przyprawia o nieznośną frustrację. Jesteś w końcu magnatem - nie byle szlachetką, który nigdy nie ubrudził sobie rąk ani bezmyślnym trepem, który za sukces uważa nieumieranie. Magnatem! Lawirujesz pod nosem Gomeza i trzymasz ten cholerny grajdołek w ryzach - i miałbyś stracić życie przez ślepe zrządzenie losu, przez jakiś niewidzialny karpys bogów?
+
+Być może wreszcie teraz dysponujesz zasobami, które pozwolą ci rozwiązać ten problem raz na zawsze. Zresztą nie masz wyboru.
+
+Stary Obóz posiada kilkoro uzdolnionych alchemików, takich jak alchemiczna Mistrzyni Farida, pracująca przy Aptece Klara czy Magini Ognia Sybilla. Być może na Cieni łatwiej wywrzeć presję, ale bywają one przebiegłe. Magini zapewne dysponuje nieco większymi zasobami, ale Magom zapewne można ufać jeszcze mniej, bo nie kierują się klarownymi pobudkami.
+Inny Mistrz Alchemii przebywa w Nowym Obozie. Eridan jest Magiem Wody, a jako taki jest twoim naturalnym rywalem, który z pewnością nie przepuści okazji w kontekście zbliżających się negocjacji. Poza nim z pewnością są jeszcze inni utalentowani alchemicy, zarówno w Nowym Obozie, jak i Obozie Bractwa. Kiedyś obiła ci się o uszy nazwa Kolegium Alchemicznego, ale nie byli do tej pory dość interesujący, by ich długo szpiegować i poznać.
+Alchemicy, ich relacje i powiązania nie były do tej pory szczególnie istotne, a kłopoty Obozu wystarczająco przyprawiały o ból głowy. Może Tanka, twoja służąca, która niedawno nawiązała z nimi kontakty, a do tego nauczyła się podstaw sztuki alchemicznej, będzie dobrym punktem wyjścia do poszukiwań. Jej samej raczej jeszcze brakuje doświadczenia, ale powinna już być w stanie odsiać ziarno od plew.
+
+Może uda ci się ugrać prywatę przy obradach? Nowy Obóz to nie tylko Eridan, ale i wykopaliska sprzed kilku miesięcy, podczas których wykopano liczne kamienne tablice. Niektóre z nich miały zawierać alchemiczne receptury dawno zapomnianego ludu, może więc jest tam coś, co by ci się przydało. Negocjacje zresztą nie są jedynym sposobem zdobycia tablic, skoro wśród Cieni nie brakuje złodziei - ale w dalszym ciągu potrzebowałbyś kogoś, kto te tablice zrozumie. Zarówno jeden, jak i drugi sposób oznaczają wtajemniczenie w twój problem niebezpiecznie wielu osób, które mogłyby wykorzystać twoją słabość.
+
+Niepokój, wręcz odór zbliżającej się śmierci przyprawia cię o desperackie pomysły. Poza ludźmi są w Kolonii przecież również i Orkowie - Orkowie, którzy niejednokrotnie okazali się bestiami szczwanymi, nieustępliwymi. Skoro są dość umyślni, by wytwarzać oręż, władać magią i stwarzać realne problemy całemu Myrtańskiemu imperium, to nietrudno sobie wyobrazić, by i o alchemii co nieco wiedzieli. Nie sposób polegać na komunikacji, ale być może konsekwentnie używana przemoc i plądrowanie ich ruin przyniosą jakieś efekty.
+**Krótki opis**: powiązane z wątkiem Karata
+Alvarez choruje, grozi mu amulet Beliara i śmierć z końcem gry
+
+przesłanki do receptury są do wydedukowania z notatek alchemika
+alternatywnym rozwiązaniem jest receptura/napój spod menhiru orkowego alchemika
+
+zamek potwierdził
+napisać notatki alchemika, recepturę do orków-dymka
+**Zaangażowane frakcje**: Magnaci, Magowie Ognia
+
+### Wpis 58
+**Nazwa wątku**: Mistrzostwo Alchemiczne
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Akania
+**Kolejność**: 31
+**Wpis fabularny**: Niewdzięczny jest los Szkodnika. Jakby mało było trudu ze zdobywaniem, a potem pilnowaniem zasobów przed zakusami innych złodziei, to nawet na forum nieco świetlejszych umysłów bywasz pomijana, bo nie nosisz wymyślnych szat albo nie jesteś tak wyszczekana, jak Cienie na smyczy Gomeza.
+
+Wiesz jednak, że zasługujesz na właściwe uznanie jako Mistrzyni Alchemii.
+
+Tak, jak i wszystko inne, tak i alchemia ma w Kolonii wymiar przede wszystkim praktyczny. Twoją reputację bardzo powinno poprawić, jeśli na przykład popiszesz się naukową znajomością lokalnych bestii i ewentualnego wpływu Bariery na nie. A zbliża się ku temu okazja, bo Arcymistrz Medus ma niedługo poprowadzić otwarty wykład o anatomii. Jest dość przystępny i raczej nie będzie potrzebował wiele przekonywania, by pozwolić ci zaprezentować swoje wnioski, ale taka szansa się prawdopodobnie nie powtórzy.
+
+Dołącz do kilku eskapad łowców Nowego Obozu lub Strażników Świątynnych, by zaobserwować zachowanie dzikich stworów na własne oczy. Zbierz ich doświadczenia, a jeśli zauważysz jakieś prawidłowości, zweryfikuj je u jednego z najbardziej doświadczonych myśliwych - Demwara.
+
+Gdy będziesz gotowa, skonsultuj swoje przemyślenia z arcymagiem Medusem. Pośpiesz się, bo wykład zaplanowano już na jutro!
+**Krótki opis**: zadanie na Mistrza Alchemii, najlepiej powiązane z Lekcją Anatomii Medusa
+**Zaangażowane frakcje**: Szkodniki
+
+### Wpis 59
+**Nazwa wątku**: Kamienna tablica
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Calor
+**Kolejność**: 39
+**Wpis fabularny**: Niedawno pijany Szkodnik rozpowiadał nad wyraz interesującą plotkę. Oto przy wykopaliskach sprzed kilku miesięcy miano wykopać kilka ciężkich, kamiennych tablic z nietypowo dekorowanymi przedstawieniami różnych bestii lub mistycznych znaków. Magowie pochwalili się, że odczytali jedną z nich i zawierała ona alchemiczną recepturę, którą bez większego problemu można by zastosować nawet dziś, nawet w prymitywnych warunkach Kolonii Karnej.
+
+Gdy z kimś o tym rozmawiałeś, trochę przypadkowo usłyszał was Cień Gafel. Złapał cię na uboczu i upewnił się co do twojego zainteresowania, sugerując, że mógłby pozyskać jedną lub kilka z tych tablic w zamian za odpowiednią nagrodę i niezadawanie zbyt wielu pytań.
+**Krótki opis**: kradzież kamiennych tabliczek z recepturami-zagadkami
+**Zaangażowane frakcje**: Cienie, Magowie Ognia, Magowie Wody
+
+### Wpis 60
+**Nazwa wątku**: Kamienne tablice
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Noel
+**Kolejność**: 39
+**Wpis fabularny**: Niedawno pijany Szkodnik rozpowiadał nad wyraz interesującą plotkę. Oto przy wykopaliskach sprzed kilku miesięcy miano wykopać kilka ciężkich, kamiennych tablic z nietypowo dekorowanymi przedstawieniami różnych bestii lub mistycznych znaków. Magowie pochwalili się, że odczytali jedną z nich i zawierała ona alchemiczną recepturę, którą bez większego problemu można by zastosować nawet dziś, nawet w prymitywnych warunkach Kolonii Karnej.
+
+Gdy z kimś o tym rozmawialiście, trochę przypadkowo usłyszała was Nowicjuszka Sardine. Złapała cię na uboczu i upewniła się co do twojego zainteresowania, sugerując, że mogłaby pozyskać jedną lub kilka z tych tablic w zamian za odpowiednią nagrodę i niezadawanie zbyt wielu pytań.
+**Krótki opis**: kradzież kamiennych tabliczek z recepturami-zagadkami
+**Zaangażowane frakcje**: Cienie, Nowicjusze, Magowie Wody
+
+### Wpis 61
+**Nazwa wątku**: Kamienna tabliczka
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Chudy
+**Kolejność**: 39
+**Wpis fabularny**: Niedawno pijany Szkodnik rozpowiadał nad wyraz interesującą plotkę. Oto przy wykopaliskach sprzed kilku miesięcy miano wykopać kilka ciężkich, kamiennych tablic z nietypowo dekorowanymi przedstawieniami różnych bestii lub mistycznych znaków. Magowie pochwalili się, że odczytali jedną z nich i zawierała ona alchemiczną recepturę, którą bez większego problemu można by zastosować nawet dziś, nawet w prymitywnych warunkach Kolonii Karnej.
+
+Gdy z kimś o tym rozmawiałeś, trochę przypadkowo usłyszała was Szkodniczka Zarah. Złapała cię na uboczu i upewniła się co do twojego zainteresowania, sugerując, że mogłaby pozyskać jedną lub kilka z tych tablic w zamian za odpowiednią nagrodę i niezadawanie zbyt wielu pytań.
+
+//Szkodniczka Zarah i Cień Zara to dwie różne graczki//
+**Krótki opis**: kradzież kamiennych tabliczek z recepturami-zagadkami
+**Zaangażowane frakcje**: Cienie, Szkodniki, Magowie Wody
+
+### Wpis 62
+**Nazwa wątku**: Kamienne tabliczki
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Malrik
+**Kolejność**: 39
+**Wpis fabularny**: Niedawno pijany Szkodnik rozpowiadał nad wyraz interesującą plotkę. Oto przy wykopaliskach sprzed kilku miesięcy miano wykopać kilka ciężkich, kamiennych tablic z nietypowo dekorowanymi przedstawieniami różnych bestii lub mistycznych znaków. Magowie pochwalili się, że odczytali jedną z nich i zawierała ona alchemiczną recepturę, którą bez większego problemu można by zastosować nawet dziś, nawet w prymitywnych warunkach Kolonii Karnej.
+
+Gdy z kimś o tym rozmawiałeś, trochę przypadkowo usłyszał was Cień Taner. Złapał cię na uboczu i upewnił się co do twojego zainteresowania, sugerując, że mógłby pozyskać jedną lub kilka z tych tablic w zamian za odpowiednią nagrodę i niezadawanie zbyt wielu pytań.
+**Krótki opis**: kradzież kamiennych tabliczek z recepturami-zagadkami
+**Zaangażowane frakcje**: Nowicjusze, Cienie, Magowie Wody
+
+### Wpis 63
+**Nazwa wątku**: Zagadkowa tablica
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Traszka
+**Kolejność**: 39
+**Wpis fabularny**: Niedawno pijany Szkodnik rozpowiadał nad wyraz interesującą plotkę. Oto przy wykopaliskach sprzed kilku miesięcy miano wykopać kilka ciężkich, kamiennych tablic z nietypowo dekorowanymi przedstawieniami różnych bestii lub mistycznych znaków. Magowie pochwalili się, że odczytali jedną z nich i zawierała ona alchemiczną recepturę, którą bez większego problemu można by zastosować nawet dziś, nawet w prymitywnych warunkach Kolonii Karnej.
+
+Gdy z kimś o tym rozmawialiście, trochę przypadkowo usłyszał was Cień Selgar. Złapał cię na uboczu i upewnił się co do twojego zainteresowania, sugerując, że mógłby pozyskać jedną lub kilka z tych tablic w zamian za odpowiednią nagrodę i niezadawanie zbyt wielu pytań.
+**Krótki opis**: kradzież kamiennych tabliczek z recepturami-zagadkami
+**Zaangażowane frakcje**: Nowicjusze, Cienie, Magowie Wody
+
+### Wpis 64
+**Nazwa wątku**: Gdzie był błąd...?!
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Digis
+**Kolejność**: 30
+**Wpis fabularny**: Nie dość, że nigdy nie byłaś ekspertem w alchemii, to jeszcze musiałabyś odnaleźć się w nowej rzeczywistości Kolonii Karnej, jeślibyś chciała zrobić jakiś postęp. Skazańcy z pewnością mają własne metody produkcji i jakieś szczwane sposoby na zastąpienie standardowej aparatury laboratoryjnej. Przepisy, jakie znałaś, mogły opierać się o nieosiągalne pod Barierą składniki, ale powinnaś móc znaleźć receptury podobne, bazujące na lokalnej zwierzynie, lokalnych roślinach i lokalnych minerałach.
+
+Przede wszystkim jednak brakuje ci pewności siebie po popełnionym śmiertelnym błędzie. W Górniczej Dolinie znajdą się ludzie ze wszystkich stron świata, a niektórzy z nich nawet nie trafili tu w ramach wyroku, a zostali zamknięci przy stworzeniu Bariery. KTOŚ na pewno coś wie o tej koszmarnej chorobie, która wywoływała ostry kaszel, a także wywoływała wypadanie włosów oraz straszliwie przeżółkłe oczy. Pewnie najlepiej byłoby zacząć od cyrulików, alchemików i magów.
+
+//Standardowo, aby osiąnąć stopień Asystenta alchemii, musisz zostać przyuczona przez Alchemika (eksperta) lub Mistrza Alchemii oraz zdobyć przynajmniej jedną, nietanią, recepturę na podstawową miksturę.
+
+Ty natomiast masz również alternatywny sposób: jeżeli odkryjesz, jakie lekarstwo mogło pomóc na zarazę, którą przetrwała Digis, zgłoś się do Domingo (MG Magów Ognia, kaplica w SO) lub Golema (MG Kopaczy, slumsy), a uzyskasz poziom Asystenta bez spełniania innych warunków.//
+**Krótki opis**: Odpowiedź jest w zagadce przeplatającej się z Karatem i Alvarezem
+**Zaangażowane frakcje**: Skazańcy, Magowie Ognia, Magnaci
+
+### Wpis 65
+**Nazwa wątku**: Fałszywi kurierzy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Hrodgir
+**Kolejność**: 39
+**Wpis fabularny**: Doszły cię słuchy że szkodniki przechodzą przez bramę starego obozu powołując się na bycie kurierem a strażnicy nie są w stanie nawet sprawdzić czy to prawda czy nie. Trzeba porozmawiać o tym z Magami Wody, niech utemperują tych obdartusów z którymi mieszkają w jaskini. Powoływanie się na autorytet magów żeby kraść jakieś błyskotki to skandal.
+**Krótki opis**: -Wpisane przez Joplina, daję magowi na 1-szym kręgu, jeżeli uważacie że lepiej nadaje się dla kogoś innego to zmieńcie.
+
+### Wpis 66
+**Wpis fabularny**: Rytuał oczyszczenia miał na celu przywrócenie magicznych właściwości Kamienia Ogniskującego, odebranemu Nekromancie i 
+
+## Arkusz: Data_Validation
+----------------------------------------
+
+### Wpis 1
+**Klasa**: Grupa
+**Nie**: Tak
+**__EMPTY**: Nie
+**#REF!**: Nie
+**Pierwszy Krąg Ognia**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_1**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_2**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_3**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_4**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_5**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_6**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_7**: Drugi Krąg Ognia
+**Calor**: Cantus
+**Calor_1**: Cantus
+**Calor_2**: Cantus
+**Calor_3**: Cantus
+**Calor_4**: Cantus
+**Calor_5**: Cantus
+**Calor_6**: Cantus
+**Calor_7**: Cantus
+**Calor_8**: Cantus
+**Calor_9**: Cantus
+**Calor_10**: Cantus
+**Calor_11**: Cantus
+**Calor_12**: Cantus
+**Calor_13**: Cantus
+**Calor_14**: Cantus
+**Calor_15**: Cantus
+**Calor_16**: Cantus
+**Calor_17**: Cantus
+**Calor_18**: Cantus
+**Calor_19**: Cantus
+**Calor_20**: Cantus
+**Calor_21**: Cantus
+**Calor_22**: Cantus
+**Calor_23**: Cantus
+**Calor_24**: Cantus
+**Calor_25**: Cantus
+**Calor_26**: Cantus
+**Calor_27**: Cantus
+**Calor_28**: Cantus
+**Calor_29**: Cantus
+**Calor_30**: Cantus
+**Calor_31**: Cantus
+**Calor_32**: Cantus
+**Calor_33**: Cantus
+**Pierwszy Krąg Ognia_8**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_9**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_10**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_11**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_12**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_13**: Drugi Krąg Ognia
+**Pierwszy Krąg Ognia_14**: Drugi Krąg Ognia
+**Calor_34**: Cantus
+**Calor_35**: Cantus
+**Calor_36**: Cantus
+**Calor_37**: Cantus
+**Calor_38**: Cantus
+**Calor_39**: Cantus
+**Calor_40**: Cantus
+**Calor_41**: Cantus
+**Calor_42**: Cantus
+
+### Wpis 2
+**Klasa**: Postać
+**Nie**: Nie
+**#REF!**: Nie
+**Pierwszy Krąg Ognia**: Spec Kapłańska
+**Pierwszy Krąg Ognia_1**: Spec Kapłańska
+**Pierwszy Krąg Ognia_2**: Spec Kapłańska
+**Pierwszy Krąg Ognia_3**: Spec Kapłańska
+**Pierwszy Krąg Ognia_4**: Spec Kapłańska
+**Pierwszy Krąg Ognia_5**: Spec Kapłańska
+**Pierwszy Krąg Ognia_6**: Spec Kapłańska
+**Pierwszy Krąg Ognia_7**: Spec Kapłańska
+**Calor**: Sybilla
+**Calor_1**: Sybilla
+**Calor_2**: Sybilla
+**Calor_3**: Sybilla
+**Calor_4**: Sybilla
+**Calor_5**: Sybilla
+**Calor_6**: Sybilla
+**Calor_7**: Sybilla
+**Calor_8**: Sybilla
+**Calor_9**: Sybilla
+**Calor_10**: Sybilla
+**Calor_11**: Sybilla
+**Calor_12**: Sybilla
+**Calor_13**: Sybilla
+**Calor_14**: Sybilla
+**Calor_15**: Sybilla
+**Calor_16**: Sybilla
+**Calor_17**: Sybilla
+**Calor_18**: Sybilla
+**Calor_19**: Sybilla
+**Calor_20**: Sybilla
+**Calor_21**: Sybilla
+**Calor_22**: Sybilla
+**Calor_23**: Sybilla
+**Calor_24**: Sybilla
+**Calor_25**: Sybilla
+**Calor_26**: Sybilla
+**Calor_27**: Sybilla
+**Calor_28**: Sybilla
+**Calor_29**: Sybilla
+**Calor_30**: Sybilla
+**Calor_31**: Sybilla
+**Calor_32**: Sybilla
+**Calor_33**: Sybilla
+**Pierwszy Krąg Ognia_8**: Spec Kapłańska
+**Pierwszy Krąg Ognia_9**: Spec Kapłańska
+**Pierwszy Krąg Ognia_10**: Spec Kapłańska
+**Pierwszy Krąg Ognia_11**: Spec Kapłańska
+**Pierwszy Krąg Ognia_12**: Spec Kapłańska
+**Pierwszy Krąg Ognia_13**: Spec Kapłańska
+**Pierwszy Krąg Ognia_14**: Spec Kapłańska
+**Calor_34**: Sybilla
+**Calor_35**: Sybilla
+**Calor_36**: Sybilla
+**Calor_37**: Sybilla
+**Calor_38**: Sybilla
+**Calor_39**: Sybilla
+**Calor_40**: Sybilla
+**Calor_41**: Sybilla
+**Calor_42**: Sybilla
+
+### Wpis 3
+**#REF!**: Nie
+**Pierwszy Krąg Ognia**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_1**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_2**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_3**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_4**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_5**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_6**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_7**: Spec Zaklinanie
+**Calor**: Taida
+**Calor_1**: Taida
+**Calor_2**: Taida
+**Calor_3**: Taida
+**Calor_4**: Taida
+**Calor_5**: Taida
+**Calor_6**: Taida
+**Calor_7**: Taida
+**Calor_8**: Taida
+**Calor_9**: Taida
+**Calor_10**: Taida
+**Calor_11**: Taida
+**Calor_12**: Taida
+**Calor_13**: Taida
+**Calor_14**: Taida
+**Calor_15**: Taida
+**Calor_16**: Taida
+**Calor_17**: Taida
+**Calor_18**: Taida
+**Calor_19**: Taida
+**Calor_20**: Taida
+**Calor_21**: Taida
+**Calor_22**: Taida
+**Calor_23**: Taida
+**Calor_24**: Taida
+**Calor_25**: Taida
+**Calor_26**: Taida
+**Calor_27**: Taida
+**Calor_28**: Taida
+**Calor_29**: Taida
+**Calor_30**: Taida
+**Calor_31**: Taida
+**Calor_32**: Taida
+**Calor_33**: Taida
+**Pierwszy Krąg Ognia_8**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_9**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_10**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_11**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_12**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_13**: Spec Zaklinanie
+**Pierwszy Krąg Ognia_14**: Spec Zaklinanie
+**Calor_34**: Taida
+**Calor_35**: Taida
+**Calor_36**: Taida
+**Calor_37**: Taida
+**Calor_38**: Taida
+**Calor_39**: Taida
+**Calor_40**: Taida
+**Calor_41**: Taida
+**Calor_42**: Taida
+
+### Wpis 4
+**Klasa**: Magowie Ognia
+**#REF!**: #REF!
+**Pierwszy Krąg Ognia**: Spec Mistyczna
+**Pierwszy Krąg Ognia_1**: Spec Mistyczna
+**Pierwszy Krąg Ognia_2**: Spec Mistyczna
+**Pierwszy Krąg Ognia_3**: Spec Mistyczna
+**Pierwszy Krąg Ognia_4**: Spec Mistyczna
+**Pierwszy Krąg Ognia_5**: Spec Mistyczna
+**Pierwszy Krąg Ognia_6**: Spec Mistyczna
+**Pierwszy Krąg Ognia_7**: Spec Mistyczna
+**Calor**: Sebastian
+**Calor_1**: Sebastian
+**Calor_2**: Sebastian
+**Calor_3**: Sebastian
+**Calor_4**: Sebastian
+**Calor_5**: Sebastian
+**Calor_6**: Sebastian
+**Calor_7**: Sebastian
+**Calor_8**: Sebastian
+**Calor_9**: Sebastian
+**Calor_10**: Sebastian
+**Calor_11**: Sebastian
+**Calor_12**: Sebastian
+**Calor_13**: Sebastian
+**Calor_14**: Sebastian
+**Calor_15**: Sebastian
+**Calor_16**: Sebastian
+**Calor_17**: Sebastian
+**Calor_18**: Sebastian
+**Calor_19**: Sebastian
+**Calor_20**: Sebastian
+**Calor_21**: Sebastian
+**Calor_22**: Sebastian
+**Calor_23**: Sebastian
+**Calor_24**: Sebastian
+**Calor_25**: Sebastian
+**Calor_26**: Sebastian
+**Calor_27**: Sebastian
+**Calor_28**: Sebastian
+**Calor_29**: Sebastian
+**Calor_30**: Sebastian
+**Calor_31**: Sebastian
+**Calor_32**: Sebastian
+**Calor_33**: Sebastian
+**Pierwszy Krąg Ognia_8**: Spec Mistyczna
+**Pierwszy Krąg Ognia_9**: Spec Mistyczna
+**Pierwszy Krąg Ognia_10**: Spec Mistyczna
+**Pierwszy Krąg Ognia_11**: Spec Mistyczna
+**Pierwszy Krąg Ognia_12**: Spec Mistyczna
+**Pierwszy Krąg Ognia_13**: Spec Mistyczna
+**Pierwszy Krąg Ognia_14**: Spec Mistyczna
+**Calor_34**: Sebastian
+**Calor_35**: Sebastian
+**Calor_36**: Sebastian
+**Calor_37**: Sebastian
+**Calor_38**: Sebastian
+**Calor_39**: Sebastian
+**Calor_40**: Sebastian
+**Calor_41**: Sebastian
+**Calor_42**: Sebastian
+
+### Wpis 5
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+**Pierwszy Krąg Ognia**: Spec Runiczna
+**Pierwszy Krąg Ognia_1**: Spec Runiczna
+**Pierwszy Krąg Ognia_2**: Spec Runiczna
+**Pierwszy Krąg Ognia_3**: Spec Runiczna
+**Pierwszy Krąg Ognia_4**: Spec Runiczna
+**Pierwszy Krąg Ognia_5**: Spec Runiczna
+**Pierwszy Krąg Ognia_6**: Spec Runiczna
+**Pierwszy Krąg Ognia_7**: Spec Runiczna
+**Calor**: Hrodgir
+**Calor_1**: Hrodgir
+**Calor_2**: Hrodgir
+**Calor_3**: Hrodgir
+**Calor_4**: Hrodgir
+**Calor_5**: Hrodgir
+**Calor_6**: Hrodgir
+**Calor_7**: Hrodgir
+**Calor_8**: Hrodgir
+**Calor_9**: Hrodgir
+**Calor_10**: Hrodgir
+**Calor_11**: Hrodgir
+**Calor_12**: Hrodgir
+**Calor_13**: Hrodgir
+**Calor_14**: Hrodgir
+**Calor_15**: Hrodgir
+**Calor_16**: Hrodgir
+**Calor_17**: Hrodgir
+**Calor_18**: Hrodgir
+**Calor_19**: Hrodgir
+**Calor_20**: Hrodgir
+**Calor_21**: Hrodgir
+**Calor_22**: Hrodgir
+**Calor_23**: Hrodgir
+**Calor_24**: Hrodgir
+**Calor_25**: Hrodgir
+**Calor_26**: Hrodgir
+**Calor_27**: Hrodgir
+**Calor_28**: Hrodgir
+**Calor_29**: Hrodgir
+**Calor_30**: Hrodgir
+**Calor_31**: Hrodgir
+**Calor_32**: Hrodgir
+**Calor_33**: Hrodgir
+**Pierwszy Krąg Ognia_8**: Spec Runiczna
+**Pierwszy Krąg Ognia_9**: Spec Runiczna
+**Pierwszy Krąg Ognia_10**: Spec Runiczna
+**Pierwszy Krąg Ognia_11**: Spec Runiczna
+**Pierwszy Krąg Ognia_12**: Spec Runiczna
+**Pierwszy Krąg Ognia_13**: Spec Runiczna
+**Pierwszy Krąg Ognia_14**: Spec Runiczna
+**Calor_34**: Hrodgir
+**Calor_35**: Hrodgir
+**Calor_36**: Hrodgir
+**Calor_37**: Hrodgir
+**Calor_38**: Hrodgir
+**Calor_39**: Hrodgir
+**Calor_40**: Hrodgir
+**Calor_41**: Hrodgir
+**Calor_42**: Hrodgir
+
+### Wpis 6
+**Klasa**: Skazańcy
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+**Pierwszy Krąg Ognia**: Spec Transmutacja
+**Pierwszy Krąg Ognia_1**: Spec Transmutacja
+**Pierwszy Krąg Ognia_2**: Spec Transmutacja
+**Pierwszy Krąg Ognia_3**: Spec Transmutacja
+**Pierwszy Krąg Ognia_4**: Spec Transmutacja
+**Pierwszy Krąg Ognia_5**: Spec Transmutacja
+**Pierwszy Krąg Ognia_6**: Spec Transmutacja
+**Pierwszy Krąg Ognia_7**: Spec Transmutacja
+**Calor**: Mesmer
+**Calor_1**: Mesmer
+**Calor_2**: Mesmer
+**Calor_3**: Mesmer
+**Calor_4**: Mesmer
+**Calor_5**: Mesmer
+**Calor_6**: Mesmer
+**Calor_7**: Mesmer
+**Calor_8**: Mesmer
+**Calor_9**: Mesmer
+**Calor_10**: Mesmer
+**Calor_11**: Mesmer
+**Calor_12**: Mesmer
+**Calor_13**: Mesmer
+**Calor_14**: Mesmer
+**Calor_15**: Mesmer
+**Calor_16**: Mesmer
+**Calor_17**: Mesmer
+**Calor_18**: Mesmer
+**Calor_19**: Mesmer
+**Calor_20**: Mesmer
+**Calor_21**: Mesmer
+**Calor_22**: Mesmer
+**Calor_23**: Mesmer
+**Calor_24**: Mesmer
+**Calor_25**: Mesmer
+**Calor_26**: Mesmer
+**Calor_27**: Mesmer
+**Calor_28**: Mesmer
+**Calor_29**: Mesmer
+**Calor_30**: Mesmer
+**Calor_31**: Mesmer
+**Calor_32**: Mesmer
+**Calor_33**: Mesmer
+**Pierwszy Krąg Ognia_8**: Spec Transmutacja
+**Pierwszy Krąg Ognia_9**: Spec Transmutacja
+**Pierwszy Krąg Ognia_10**: Spec Transmutacja
+**Pierwszy Krąg Ognia_11**: Spec Transmutacja
+**Pierwszy Krąg Ognia_12**: Spec Transmutacja
+**Pierwszy Krąg Ognia_13**: Spec Transmutacja
+**Pierwszy Krąg Ognia_14**: Spec Transmutacja
+**Calor_34**: Mesmer
+**Calor_35**: Mesmer
+**Calor_36**: Mesmer
+**Calor_37**: Mesmer
+**Calor_38**: Mesmer
+**Calor_39**: Mesmer
+**Calor_40**: Mesmer
+**Calor_41**: Mesmer
+**Calor_42**: Mesmer
+
+### Wpis 7
+**Klasa**: Kopacze
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+**Pierwszy Krąg Ognia**: Spec Żywiołów
+**Pierwszy Krąg Ognia_1**: Spec Żywiołów
+**Pierwszy Krąg Ognia_2**: Spec Żywiołów
+**Pierwszy Krąg Ognia_3**: Spec Żywiołów
+**Pierwszy Krąg Ognia_4**: Spec Żywiołów
+**Pierwszy Krąg Ognia_5**: Spec Żywiołów
+**Pierwszy Krąg Ognia_6**: Spec Żywiołów
+**Pierwszy Krąg Ognia_7**: Spec Żywiołów
+**Calor**: Karat (Joahim)
+**Calor_1**: Karat (Joahim)
+**Calor_2**: Karat (Joahim)
+**Calor_3**: Karat (Joahim)
+**Calor_4**: Karat (Joahim)
+**Calor_5**: Karat (Joahim)
+**Calor_6**: Karat (Joahim)
+**Calor_7**: Karat (Joahim)
+**Calor_8**: Karat (Joahim)
+**Calor_9**: Karat (Joahim)
+**Calor_10**: Karat (Joahim)
+**Calor_11**: Karat (Joahim)
+**Calor_12**: Karat (Joahim)
+**Calor_13**: Karat (Joahim)
+**Calor_14**: Karat (Joahim)
+**Calor_15**: Karat (Joahim)
+**Calor_16**: Karat (Joahim)
+**Calor_17**: Karat (Joahim)
+**Calor_18**: Karat (Joahim)
+**Calor_19**: Karat (Joahim)
+**Calor_20**: Karat (Joahim)
+**Calor_21**: Karat (Joahim)
+**Calor_22**: Karat (Joahim)
+**Calor_23**: Karat (Joahim)
+**Calor_24**: Karat (Joahim)
+**Calor_25**: Karat (Joahim)
+**Calor_26**: Karat (Joahim)
+**Calor_27**: Karat (Joahim)
+**Calor_28**: Karat (Joahim)
+**Calor_29**: Karat (Joahim)
+**Calor_30**: Karat (Joahim)
+**Calor_31**: Karat (Joahim)
+**Calor_32**: Karat (Joahim)
+**Calor_33**: Karat (Joahim)
+**Pierwszy Krąg Ognia_8**: Spec Żywiołów
+**Pierwszy Krąg Ognia_9**: Spec Żywiołów
+**Pierwszy Krąg Ognia_10**: Spec Żywiołów
+**Pierwszy Krąg Ognia_11**: Spec Żywiołów
+**Pierwszy Krąg Ognia_12**: Spec Żywiołów
+**Pierwszy Krąg Ognia_13**: Spec Żywiołów
+**Pierwszy Krąg Ognia_14**: Spec Żywiołów
+**Calor_34**: Karat (Joahim)
+**Calor_35**: Karat (Joahim)
+**Calor_36**: Karat (Joahim)
+**Calor_37**: Karat (Joahim)
+**Calor_38**: Karat (Joahim)
+**Calor_39**: Karat (Joahim)
+**Calor_40**: Karat (Joahim)
+**Calor_41**: Karat (Joahim)
+**Calor_42**: Karat (Joahim)
+
+### Wpis 8
+**Klasa**: Służący
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+**Pierwszy Krąg Ognia**: Gniew Innosa
+**Pierwszy Krąg Ognia_1**: Gniew Innosa
+**Pierwszy Krąg Ognia_2**: Gniew Innosa
+**Pierwszy Krąg Ognia_3**: Gniew Innosa
+**Pierwszy Krąg Ognia_4**: Gniew Innosa
+**Pierwszy Krąg Ognia_5**: Gniew Innosa
+**Pierwszy Krąg Ognia_6**: Gniew Innosa
+**Pierwszy Krąg Ognia_7**: Gniew Innosa
+**Calor**: Dante
+**Calor_1**: Dante
+**Calor_2**: Dante
+**Calor_3**: Dante
+**Calor_4**: Dante
+**Calor_5**: Dante
+**Calor_6**: Dante
+**Calor_7**: Dante
+**Calor_8**: Dante
+**Calor_9**: Dante
+**Calor_10**: Dante
+**Calor_11**: Dante
+**Calor_12**: Dante
+**Calor_13**: Dante
+**Calor_14**: Dante
+**Calor_15**: Dante
+**Calor_16**: Dante
+**Calor_17**: Dante
+**Calor_18**: Dante
+**Calor_19**: Dante
+**Calor_20**: Dante
+**Calor_21**: Dante
+**Calor_22**: Dante
+**Calor_23**: Dante
+**Calor_24**: Dante
+**Calor_25**: Dante
+**Calor_26**: Dante
+**Calor_27**: Dante
+**Calor_28**: Dante
+**Calor_29**: Dante
+**Calor_30**: Dante
+**Calor_31**: Dante
+**Calor_32**: Dante
+**Calor_33**: Dante
+**Pierwszy Krąg Ognia_8**: Gniew Innosa
+**Pierwszy Krąg Ognia_9**: Gniew Innosa
+**Pierwszy Krąg Ognia_10**: Gniew Innosa
+**Pierwszy Krąg Ognia_11**: Gniew Innosa
+**Pierwszy Krąg Ognia_12**: Gniew Innosa
+**Pierwszy Krąg Ognia_13**: Gniew Innosa
+**Pierwszy Krąg Ognia_14**: Gniew Innosa
+**Calor_34**: Dante
+**Calor_35**: Dante
+**Calor_36**: Dante
+**Calor_37**: Dante
+**Calor_38**: Dante
+**Calor_39**: Dante
+**Calor_40**: Dante
+**Calor_41**: Dante
+**Calor_42**: Dante
+
+### Wpis 9
+**Klasa**: Cienie
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+**Pierwszy Krąg Ognia**: Nawracający
+**Pierwszy Krąg Ognia_1**: Nawracający
+**Pierwszy Krąg Ognia_2**: Nawracający
+**Pierwszy Krąg Ognia_3**: Nawracający
+**Pierwszy Krąg Ognia_4**: Nawracający
+**Pierwszy Krąg Ognia_5**: Nawracający
+**Pierwszy Krąg Ognia_6**: Nawracający
+**Pierwszy Krąg Ognia_7**: Nawracający
+**Calor**: Arik
+**Calor_1**: Arik
+**Calor_2**: Arik
+**Calor_3**: Arik
+**Calor_4**: Arik
+**Calor_5**: Arik
+**Calor_6**: Arik
+**Calor_7**: Arik
+**Calor_8**: Arik
+**Calor_9**: Arik
+**Calor_10**: Arik
+**Calor_11**: Arik
+**Calor_12**: Arik
+**Calor_13**: Arik
+**Calor_14**: Arik
+**Calor_15**: Arik
+**Calor_16**: Arik
+**Calor_17**: Arik
+**Calor_18**: Arik
+**Calor_19**: Arik
+**Calor_20**: Arik
+**Calor_21**: Arik
+**Calor_22**: Arik
+**Calor_23**: Arik
+**Calor_24**: Arik
+**Calor_25**: Arik
+**Calor_26**: Arik
+**Calor_27**: Arik
+**Calor_28**: Arik
+**Calor_29**: Arik
+**Calor_30**: Arik
+**Calor_31**: Arik
+**Calor_32**: Arik
+**Calor_33**: Arik
+**Pierwszy Krąg Ognia_8**: Nawracający
+**Pierwszy Krąg Ognia_9**: Nawracający
+**Pierwszy Krąg Ognia_10**: Nawracający
+**Pierwszy Krąg Ognia_11**: Nawracający
+**Pierwszy Krąg Ognia_12**: Nawracający
+**Pierwszy Krąg Ognia_13**: Nawracający
+**Pierwszy Krąg Ognia_14**: Nawracający
+**Calor_34**: Arik
+**Calor_35**: Arik
+**Calor_36**: Arik
+**Calor_37**: Arik
+**Calor_38**: Arik
+**Calor_39**: Arik
+**Calor_40**: Arik
+**Calor_41**: Arik
+**Calor_42**: Arik
+
+### Wpis 10
+**Klasa**: Strażnicy
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+**Pierwszy Krąg Ognia**: Glifiarze
+**Pierwszy Krąg Ognia_1**: Glifiarze
+**Pierwszy Krąg Ognia_2**: Glifiarze
+**Pierwszy Krąg Ognia_3**: Glifiarze
+**Pierwszy Krąg Ognia_4**: Glifiarze
+**Pierwszy Krąg Ognia_5**: Glifiarze
+**Pierwszy Krąg Ognia_6**: Glifiarze
+**Pierwszy Krąg Ognia_7**: Glifiarze
+**Pierwszy Krąg Ognia_8**: Glifiarze
+**Pierwszy Krąg Ognia_9**: Glifiarze
+**Pierwszy Krąg Ognia_10**: Glifiarze
+**Pierwszy Krąg Ognia_11**: Glifiarze
+**Pierwszy Krąg Ognia_12**: Glifiarze
+**Pierwszy Krąg Ognia_13**: Glifiarze
+**Pierwszy Krąg Ognia_14**: Glifiarze
+
+### Wpis 11
+**Klasa**: Magowie Ognia
+**#REF!**: #REF!
+**Pierwszy Krąg Ognia**: Elementaliści
+**Pierwszy Krąg Ognia_1**: Elementaliści
+**Pierwszy Krąg Ognia_2**: Elementaliści
+**Pierwszy Krąg Ognia_3**: Elementaliści
+**Pierwszy Krąg Ognia_4**: Elementaliści
+**Pierwszy Krąg Ognia_5**: Elementaliści
+**Pierwszy Krąg Ognia_6**: Elementaliści
+**Pierwszy Krąg Ognia_7**: Elementaliści
+**Pierwszy Krąg Ognia_8**: Elementaliści
+**Pierwszy Krąg Ognia_9**: Elementaliści
+**Pierwszy Krąg Ognia_10**: Elementaliści
+**Pierwszy Krąg Ognia_11**: Elementaliści
+**Pierwszy Krąg Ognia_12**: Elementaliści
+**Pierwszy Krąg Ognia_13**: Elementaliści
+**Pierwszy Krąg Ognia_14**: Elementaliści
+
+### Wpis 12
+**Klasa**: Magnaci
+**#REF!**: #REF!
+**Pierwszy Krąg Ognia**: Próba Magii
+**Pierwszy Krąg Ognia_1**: Próba Magii
+**Pierwszy Krąg Ognia_2**: Próba Magii
+**Pierwszy Krąg Ognia_3**: Próba Magii
+**Pierwszy Krąg Ognia_4**: Próba Magii
+**Pierwszy Krąg Ognia_5**: Próba Magii
+**Pierwszy Krąg Ognia_6**: Próba Magii
+**Pierwszy Krąg Ognia_7**: Próba Magii
+**Calor**: Alvarez
+**Calor_1**: Alvarez
+**Calor_2**: Alvarez
+**Calor_3**: Alvarez
+**Calor_4**: Alvarez
+**Calor_5**: Alvarez
+**Calor_6**: Alvarez
+**Calor_7**: Alvarez
+**Calor_8**: Alvarez
+**Calor_9**: Alvarez
+**Calor_10**: Alvarez
+**Calor_11**: Alvarez
+**Calor_12**: Alvarez
+**Calor_13**: Alvarez
+**Calor_14**: Alvarez
+**Calor_15**: Alvarez
+**Calor_16**: Alvarez
+**Calor_17**: Alvarez
+**Calor_18**: Alvarez
+**Calor_19**: Alvarez
+**Calor_20**: Alvarez
+**Calor_21**: Alvarez
+**Calor_22**: Alvarez
+**Calor_23**: Alvarez
+**Calor_24**: Alvarez
+**Calor_25**: Alvarez
+**Calor_26**: Alvarez
+**Calor_27**: Alvarez
+**Calor_28**: Alvarez
+**Calor_29**: Alvarez
+**Calor_30**: Alvarez
+**Calor_31**: Alvarez
+**Calor_32**: Alvarez
+**Calor_33**: Alvarez
+**Pierwszy Krąg Ognia_8**: Próba Magii
+**Pierwszy Krąg Ognia_9**: Próba Magii
+**Pierwszy Krąg Ognia_10**: Próba Magii
+**Pierwszy Krąg Ognia_11**: Próba Magii
+**Pierwszy Krąg Ognia_12**: Próba Magii
+**Pierwszy Krąg Ognia_13**: Próba Magii
+**Pierwszy Krąg Ognia_14**: Próba Magii
+**Calor_34**: Alvarez
+**Calor_35**: Alvarez
+**Calor_36**: Alvarez
+**Calor_37**: Alvarez
+**Calor_38**: Alvarez
+**Calor_39**: Alvarez
+**Calor_40**: Alvarez
+**Calor_41**: Alvarez
+**Calor_42**: Alvarez
+
+### Wpis 13
+**Klasa**: Krety
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+**Pierwszy Krąg Ognia**: Archolos
+**Pierwszy Krąg Ognia_1**: Archolos
+**Pierwszy Krąg Ognia_2**: Archolos
+**Pierwszy Krąg Ognia_3**: Archolos
+**Pierwszy Krąg Ognia_4**: Archolos
+**Pierwszy Krąg Ognia_5**: Archolos
+**Pierwszy Krąg Ognia_6**: Archolos
+**Pierwszy Krąg Ognia_7**: Archolos
+**Calor**: Akania
+**Calor_1**: Akania
+**Calor_2**: Akania
+**Calor_3**: Akania
+**Calor_4**: Akania
+**Calor_5**: Akania
+**Calor_6**: Akania
+**Calor_7**: Akania
+**Calor_8**: Akania
+**Calor_9**: Akania
+**Calor_10**: Akania
+**Calor_11**: Akania
+**Calor_12**: Akania
+**Calor_13**: Akania
+**Calor_14**: Akania
+**Calor_15**: Akania
+**Calor_16**: Akania
+**Calor_17**: Akania
+**Calor_18**: Akania
+**Calor_19**: Akania
+**Calor_20**: Akania
+**Calor_21**: Akania
+**Calor_22**: Akania
+**Calor_23**: Akania
+**Calor_24**: Akania
+**Calor_25**: Akania
+**Calor_26**: Akania
+**Calor_27**: Akania
+**Calor_28**: Akania
+**Calor_29**: Akania
+**Calor_30**: Akania
+**Calor_31**: Akania
+**Calor_32**: Akania
+**Calor_33**: Akania
+**Pierwszy Krąg Ognia_8**: Archolos
+**Pierwszy Krąg Ognia_9**: Archolos
+**Pierwszy Krąg Ognia_10**: Archolos
+**Pierwszy Krąg Ognia_11**: Archolos
+**Pierwszy Krąg Ognia_12**: Archolos
+**Pierwszy Krąg Ognia_13**: Archolos
+**Pierwszy Krąg Ognia_14**: Archolos
+**Calor_34**: Akania
+**Calor_35**: Akania
+**Calor_36**: Akania
+**Calor_37**: Akania
+**Calor_38**: Akania
+**Calor_39**: Akania
+**Calor_40**: Akania
+**Calor_41**: Akania
+**Calor_42**: Akania
+
+### Wpis 14
+**Klasa**: Szkodniki
+**#REF!**: #REF!
+**Pierwszy Krąg Ognia**: Alchemia - asystent
+**Pierwszy Krąg Ognia_1**: Alchemia - asystent
+**Pierwszy Krąg Ognia_2**: Alchemia - asystent
+**Pierwszy Krąg Ognia_3**: Alchemia - asystent
+**Pierwszy Krąg Ognia_4**: Alchemia - asystent
+**Pierwszy Krąg Ognia_5**: Alchemia - asystent
+**Pierwszy Krąg Ognia_6**: Alchemia - asystent
+**Pierwszy Krąg Ognia_7**: Alchemia - asystent
+**Calor**: Noel
+**Calor_1**: Noel
+**Calor_2**: Noel
+**Calor_3**: Noel
+**Calor_4**: Noel
+**Calor_5**: Noel
+**Calor_6**: Noel
+**Calor_7**: Noel
+**Calor_8**: Noel
+**Calor_9**: Noel
+**Calor_10**: Noel
+**Calor_11**: Noel
+**Calor_12**: Noel
+**Calor_13**: Noel
+**Calor_14**: Noel
+**Calor_15**: Noel
+**Calor_16**: Noel
+**Calor_17**: Noel
+**Calor_18**: Noel
+**Calor_19**: Noel
+**Calor_20**: Noel
+**Calor_21**: Noel
+**Calor_22**: Noel
+**Calor_23**: Noel
+**Calor_24**: Noel
+**Calor_25**: Noel
+**Calor_26**: Noel
+**Calor_27**: Noel
+**Calor_28**: Noel
+**Calor_29**: Noel
+**Calor_30**: Noel
+**Calor_31**: Noel
+**Calor_32**: Noel
+**Calor_33**: Noel
+**Pierwszy Krąg Ognia_8**: Alchemia - asystent
+**Pierwszy Krąg Ognia_9**: Alchemia - asystent
+**Pierwszy Krąg Ognia_10**: Alchemia - asystent
+**Pierwszy Krąg Ognia_11**: Alchemia - asystent
+**Pierwszy Krąg Ognia_12**: Alchemia - asystent
+**Pierwszy Krąg Ognia_13**: Alchemia - asystent
+**Pierwszy Krąg Ognia_14**: Alchemia - asystent
+**Calor_34**: Noel
+**Calor_35**: Noel
+**Calor_36**: Noel
+**Calor_37**: Noel
+**Calor_38**: Noel
+**Calor_39**: Noel
+**Calor_40**: Noel
+**Calor_41**: Noel
+**Calor_42**: Noel
+
+### Wpis 15
+**Klasa**: Najemnicy
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+**Pierwszy Krąg Ognia**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_1**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_2**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_3**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_4**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_5**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_6**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_7**: Alchemia - ekspert
+**Calor**: Chudy
+**Calor_1**: Chudy
+**Calor_2**: Chudy
+**Calor_3**: Chudy
+**Calor_4**: Chudy
+**Calor_5**: Chudy
+**Calor_6**: Chudy
+**Calor_7**: Chudy
+**Calor_8**: Chudy
+**Calor_9**: Chudy
+**Calor_10**: Chudy
+**Calor_11**: Chudy
+**Calor_12**: Chudy
+**Calor_13**: Chudy
+**Calor_14**: Chudy
+**Calor_15**: Chudy
+**Calor_16**: Chudy
+**Calor_17**: Chudy
+**Calor_18**: Chudy
+**Calor_19**: Chudy
+**Calor_20**: Chudy
+**Calor_21**: Chudy
+**Calor_22**: Chudy
+**Calor_23**: Chudy
+**Calor_24**: Chudy
+**Calor_25**: Chudy
+**Calor_26**: Chudy
+**Calor_27**: Chudy
+**Calor_28**: Chudy
+**Calor_29**: Chudy
+**Calor_30**: Chudy
+**Calor_31**: Chudy
+**Calor_32**: Chudy
+**Calor_33**: Chudy
+**Pierwszy Krąg Ognia_8**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_9**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_10**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_11**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_12**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_13**: Alchemia - ekspert
+**Pierwszy Krąg Ognia_14**: Alchemia - ekspert
+**Calor_34**: Chudy
+**Calor_35**: Chudy
+**Calor_36**: Chudy
+**Calor_37**: Chudy
+**Calor_38**: Chudy
+**Calor_39**: Chudy
+**Calor_40**: Chudy
+**Calor_41**: Chudy
+**Calor_42**: Chudy
+
+### Wpis 16
+**Klasa**: Magowie Wody
+**#REF!**: #REF!
+**Pierwszy Krąg Ognia**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_1**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_2**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_3**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_4**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_5**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_6**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_7**: Alchemia - Mistrz
+**Calor**: Malrik
+**Calor_1**: Malrik
+**Calor_2**: Malrik
+**Calor_3**: Malrik
+**Calor_4**: Malrik
+**Calor_5**: Malrik
+**Calor_6**: Malrik
+**Calor_7**: Malrik
+**Calor_8**: Malrik
+**Calor_9**: Malrik
+**Calor_10**: Malrik
+**Calor_11**: Malrik
+**Calor_12**: Malrik
+**Calor_13**: Malrik
+**Calor_14**: Malrik
+**Calor_15**: Malrik
+**Calor_16**: Malrik
+**Calor_17**: Malrik
+**Calor_18**: Malrik
+**Calor_19**: Malrik
+**Calor_20**: Malrik
+**Calor_21**: Malrik
+**Calor_22**: Malrik
+**Calor_23**: Malrik
+**Calor_24**: Malrik
+**Calor_25**: Malrik
+**Calor_26**: Malrik
+**Calor_27**: Malrik
+**Calor_28**: Malrik
+**Calor_29**: Malrik
+**Calor_30**: Malrik
+**Calor_31**: Malrik
+**Calor_32**: Malrik
+**Calor_33**: Malrik
+**Pierwszy Krąg Ognia_8**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_9**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_10**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_11**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_12**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_13**: Alchemia - Mistrz
+**Pierwszy Krąg Ognia_14**: Alchemia - Mistrz
+**Calor_34**: Malrik
+**Calor_35**: Malrik
+**Calor_36**: Malrik
+**Calor_37**: Malrik
+**Calor_38**: Malrik
+**Calor_39**: Malrik
+**Calor_40**: Malrik
+**Calor_41**: Malrik
+**Calor_42**: Malrik
+
+### Wpis 17
+**Klasa**: Nowicjusze
+**#REF!**: #REF!
+**Pierwszy Krąg Ognia**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_1**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_2**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_3**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_4**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_5**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_6**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_7**: Alchemia - nauczyciele
+**Calor**: Traszka
+**Calor_1**: Traszka
+**Calor_2**: Traszka
+**Calor_3**: Traszka
+**Calor_4**: Traszka
+**Calor_5**: Traszka
+**Calor_6**: Traszka
+**Calor_7**: Traszka
+**Calor_8**: Traszka
+**Calor_9**: Traszka
+**Calor_10**: Traszka
+**Calor_11**: Traszka
+**Calor_12**: Traszka
+**Calor_13**: Traszka
+**Calor_14**: Traszka
+**Calor_15**: Traszka
+**Calor_16**: Traszka
+**Calor_17**: Traszka
+**Calor_18**: Traszka
+**Calor_19**: Traszka
+**Calor_20**: Traszka
+**Calor_21**: Traszka
+**Calor_22**: Traszka
+**Calor_23**: Traszka
+**Calor_24**: Traszka
+**Calor_25**: Traszka
+**Calor_26**: Traszka
+**Calor_27**: Traszka
+**Calor_28**: Traszka
+**Calor_29**: Traszka
+**Calor_30**: Traszka
+**Calor_31**: Traszka
+**Calor_32**: Traszka
+**Calor_33**: Traszka
+**Pierwszy Krąg Ognia_8**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_9**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_10**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_11**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_12**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_13**: Alchemia - nauczyciele
+**Pierwszy Krąg Ognia_14**: Alchemia - nauczyciele
+**Calor_34**: Traszka
+**Calor_35**: Traszka
+**Calor_36**: Traszka
+**Calor_37**: Traszka
+**Calor_38**: Traszka
+**Calor_39**: Traszka
+**Calor_40**: Traszka
+**Calor_41**: Traszka
+**Calor_42**: Traszka
+
+### Wpis 18
+**Klasa**: Strażnicy Świątynni
+**#REF!**: #REF!
+**Pierwszy Krąg Ognia**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_1**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_2**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_3**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_4**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_5**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_6**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_7**: Alchemia - Kollegium
+**Calor**: Digis
+**Calor_1**: Digis
+**Calor_2**: Digis
+**Calor_3**: Digis
+**Calor_4**: Digis
+**Calor_5**: Digis
+**Calor_6**: Digis
+**Calor_7**: Digis
+**Calor_8**: Digis
+**Calor_9**: Digis
+**Calor_10**: Digis
+**Calor_11**: Digis
+**Calor_12**: Digis
+**Calor_13**: Digis
+**Calor_14**: Digis
+**Calor_15**: Digis
+**Calor_16**: Digis
+**Calor_17**: Digis
+**Calor_18**: Digis
+**Calor_19**: Digis
+**Calor_20**: Digis
+**Calor_21**: Digis
+**Calor_22**: Digis
+**Calor_23**: Digis
+**Calor_24**: Digis
+**Calor_25**: Digis
+**Calor_26**: Digis
+**Calor_27**: Digis
+**Calor_28**: Digis
+**Calor_29**: Digis
+**Calor_30**: Digis
+**Calor_31**: Digis
+**Calor_32**: Digis
+**Calor_33**: Digis
+**Pierwszy Krąg Ognia_8**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_9**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_10**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_11**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_12**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_13**: Alchemia - Kollegium
+**Pierwszy Krąg Ognia_14**: Alchemia - Kollegium
+**Calor_34**: Digis
+**Calor_35**: Digis
+**Calor_36**: Digis
+**Calor_37**: Digis
+**Calor_38**: Digis
+**Calor_39**: Digis
+**Calor_40**: Digis
+**Calor_41**: Digis
+**Calor_42**: Digis
+
+### Wpis 19
+**Klasa**: Guru
+**#REF!**: Nie
+**Pierwszy Krąg Ognia**: Oruniaki
+**Pierwszy Krąg Ognia_1**: Oruniaki
+**Pierwszy Krąg Ognia_2**: Oruniaki
+**Pierwszy Krąg Ognia_3**: Oruniaki
+**Pierwszy Krąg Ognia_4**: Oruniaki
+**Pierwszy Krąg Ognia_5**: Oruniaki
+**Pierwszy Krąg Ognia_6**: Oruniaki
+**Pierwszy Krąg Ognia_7**: Oruniaki
+**Pierwszy Krąg Ognia_8**: Oruniaki
+**Pierwszy Krąg Ognia_9**: Oruniaki
+**Pierwszy Krąg Ognia_10**: Oruniaki
+**Pierwszy Krąg Ognia_11**: Oruniaki
+**Pierwszy Krąg Ognia_12**: Oruniaki
+**Pierwszy Krąg Ognia_13**: Oruniaki
+**Pierwszy Krąg Ognia_14**: Oruniaki
+
+### Wpis 20
+**#REF!**: Nie
+**Pierwszy Krąg Ognia**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_1**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_2**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_3**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_4**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_5**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_6**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_7**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_8**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_9**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_10**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_11**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_12**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_13**: Alchemia - złodzieje
+**Pierwszy Krąg Ognia_14**: Alchemia - złodzieje
+
+### Wpis 21
+**Klasa**: Khorinis
+**Nie**: Miasto Khorinis
+**#REF!**: Nie
+**Pierwszy Krąg Ognia**: Alchemia - farba
+**Pierwszy Krąg Ognia_1**: Alchemia - farba
+**Pierwszy Krąg Ognia_2**: Alchemia - farba
+**Pierwszy Krąg Ognia_3**: Alchemia - farba
+**Pierwszy Krąg Ognia_4**: Alchemia - farba
+**Pierwszy Krąg Ognia_5**: Alchemia - farba
+**Pierwszy Krąg Ognia_6**: Alchemia - farba
+**Pierwszy Krąg Ognia_7**: Alchemia - farba
+**Pierwszy Krąg Ognia_8**: Alchemia - farba
+**Pierwszy Krąg Ognia_9**: Alchemia - farba
+**Pierwszy Krąg Ognia_10**: Alchemia - farba
+**Pierwszy Krąg Ognia_11**: Alchemia - farba
+**Pierwszy Krąg Ognia_12**: Alchemia - farba
+**Pierwszy Krąg Ognia_13**: Alchemia - farba
+**Pierwszy Krąg Ognia_14**: Alchemia - farba
+
+### Wpis 22
+**Nie**: Farmy
+**#REF!**: #REF!
+
+### Wpis 23
+**Klasa**: Myrtana
+**Nie**: Ardea
+**#REF!**: Nie
+
+### Wpis 24
+**Nie**: Cape Dun
+**#REF!**: #REF!
+
+### Wpis 25
+**Nie**: Montera
+**#REF!**: Nie
+
+### Wpis 26
+**Nie**: Vengard
+**#REF!**: Nie
+
+### Wpis 27
+**Nie**: Silden
+**#REF!**: Nie
+
+### Wpis 28
+**Nie**: Geldern
+**#REF!**: Nie
+
+### Wpis 29
+**Nie**: Faring
+**#REF!**: Nie
+
+### Wpis 30
+**Nie**: Gotha
+**#REF!**: Nie
+
+### Wpis 31
+**Nie**: Trelis
+**#REF!**: Nie
+
+### Wpis 32
+**Klasa**: Varant
+**Nie**: Ishtar
+**#REF!**: #REF!
+
+### Wpis 33
+**Nie**: Mora Sul
+**#REF!**: Nie
+
+### Wpis 34
+**Nie**: Bakaresh
+**#REF!**: Nie
+
+### Wpis 35
+**Nie**: Braga
+**#REF!**: Nie
+
+### Wpis 36
+**Nie**: Ben Erai
+**#REF!**: #REF!
+
+### Wpis 37
+**Nie**: Lago
+**#REF!**: Nie
+
+### Wpis 38
+**Nie**: Ben Sala
+**#REF!**: Nie
+
+### Wpis 39
+**Klasa**: Archolos
+**Nie**: Miasto Archolos
+**#REF!**: Nie
+
+### Wpis 40
+**Nie**: Silbach
+**#REF!**: Nie
+
+### Wpis 41
+**Nie**: Wilcze Leże
+**#REF!**: Nie
+
+### Wpis 42
+**Nie**: Winnica Rity
+**#REF!**: Nie
+
+### Wpis 43
+**Nie**: Winnica Valerio
+**#REF!**: Nie
+
+### Wpis 44
+**Klasa**: Nordmar
+**Nie**: Klan Młota
+**#REF!**: Nie
+
+### Wpis 45
+**Nie**: Klan Ognia
+**#REF!**: Nie
+
+### Wpis 46
+**Nie**: Klan Wilka
+**#REF!**: Nie
+
+### Wpis 47
+**Klasa**: Wyspy Południowe
+**Nie**: Wyspy Południowe
+**#REF!**: #REF!
+
+### Wpis 48
+**Klasa**: Wschodni Archipelag
+**Nie**: Wschodni Archipelag
+**#REF!**: #REF!
+
+### Wpis 49
+**#REF!**: Nie
+
+### Wpis 50
+**#REF!**: Nie
+
+### Wpis 51
+**#REF!**: Nie
+
+### Wpis 52
+**#REF!**: #REF!
+
+### Wpis 53
+**#REF!**: #REF!
+
+### Wpis 54
+**#REF!**: #REF!
+
+### Wpis 55
+**#REF!**: Nie
+
+### Wpis 56
+**#REF!**: Nie
+
+### Wpis 57
+**#REF!**: Nie
+
+### Wpis 58
+**#REF!**: #REF!
+
+### Wpis 59
+**#REF!**: Nie
+
+### Wpis 60
+**#REF!**: Nie
+
+### Wpis 61
+**#REF!**: #REF!
+
+### Wpis 62
+**#REF!**: #REF!
+
+### Wpis 63
+**#REF!**: Nie
+
+### Wpis 64
+**#REF!**: Nie
+
+### Wpis 65
+**#REF!**: #REF!
+
+### Wpis 66
+**#REF!**: #REF!
+
+### Wpis 67
+**#REF!**: #REF!
+
+### Wpis 68
+**#REF!**: #REF!
+
+### Wpis 69
+**#REF!**: #REF!
+
+### Wpis 70
+**#REF!**: #REF!
+
+### Wpis 71
+**#REF!**: #REF!
+
+### Wpis 72
+**#REF!**: #REF!
+
+### Wpis 73
+**#REF!**: #REF!
+
+### Wpis 74
+**#REF!**: #REF!
+
+### Wpis 75
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+
+### Wpis 76
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+
+### Wpis 77
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+
+### Wpis 78
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+
+### Wpis 79
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+
+### Wpis 80
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+
+### Wpis 81
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+
+### Wpis 82
+**#REF!**: Nie
+
+### Wpis 83
+**#REF!**: Nie
+
+### Wpis 84
+**#REF!**: Nie
+
+### Wpis 85
+**#REF!**: Nie
+
+### Wpis 86
+**#REF!**: Nie
+
+### Wpis 87
+**#REF!**: Nie
+
+### Wpis 88
+**#REF!**: Nie
+
+### Wpis 89
+**#REF!**: Nie
+
+### Wpis 90
+**#REF!**: Nie
+
+### Wpis 91
+**#REF!**: Nie
+
+### Wpis 92
+**#REF!**: Nie
+
+### Wpis 93
+**#REF!**: Nie
+
+### Wpis 94
+**#REF!**: Nie
+
+### Wpis 95
+**#REF!**: Nie
+
+### Wpis 96
+**#REF!**: Nie
+
+### Wpis 97
+**#REF!**: Nie
+
+### Wpis 98
+**#REF!**: Nie
+
+### Wpis 99
+**#REF!**: Nie
+
+### Wpis 100
+**#REF!**: Nie
+
+### Wpis 101
+**#REF!**: Nie
+
+### Wpis 102
+**#REF!**: Nie
+
+### Wpis 103
+**#REF!**: Nie
+
+### Wpis 104
+**#REF!**: Nie
+
+### Wpis 105
+**#REF!**: Nie
+
+### Wpis 106
+**#REF!**: Nie
+
+### Wpis 107
+**#REF!**: Nie
+
+### Wpis 108
+**#REF!**: Nie
+
+### Wpis 109
+**#REF!**: Nie
+
+### Wpis 110
+**#REF!**: Nie
+
+### Wpis 111
+**#REF!**: Nie
+
+### Wpis 112
+**#REF!**: Nie
+
+### Wpis 113
+**#REF!**: Nie
+
+### Wpis 114
+**#REF!**: Nie
+
+### Wpis 115
+**#REF!**: Nie
+
+### Wpis 116
+**#REF!**: Nie
+
+### Wpis 117
+**#REF!**: Nie
+
+### Wpis 118
+**#REF!**: Nie
+
+### Wpis 119
+**#REF!**: Nie
+
+### Wpis 120
+**#REF!**: Nie
+
+### Wpis 121
+**#REF!**: Nie
+
+### Wpis 122
+**#REF!**: Nie
+
+### Wpis 123
+**#REF!**: Nie
+
+### Wpis 124
+**#REF!**: Nie
+
+### Wpis 125
+**#REF!**: Nie
+
+### Wpis 126
+**#REF!**: Nie
+
+### Wpis 127
+**#REF!**: Nie
+
+### Wpis 128
+**#REF!**: Nie
+
+### Wpis 129
+**#REF!**: Nie
+
+### Wpis 130
+**#REF!**: Nie
+
+### Wpis 131
+**#REF!**: Nie
+
+### Wpis 132
+**#REF!**: Nie
+
+### Wpis 133
+**#REF!**: Nie
+
+### Wpis 134
+**#REF!**: Nie
+
+### Wpis 135
+**#REF!**: Nie
+
+### Wpis 136
+**#REF!**: Nie
+
+### Wpis 137
+**#REF!**: Nie
+
+### Wpis 138
+**#REF!**: Nie
+
+### Wpis 139
+**#REF!**: Nie
+
+### Wpis 140
+**#REF!**: Nie
+
+### Wpis 141
+**#REF!**: Nie
+
+### Wpis 142
+**#REF!**: Nie
+
+### Wpis 143
+**#REF!**: Nie
+
+### Wpis 144
+**#REF!**: Nie
+
+### Wpis 145
+**#REF!**: Nie
+
+### Wpis 146
+**#REF!**: Nie
+
+### Wpis 147
+**#REF!**: Nie
+
+### Wpis 148
+**#REF!**: Nie
+
+### Wpis 149
+**#REF!**: Nie
+
+### Wpis 150
+**#REF!**: Nie
+
+### Wpis 151
+**#REF!**: Nie
+
+### Wpis 152
+**#REF!**: Nie
+
+### Wpis 153
+**#REF!**: Nie
+
+### Wpis 154
+**#REF!**: Nie
+
+### Wpis 155
+**#REF!**: Nie
+
+### Wpis 156
+**#REF!**: Nie
+
+### Wpis 157
+**#REF!**: Nie
+
+### Wpis 158
+**#REF!**: Nie
+
+### Wpis 159
+**#REF!**: Nie
+
+### Wpis 160
+**#REF!**: Nie
+
+### Wpis 161
+**#REF!**: Nie
+
+### Wpis 162
+**#REF!**: Nie
+
+### Wpis 163
+**#REF!**: Nie
+
+### Wpis 164
+**#REF!**: Nie
+
+### Wpis 165
+**#REF!**: Nie
+
+### Wpis 166
+**#REF!**: Nie
+
+### Wpis 167
+**#REF!**: Nie
+
+### Wpis 168
+**#REF!**: Nie
+
+### Wpis 169
+**#REF!**: Nie
+
+### Wpis 170
+**#REF!**: Nie
+
+### Wpis 171
+**#REF!**: Nie
+
+### Wpis 172
+**#REF!**: Nie
+
+### Wpis 173
+**#REF!**: Nie
+
+### Wpis 174
+**#REF!**: Nie
+
+### Wpis 175
+**#REF!**: Nie
+
+### Wpis 176
+**#REF!**: Nie
+
+### Wpis 177
+**#REF!**: Nie
+
+### Wpis 178
+**#REF!**: Nie
+
+### Wpis 179
+**#REF!**: Nie
+
+### Wpis 180
+**#REF!**: Nie
+
+### Wpis 181
+**#REF!**: Nie
+
+### Wpis 182
+**#REF!**: Nie
+
+### Wpis 183
+**#REF!**: Nie
+
+### Wpis 184
+**#REF!**: Nie
+
+### Wpis 185
+**#REF!**: Nie
+
+### Wpis 186
+**#REF!**: Nie
+
+### Wpis 187
+**#REF!**: Nie
+
+### Wpis 188
+**#REF!**: Nie
+
+### Wpis 189
+**#REF!**: Nie
+
+### Wpis 190
+**#REF!**: Nie
+
+### Wpis 191
+**#REF!**: Nie
+
+### Wpis 192
+**#REF!**: Nie
+
+### Wpis 193
+**#REF!**: Nie
+
+### Wpis 194
+**#REF!**: Nie
+
+### Wpis 195
+**#REF!**: Nie
+
+### Wpis 196
+**#REF!**: Nie
+
+### Wpis 197
+**#REF!**: Nie
+
+### Wpis 198
+**#REF!**: Nie
+
+### Wpis 199
+**Klasa**: #REF!
+**Nie**: Ardea
+**__EMPTY**: Ardea
+**#REF!**: Miasto Khorinis
+**__EMPTY_1**: Ardea
+**#REF!_1**: Miasto Khorinis
+**Magowie Ognia**: Klan Młota
+**Magowie Ognia_1**: Miasto Khorinis
+**Magowie Ognia_2**: Miasto Archolos
+**#REF!_2**: Miasto Archolos
+**Pierwszy Krąg Ognia**: Miasto Khorinis
+**Pierwszy Krąg Ognia_1**: false
+**Pierwszy Krąg Ognia_2**: false
+**Pierwszy Krąg Ognia_3**: false
+**Pierwszy Krąg Ognia_4**: false
+**Pierwszy Krąg Ognia_5**: false
+**#REF!_3**: false
+**#REF!_4**: false
+**Pierwszy Krąg Ognia_6**: false
+**#REF!_5**: false
+**Pierwszy Krąg Ognia_7**: false
+**#REF!_6**: false
+**#REF!_7**: false
+**#REF!_8**: false
+**Calor**: false
+**Calor_1**: false
+**Calor_2**: false
+**#REF!_9**: false
+**Calor_3**: false
+**#REF!_10**: false
+**Calor_4**: false
+**Calor_5**: false
+**Calor_6**: false
+**Calor_7**: false
+**Calor_8**: false
+**Calor_9**: false
+**Calor_10**: false
+**#REF!_11**: false
+**Calor_11**: false
+**Calor_12**: false
+**Calor_13**: false
+**#REF!_12**: false
+**Calor_14**: false
+**Calor_15**: false
+**Calor_16**: false
+**Calor_17**: false
+**Calor_18**: false
+**Calor_19**: false
+**Calor_20**: false
+
+### Wpis 200
+**Nie**: Cape Dun
+**__EMPTY**: Cape Dun
+**#REF!**: Farmy
+**__EMPTY_1**: Cape Dun
+**#REF!_1**: Farmy
+**Magowie Ognia**: Klan Ognia
+**Magowie Ognia_1**: Farmy
+**Magowie Ognia_2**: Silbach
+**#REF!_2**: Silbach
+**Pierwszy Krąg Ognia**: Farmy
+
+### Wpis 201
+**Nie**: Montera
+**__EMPTY**: Montera
+**__EMPTY_1**: Montera
+**Magowie Ognia**: Klan Wilka
+**Magowie Ognia_2**: Wilcze Leże
+**#REF!_2**: Wilcze Leże
+
+### Wpis 202
+**Nie**: Vengard
+**__EMPTY**: Vengard
+**__EMPTY_1**: Vengard
+**Magowie Ognia_2**: Winnica Rity
+**#REF!_2**: Winnica Rity
+
+### Wpis 203
+**Nie**: Silden
+**__EMPTY**: Silden
+**__EMPTY_1**: Silden
+**Magowie Ognia_2**: Winnica Valerio
+**#REF!_2**: Winnica Valerio
+
+### Wpis 204
+**Nie**: Geldern
+**__EMPTY**: Geldern
+**__EMPTY_1**: Geldern
+
+### Wpis 205
+**Nie**: Faring
+**__EMPTY**: Faring
+**__EMPTY_1**: Faring
+
+### Wpis 206
+**Nie**: Gotha
+**__EMPTY**: Gotha
+**__EMPTY_1**: Gotha
+
+### Wpis 207
+**Nie**: Trelis
+**__EMPTY**: Trelis
+**__EMPTY_1**: Trelis
+

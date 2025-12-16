@@ -1,0 +1,21 @@
+{
+  "id": "session-1765853504830",
+  "profileName": "Lotka",
+  "startTime": 1765853504830,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765853504862
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {},
+  "flowState": {
+    "stage": "IDLE",
+    "data": {},
+    "missing": []
+  }
+}

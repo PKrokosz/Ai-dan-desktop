@@ -1,0 +1,106 @@
+{
+    "Skazaniec": [
+        "Przed larpem Skazańcy mogą przekazać do depozytu swoją broń, aby później pozyskać ją w trakcie gry. Jaki poziom trudności pozyskania broni na grze preferujesz?",
+        "Czy jesteś chętny do odgrywania wątków o podwyższonej śmiertelności postaci?"
+    ],
+    "Służący": [
+        "Czemu twoja postać postanowiła zostać sługą?",
+        "Jak widzisz swoją grę na Zamku?",
+        "Jaki chcesz mieć stosunek do innych służących?",
+        "Czy zostałeś na poprzedniej edycji Ulubionym Służącym któregoś z magnatów?",
+        "W tym roku w trakcie gry możliwa będzie utrata statusu Służącego. Jak twoja postać zareagowałaby na taką dymisję?",
+        "Czy twoja postać ma jakieś umiejętności, którymi zwróciła na siebie uwagę magnatów?",
+        "Czy posiadasz akcesoria mogące urozmaicić Zamek jako lokację?"
+    ],
+    "Kopacz": [
+        "Czy masz klaustrofobię lub strach przed ciemnością?",
+        "Jak byś się czuł w sytuacji, w której Twoja postać będzie traktowana w nieprzyjemny sposób?",
+        "Czym Twoja postać będzie się kierować w sytuacji konfliktu interesów?",
+        "Czy jesteś chętny na grę w trybie trudnym?"
+    ],
+    "Cień": [
+        "Czy należysz już do którejś z Band, a jeśli tak - do której?",
+        "Czy jesteś zainteresowany degradacją na Strażnika?",
+        "Czy jesteś zainteresowany animowaniem gry innym?",
+        "Czy jako Cień byłeś zamieszany w interesy, które mogły stać w sprzeczności z interesami Twojej bandy?",
+        "Czy jesteś zainteresowany, lub masz pomysł na wątek, który potencjalnie byłby międzyobozowy?",
+        "Czy jesteś zainteresowany wątkami podwyższonego ryzyka?"
+    ],
+    "Strażnik": [
+        "Jak wyobrażasz sobie swoją grę w Straży Starego Obozu?",
+        "Który strój Strażnika planujesz przygotować?",
+        "Jaką broń planujesz wziąć na grę, wliczając broń dystansową?",
+        "Dużą częścią gry Strażnika to zbrojne wypady, musztry, warty. Jak się w tym odnajdujesz?",
+        "Czy widzisz się bardziej jako karnego żołnierza w służbie Gomeza, czy zbira oportunistę?"
+    ],
+    "Mag Ognia": [
+        "Co w Twoim odczuciu wnoszą/powinny wnosić na grę wakaty Magów Ognia?",
+        "Które z ww. aspektów realizuje Twoje zgłoszenie?",
+        "Wątki jakich typów i tematów Cię interesują?",
+        "Czy i jaki masz wstępny zamysł na grę?",
+        "Jako Mag Ognia planujesz trzymać się granic obozu czy raczej działać w terenie?",
+        "Jak, krótko, określisz ideologię swojej postaci?",
+        "Wskaż specjalizacje magiczne oraz runy, jakie Cię interesują.",
+        "Jak odnajdujesz się w sytuacjach, gdy uwaga sceny jest skupiona na tobie?",
+        "Jak czujesz się z wystąpieniami publicznymi i prowadzeniem dyskusji na forum?",
+        "Czy planujesz zaopatrzyć się w dodatkowe rekwizyty?"
+    ],
+    "Magnat": [
+        "Jaki masz pomysł na organizowanie zabawy innym graczom z pozycji postaci autorytetu?",
+        "Czy posiadasz ciekawe przedmioty i utensylia, którymi można by było przystroić zamek Magnatów?",
+        "Czym najbardziej chciałbyś zajmować się podczas gry jako Magnat?"
+    ],
+    "Kret": [
+        "Dużą częścią gry Kreta jest praca fizyczna... Jak się w tym odnajdujesz?",
+        "Czy posiadasz akcesoria mogące przydac się w życiu obozowym?"
+    ],
+    "Szkodnik": [
+        "Czy zamierzasz zabrać broń dystansową?",
+        "Czy posiadasz jakieś klimatyczne przedmioty i rekwizyty, którymi mógłbyś wzbogacić obozowisko?",
+        "Jeżeli kontynuujesz postać, czy należysz do którejś z profesji (Bandziory / Łowcy / Złodzieje)?"
+    ],
+    "Najemnik": [
+        "Czy umiesz walczyć bronią larpową?",
+        "Jak oceniasz stan swojej kondycji fizycznej?",
+        "Czy potrafisz działać w zespole?",
+        "Czy przeszkadza ci głośna atmosfera?",
+        "Czy zamierzasz zabrać broń dystansową?"
+    ],
+    "Mag Wody": [
+        "Jak widzisz funkcję postaci Magów Wody na grze?",
+        "Jakie są twoje oczekiwania od gry tą rolą?",
+        "Co najbardziej interesuje cię w byciu Magiem Wody?",
+        "Rola Maga Wody nie jest dla osób lubiących samemu odgrywać wątki na uboczu... Jak to rozumiesz?",
+        "Czy planujesz zaopatrzyć się w jakieś magiczne dodatki?"
+    ],
+    "Nowicjusz": [
+        "Wybierz jedną, lub więcej, przykładowych scen które chciałbyś/chciałabyś zagrać.",
+        "Z poniższych wybierz jeden styl gry który najbardziej Ci odpowiada.",
+        "Z poniższych wybierz jeden, bądź kilka, wątków w które twoja postać mogła by być zaplątana.",
+        "Jak określiłbyś swoją wiarę?",
+        "Czy jesteś osobą palącą?",
+        "Czy dym papierosowy stanowi dla Ciebie duży problem?",
+        "Czy umiesz skręcać ręcznie papierosy z bletek?",
+        "Czy przeczytałeś podręcznik Bractwa?",
+        "Czy posiadasz ciekawe przedmioty i rekwizyty?",
+        "Czy zamierzasz zabrać broń dystansową?"
+    ],
+    "Strażnik Świątynny": [
+        "Czy masz problem z odgrywaniem postaci charyzmatycznej?",
+        "Wybierz jedną, lub więcej, przykładowych scen które chciałbyś zagrać.",
+        "Z poniższych wybierz jeden styl gry który najbardziej Ci odpowiada.",
+        "Jakie spośród wymienionych niżej stylów gry będziesz realizował?",
+        "Wybierz jedno z poniższych (kondycja fizyczna).",
+        "Czy dym papierosowy stanowi dla Ciebie problem?",
+        "Czy przeczytałeś podręcznik Bractwa?",
+        "Czy posiadasz ciekawe przedmioty i rekwizyty?",
+        "Czy zamierzasz zabrać broń dystansową?"
+    ],
+    "Guru": [
+        "Jaki krąg magii posiada Twoja postać?",
+        "Twoja postać będzie odpowiedzialna za jeden z sektorów życia Bractwa. Wymień obszary.",
+        "Jakie specjalizacje magiczne posiada Twoja postać?",
+        "Czy masz problemy z przemawianiem publicznie?",
+        "Czy zapoznałeś się z podręcznikiem Bractwa?"
+    ]
+}

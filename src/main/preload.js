@@ -75,6 +75,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     // File operations
     saveOutput: (filename, content) => ipcRenderer.invoke('save-output', filename, content),
     openOutputFolder: () => ipcRenderer.invoke('open-output-folder'),
+    openFile: (filepath) => ipcRenderer.invoke('open-file', filepath),
 
     // Event listeners for progress
     onProgress: (callback) => {
@@ -94,6 +95,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
     onTestbenchProgress: (callback) => {
         ipcRenderer.on('testbench-progress', (event, progress) => callback(progress));
     },
+    // Character Test Report
+    generateReport: (runId) => ipcRenderer.invoke('report:generate', runId),
 
     // Advanced Tests
     testsContextLimitsRunAll: (modelNames) => ipcRenderer.invoke('tests:context-limits:run-all', modelNames),

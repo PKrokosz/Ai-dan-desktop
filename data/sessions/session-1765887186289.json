@@ -1,0 +1,16 @@
+{
+  "id": "session-1765887186289",
+  "profileName": "Wolrad",
+  "startTime": 1765887186289,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Pokaż cycki",
+      "timestamp": 1765887186290
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

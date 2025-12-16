@@ -22,7 +22,6 @@ export const QUICK_ACTIONS = [
             { id: 'traits', icon: '💡', label: 'Cechy postaci' },
             { id: 'relations', icon: '🤝', label: 'Relacje' },
             { id: 'faction_suggestion', icon: '🏴', label: 'Frakcja' },
-            { id: 'secret', icon: '🤫', label: 'Sekret' },
             { id: 'correct_text', icon: '✍️', label: 'Korekta' },
         ]
     },
@@ -35,8 +34,8 @@ export const PERSONALITY_PROMPTS = {
     'default_mg': {
         name: 'Surowy MG',
         icon: '📜',
-        role: 'Jesteś Mistrzem Gry w systemie Gothic. Jesteś bezstronnym narratorem brutalnego świata.',
-        example: 'Gracz: "Gdzie znajdę miecz?"\nMG: "W Starym Obozie handluje nimi Fisk. Ale za darmo nic nie dostaniesz, kopaczu. Masz rudę?"'
+        role: 'Jesteś Mistrzem Gry w systemie Gothic. Jesteś konkretny, brutalny i bezpośredni. Nie filozofuj. Skup się na faktach, mechanice i popychaniu fabuły do przodu.',
+        example: 'Gracz: "Co widzę?"\nMG: "Widzisz dwóch strażników przy bramie. Jeden trzyma kuszę, drugi dłubie w zębach. Patrzą na ciebie jak na ścierwo. Czego chcesz?"'
     },
     'helper': {
         name: 'Pomocny Asystent',
@@ -67,18 +66,19 @@ export const STEPS = [
     { id: 3, title: 'Krok 3: AI Processing', key: 'ai' },
     { id: 4, title: 'Krok 4: Scalanie', key: 'merge' },
     { id: 5, title: 'Krok 5: Generowanie questów', key: 'quests' },
-    { id: 6, title: 'Krok 6: Eksport', key: 'export' }
+    { id: 6, title: 'Krok 6: Eksport', key: 'export' },
+    { id: 7, title: '🧪 Model Testbench', key: 'testbench' },
+    { id: 8, title: '⚙️ Ustawienia', key: 'settings' }
 ];
 
 // ==============================
 // Slash Commands Mapping
 // ==============================
 export const SLASH_COMMANDS = {
-    '/quest': 'quest_main',
-    '/q': 'quest_main',
+    '/quest': 'main_quest',
+    '/q': 'main_quest',
     '/side': 'side_quest',
     '/hook': 'story_hooks',
-    '/secret': 'secret',
     '/analiza': 'analyze_relations',
     '/cechy': 'extract_traits',
     '/frakcja': 'faction_suggestion',
@@ -94,12 +94,12 @@ export const COMMAND_LABELS = {
     'summarize': 'Podsumowanie',
     'main_quest': 'Główny quest',
     'side_quest': 'Quest poboczny',
+    'side_quest_repeatable': 'Quest powtarzalny',
     'redemption_quest': 'Quest odkupienia',
     'group_quest': 'Quest grupowy',
     'story_hooks': 'Hooki fabularne',
     'potential_conflicts': 'Możliwe konflikty',
     'npc_connections': 'Powiązania z NPC',
     'nickname': 'Generowanie ksywki',
-    'faction_suggestion': 'Sugestia frakcji',
-    'secret': 'Wymyślanie sekretu'
+    'faction_suggestion': 'Sugestia frakcji'
 };

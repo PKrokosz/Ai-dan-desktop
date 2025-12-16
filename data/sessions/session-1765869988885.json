@@ -1,0 +1,101 @@
+{
+  "id": "session-1765869988885",
+  "profileName": "Yeleena",
+  "startTime": 1765869988885,
+  "messages": [
+    {
+      "role": "user",
+      "content": "/quest",
+      "timestamp": 1765869988886
+    },
+    {
+      "role": "user",
+      "content": "/q",
+      "timestamp": 1765869996703
+    },
+    {
+      "role": "user",
+      "content": "/side",
+      "timestamp": 1765869999277
+    },
+    {
+      "role": "user",
+      "content": "/hook",
+      "timestamp": 1765870001826
+    },
+    {
+      "role": "user",
+      "content": "/secret",
+      "timestamp": 1765870030189
+    },
+    {
+      "role": "user",
+      "content": "/analiza",
+      "timestamp": 1765870054076
+    },
+    {
+      "role": "user",
+      "content": "/cechy",
+      "timestamp": 1765870104834
+    },
+    {
+      "role": "user",
+      "content": "/frakcja",
+      "timestamp": 1765870147781
+    },
+    {
+      "role": "user",
+      "content": "/ksywka",
+      "timestamp": 1765870180288
+    },
+    {
+      "role": "user",
+      "content": "/pomoc",
+      "timestamp": 1765870193638
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [Imię: Yeleena]",
+      "timestamp": 1765870223658
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [Gildia: Nowicjusz]",
+      "timestamp": 1765870265184
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@slabosci?]",
+      "timestamp": 1765870295244
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@aspiracje?]",
+      "timestamp": 1765870316292
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@historia?]",
+      "timestamp": 1765870353234
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@relacje?]",
+      "timestamp": 1765870386447
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@sekret?]",
+      "timestamp": 1765870431682
+    },
+    {
+      "role": "user",
+      "content": "Test deep path: @cecha.imie",
+      "timestamp": 1765870454261
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

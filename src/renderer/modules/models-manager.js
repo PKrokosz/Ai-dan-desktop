@@ -292,14 +292,36 @@ export function isModelInstalled(modelId) {
 // Selection Helpers
 // ==============================
 
+/**
+ * Preload model (send empty request to wake it up)
+ * @param {string} modelName 
+ */
+export async function preloadModel(modelName) {
+    if (!modelName) return;
+    console.log(`[ModelManager] Preloading ${modelName}...`);
+    try {
+        // "Fire and Forget" preload request
+        if (window.electronAPI && window.electronAPI.aiCommand) {
+            window.electronAPI.aiCommand('preload', {}, {
+                model: modelName,
+                keep_alive: '5m'
+            }).catch(e => { });
+        }
+    } catch (e) {
+        console.warn('Preload failed:', e);
+    }
+}
+
 export function setExtractionModel(modelId) {
     if (window.state) window.state.selectedModelExtraction = modelId;
     if (window.addLog) window.addLog('info', `Model ekstrakcji: ${modelId}`);
+    preloadModel(modelId);
 }
 
 export function setGenerationModel(modelId) {
     if (window.state) window.state.selectedModelGeneration = modelId;
     if (window.addLog) window.addLog('info', `Model generacji: ${modelId}`);
+    preloadModel(modelId);
 }
 
 export function getCurrentModel() {

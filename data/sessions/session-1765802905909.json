@@ -1,0 +1,21 @@
+{
+  "id": "session-1765802905909",
+  "profileName": "Yeleena",
+  "startTime": 1765802905909,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765802905911
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {},
+  "flowState": {
+    "stage": "IDLE",
+    "data": {},
+    "missing": []
+  }
+}

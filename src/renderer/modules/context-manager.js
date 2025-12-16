@@ -41,6 +41,14 @@ async function loadContextFile(key) {
     return '';
 }
 
+/**
+ * Gets the FULL content of a context file (no chunking).
+ * @param {string} key - Context key (system, geography, etc.)
+ */
+export async function getFullContext(key) {
+    return await loadContextFile(key);
+}
+
 // ==========================================
 // SMART INDEXERS (REGEX & SEARCH)
 // ==========================================
@@ -199,5 +207,6 @@ export default {
     getLayer1_Identity,
     getLayer2_Relations,
     getLayer3_World,
-    getProfileStats
+    getProfileStats,
+    getFullContext
 };

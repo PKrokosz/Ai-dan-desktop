@@ -6,7 +6,7 @@
 import { state } from './state.js';
 import { STEPS } from './config.js';
 import { stepTemplates } from './step-templates.js';
-import { addLog, setProgress } from './ui-helpers.js';
+import { addLog, setProgress, goToStep } from './ui-helpers.js';
 import { renderMinimalistAIPanel } from './ai-panel.js';
 
 // Import proxies if unavailable via AppModules yet
@@ -98,17 +98,12 @@ export function renderStep() {
     // Initialize model selectors on step 1
     if (state.currentStep === 1) {
         setTimeout(async () => {
-            // Load specs via proxy
             if (window.AppModules && window.AppModules.loadSystemSpecs) await window.AppModules.loadSystemSpecs();
             if (window.AppModules && window.AppModules.renderModelCategories) window.AppModules.renderModelCategories();
             if (window.AppModules && window.AppModules.populateModelSelects) window.AppModules.populateModelSelects();
 
-            // Add event listener for VRAM filter
             const filter = document.getElementById('vramFilter');
             if (filter) {
-                // Remove old listeners to be safe? 
-                // A robust way to replace listener is setting onchange, or using a dedicated handler replacer.
-                // Assuming AppModules.filterModelsByVram is available.
                 filter.onchange = () => {
                     if (window.AppModules.filterModelsByVram) window.AppModules.filterModelsByVram();
                 };
@@ -116,29 +111,20 @@ export function renderStep() {
         }, 50);
     }
 
-    // Re-attach listeners for ChatUtils (Dropdowns)
-    if (window.ChatUtils) {
-        window.ChatUtils.attachListeners();
+    // Initialize Testbench (Step 7)
+    if (state.currentStep === 7) {
+        setTimeout(() => {
+            if (window.AppModules && window.AppModules.initTestbenchView) {
+                window.AppModules.initTestbenchView();
+            }
+        }, 50);
     }
-}
 
-export function showSettings() {
-    const content = document.getElementById('stepContent');
-    const title = document.getElementById('stepTitle');
-
-    if (content && title) {
-        title.textContent = '⚙️ Ustawienia AI';
-        content.innerHTML = stepTemplates.settings();
-
-        // Highlight settings item in sidebar
-        document.querySelectorAll('.step-item').forEach(el => el.classList.remove('active'));
-        document.querySelector('.settings-item')?.classList.add('active');
-
-        // Initialize settings view
+    // Initialize Settings (Step 8)
+    if (state.currentStep === 8) {
         setTimeout(async () => {
             if (window.AppModules && window.AppModules.loadSystemSpecs) await window.AppModules.loadSystemSpecs();
 
-            // Load current model path
             try {
                 if (window.electronAPI) {
                     const currentPath = await window.electronAPI.getModelsPath();
@@ -153,27 +139,19 @@ export function showSettings() {
             if (window.AppModules && window.AppModules.populateModelSelects) window.AppModules.populateModelSelects();
         }, 50);
     }
+
+    // Re-attach listeners for ChatUtils (Dropdowns)
+    if (window.ChatUtils) {
+        window.ChatUtils.attachListeners();
+    }
+}
+
+export function showSettings() {
+    goToStep(8);
 }
 
 export function showTestbench() {
-    const content = document.getElementById('stepContent');
-    const title = document.getElementById('stepTitle');
-
-    if (content && title) {
-        title.textContent = '🧪 Model Testbench';
-        content.innerHTML = stepTemplates.testbench();
-
-        // Highlight testbench item in sidebar
-        document.querySelectorAll('.step-item').forEach(el => el.classList.remove('active'));
-        document.querySelector('.testbench-item')?.classList.add('active');
-
-        //Initialize testbench view
-        setTimeout(() => {
-            if (window.AppModules && window.AppModules.initTestbenchView) {
-                window.AppModules.initTestbenchView();
-            }
-        }, 50);
-    }
+    goToStep(7);
 }
 
 export function updatePromptConfig(path, value) {

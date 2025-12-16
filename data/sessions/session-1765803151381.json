@@ -1,0 +1,107 @@
+{
+  "id": "session-1765803151381",
+  "profileName": "Rio",
+  "startTime": 1765803151381,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765803151383
+    },
+    {
+      "role": "user",
+      "content": "Weź pisz poprawniej",
+      "timestamp": 1765803177471
+    },
+    {
+      "role": "user",
+      "content": "Co to za postać?",
+      "timestamp": 1765803192358
+    },
+    {
+      "role": "user",
+      "content": "No ta postać Rio z karty wyżej",
+      "timestamp": 1765803208383
+    },
+    {
+      "role": "user",
+      "content": "[Imię: Rio]",
+      "timestamp": 1765803222310
+    },
+    {
+      "role": "user",
+      "content": "[Gildia: Szkodnik]",
+      "timestamp": 1765803236570
+    },
+    {
+      "role": "user",
+      "content": "[@slabosci?]",
+      "timestamp": 1765803243518
+    },
+    {
+      "role": "user",
+      "content": "[@aspiracje?]",
+      "timestamp": 1765803249205
+    },
+    {
+      "role": "user",
+      "content": "[@aspiracje?]",
+      "timestamp": 1765803254617
+    },
+    {
+      "role": "user",
+      "content": "[@historia?]",
+      "timestamp": 1765803263671
+    },
+    {
+      "role": "user",
+      "content": "[@sekret?]",
+      "timestamp": 1765803288047
+    },
+    {
+      "role": "user",
+      "content": "[Kora?]",
+      "timestamp": 1765803303815
+    },
+    {
+      "role": "user",
+      "content": "Chce jakiś pomysł na questa",
+      "timestamp": 1765803324823
+    },
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765803357700
+    },
+    {
+      "role": "user",
+      "content": "Command: side_quest",
+      "timestamp": 1765803382460
+    },
+    {
+      "role": "user",
+      "content": "Command: redemption_quest",
+      "timestamp": 1765803401950
+    },
+    {
+      "role": "user",
+      "content": "Command: group_quest",
+      "timestamp": 1765803452906
+    },
+    {
+      "role": "user",
+      "content": "Command: traits",
+      "timestamp": 1765803471454
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {},
+  "flowState": {
+    "stage": "COLLECTION",
+    "data": {},
+    "missing": [],
+    "intent": "GENERATE_QUEST"
+  }
+}

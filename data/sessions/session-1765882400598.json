@@ -1,0 +1,101 @@
+{
+  "id": "session-1765882400598",
+  "profileName": "Sroka",
+  "startTime": 1765882400598,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Test deep path: @cecha.imie",
+      "timestamp": 1765882400600
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765882470762
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [[@sekret?]?]",
+      "timestamp": 1765882488776
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765882502761
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [[@relacje?]?]",
+      "timestamp": 1765882520128
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765882537233
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [[@historia?]?]",
+      "timestamp": 1765882552364
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765882569512
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [[@aspiracje?]?]",
+      "timestamp": 1765882587127
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765882598243
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [[@slabosci?]?]",
+      "timestamp": 1765882615847
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765882628508
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765882635008
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [Imię: Vivienne]",
+      "timestamp": 1765882676906
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765882696507
+    },
+    {
+      "role": "user",
+      "content": "/pomoc",
+      "timestamp": 1765882713112
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765882726726
+    },
+    {
+      "role": "user",
+      "content": "/ksywka",
+      "timestamp": 1765882742376
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

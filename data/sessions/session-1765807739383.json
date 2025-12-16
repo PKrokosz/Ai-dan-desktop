@@ -1,0 +1,26 @@
+{
+  "id": "session-1765807739383",
+  "profileName": "Zguba",
+  "startTime": 1765807739383,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Command: side_quest_repeatable",
+      "timestamp": 1765807739384
+    },
+    {
+      "role": "user",
+      "content": "Command: traits",
+      "timestamp": 1765807756070
+    },
+    {
+      "role": "user",
+      "content": "Command: relations",
+      "timestamp": 1765807758967
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

@@ -169,6 +169,8 @@ export function questsTemplate() {
         </p>
         <button class="btn btn-primary" onclick="generateQuests()">Generuj questy</button>
       `}
+      
+
     </div>
   `;
 }

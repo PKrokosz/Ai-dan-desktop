@@ -1,0 +1,21 @@
+{
+  "id": "session-1765886292159",
+  "profileName": "Rio",
+  "startTime": 1765886292159,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Cześć, chce zebys był profesjonalny i malo gadał. Opowiedz mi w trzech zdaniach co to za postac?",
+      "timestamp": 1765886292162
+    },
+    {
+      "role": "user",
+      "content": "Co konkretnie trzeba wyrównać?",
+      "timestamp": 1765886437225
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

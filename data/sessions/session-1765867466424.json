@@ -1,0 +1,16 @@
+{
+  "id": "session-1765867466424",
+  "profileName": "Zysk",
+  "startTime": 1765867466424,
+  "messages": [
+    {
+      "role": "user",
+      "content": "/quest",
+      "timestamp": 1765867466426
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

@@ -1,0 +1,16 @@
+{
+  "id": "session-1765788258695",
+  "profileName": "Ziemniak",
+  "startTime": 1765788258695,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765788258696
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

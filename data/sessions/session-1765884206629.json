@@ -1,0 +1,16 @@
+{
+  "id": "session-1765884206629",
+  "profileName": "Unknown",
+  "startTime": 1765884206629,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Test deep path: @cecha.imie",
+      "timestamp": 1765884206631
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

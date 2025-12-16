@@ -1,0 +1,1744 @@
+# Fabuła Służący 2025.xlsx
+================================================================================
+
+## Arkusz: Postacie
+----------------------------------------
+
+### Wpis 1
+**L.p.**: 1
+**Imię postaci**: Beza
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Ardea
+**Krótki opis postaci**: Ulubiona służąca Magnusa, bardzo skryty szpieg NO (nikt go ostatnio nie wykrył!). Ostatnia z Gangu Piekarzy. Ma wielkie ambicje bycia nową magnatką. Planuje również rozwinąć na boku mały lichwiarski interes. Bardzo ambitna i bezwlędna, stale sprawdzająca, na co może sobie pozwolić przy Magnatach.
+**Słowa kluczowe**: #ulubiony
+**Wątki**: Wyścig magnacki, Szpiegostwo NO, Ulubiona 
+
+### Wpis 2
+**L.p.**: 2
+**Imię postaci**: Faust
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Vengard
+**Krótki opis postaci**: Skazany za rozpustę. Przymilny intrygant, który za podpuszczeniem NO zorganizował podtrucie Magnusa. Magnat zorientował się i nieomal sknończyło się to źle dla sługi, ale wyłgał się, rżnąc głupa. Wciąż, raczej nie będą przyjaciółmi. Jest idealistą, bardzo poszukującym "dobra Kolonii". Ulubiony służący Valerii, ale tej nie będzie - jak sobie poradzi bez jej protektoratu?
+**Słowa kluczowe**: #ulubiony
+**Wątki**: Ulubiony, Szpiegostwo NO
+
+### Wpis 3
+**L.p.**: 3
+**Imię postaci**: Anik
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Montera
+**Krótki opis postaci**: Ulubiony służący Sama, artysta uzależniony od skrętów. Ten ostatni nałóg sprawił że zgodził się wynosić informacje dla OnB. Nieufny, zwłaszcza wobec innych służących. Bardzo polega na swojej sławie jako grajka - a tych będzie wielu w tym roku na Zamku... czy wytrzyma konkurencję?
+**Słowa kluczowe**: #ulubiony
+**Wątki**: Ulubiony, Szpiegostwo OnB
+
+### Wpis 4
+**L.p.**: 4
+**Imię postaci**: Tanka
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Krótki opis postaci**: Ulubiona służąca Alvareza, alchemiczka. Do koloni trafiła za pomaganie w pozbywaniu się mężów metodami pozasądowymi, chociaż oficjalnie twierdzi, że za hazard i pilnuje tej tajemnicy. Bardzo emocjonalna, szuka prawdziwego połączenia z drugą osobą.  Nominalnie studentka Klary, ale marzy o trafieniu pod opiekę Eridiana. Jej lojalność wobec SO może być kwestionowalna, OnB czyni już podchody, by zrobić z niej informatorkę
+**Wątki**: Ulubiony, Alchemia, Szpiegostwo OnB
+
+### Wpis 5
+**L.p.**: 5
+**Imię postaci**: Knot
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Khorinis
+**Pochodzenie dokładne**: Miasto Khorinis
+**Krótki opis postaci**: Służący z długim stażem, do tej pory skrzętnie pomijany przy awansach. Przepełniony gniewem i chęcią zemsty, ma wielką motywację szkodzić magnatom ile tylko będzie w stanie, utrzymując tylko fasadę pokornego służącego. Wie o pozostałych służących więcej niż im się wydaje.
+
+### Wpis 6
+**L.p.**: 6
+**Imię postaci**: Vivienne
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Archolos
+**Pochodzenie dokładne**: Miasto Archolos
+**Krótki opis postaci**: Dziewczyna o dużym uroku i jeszcze większym apetycie na cudze rzeczy. Bardzo chciałaby być ważna, im niższym kosztem - tym lepiej. 
+
+### Wpis 7
+**L.p.**: 7
+**Imię postaci**: Tuna
+**Kontynuacja**: TAK
+
+### Wpis 8
+**L.p.**: 8
+**Imię postaci**: Kilgara
+**Kontynuacja**: TAK
+
+### Wpis 9
+**L.p.**: 9
+**Imię postaci**: Na
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Wyspy Południowe
+**Pochodzenie dokładne**: Wyspy Południowe
+**Krótki opis postaci**: Pochodząca z dalekiego południa, ma pewne problemy z językiem. Chciałaby otworzyć własny biznes w kolonii
+
+### Wpis 10
+**L.p.**: 10
+**Imię postaci**: Dacjan
+**Kontynuacja**: NIE
+**Pochodzenie ogólne**: Archolos
+**Pochodzenie dokładne**: Miasto Archolos
+**Krótki opis postaci**: Przeciętny artysta przepełniony strachem przed degradacją. Wie, że z jego umiejętnościami walki nie poradzi sobie poza zamkiem.
+
+### Wpis 11
+**L.p.**: 11
+**Imię postaci**: Mario Majestro
+**Kontynuacja**: TAK
+**Pochodzenie ogólne**: Myrtana
+**Pochodzenie dokładne**: Silden
+**Krótki opis postaci**: Dawny kopacz, niedoszły cień. Jest w służbie tylko po to, żeby zrobić wielki heist na Skarbiec Gomeza
+
+## Arkusz: Grupy
+----------------------------------------
+
+### Wpis 1
+**L.p.**: 1
+**Nazwa grupy**: Ulubieni Służący
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Beza,Anik,Tanka,Faust
+
+### Wpis 2
+**L.p.**: 2
+**Nazwa grupy**: Szeregowi Służący
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Vivienne,Tuna,Kilgara,Knot,Dacjan,Mario Majestro
+
+### Wpis 3
+**L.p.**: 3
+**Nazwa grupy**: Szeregowi Służący ENG
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Na
+
+### Wpis 4
+**L.p.**: 4
+**Nazwa grupy**: Hazardziści Służący
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Knot,Kilgara
+
+### Wpis 5
+**L.p.**: 5
+**Nazwa grupy**: Służący PL
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Vivienne,Tuna,Kilgara,Knot,Dacjan,Mario Majestro,Beza,Anik,Tanka,Faust
+
+### Wpis 6
+**L.p.**: 6
+**Nazwa grupy**: Służący ENG
+**Członkowie (imiona postaci rozdzielone przecinkiem)**: Na
+
+## Arkusz: Wątki
+----------------------------------------
+
+### Wpis 1
+**Nazwa wątku**: Praca, praca
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Służący PL
+**Kolejność**: 10
+**Wpis fabularny**: Udało się wam uciec od pracy w Kopalni, pewne rzeczy jednak pozostały bez zmian. Ciągle macie swoje szychty, które musicie odbębnić, a niestawiennictwo na służbie może mieć daleko idące konsekwencje - łącznie z usunięciem z Zamku. I to nie bedzie zwykła degradacja - ci, którzy podpadną magnatom, trafiają do karnej, Szóstej Brygady. Lepiej więc pilnować swojego grafiku, a jesli już pojawią się problemy z obecnością - mieć ogarnięte zastępstwo. Lub naprawdę dobry powód.
+**Krótki opis**: Opis systemu wachtowego
+**Zaangażowane frakcje**: Służący
+
+### Wpis 2
+**Nazwa wątku**: Work, work
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Służący ENG
+**Kolejność**: 10
+**Wpis fabularny**: You managed to escape from working in the Mine, but some things have remained unchanged. You still have your shifts to work, and failure to report for duty can have far-reaching consequences, including removal from the Castle. And it won't be a simple demotion - those who fall out of favour with the ore barons end up in the Sixth Brigade, a penal unit. So it's best to keep an eye on your schedule, and if you do have problems with attendance, make sure you have a replacement lined up. Or a really good reason.
+
+### Wpis 3
+**Nazwa wątku**: Donos najwyższą formą odpowiedzialności
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Służący PL
+**Kolejność**: 11
+**Wpis fabularny**: Pozostali służący to twoi towarzysze w niedoli, ale nie miej złudzeń - nie są to twoi przyjaciele. Magnaci mogą się was pozbyć za dowolne przewinienie, jeśli tylko nie będziecie mieli wystarczająco silnych pleców. Jest jednak wśród służby osoba, z którą liczą się wszyscy. Zevan, formalnie - po prostu ulubieniec Gomeza. Nieformalnie - osoba faktycznie zarządzajaca całą służbą. To od niego zależy, kiedy dostaniecie wypłaty, co dotrze do uszu magnackich, a co zostanie zamiecione pod dywan. Zevan prowadzi swoje tajne zapiski i nie jest szczególną tajemnicą, że nie dotyczą one tylko i wyłącznie grafiku wacht na Zamku. Ponoć są tam spisane wszystkie plotki i donosy jakie do niego dotrą. I za każdą nową informację jest skłonny dobrze zapłacić. To może być dodatkowe źródełko bryłek, jeśli tylko będzie się miało wystarczająco dobre informacje. A dyskretne sprawdzenie sprawdzenie, co Zevan ma zapisane na twój temat może uchronić cię przed przykrą niespodzianką.
+**Krótki opis**: Zevan zbiera wszystkie plotki i płaci za nowe
+**Zleceniodawca**: Zevan
+**Zaangażowane frakcje**: Służący
+**Potrzebne rekwizyty**: notatnik/książka  dla Zevana
+
+### Wpis 4
+**Nazwa wątku**: Reporting as the highest form of responsibility
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Służący ENG
+**Kolejność**: 11
+**Wpis fabularny**: The other servants are your companions in misery, but make no mistake – they are not your friends. The magnates can get rid of you for any offence if you don't have enough powerful backing. However, there is one person among the servants whom everyone respects. Zevan, formally – simply Gomez's favourite. Informally – the person who actually manages the entire staff. It is up to him when you get paid, what reaches the ears of the magnates, and what gets swept under the rug. Zevan keeps his secret notes, and it is no secret that they do not only concern the watch schedule at the Castle. Apparently, all the rumours and reports that reach him are written down there. And he is willing to pay well for any new information. This can be an additional source of gold nuggets, if you have good enough information. And discreetly checking what Zevan has written about you can save you from an unpleasant surprise.
+
+### Wpis 5
+**Nazwa wątku**: To wszystko wina Magnatów
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Służący PL
+**Kolejność**: 12
+**Wpis fabularny**: W wyniku magnackiego edyktu, całe wino ze Starego Obozu ma trafiać tylko i wyłącznie do Zamku, a każdy, kto się temu sprzeciwi, poczuje ich gniew. Nic dziwnego, że popyt na zakazany trunek wystrzelił w powietrze. Przebywając na codzień tak blisko olbrzymiego jego zapasu, wielu spośród Służby nie raz, nie dwa słyszy niedyskretne propozycje "załatwienia" nieco alkoholu w zamian za korzyści finansowe. Ale Służący to ludzie o wielkiej moralności nie ma szans na to, by któreś z ich grona skusiło się na taki łatwy pieniądz, prawda? Prawda?
+**Zaangażowane frakcje**: Magnaci
+
+### Wpis 6
+**Nazwa wątku**: All Ore Barons' fault
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Służący ENG
+**Kolejność**: 12
+**Wpis fabularny**: As a result of the baron's edict, all wine from the Old Camp is to go exclusively to the Castle, and anyone who opposes this will feel their wrath. No wonder the demand for the forbidden drink has skyrocketed. Being so close to its enormous supply on a daily basis, many of the Servants hear indiscreet offers to ‘arrange’ some alcohol in exchange for financial gain more than once or twice. But the Servants are people of great morality, so there is no chance that any of them would be tempted by such easy money, right? Right?
+
+### Wpis 7
+**Nazwa wątku**: Smak winnicy Valerio
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Służący PL
+**Kolejność**: 13
+**Wpis fabularny**: Jakby mało było winnej prohibicji, ostatnio Gomez sprowadził do Zamku wyjątkowo znakomitego trunku, pochodzącego z winnic Archolos. O ile już za zwykłe wino spragnieni gotowi byli płacić spore sumy, cena tego specjału prawdopodobnie przebije je wszystkie. Butelki, ze względu na swoją unikatowość, są jednak policzone i skrzętnie inwentaryzowane. 
+
+### Wpis 8
+**Nazwa wątku**: The taste of Valerio vineyard
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Służący ENG
+**Kolejność**: 13
+**Wpis fabularny**: As if the prohibition of wine were not enough, Gomez recently brought an exceptionally fine wine from the Archolos vineyards to the Castle. While thirsty people were already willing to pay large sums for ordinary wine, the price of this speciality is likely to surpass them all. However, due to their uniqueness, the bottles are numbered and carefully inventoried.
+
+### Wpis 9
+**Nazwa wątku**: Raz na wozie, raz pod wozem
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Służący PL
+**Kolejność**: 14
+**Wpis fabularny**: Łaska Gomeza potrafi być bardzo chwiejna nie tylko dla was. Coraz częstsze wizyty Lady Valerii w faktorii Obozu na Bagnie przy Starym Obozie sprawiły, że coraz częściej zaczeła mówić o Śniącym, a czasem wręcz wychwalając go czy opowiadać o jakichś wizjach. A że cierpliwość Gomeza jest zasobem bardzo ograniczonym, to nie trzeba było wiele. Obecnie Lady Valeria spędza dnie w areszcie domowym w swoich komntach aż do momentu kiedy wróci jej rozum do głowy. Jest to tym bardziej zaskakujące, że jest przecież byłą paladynką. Czyżby utraciła wiarę w Innosa? A może po prostu przesadza z paleniem tego bagiennego ziela?
+**Zleceniodawca**: Thorus
+
+### Wpis 10
+**Nazwa wątku**: Sometimes on top, sometimes down below
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Służący ENG
+**Kolejność**: 14
+**Wpis fabularny**: Gomez's grace can be very unstable, and not only for you. Lady Valeria's increasingly frequent visits to the Camp on the Marsh trading post near the Old Camp meant that she began to talk more and more about the Dreamer, sometimes even praising him or recounting some visions. And since Gomez's patience is a very limited resource, it didn't take much. Currently, Lady Valeria is spending her days under house arrest in her chambers until she comes to her senses. This is all the more surprising given that she is a former paladin. Has she lost her faith in Innos? Or is she simply overdoing it with smoking that swamp weed?
+
+### Wpis 11
+**Nazwa wątku**: Nos wysoko
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: Ulubieni Służący
+**Kolejność**: 21
+**Wpis fabularny**: Jesteście zamkową elitą. Magnaci znają waszą wartość i możecie dzięki temu patrzeć z góry na resztę służących. Wasza pozycja pozwala wam na nieco bardziej luźny stosunek do obowiązków i wacht zamkowych, tak długo, jak waszemu Magnatowi to nie przeszkadza. To przede wszystkim jemu służycie. Ale nie miejcie złudzeń - wasza fortuna może się szybko odwrócić, czy to ze względu na humor Magnata, czy intrygi pozostałych służących. Musicie się nieustannie pilnować, by zachować to, co macie. Bo zdecydowanie zbyt wielu czycha na waszą pozycję.
+**Krótki opis**: Czujecie się lepiej od innych,ale musicie uważać - koledzy i konkurcenci z dołu nie śpią
+**Zaangażowane frakcje**: Służący
+
+### Wpis 12
+**Nazwa wątku**: Semper in altum
+**Zakres wątku**: Grupa
+**Wymień członków**: Tak
+**Nazwa klasy / grupy / postaci**: Szeregowi Służący
+**Kolejność**: 21
+**Wpis fabularny**: Zamek to niepewne miejsce. Dzięki pracy tutaj nie musicie czołgać się na kolanach w pyle kopalni, wydobywając bryłki, ale bycie służącym to praca, którą łatwo stracić. Szeregowi służący mogą liczyć na niewiele pobłażania i każdy ich błąd może skutkować powrotem do kopalni. A inni kopacze nie będą pewnie szczególnie entuzjastyczni przy witaniu takiego zdegradowanego. Dlatego - trzeba mieć plecy. Najlepiej magnackie. Ulubienieńcom magnatów uchodzi znacznie więcej, tak długo, jak tylko ich patron jest zadowolony. Dlatego zrobicie bardzo wiele, by osiągnąć taki status. Może to wymagać wykolegowania obecnego magnackiego ulubieńca, ale, hej - ktoś nie je, żeby jeść mógł ktoś.
+
+[Służka Na jest również szeregowym służącym]
+**Krótki opis**: chcecie zostać ulubionymi
+**Zaangażowane frakcje**: Służący
+
+### Wpis 13
+**Nazwa wątku**: Semper in altum!
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Szeregowi Służący ENG
+**Kolejność**: 21
+**Wpis fabularny**: The castle is an uncertain place. Thanks to working here, you don't have to crawl on your knees in the dust of the mine, extracting lumps, but being a servant is a job that is easy to lose. Rank-and-file servants can expect little leniency, and any mistake they make could result in a return to the mines. And the other miners probably won't be particularly enthusiastic about welcoming such a demoted servant. That's why you need to have backing. Preferably from a magnate. The favourites of the ore barons get away with much more, as long as their patron is satisfied. That's why you'll do a lot to achieve such status. It may require undermining the current ore baron's favourite, but hey, someone has to eat so that someone else can eat.
+
+[Maid Na is also a lowly servant]
+
+### Wpis 14
+**Nazwa wątku**: Turniej na wysokie stawki
+**Zakres wątku**: Grupa
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Hazardziści Służący
+**Kolejność**: 22
+**Wpis fabularny**: Pod Barierą hazard to więcej niż rozrywka. To religia. Tętnienie, wyznaczające puls życia. To jedyny moment, kiedy nie liczy się siła miecza, a pewność ręki, zimna krew i błysk w oku. A ty? Ty oddychasz hazardem. Właściwie cała Kolonia powinna ci się kłaniać, tak masz ułożony byt dzięki kościom, kartom i zakładom. Czy grasz czysto, czy nie - nie ma to znaczenia. Ty po prostu wygrywasz. Ale ile można opędzlowywać frajerów z marnych bryłek? Do Twoich uszu doszło ostatnio, że nadchodzi to, czego od dawna nie było. W piątek o północy, kiedy nocne chłody wyciszą nawet strażników, na piętrze karczmy odbędzie się turniej. Ale nie byle jaki – to będzie hazardowe święto, walka o grubą stawkę, o respekt i o bogactwo, które może odmienić czyjeś życie. Dwanaście osób, które zaprezentują żeton wstępu, zostanie dopuszczone do stołu i zagra. O wszystko. Jak zdobyć żeton? Oczywiście wygrać. Dwa są u Klina, w Nowym Obozie. Jeden u Eddiego pod Kopalnią. Jeden u Gravo i dwa u Belfra na Slumsach. Dwa u Karczmarza w Starym Obozie. Dwa u kowala Stone'a, który uwielbia organizować małe turnieje w swojej kuźni. Jeden u Zevana w zamkowych murach. Ah, no i jeden gdzieś zaginął, więc może być gdziekolwiek pod Barierą. Ale pamiętaj — żetony można też kraść. I jeśli masz jeden — lepiej go pilnuj. Bo w Kolonii każda wartość rodzi chciwość. Chciwość zaś zawsze w końcu doprowadza do rozlewu krwi. Do zobaczenia przy stole przy którym stawka nie gra roli.
+
+### Wpis 15
+**Nazwa wątku**: Od Bezy do Lukrecji
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Beza
+**Kolejność**: 30
+**Wpis fabularny**: Gomez już od dłuższego czasu utyskiwał na Lady Valerię i zapowiedział, choć narazie tylko nieoficjalnie, że będzie potrzebował zmian w gronie magnackim. To jest właśnie chwila, na którą czekasz. Musisz tylko pokazać Gomezowi, że jesteś warta tego stanowiska. Bez lady Valerii nie będzie komu dbać o splendor na zamku - to zdecydowanie coś, o co możesz zadbać. Wystawna uczta, muzycy, prezenty - będzie to pewnie wymagało morza rudy, ale masz kilka pomysłów, skąd pozyskać dodatkowe środki. Do tego musisz się pokazać jako osoba wpływowa i posiadająca dostęp do tajemnic i informacji - tutaj przyda się pomoc od twoich kontaktów z Nowego Obozu. Wiesz, że planowane jest rozpoczęcie intenstywnych rozmów politycznych między obozami pod auspicjami Mistrza Medusa - to może być twoja okazja, by zaskoczyć wszystkich i widowiskowo przeważyć szalę na stronę Starego Obozu.
+**Krótki opis**: zajawka do wyścigu magnackiego
+
+### Wpis 16
+**Nazwa wątku**: Oczy Nowego Obozu
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Beza
+**Kolejność**: 31
+**Wpis fabularny**: Choć ciężko ci się do tego przyznać przed samą sobą, swojej kariery w Starym Obozie nie zawdzięczasz jedynie wrodzonemu urokowi i sprytowi. Swoją, całkiem niestety niemałą cegiełkę, dołożył Nowy Obóz. A konkretnie Wodny Krąg - ludzie odpowiedzialni za szpiegostwo. Od dłuższego czasu dyskretnie przekazujesz im informacje o tym, co dzieje się w otoczeniu Gomeza, w zamian za to mogąc liczyć na ich pomoc w twoich własnych problemach. I tu właśnie dochodzimy do sedna problemu: wiesz doskonale, że Joplin i jego podwładni zrobią naprawdę dużo, żeby pomóc ich tajnej agentce osiągnąć rangę magnacką. Dostęp do możliwości, jakie otworzy im tak bezpośredni wpływ na decyzje w Starym Obozie musi im się jawić jako szansa zesłana wprost przez Adanosa. Jesteś w pełni przekonana, że posuną się naprawdę daleko, niewykluczając nawet tymczasowego sabotażu polityki ich własnego obozu. Tylko czy wtedy będziesz tak naprawdę czymś więcej, niż marionetką w ich rękach? Czy cała ta wolność, którą przyniesie ci awans, nie będzie tylko ułudą słowika uwięzionego w złotej klatce, pozbawionego możliwości decydowania o sobie? Może tak wcale nie musi być, może jesteś w stanie zdobyć najwyższe stanowisko bez tracenia niezależności. Musisz mądrze rozegrać tę partię. Stąpasz teraz po bardzo cienkim lodzie...
+
+### Wpis 17
+**Nazwa wątku**: Skarb Gangu Piekarzy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Beza
+**Kolejność**: 32
+**Wpis fabularny**: Przezorność to ważna cecha. Gdyby tylko Precel, niech mu Beliar łaskawym będzie, wykazał się większą jej ilością zanim postanowił łazić sam po trakcie... może nie skończyłby wtedy udławiwszy się krwią z własnego, wyrwanego języka. Ale może też być tak, że po prostu wtedy na trakcie tej przezorności zwyczajnie mu zabrakło, bo całą zdążył zużyć na schowanie w bezpiecznym miejscu większej części piekarzowego zapasu bryłek rudy. Niegłupim pomysłem byłoby sprawdzenie, czy ten skarb wciąż tam jest. Precel raz pokazał ci to miejsce, dołek pod drzewem nieopodal Aidanowej chatki. Od tamtego czasu niestety obozowisko Nowego Obozu sporo się rozrosło i dostęp do skrytki może okazać się nieco... problematyczny. Wciąż, jeśli ruda ciągle tam jest - będzie do niebagatelna pomoc w twoich planach. Walka o tron nie jest w końcu tanim zajęciem...
+**Potrzebne rekwizyty**: 300 bryłek rudy w worku
+
+### Wpis 18
+**Nazwa wątku**: Pierwsza pośród równych
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Beza
+**Kolejność**: 33
+**Wpis fabularny**: Twoje wielkie plany nie powiodą się, jeśli będziesz otoczona przez wrogów. Może i pozostali służący nie mogą się z tobą mierzyć, ale na antagonizowaniu ich nigdzie nie zajdziesz. Dobrym pomysłem byłoby cieszyć się przychylnością tylu z nich, ilu tylko zdołasz. Zwłaszcza tych, którzy mają blisko do magnackich uszu. Pochlebstwa, drobne przysługi, haki - sposobów jest mnóstwo.  Wykorzystaj jakie tylko będziesz chciała. 
+**Krótki opis**: Beza musi przekonać do siebie jak najwięcej służących
+
+### Wpis 19
+**Nazwa wątku**: Na cztery łapy
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Beza
+**Kolejność**: 34
+**Wpis fabularny**: Plany są dobre. Ale jest coś lepszego, niż gotowe plany - są to plany zapasowe na wypadek, jakby te podstawowe nie wypaliły. Jesteś w pełni świadoma, że twoje ambitne plany mogą się wykoleić, gdy los (lub ktoś nieżyczliwy) włoży im szprychy kijek. Dlatego musisz mieć plan awaryjny. Czy Nowy Obóz przygarnie cię, jeśli zostaniesz odkryta ? Czy masz tam wystarczająco znajomych, którzy cię obronią? Jeśli nie, może warto o tym pomyśleć...
+
+### Wpis 20
+**Nazwa wątku**: Lepszy Kurak w kieszeni...
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Beza
+**Kolejność**: 35
+**Wpis fabularny**: Kurak - magiem ognia... nigdy nie sądziłaś, że dojdzie do takiego rozwoju wydarzeń, ale oto jest. Przy czym ta tranzycja nie odbyła sie zupełnie bezproblemowo. Straż, postawiona w obliczu utraty najlepszego zdpbywacza bryłek, zarządała pd Kuraka wykupnego w wysokosci 100 bryłek. I tu pojawił sie problem - razem z klątwą, Sebastian-już-nie-Kurak ewidentnie stracił swój dryg do zarabiania. Sytuacja wyglądała niewesoło, wleź wtedy pojawiłaś sie Ty - cała na bezowo - i z własnej kieszeni zapłaciłaś wymaganą sumę. Sebastian obiecał ci zwrócić całą kwotę lub Jej ekwiwalent, ale do tej pory nie widziałaś powodu, by upominać się o swoje. Ale może to najwyższy czas?
+**Krótki opis**: Kurak przeszedł do Straży, jednak pozostał po nim dług. Beza uregulowała go, więc Kurak leci jej przynajmniej hajs
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 21
+**Nazwa wątku**: Mój mały Mag Ognia - Beza
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Beza
+**Kolejność**: 36
+**Wpis fabularny**: W kolonii nieczego się samemu nie osiągnie. Ale jeśli chce się grać o najwyższą stawkę - potrzebni są szczególni pomocnicy. Jeśli masz zostać magnatką, będziesz potrzebowała zaufanej osoby wśród staroobozowych Magów. Od jakiegoś czasu przyglądałaś się uważnie wszystkim noszącym czerwone szaty sług Innosa i masz wrażenie, że znalazłaś odpowiednią osobę. Mag Mesmer jest szczególnie cięty na "herezję" uprawianą przez Sektę z Bagna i bardzo szuka pobożnej osoby, która pomogłaby mu rozpalić wiarę w Innosa w Starym Obozie. Zaczęłaś już go urabiać - kilka drobnych przysług i napomknień o tym, jak ważna jest wiara dla sumień ludzi w Starym Obozie wystarczyło, by zaczął wyraźnie przychylniej na ciebie patrzeć. Odrobina pobożności, nawet, jeśli udawanej, nikomu jeszcze nie zaszkodziła - jeśli dzięki temu masz zdobyć potężnego sojusznika.
+**Zaangażowane frakcje**: Magowie Ognia
+
+### Wpis 22
+**Nazwa wątku**: O jeden skręt za daleko
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Anik
+**Kolejność**: 30
+**Wpis fabularny**: Zawsze lubiłeś skręty z bagiennego ziela. A nie ma już nic lepszego, niż darmowe skręty z bagiennego ziela. No, może nie do końca darmowe - odkryłeś, że Baal Sach jest gotowy wręczyć ci w prezencie naprawdę dobre skręty, jeśli tylko podzielisz się z nim nic nie znaczącymi plotkami z zamku. Układ działał bardzo dobrze, do momentu, gdy Baal zaproponował ci lepszy towar. I tak zrezygnowałeś z Zielonych Nowicjuszy na rzecz Mroku Północy. Zioło kopało mocniej, twoje wizje i wena były nie z tej ziemi, ale niestety również pytania Baala zaczęły być bardziej dociekliwe i natarczywe. Poza Baalem mało kto ma dostęp do tych skrętów - a jeśli już, są naprawdę drogie. Niestety, bez nich już trochę nie wyobrażasz sobie dalszego funkcjonowania. Dawały ci tę ostrość niezbędną, by utrzymać się na szczycie jako ulubiony służący Sama. Smycz nałożona ci przez Bagno zaczyna cię mocno cisnąć, do tego jesteś świadomy, że jeśli wasz mały układ zostanie wykryty, wylecisz z Zamku prosto na dno kopalni. Co więc zrobić?
+**Krótki opis**: Szpieg bagna uzależniony od zielska
+**Zleceniodawca**: Baal Sach
+**Zaangażowane frakcje**: Guru
+
+### Wpis 23
+**Nazwa wątku**: Po co więcej artystów?
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Anik
+**Kolejność**: 31
+**Wpis fabularny**: Do niedawna twoja pozycja jako zamkowego muzyka była niezaprzeczalnie bezpieczna - nie miałeś żadnych konkurentów, a jeśli nawet Zevan czasami krzywił się na twoje śpiewanie - Samowi to nie przeszkadzało. Po ostatnich rotacjach sytuacja jednak drastycznie się zmieniła. Najpierw przybyła Na, z tą swoją śmieszną, południową mini-lutnią. A zaraz po niej Dacjan - osobnik, który z bycia muzykiem zrobił niemal całą swoją osobowość. Do niego czujesz szczególną odrazę. Na przynajmniej nie obnosi się z tym aż tak... Boisz się, że jest tylko kwestią czasu, gdy Sam zmieni zdanie odnośnie twojej niezbędności. Nie możesz na to pozwolić. Muszą mieć jakieś słabości - wszyscy artyści mają, wiesz o tym za dobrze. Grunt, to umieć je wykorzystać tak, by przestali ci zagrażać. 
+**Krótki opis**: Wśrod niedawno przyjętych służących pojawiła się nowa muzyczka.  To nie dobrze jest. Ta konkurencja może cię kosztować twoje miejsce przy Samie, dla którego była to twoja główna zaleta.
+
+### Wpis 24
+**Nazwa wątku**: Erzac albo zgon
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Anik
+**Kolejność**: 32
+**Wpis fabularny**: Twoje uzależnienie od Bagiennego Ziela powoli zaczyna się wymykać spod kontroli. Odkąd Guru zaczęli ci dostarczać Mrok Północy, coraz gorzej radzisz sobie w tych momentach, gdy nie masz nic do zapalenia. Może to pora na radykalne kroki? Na znalezienie kogoś, kto albo cię z tego wyleczy, albo dostarczy coś, co pozwoli zapomnieć o zielu? W służbie jest alchemiczka - Tanka. Może dałaby radę poradzić ci coś w tej sprawie? A jeśli nie zechce - jej zapas odczynników i esencji z pewnością będzie cenny dla każdego, kto zgodzi ci się pomóc.
+
+### Wpis 25
+**Nazwa wątku**: Niepewna lojalność
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Tanka
+**Kolejność**: 30
+**Wpis fabularny**: Magnaci, mimo swojego bogactwa, nie przesadzają z płaceniem służącym. Pensja może i wystarcza na podstawowe potrzeby, ale na niewiele ponad to. W Zamku jest jednak dużo cennych rzeczy, które można wynieść. Kosztowności, zastawa... oraz informacje. Gardzisz złodziejami, ale co się może stać, jeśli od czasu do czasu podzielisz się z kimś jakąś niewielką plotką? Jakiś czas temu dostałaś kilka naprawdę dobrej jakości skrętów od jakiegoś nowicjusza za naprawdę błahe informacje, z gatunku tych, które można usłyszeć pod karczmą. Nie pamiętasz nawet jego imienia, ale wydawał się bardzo chętny na więcej. Może to jest ten sposób na dorobienie sobie? A gdyby chcieli za dużo - zawsze można ich wysypać Alvarezowi. On na pewno zapłaci za takie informacje.
+**Krótki opis**: Potencjalny szpieg Bagna
+
+### Wpis 26
+**Nazwa wątku**: W poszukiwaniu straconego haju
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Tanka
+**Kolejność**: 31
+**Wpis fabularny**: Choć lata mijają, ciągle nie możesz zapomnieć tego, jaki efekt wywoływały na Tobie misktury twojego pierwszego nauczyciela. Lemian mógł być obrzydliwym dziadem, ale, mimo lat obcowania z substancjami alchemicznymi, wciąż nie znalazłaś nic podobnego do tego, co wtedy ci podawał. Może to już czas rozpocząć własne poszukiwania? Doszły do ciebie plotki o badaniach, jakie prowadzi mistrzyni Sybilla. jej "teoria humorów", regulujących zachowania i emocje... Może dałoby sie je zastosować do twoich celów - niekoniecznie za jej wiedzą... A jesli nie to - kto wie, jakie tajemne, zapomniane receptury można znaleźć w Kolonii? Niekoniecznie pośród ludzi...
+
+### Wpis 27
+**Nazwa wątku**: Chłodnik z zemsty - Selene
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Tanka
+**Kolejność**: 32
+**Wpis fabularny**: Zemsta ponoć najlepiej smakuje na zimno. Tak przynajmniej twierdziły wszystkie te, którym pomagałaś w ich małżeńskich problemach. Czas spróbować samemu. Selene pobiła cię na egzaminie alchemicznym, i nawet nominacja na ulubioną służącą Alvareza nie osłodzila goryczy tej porażki. Poza tym, to uczennica Eridiana - gdyby miał więcej czasu, z pewnością przyjąłby cię na swoją protegowaną. Dotarły do ciebie informacje o jej niemal przesądnym strachu przed skutkami ubocznymi magii, tylko spotengowane przez eskplozję mistrzyni Lux. Może dałoby się to jakoś wykorzystać? Wiesz też, że od niedawna spotyka się z Karinthiusem, najemnikiem z Nowego Obozu. Może to będzie ten obiekt zemsty, który wykorzystasz?
+**Zaangażowane frakcje**: Magowie Wody, Najemnicy
+
+### Wpis 28
+**Nazwa wątku**: Chłodnik z zemsty - Farida
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Tanka
+**Kolejność**: 33
+**Wpis fabularny**: Powiadają, że piekło nie zna furii takiej jak kobieta wzgardzona. Czas się przekonać, czy Farida, która bezpardonowo odmówiła ci nauczania, zasłużyła na takie emocje. Widziałaś, że wyjątkowo skrzętnie pilnuje, by nikt nie zobaczył tatuaży, które ponoć ma na ciele. Możesz się założyć, że to nie jest wyłącznie kwestia ich kiepskiego wykonania. W tym musi być coś więcej.
+**Zaangażowane frakcje**: Cienie
+
+### Wpis 29
+**Nazwa wątku**: Nauczaj, Mistrzu
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Tanka
+**Kolejność**: 34
+**Wpis fabularny**: Formalnie pozostajesz studenką Klary. Od początku jednak czujesz, że jej nauki nie są ci w stanie wiele zaoferować. Wciąż marzysz o tym, by twym nauczycielem został Eridian. Może jeśli pokażesz mu się z najlepszej strony może tym razem uda ci się go przekonać?
+**Krótki opis**: Poszukiwania i klepnięcie nowego patrona
+**Zaangażowane frakcje**: Magowie Wody
+
+### Wpis 30
+**Nazwa wątku**: Lektura na każdą kieszeń 
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Tanka
+**Kolejność**: 35
+**Wpis fabularny**: Z okazji to głupio nie skorzystać. Ale jeśli ktoś wyjątkowo tanio oferuje ci książkę, to trzeba po prostu brać. No więc wzięłaś... Za wiele z niej zrozumiałaś, jedyne co udało Ci się odszyfrować było fragmentem jakiejś nieokreślonej receptury. Na szczęście potem książką zainteresował się Mistrz Eridan  i ją od Ciebie odkupił. Wyszłaś na zero, więc w sumie nie ma tragedii.
+
+### Wpis 31
+**Nazwa wątku**: Już nie taki ulubiony
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Faust
+**Kolejność**: 30
+**Wpis fabularny**: Łaska Lady Valerii na pstrym koniu jeździ. Do niedawna jeszcze byłeś jej ulubieńcem, sługą do zadań specjalnych i najwierniejszym sojusznikiem. Ale mimo tych wszystkich starań z każdym dniem widziałeś, jak twoje zasługi robią na Magnacce coraz mniejsze wrażenie, wręcz... zaczynają ją nudzić. A teraz, gdy została zamknięta na cholera wie ile w komatach - jej łaska nie dość, że przestaje mieć znaczenie, to jeszcze odwraca się przeciwko tobie. Dając ci jednocześnie do zrozumienia, że nie potrzebuje dłużej twoich usług. Chwilowo cały czas cieszysz się tytułem jej ulubieńca, ale wiesz doskonale, że to całkowicie złudne i twój status jest identyczny, jak zwykłych, szeregowych służących. Musisz koniecznie zmienić ten stan. Napewno któryś z pozostałych magnatów będzie umiał docenić twoje starania. Jeśli będzie trzeba do tego podłożyć świnię któremuś z ich ulubieńców - trudno.
+**Krótki opis**: Musisz KONIECZNIE odzyskać status ulubionego. Jeśli będzie to wymagało rzucenia kogoś z kolegów pod wóz - trudno
+
+### Wpis 32
+**Nazwa wątku**: Głosy w ścianach...
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Faust
+**Kolejność**: 31
+**Wpis fabularny**: Doskonale wiesz, że Zamek jest areną nieustannych starć, ziinfiltrowany przez inne obozy, które mają w nim swoich zakonspirowanych szpiegów. Sam w końcu jesteś jednym z nich, jako członek siatki Leona. Ta sytuacja jest jednak niezwykle niebezpieczna - jeśli zostaniesz wykryty, twoja kariera skończy się w najlepszym wypadku w Kopalni. A zapewne gorzej. Dlaczego by więc nie uprzedzić poszukiwań i samemu odnaleźć pozostałych szpiegów? Nikt przecież nie będzie podejrzewał o szpiegostwo tak gorliwego kontrwywiadowcy. A nawet, jeśli ktoś wtedy rzuci takie oskarżenie, będzie ono wyglądało jako kiepska próba odwrócenia kota ogonem. Dodatkowo, takie zasługi z pewnością zostaną docenione przez Magnatów. Znalezienie pozostałych nie powinno być trudne - najlepiej zacząć od tych, którzy mają jakieś problemy, łatwe do wykorzystania.
+**Krótki opis**: Na zamku są szpiedzy. To jasne jak słońce. Jeśli ich odkryjesz - twoja pozycja będzie zagwarantowana
+
+### Wpis 33
+**Nazwa wątku**: ... noże w plecach
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Faust
+**Kolejność**: 32
+**Wpis fabularny**: Twój zamach na Magnusa był niemalże zupełnym sukcesem. Wszystkie kroki planu zostały zrealizowane, za wyjątkiem tego ostatniego - sukinsyn przeżył. Wydaje się, ze uwierzył w twoją bajeczkę o niewiedzy co do zawartosci jego kubka. Ale jesli nie, jesli czai sie w nim choć cień wątpliwości - masz bardzo potężnego wroga. Z gatunku tych, którzy, jesli przy pierwszej okazji pozbawią cię wszystkiego, z życiem włącznie. Ale Magnus ma naprawdę wielu wrogów - może to czas połączyć z nimi siły? To, co nie udało sie w pojedynkę, może być dużo łatwiejsze w grupie.
+
+### Wpis 34
+**Nazwa wątku**: Nowe rozdanie
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Faust
+**Kolejność**: 33
+**Wpis fabularny**: Jeśli żaden z dotychczasowych Magnatów nie okaże sie wystarczająco mądry, by uczynić z ciebie swojego protegowanego, może czas poszukać nowych mecenasów wśród silnych frakcji Starego Obozu? Od jakiegoś czasu słyszy się na Zamku plotki o rozszerzeniu magnackiego grona. Jeśli znalazłbyś obiecującego kandydata i przyczepił się do niego wystarczająco wczesnie - na pewno to doceni. W Straży albo Cieniach musi czaić się nowa szycha - ty musisz ją tylko znaleźć, a potem przekonać do siebie.
+**Krótki opis**: Zamek przestaje być bezpiecznym miejscem. Potrzebujesz kogoś, kto w razie czego będzie twoim silnym ramieniem.  
+**Zleceniodawca**: Ulęgałke
+**Zaangażowane frakcje**: Strażnicy
+
+### Wpis 35
+**Nazwa wątku**: W dobrych kręgach
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Faust
+**Kolejność**: 34
+**Wpis fabularny**: Może i Magnus wciąż żyje, ale uważasz, że i tak wyświadczyłeś Nowemu Obozowi na tyle przyslug, by przyjęli cię do Kręgu Wody. Masz poczucie, że w razie wpadki może ci to zapewnić choć trochę bezpieczeństwa - a ty i tak jesteś już na cenzurowanym.... Leon może mówić, co chce, ale ty niespecjalnie zamierzasz czekać dłużej.
+
+### Wpis 36
+**Nazwa wątku**: Zobaczyć świat który płonie
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Knot
+**Kolejność**: 30
+**Wpis fabularny**: Ostatnio coraz częściej nachodzą cię wyjątkowo niewesołe myśli, dotyczące sensu tego całego starania się. Jesteś jednym z najdłuższym stażem służącym, przebija cię chyba tylko Zevan - i co ci z tego przyszło? Nic poza sińcami od uderzeń niezadowolonych magnatów, marną płacą bez perspektyw i pozbyciem się wszelkich złudzeń odnośnie charakteru władzy w Starym Obozie. Wszyscy Magnaci to pozbawieni moralności szaleńcy - nawet Sam, choć on dopiero stawia pierwsze kroki na tej ścieżce. Ale trzeba kiedyś powiedzieć: dość. Ktoś mógłby zapytać - co może jeden mały sługa przeciwko najpotężniejszym ludziom w kolonii? Jak się okazuje - może nie tak mało. Może i Magnaci są najpotężniejszymi w Starym Obozie, ale Kolonia pełna jest większych ryb. Wystarczy tylko znaleźć odpowiednią na nie przynętę. Służba na zamku daje ci dostęp do tajemnic, rozkazów, a także napitków - wszystkie te rzeczy możesz wykorzystać przeciwko Magnatom. 
+
+Ciekawe, jak długo pociągnie Sam, jeśli każdy jego transport będzie plądrowany przez "nieznanych sprawców" z innych obozów? 
+
+Ile podkopywania ze strony Cieni i Straży wytrzyma Magnus? 
+
+W końcu, ile jeszcze może kaszleć krwią Alvarez, pan Wielki Wywiadowca, który stara się tak skrzętnie ukrywać swój stan zdrowia przed światem?
+
+Może i nie dasz rady wyzwać ich wszystkich na pojedynek i upokorzyć na oczach całej Kolonii. Ale dołożenie własnej cegiełki do ich upadku, a potem patrzenie, jak się przewracają i rozwalają sobie głupie mordy może być wystarczająco satysfakcjonujące.
+**Krótki opis**: Chciałbyś jak najbardziej dokopać magnatom. Niech ciepią, a ich plany niech obracają się wniwecz. Podpiszesz cyrograf z każdym, kto ci pomoże
+
+### Wpis 37
+**Nazwa wątku**: To kiedy pan właściwie chcesz kaszleć?
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Knot
+**Kolejność**: 31
+**Wpis fabularny**: Stan zdrowia Alvareza jest jedną ze skrzętniej ukrywanych tajemnic Zamku. Wszyscy wiedzą, że jest chory, ale nikt tak naprawdę nie wie, jak bardzo. Ty jednak, będąc w słuzbie już tak długo, masz całkiem dobre porównanie. I doskonale widzisz, że jego stan znacznie się pogorszył, a co więcej - ostatnio marnieje w oczach niemal z dnia na dzień. Czyżby jeden z najpotężniejszych ludzi w kolonii miał przegrać z własnym ciałem? To mało poetycki koniec, ale należy się sukinsynowi. Jesteś jednak pewien, że nie podda się tak łatwo i z pewnością już teraz szuka lekarstwa. Jeśli miałbyś zgadywać - będzie musiał zaangażować w to swoją ulubioną służącą, Tankę - waszą zamkową alchemiczkę. Dobrze będzie patrzeć jej na ręce. Byłoby NIESAMOWICIE PRZYKRO, gdyby cudem wynaleziony lek dla Alvareza gdzieś się... zgubił.
+
+### Wpis 38
+**Nazwa wątku**: Bagnisty grunt
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Knot
+**Kolejność**: 32
+**Wpis fabularny**: Zauważyłeś, że ostatnio kręci się dookoła ciebie zastanawiająco dużo Nowicjuszy. Zadają ci z pozoru nieistotne pytania, dopytują o imię, dzielą się za darmo skrętami. Ktoś mógłby powiedzieć - chcą po prostu być przyjaźni. Ale w Kolonii nie ma nic za darmo - jeśli ktoś okazuje ci sympatię, musi coś od ciebie chcieć. Jeśli miałbyś strzelać - przygotowują grunt pod rozmowy, najpewniej dotyczące "pomocy w rozeznaniu się w sytuacji na zamku", czy jak tam teraz ładnie mówi się na szpiegostwo. Może to i dobrze - jeśli masz dokopać magnatom, przyda ci się pomoc spoza obozu. Będzie komu sprzedać informacje, które podkopią magnackie stołki...
+
+### Wpis 39
+**Nazwa wątku**: Oczy widzą, usta milczą
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Knot
+**Kolejność**: 33
+**Wpis fabularny**: Lata pracy w Zamku nauczyły cię gdzie patrzeć i co dostrzegać. Twoi koledzy i koleżanki z pracy mogą myśleć, że dobrze się ukrywają, ale cóż - ciebie nie przechytrzą. Każdy się czasem odkryje, a ty byłeś akurat w okolicy, gdy to im się przydażało.
+
+Beza ma wielkie ambicje, które z pewnością pochłoną wielkie środki. Wiesz, że gdzieś chowa niemałą fortunę, jeszcze z czasów, gdy była członkinią niesławnego Gangu Piekarzy. 
+
+Anik coraz bardziej pogrąża się w bagiennym zielu - nie ma najmniejszych szans, by tempo, w którym wypala skręty, dało się utrzymać z mizernej pensji służącego. Musi je w jakiś sposób pozyskiwać na bagnie - i raczej nie robi tego tylko grą na lutni. Do tego wyraźnie nie podoba mu się, że w Zamku pojawiło się więcej muzyków.
+
+Po tym, jak Faust podał Magnusowi zatruty kielich, jego karierę uratowało tylko to, że lady Valeria wybrała go na swojego ulubieńca. Co prawda udało mu się wyłgać, ale ty nie sądzisz, że to był zwykły wypadek. Zbyt często widziałeś go rozmawiajacego z wysłannikiem Nowego Obozu - Leonem - by wierzyć, że była to jedynie jego indolencja.
+
+Tanka, wasza zamkowa alchemiczka,  może twierdzić, że zesłano ją za hazard. Ale ty nigdy nie widziałeś ją choćby w pobliżu miejsc, gdzie w Koloni gra się w kości i karty. Czujesz ciągnący się za nią smród morderczyni, i to wielokrotnej.
+
+Vivienne chciałaby być drugą Bezą. Na razie jednak skupia się głównie na umiejętnym znikaniu drobnych rzeczy - głównie kosztowności i rudy.
+
+Podobnie z resztą Na. O ile jednak Vivienne wydaje się to robić niemal dla sportu, z czystego zamiłowania do bogactwa, to ta małomówna dziewczyna z południa ma jakąś ukrytą misję. Widziałeś potem część z jej fantów w rękach ludzi z dolnej części obozu, ale raczej nie podejrzewasz jej o zacięcie charytatywne.
+
+Mario Maestro. Wasz najnowszy nabytek, o-mało-co-Cień zdegradowany do roli służącego. Samozwańczy mistrz szermierki, który wyglada, jakby miał się pokaleczyć zbyt ostrym nożem. Opowiada wszystkim, jak to zawsze nie marzył o pracy w Zamku, masz jednak wrażenie, że więcej czasu spędza na oglądaniu zabezpieczeń gomezowego Skarbca niż na czymkolwiek innym.
+
+Kilgara, porzucona zabawka lady Valerii. Co zrobi teraz, gdy jej zabrakło? Ciężko ci określić, który z nich wyleci szybciej - on, czy Faust. Widziałeś, jak kilku osobom proponował partyjkę kości. Czyżby miał również problem z hazardem?
+
+Dacjan, wasz nowy muzyk. Sól w oku Anika, który boi się, że przecietny artysta, jakim jest Dacjan, będzie dla niego końcem. Ty jednak widzisz dobrze, że za pewną siebię fasadą Dacjana czai się  przerażenie i obawa. Doskonale wie, że ktoś taki jak on nie poradzi sobie poza bezpiecznym Zamkiem. Degradacja będzie dla niego wyrokiem śmierci.
+
+I wreszcie Tuna, krawcowa. Cbyba jedyna osoba, która wydaje się nie mieć jakiejś mroczniejszej strony... widzisz jednak, że nałożone na jej małą szwalnię podatki zaczynają ją przygniatać. Czy kiedy uzna, że potrzebne jej dodatkowe źródło dochodu, 
+
+Żadna z tych informacji nie jest na tyle pewna, by Zevan wypłacił ci za nią cokolwiek więcej niż kopa w rzyć. Ale przy odpowiednich dowodach... możesz zbić fortunę na pozbyciu się reszty służących lub przy pomocy informacji podporządkować ich sobie i swoim celom.
+Wybór należy tylko do ciebie.
+**Krótki opis**: Sekrety twoich kolegów i koleżanek
+
+### Wpis 40
+**Nazwa wątku**: Lepkie rączki
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Vivienne
+**Kolejność**: 30
+**Wpis fabularny**: Od zawsze umiałaś przywłaszczać sobie rzeczy w niepostrzeżony sposób. Czasami wystarczyło jedynie skorzystać ze swojego uroku... Obawiałaś się, że pod barierą - miejscu z samej swojej natury przesyconym złodziejami - będziesz miała trudniej, ale służba na Zamku dostarcza ci więcej niż wystarczająco okazji do wzbogacenia się. Jakiś czas temu odkryłaś jednak, że ktoś cię bacznie obserwuje. Kilka razy różni Cienie wydawali się doskonale dostrzegać twoje działania, a mimo to nie podejmować żadnych akcji. Lekko się tylko uśmiechali. Kim oni są i czego mogą od ciebie chcieć w zamian za milczenie? Obawiasz się, że wkrótcę dowiesz się tego, czy chciesz, czy nie.
+**Krótki opis**: Vivienne potrafi przywłaszczać sobie cudze rzeczy w sposób niezauważony. To imponująca umiejętność w oczach paserów
+**Zleceniodawca**: Esma
+**Zaangażowane frakcje**: Cienie
+
+### Wpis 41
+**Nazwa wątku**: Honor między złodziejami
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Vivienne
+**Kolejność**: 35
+**Wpis fabularny**: Doskonale wiesz, że nie tylko ty uważasz Zamek za świetne źródło nielegalnego dochodu. Widziałaś przynajmniej raz, jak rzeczy niepostrzeżenie znikają w rękawach Na, by nigdy potem już się na Zamku nie pojawić. Gdy jednak ty czerpiesz z tego przyjemność, u niej widzisz tylko determinację. No i jest jeszcze Mario - wasz najnowszy nabytek, mistrz miecza, który ewidentnie chciałby się bliżej zapoznać z Gomezowym skarbcem... każda z tych osób może być zarówno sprzymierzeńcem w planowaniu większego skoku, jak i rywalem w zdobywaniu bogactw. Jedno jest pewne - musisz mieć ich na oku.
+
+### Wpis 42
+**Nazwa wątku**: Nowa, lepsza Beza
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Vivienne
+**Kolejność**: 31
+**Wpis fabularny**: Beza to jedna z bardziej doświadczonych Służących, ulubienica magnata Sama, który, jak twierdzą, podebrał ją Gomezowi sprzed nosa. To do niej trafia większość biżuterii, jaka trafia do zamku - i to w sposób zupełnie legalny, jako prezenty! Wiele byś dała, by też cię tak traktowano... sposoby są dwa: albo pozbyć się Bezy i zająć jej miejsce, albo... zaprzyjaźnić się z nią. Beza ma swoje ambicje i raczej nie marzy o pozostaniu służącą do końca życia. A wtedy  na pewno przekaże komuś swoje stanowisko. Komuś, komu zaufała. 
+**Krótki opis**: Vivienne chce zająć miejsce Bezy, ponieważ ta druga jest zajęta grą na wyższych salonach i nie zauważy, że ktoś jej się dobiera do ogona. Powinna to robić jednak bardzo ostrożnie ponieważ Beza jest największą rybą w tym stawie. Można to zrobić na dwa sposoby- przyjacielski, bądź wrogi. Pierwszy sposób zakłada umiejętne wejście w łaski Bezy jako ,,przyjaciółka od serca". Drugi sposób zakłada zebranie na nią haków i doniesienie na nią do magnatów.
+**Zaangażowane frakcje**: Służący
+
+### Wpis 43
+**Nazwa wątku**: Odrzucona zabawka
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Kilgara
+**Kolejność**: 30
+**Wpis fabularny**: Twoja pozycja od początku nie należała do najwyższych. Czułeś palące spojrzenia pozostałych służących, kiedy lady Valeria przyjęła cię głównie dlatego, że "miałeś ładne loczki"... Do tego dość szybko przekonałeś się, że sentyment ex-paladynki jest rzeczą wyjątkowo krótkotrwałą i ulotną. Znudziła się tobą po tygodniu. A teraz - zupełnie zniknęła z zamku. Wyjścia masz dwa - albo postarasz się zdobyć łaskę jednego z magnatów... albo to czas poszukać sobie miękkiej poduszki do lądowania, gdy wywalą cię z zamku. Z tego co słyszałeś, wszyscy "spadkowicze" trafiają do szóstej, karnej brygady kopaczy, a to nie jest los, na którym szczególnie ci zależy...
+**Krótki opis**: Lady Valeria zdążyła znudzić się nowym służącym szybciej niż ruda ucieka z kieszeni kopacza. Kilgara musi znaleźć sobie nowy punkt zaczepienia, u któregoś z magnatów albo poza zamkiem, bo w takiej sytuacji to bardziej niż pewne, że zostanie wyrzucony.
+
+### Wpis 44
+**Nazwa wątku**: Pocztowa gonitwa
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Kilgara
+**Kolejność**: 31
+**Wpis fabularny**: Zanim zostałeś służącym, zarabiałeś na życie jako goniec - może to jest sposób na odwrócenie swojej karty? Magnaci z pewnością docenią sprawne przekazywanie wiadomości między obozami, zwłaszcza, gdyby udało ci się do pomocy zwerbować jeszcze kogoś. Wiedza to potęga - ale nikomu nie przyda się wiedza zdobyta zbyt późno.
+
+### Wpis 45
+**Nazwa wątku**: Przemyć to sam (ale lepiej z kolegami)
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Kilgara
+**Kolejność**: 32
+**Wpis fabularny**: W ramach przygotowania sobie ewentualnego planu B, spóbowałeś wybadać, jak obecnie wygląda sytuacja w kręgach przemytniczych Kolonii. Wygląda na to, że do głosu doszedł ostatnio potężny gracz - potentat handlowy z Khorinis, mający pod barierą podejrzanie wielu silnorękich. Jeśli miałbyś na powrót zaangażować się w przemyt, lepiej będzie spróbować się wkręcić w jego siatkę niż ryzykować działanie na własną rękę... słyszałeś, że jego ludzie to przede wszystkim strażnicy i najemnicy. To najpewniej tam należy zacząć poszukiwania.
+
+### Wpis 46
+**Nazwa wątku**: Every litle bit helps
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Na
+**Kolejność**: 30
+**Wpis fabularny**: Your dream of becoming a full fleged merchant required both money and contacts. Żbik is helping you with the disposal of stolen goods, but he is not a regular fence. It would be better to know someone with better contacts, who can offer better wages. There should be someone like this in Slums. As for the merchandise - you heared that there are people in Guard who are dealing in goods from outside the barrier. There are two recurring names: Albert Konus and Barnaba. You should probably get to know them better.
+**Krótki opis**: Na ma aspiracje, by zostać niezależną handlarką. Do tego potrzebuje towarów, fantów. Nic jej tak nie pomoże jak zaangażowanie w interes przemytniczy oraz praca na zamku.
+
+### Wpis 47
+**Nazwa wątku**: Honor amongs thieves
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Na
+**Kolejność**: 31
+**Wpis fabularny**: You know perfectly well that you’re not the only one who sees the Castle as a source of illegal income. You’ve seen at least once how things quietly disappear into Vivienne's sleeves, never to be seen in the Castle again. She seems to derive some kind of pleasure from this, as if stealing things was just a play for her.
+And then there’s Mario — newest in Service, a master swordsman who clearly has his eye on Gomez’s treasure vault…
+Each of these people could be either an ally in planning a bigger heist, a rival in the race for riches, or a competitor, who would not hestitate to tell on you. One thing is certain — you need to keep an eye on them.
+
+### Wpis 48
+**Nazwa wątku**: Licence to steal
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Na
+**Kolejność**: 32
+**Wpis fabularny**: You steal things from the castle and so far you were quite content with the limited scope of your operation. But then you began to hear rumors... whispers about an organization that federates the best thieves in the Colony. There are supposingly organising a stealing competition with the price beeing admision to their guild and to real money. It might be something you could be interested in. There are for certain some people amongs the Shadows that could give you more details.
+
+### Wpis 49
+**Nazwa wątku**: Striking a chord
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Na
+**Kolejność**: 33
+**Wpis fabularny**: Every time you sit down in the Castle with your instrument and start to play, you feel strange chill. For a long time, you couldn’t find its source — until one day, during a performance, your eyes met Anik’s gaze.
+It was filled with pure, cold hatred — of the kind that can freeze over lakes. He used to be the only musician in the castle, now there are three. He obviously considers both you and Dacjan a threat to his standing. After all, each Baron can have only one favourite servant and the sole reason he become Sam's pet was because of his skill. Sentiments aside - besting him might be a sound way to improve your position. But you can be sure he won't give up easily.
+**Krótki opis**: Na umie grać na instrumentach. Magnaci uwielbiają czuć się jak prawdziwi mecenasi sztuki. To podbija im małostkowe poczucie władzy. Największym miłośnikiem muzyki i poezji zdaje się być Magnat Sam. Możliwe,że w ten sposób można zyskać jego protekcję i przychylność.
+
+### Wpis 50
+**Nazwa wątku**: Trudne początki
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Tuna
+**Kolejność**: 30
+**Wpis fabularny**: Miałaś cichą nadzieję, że pensja Służącej podreperuje nieco twoje finanse, ale szybko przekonałaś się, że kwoty, które otrzymują pracujący na Zamku to zaledwie grosze. Pozostali służący wydają się jednak wydawać znacznie więcej, niż wynoszą wasze niewielkie żołdy. Powinnaś się zainteresować, czy gdzieś tu na Zamku nie kręci się pod nosem magnatów jakiś dochodowy interes...
+**Krótki opis**: Pozostali służący maja różne źródła dochodów. Aby rozpocząć własną działalność przydałyby się jakieś środki. Druga, bądź trzecia pensja. Tuna powinna znaleźć sposób na ,,drugi etat" i zdobycie dodatkowych dochodów.
+
+### Wpis 51
+**Nazwa wątku**: Dwie rzeczy są pewne- Gomez i podatki
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Tuna
+**Kolejność**: 31
+**Wpis fabularny**: Podatki w Starym Obozie nie są tak naprawdę niczym innym, jak zwykłym, usankcjonowanym rozbojem. Stawki, które Anders narzuca na niezależnych przedsiębiorców duszą i odbierają chęć do starania się. Musi być jednak jakiś sposób, by wypracować jakieś zwolnienie podatkowe dla szwalni... lub przynajmniej zmniejszenie stawek. Pracujesz w końcu w miejscu, gdzie przebywa główna władza w obozie  - Magnaci, jeśli dobrze ich rozegrać, z pewnością mogą ci tym pomóc.
+**Krótki opis**: Nie da się wyżyć z krawiectwa przy tych wysokich haraczach. Tuna musi znaleźć sposób by jej interes krawiecki nie został zakopany przez rosnące podatki.
+
+### Wpis 52
+**Nazwa wątku**: Nowe szaty magnata
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Tuna
+**Kolejność**: 32
+**Wpis fabularny**: Większość skarbów i lepszych materiałów, które trafiają do Starego Obozu, prędzej czy później trafia do Magnatów. Wszystkie piękne stroje, którymi podkreślają swój status, pochodzą spoza bariery. Ale może tak niekoniecznie musi być?  Jesteś przekonana, że gdybyś tylko miała odpowiedni materiał, byłabyś w stanie wykonać piękne dzieło sztuki, godne magnatów. To także z pewnością poprawiłoby twoją pozycję na Zamku. Ktoś w Kolonii musić mieć dostęp do czegoś takiego...
+**Krótki opis**: Wszystkie błyskotki i wykwintne ubrania, które posiadają samozwańczy magnaci pochodzą ze świata zza bariery. A co gdyby Tanka sama szyła ubrania dla magnatów? Wtedy na pewno nie brakowałoby jej ani rudy ani szacunku. Znajdź źródło wykwintnych materiałów.
+
+### Wpis 53
+**Nazwa wątku**: Chłodna publika
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Dacjan
+**Kolejność**: 30
+**Wpis fabularny**: Może nie jesteś bardzo przekonany co do jakości twojej gry, ale wiesz o kimś, kto zdecydowanie jest. I jest to pewien problem. Anik to ulubiony służący Magnata Sama i, do niedawna, jedyny muzyk na Zamku. Widziałeś jak na ciebie patrzy - za każdym razem, gdy grasz, jego wzrok przepełniony jest czystą, zimną nienawiścią. Uważa cię za zagrożenie dla swojej pozycji, tego możesz być pewien. Może to wskazówka? Może faktycznie powinieneś postarać się wskoczyć na jego miejsce u boku Sama? Tak czy siak - gdy Anik jest blisko ciebie, musisz mieć oczy z tyłu głowy.
+
+### Wpis 54
+**Nazwa wątku**: Informacja na miarę bezpieczeństwa
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Dacjan
+**Kolejność**: 31
+**Wpis fabularny**: Zamek to miejsce pełne wiedzy - wypełnione zarówno plotkami, jak i zupełnie prawdziwymi infomacjami. Jest jedna osoba, która trzyma nad nimi wszystkimi pieczę: Alvarez, Magnat od "bezpieczeństwa". Nie masz nerwów na zostanie pełnoprawnym szpiegiem, ale nieszkodliwe zbieranie informacji - to mógłbyś mu zaoferować. A może przy okazji w jego otoczeniu dowiesz się czegoś, co wreszcie będzie można wymienić na choć odrobinę poczucia bezpieczeństwa?
+
+### Wpis 55
+**Nazwa wątku**: Gloria victoribus
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Dacjan
+**Kolejność**: 32
+**Wpis fabularny**: Przyszedł ci ostatnio pomysł, jak mógłbyś w znaczący sposób polepszyć twoje notowania jako muzyk. Znany ci jest koncept bitwy bardów, w której dwóch muzyków staje naprzeciwko siebie i prowadzi melodyjną bitwę na obelgi. Gdyby udało ci się wygrać takie starcie - z pewnością zaimponujesz wszystkim magnatom. A jak zapewnić sobie zwycięstwo? Znaleźć samemu wcześniej "przeciwnika", dogadać z nim to, jakie "obelgi" będą lecieć w twoim kierunku i mieć przygotowane najciętsze z ripost. I wtedy tylko czekać na ucztę (albo inny moment, gdy wszyscy magnaci siedzą i się nudzą) i upewnić się że jej trakcie podstawiony figurant pojawi się przed zamkiem, wyzwie jego muzyków, a potem podłoży się tobie, jako czempionowi starego obozu. Ruda, którą mu zapłacisz, będzie warta tej chwały. W Nowym Obozie albo na bagnie spewnością znajdzie się ktoś, kto pójdzie na taki układ.
+
+### Wpis 56
+**Nazwa wątku**: Zasadnicza szkoła zawodowa sildeńskiej szermierki
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Mario Majestro
+**Kolejność**: 30
+**Wpis fabularny**: Plotki o twoich umiejętnościach szermierczych rozeszły się w koloni szerokim echem. To właśnie dzięki nim dostałeś tę pracę - mówią, że sam Gomez chciał mieć pod ręką osobę o takich talentach. Wygląda więc na to, że musisz brnąć w to dalej. Czy oni wszyscy naprawdę się nie zorientowali?
+
+### Wpis 57
+**Nazwa wątku**: Archoloska robota
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Mario Majestro
+**Kolejność**: 31
+**Wpis fabularny**: Jak zapisać się na kartach historii? Co zrobić, by mówiono o tobie nawet długo po twojej śmierci? Skok. Ale nie taki zwykły. Nie chodzi o obrabowanie w maskach paru frajerów, którzy akurat napatoczą się na trakcie. Nie. Chodzi o złodziejstwo takiej klasy, że nawet Lares będzie bił ci pokłony. Długo szukałeś swojego celu i w końcu się udało. Pijany sługa zamkowy, który wymknął się do karczmy, zdradził ci, że istnieje coś takiego, jak skarbiec Gomeza. Piękna skrzynia, w której jest ruda, artefakty, a może nawet pozostałości po królewskich oddziałach sprzed powstania bariery. Wszystkie te łupy, które zagrabił magnatom w trakcie rebelii. Teraz zostaje tylko zebrać ludzi, opracować plan i wykonać skok stulecia. Jeżeli miałbyś na kogoś wskazywać, to Smalec Faja brzmi jak gość, który nie obsra gaci na myśl o napadzie i może się dać do niego przekonać, a ma łeb i kiedyś był cieniem.
+**Zaangażowane frakcje**: Kopacze
+
+### Wpis 58
+**Nazwa wątku**: Wątki do podwiązania
+**Zakres wątku**: Postać
+**Wymień członków**: Nie
+**Nazwa klasy / grupy / postaci**: Mario Majestro
+**Kolejność**: 32
+**Wpis fabularny**: Nawet, jesli uda ci się skok - w Starym Obozie będziesz spalony. Musisz zawczasu postarać się o drogę ucieczki do miejsca, w którym będziesz choć trochę poza zasięgiem długich rąk Gomeza. Bagno albo Nowy Obóz. Obie te opcje nie są jakoś bardzo pociągające - pierwsze ma paskudny klimat a w drugim musiałbyś się tłumaczyć dlaczego porzuciłeś zleconą ci misję inflitracji - ale nie bardzo masz inne... Chyba, że przyjmiesz zuplnie odmienne podejście: znaleźć frajera, na którego wszystko zwalisz, który zostanie skazany, osądzony i, miejmy nadzieję, zabity (w tym ostatnim może wymagać nieco pomocy). Wtedy nie musiałbyś nigdzie uciekać...
+
+## Arkusz: Data_Validation
+----------------------------------------
+
+### Wpis 1
+**Klasa**: Grupa
+**Nie**: Tak
+**__EMPTY**: Nie
+**#REF!**: Nie
+**Beza**: Faust
+**Beza_1**: Faust
+**Beza_2**: Faust
+**Beza_3**: Faust
+**Beza_4**: Faust
+**Beza_5**: Faust
+**Beza_6**: Faust
+**Beza_7**: Faust
+**Ulubieni Służący**: Szeregowi Służący
+**Ulubieni Służący_1**: Szeregowi Służący
+**Beza_8**: Faust
+**Beza_9**: Faust
+**Beza_10**: Faust
+**Beza_11**: Faust
+**Beza_12**: Faust
+**Beza_13**: Faust
+**Beza_14**: Faust
+**Beza_15**: Faust
+**Beza_16**: Faust
+**Beza_17**: Faust
+**Beza_18**: Faust
+**Beza_19**: Faust
+**Ulubieni Służący_2**: Szeregowi Służący
+**Ulubieni Służący_3**: Szeregowi Służący
+**Beza_20**: Faust
+**Beza_21**: Faust
+**Beza_22**: Faust
+**Beza_23**: Faust
+**Beza_24**: Faust
+**Beza_25**: Faust
+**Beza_26**: Faust
+**Beza_27**: Faust
+
+### Wpis 2
+**Klasa**: Postać
+**Nie**: Nie
+**#REF!**: Nie
+**Beza**: Anik
+**Beza_1**: Anik
+**Beza_2**: Anik
+**Beza_3**: Anik
+**Beza_4**: Anik
+**Beza_5**: Anik
+**Beza_6**: Anik
+**Beza_7**: Anik
+**Ulubieni Służący**: Szeregowi Służący ENG
+**Ulubieni Służący_1**: Szeregowi Służący ENG
+**Beza_8**: Anik
+**Beza_9**: Anik
+**Beza_10**: Anik
+**Beza_11**: Anik
+**Beza_12**: Anik
+**Beza_13**: Anik
+**Beza_14**: Anik
+**Beza_15**: Anik
+**Beza_16**: Anik
+**Beza_17**: Anik
+**Beza_18**: Anik
+**Beza_19**: Anik
+**Ulubieni Służący_2**: Szeregowi Służący ENG
+**Ulubieni Służący_3**: Szeregowi Służący ENG
+**Beza_20**: Anik
+**Beza_21**: Anik
+**Beza_22**: Anik
+**Beza_23**: Anik
+**Beza_24**: Anik
+**Beza_25**: Anik
+**Beza_26**: Anik
+**Beza_27**: Anik
+
+### Wpis 3
+**#REF!**: Nie
+**Beza**: Tanka
+**Beza_1**: Tanka
+**Beza_2**: Tanka
+**Beza_3**: Tanka
+**Beza_4**: Tanka
+**Beza_5**: Tanka
+**Beza_6**: Tanka
+**Beza_7**: Tanka
+**Ulubieni Służący**: Hazardziści Służący
+**Ulubieni Służący_1**: Hazardziści Służący
+**Beza_8**: Tanka
+**Beza_9**: Tanka
+**Beza_10**: Tanka
+**Beza_11**: Tanka
+**Beza_12**: Tanka
+**Beza_13**: Tanka
+**Beza_14**: Tanka
+**Beza_15**: Tanka
+**Beza_16**: Tanka
+**Beza_17**: Tanka
+**Beza_18**: Tanka
+**Beza_19**: Tanka
+**Ulubieni Służący_2**: Hazardziści Służący
+**Ulubieni Służący_3**: Hazardziści Służący
+**Beza_20**: Tanka
+**Beza_21**: Tanka
+**Beza_22**: Tanka
+**Beza_23**: Tanka
+**Beza_24**: Tanka
+**Beza_25**: Tanka
+**Beza_26**: Tanka
+**Beza_27**: Tanka
+
+### Wpis 4
+**Klasa**: Służący
+**#REF!**: Nie
+**Beza**: Knot
+**Beza_1**: Knot
+**Beza_2**: Knot
+**Beza_3**: Knot
+**Beza_4**: Knot
+**Beza_5**: Knot
+**Beza_6**: Knot
+**Beza_7**: Knot
+**Ulubieni Służący**: Służący PL
+**Ulubieni Służący_1**: Służący PL
+**Beza_8**: Knot
+**Beza_9**: Knot
+**Beza_10**: Knot
+**Beza_11**: Knot
+**Beza_12**: Knot
+**Beza_13**: Knot
+**Beza_14**: Knot
+**Beza_15**: Knot
+**Beza_16**: Knot
+**Beza_17**: Knot
+**Beza_18**: Knot
+**Beza_19**: Knot
+**Ulubieni Służący_2**: Służący PL
+**Ulubieni Służący_3**: Służący PL
+**Beza_20**: Knot
+**Beza_21**: Knot
+**Beza_22**: Knot
+**Beza_23**: Knot
+**Beza_24**: Knot
+**Beza_25**: Knot
+**Beza_26**: Knot
+**Beza_27**: Knot
+
+### Wpis 5
+**#REF!**: Nie
+**Beza**: Vivienne
+**Beza_1**: Vivienne
+**Beza_2**: Vivienne
+**Beza_3**: Vivienne
+**Beza_4**: Vivienne
+**Beza_5**: Vivienne
+**Beza_6**: Vivienne
+**Beza_7**: Vivienne
+**Ulubieni Służący**: Służący ENG
+**Ulubieni Służący_1**: Służący ENG
+**Beza_8**: Vivienne
+**Beza_9**: Vivienne
+**Beza_10**: Vivienne
+**Beza_11**: Vivienne
+**Beza_12**: Vivienne
+**Beza_13**: Vivienne
+**Beza_14**: Vivienne
+**Beza_15**: Vivienne
+**Beza_16**: Vivienne
+**Beza_17**: Vivienne
+**Beza_18**: Vivienne
+**Beza_19**: Vivienne
+**Ulubieni Służący_2**: Służący ENG
+**Ulubieni Służący_3**: Służący ENG
+**Beza_20**: Vivienne
+**Beza_21**: Vivienne
+**Beza_22**: Vivienne
+**Beza_23**: Vivienne
+**Beza_24**: Vivienne
+**Beza_25**: Vivienne
+**Beza_26**: Vivienne
+**Beza_27**: Vivienne
+
+### Wpis 6
+**Klasa**: Skazańcy
+**#REF!**: Nie
+**Beza**: Tuna
+**Beza_1**: Tuna
+**Beza_2**: Tuna
+**Beza_3**: Tuna
+**Beza_4**: Tuna
+**Beza_5**: Tuna
+**Beza_6**: Tuna
+**Beza_7**: Tuna
+**Beza_8**: Tuna
+**Beza_9**: Tuna
+**Beza_10**: Tuna
+**Beza_11**: Tuna
+**Beza_12**: Tuna
+**Beza_13**: Tuna
+**Beza_14**: Tuna
+**Beza_15**: Tuna
+**Beza_16**: Tuna
+**Beza_17**: Tuna
+**Beza_18**: Tuna
+**Beza_19**: Tuna
+**Beza_20**: Tuna
+**Beza_21**: Tuna
+**Beza_22**: Tuna
+**Beza_23**: Tuna
+**Beza_24**: Tuna
+**Beza_25**: Tuna
+**Beza_26**: Tuna
+**Beza_27**: Tuna
+
+### Wpis 7
+**Klasa**: Kopacze
+**#REF!**: Nie
+**Beza**: Kilgara
+**Beza_1**: Kilgara
+**Beza_2**: Kilgara
+**Beza_3**: Kilgara
+**Beza_4**: Kilgara
+**Beza_5**: Kilgara
+**Beza_6**: Kilgara
+**Beza_7**: Kilgara
+**Beza_8**: Kilgara
+**Beza_9**: Kilgara
+**Beza_10**: Kilgara
+**Beza_11**: Kilgara
+**Beza_12**: Kilgara
+**Beza_13**: Kilgara
+**Beza_14**: Kilgara
+**Beza_15**: Kilgara
+**Beza_16**: Kilgara
+**Beza_17**: Kilgara
+**Beza_18**: Kilgara
+**Beza_19**: Kilgara
+**Beza_20**: Kilgara
+**Beza_21**: Kilgara
+**Beza_22**: Kilgara
+**Beza_23**: Kilgara
+**Beza_24**: Kilgara
+**Beza_25**: Kilgara
+**Beza_26**: Kilgara
+**Beza_27**: Kilgara
+
+### Wpis 8
+**Klasa**: Służący
+**#REF!**: Nie
+**Beza**: Na
+**Beza_1**: Na
+**Beza_2**: Na
+**Beza_3**: Na
+**Beza_4**: Na
+**Beza_5**: Na
+**Beza_6**: Na
+**Beza_7**: Na
+**Beza_8**: Na
+**Beza_9**: Na
+**Beza_10**: Na
+**Beza_11**: Na
+**Beza_12**: Na
+**Beza_13**: Na
+**Beza_14**: Na
+**Beza_15**: Na
+**Beza_16**: Na
+**Beza_17**: Na
+**Beza_18**: Na
+**Beza_19**: Na
+**Beza_20**: Na
+**Beza_21**: Na
+**Beza_22**: Na
+**Beza_23**: Na
+**Beza_24**: Na
+**Beza_25**: Na
+**Beza_26**: Na
+**Beza_27**: Na
+
+### Wpis 9
+**Klasa**: Cienie
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+**Beza**: Dacjan
+**Beza_1**: Dacjan
+**Beza_2**: Dacjan
+**Beza_3**: Dacjan
+**Beza_4**: Dacjan
+**Beza_5**: Dacjan
+**Beza_6**: Dacjan
+**Beza_7**: Dacjan
+**Beza_8**: Dacjan
+**Beza_9**: Dacjan
+**Beza_10**: Dacjan
+**Beza_11**: Dacjan
+**Beza_12**: Dacjan
+**Beza_13**: Dacjan
+**Beza_14**: Dacjan
+**Beza_15**: Dacjan
+**Beza_16**: Dacjan
+**Beza_17**: Dacjan
+**Beza_18**: Dacjan
+**Beza_19**: Dacjan
+**Beza_20**: Dacjan
+**Beza_21**: Dacjan
+**Beza_22**: Dacjan
+**Beza_23**: Dacjan
+**Beza_24**: Dacjan
+**Beza_25**: Dacjan
+**Beza_26**: Dacjan
+**Beza_27**: Dacjan
+
+### Wpis 10
+**Klasa**: Strażnicy
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+**Beza**: Mario Majestro
+**Beza_1**: Mario Majestro
+**Beza_2**: Mario Majestro
+**Beza_3**: Mario Majestro
+**Beza_4**: Mario Majestro
+**Beza_5**: Mario Majestro
+**Beza_6**: Mario Majestro
+**Beza_7**: Mario Majestro
+**Beza_8**: Mario Majestro
+**Beza_9**: Mario Majestro
+**Beza_10**: Mario Majestro
+**Beza_11**: Mario Majestro
+**Beza_12**: Mario Majestro
+**Beza_13**: Mario Majestro
+**Beza_14**: Mario Majestro
+**Beza_15**: Mario Majestro
+**Beza_16**: Mario Majestro
+**Beza_17**: Mario Majestro
+**Beza_18**: Mario Majestro
+**Beza_19**: Mario Majestro
+**Beza_20**: Mario Majestro
+**Beza_21**: Mario Majestro
+**Beza_22**: Mario Majestro
+**Beza_23**: Mario Majestro
+**Beza_24**: Mario Majestro
+**Beza_25**: Mario Majestro
+**Beza_26**: Mario Majestro
+**Beza_27**: Mario Majestro
+
+### Wpis 11
+**Klasa**: Magowie Ognia
+**#REF!**: Nie
+
+### Wpis 12
+**Klasa**: Magnaci
+**#REF!**: Nie
+
+### Wpis 13
+**Klasa**: Krety
+**#REF!**: Nie
+
+### Wpis 14
+**Klasa**: Szkodniki
+**#REF!**: Nie
+
+### Wpis 15
+**Klasa**: Najemnicy
+**#REF!**: Nie
+
+### Wpis 16
+**Klasa**: Magowie Wody
+**#REF!**: Nie
+
+### Wpis 17
+**Klasa**: Nowicjusze
+**#REF!**: Nie
+
+### Wpis 18
+**Klasa**: Strażnicy Świątynni
+**#REF!**: Nie
+
+### Wpis 19
+**Klasa**: Guru
+**#REF!**: Nie
+
+### Wpis 20
+**#REF!**: Nie
+
+### Wpis 21
+**Klasa**: Khorinis
+**Nie**: Miasto Khorinis
+**#REF!**: Nie
+
+### Wpis 22
+**Nie**: Farmy
+**#REF!**: Nie
+
+### Wpis 23
+**Klasa**: Myrtana
+**Nie**: Ardea
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+
+### Wpis 24
+**Nie**: Cape Dun
+**#REF!**: Tak
+**__EMPTY_1**: Nie
+
+### Wpis 25
+**Nie**: Montera
+**#REF!**: Nie
+
+### Wpis 26
+**Nie**: Vengard
+**#REF!**: Nie
+
+### Wpis 27
+**Nie**: Silden
+**#REF!**: Nie
+
+### Wpis 28
+**Nie**: Geldern
+**#REF!**: Nie
+
+### Wpis 29
+**Nie**: Faring
+**#REF!**: Nie
+
+### Wpis 30
+**Nie**: Gotha
+**#REF!**: Nie
+
+### Wpis 31
+**Nie**: Trelis
+**#REF!**: Nie
+
+### Wpis 32
+**Klasa**: Varant
+**Nie**: Ishtar
+**#REF!**: Nie
+
+### Wpis 33
+**Nie**: Mora Sul
+**#REF!**: Nie
+
+### Wpis 34
+**Nie**: Bakaresh
+**#REF!**: Nie
+
+### Wpis 35
+**Nie**: Braga
+**#REF!**: Nie
+
+### Wpis 36
+**Nie**: Ben Erai
+**#REF!**: Nie
+
+### Wpis 37
+**Nie**: Lago
+**#REF!**: Nie
+
+### Wpis 38
+**Nie**: Ben Sala
+**#REF!**: Nie
+
+### Wpis 39
+**Klasa**: Archolos
+**Nie**: Miasto Archolos
+**#REF!**: Nie
+
+### Wpis 40
+**Nie**: Silbach
+**#REF!**: Nie
+
+### Wpis 41
+**Nie**: Wilcze Leże
+**#REF!**: Nie
+
+### Wpis 42
+**Nie**: Winnica Rity
+**#REF!**: Nie
+
+### Wpis 43
+**Nie**: Winnica Valerio
+**#REF!**: Nie
+
+### Wpis 44
+**Klasa**: Nordmar
+**Nie**: Klan Młota
+**#REF!**: Nie
+
+### Wpis 45
+**Nie**: Klan Ognia
+**#REF!**: Nie
+
+### Wpis 46
+**Nie**: Klan Wilka
+**#REF!**: Nie
+
+### Wpis 47
+**Klasa**: Wyspy Południowe
+**Nie**: Wyspy Południowe
+**#REF!**: Nie
+
+### Wpis 48
+**Klasa**: Wschodni Archipelag
+**Nie**: Wschodni Archipelag
+**#REF!**: Nie
+
+### Wpis 49
+**#REF!**: Nie
+
+### Wpis 50
+**#REF!**: Nie
+
+### Wpis 51
+**#REF!**: Nie
+
+### Wpis 52
+**#REF!**: Nie
+
+### Wpis 53
+**#REF!**: Nie
+
+### Wpis 54
+**#REF!**: Nie
+
+### Wpis 55
+**#REF!**: Nie
+
+### Wpis 56
+**#REF!**: Nie
+
+### Wpis 57
+**#REF!**: Nie
+
+### Wpis 58
+**#REF!**: Nie
+
+### Wpis 59
+**#REF!**: Nie
+
+### Wpis 60
+**#REF!**: Nie
+
+### Wpis 61
+**#REF!**: Nie
+
+### Wpis 62
+**#REF!**: Nie
+
+### Wpis 63
+**#REF!**: Nie
+
+### Wpis 64
+**#REF!**: Nie
+
+### Wpis 65
+**#REF!**: Nie
+
+### Wpis 66
+**#REF!**: Nie
+
+### Wpis 67
+**#REF!**: Nie
+
+### Wpis 68
+**#REF!**: Nie
+
+### Wpis 69
+**#REF!**: Nie
+
+### Wpis 70
+**#REF!**: Nie
+
+### Wpis 71
+**#REF!**: Nie
+
+### Wpis 72
+**#REF!**: Nie
+
+### Wpis 73
+**#REF!**: Nie
+
+### Wpis 74
+**#REF!**: Nie
+
+### Wpis 75
+**#REF!**: Nie
+
+### Wpis 76
+**#REF!**: Nie
+
+### Wpis 77
+**#REF!**: Nie
+
+### Wpis 78
+**#REF!**: Nie
+
+### Wpis 79
+**#REF!**: Nie
+
+### Wpis 80
+**#REF!**: Nie
+
+### Wpis 81
+**#REF!**: Nie
+
+### Wpis 82
+**#REF!**: Nie
+
+### Wpis 83
+**#REF!**: Nie
+
+### Wpis 84
+**#REF!**: Nie
+
+### Wpis 85
+**#REF!**: Nie
+
+### Wpis 86
+**#REF!**: Nie
+
+### Wpis 87
+**#REF!**: Nie
+
+### Wpis 88
+**#REF!**: Nie
+
+### Wpis 89
+**#REF!**: Nie
+
+### Wpis 90
+**#REF!**: Nie
+
+### Wpis 91
+**#REF!**: Nie
+
+### Wpis 92
+**#REF!**: Nie
+
+### Wpis 93
+**#REF!**: Nie
+
+### Wpis 94
+**#REF!**: Nie
+
+### Wpis 95
+**#REF!**: Nie
+
+### Wpis 96
+**#REF!**: Nie
+
+### Wpis 97
+**#REF!**: Nie
+
+### Wpis 98
+**#REF!**: Nie
+
+### Wpis 99
+**#REF!**: Nie
+
+### Wpis 100
+**#REF!**: Nie
+
+### Wpis 101
+**#REF!**: Nie
+
+### Wpis 102
+**#REF!**: Nie
+
+### Wpis 103
+**#REF!**: Nie
+
+### Wpis 104
+**#REF!**: Nie
+
+### Wpis 105
+**#REF!**: Nie
+
+### Wpis 106
+**#REF!**: Nie
+
+### Wpis 107
+**#REF!**: Nie
+
+### Wpis 108
+**#REF!**: Nie
+
+### Wpis 109
+**#REF!**: Nie
+
+### Wpis 110
+**#REF!**: Nie
+
+### Wpis 111
+**#REF!**: Nie
+
+### Wpis 112
+**#REF!**: Nie
+
+### Wpis 113
+**#REF!**: Nie
+
+### Wpis 114
+**#REF!**: Nie
+
+### Wpis 115
+**#REF!**: Nie
+
+### Wpis 116
+**#REF!**: Nie
+
+### Wpis 117
+**#REF!**: Nie
+
+### Wpis 118
+**#REF!**: Nie
+
+### Wpis 119
+**#REF!**: Nie
+
+### Wpis 120
+**#REF!**: Nie
+
+### Wpis 121
+**#REF!**: Nie
+
+### Wpis 122
+**#REF!**: Nie
+
+### Wpis 123
+**#REF!**: Nie
+
+### Wpis 124
+**#REF!**: Nie
+
+### Wpis 125
+**#REF!**: Nie
+
+### Wpis 126
+**#REF!**: Nie
+
+### Wpis 127
+**#REF!**: Nie
+
+### Wpis 128
+**#REF!**: Nie
+
+### Wpis 129
+**#REF!**: Nie
+
+### Wpis 130
+**#REF!**: Nie
+
+### Wpis 131
+**#REF!**: Nie
+
+### Wpis 132
+**#REF!**: Nie
+
+### Wpis 133
+**#REF!**: Nie
+
+### Wpis 134
+**#REF!**: Nie
+
+### Wpis 135
+**#REF!**: Nie
+
+### Wpis 136
+**#REF!**: Nie
+
+### Wpis 137
+**#REF!**: Nie
+
+### Wpis 138
+**#REF!**: Nie
+
+### Wpis 139
+**#REF!**: Nie
+
+### Wpis 140
+**#REF!**: Nie
+
+### Wpis 141
+**#REF!**: Nie
+
+### Wpis 142
+**#REF!**: Nie
+
+### Wpis 143
+**#REF!**: Nie
+
+### Wpis 144
+**#REF!**: Nie
+
+### Wpis 145
+**#REF!**: Nie
+
+### Wpis 146
+**#REF!**: Nie
+
+### Wpis 147
+**#REF!**: Nie
+
+### Wpis 148
+**#REF!**: Nie
+
+### Wpis 149
+**#REF!**: Nie
+
+### Wpis 150
+**#REF!**: Nie
+
+### Wpis 151
+**#REF!**: Nie
+
+### Wpis 152
+**#REF!**: Nie
+
+### Wpis 153
+**#REF!**: Nie
+
+### Wpis 154
+**#REF!**: Nie
+
+### Wpis 155
+**#REF!**: Nie
+
+### Wpis 156
+**#REF!**: Nie
+
+### Wpis 157
+**#REF!**: Nie
+
+### Wpis 158
+**#REF!**: Nie
+
+### Wpis 159
+**#REF!**: Nie
+
+### Wpis 160
+**#REF!**: Nie
+
+### Wpis 161
+**#REF!**: Nie
+
+### Wpis 162
+**#REF!**: Nie
+
+### Wpis 163
+**#REF!**: Nie
+
+### Wpis 164
+**#REF!**: Nie
+
+### Wpis 165
+**#REF!**: Nie
+
+### Wpis 166
+**#REF!**: Nie
+
+### Wpis 167
+**#REF!**: Nie
+
+### Wpis 168
+**#REF!**: Nie
+
+### Wpis 169
+**#REF!**: Nie
+
+### Wpis 170
+**#REF!**: Nie
+
+### Wpis 171
+**#REF!**: Nie
+
+### Wpis 172
+**#REF!**: Nie
+
+### Wpis 173
+**#REF!**: Nie
+
+### Wpis 174
+**#REF!**: Nie
+
+### Wpis 175
+**#REF!**: Nie
+
+### Wpis 176
+**#REF!**: Nie
+
+### Wpis 177
+**#REF!**: Nie
+
+### Wpis 178
+**#REF!**: Nie
+
+### Wpis 179
+**#REF!**: Nie
+
+### Wpis 180
+**#REF!**: Nie
+
+### Wpis 181
+**#REF!**: Nie
+
+### Wpis 182
+**#REF!**: Nie
+
+### Wpis 183
+**#REF!**: Nie
+
+### Wpis 184
+**#REF!**: Nie
+
+### Wpis 185
+**#REF!**: Nie
+
+### Wpis 186
+**#REF!**: Nie
+
+### Wpis 187
+**#REF!**: Nie
+
+### Wpis 188
+**#REF!**: Nie
+
+### Wpis 189
+**#REF!**: Nie
+
+### Wpis 190
+**#REF!**: Nie
+
+### Wpis 191
+**#REF!**: Nie
+
+### Wpis 192
+**#REF!**: Nie
+
+### Wpis 193
+**#REF!**: Nie
+
+### Wpis 194
+**#REF!**: Nie
+
+### Wpis 195
+**#REF!**: Nie
+
+### Wpis 196
+**#REF!**: Nie
+
+### Wpis 197
+**#REF!**: Nie
+
+### Wpis 198
+**#REF!**: Nie
+
+### Wpis 199
+**Klasa**: #REF!
+**Nie**: Ardea
+**__EMPTY**: Ardea
+**#REF!**: Ardea
+**__EMPTY_1**: Miasto Khorinis
+**#REF!_1**: Miasto Khorinis
+**Beza**: Miasto Archolos
+**Beza_1**: false
+**Beza_2**: false
+**Beza_3**: Wyspy Południowe
+**Beza_4**: Miasto Archolos
+**Beza_5**: Ardea
+**Beza_6**: false
+**Beza_7**: false
+**Ulubieni Służący**: false
+**Ulubieni Służący_1**: false
+**Beza_8**: false
+**Beza_9**: false
+**Beza_10**: false
+**Beza_11**: false
+**Beza_12**: false
+**Beza_13**: false
+**Beza_14**: false
+**Beza_15**: false
+**Beza_16**: false
+**Beza_17**: false
+**Beza_18**: false
+**Beza_19**: false
+**Ulubieni Służący_2**: false
+**Ulubieni Służący_3**: false
+**Beza_20**: false
+**Beza_21**: false
+**Beza_22**: false
+**Beza_23**: false
+**Beza_24**: false
+**Beza_25**: false
+**Beza_26**: false
+**Beza_27**: false
+**FALSE**: false
+**FALSE_1**: false
+**FALSE_2**: false
+**FALSE_3**: false
+**FALSE_4**: false
+**FALSE_5**: false
+**FALSE_6**: false
+**FALSE_7**: false
+**FALSE_8**: false
+**FALSE_9**: false
+**FALSE_10**: false
+
+### Wpis 200
+**Nie**: Cape Dun
+**__EMPTY**: Cape Dun
+**#REF!**: Cape Dun
+**__EMPTY_1**: Farmy
+**#REF!_1**: Farmy
+**Beza**: Silbach
+**Beza_4**: Silbach
+**Beza_5**: Cape Dun
+
+### Wpis 201
+**Nie**: Montera
+**__EMPTY**: Montera
+**#REF!**: Montera
+**Beza**: Wilcze Leże
+**Beza_4**: Wilcze Leże
+**Beza_5**: Montera
+
+### Wpis 202
+**Nie**: Vengard
+**__EMPTY**: Vengard
+**#REF!**: Vengard
+**Beza**: Winnica Rity
+**Beza_4**: Winnica Rity
+**Beza_5**: Vengard
+
+### Wpis 203
+**Nie**: Silden
+**__EMPTY**: Silden
+**#REF!**: Silden
+**Beza**: Winnica Valerio
+**Beza_4**: Winnica Valerio
+**Beza_5**: Silden
+
+### Wpis 204
+**Nie**: Geldern
+**__EMPTY**: Geldern
+**#REF!**: Geldern
+**Beza_5**: Geldern
+
+### Wpis 205
+**Nie**: Faring
+**__EMPTY**: Faring
+**#REF!**: Faring
+**Beza_5**: Faring
+
+### Wpis 206
+**Nie**: Gotha
+**__EMPTY**: Gotha
+**#REF!**: Gotha
+**Beza_5**: Gotha
+
+### Wpis 207
+**Nie**: Trelis
+**__EMPTY**: Trelis
+**#REF!**: Trelis
+**Beza_5**: Trelis
+

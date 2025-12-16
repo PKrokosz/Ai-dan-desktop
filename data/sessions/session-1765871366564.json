@@ -1,0 +1,101 @@
+{
+  "id": "session-1765871366564",
+  "profileName": "Vivienne",
+  "startTime": 1765871366564,
+  "messages": [
+    {
+      "role": "user",
+      "content": "/quest",
+      "timestamp": 1765871366565
+    },
+    {
+      "role": "user",
+      "content": "/q",
+      "timestamp": 1765871411695
+    },
+    {
+      "role": "user",
+      "content": "/side",
+      "timestamp": 1765871414244
+    },
+    {
+      "role": "user",
+      "content": "/hook",
+      "timestamp": 1765871416779
+    },
+    {
+      "role": "user",
+      "content": "/secret",
+      "timestamp": 1765871436162
+    },
+    {
+      "role": "user",
+      "content": "/analiza",
+      "timestamp": 1765871460964
+    },
+    {
+      "role": "user",
+      "content": "/cechy",
+      "timestamp": 1765871502916
+    },
+    {
+      "role": "user",
+      "content": "/frakcja",
+      "timestamp": 1765871538870
+    },
+    {
+      "role": "user",
+      "content": "/ksywka",
+      "timestamp": 1765871571096
+    },
+    {
+      "role": "user",
+      "content": "/pomoc",
+      "timestamp": 1765871590082
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [Imię: Vivienne]",
+      "timestamp": 1765871618499
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [Gildia: Służba]",
+      "timestamp": 1765871653728
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@slabosci?]",
+      "timestamp": 1765871661005
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@aspiracje?]",
+      "timestamp": 1765871693859
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@historia?]",
+      "timestamp": 1765871721769
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@relacje?]",
+      "timestamp": 1765871753787
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@sekret?]",
+      "timestamp": 1765871773423
+    },
+    {
+      "role": "user",
+      "content": "Test deep path: @cecha.imie",
+      "timestamp": 1765871801881
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

@@ -29,12 +29,19 @@ export {
 } from './ui-helpers.js';
 
 // UI Core (primary renderStep source)
-export {
+import {
     renderStep,
     showSettings,
     showTestbench,
     updatePromptConfig
 } from './ui-core.js';
+
+export {
+    renderStep,
+    showSettings,
+    showTestbench,
+    updatePromptConfig
+};
 
 // Step Templates
 export {
@@ -85,8 +92,10 @@ export {
     handleAIStreamChunk
 } from './streaming-handler.js';
 
+export { runCharacterTest } from './character-test-runner.js';
+
 // AI Panel & Dropdowns
-export {
+import {
     toggleDropdown,
     renderQuickActionsDropdown,
     renderModelDropdown,
@@ -94,6 +103,15 @@ export {
     updatePromptPart,
     renderMinimalistAIPanel
 } from './ai-panel.js';
+
+export {
+    toggleDropdown,
+    renderQuickActionsDropdown,
+    renderModelDropdown,
+    renderContextDropdown,
+    updatePromptPart,
+    renderMinimalistAIPanel
+};
 
 // Data Manager (consolidated)
 export {
@@ -123,12 +141,19 @@ export {
 } from './ollama-setup.js';
 
 // Excel Search & Tests
-export {
+import {
     runExcelSearch,
     highlightSearchText,
     clearActiveSteps,
     showAdvancedTests
 } from './excel-search.js';
+
+export {
+    runExcelSearch,
+    highlightSearchText,
+    clearActiveSteps,
+    showAdvancedTests
+};
 
 // Slash Commands & Utils (primary SLASH_COMMANDS source)
 export {
@@ -141,7 +166,27 @@ export {
     copyToClipboard
 } from './slash-commands.js';
 
+// Automated Test
+import {
+    runFullPipelineTest
+} from './automated-test.js';
+
+export {
+    runFullPipelineTest
+};
+
 // Testbench
+import {
+    getTestbenchTemplate,
+    initTestbenchView,
+    runTestbench,
+    cancelTestbench,
+    exportTestbenchReport,
+    selectAllModels,
+    selectAllScenarios,
+    selectTestProfile
+} from './testbench.js';
+
 export {
     getTestbenchTemplate,
     initTestbenchView,
@@ -149,9 +194,36 @@ export {
     cancelTestbench,
     exportTestbenchReport,
     selectAllModels,
-    selectAllScenarios
-} from './testbench.js';
+    selectAllScenarios,
+    selectTestProfile
+};
 
+// ==============================
+// Global Exposure for Legacy HTML
+// ==============================
+if (typeof window !== 'undefined') {
+    window.AppModules = {
+        renderStep,
+        showSettings,
+        showTestbench,
+        showAdvancedTests,
+        renderMinimalistAIPanel,
+        initTestbenchView,
+        runTestbench,
+        cancelTestbench,
+        exportTestbenchReport,
+        selectAllModels,
+        selectAllScenarios,
+        selectTestProfile,
+        runFullPipelineTest
+    };
+
+    // Legacy direct access for onclick="" in HTML
+    window.showSettings = showSettings;
+    window.showTestbench = showTestbench;
+    window.showAdvancedTests = showAdvancedTests;
+    window.renderStep = renderStep;
+}
 // Models Manager (consolidated)
 export {
     OLLAMA_MODELS,

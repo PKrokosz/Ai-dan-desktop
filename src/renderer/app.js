@@ -97,6 +97,21 @@ messageAnimStyle.textContent = `
   .chat-spacer::before { content: '•••'; }
   
   .ai-input-bar { transition: opacity 0.5s ease, transform 0.5s ease; }
+  
+  /* Global Input Width Fix */
+  .ai-input-container {
+      max-width: 900px;
+      margin: 0 auto;
+      left: 0; 
+      right: 0;
+  }
+  
+  /* Match Feed Width to Input */
+  .ai-feed {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+  }
 `;
 document.head.appendChild(messageAnimStyle);
 

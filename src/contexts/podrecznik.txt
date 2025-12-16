@@ -1,0 +1,1679 @@
+1.Przydatne linki	3
+
+2. Informacje Ogólne	3
+
+2.1 Nasze założenia	3
+
+2.2 Słowa Bezpieczeństwa	4
+
+2.3 WYSIWYG, DKWDDK, gra bez przerwy oraz iluzja 360 stopni	5
+
+2.4 Regulamin	6
+
+3. Bezpieczeństwo	6
+
+3.1 Ważne numery telefonów	6
+
+3.2 Punkt medyczny	6
+
+3.3 Osoby zaufania	6
+
+3.4 Wątki miłosne	6
+
+4. Informacje praktyczne	7
+
+4.1 Godziny trwania	7
+
+4.2 Miejsce i dojazd	7
+
+4.3 Nocleg	8
+
+4.4 Wyżywienie	8
+
+4.5 Fotografowie na grze	8
+
+4.6 Opaski akredytacyjne	8
+
+4.7 Alkohol	9
+
+4.8 Papierosy	9
+
+5. Przed larpem	9
+
+5.1 Komisja Strojów	10
+
+5.2 E-learning	11
+
+5.3 Warsztaty	11
+
+6. Preplay	12
+
+6.1 Co to w ogóle jest	12
+
+6.2 Jak się przygotować	12
+
+7. Ekonomia	12
+
+7.1 Przedmioty fabularne	12
+
+7.2 Obrót rudą na grze	12
+
+7.3 Rola kupców na grze	13
+
+7.4 Przykładowe ceny	13
+
+7.5 Fundusze obozu	14
+
+8. Walka	14
+
+8.1 Ogólne zasady	14
+
+8.2 Broń do walki w zwarciu	14
+
+8.3 Broń dystansowa	15
+
+8.3.1 Zasady akredytacji	15
+
+8.3.2 Przebieg akredytacji	16
+
+8.3.3 Źródła dotyczące ustalonych limitów	16
+
+8.3.4 Jak sprawdzić czy moja broń przejdzie?	16
+
+8.3.5 BHP strzelania z łuków	17
+
+8.4 Pancerz	18
+
+8.5 Śmierć	18
+
+8.5 Leczenie	19
+
+9. Walka z potworami	20
+
+9.1 Kwestie ogólne	20
+
+9.2 Składniki z potworów	20
+
+9.3 Postępowanie z martwym potworem	21
+
+10. Arena	21
+
+11. Mechanika zakrywania twarzy	21
+
+12. Znajdźki	21
+
+13. Łowiectwo	22
+
+14. Kradzież	22
+
+14.1 Co wolno kraść	22
+
+14.2 Przechowywanie	23
+
+14.3 Przerwa nocna = przerwa od kradzieży	23
+
+15. Awans postaci w hierarchii gry	24
+
+16. Bagienne ziele	24
+
+17. Podstawy magii dla każdego gracza	25
+
+17.1 Esencje	25
+
+17.2 Zwoje	25
+
+17.3 Rzucanie zaklęć	26
+
+17.4 Odgrywanie efektów zaklęć	27
+
+17.5 Mechanika modlitwy / medytacji	28
+
+18. Magia Zaawansowana	28
+
+18.1 Tworzenie zwojów	28
+
+18.2 Schematy powszechnie znanych zwojów	32
+
+18.3 Magia runiczna	33
+
+18.4 Magia rytualna	34
+
+18.5 Kręgi magii	34
+
+18.5.1 Adepci - „krąg zerowy”	35
+
+18.5.2 Pierwszy krąg	35
+
+18.5.3 Drugi krąg	36
+
+18.5.4 Trzeci krąg	36
+
+18.6 Specjalizacje magiczne	36
+
+19. Podstawy Alchemii dla każdego gracza	37
+
+19.1 Mikstury	37
+
+19.1.1 Mikstury proste:	38
+
+19.1.2 Mikstury zaawansowane:	38
+
+19.2 Odgrywanie efektów mikstur	38
+
+19.3 Rzadkie składniki	39
+
+20. Alchemia Zaawansowana	39
+
+20.1 Wtajemniczenie Alchemiczne	39
+
+20.1.1 Asystent	39
+
+20.1.2 Alchemik	40
+
+20.1.3 Mistrz Alchemii	40
+
+20.2 Warzenie mikstur	40
+
+20.3 Receptury alchemiczne	41
+
+20.3.1 Mikstury proste	42
+
+21. Po larpie	42
+
+21.1 Podsumowania	42
+
+21.2 Wyjście z postaci	42
+
+21.3 Internetowy savoir vivre	42
+
+22. Informacje końcowe	43
+
+22.1 Organizatorzy	43
+
+22.2 Współpraca	43
+
+1.Przydatne linki
+
+Strona internetowa
+
+https://larpgothic.pl
+
+
+
+Instrukcja jak się zgłosić
+
+https://bit.ly/Jak_się_zgłosić_2025
+
+
+
+Wydarzenie
+
+https://www.facebook.com/events/544718798375676
+
+
+
+Grupa na facebooku
+
+https://www.facebook.com/groups/120374448603126
+
+
+
+Discord
+
+https://discord.gg/NNGEg8TUHF
+
+
+
+Regulamin imprezy
+
+https://larpgothic.pl/regulamin
+
+
+
+Wymagania strojowe
+
+https://bit.ly/Podręcznik_Strojów_2025
+
+2. Informacje Ogólne
+
+2.1 Czy ten larp jest dla mnie
+
+Ten larp jest dla Ciebie jeśli:
+
+Zależy Ci na wysokim poziomie immersji i sam chcesz się do niego przyczynić
+
+Nie lubisz mieć niczego podawanego na tacy, chcesz sam zapracować na sukces lub porażkę swojej postaci
+
+Chcesz poczuć brutalny klimat kolonii więziennej, gdzie jesteś tylko trybikiem w wielkiej przestępczej machinie
+
+Preferujesz styl gry „play to lose” i „play for trouble”
+
+Lubisz gry typu „slice of life”
+
+Nie masz trudności z inicjowaniem rozmów i lubisz wychodzić z własnymi pomysłami
+
+Zależy Ci na byciu w community aktywnym przez cały rok
+
+
+
+Ten larp nie jest dla Ciebie jeśli:
+
+Chcesz pojechać na mało wymagającą grę i nie masz czasu na przygotowania
+
+Chcesz się czuć jak główny bohater larpa
+
+Preferujesz historie w których dobro wygrywa a zło ponosi klęskę
+
+Zależy Ci na długich, literackich kartach postaci
+
+Preferujesz styl gry „play to win”
+
+Łatwo się zniechęcasz porażkami
+
+Potrzebujesz żeby to inni gracze zawsze wychodzili do Ciebie z inicjatywą
+
+Źle się czujesz w roli osoby uciśnionej
+
+Nie chcesz podejmować aktywności fizycznej jakim może być przejście między odległymi między sobą poszczególnymi lokacjami
+
+Ponadto ten larp może być wyzwaniem, jeśli dotąd zawsze grałeś w grupie, w której zawsze wspieraliście się nawzajem. Na Gothicu, mimo że gramy we frakcjach, to ostatecznie każdy pracuje na własny rachunek i czasami nie zawaha się wbić przyjacielowi noża w plecy.
+
+
+
+
+
+
+
+
+
+2.2 Słowa Bezpieczeństwa
+
+W trakcie gry może zdarzyć się sytuacja, która z jakichś przyczyn będzie dla ciebie niekomfortowa. Często są to sceny walki, przemocy, tortur, a czasem z pozoru zwykła rozmowa. Możesz moderować daną scenę posługując się następującymi zwrotami:
+
+RED — natychmiast przestań robić to co robisz. Jest to nakaz, po usłyszeniu którego każdy gracz musi się do niego dostosować. Zakończyć daną scenę / zrobić przestrzeń / zejść z tonu.
+
+YELLOW — chcę kontynuować scenę, ale na poziomie intensywności o stopień niższym; zrób krok w tył. Również nakaz. Może być użyty, aby zatrzymać eskalację sceny i odrobinę ją uspokoić.
+
+GREEN — ta scena jest dla mnie zbyt łagodna; jeśli masz ochotę, zagraj ją intensywniej. To słowo jest zachętą, nie musi być brane pod uwagę.
+
+Zachowaj MIR — ten tekst należy kierować do graczy, którzy wychodzą z roli, offtopują lub robią jakiekolwiek inne nieklimatyczne rzeczy, np. na środku lokacji wyciągną telefon. Po usłyszeniu tego powinni poprawić swoje zachowanie i wrócić do gry. Jeśli mimo pouczeń gracz wciąż wychodzi i wybija innych z klimatu, należy zgłosić tę sprawę do MG, a oni odpowiednio zainterweniują.
+
+Symbol „PAX” — czyli skrzyżowane na klatce piersiowej ręce w znak „X”, oznacza że tej postaci tu nie ma, jest poza larpem. Używane niemal wyłącznie przez NPC, może się jednak przydać jeśli z jakichś powodów musicie pilnie opuścić teren gry albo Wasza postać zginie i musicie po cichu przejść do orgówki.
+
+
+
+2.3 WYSIWYG, DKWDDK, gra bez przerwy oraz iluzja 360 stopni
+
+Na Larp Gothic stosujemy kilka larpowych zasad, które mają sprawić, że gra będzie toczyć się bez przeszkód, przestojów i bez wybijania z klimatu. 
+
+Pierwszą z nich jest WYSIWYG (What You See Is What You Get). Oznacza to, że na larpie to co widzisz i robisz ma znaczenie dosłowne. Rozwieszone na sznurku prześcieradło nie symuluje murów obozu, kolega w podartej koszuli nie jest wielkim bogaczem, a Kopacz nie udaje, że wydobywa rudę machając kilofem w powietrzu, tylko naprawdę rozłupuje fragmenty skał w poszukiwaniu bryłek.
+
+Drugą jest DKWDDK (Du Kannst Was Du Darstellen Kannst) czyli „umiesz to, co umiesz pokazać”. Chcesz grać wielkiego gladiatora, słynnego mistrza fechtunku, znanego na wszystkich arenach kontynentu? To umiej walczyć jak słynny mistrz walki, bo dając się pokonać już w pierwszym pojedynku wzbudzisz tylko śmiech. Na larpie nie ma również deklarowania akcji typu „to ja teraz tworzę magiczny zwój”. Zwój musisz przygotować samodzielnie i dosłownie, według odpowiedniego schematu. Nie opanowałeś przed larpem jak działa schemat i w jaki sposób przeliczać esencje na zwoje? To cóż, kiepski z ciebie mag, a zwojów tworzyć nie umiesz. Możesz się tych umiejętności w klimatyczny sposób nauczyć od innych w trakcie gry.
+
+Gra trwa bez przerwy (wyjątkiem jest opisana niżej „przerwa fabularna” w godzinach 1:00-10:00) od momentu rozpoczęcia do momentu zakończenia larpa. Spanie na terenie gry jest możliwe zarówno w drewnianych chatach, wewnątrz kopalni czy we własnych historycznych namiotach, ale tylko w klimatyczny sposób, czyli np. na skórach lub sienniku, pod wełnianym kocem w neutralnym wzorze. Jednocześnie nie musisz się obawiać, że nie wytrzymasz tylu godzin bez przerwy będąc w klimacie — strefa offgame znajduje się tuż za jedną z bram Starego Obozu. Tam też będzie pole namiotowe dla współczesnych namiotów, parking oraz restauracja Rancho Western, gdzie przy stoliku będzie można pogadać i odpocząć od gry.
+
+Iluzja 360 stopni wynika bezpośrednio ze wszystkich poprzednio wymienionych zasad. Gra toczy się wokół nas nieprzerwanie i z możliwie niewieloma elementami psującymi nam pełne wtopienie w świat gry. Jako organizatorzy zrobimy co możemy, by nic nie zakłócało klimatu. Jednak wiele rzeczy takich jak przelatujące nad Czyżowicami samoloty, czy widoczne zza drzew domy, są niestety poza naszą kontrolą, także prosimy o wyrozumiałość w tym względzie.
+
+2.4 Regulamin
+
+Znajomość i przestrzeganie regulaminu obowiązuje każdego uczestnika imprezy! Uczestnictwo w imprezie jest równoznaczne z oświadczeniem, że uczestnik zapoznał się z treścią regulaminu oraz zobowiązuje się go przestrzegać. Uczestnik potwierdza to oświadczenie składając podpis podczas akredytacji przed rozpoczęciem imprezy.
+
+
+
+Regulamin dostępny jest pod linkiem:
+
+https://larpgothic.pl/regulamin
+
+3. Bezpieczeństwo
+
+	3.1 Triggery na larpie
+
+Każdego gracza pytamy przy zgłoszeniu o indywidualne triggery. Są jednak takie, które będą występować w dużej ilości na larpie i trudno będzie ich uniknąć. Są to:	Przemoc (fizyczna, psychiczna i ekonomiczna). Alkohol. Narkotyki. Dym tytoniowy. Prześladowanie (jako ofiara i oprawca). Żebranie. Śmierć. Okaleczanie. Kradzież. Okultyzm. Hazard. Zastraszanie. Tortury. Poniżenie. Bycie pod negatywną presją grupy. System kastowy. Systemowy wyzysk i oszustwa. Poczucie niesprawiedliwości. Potwory. Wulgarny język.
+
+Podczas gry mogą się wydarzyć ciągi niefortunnych zdarzeń, w trakcie których postać traci wszystko i spada na sam dół drabiny społecznej, nie mając żadnych funduszy i perspektyw. Z tego dołka zawsze można się jednak podnieść, czy to samemu, czy prosząc MG o wskazówki.
+
+Na larpie nie będą występowały wątki zawierające przemoc seksualną. Zabronione jest też tworzenie przez graczy takich wątków.
+
+
+
+3.2 Wątki miłosne
+
+Bardzo duża część graczy co roku zaznacza w zgłoszeniach, że nie chcą mieć na naszym larpie styczności z tego typu wątkami. Grupa ta jest na tyle liczna, że postanowiliśmy całkowicie zrezygnować z wplatania ich do fabuły. Z tego względu, jeśli planujecie takie grać, upewnijcie się, że druga osoba wyraża na to zgodę dogadując to przed larpem lub w jego trakcie uzyskując na to wyraźne GREEN.
+
+3.3 Osoby zaufania
+
+W trakcie imprezy dostępne będą osoby zaufania. Każdy uczestnik, który doświadczy przykrej sytuacji, w szczególności spotka się z przemocą, hejtem lub dyskryminacją, może zgłosić się do takiej osoby celem uzyskania wsparcia, pomocy i ewentualnej interwencji. Osoby zaufania zostaną przedstawione na grupie facebookowej i bezpośrednio przed larpem.
+
+3.4 Ważne numery telefonów
+
+Organizator główny — Maciej Antkiewicz: 664 142 018
+
+Punkt Medyczny — Gosia Bednarek: 726 549 247
+
+Numer alarmowy: 112
+
+3.5 Punkt medyczny
+
+Przez cały czas trwania imprezy na terenie Rancha Western będzie dostępny wykwalifikowany ratownik (ew. lekarz / pielęgniarka), dostępny również pod telefonem. Osoby wymagające pomocy szpitalnej zostaną przetransportowane przez organizatorów do najbliższego szpitala.
+
+
+
+
+
+4. Informacje praktyczne
+
+4.1 Godziny trwania
+
+Impreza trwa od środy do niedzieli. 
+
+Na środę planowane są preplaye oraz pierwsze tury warsztatów.
+
+W czwartek będą odbywały się warsztaty dla tych, którzy nie zrobili ich jeszcze w środę, a w okolicach godziny 15 rozpocznie się właściwa część imprezy. Gra będzie trwała nieprzerwanie do soboty wieczorem. Niedziela to dzień na sprzątanie, pakowanie, pożegnania i wyjazdy.
+
+	W trakcie larpa obowiązywać będzie przerwa fabularna w godzinach 1:00-10:00. Nie jest to absolutnie przerwa w larpie, w trakcie jej trwania powinien być cały czas utrzymany klimat gry i obowiązuje zakaz offtopowania. Przerwa oznacza, że Mistrzowie Gry schodzą z terenu żeby odpocząć i na pewno nie będą się działy żadne eventy ani ważne fabularnie wydarzenia. Obowiązuje wtedy też absolutny zakaz kradzieży. Celem tego jest, aby wszyscy gracze mogli się spokojnie wyspać bez martwienia się, że ominą ich ważne wydarzenia albo zostaną w nocy okradnięci. Więcej o tym w rozdziale “Kradzież”.
+
+4.2 Miejsce i dojazd
+
+Impreza odbywa się na terenie Rancza Western w Czyżowicach. Tuż obok terenu gry będzie usytuowane pole namiotowe z sanitariatami oraz wyznaczony parking. Nie wolno parkować pod bramą terenu gry ani w miejscach do tego niewyznaczonych. 
+
+Poza zaznaczonym na mapie parkingiem, organizatorzy planują wynająć dodatkowe pole przeznaczone na parking. 
+
+
+
+
+
+
+
+Miejsce wjazdu na parking (na nie polecamy ustawić nawigację): https://maps.app.goo.gl/iBKpjPrPKqxEYTWn8 
+
+4.3 Nocleg
+
+Do dyspozycji uczestników będzie pole namiotowe położone w strefie off-game, oraz wybrane chatki na terenie gry, w których klimat ma być zachowany non stop. W przypadku chatek konieczne jest przygotowanie klimatycznego posłania (tj. siennik, koce, skóry), żadne nowoczesne elementy nie powinny być widoczne. Chatki są jednak miejscami gdzie priorytetem jest toczenie gry, a nie nocleg, dlatego traktujcie to jako trudno dostępną opcje. 
+
+Dla bardziej wymagających: w Czyżowicach i okolicznych miejscowościach są też hotele i agroturystyki. Wynajęcie tam pokoju leży po stronie uczestnika. Organizatorzy zapewniają dostęp do toalet i pryszniców w strefie off-game.
+
+W konkretnych przypadkach można też nocować w namiotach historycznych, jednak trzeba najpierw ustalić z organizacją fakt posiadania i chęci przywiezienia takiego namiotu. Jest to rozwiązanie sugerowane dla członków Nowego Obozu i Bractwa. 
+
+4.4 Wyżywienie
+
+Wyżywienie będzie dostępne w trakcie trwania głównego larpa, tj. od czwartku wieczorem do soboty wieczorem. Na pozostałe dni (w tym środowe preplaye i pierwszą część czwartku) gracze powinni zapewnić sobie wyżywienie we własnym zakresie. Tuż koło terenu gry znajduje się restauracja „Rancho Western” oferująca posiłki. Na terenie Czyżowic i w okolicznych miejscowościach są restauracje z dowozem.
+
+Na grze dostępne będą czterykuchnie: jedna w karczmie Starego Obozu, druga przy obozowisku Szkodników, trzecia przy lokacji terenowej obozu Bractwa. Dodatkowo zostanie utworzona wydawka pod kopalnią w slumsach Kopaczy, gdzie będzie trafiać jedzenie z pozostałych kuchni.. Za posiłki będzie płacić się klimatyczną walutą, czyli bryłkami rudy, które gracze będą mogli zdobyć w trakcie trwania larpa. Jednorazowe talerze, miski i sztućce będą zapewnione przez organizację. Uczestnicy proszeni są o zabranie jedynie własnego klimatycznego kubka.
+
+Jeśli jako postaci nie macie czym aktualnie zapłacić za jedzenie, zawsze możecie zaproponować karczmarzowi jakąś przysługę w zamian za porcję, bez trudu coś dla Was znajdzie.
+
+Zastrzegamy też, że przygotowywanie jedzenia w terenie jest bardzo podatne na opóźnienia spowodowane pogodą, nie jesteśmy więc w stanie zagwarantować stałych godzin posiłków. Szczególnie dotyczy to śniadania - zanim uda się rozpalić ogień i wszystko przygotować, godzina może być już nieco późniejsza. Prosimy więc o wyrozumiałość i powstrzymanie się od uwag w kierunku kucharzy.
+
+4.5 Fotografowie na grze
+
+Podczas larpa zdjęcia mogą robić tylko osoby upoważnione do tego przez organizatorów. Gracze nie powinni robić zdjęć, ponieważ będzie to wybijało ich samych oraz osoby postronne z klimatu gry. Fotografowie nie będą grali i będą starali się nie ingerować w sceny. Gracze proszeni są o niewchodzenie z nimi w interakcje i nie przeszkadzanie im w pracy. Podpisując regulamin imprezy uczestnik wyraża zgodę na publikowanie zdjęć i nagrań z jego wizerunkiem w mediach społecznościowych i na stronie internetowej imprezy w celach archiwistycznych i promocyjnych.
+
+Chcesz przyjechać na Larp Gothic jako fotograf? Skontaktuj się z nami!
+
+4.6 Opaski akredytacyjne
+
+Każdy przy akredytacji otrzymuje materiałową opaskę z numerem. Czemu to służy? Możesz tym numerem podpisać swoje przedmioty, które wprowadzasz na grę, by łatwiej je znaleźć. Jeśli chcesz zgłosić groźne zachowanie innego gracza, nie musisz znać jego imienia, wystarczy numer opaski. W razie sytuacji nagłych, po numerze możemy szybko skojarzyć gracza z jego imieniem i nazwiskiem.
+
+Opaski mają też różne kolory, po których można poznać kto się czym zajmuje:
+
+Gracze mają kolor czarny,
+
+Mistrzowie Gry (MG), czyli osoby decyzyjne w kwestiach fabularnych do których możesz kierować wszelkie pytania o fabułę gry, mają kolor czerwony,
+
+NPC i techniczni, czyli osoby które mogą doradzić w kwestiach logistycznych, mają kolor pomarańczowy,
+
+Media i fotografowie mają kolor niebieski,
+
+Główni organizatorzy, czyli osoby które zajmują się rozwiązywaniem najpoważniejszych problemów i fuckupów oraz są decyzyjne w kwestiach logistyczno-organizacyjnych, mają kolor fioletowy.
+
+
+
+	Meta info - jeśli jesteś Strażnikiem pilnującym bramy, bandytą napadającym kogoś na trakcie itp., a osoba której nie chcesz przepuścić lub którą napadasz wyciągnie rękę i pokaże ci swoją opaskę (w innym kolorze niż czarny), znaczy to, że ma tutaj do załatwienia coś związanego z organizacją larpa i tymczasowo należy traktować ją jak powietrze. Może to być np. NPC, który musi podrzucić ważny rekwizyt do zamku Gomeza i w tym celu musi minąć wszystkie straże lub fotograf, który samotnie spaceruje traktem szukając ciekawej akcji.
+
+Numery na opaskach - opaski akredytacyjne będą ponumerowane, a numer przypisany do gracza. Ma to ułatwić identyfikację w wypadku zgłoszenia niebezpiecznego zachowania, albo w sytuacjach nagłych. Jeśli gracz wprowadza jakieś przedmioty na grę (np broń, rzeczy do kradzieży) sugerujemy aby na naklejkach, które na nich będą, napisać numer swojej opaski. Dzięki temu zgubione po grze przedmioty łatwiej wrócą do właścicieli.
+
+4.7 Alkohol
+
+Pewna ilość alkoholu będzie dostępna do kupienia podczas gry za bryłki rudy. Będzie to niskoprocentowe piwo lane, więc należy mieć na nie swój własny kufel/kubek.
+
+Jest też możliwość wniesienia własnego alkoholu w klimatycznych butelkach. Prosimy jednak o picie „z głową”. Osoby wykazujące oznaki daleko posuniętej nietrzeźwości i zachowujące się agresywnie, bądź psujące klimat, będą bezwzględnie wypraszane z larpa.
+
+Organizatorzy nie zapewniają alkoholu na before, ani też after party. Warto przygotować go sobie we własnym zakresie.
+
+4.8 Papierosy
+
+Na larpie jest kategoryczny zakaz palenia własnych papierosów, bądź wnoszenia swojego tytoniu na teren na którym odbywa się larp. Podczas gry wolno palić tylko tytoń kupiony za fabularną walutę od graczy zajmujących się fabularnie handlem bagiennym zielem (patrz „16. Bagienne ziele”). Jest to rozwiązanie wprowadzone celem napędzania ekonomii na grze, a próby jego obejścia będą niemile widziane. Własne papierosy można palić jedynie na strefie off-game.
+
+5. Przed larpem
+
+Czyli rzeczy które trzeba załatwić zanim rozpocznie się larp.
+
+5.1 Komisja Strojów
+
+Będziemy prosili graczy o przesłanie zdjęć swoich strojów w celu weryfikacji czy pasują do stylistyki i założeń larpa. Jeśli wykonaliście strój według zasad Standardów Strojów, nie macie się o co martwić. Zdjęcie najlepiej przesłać jak najszybciej, aby mieć czas na wprowadzenie ewentualnych poprawek. Akceptacja stroju jest jednym z niezbędnych elementów, aby postać została oznaczona jako „gotowa”. Zdjęcia wysyłajcie na adres e-mail stroje@larpgothic.pl. Stroje będą ostatecznie akceptowane TYLKO poprzez maila. Wysyłanie zdjęć na Messengerze nie równa się akceptacji i prosimy nie konsultować się z nami tą drogą.
+
+5.2 E-learning
+
+Na około miesiąc przed larpem zostanie opublikowany test ze znajomości podstaw lore Gothica, zasad larpa i niniejszego dokumentu. Pytania nie będą trudne, bo test ma jedynie na celu zweryfikowanie czy gracz przeczytał najważniejsze dokumenty na temat larpa i zrozumiał jego zasady.
+
+5.3 Warsztaty
+
+W środę przed preplayem oraz w czwartek przed właściwą grą odbędą się warsztaty, których zaliczenie jest obowiązkowe. Po przyjechaniu na miejsce larpa należy udać się na najbliższy ich termin. Będą przeprowadzane wielokrotnie, a godziny startu będą zaznaczone w grafiku imprezy.
+
+Gracze, którzy byli u nas w zeszłym roku, mają możliwość zwolnienia się z warsztatów poprzez wypełnienie specjalnego „E-learningu dla weteranów”, w którym będziemy pytać o zmiany względem zeszłego roku. Ten test będzie trudniejszy do zaliczenia i są do niego tylko 2 podejścia. Taką możliwość mają tylko gracze zeszłoroczni, więc jeżeli miałeś rok przerwy, to musisz zaliczyć całość.
+
+Dla graczy wcielających się w alchemików i magów będą specjalne warsztaty z tych mechanik, by uniknąć błędów i nieporozumień w trakcie gry. Ich godziny również będą ujęte w grafiku.
+
+6. Preplay
+
+6.1 Co to w ogóle jest
+
+Będzie to kilka krótkich larpów osadzonych w realiach uniwersum Gothica. Można grać na nich swoją postacią w przeszłości albo kimś zupełnie innym. Nie będzie miało to żadnego wpływu na fabułę gry głównej. Uczestnictwo w preplayu nie jest obowiązkowe, jednak bardzo je polecamy, szczególnie jeśli nie masz doświadczenia larpowego lub chcesz trochę się „rozgrzać” przed główną częścią larpa.
+
+Zapisy na preplaye będą odbywać się przez stronę internetową na zasadzie „kto pierwszy ten lepszy”. W tym roku planujemy puścić też kilka z preplayów w języku angielskim.
+
+6.2 Jak się przygotować
+
+Przy każdym preplayu zostaną zaznaczone wymagania strojowe. W znaczącej większości będzie to tylko neutralny klimatyczny strój, czyli zwykła koszula i spodnie. O ewentualnych dodatkowych wymaganiach będziemy informować w opisie gry.
+
+7. Ekonomia
+
+7.1 Przedmioty fabularne
+
+Na początku gry każdy gracz rozpoczyna grę z określoną ilością rudy w zależności od gildii do której należy, a do tego każdy Mag dostaje startowe esencje. Absolutnie zakazane jest wchodzenie na grę z rudą, esencjami, zwojami czy miksturami, które zachowaliśmy z poprzednich lat.
+
+Pamiętaj, że po grze należy zwrócić esencje, rudę i inne przedmioty (nie będące znajdźkami), które dostałeś w ramach gry.
+
+Poza strojem i bronią warto zwrócić uwagę na inne przedmioty z którymi chcemy zacząć grę. O ile kości czy prosty kubek jest normalnym wyposażeniem dla praktycznie każdej gildii, tak jeśli chcesz zacząć z czymś nietypowym, dobrze napisać w tej kwestii do swojego MG. Rzadkie księgi, piękne puchary, skrzynka piwa, zestaw malarza itp. mogą być ważnym elementem fabuły i zamiast zaczynać z nimi, warto skontaktować się z MG i przekazać je w depozyt. W ten sposób będziesz mógł je kupić u handlarza, ukraść NPC lub po prostu stworzyć wątek, który ubarwi i wyjaśni czemu jesteś w jego posiadaniu.
+
+7.2 Obrót rudą na grze
+
+Przepływ rudy między graczami jest realnym i żywym zjawiskiem na grze. Kopacze ciężko pracują wydobywając rudę i znaczną jej część przekazują Strażnikom, którzy znowu przekazują sporą jej część Magnatom, którzy dzięki temu sponsorują nagrody za wykonywanie zadań. Z drugiej strony Szkodniki kombinują, a Nowicjusze handlują zielem, żeby utrzymać w dobrym stanie finanse swoich obozów, pozwalając Magom i Guru finansować ważne zadania chroniące ich interesy. Jesteś ważnym elementem tej wielkiej machiny i nie bój się spekulować, kupować taniej, by sprzedawać drożej, targować się, kraść przedmioty przeznaczone na kradzież i sprzedawać je potem z zyskiem. Pamiętaj też, że w zależności od gildii w której jesteś, masz pewne obowiązki, które musisz zrealizować dla swojego obozu, jeśli chcesz utrzymać się na swojej pozycji i zarabiać. Jeśli masz jakieś bardziej skomplikowane plany w tej kwestii, nie zapomnij skontaktować się z MG ds. finansów (Karol Łukowski) lub MG opiekującym się twoją gildią.
+
+7.3 Rola kupców na grze
+
+Masz pomysł czym chciałbyś handlować na grze za bryłki rudy? Świetnie! Napisz do MG od finansów (Karol Łukowski) - uzgodnicie pomysł i dostaniesz pomoc od organizacji wedle naszych możliwości. 
+
+Z czym to się wiąże? Dostajesz fabularne zobowiązanie, żeby spłacić długi zaciągnięte na potrzebę zdobycia tego, czym handlujesz. Jeśli chcesz to robić bez zgody Gomeza (lub Guru - jeśli jesteś Nowicjuszem) i zaryzykować jego gniew, twoje początkowe koszty będą niższe, ale ryzyko większe. Jeśli chcesz być uczciwym i jawnym kupcem, zapłacisz więcej, ale będziesz pod ochroną. Tego typu długi będą omawiane indywidualnie i dostosowywane tak, żeby gra była wymagająca, ale przy odpowiednim zaangażowaniu dawała zysk.
+
+7.4 Przykładowe ceny
+
+
+
+Produkt
+
+Dostępność
+
+Cena
+
+Obiad
+
+Karczma, jadłodajnia Snafa, Kuchnia bractwa
+
+5 bryłek rudy
+
+Tanie piwo lub cydr
+
+Karczma, jadłodajnia Snafa
+
+5-9 bryłek rudy
+
+Drogie piwo lub cydr
+
+Karczma, jadłodajnia Snafa, kupcy
+
+10-15 bryłek rudy
+
+Wino, nalewka lub inny alkohol
+
+Karczma, kupcy
+
+15-50 bryłek rudy
+
+Zielony Nowicjusz
+
+Nowicjusze, obozowisko Bractwa Śniącego
+
+4 bryłki rudy
+
+Mrok Północy
+
+Nowicjusze, obozowisko Bractwa Śniącego
+
+8 bryłek rudy
+
+Broń, zbroja
+
+Fisk
+
+20-999 bryłek rudy
+
+Zwój lub mikstura magiczna
+
+Magowie
+
+20-200 bryłek rudy
+
+Mikstura leczenia
+
+Alchemicy
+
+15 bryłek rudy
+
+Esencja
+
+Arcymagowie
+
+3-6 bryłek rudy
+
+Drobna przysługa
+
+Ważne lub bogate postacie
+
+5 bryłek rudy
+
+Zadanie
+
+Twoi przełożeni, ważne postacie
+
+10-20 bryłek rudy
+
+7.5 Fundusze obozu
+
+Najważniejsze gildie w Górniczej Dolinie posiadają swoje skrzynie na oszczędności. Magowie Wody i Ognia, Guru oraz Magnaci oprócz własnego majątku mają możliwość korzystania z takich skrzyń, żeby finansować różne cele obozu.
+
+Mogą oni pobierać ze skrzyni wedle uznania tak długo, jak ich towarzysze to akceptują, a oni zapisują to w rachunkach. Jednakże takie prawo wiąże się z odpowiedzialnością i nierozsądne lub samolubne wydawanie wspólnych funduszy może wiązać się z konsekwencjami. 
+
+Każdy z trzech obozów ma grupę, która zarządza ich finansami. Guru gromadzą rudę na utrzymanie Bractwa, Magowie Wody zbierają rudę na swój wielki plan, a Magnaci starają się, żeby Gomez miał bezpieczne zapasy gwarantujące stały handel nawet na wypadek wypadku w kopalni.
+
+Poza tym każdy obóz ma swoje potrzeby bieżące, reprezentowane przez ładunki spoza Kolonii. Skrzynie z żelazem, jedzeniem i alkoholem są ściągane dzięki Gomezowi, ale bez nich każdy z trzech obozów mógłby upaść. Kluczowym celem dla utrzymania porządku każdego z obozów jest zdobycie odpowiednich zapasów ze zrzutu drogą kupna, negocjacji lub kradzieży.
+
+8. Walka
+
+8.1 Ogólne zasady
+
+Każda postać na grze posiada dwa Punkty Zdrowia (PZ). Czysto wyprowadzony cios, który trafił w punktowaną strefę (wszystkie części ciała, które nie są osłonięte pancerzem, wyłączając głowę i krocze) odbiera postaci jeden PZ. Osoba sprowadzona do 0 PZ pada na ziemię i nie może wstać do zakończenia sceny. Oznacza to, że nie może wpływać na otaczającą ją scenę nie tylko fizycznie, ale także informacyjnie. Jeśli padłeś, to nie krzycz do kolegów o niebezpieczeństwie za rogiem.
+
+Gracz może uznać, że jego postać została sprowadzona do 0 PZ po pierwszym ciosie, jeśli jest to wiarygodne (np. zostaje uderzony w plecy lub jego gardło zostaje poderżnięte) lub napędzi to scenę. Kategorycznie zabronione i niepunktowane są ciosy w głowę i krocze!
+
+Walkę odgrywamy tak, by wyglądała dobrze i jej rezultat miał sens. Jeśli dostałeś, odegraj to stosownie do Twojej postaci. Jeśli jesteś Kopaczem w samej koszuli, to już jedno dziobnięcie ścierwojada może Cię zmieść z pola. Poza tym nieprosto jest zginąć, ale o tym niżej. W przypadku przegranej walki, ogłuszenia lub otrucia powinieneś odgrywać wynikające z tego niedogodności, jednak nie kończysz gry. Nie znaczy to, że możesz być nieśmiertelnym terminatorem – psuje to grę Tobie i innym oraz może spotkać się z poważnymi konsekwencjami ze strony organizatorów.
+
+8.2 Broń do walki w zwarciu
+
+Na grze dopuszczalne jest korzystanie z lateksowych lub poliuretanowych broni  bezpiecznych renomowanych producentów oraz wykonanych samodzielnie. Nie wolno korzystać z tarcz oraz broni drzewcowych. Dodatkowo wprowadziliśmy limit długości uzbrojenia: 
+
+Skazańcy, Kopacze, Cienie, Krety, Szkodniki i Nowicjusze - maks. 110 cm długości,
+
+Strażnicy, Strażnicy Świątynni, Najemnicy, Magnaci - maks. 140 cm długości,
+
+Nie przewidujemy broni dłuższych niż 140 cm długości,
+
+Magowie i Guru mogą używać kosturów, które stanowią rekwizyt. Nie mogą jednak być używane do atakowania, a jedynie do zasłaniania się przed ciosami.
+
+Gracze powinni dostosować swoją broń do zaleceń odpowiednich dla gildii jakimi grają, są one szerzej opisane w Podręczniku Strojów 2024 <link>. Oręż musi przejść pozytywną weryfikację Komisji Strojowej. Dopiero akceptacja przez komisję pozwala na przywiezienie broni na grę i podejście do akredytacji broni.
+
+Podczas akredytacji każdy egzemplarz broni będzie sprawdzany przez organizatorów pod kątem stanu technicznego oraz bezpieczeństwa. Akredytowane egzemplarze broni będą oznaczone niebieską taśmą. Posługiwanie się nieoznaczonym egzemplarzem broni podczas gry jest niedozwolone.
+
+8.3 Broń dystansowa
+
+Na grze dopuszczalne jest używanie łuków i imitacje kusz zgodnych z atestem IDV (zgodność z nim również będzie sprawdzana) oraz dedykowanych strzał. Nie wolno używać strzał samoróbek. Wszyscy łucznicy będą musieli przejść przed larpem obowiązkowe szkolenie z zasad bezpieczeństwa. Łuki i imitacje kusz muszą swoją stylistyką i wykonaniem mieścić się w realiach gry. Gracze mogą używać również innych niż klasyczne imitacje kusz (np. arbaletów), jednakże repliki takie również muszą mieścić się w limicie energii pocisku.
+
+Pamiętajcie - każdy egzemplarz broni strzeleckiej musi przejść akredytację, nawet jeśli przechodził ją już na innym wydarzeniu. Inaczej nie zostanie on dopuszczony do gry.
+
+8.3.1 Zasady akredytacji
+
+Akredytacja odbędzie się w czwartek w wyznaczonym miejscu. Każdy strzelec jest zobowiązany do stawienia się na akredytację broni dystansowej osobiście. Niepojawienie się na akredytacji oznacza zakaz udziału w wydarzeniu w roli strzelca pod groźbą usunięcia z gry. Na akredytację należy przynieść wszystkie egzemplarze broni, które planuje się używać oraz wszystkie pociski. W przypadku łuków, każdy przypisany jest tylko do jednego gracza i nie można przekazać go nikomu innemu przez całą grę.
+
+Zalecane jest używanie strzał i bełtów marki IDV o kulistych grotach. Pociski o gąbczastych (chropowatych) grotach oraz marek Avalon i Mytholon są dopuszczane warunkowo, a pocisków o chropowatych grotach nie należy używać w czasie deszczu i na mokrym terenie. Pociski muszą być w dobrym stanie technicznym, nieuszkodzone. Jedyne dopuszczalne modyfikacje strzał i bełtów to oznaczenia właściciela na promieniu (taśmy, naklejki, farba) oraz zastąpienie oryginalnych lotek lotkami customowymi o powierzchni nie mniejszej niż tych oryginalnych. Strzały z modyfikacjami wprowadzonymi w obszarze pacyny (malowane farbą, owijane folią, z nałożonymi balonikami itp.) lub nocka (np. struganie nocka w celu zmiany jego profilu lub wymiana na wąski nock do strzał ostrych) nie zostaną dopuszczone do gry.
+
+Wszystkie strzały i bełty powinny obowiązkowo posiadać indywidualne oznaczenia promieni wpisane do wspólnej internetowej bazy ułatwiającej identyfikację pocisków. 
+
+
+
+Link do bazy i instrukcji:
+
+https://docs.google.com/spreadsheets/d/1AcDep1V04Kcj942t0TI1XImMZ-Oz3Kbh5k5OxUIKZ2U/edit?usp=sharing
+
+
+
+Akredytacja sprzętu wykonywana będzie za pomocą chronografu mierzącego prędkość wylotową pocisku. Limit energii pocisku jest zgodny z instrukcją producenta pocisków marki IDV i wynosi: dla strzał 27J, a dla bełtów 18J. Jeżeli energia przekracza limit o nie więcej niż 10%, broń ta zostanie dopuszczona warunkowo.
+
+Przeprowadzony zostanie również krótki wywiad z każdym łucznikiem w celu oceny jego poziomu doświadczenia. Osoby biorące udział w larpie jako łucznicy po raz pierwszy lub też nie czujący się pewnie z łukiem w ręku, zobowiązane są do zgłoszenia tego przy akredytacji. Zalecane jest, aby początkujący strzelcy zawsze poruszali się w trakcie gry wraz z innym, doświadczonym strzelcem.
+
+8.3.2 Przebieg akredytacji
+
+W pierwszej kolejności ważony jest pocisk używany z daną bronią (z wyłączeniem łuków, gdyż w ich przypadku wykorzystujemy nasze własne strzały o znanej masie). Osoba przeprowadzająca akredytację (nie gracz) wykonuje z każdej broni 1-3 strzały przez chronograf, z mierzonej prędkości wyciągamy średnią i przeliczamy na energię kinetyczną. Jeżeli energia pocisku mieści się w przewidzianym limicie, broń przechodzi bez problemu. Jeżeli energia przekracza limit o nie więcej niż 10%, postanowiliśmy dopuścić taką broń na to wydarzenie i zostanie ona warunkowo zaakceptowana. W razie gdyby broń przekroczyła limity o więcej niż 10%, nie zostanie dopuszczona do gry. Każdy zaakredytowany strzelec i każda jednostka broni wraz z wynikami pomiaru prędkości zostają wpisane na listę, która pozostaje do wglądu dla organizatorów larpa.
+
+8.3.3 Źródła dotyczące ustalonych limitów
+
+Przy opracowaniu zasad akredytacji staramy się korzystać z obiektywnych źródeł dot. limitów siły pocisków. Korzystamy tutaj z dwóch źródeł, tj:
+
+Dla łuków i kusz - z najnowszej opublikowanej instrukcji głównego producenta strzał i bełtów, czyli IDV,
+
+(https://drive.google.com/file/d/19lmKEdcfq1FF7OJWJiwARKygQKIE0TRm/view?usp=sharing).
+
+Dla innych broni strzelających pociskami odkształcalnymi - wspomagając się europejską normą bezpieczeństwa dot. zabawek: EN 71, ustaliliśmy energię takiego pocisku na maksymalnie 3J.
+
+8.3.4 Jak sprawdzić czy moja broń przejdzie?
+
+Aby mieć absolutną pewność, potrzebujesz dostępu do chronografu. Jeżeli masz do takiego dostęp, wystarczy, że wykonasz przez niego kilka strzałów (ze strzałą naciągniętą do standardowych 28cali), a do wyliczenia energii pocisku użyjesz któregoś z dostępnych kalkulatorów energii kinetycznej (na przykład taki jak tutaj: https://www.calculatorsoup.com/calculators/physics/kinetic.php). Pamiętaj jednak, że twój chronograf może pokazywać delikatnie inny odczyt niż nasz (przyjmuje się dokładność na poziomie +/- 3%), więc jeżeli dostajesz wyniki dokładnie na granicy dopuszczalności, to przemyśl wzięcie jakiejś innej broni, tak na wszelki wypadek. Jeżeli nie dysponujesz chronografem, to musisz sugerować się siłą naciągu łuku podaną przez producenta i oznaczoną na łuku. Z naszego doświadczenia wynika, że łuki do 25 funtów naciągu (ok. 12 kg) w 98 procentach przypadków mieszczą się w limitach bez problemu. Łuki do 30 funtów naciągu (ok. 13.5 kg) zwykle mieszczą się w ustalonych +10% limitu, czyli prawdopodobnie zostaną warunkowo dopuszczone do gry. 
+
+8.3.5 BHP strzelania z łuków 
+
+Trenuj zanim pojedziesz na larpa. Najczęstszą przyczyną wypadków na grze jest brak doświadczenia strzelca. Grupy zrzeszające łuczników larpowych z chęcią pomogą w szkoleniu.
+
+Bądź w pełni trzeźwy. Postrzeganie i reakcje strzelca nie mogą być zniekształcone przez alkohol lub inne substancje psychoaktywne.
+
+Nie strzelaj po zmroku. Wtedy łatwiej o przypadkowe trafienia, a gracz ma mniejsze szanse na zauważenie nadlatującego pocisku. Na misje nocne wychodzimy wyłącznie z bronią do walki wręcz.
+
+Przed oddaniem strzału sprawdź pocisk. Strzały uszkodzone, złamane lub brudne nie mogą zostać użyte. Przed każdą misją sprawdź stan uzbrojenia.
+
+Upewnij się, gdzie trafiłeś. Jeśli przypadkiem kontuzjowałeś gracza, nie bój się przyznać. Wypadki się zdarzają, a znajomość gracza i jego broni jest konieczna do wypłaty ubezpieczenia (również od producenta broni).
+
+Bądź asertywny. Tylko Ty odpowiadasz za strzały, które oddasz. Nie pozwól innym graczom, aby decydowali za Ciebie, kiedy i gdzie posyłać Twoje pociski.
+
+Nie można strzelać cudzymi strzałami, strzelać z cudzego łuku, imitacji kuszy czy rzucać bronią miotaną. Nie można też takiej broni pożyczać. Zarówno broń jak i oznaczone strzały są bezwzględnie przypisane do miotacza / strzelca, miotacz / strzelec jest odpowiedzialny za obrażenia wykonane swoim zestawem. 
+
+Zostań po bitwie, aby pomóc innym zbierać pociski. Grupą, szukając w sposób zorganizowany, dużo łatwiej jest odnaleźć zagubione strzały.
+
+Dbaj o bezpieczeństwo leżących pocisków. Jeśli widzisz strzałę na drodze innych graczy, w miarę możliwości staraj się ją stamtąd usunąć. Jeśli jesteś martwy / ranny, nie chowaj jej do kołczanu, tylko odłóż w bezpiecznym miejscu.
+
+Nie wolno celować w głowę bez względu na okoliczności.
+
+Nie wolno strzelać z dystansu mniejszego niż 10m. Strzelanie z mniejszego dystansu będzie skutkowało arbitrażem oraz konsekwencjami.
+
+Jeśli przeciwnik skraca dystans i nie możemy strzelić z minimum 10m to zwiększamy znacznie dystans, wyciągamy broń boczną, albo uciekamy.
+
+Jeśli macie dynamiczną broń, nie napinajcie łuku w pełni z bliskiego dystansu (10m).
+
+W Starym Obozie jest zakaz stosowania broni miotanej. Zbyt duża populacja, małe pole manewru, chaos.
+
+Nie ryzykujemy i nie strzelamy kiedy mamy wątpliwą sytuację bezpieczeństwa. Jeśli jest chaos w walce i nie możemy znaleźć „okienka” pomiędzy swoim oddziałem to nie strzelamy. Strzał z nienacka w oko odwróconego sojusznika, który akurat wlazł nam w pole strzału z dwóch metrów może skończyć się operacją. Większość strzałów z łuku jest zupełnie bezpieczna, natomiast strzały krytyczne w oczodół potrafią być bardzo niebezpieczne.
+
+Celuj nisko z bliskiego i średniego dystansu (jama brzuszna, nogi).
+
+
+
+Baza oznaczeń strzał i bełtów: 
+
+https://docs.google.com/spreadsheets/d/1AcDep1V04Kcj942t0TI1XImMZ-Oz3Kbh5k5OxUIKZ2U/edit?usp=sharing
+
+
+
+Instrukcja producenta strzał i bełtów IDV: 
+
+https://drive.google.com/file/d/19lmKEdcfq1FF7OJWJiwARKygQKIE0TRm/view?usp=sharing
+
+
+
+Kalkulator energii kinetycznej:
+
+https://www.calculatorsoup.com/calcul.../physics/kinetic.php
+
+8.4 Pancerz
+
+Pancerz na grze jest uznaniowy i chroni tylko w miejscu założenia. To gracz decyduje ile obrażeń pancerz potrafi wytrzymać. Powinna to być jednak rozsądna i realna ilość (uzależniona np. od materiału z którego wykonana jest zbroja – stalowa płyta wytrzyma więcej niż cienka skóra), maksymalnie 2-3 ciosy. Pancerzem są elementy skórzane, kolcze, metalowe bądź poliuretanowe, które są poprawnie założone i noszone w widocznym miejscu. Zbroja może być też wykonana z pianki EVA, jednak musi ona wyglądać realistycznie. Zbroja powinna być też bezpieczna dla graczy wokoło, zrezygnujcie więc z ostrych wystających krawędzi czy kolców.
+
+8.5 Śmierć
+
+Zachęcamy, by nie traktować śmierci jako sposobu rozwiązywania problemów. Najlepiej zapomnij o możliwości zabijania, od samego początku kreowania konfliktów staraj się dążyć do innych rozwiązań. Jako Szkodnik planuj kradzieże i napady na Kopaczy, ale nie morderstwa na trakcie. Jeśli jesteś Kopaczem i dręczy cię pewien wredny Cień, nie planuj zabójstwa, a raczej spuśćcie mu z kumplami łomot. Takie zagrania będą napędzać rozgrywkę zamiast ją hamować. To samo tyczy się spisków, przewrotów i innych przejawów kąsania ręki, która Cię karmi. Jeśli chcesz to zrobić, zastanów się, czy masz ku temu naprawdę dobre powody i czy przypadkiem nie popsujesz tym komuś gry. 
+
+Jeśli już jednak zdarzy się, że zginąłeś, postaraj się nie zwracać na siebie uwagi. Udaj się do strefy off-game i zapytaj organizatorów co dalej, na pewno coś dla Ciebie wymyślą. Kiedy możesz zginąć? Kiedy jako gracz decydujesz, że to czas na śmierć twojej postaci lub zostaniesz sprowadzony do 0 PZ będąc w posiadaniu Medalionu Beliara.
+
+Medalion Beliara to token mechaniczny, który może zostać wręczony graczowi przez Mistrza Gry. Osoba, która go dostanie, musi cały czas nosić go przy sobie w torbie / kieszeni / na szyi. Nie można go zgubić, ukraść, oddać ani odsprzedać. Tylko MG może go zabrać, gdy zagrożenie życia Twojej postaci już minie. Możesz go dostać, kiedy poważnie podpadniesz komuś i ta osoba chce Cię zabić lub kiedy swoim zachowaniem „prosisz się o śmierć” robiąc wyjątkowo głupie i ryzykowne rzeczy. Medalion Beliara obowiązuje „domyślnie” podczas audiencji u Gomeza.
+
+
+
+Jak można zginąć?
+
+Fabularne zabicie swojej postaci - kiedy uważasz, że jej historia powinna zakończyć się tu i teraz. Najczęściej takie sytuacje wynikają w toku fabuły. 
+
+Zmiana obozu w trakcie larpa - jeżeli ktoś zapisuje się na grę jako Kopacz, to gra Kopacza. Nie stwierdza nagle, że przyłącza się do Nowego Obozu albo że teraz zostaje członkiem Bractwa. Jego rolą jest bycie Kopaczem i trzymanie się tej roli jest istotne, aby struktura naszej gry nie rozleciała się w trakcie jej przebiegu. Nie zabraniamy jednak zmiany obozów, bo wiemy, że i tak skrajnie ryzykowne decyzje zdarzają się pośród ludzi. Chcemy, aby symulacja była jak najbardziej realna, bez sztucznych zasad. Dlatego od lat stosujemy regułę: jeżeli zdradzisz swój obóz, to spodziewaj się zemsty. Jak to wygląda na grze? Gracz, który podczas rozgrywki postanawia zmienić obóz może to zrobić. Jednak musi to zgłosić do MG, który wręczy mu wtedy Medalion Beliara. Za zmianę obozu grozi śmierć. Jest to zdrada, na którą w świecie przestępców nie ma miejsca. Dlatego pamiętajcie: jeżeli chcecie zmienić obóz, każde starcie to ryzyko waszej śmierci.
+
+Na własne życzenie - część postaci aż prosi się o śmierć. Ubliżanie matce Gomeza w Starym Obozie czy inne lekkomyślne prowokowanie Magnatów - takie rzeczy po prostu muszą się źle skończyć, a gracz może otrzymać od MG Medalion Beliara. 
+
+W wyniku zaplanowanej akcji graczy - jeśli posiadasz dobry powód do zabicia kogoś, ciekawy plan wykonania oraz realne szanse powodzenia, możesz o takim zamiarze poinformować MG. Cel Twoich knowań otrzyma Medalion Beliara i stanie się śmiertelny. Licz się jednak z możliwością odmowy. 
+
+W wyniku zrządzenia losu aka MG - zastrzegamy sobie prawo do wręczenia Medalionu Beliara bez wyjaśnień, według własnego uznania. Nie będzie to częste i zdecydowanie nie będziemy chcieli was w ten sposób karać. Zwyczajnie udział w pewnych elementach fabuły może grozić śmiercią. Na przykład decydując się na rozmowę z Gomezem, musisz liczyć się z ryzykiem śmierci. W końcu świat Gothica to nie jest przyjazne i bezpieczne miejsce.
+
+
+
+Otrzymanie Medalionu Beliara to nie wyrok śmierci. Postać może dalej walczyć, uciekać i pertraktować. Poza tym nie oznacza to, że daną postać trzeba zabić, ponieważ w każdej chwili jej prześladowcy mogą zmienić plany i zrealizować swoją zemstę w inny sposób. Medalionu Beliara da się również pozbyć, jeśli tylko sytuacja postaci zmieni się na tyle, że powód otrzymania go przestanie istnieć, a postaci przestanie grozić śmierć.
+
+8.5 Leczenie
+
+Postać, która została ranna (ma 0 PZ) może zostać uleczona na kilka sposobów:
+
+Przez wypicie mikstury leczniczej – mikstura lecznicza przywraca 2 PZ,
+
+Dzięki zaklęciu leczącemu – przywraca ono 2 PZ,
+
+Po rozegraniu dwóch różnych od siebie scen, podczas których gracz wyraźnie podkreśla, że jego postać jest ranna i niezdolna do walki.
+
+
+
+Przykłady:
+
+„Gdy pobity przez Szkodników Cień kuśtyka ranny do obozu, wypatruje go i użycza mu ręki Kopacz. Cień przez całą drogę złorzeczy na bandytów i Nowy Obóz jednocześnie odgrywając bolesne rany. Kiedy docierają do obozu, Cień rusza do karczmy napić się piwa. Przeklinając na ból w ranach, opowiada zebranemu towarzystwu o napadzie którego był ofiarą.”
+
+W trakcie trwania sceny możesz zostać przywrócony z 0 PZ do 2 PZ tylko wówczas, gdy ktoś cię uzdrowi zaklęciem lub miksturą. Po zakończeniu sceny możesz uzdrowić się sam, oczywiście jeżeli masz czym. Jeżeli nie, to idziesz do bezpiecznej strefy.
+
+9. Walka z potworami
+
+9.1 Kwestie ogólne
+
+Lasy Górniczej Doliny obfitują w różne chol... niebezpieczne bestie. Niektóre z nich będziecie mieli okazję spotkać na larpie, a może nawet wyjść z tego spotkania żywi. Walka z potworami rządzi się swoimi prawami. Przede wszystkim tym, że jeden ich cios jest w stanie położyć każdego, kto nie jest zakuty w ciężką zbroję. Udawanie, że trzy ciosy czarnego trolla nic nie zrobiły i dalsza walka jak gdyby nigdy nic to zwykła terminatorka. Powinno się więc wystrzegać takiego zachowania i walczyć (lub uciekać) tak, jakby naprawdę Wasze życie wisiało na włosku. Należy też pamiętać, że pod strojem potwora jest wcielający się w niego NPC. Wyprowadzając ciosy i dostosowując ich siłę pamiętajcie, że nie oberwie kamienny golem, ale przebrany za niego Andrzej czy inny członek Monster Teamu. Walczcie więc z głową.
+
+A co do głów... Prosimy, aby po wygranej walce nie zabierać głowy potwora (ani żadnych innych elementów stroju) jako trofeum, bo może to nieco utrudnić jego „respawn”.
+
+9.2 Składniki z potworów
+
+Z niektórych zabitych potworów można będzie pozyskać cenne składniki alchemiczne, jednak tę umiejętność posiadają jedynie łowcy. Warto więc pamiętać, aby zawsze zabierać ze sobą jednego z nich idąc na większe polowanie. Łowcy będą mieli specjalne oznaczenie potwierdzające kim są. Należy je pokazać NPCowi grającego potwora, a wtedy on sam poda Wam składnik alchemiczny. Udawanie, że jest się łowcą nie mając tych umiejętności jest niemile widziane, a wręcz grozi banem.	Ważne! NPC wchodzący w skład Monster Teamu noszą ze sobą wiele przedmiotów służących do różnych questów. Dobrze wiedzą, co powinno w tym momencie „wypaść” z zabitego potwora i sami wydają ten przedmiot graczom. Kategorycznie zabronione jest przeszukiwanie im kieszeni!
+
+9.3 Postępowanie z martwym potworem
+
+Po wyczerpującej walce NPC z Monster Teamu potrzebują zdjąć maski i chwilę odsapnąć, bardzo Was więc prosimy, byście to im umożliwili. Kiedy pokonacie potwora, nie debatujcie przez pół godziny nad jego truchłem, tylko odejdźcie od niego kawałek, żeby mógł na spokojnie zejść z gry. Nie przenoście też ich nigdzie i nie ciągnijcie po ziemi.
+
+A po czym poznać, czy wstający NPC w kostiumie potwora jest żywy czy martwy?
+
+W prosty sposób - jeśli ma na sobie maskę i idzie w Waszym kierunku, to najprawdopodobniej jest żywy i chce Was zabić. Jeśli ściąga maskę, odwraca się i wycofuje ze sceny, to jest na PAXie i nie należy go ponownie atakować.
+
+
+
+
+
+10. Arena
+
+W tym roku będą toczyły się dwa niezależne turnieje: turniej otwarty i turniej dla profesjonalistów. W turnieju otwartym będzie się liczył styl i widowiskowość walki, a nie trafienia. Sędziowie będą oceniali umiejętności aktorskie i walkę fair play. Przed walkami będzie się można umówić na konkretny scenariusz według którego walka będzie przebiegać. Nie chcemy jednak rezygnować z punktowanych walk, w których liczą się faktyczne umiejętności szermiercze. Równolegle będzie się więc odbywał drugi turniej „dla profesjonalistów”.
+
+Można brać udział jednocześnie w obydwu turniejach lub tylko w wybranym. Każdy turniej będzie sędziowany przez dwóch arbitrów - mistrzów areny. Będą oni prowadzić notatki z punktacją - rezygnujemy w tym roku z koralików oznaczających punkty. W obu turniejach będą też do wygrania nagrody rzeczowe.
+
+11. Mechanika zakrywania twarzy
+
+Napady i kradzieże są elementem, który bardzo napędza fabułę. Ciężko jest się jednak zdecydować na jawne okradanie kogoś, mając świadomość, że ta osoba od razu zgłosi Was do Straży i będziecie ścigani do końca larpa. By rozwiązać ten problem, wprowadziliśmy mechanikę zakrywania twarzy. Polega ona na tym, że kiedy założycie na twarz bandanę, nikt nie może Was rozpoznać, a wie tylko z jakiej frakcji jesteście. 
+
+W ten sposób przykładowo Szkodniki mogą przeprowadzić zbrojny napad na karawanę, a nikt z napadniętych nie będzie w stanie wskazać konkretnie kto w tym uczestniczył. Oczywiście winnych można dopaść w wyniku śledztwa, nie będzie to już jednak takie proste. Bandany powinny być w kolorze odpowiadającym danej frakcji. Stary Obóz - czerwony, Nowy Obóz - niebieski, Bractwo - zielony, Skazańcy - brązowy. 
+
+12. Znajdźki
+
+By zachęcić graczy do eksploracji terenu, na terenie gry będa obecne znajdźki. Są to przedmioty, które będzie można znaleźć podczas przeszukiwania lasu i podczas questów. Oznaczone zostaną ZIELONĄ naklejką. Po zakończeniu gry, znajdźki stają się własnością gracza, w którego posiadaniu się znajdowały. W trakcie gry można je oczywiście kraść, sprzedawać i wymieniać. Gracz który wejdzie w posiadanie znajdźki ma ją nosić ze sobą do końca gry, dając innym możliwość obrabowania go. Kategorycznie zabronione jest zbieranie znajdziek na strefę off-game i chowanie do namiotu w trakcie trwania larpa. Znajdźki nie są wystawiane wszystkie na raz. Roznosimy je partiami kilka razy dziennie. Spokojne, nie trzeba biec od razu do lasu, aby coś znaleźć, bo szansa na to będzie przez całą grę.
+
+
+
+13. Łowiectwo
+
+Jako łowca musisz posiadać łuk, jakiś nóż / sztylet (bezpieczny) do patroszenia oraz drobną przeszłość łowcy, aby móc dołączyć do cechu łowców pod barierą. Poza możliwością pozyskania  esencji z potworów, łowcy posiadają specjalną umiejętność na wyłączność. Poprzez specjalną umiejętność patroszenia potworów masz szansę na pozyskanie rzadkich bądź unikalnych komponentów. Komponenty są pożądane przez alchemików i magów oraz służą do tworzenia zaawansowanych mikstur, czarów i rytuałów. Trofea można także odsprzedawać za rudę, a niejeden będzie chętny na taką rzadkość. Aby pozyskać trofeum z danego potwora należy w pierwszej kolejności posiadać umiejętność pozyskiwania konkretnego komponentu. 
+
+Jako początkujący łowca otrzymujesz na początek jedną „receptę” (kartę łowcy) na ekstrakcję jednego komponentu. W drodze zdobywania doświadczenia, możesz nauczyć się pozyskiwania różnych rodzajów komponentów z różnych bestii. W Kolonii znajdziesz dwóch mistrzów, którzy mogą Cię nauczyć takiej wiedzy. Są to Demwar oraz Aidan. Mistrzowie cechu to nie jedyne źródło. Podobno w Kolonii można znaleźć zagubione notatki Wilka – łowcy, który polował przed nimi. Po zdobyciu „recepty” bądź otrzymaniu jej od mistrza, posiadasz umiejętność pozyskiwania komponentu. Aby wydobyć komponent należy podejść pod martwą bestię i odegrać krótką scenkę jej patroszenia (około 2 minuty). Do tej sceny używa się bezpiecznego noża. Po odegraniu sceny wyszeptujesz do NPC grającego potwora odpowiednie hasło komponentu. Zazwyczaj będzie to „wycinam …, daj mi …”. Ponadto pokazujesz NPC-potworowi identyfikator łowcy. Jeśli ekstrakcja zakończy się sukcesem, otrzymujesz komponent. Zabronione jest pozyskiwanie komponentów nie posiadając odpowiedniej karty łowcy. Tylko łowca (wyznaczony przez mistrza gry) może patroszyć bestie i pozyskiwać komponenty. Pozostali mieszkańcy Kolonii nie mogą tego zrobić, nawet jeśli wpadli w posiadanie takiej karty łowcy. Tylko mistrz łowców może uczyć i przekazywać karty łowców. Jeśli karta łowcy znajdzie się w rękach łowcy i ten nauczy się jej, przedmiot przestaje być przedmiotem fabularnym i nie można go odsprzedać, oddać, czy ukraść. Karta łowcy zupełnie jak karta postaci jest przypisana do postaci.
+
+14. Kradzież
+
+Kradzież na larpie będzie działać na zasadzie DKWDDK, czyli Twoja postać potrafi tylko to, co Ty sam umiesz. Jest jednak objęta sporymi restrykcjami.
+
+14.1 Co wolno kraść
+
+Kraść będzie można jedynie następujące przedmioty:
+
+magiczną rudę,
+
+esencje,
+
+zwoje magiczne,
+
+receptury alchemiczne,
+
+mikstury,
+
+gotowe skręty bagiennego ziela,
+
+przedmioty fabularne, oznaczone CZERWONĄ nalepką,
+
+znajdźki, oznaczone ZIELONĄ nalepką.
+
+
+
+
+
+Każdy przedmiot fabularny, który wolno ukraść, zostanie oznaczony czerwoną nalepką. Jeśli takiego znaku nie posiada, a już zdążyliście wybiec z nim w worku za bramę obozu, należy go odstawić na miejsce lub oddać najbliższemu MG, by on dyskretnie to zrobił. 
+
+Kolejnym ważnym kolorem jest FIOLETOWY. Rzeczy oznaczone fioletowym kolorem są rzeczami, które na pierwszy rzut oka mogą być dostępne dla kradzieży, ale kraść ich bezwzględnie nie wolno. Będą to na przykład listy Skazańców. Jak zobaczycie fioletową nalepkę na rekwizycie czy czymkolwiek innym, zostawiacie to w spokoju. Wszystkich pozostałych rzeczy wciąż NIE WOLNO KRAŚĆ.
+
+Jeśli zdarzy się, że przez pomyłkę (np. podczas kradzieży kieszonkowej) zabierzecie graczowi jego prywatne rzeczy, należy BEZZWŁOCZNIE zanieść je do dowolnego MG i wskazać właściciela. Jeśli właściciela nie uda się zlokalizować, trafią one do skrzynki rzeczy znalezionych, która będzie w orgówce.
+
+Jeśli chcecie przeznaczyć jeden lub więcej ze swoich przedmiotów do kradzieży, możecie przy akredytacji dostać nalepkę. Dodatkowo chcielibyśmy mocno podkreślić, że przedmiotów wystawionych na straganach handlarzy czy elementów wystroju nie posiadających czerwonego przylepca NIE WOLNO KRAŚĆ! Są to zazwyczaj prywatne rzeczy graczy, których nie chcieliby stracić. Nie ruszajcie więc niczego, co nie ma odpowiedniego oznaczenia!
+
+14.2 Przechowywanie
+
+Dobrym zwyczajem jest, aby przedmioty z poprzedniego punktu, które są przeznaczone do kradzieży, nosić tak, by ewentualną kradzież umożliwić. Rudę noście w kaletce albo sakiewce na pasie, nie ukrywajcie jej w bucie czy głęboko pod koszulą. Może w prawdziwej Górniczej Dolinie Skazańcy używaliby takich skrytek, ale w warunkach larpa musimy trochę nagiąć logikę, żeby umożliwić gameplay. Dajmy złodziejaszkom możliwość zabawy, a sami miejmy oczy dookoła głowy.
+
+Natomiast rzeczy prywatne, jak telefon czy leki, lepiej umieścić w lepszej skrytce, by nie zostały przez pomyłkę zabrane.
+
+14.3 Przerwa nocna = przerwa od kradzieży
+
+Każdy gracz musi czasami spać, nawet Strażnik, który w uniwersum Gothica za nic w życiu by nie spuścił oka ze strzeżonego przedmiotu. Z tego względu kradzież jest zakazana podczas „przerwy fabularnej”, tj. między 1 w nocy, a 10 rano.
+
+Przykładowo, to że o 5 nad ranem kaplica jest pusta, nie oznacza, że Magowie Ognia fabularnie zostawili ją otwartą dla każdego. Gracze musieli pójść odpocząć, a my jako organizatorzy nie mamy fizycznie możliwości zabezpieczenia wszystkiego na noc. Dlatego też zabraniamy wykorzystywania nocnej przerwy celem kradzieży, szczególnie okradania lokacji.
+
+14.4 Dobre złodziejskie zwyczaje
+
+Podczas napadów na członków najbiedniejszych frakcji mocno sugerujemy, aby nie zabierać im wszystkich bryłek, ale nie więcej niż połowę. Jeśli natomiast mają ich mniej niż 5, to w ogóle nie okradać. Szczególnie dotyczy to pierwszego dnia gry. Pozwoli to tym graczom szybciej odbić się od dna, a Wy będziecie mogli ich okraść, gdy będą bogatsi.
+
+15. Awans postaci w hierarchii gry
+
+	Naturalną ludzką skłonnością w Kolonii Karnej jest chęć do pięcia się wzwyż łańcucha pokarmowego, na którego dole znajdują się świeży Skazańcy i Kopacze, a na którego szczycie zasiadają Magnaci i wszelcy Magowie. 
+
+	Skazaniec ma czystą kartę i może dołączyć do dowolnego obozu. Zdecydowanie najłatwiej będzie mu zostać Kopaczem czy Kretem - wystarczy, że zgłosi się do kopalni po kilof i praca zaraz się dla niego znajdzie. Jeśli szybko nie dołączy do żadnej innej frakcji i tak nieuchronnie skończy jako Kopacz. Jeśli taki styl życia mu nie odpowiada, na początek najłatwiej będzie mu zostać Cieniem, Szkodnikiem lub Nowicjuszem. Każda z tych frakcji ma swoje specyficzne zasady dotyczące przyjmowania nowych członków, a o ich szczegółach dowiesz się od ich przedstawicieli.
+
+	Jeśli dana postać należy już do któregoś z obozów, może także próbować awansować w hierarchii. Aby uniknąć Medalionu Beliara i ryzyka zemsty za zdradę, najlepiej robić to w ramach swojego obozu. Dajmy na to Cień może ubiegać się o zostanie Strażnikiem, lecz aby to się udało, musi się wyraźnie wyróżnić na tle pozostałych. W Straży cenią siłę, lojalność i dyscyplinę - Cień o takich cechach musi przysłużyć się Strażnikom, prawdopodobnie wykonując dla nich szereg zadań.
+
+Od strony technicznej, jeśli planujesz awansować, przygotuj wcześniej strój klasy do której zamierzasz dołączyć. Nie możesz tytułować się Strażnikiem chodząc cały czas w stroju Cienia. Strój możesz trzymać w strefie off-game i przebrać się w niego już po awansie lub wręczyć go MG, aby ten przekazał Ci go fabularnie. Zasada ta w mniejszym stopniu dotyczy Skazańców, którzy po dołączeniu do danej frakcji otrzymają podstawowe jej atrybuty od MG (np. kawałek futra i niebieska chusta w przypadku Szkodnika).
+
+Uwaga! Przygotowanie stroju danej klasy nie gwarantuje Ci awansu na nią! W zależności od tego jak potoczy się rozgrywka, możesz awansować lub nie. Musisz brać pod uwagę to, że klasa jaką wybrałeś zgłaszając postać będzie Twoją klasą do końca gry.
+
+16. Bagienne ziele
+
+Nierozłącznym elementem świata Gothica jest bagienne ziele. Pamiętaj jednak, że nie każde bagienne ziele w grze komputerowej ma właściwości wywoływania wizji, więc i u nas najzwyklejsze papierosy działają jak najzwyklejsze papierosy. Te, które mają funkcje mechaniczne i wywołują wizje, są specjalnie oznaczone (posiadają dołączoną karteczkę z efektem oraz są zawinięte w brązową bletkę).
+
+
+
+Na grze występują 3 kategorie skrętów:
+
+Zielony Nowicjusz - tytoń, krótka biała bletka,
+
+Mrok Północy - tytoń smakowy, brązowa bletka,
+
+Zew Nocy - CBD, brązowa bletka.
+
+
+
+Jeśli gracz chce fabularnie „zapalić coś mocniejszego”, ma taką możliwość i są tego efekty. Takiego skręta można dostać od Nowicjusza Bractwa Śniącego, który czynnie zajmuje się sprzedażą bagiennego ziela. Należy zakupić „Mrok Północy” lub „Zew Nocy” (zrobiony z brązowej bletki), który w kontraście do skręta „Zielony Nowicjusz” (zrobiony z białej bletki), może powodować dodatkowe efekty. Wraz z zakupem otrzymuje się niewielką karteczkę, którą trzeba przeczytać w trakcie palenia, a następnie odgrywać efekt na czas trwania jednej sceny. W przypadku palenia specjalnego ziela w więcej niż jedną osobę, efekt obejmuje wszystkich palących. Po wszystkim, w dowolnym dogodnym momencie należy odnieść karteczkę do dowolnego stanowiska kuchennego.
+
+17. Podstawy magii dla każdego gracza
+
+W świecie Gothica magia jest potężnym żywiołem, co na larpie odzwierciedlają mechaniki. Postacie niemagiczne, takie jak Kopacze czy Nowicjusze, mogą posługiwać się nią w ograniczonym zakresie, podczas gdy magowie są w stanie tworzyć nawet własne zaklęcia i czynić rytuały. W tym rozdziale opisane są podstawy działania magii, sposoby reagowania na nią oraz korzystania z niej przez postacie, które nie znają się na magii. Ten rozdział powinien przeczytać każdy gracz.
+
+Jeśli planujesz zagrać Magiem lub Guru, musisz także przeczytać rozdział „Magia zaawansowana”, gdzie opisana jest reszta reguł, np. dotyczących rytuałów, tworzenia własnych zaklęć i magicznych przedmiotów oraz kręgów magii.
+
+17.1 Esencje
+
+Esencje to drobne, różnokolorowe kamienie, które są potrzebne magom oraz alchemikom do tworzenia zaklęć i warzenia mikstur. Każdy kamień zawiera moc określonego żywiołu, która może być wykorzystana przez magów. Istnieją cztery rodzaje esencji: 
+
+ognia (czerwona), 
+
+wody (przezroczysta), 
+
+wiatru (zielona),
+
+ziemi (fioletowa).
+
+Esencje można znaleźć podczas wydobywania rudy w kopalni, pracy na polu ryżowym, przy truchłach bestii, a czasem nawet poprzez żarliwą modlitwę do swojego bóstwa.
+
+17.2 Zwoje
+
+	Zwój to magiczny przedmiot w formie charakterystycznej karty papieru z narysowanym schematem magicznym, podpisany przez Mistrza Magii i z przypieczętowanym diabełkiem. Zwój służy do jednorazowego rzucenia zaklęcia, po czym zostaje podarty i bezużyteczny.
+
+
+
+Jako postać niemagiczna możesz rzucać tylko najprostsze zaklęcia z białych zwojów. Są to:
+
+Kula Ognia / Bryła Lodu / Błyskawica — cel traci wszystkie punkty zdrowia poprzez podpalenie / zamrożenie / porażenie,
+
+Pięść Wichru — cel odgrywa efekt powalenia na ziemię bez utraty punktów zdrowia,
+
+Ogłupienie — wywołuje zamroczenie i istotnie ogranicza zdolność rozumowania,
+
+Bełkot — cel w miejsce artykułowanej mowy mamrocze i bełkocze,
+
+Ciężka broń — jakakolwiek dzierżona przez cel broń zaczyna mu ciążyć i wadzić,
+
+Dezorientacja  — konfunduje i pozbawia orientacji wybrany cel,
+
+Głuchota — na czas sceny pozbawia zdolności słuchu,
+
+Oślepienie — na czas sceny pozbawia zdolności widzenia,
+
+Rój owadów — iluzoryczne owady natrętnie rozpraszają i doskwierają celowi,
+
+Splątanie nóg — cel staje się niezdolny do sprawnego poruszania się,
+
+Upojenie — na czas sceny cel zachowuje się, jakby był silnie odurzony alkoholem.
+
+
+
+
+
+Powyżej znajduje się przykład pustego, niezapisanego jeszcze białego zwoju magicznego. Zwoje wytwarzać potrafią tylko magowie oraz w ograniczonym stopniu ich wybrani uczniowie. Nie można też tworzyć fałszywych zwojów. Na larpie pojawią się także czerwone zwoje, których postać niemagiczna użyć nie może. Takie zwoje służą nieco potężniejszym oraz autorskim czarom.
+
+Takie zaklęcia, jak Kula Ognia, Bryła Lodu czy Błyskawica, całkowicie omijają pancerz postaci i pozbawiają wszystkich punktów zdrowia człowieka lub przeciętnego potwora. 
+
+Niektóre potwory mogą być częściowo odporne na działanie magii. Magowie mogą uchronić się przed zaklęciem, rzucając czar Nietykalność. Strażnicy Świątynni, wyjątkowo, mają też dostęp do runy Pięść Wichru bądź Dezorientacji.
+
+17.3 Rzucanie zaklęć
+
+Do rzucenia zaklęcia potrzebny jest zwój oraz magiczny wyzwalacz, którego rolę pełni diabełek. Do każdego stworzonego przez maga zwoju powinieneś otrzymać co najmniej dwa wyzwalacze do tego zwoju przypieczętowane. 
+
+
+
+Sposób rzucania zaklęć ze zwojów:
+
+Należy mieć w ręku magiczny zwój. 
+
+Wskazać cel oraz wykrzyczeć nazwę zaklęcia.
+
+Zdetonować w palcach diabełka:
+
+Jeśli z jakiegoś powodu nie udało się zdetonować diabełka, rzucenie zaklęcia nie powiodło się. Należy wyraźnie odegrać niepowodzenie.
+
+Przerwać zwój, jeżeli udało się rzucić zaklęcie:
+
+Rozerwany zwój chowamy do kaletki / kieszeni, by wyrzucić później do kosza.
+
+
+
+	W przypadku nieudanego rzucenia zaklęcia (np. z powodu zgubienia wyzwalacza czy zwykłego niewypału), warto udać się do maga, aby podszkolić się w rzucaniu zaklęć i dostać nowe wyzwalacze.
+
+Każda postać posiada ograniczoną energię magiczną zwaną maną. Postać niemagiczna posiada jeden punkt many, natomiast pełnoprawni magowie posiadają ich trzy. Każde zaklęcie kosztuje jeden punkt many.
+
+Mana odnawia się po zakończeniu sceny, np. po walce. Możesz również wypić miksturę many, aby odnowić do dwóch punktów many.
+
+Twoja postać nie wie ile zaklęć może rzucić dana osoba i jako gracz nie powinieneś wykorzystywać tej wiedzy.
+
+17.4 Odgrywanie efektów zaklęć
+
+Magowie mogą rzucać również autorskie zaklęcia, których nazwy powinny być intuicyjnie zrozumiałe. Ich efekty należy odegrać zgodnie z wykrzyczaną przez maga nazwą. 
+
+Warto pamiętać, że zaklęcia magów mogą modyfikować pewne inne mechaniki gry, ale zawsze należy zakładać dobrą wolę gracza.
+
+
+
+Magowie mogą używać magicznych run, które nie zużywają się po rzuceniu czaru. O rzuconym zaklęciu świadczy charakterystyczny trzask diabełka lub runy-rekwizytu, a zamiast zwoju mag musi trzymać w ręce runę.
+
+Jeżeli wydaje się, że efekt zaklęcia trwa przez jakiś czas (np. Paraliż, Sen czy Ogłupienie), to należy efekt odgrywać do zakończenia sceny.
+
+Jeśli widzisz postać rzucającą zaklęciew twoim kierunku, a nie jesteś pewien, czy jesteś jego celem - załóż, że nim jesteś.
+
+
+
+Niektóre zaklęcia, jakich mogą użyć magowie i ich uczniowie, to:
+
+Bojaźń Boża — cel czuje natchniony lęk przed Innosem / Adanosem / Śniącym, w zależności od wyznania rzucającego zaklęcie maga,
+
+Nietykalność — rzucający zaklęcie jest niewrażliwy na broń i magię, póki sam się nie poruszy,
+
+Prawdziwy Smutek / Prawdziwe Szczęście — cel poraża fala wymienionej przez maga emocji,
+
+Przyjaźń — cel uważa rzucającego za prawdziwego przyjaciela,
+
+Sen — cel nagle zasypia, a jeżeli nie widział czarującego to nie wie, że został poddany magii,
+
+Strach — cel ucieka w popłochu,
+
+Spokój — cel uspokaja się i traci chęć do walki,
+
+Szał — cel atakuje najbliższą postać inną niż rzucający zaklęcie.
+
+
+
+Jeśli uważasz to za zasadne i interesujące, to nawet po zakończeniu sceny możesz odgrywać efekty niektórych zaklęć. Bojaźń Boża może stać się przyczynkiem do nawrócenia, Strach może ożywić dawną traumę, a Przyjaźń spowodować długotrwałe i niezrozumiałe zauroczenie - choć są to tylko przykłady.
+
+17.5 Mechanika modlitwy / medytacji
+
+Pewien wpływ na świat gry wywierają bóstwa, a ich agentami są przede wszystkim ichni kapłani - magowie. Zarówno oni, jak i wszyscy wierni, a nawet ci, którzy do religii nie przykładają większej uwagi, mogą doznać różnorakich wizji. Czasem są one ewidentnie nadprzyrodzone, ale nierzadko ich prawdziwość pozostaje dyskusyjna.
+
+
+
+Takie wizje:
+
+może zainicjować Mistrz Gry, dyskretnie prowadząc narrację graczowi,
+
+mogą być wywołane przez żarliwą modlitwę i ofiarę wierzących wyrażoną w akcie religijnym (który nie musi być pełnoprawnym rytuałem magicznym),
+
+mogą być zainicjowane przez gracza-maga w scenie modlitwy lub medytacji, jeżeli mag ten posiada stosowną specjalizację, kapłańską
+
+
+
+17.6 Magiczne przedmioty
+
+Na grze mogą pojawić się magiczne przedmioty w różnej formie, głównie bransolet i amuletów. Większość z nich jest wielokrotnego użytku, ale ich efekty można przywołać nie więcej niż raz na scenę (choć niektóre mogą trwać przez całą scenę). 
+
+	Narracyjnie postacie muszą poznać działanie magicznego przedmiotu i zostać pouczonymi, jak się z nim zestroić i nim posługiwać. Jeśli podejrzewasz, że posiadasz magiczny przedmiot (lub chcesz zamówić stworzenie takowego) - poszukaj pomocy u magów.
+
+	Nawet nieszczególnie potężny przedmiot z pewnością zainteresuje magów, którzy mogą odzyskać z nich magiczne ingrediencje (esencje).
+
+18. Magia Zaawansowana
+
+Ten rozdział przeznaczony jest dla wszystkich magów oraz adeptów. Pozostali gracze też mogą się z nim zapoznać, ale nie mogą wykorzystywać zawartych w nim informacji podczas gry. Postać niebędąca magiem nie wie, czy mag jest w stanie rzucić dane zaklęcie, czy nie.
+
+Jako uczestnik larpa powinieneś też zakładać dobrą wolę innych graczy. Jeśli mag rzuca jakieś zaklęcie, najpewniej oznacza to, że może to zrobić.
+
+18.1 Tworzenie zwojów
+
+Na larpie będą dwa rodzaje zwojów: zwykłe („białe”), na których będą zaklęcia do użytku dla wszystkich, oraz zaawansowane („czerwone”), których użyć mogą wyłącznie magowie i adepci. Trzon zasady ich tworzenia pozostaje ten sam.
+
+Tworzenie zwojów i zaklęć jest nietrywialne. Prawdopodobnie nie wszystko będzie od razu oczywiste. Magów czekać będą dodatkowe warsztaty obejmujące m.in. ich wytwarzanie. Możesz też poprawić swoje umiejętności podczas gry, ucząc się od magów wyższych kręgów.
+
+
+
+
+
+Elementami zwoju magicznego są:
+
+Kolor zwoju, jasny dla „białych”, ogólnodostępnych zaklęć podstawowych z podręcznika oraz czerwony dla zaklęć dostępnych wyłącznie magom i adeptom,
+
+Wykres żywiołów, czyli matematyczno-magiczna łamigłówka reprezentująca relacje elementarnych sił, gdzie nanosi się punkty oraz wektory wedle ustalonych reguł,
+
+Nazwa zaklęcia, która powinna być intuicyjnie zrozumiała dla wszystkich postronnych graczy,
+
+Działanie zaklęcia opisujące zamysł autora zaklęcia i może być pominięte dla banalnych zaklęć, jak Kula Ognia czy Uzdrowienie,
+
+Koszt zaklęcia, który należy uiścić przy akceptacji zwoju, a który wynosi połowę mocy zwoju, tj. połowę wszystkich esencji naniesionych na wykres żywiołów,
+
+Opis schematu magicznego, który wymienia wszystkie punkty i wektory opisane na wykresie oraz wykazuje ich moc w esencjach,
+
+Podpisy osoby spisującej zwój oraz mistrza magii autoryzującego zwój,
+
+Wyzwalacz, zazwyczaj umocowany lakiem diabełek, który jest niezbędny do odegrania czarowania.
+
+
+
+Aby nakreślić zwój, należy wypełnić wszystkie wyżej wymienione pola. Najtrudniejszym elementem jest naniesienie schematu czaru na wykres żywiołów.
+
+Schemat czaru składa się z punktów oraz wektorów. Punkty w schemacie reprezentują pojedyncze, krótkotrwałe efekty. Wektory („strzałki”) reprezentują zmiany w czasie, np. jeden efekt stopniowo zmieniający się w inny lub zachodzący po innym efekcie. Punkty oraz wektory mają różną wartość esencji („moc”) wynikającą bezpośrednio ze swojego położenia.
+
+Niektóre zwoje mogą mieć dodatkowe linie i symbole, ale nie mają one znaczenia mechanicznego.
+
+Schemat czaru pozbawiony kontekstu często jest niejednoznaczny i wymaga kreatywnej argumentacji ze strony maga spisującego lub interpretującego zwój.
+
+
+
+Wykres żywiołów składa się z kilku osi oraz szeregu pól, które mogą nie być widoczne na pierwszy rzut oka.
+
+Na osiach odczytujemy rodzaj oraz ilość esencji przypisanych danym punktom i wektorom. Esencje symbolicznie reprezentują elementarne moce w świecie, a na grze używane są przez alchemików i magów. Dostępne esencje to:
+
+Esencje ziemi (fioletowe),
+
+Esencje ognia (czerwone),
+
+Esencje wiatru (zielone),
+
+Esencje wody (przezroczyste).
+
+Na wykresie, oprócz osi żywiołów, są również pola żywiołów. Pola żywiołów reprezentują dosłowne manifestacje żywiołów, podczas gdy wartości bezpośrednio na osiach (np. punkty (0, 3) czy (-4, 0) mogą być również interpretowane symbolicznie. Przykładowo same esencje Ziemi w punkcie (0, -4) mogą reprezentować skałę, entropię, śmierć czy grzech, ale już znajdujący się na polu żywiołu ziemi punkt (-1, -1) bardziej jednoznacznie wskazuje na grunt, skałę czy fizyczny przedmiot. Interpretacja symboliczna może być szczególnie użyteczna przy tworzeniu zaklęć autorskich, w tym elementów rytuałów.
+
+Pola Umysłu oraz Ciała zgodnie z nazwą odwołują się do istot żywych lub obiektów i są często używane w przeciętnych zaklęciach.
+
+Pola Życia i Mocy odwołują się do najpotężniejszych fenomenów, takich jak samo życie, dusza czy zdolność czarowania. Manipulowanie tymi polami zazwyczaj wykracza poza potencjał przeciętnego zwoju, a podlega pod efekty rytualne.
+
+Zarówno pola Umysłu / Ciała, jak i Życia / Mocy są podwojone, ponieważ połowa z nich odnosi się do efektów pozytywnych, a druga połowa do negatywnych.
+
+O charakterze efektu informuje wertykalna oś Wiatr-Ziemia („Y”) zgodnie z podpisem po lewej stronie wykresu żywiołów. Dolna część wykresu, oś Ziemi, pozwala na osłabianie (wartości od 1 do 2 esencji Ziemi) oraz manipulację (wartości od 3 esencji Ziemi) celu zaklęcia. Górna część wykresu, oś Wiatru, pozwala na wzmacnianie (wartości od 1 do 2 esencji Wiatru) oraz uodparnianie (wartości od 3 esencji Wiatru) celu zaklęcia.
+
+Linie graniczne pomiędzy dwoma polami zazwyczaj przynależą efektom bliższym punktowi zero (0,0) na osi, ale podlegać mogą dyskusji.
+
+Ponieważ jest to typowy dwuwymiarowy wykres, położenie punktów możemy zapisywać dwojako:
+
+matematycznie, tj. (X, Y), gdzie „X” to oś horyzontalna, a „Y” to oś wertykalna, zaś wartości dodatnie odpowiadają osiom Ognia i Wiatru, a ujemne Wody i Ziemi,
+
+opisowo, tj. (a B, c D ), gdzie „a” i „c” to wartości liczbowe, a „B” i „D” to rodzaj odpowiadających im esencji na odpowiednich osiach żywiołów.
+
+	Na przykład punkt wzmacniający ciało można opisać jako (-3, 1) lub (3 Wody, 1 Wiatru).
+
+Schemat wypisuje się na wykresie żywiołów, aby wyrazić pożądane efekty oraz zidentyfikować koszt zaklęcia. Koszt równy jest połowie całkowitej „mocy” zwoju, tj. wszystkich esencji przypisanych wszystkim punktom oraz wszystkim wektorom, które to punkty oraz wektory sumuje się oddzielnie. Moc poszczególnych żywiołów na zwoju jest również limitem esencji, których można użyć do produkcji tego zwoju (co szerzej wyjaśnimy w dalszych przykładach).
+
+W przypadku dzielenia i otrzymania liczb dziesiętnych wartości zaokrągla się w górę.
+
+Moc punktów wynika bezpośrednio z ich położenia na osiach żywiołów, np. punkt (2, 0) ma moc dwóch esencji Ognia.
+
+Moc wektorów wynika wyłącznie z samego wektora łączącego dwa punkty (przy czym punkty te liczy się oddzielnie od wektora). Aby poznać moc wektora, należy przeczytać jaka ilość jakich esencji jest niezbędna do aktualizacji początkowego punktu w końcowy punkt i podzielić tę wartość na połowę.
+
+Najłatwiej jest to zrobić przesuwając w pamięci cały wektor tak, ażeby jego początek znajdował się w punkcie (0,0). Wtedy moc wektora równa jest (połowie) mocy punktu, który znajdowałby się na końcu tego wektora. Na przykład wektor (-2,0) → (3, 1) po przesunięciu w pamięci wyglądałby jak (0,0) → (5, 1), a zatem jego moc to 3 esencje Ognia, 1 esencja Wiatru (ponieważ 5,1 dzielimy na pół i zaokrąglamy wartość w górę).
+
+Z prawidłowego opisu schematu magicznego wynikać będzie moc zwoju w poszczególnych żywiołach oraz koszt stworzenia zwoju.
+
+Koszt stworzenia zwoju to połowa całkowitej sumy mocy poszczególnych żywiołów.
+
+Płatność tego kosztu jest jednak dodatkowo ograniczona. Nie można zapłacić więcej esencji danego żywiołu niż wynosi moc żywiołu dla tego zaklęcia. Na przykład mając zapłacić za zwój, który ma tylko jeden efekt (-1, 4), tj. 1 Wody, 4 Wiatru, to choć koszt zaklęcia wynosi 3 (bo [1+4]/2=2.5, zaokrąglane w górę), nie można zapłacić 3 esencji Wody, gdyż moc Wody dla tego czaru wynosi 1. Można więc zapłacić 1 esencję Wody oraz 2 esencje Wiatru lub po prostu 3 esencje Wiatru (gdyż moc Wiatru dla tego czaru wynosi aż 4).
+
+Dla dodatkowego rozjaśnienia tego niełatwego systemu przejdziemy teraz krok po kroku przez cały proces pisania autorskiego zwoju.
+
+Autorskie zwoje mogą tworzyć magowie kręgów drugiego lub trzeciego, ale ostatecznie zwój taki akceptuje MG.
+
+
+
+Najważniejsze: zamysł. Efekt czaru powinien być nietrudny do odegrania, a jego nazwa intuicyjnie zrozumiała. Decyduję się na stworzenie dodającego otuchy czaru „Odwaga”.
+
+Następnie clue pisania zwoju: schemat magiczny, który zinterpretuję Mistrzowi Gry.  Chcę, by sposób działania zaklęcia ukazywał podejście mojej postaci. By osiągnąć efekt śmiałości, mógłbym bezpardonowo pozbyć ofiarę lęków poprzez żywioły Wody i Ziemi i pole Manipulacji Umysłem. Mógłbym również dodać komuś nabożnego heroizmu poprzez odwołanie się do symboliki Ognia i Innosa w punkcie (4,0), a następnie wektorem przekuć to we Wzmocnienie Umysłu.Tak się jednak składa, że moja postać jest alchemikiem i z powołania bardziej naukowcem niż kapłanem, toteż decyduję się zaakcentować moją znajomość ludzkiej anatomii  i ostatecznie Manipuluję Ciałem, by uzyskać Wzmocnienie Umysłu. Ponieważ chcę, by czar trwał całą scenę, a jeden efekt przechodzi w inny, to punkty te łączę wektorem. Choć może są tańsze sposoby na stworzenie tego efektu, ostatecznie decyduję się na schemat: (2, -3) → (2, 2).
+
+Zgodnie z powyższym rozumowaniem, opisuję na zwoju pole „Działanie zaklęcia”.
+
+Chciałbym uzupełnić koszt czaru, ale do tego potrzebuję znać jego moc we wszystkich esencjach, toteż w „Opisie schematu magicznego” opisuję oddzielnie każdy z dwóch punktów oraz wektor:	a) (2, -3) - 2 Ognia, 3 Ziemi	b) (2, 2) - 2 Ognia, 2 Wiatru	c) (2, -3) → (2, 2) - 3 Wiatru	d) Łączna moc (12): 4 Ognia, 3 Ziemi, 5 Wiatru
+
+Zapisuję koszt, tj. połowę mocy zaklęcia: 6.
+
+Choć do tej pory mogłem pracować teoretycznie, teraz przygotowuję się do poniesienia kosztu zaklęcia w esencjach. Muszę zebrać łącznie sześć esencji, ale wśród nich nie może być więcej niż 4 esencji Ognia ani więcej niż 3 esencji Ziemi, ani więcej niż 5 esencji Wiatru. Mam akurat 3 esencje Ognia oraz 3 esencje Ziemi, więc zapłacę nimi, chociaż zaklęcie w głównej mierze opiera się na Wietrze.
+
+Przedstawiam ten autorski zwój Mistrzowi Gry.
+
+Po akceptacji płacę koszt w esencjach oraz uzupełniam ostatnie brakujące pola, jak np. swój podpis, ale również korzystam z laku i przypieczętowuję do zwoju diabełka, który posłuży mi do odegrania efektu zaklęcia. Chociaż jako mag mogę mieć takich diabełków cały zapas, to zwój i tak muszę przygotować należycie, bo mogę go zgubić lub zostanie mi skradziony.
+
+18.2 Schematy powszechnie znanych zwojów
+
+Białe zwoje, podstawowe:
+
+Błyskawica: (3, -2), (2, 0). Koszt: 4
+
+Bryła Lodu: (3, -2), (-2, 0). Koszt: 4
+
+Kula Ognia: (3, -2), (0, -2). Koszt: 4
+
+Bełkot:  (-4, -2), (1, 1). Koszt: 4
+
+Ciężka Broń: (-2 , 2) → ( 3, -1). Koszt: 6
+
+Dezorientacja:  (2, 2) → (0, 0), (3 -1). Koszt: 5
+
+Głuchota: (2,1), (2, -3). Koszt: 4
+
+Ogłupienie: (2, 2) → (0, 0), (-3, -1). Koszt: 5
+
+Oślepienie: (3, 0), (3, -1), (1, -3). Koszt: 6
+
+Pięść Wichru: (2, 1), (0, 2). Koszt: 3
+
+Rój Owadów: (-3, 0), (4, -3). Koszt: 5
+
+Splątanie Nóg: (0,0) → (3,-3). Koszt: 5
+
+Upojenie: (-4, -1). Koszt: 3
+
+
+
+Czerwone zwoje, zaawansowane:
+
+Bojaźń Boża: Koszt: 7
+
+Guru: (-2, -2) → (1, 1) ← (2, 2)
+
+Magowie Ognia: (-2, -2) → (1, -1) ← (2, 2)
+
+Magowie Wody: (-2, -2) → (-1, 1) ← (2, 2)
+
+Cisza: (1, 1) → (3, 1). Koszt: 4
+
+Nietykalność: (-3, 3), (3, 3), (-1, -1), (-1, 1), (1, -1), (1, 1). Koszt: 10
+
+Paraliż: (1, -3), (3, -1), (-1, -1). Koszt: 5
+
+Prawdziwy Smutek / Prawdziwe Szczęście: (-1, -3), (-3, -1). Koszt: 4
+
+Przyjaźń: (-1, -3) → (4, 2). Koszt: 8
+
+Sen: (-1, -3) → (-3, -1), (1, -3) → (3, -1). Koszt: 10
+
+Spokój: (1, -4), (-1, -4). Koszt: 5
+
+Strach: (-2, -3), (4, -2). Koszt: 6
+
+Szał: (2, -3), (-1, -4) → (-2, -2). Koszt: 8
+
+Uzdrowienie: (-2, 1), (2, -1) → (0, 0). Koszt: 4
+
+
+
+Zaklęcie Bojaźń Boża charakteryzuje się dwoma wektorami skierowanymi do tego samego punktu. Tym samym jego moc określamy poprzez odczytanie mocy trzech różnych punktów oraz dwóch różnych wektorów.
+
+A zatem dla wariantu dla Magów Ognia: (-2, -2) → (1, 0) ← (2, 2)  moc całego schematu to:
+
+2 esencje Wody i 2 esencje Ziemi za (-2, -2), 
+
+1 esencja Ognia za (1,0),
+
+2 esencje Ognia i 2 esencje Wiatru za (2, 2),
+
+3 esencje Ognia i 2 esencje Wiatru za (-2, -2) → (1, 0), 
+
+1 esencja Wody i 1 esencja Ziemi za (1, 0) ← (2, 2).
+
+Łącznie to 3 esencje wody, 3 esencje wiatru, 5 esencji ognia i 3 esencje ziemi, łącznie 14 esencji. Koszt stworzenia zwoju to połowa mocy schematu, czyli 7 esencji, np. 5 ognia, 1 wiatru, 1 ziemi lub 1 ognia, 3 wody, 3 ziemi.
+
+18.3 Magia runiczna
+
+Jednym z wyróżników magów są magiczne runy: przedmioty z zaklętą formułą pojedynczego zaklęcia, które pozwalają im na wielokrotne rzucenie tego samego zaklęcia (w przeciwieństwie do jednorazowych zwojów magicznych). Wszystkie takie runy muszą być zatwierdzone przez Mistrza Gry danej frakcji, a przy tym obowiązują wszelkie pozostałe zasady rzucania czarów (np. czar nie został rzucony, jeśli nie udało się wytworzyć huku diabełkiem lub rekwizytem).
+
+W realiach naszego larpa runy są bardzo osobiste. Nie wolno ich kraść, ani nie można używać runy innego maga. Warto zaznaczyć, że nie można posiadać runy uzdrowienia.	W przeciwieństwie do pozostałych postaci (które mają zaledwie jeden punkt many), magowie posiadają trzy punkty many do wykorzystania na scenę, a każdorazowe rzucenie zaklęcia, czy to ze zwoju, czy z runy, kosztuje jeden punkt many. Warto przypomnieć, iż wypita mikstura many przywraca dwa punkty.
+
+Wyłącznie magowie i adepci mogą korzystać z czerwonych zwojów magicznych, czy to autorskich, czy to z podręcznika. 
+
+18.4 Magia rytualna
+
+Efekty czarów zaklętych w runach bywają niewystarczające, a zwoje, choć bardziej elastyczne, także utrzymają jedynie ograniczoną ilość energii. Gdy potrzeba mocy wielkiej, przekraczającej typowe efekty czarów, magowie muszą podjąć się współpracy i sprostać wyzwaniu przeprowadzenia magicznego rytuału dla osiągnięcia sprecyzowanego efektu.
+
+Choć ich przebieg jest nierzadko powiązany z aktem wiary czarujących, to magiczne rytuały różnią się od zwykłych religijnych obrządków (jak proste błogosławieństwa, modlitwy czy procesje) oparciem się o reguły działania magii oraz tworzenia zaklęć. Zazwyczaj więc nie będzie rytuałem zwykłe nabożeństwo, ale będzie nim podniosła konsekracja i magiczne zabezpieczenie cmentarza.
+
+Są to sceny niejednokrotnie moderowane przez Mistrzów Gry i wzbogacane o efekty specjalne, a zawsze wymagające zaangażowania przynajmniej kilku graczy.
+
+Do przeprowadzenia rytuału niezbędny jest arcymag (Mistrz Gry) lub mag o właściwej specjalizacji bądź trzecim kręgu magii. Choć autorskich, czerwonych zwojów użyć mogą wyłącznie magowie lub adepci, to w pozostałych jego aspektach może uczestniczyć każdy więzień Kolonii Karnej.
+
+Rytuał składa się z czterech elementów. Ich interpretacja podlega kreatywności graczy w taki sposób, by tworzyć sceny klimatyczne, tematycznie poprawne i angażujące możliwie dużą ilość innych uczestników larpa. Są to:
+
+Element magiczny - czyli autorskie zwoje tworzone zgodnie ze standardowymi regułami, ale których efekty rozpatrywane są jako skoordynowane,
+
+Element werbalny - na przykład modlitwy lub fantastyczne inwokacje,
+
+Element materialny - na przykład dewocjonalia lub przedmioty rytuału,
+
+Element somatyczny - na przykład harmoniczny ruch rytualistów.
+
+Konsekwencje rytuału podlegają ocenie Mistrza Gry opartej tak o zasadność fabularną, jak i o zaangażowanie graczy. Pomyłki, przejęzyczenia, niedziałające zwoje - to wszystko może prowadzić do niepowodzenia.
+
+18.5 Kręgi magii
+
+	Kręgi magiczne odzwierciedlają znajomość arkan, jednak są również stopniami czarodziejsko-kapłańskiej hierarchii. Wraz z kolejnymi krokami, mag może zyskać więcej magicznych run lub dostęp do zdolności wynikających z obranej specjalizacji. W larpowych warunkach przyjmujemy trzeci krąg za maksymalny do osiągnięcia przez gracza, a krąg drugi za najpowszechniejszy i niemal zupełnie samodzielny. 
+
+Magowie mają przywilej i obowiązek prezentować swój stopień zaawansowania poprzez noszenie okazałych pierścieni w liczbie równej posiadanym kręgom. Forma pierścieni pozostaje dowolna. Pozostaje w gestii gracza, jeśli chce ich kolor czy kształt powiązać tematycznie ze swoją postacią.
+
+W czasie gry możliwy jest awans na kolejny krąg, toteż warto przygotować sobie dodatkowy pierścień.
+
+18.5.1 Adepci - „krąg zerowy”
+
+ „Mieszka w Khorinis i prowadzi eksperymenty nad przeróżnymi miksturami i napojami leczniczymi. No i nad zaklęciami, i to właśnie najbardziej mnie martwi. Widzisz, zastanawia mnie czasami, czy Innosowi podoba się ta jego magia.”
+
+Chociaż prawdziwy potencjał run i tajemnice świata magii zarezerwowane są dla pełnoprawnych magów, to magia dostępna jest też zwykłym śmiertelnikom. Niektórzy z nich bardziej od innych są zdeterminowani, by rozwijać talent w tej dziedzinie. Kolonia Karna nie jest miejscem na studia, ale uzyskanie wystarczających wpływów, by zostać uczniem maga, pozwala imitować część ich umiejętności.
+
+Adepci magii, jak na przykład nieliczni spośród Nowicjuszy Bractwa, znajdują się pod bezpośrednią opieką magów Drugiego lub Trzeciego Kręgu. Są w stanie korzystać z czerwonych zwojów magicznych, a także raz dziennie spisać jeden biały zwój z podstawowym zaklęciem. Na potrzeby wszystkich innych reguł nie są pełnoprawnymi magami, a ich zdolności biorą się przede wszystkim ze stale aktualizowanej przez mentorów wiedzy oraz dostępu do zasobów magów, co oznacza, że te zdolności tracą, jeśli mieliby wypaść z łask. O dostępie do wspomnianych „zasobów” decydują arcymagowie (MG).
+
+Adept posiada jeden punkt many
+
+Adept może pod mentorstwem pełnoprawnego maga pisać białe zwoje
+
+Adept może używać zaawansowanych „czerwonych zwojów”
+
+Zgłosić adepta może tylko mag posiadający przynajmniej Drugi Krąg
+
+Mag może zgłosić maksymalnie jednego adepta
+
+Kandydata na adepta musi zaakceptować arcymag (MG magów)
+
+Arcymag może w każdej chwili odebrać tytuł adepta oraz związane z tym bonusy
+
+18.5.2 Pierwszy krąg
+
+„Przystąpienie do Pierwszego Kręgu wiąże się z poznaniem tajników magii runicznej. Wykorzystaj drzemiącą w runach moc do poznania samego siebie.”
+
+	Magowie pierwszego kręgu to postacie, które relatywnie niedawno dołączyły do swoich zgromadzeń. Sprawnie władają dynamicznie wzrastającą mocą magiczną i aktywnie studiują arkana magii oraz struktury swych zakonów, niejednokrotnie obierając jednego ze starszych magów za mentora. Choć jeszcze szlifują swe zdolności i docierają się w swej nowej roli, to w oczach laików cieszą się pełnym autorytetem maga. Jako że jest to etap przejściowy, magów pierwszego kręgu jest relatywnie niewielu.
+
+	Mag pierwszego kręgu może posiadać jedną runę z jednym z podstawowych („białych”) czarów z podręcznika. Umie również wypisać zwoje z podstawowymi oraz zaawansowanymi czarami, ale podlegają one akceptacji maga kręgu trzeciego lub wyższego. Mag pierwszego kręgu posiada trzy punkty many na scenę.
+
+18.5.3 Drugi krąg
+
+„Poznasz teraz drugi krąg i nauczysz się posługiwać jeszcze potężniejszą magią. Pamiętaj jednak o spoczywającej na tobie odpowiedzialności.”
+
+Magowie drugiego kręgu to kompetentni czarodzieje i kapłani, którzy biegle opanowali przynajmniej jedną z dziedzin magicznych i cieszą się pewnym zaufaniem swych przełożonych. Daleko im do mistrzowskiej znajomości najpilniej skrywanych sekretów, ale poznali tradycyjne metody praktykowania magii i samodzielnie podejmują się różnorakich eksperymentów oraz przedsięwzięć. Magowie drugiego kręgu to zdecydowana większość magów w Kolonii Karnej.
+
+Mag drugiego kręgu zyskuje drugą runę z zaklęciem zawartym w podręczniku. W niektórych aspektach ciągle polega na pomocy magów wyższych kręgów: wymaga ich akceptacji podczas wypisywania zwojów z podręcznika bądź autorskich oraz nie jest w stanie samodzielnie przeprowadzić magicznego rytuału bez właściwej specjalizacji.
+
+Mag drugiego kręgu opanował dwie z magicznych dziedzin i może wybrać dwa benefity wynikające z tych specjalizacji.
+
+18.5.4 Trzeci krąg
+
+„Trzeci Krąg to jeden z najważniejszych etapów w życiu każdego maga. Przystępując do niego przestajesz być uczniem.”	 Trzeci krąg zarezerwowany jest dla magów, którzy wiele lat poświęcili na studiowanie i praktykowanie magii swego Kręgu. Doskonale znają się na tworzeniu zwojów, uczestniczyli w wielu rytuałach i pochwalić się mogą osiągnięciami naukowymi oraz politycznymi. Magów trzeciego kręgu w Kolonii Karnej jest zaledwie garstka.
+
+Mag trzeciego kręgu zyskuje jedną dodatkową specjalizację oraz jest w stanie poprowadzić rytuały. Jest także dostatecznie doświadczony, by samodzielnie wypisywać oraz zatwierdzać zwoje magiczne zawierające czary z podręcznika, chociaż do czarów autorskich w dalszym ciągu potrzebuje akceptacji maga wyższego kręgu (MG). Zazwyczaj może przewodzić rytuałom nawet bez bez specjalizacji kapłańskiej.
+
+18.6 Specjalizacje magiczne
+
+Wejście na drugi krąg magii wiąże się z osiągnięciem pewnych kompetencji i pozyskaniem szczególnej wiedzy w interesujących maga dziedzinach. Na drugim kręgu mag może wybrać dwie spośród poniższych specjalizacji, a na kręgu trzecim może dobrać trzecią. Wyjątkiem są Guru, którzy na drugim kręgu otrzymują specjalizację astrologiczną oraz dobierają jedną inną.
+
+
+
+
+
+KapłańskaPozwala przewodzić rytuałom magicznym. Pozwala na samodzielne wywoływanie wizji innym graczom w oparciu o sceny modlitwy i medytacji.
+
+Magia (Żywiołu)Jedna z posiadanych run może być runą z zaklęciem autorskim tematycznie powiązanym z wybranym żywiołem lub „para-żywiołem” ustalonym z Mistrzem Gry (jak Lód dla Magów Wody, Śnienie dla Guru i tym podobne).
+
+MistycznaZwiększa maksymalny poziom many o jeden.
+
+RunicznaPozwala posiadać dodatkową runę z zaklęciem z podręcznika (poza Uzdrowieniem).
+
+TransmutacjaKosztem jednej esencji, pozwala przemienić nawet kilka esencji w inne.
+
+ZaklinaniePozwala tworzyć magiczne przedmioty.
+
+
+
+
+
+18.7 Magiczne przedmioty i zaklinanie
+
+	Na grze mogą pojawić się magiczne przedmioty w różnej formie, głównie bransolet i amuletów. Większość z nich jest wielokrotnego użytku, ale ich efekty można przywołać nie więcej niż raz na scenę (choć niektóre mogą trwać przez całą scenę). Niektóre z nich wymagają aktywacji w konkretny sposób. Wszystkie te przedmioty powinny być identyfikowalne przy pomocy specjalnej runy Prawdziwego Widzenia dostępnej wśród magów.
+
+	Przedmioty magiczne będą również specjalnie oznaczone, by mogły zostać odnalezione w ewidencji dostępnej u magów każdego z Obozów. Magowie mogą świadczyć usługi identyfikacji, sprawdzając w swoich bibliotekach, jak dany przedmiot działa i jak go obsługiwać. Chociaż fabularnie postać maga może oczywiście okłamać postać innego gracza, to ze względów organizacyjnych prosimy, by gracz powiedział graczowi prawdziwie, co powinno się stać, gdy ten przedmiotu użyje.Narracyjnie postacie muszą poznać działanie magicznego przedmiotu i zostać pouczonymi, jak się z nim zestroić i nim posługiwać.
+
+Nawet bez specjalizacji zaklinania magowie mogą potraktować magiczne przedmioty wręcz prostacko - i je rozczarować, pozbawiając mocy magicznej, a pozyskując esencje. Aby to zrobić, należy zweryfikować przedmiot w ewidencji oraz skonsultować się ze swoim MG.
+
+	Aby stworzyć magiczny przedmiot, niezbędna jest magiczna specjalizacja zaklinania.Proces wygląda analogicznie do magii rytualnej, a na poziomie fabularnym może się nawet w nią wpisywać: należy przygotować autorski czerwony zwój (lub zwoje), uzyskać akceptację MG i odegrać samą scenę zaklinania, często z użyciem specjalnych składników lub znacznej ilości magicznej rudy do naładowania nowego przedmiotu. Rzecz jasna, należy również przygotować sam przedmiot (ze świadomością, że przedmiot ten może zostać ukradziony) oraz upewnić się, że został właściwie oznaczony jako magiczny. Wreszcie: należy dopisać przedmiot do ewidencji oraz upewnić się, że zostanie dopisany do ewidencji pozostałych kręgów, np. wysyłając kuriera (tu wyjątkowo można posłużyć się fioletową naklejką do oznaczenia listu).
+
+	Zaklinanie wykorzystuje czerwone zwoje i posiłkuje się wszelkimi ogólnymi wytycznymi dotyczącymi magii. Na przykład efekt magiczny powinien być racjonalnie możliwy do odegrania bez zaburzania sceny, a więc raczej spodziewamy się efektów działających na samego posiadacza przedmiotu (dzięki czemu nie musi meta-growo pouczać innych graczy).
+
+
+
+	Przykładowe efekty magicznych przedmiotów to:
+
++1 many na scenę,
+
+przypływ odwagi na czas sceny,
+
+efekt upojenia na czas sceny,
+
+odporność na alchemię na scenę (wszelką, także tę pozytywną),
+
+nagły efekt uzdrowienia, analogicznie do mikstury uzdrowienia.
+
+19. Podstawy Alchemii dla każdego gracza
+
+Rozdział poświęcony każdemu graczowi, bowiem nawet jeśli nie zamierzasz zajmować się alchemią, to na grze możesz zostać poddany jej efektom. Alchemia to dyscyplina naukowa zajmująca się zarówno teoretycznym opisaniem świata, jak i praktycznym wykorzystaniem tej wiedzy poprzez produkcję mikstur oraz pokrewne im przemiany substancji. 
+
+Alchemicy sami w sobie nie są magami, ale magowie często są zainteresowani alchemią. Budowa świata, gdzie obecni są bogowie oraz mana, sprzyja temu, by nauka zajmowała się czasem również kosmologią, symboliką i metafizyką, ale w sposób racjonalny i bez religijnego dogmatyzmu.
+
+Receptury alchemiczne są wielokrotnego użytku, a przyjmują formę charakterystycznej, zielonej karty papieru. Receptury można kraść. Tylko osoby znające się na alchemii (jak np. Asystenci) oraz ich uczniowie mogą z powodzeniem skopiować recepturę.
+
+19.1 Mikstury
+
+Mikstury będą charakteryzowały się kolorem lub smakiem, prosimy zatem nie przynosić i nie przyrządzać na grze napojów o podobnej charakterystyce z pominięciem zasad alchemii. Każda mikstura będzie zdatna do spożycia. Mikstury dzielimy na pięć rodzajów:
+
+Czerwona - lecznicza,
+
+Niebieska - many,
+
+Zielona - serum prawdy,
+
+Żółty - inna (z efektem opisanym na załączonej kartce),
+
+Fioletowa lub słona - trucizna.
+
+
+
+Słony smak napoju bezwzględnie oznacza, iż jest to trucizna i o ile nie ma załączonej karteczki z opisem efektu, jest to trucizna podstawowa. Nietypowe trucizny będą mieć karteczki, które zawiesza się na naczyniu lub wkłada pod kubek z zatrutym napojem. Jeśli karteczka dotarła do otrutego, ten czyta i odgrywa efekt, a jeśli nie, to działa efekt podstawowy. Karteczki mają funkcję wyłącznie mechaniczną, prosimy nie wykorzystywać ich do unikania trucizn oraz o nie ignorowanie ich. Każda będzie zaczynała się napisem „TRUCIZNA”.
+
+Żywność nie może być zatruwana - słony kotlet z kretoszczura to po prostu słony kotlet z kretoszczuta, a nie zatruty kotlet z kretoszczura. Jednak słone piwo, woda, nalewka czy każda inna ciecz to już trucizna.
+
+Uwaga! Trucizny mogą być również podawane pod ukryciem innej mikstury, co można poznać po słonym smaku. Takie mikstury posiadają tylko i wyłącznie efekt trucizny.
+
+Przykład: Ranny Szkodnik wypił miksturę uzdrowienia, ale okazała się być słona. Oprócz tego, że nie wyleczył swoich ran, to jeszcze został otruty.
+
+19.1.1 Mikstury proste:
+
+Mikstura Lecznicza
+
+Kolor: Czerwony
+
+Działanie: Przywraca wszystkie punkty zdrowia.
+
+Mikstura Many
+
+Kolor: Niebieski
+
+Działanie: Przywraca do dwóch punktów many.
+
+Niestrawność (Trucizna)
+
+Kolor: Fioletowy, Smak: Słony
+
+Działanie: Otruty odczuwa nagłe problemy żołądkowe na czas sceny.
+
+Trucizna
+
+Kolor: Fioletowy, Smak: Słony
+
+Działanie: Ofiara zostaje na czas sceny osłabiona (nie może walczyć, odgrywa osłabienie fizyczne).
+
+Usypiająca (Inna)
+
+Kolor: Żółty
+
+Działanie: Spożywający zapada w głęboki sen na czas sceny.
+
+19.1.2 Mikstury zaawansowane:
+
+Mikstura Odwagi
+
+Kolor: Żółty
+
+Działanie: Cel na czas sceny czuje, że może stawić czoła każdej przeciwności (efekt czysto psychologiczny).
+
+Lekarstwo
+
+Kolor: Żółty
+
+Działanie: Pomaga organizmowi zwalczyć efekty trucizn, może zostać wykorzystana pomocniczo do leczenia uzależnień i chorób.
+
+Narkotyk (Trucizna)
+
+Kolor: Fioletowy, Smak: Słony
+
+Działanie: Postać na jedną scenę zaczyna odgrywać efekt haju, przez co wykonywanie jakichkolwiek czynności staje się utrudnione. Gracz może się od tej substancji uzależnić (sam decyduje).
+
+Mikstura szału (Trucizna)
+
+Kolor: Fioletowy, Smak: Słony
+
+Działanie: Ofiara wpada na chwilę w szał i atakuje najbliższy cel.
+
+Serum prawdy
+
+Kolor: Zielony
+
+Działanie: Ofiara na czas sceny musi mówić prawdę.
+
+19.2 Odgrywanie efektów mikstur
+
+Poza wymienionymi wyżej wyrobami, alchemicy mogą przyrządzać także eksperymentalne mikstury, których działanie będzie opisane na załączonej kartce. Warto pamiętać, że mikstury alchemików mogą modyfikować pewne inne mechaniki gry, ale zawsze należy zakładać dobrą wolę gracza.
+
+Opis może określać czas trwania efektu. Z reguły będzie to jedna scena, godzina, a sporadycznie do spełnienia określonego warunku, np. wyleczenia przez specjalistę (a wtedy należy szukać pomocy w samej grze).Jeżeli z efektu wynika, że powinien trwać on określony czas, ale nie został zdefiniowany w opisie, to należy efekt odgrywać wedle własnego uznania, przynajmniej do zakończenia sceny.
+
+Jeśli uważasz to za zasadne i interesujące, to nawet po zakończeniu domyślnego czasu trwania możesz odgrywać efekty mikstur.
+
+19.3 Rzadkie składniki
+
+Niektóre mikstury wymagają konkretnych, rzadkich składników, których nie da się zastąpić esencjami magicznymi. Służą do produkcji mikstur zaawansowanych, a czasem również do konkretnych wątków lub rytuałów.
+
+Składniki pozyskać można z pewnych roślin, zwierząt, bądź potworów, lecz nie jest to domena alchemików. Potrzebna jest wyspecjalizowana wiedza myśliwska opisana w rozdziale „9.2 Składniki z potworów”.
+
+20. Alchemia Zaawansowana
+
+Ten rozdział przeznaczony jest dla tych, którzy zamierzają zagłębić się w arkana alchemii. Polecamy jednak zapoznać się z jego treścią również osobom, które zamierzają mieć większe interakcje z alchemią w trakcie gry, nawet jeśli nie są alchemikami.
+
+ 20.1 Wtajemniczenie Alchemiczne
+
+Istnieją 3 poziomy wtajemniczenia w alchemii. Rozwój w tej dziedzinie będzie polegać na zdobywaniu kolejnych receptur alchemicznych i pozyskiwaniu wiedzy od bardziej doświadczonych kolegów po fachu.
+
+Poziomy wtajemniczeń będą oznaczone charakterystycznymi menzurkami. Asystent, Alchemik oraz Mistrz Alchemii będą mieć odpowiednio srebrną, złotą oraz niebieską menzurkę.
+
+20.1.1 Asystent
+
+Wymagania: Postać została nauczona podstaw alchemii oraz zdobyła przynajmniej jeden przepis na miksturę podstawową. Gracz rozumie mechanikę alchemii i jest w stanie tę miksturę przyrządzić. Kandydat na Asystenta musi zostać zarekomendowany Mistrzom Gry przez Alchemika lub Mistrza Alchemii.
+
+Zdolność: Może tworzyć mikstury z zakresu alchemii prostej (patrz „19.1.1 Mikstury proste”), gdy ma dostęp do stołu alchemicznego oraz właściwy przepis.
+
+20.1.2 Alchemik
+
+Wymagania: Postać odbyła naukę i praktykę alchemiczną oraz zdobyła przepisy na wszystkie mikstury podstawowe oraz na co najmniej jedną zaawansowaną. Rekomendowany Mistrzom Gry przez Mistrza Alchemii.
+
+Zdolność: Może tworzyć wszystkie mikstury, jeżeli ma właściwy przepis, a mikstury proste może tworzyć nawet bez przepisu. Pod nadzorem Mistrza Alchemii może opracować jeden autorski przepis na miksturę eksperymentalną, która na czas danej edycji będzie miała efekty uboczne określone przez MG. Może w czasie edycji wyszkolić i rekomendować jednego asystenta.
+
+20.1.3 Mistrz Alchemii
+
+Wymagania: Postać posiadająca znaczący dorobek naukowy, a także poświęcająca sztuce alchemicznej większość swego czasu. Mianowany przez MG.
+
+Zdolność: Może tworzyć wszystkie mikstury z podręcznika nie posiadając przepisu, choć ciągle potrzebuje przepisu do wszelkich mikstur autorskich. Może pod nadzorem MG stworzyć jeden autorski przepis na miksturę eksperymentalną. Może w trakcie edycji wyszkolić i rekomendować jednego Alchemika lub Asystenta.
+
+20.2 Warzenie mikstur
+
+Mikstury tworzy się przy stołach alchemicznych, które powinny zawierać większość rekwizytów niezbędnych do stworzenia pijalnego eliksiru. Alchemik po swojej stronie powinien mieć przygotowane recepturę oraz niezbędne surowce: esencje magiczne oraz składniki specjalne, jeśli takie są wymagane. Nieodzowna jest również menzurka oznaczająca stopień zaawansowania alchemika. Menzurki te zostaną przygotowane przez organizatorów i rozdane przed grą.
+
+
+
+Dla większości mikstur:
+
+Skrop ręce olejkiem roślinnym.
+
+Złóż składniki potrzebne do mikstury w specjalnym pojemniku.
+
+Dodaj do fiolki odpowiedni barwnik.
+
+(W przypadku trucizn) Dodaj soli do naczynia.
+
+Dodaj wody do fiolki, tak by zapełnić naczynie.
+
+Zamieszaj całość patyczkiem lub wstrząsając.
+
+Zamknij fiolkę korkiem.
+
+(W przypadku mikstur złożonych) Dodaj etykietę do mikstury.
+
+
+
+W przypadku przygotowywania paru mikstur naraz (przy produkcji ponad 3 mikstur naraz można od ich łącznego kosztu odjąć jedną wybraną esencję):
+
+Skrop ręce olejkiem roślinnym.
+
+Złóż składniki potrzebne do mikstur w specjalnym pojemniku.
+
+Dodaj do miseczki odpowiedni barwnik.
+
+(W przypadku trucizn) Dodaj soli do miseczki.
+
+Dodaj wody do miseczki.
+
+Zamieszaj całość patyczkiem.
+
+Przelej mikstury do fiolek i zamknij je korkami.
+
+(W przypadku mikstur złożonych) Dodaj etykiety do mikstur.
+
+
+
+Istnieją mikstury posiadające specjalne wymogi ponad te wymienione wyżej. Wymagania te będą opisane w recepturze.
+
+20.3 Receptury alchemiczne
+
+	Receptury alchemiczne są zazwyczaj niezbędne do stworzenia mikstury, chociaż alchemicy, w zależności od stopnia zaawansowania, czasem mogą ich nie potrzebować. Receptury te są wielokrotnego użytku, a przyjmują formę charakterystycznej karty papieru z naniesionym schematem oraz podpisami Alchemika oraz Mistrza Alchemii. Receptury można kraść, co powinniście uwzględnić, jeżeli chcielibyście przechowywać je w klimatycznych rekwizytach, jak almanachy czy dzienniki. Tylko osoby znające się na alchemii (jak np. Asystenci) oraz ich uczniowie mogą z powodzeniem skopiować recepturę. Podczas kopiowania receptury wystarczy uzupełnić jedno z pól na imię alchemika lub Mistrza Alchemii.
+
+Przepisy alchemiczne można również znaleźć w świecie: u kupców, w dziczy czy w wyniku różnych fabularnych wątków.
+
+
+
+
+
+
+
+	Receptury alchemiczne operują na zasadach analogicznych do zwojów magicznych: wartości liczbowe określają punkty oraz wektory nanoszone na oś żywiołów widoczną na karcie receptury. Z tych punktów oraz wektorów bezpośrednio wynika koszt produkcji mikstury, który należy uiścić w esencjach. Szczegółowa znajomość tych reguł nie będzie niezbędna dla większości alchemików operujących przede wszystkim na recepturach. Dla pełnego ich zrozumienia należy znaleźć nauczyciela w czasie gry lub zapoznać się z rozdziałem podręcznika dotyczącym tworzenia autorskich zaklęć.
+
+W trakcie gry pod okiem Mistrzów Alchemii mogą powstać też nowe receptury alchemiczne. Takie autorskie przepisy na mikstury eksperymentalne będą do końca danej edycji niedoskonałe, a korzystanie z nich będzie wiązało się z efektami ubocznymi. Efekty te określa MG podczas akceptacji receptury.
+
+ 20.3.1 Mikstury proste
+
+Mikstura Lecznicza
+
+Receptura: (-1, 1), (1, -1), (-3, 1). Koszt: 4
+
+Mikstura Many
+
+Receptura: (3, 2), (-3, 2). Koszt: 5
+
+Niestrawność (Trucizna)
+
+Receptura: (2, 2) → (0, 0), (-3, -1). Koszt: 5
+
+Trucizna
+
+Receptura: (3, -1), (-1, -1). Koszt: 3
+
+Usypiająca (inna)
+
+Receptura: (-2, -3) → (-2, 1). Koszt: 5
+
+21. Po larpie
+
+21.1 Podsumowania
+
+Na niedługo po zakończeniu larpa na stronie internetowej otwarta zostanie możliwość napisania podsumowania swojej tegorocznej gry. Jest to niezbędne, jeśli chcesz kontynuować postać w przyszłym roku.
+
+21.2 Wyjście z postaci
+
+Grając w larpa trzeba postawić wyraźną granicę pomiędzy tym, co czuła Twoja postać i co ją spotkało, a własnymi emocjami. To, że jeden z Cieni był przez całego larpa wredny i okrutny, wcale nie musi znaczyć, że gracz zachowuje się tak samo na co dzień.
+
+Jeśli podczas larpa wystąpiły jakieś budzące wątpliwości sytuacje, polecamy porozmawiać poza larpem z drugim graczem i wszystko wyjaśnić (można poprosić do pomocy jedną z osób zaufania).
+
+Zadbaj, aby po larpie nie pozostały w Tobie negatywne emocje, a zabierzesz z niego same dobre wspomnienia.
+
+21.3 Internetowy savoir vivre
+
+Zawsze po larpie w internecie, a przede wszystkim na naszej grupie FB i Discordzie, wybuchają dziesiątki dyskusji w których gracze dzielą się wspomnieniami i emocjami. Bardzo prosimy o zachowanie kultury w tej dyskusji.
+
+Pamiętajcie też, aby nie wyjawiać sekretów swojej postaci, które na larpie nie wyszły na jaw. Mogą się przydać na kolejnej edycji.
+
+22. Informacje końcowe
+
+22.1 Organizatorzy
+
+W roku 2025 w skład organizacji wchodzą:
+
+
+
+Maciej Antkiewicz — Organizator główny, informatyk, pomysłodawca i założyciel od 2015 r.
+
+Anna Szyller-Nowak — Koordynatorka od całości przedsięwzięcia, eventów i rekwizytów
+
+Piotr Krokosz — Główny fabularzysta, Social media i kontakt z graczami, grafika, pomysłodawca i założyciel od 2015 r.
+
+Tomasz Mazur — Koordynator logistyki
+
+Paweł Pelikan — Koordynator Komisji Strojowej
+
+Rafał Matraszek — Oświetlenie i oprawa dźwiękowa, pomysłodawca i założyciel od 2015 r.
+
+Małgorzata Bednarek — Opieka medyczna
+
+Aleksandra Borkowska — Logistyka
+
+Artur Postula — Logistyka
+
+Szymon Wasilewski — Koordynator eventówki
+
+Karol Łukowski — Ekonomia, kupcy, przestępczość zorganizowana
+
+Łukasz Arczyński — Fabuła międzyobozowa 
+
+Krzysztof Śliwa — Koordynacja Starego Obozu
+
+Szymon Dakowicz, Grzegorz Dąbrowski — Fabuła Magów Ognia oraz Alchemia
+
+Krzysztof Sikora, Błażej Kardyś - Fabuła Magnatów i Służby
+
+Jakub Zielnik, Michał Paliszewski, Jakub Sempowicz — Fabuła Strażników i Magnatów
+
+Jan Wojciechowski, Mariusz Lizończyk — Fabuła Cieni
+
+Paweł Kułak, Michał Patkowski, Tomasz Kalinowski — Fabuła Kopaczy
+
+Karol Baranowski — Fabuła Magów Wody
+
+Maria Badyoczek, Igor Urbański — Fabuła Najemników
+
+Adrian Celebański, Borys Palka, Michał Ignacyk, Mateusz Łukowski — Fabuła Szkodników
+
+Jakub Łabaz, Bartłomiej Płoszczyca, Oskar Łukianowicz, Stasiek Jaraczewski, Czarek Szypulski — Fabuła Bractwa Śniącego
+
+Samanta Jurkowska, Paweł Pelikan, Patryk Domurad, Jakub Janucik — Fabuła Skazańców
+
+Magdalena Szulc, Proxy Approxit, Mikołaj Wiński, Kuba Józefek, Tomasz Kalinowski - Logistyka obozów
+
+Krzysztof Krasuski — Scenografia i rekwizyty
+
+Magda Pawlikowska — Scenografia, kostiumy potworów
+
+Wiktoria Kosakowska, Karolina Żak, Martyna Jankowska, Justyna Dudkiewicz, Anna Wojtala, Alicja Porowiec — Charakteryzacja 
+
+Kamil Zatyka, Lidia Steczek, Emi Łukowski, Bartosz Słowik,, Dolores, Aldona Dukat, Igor Milewski, Radosław Wojtarowicz, Marta Wojtarowicz — Kuchnia

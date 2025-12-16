@@ -1,0 +1,231 @@
+{
+    "factions": {
+        "stary_oboz": {
+            "name": "Stary Obóz",
+            "leaders": [
+                "Gomez",
+                "Thorus",
+                "Diego",
+                "Corristo",
+                "Bartholo",
+                "Kruk",
+                "Blizna",
+                "Arto"
+            ],
+            "npcs": [
+                "Jim Wiązka",
+                "Rob Graba",
+                "Sverh",
+                "Bełt",
+                "Cyna",
+                "Lengar",
+                "Sznitka",
+                "Udar",
+                "Garhax",
+                "Pergan",
+                "Esma",
+                "Noel",
+                "Klara",
+                "Faran",
+                "Sztychu",
+                "Jurgen",
+                "Snaf",
+                "Stone",
+                "Fisk",
+                "Dexter",
+                "Whistler",
+                "Sly",
+                "Fingers",
+                "Scatty"
+            ],
+            "locations": [
+                "Zamek (Siedziba Magnatów)",
+                "Wewnętrzny Pierścień",
+                "Dzielnica Areny",
+                "Targowisko",
+                "Kuźnia Stone'a",
+                "Karczma",
+                "Bajoro (oczyszczalnia/kąpielisko)",
+                "Kopalnia (Stara Kopalnia)",
+                "Slumsy (przy Kopalni)",
+                "Apteka Esmy"
+            ]
+        },
+        "nowy_oboz": {
+            "name": "Nowy Obóz",
+            "leaders": [
+                "Aidan",
+                "Demwar",
+                "Medus",
+                "Keira",
+                "Joplin",
+                "Ryżowy Książę",
+                "Klin",
+                "Selene"
+            ],
+            "npcs": [
+                "Cord",
+                "Jarvis",
+                "Wolf",
+                "Silas",
+                "Shrike",
+                "Sharky",
+                "Buster",
+                "Cipher",
+                "Torlof",
+                "Orik",
+                "Homer"
+            ],
+            "roles": [
+                "Najemnik",
+                "Szkodnik",
+                "Kret (odpowiednik Kopacza)",
+                "Mag Wody"
+            ],
+            "locations": [
+                "Chata Aidana",
+                "Pola Ryżowe",
+                "Kram Lore&Enzo",
+                "Karczma na (u Snafa)",
+                "Kopiec Rudy (chroniony przez Magów Wody)",
+                "Tama",
+                "Chata Laresa",
+                "Wolna Kopalnia"
+            ]
+        },
+        "bractwo": {
+            "name": "Bractwo Śniącego (Obóz na Bagnie)",
+            "leaders": [
+                "Y'Berion",
+                "Cor Kalom",
+                "Cor Angar",
+                "Baal Cadar",
+                "Baal Namib",
+                "Baal Orun",
+                "Baal Tyon"
+            ],
+            "npcs": [
+                "Lester",
+                "Fortuno",
+                "Ghorim",
+                "Harlok",
+                "Joru",
+                "Melvin",
+                "Talas",
+                "Viran",
+                "Nyras"
+            ],
+            "locations": [
+                "Świątynia Śniącego",
+                "Plac Treningowy (Templariusze)",
+                "Shisharnia",
+                "Plac Świątynny",
+                "Kuchnia Bractwa"
+            ]
+        }
+    },
+    "world": {
+        "general_locations": [
+            "Las Doliny",
+            "Kotlinka Wymian (Plac Wymian)",
+            "Stara Kopalnia",
+            "Ziemia Orków",
+            "Cmentarz",
+            "Mostek w dolinie",
+            "Slumsy",
+            "Faktoria Bractwa",
+            "Chata Aidana",
+            "Stary Oboz"
+        ],
+        "external_lore": [
+            "Myrtana (Królestwo, wojna z Orkami)",
+            "Varant (Pustynia, upadła 3 lata temu)",
+            "Nordmar (Północ, podbity przez Orków)",
+            "Archolos (Wyspa, winnice, autonomiczni Wilczy Synowie)",
+            "Wyspy Południowe (handel)"
+        ]
+    },
+    "economy": {
+        "currency": "Bryłki Rudy",
+        "prices": {
+            "cheap_food": "5 bryłek (Obiad u Snafa)",
+            "cheap_beer": "5-9 bryłek (Cienkie piwo/cydr)",
+            "good_beer": "10-15 bryłek",
+            "wine": "15-50 bryłek (Wino/Nalewka)",
+            "swampweed_beginner": "4 bryłki (Zielony Nowicjusz)",
+            "swampweed_strong": "8 bryłek (Mrok Północy)",
+            "healing_potion": "15 bryłek",
+            "magic_scroll": "20-200 bryłek",
+            "weapon_armor": "20-999 bryłek",
+            "small_favor": "5 bryłek",
+            "quest_reward_standard": "10-20 bryłek"
+        }
+    },
+    "mechanics": {
+        "health": "Max 2 PZ (Punkty Zdrowia). Cios odbiera 1 PZ.",
+        "healing": "Mikstura lub Zaklęcie przywraca 2 PZ.",
+        "death": "Medalion Beliara (token śmierci). Jeśli gracz go otrzyma, może zginąć.",
+        "safety_words": [
+            "RED (Stop)",
+            "YELLOW (Zwolnij)",
+            "GREEN (Więcej)",
+            "PAX (Offgame)",
+            "MIR (Zachowaj Klimat)"
+        ],
+        "magic_circles": [
+            "Krąg 0 (Adepci)",
+            "Krąg 1 (Światło, Ognista Strzała)",
+            "Krąg 2 (Kula Ognia)",
+            "Krąg 3 (Burza Ognia)"
+        ]
+    },
+    "items": {
+        "drugs": [
+            "Bagienne Ziele",
+            "Zacier",
+            "Jęzor (narkotyk)",
+            "Skręty",
+            "Fajka Wodna"
+        ],
+        "food": [
+            "Potrawka z Chrząszcza",
+            "Ryżówka",
+            "Chleb (twardy)",
+            "Zupa Rzepowa",
+            "Wino z Archolos"
+        ],
+        "props": [
+            "List żelazny (prop papierowy)",
+            "Mieszek z rudą (rekwizyt fizyczny)",
+            "Stary miecz (bezpieczny, lateks)",
+            "Zniszczony kilof",
+            "Kawałek magicznego kryształu",
+            "Pierścień (ogranicznik ruchu)",
+            "Bandana (maskowanie tożsamości: Czerwona/Niebieska/Zielona/Brązowa)"
+        ]
+    },
+    "concepts": {
+        "hierarchy": [
+            "Magnat",
+            "Mag Ognia",
+            "Mag Wody",
+            "Guru",
+            "Strażnik",
+            "Strażnik Świątynny",
+            "Cień",
+            "Szkodnik",
+            "Nowicjusz",
+            "Kopacz",
+            "Kret",
+            "Skazaniec"
+        ],
+        "activities": [
+            "Szychta",
+            "Warta",
+            "Zbieranie ziela",
+            "Obieranie rzepy",
+            "Handel rudą",
+            "Arena (zakłady)"
+        ]
+    }
+}

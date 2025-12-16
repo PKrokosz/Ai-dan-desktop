@@ -211,32 +211,75 @@ export async function runAI(commandType, overrideProfile = null, options = {}) {
 
     try {
         // ===============================================
-        // INTELLIGENT CONTEXT LOADING (State-Based)
+        // INTELLIGENT CONTEXT LOADING (State-Based & Tag-Based)
         // ===============================================
         let systemContext = '';
+        let dynamicContext = {}; // For new PromptBuilder
 
-        // Default (Layer 0 + Stats) - Fallback for Buttons
-        if (!state.conversationFlow?.active) {
-            systemContext = ContextManager.getProfileStats(profile);
-            // Optionally add Layer 1 for context richness if needed, but keep it light
-            // systemContext += await ContextManager.getLayer1_Identity(profile['Imie postaci']);
-        } else {
-            // Layer 1: Identity
-            if (state.conversationFlow.currentLayer >= 1) {
-                const identity = await ContextManager.getLayer1_Identity(profile['Imie postaci']);
-                systemContext += identity;
-            }
-            // Layer 2: Relations
-            if (state.conversationFlow.currentLayer >= 2) {
-                const relations = await ContextManager.getLayer2_Relations(profile);
-                systemContext += relations;
-            }
-            // Layer 3: World
-            if (state.conversationFlow.currentLayer >= 3 && state.conversationFlow.intent) {
-                const world = await ContextManager.getLayer3_World(state.conversationFlow.intent);
-                systemContext += world;
+        // 1. Parse Tags in User Prompt (e.g. @relacje, @geografia.Las)
+        const tagRegex = /@(\w+)(?:\.(\w+))?/g;
+        let match;
+        const usedTags = new Set();
+
+        // We scan the raw prompt (commandLabel or userPrompt)
+        const textToScan = (commandType === 'chat' || commandType === 'custom') ? commandLabel : '';
+
+        while ((match = tagRegex.exec(textToScan)) !== null) {
+            const [fullTag, key, subKey] = match;
+            usedTags.add(fullTag);
+
+            // Map tag to context file
+            const contextMap = {
+                'relacje': 'system',
+                'rel': 'system',
+                'swiat': 'geography',
+                'geo': 'geography',
+                'questy': 'quests',
+                'lore': 'geography'
+            };
+
+            const fileKey = contextMap[key.toLowerCase()];
+            if (fileKey) {
+                const content = await ContextManager.getFullContext(fileKey);
+                if (content) {
+                    if (subKey) {
+                        // Surgical extraction if subKey provided
+                        // We use a naive simple search for the subKey in the content
+                        // or rely on ContextManager's extract logic if exposed, 
+                        // but for now let's just create a block
+                        const snippet = content.split('\n').filter(l => l.includes(subKey)).slice(0, 20).join('\n');
+                        dynamicContext[`${key}_${subKey}`] = `--- @${key}.${subKey} ---\n${snippet}`;
+                    } else {
+                        // Full File Injection (as requested for "No RAG" style)
+                        dynamicContext[key] = `--- @${key} (Full) ---\n${content}`;
+                    }
+                }
             }
         }
+
+        // 2. Command-Specific FORCE FULL CONTEXT (The "Simpler Prompts" requirement)
+        if (commandType === 'analyze_relations' || commandType === 'npc_connections') {
+            const relContent = await ContextManager.getFullContext('system');
+            dynamicContext['relations_full'] = `--- RELACJE (PEŁNE) ---\n${relContent}`;
+        }
+        else if (commandType === 'extract_traits') {
+            // Maybe traits need less context? Or just profile.
+        }
+
+        // 3. Layered Context (Fallback/Default)
+        if (!state.conversationFlow?.active && Object.keys(dynamicContext).length === 0) {
+            // Standard layers
+            systemContext = ContextManager.getProfileStats(profile);
+            if (commandType === 'main_quest') {
+                systemContext += await ContextManager.getLayer2_Relations(profile);
+            }
+        } else {
+            // If Flow is active OR we have tags, we merge them
+            if (state.conversationFlow?.currentLayer >= 1) systemContext += await ContextManager.getLayer1_Identity(profile['Imie postaci']);
+        }
+
+        // Pass dynamicContext to backend via options
+        options.dynamicContext = dynamicContext;
 
         // STRICT LANGUAGE ENFORCEMENT (RECENCY BIAS)
         systemContext += `\n\n[SZYBKA INSTRUKCJA KOŃCOWA]\n1. Odpowiadaj WYŁĄCZNIE w języku POLSKIM.\n2. Zachowaj klimat Gothic (brutalny, surowy).\n3. Nie używaj anglicyzmów.`;
@@ -252,8 +295,8 @@ export async function runAI(commandType, overrideProfile = null, options = {}) {
             useCoT: false
         }, selectedModel);
 
-        // Context Suppression for Stage 0
-        // We force-disable all external contexts (RAG, System, Geography) to ensure raw speed.
+        // Context Suppression for Stage 0 (Disable RAG if explicitly Stage 0 or if we used explicit tags)
+        const usedExplicitContext = Object.keys(dynamicContext).length > 0;
         const isStage0 = (!state.conversationFlow?.active) || (state.conversationFlow?.currentLayer === 0);
 
         const effectivePromptConfig = isStage0 ? {
@@ -280,11 +323,10 @@ export async function runAI(commandType, overrideProfile = null, options = {}) {
             // If chat/custom, pass the text as customPrompt
             customPrompt: (commandType === 'chat' || commandType === 'custom') ? commandLabel : undefined,
 
-            // Optimization Flags for Stage 0 (Chat)
-            disableRAG: isStage0,
-            autoCorrect: isStage0 ? false : undefined, // Disable if Stage 0, else default
-            disableIndexing: isStage0 // Don't index casual chat to keep vector store clean? Or maybe we DO want to index it?
-            // User complained about "Vector store saved" (46.9s). So let's disable it for speed.
+            // Optimization Flags
+            disableRAG: isStage0 || usedExplicitContext, // Disable RAG if we manually injected context
+            autoCorrect: (isStage0 || commandType === 'chat') ? false : undefined,
+            disableIndexing: isStage0
         };
 
 
@@ -302,7 +344,39 @@ export async function runAI(commandType, overrideProfile = null, options = {}) {
             state.streamData.cardIndex = -1;
             renderStep();
         }
-        // Success: streaming handler will manage state
+
+        // Success: Handle both Streaming and Synchronous (GCF) responses
+        // If streaming worked, aiProcessing should already be false (via handleAIStreamChunk).
+        // If aiProcessing is still true, it means we got a sync response (e.g. GCF) or stream failed to emit done.
+        if (result.success && state.aiProcessing) {
+            // Synchronous completion
+            state.aiProcessing = false;
+
+            if (state.aiResultsFeed[newItemIndex]) {
+                const item = state.aiResultsFeed[newItemIndex];
+                item.content = result.text || '';
+                item.isStreaming = false;
+
+                // Capture Reporting Metadata for Sync Responses
+                if (result.system) item.system = result.system;
+                if (result.prompt) item.prompt = result.prompt;
+                if (result.model) item.model = result.model;
+
+                // If formatting needed:
+                if (window.formatMarkdown) {
+                    // We rely on updateStreamUI or just leave raw, but updateStreamUI handles formatting
+                    // Let's rely on renderStep re-rendering, but we might want to format.
+                    // Ideally we use handleAIStreamChunk logic but synchronously:
+                }
+            }
+
+            if (state.streamData.timerInterval) clearInterval(state.streamData.timerInterval);
+            state.streamData.active = false;
+            state.streamData.cardIndex = -1;
+
+            addLog('success', '✓ Wygenerowano odpowiedź (Sync/GCF)');
+            renderStep();
+        }
 
     } catch (error) {
         state.aiResult = `❌ Błąd połączenia: ${error.message}`;

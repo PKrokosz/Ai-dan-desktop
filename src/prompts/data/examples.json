@@ -1,0 +1,432 @@
+{
+    "QUEST": [
+        {
+            "user_input": "Zrób quest dla Strażnika, który chce dorobić na boku.",
+            "output": {
+                "_thought_process": "Kategoria: Surowy Realizm & Brutalna Egzekucja. Frakcja: Strażnicy. Cel: Zysk (szaber/wymuszenie). Motyw: Korupcja w Starym Obozie.",
+                "title": "Podatek od Ochrony",
+                "summary": "Strażnik Sverh potrzebuje 'dodatkowego żołdu' dla swojego oddziału. Gracz ma wymusić haracz od sprytnego Kopacza 'Zguby', która ukrywa się w slumsach.",
+                "type": "Brutalna Egzekucja (Wymuszenie/Zastraszenie)",
+                "triggers": [
+                    "Rozmowa ze Sverhem przy beczce z żurem",
+                    "Braki w żołdzie po porannej musztrze"
+                ],
+                "steps": [
+                    "Znajdź Zgubę w Slumsach (często chowa się przy Kopalni).",
+                    "Zastrasz ją lub pobij, aby oddała ukrytą rudę (Test Siły).",
+                    "Uważaj, by nie zobaczył tego Magnat Magnus (nie lubi samowolki).",
+                    "Wróć do Sverha z sakiewką."
+                ],
+                "props": [
+                    "Sakiewka z rudą",
+                    "Pałka Strażnika"
+                ],
+                "events": [
+                    "Zguba płacze i oferuje informację o przemycie zamiast rudy."
+                ],
+                "rewards": {
+                    "material": "15 bryłek rudy (dola)",
+                    "social": "Szacunek w Oddziale Sverha, darmowy żur wieczorem"
+                }
+            }
+        },
+        {
+            "user_input": "Misja dla Maga Ognia badającego wybuch.",
+            "output": {
+                "_thought_process": "Kategoria: Tajemna Wiedza & Polityka. Frakcja: Magowie Ognia. Postać: Calor. Motyw: Śledztwo w sprawie Lux, rywalizacja z Dorianem.",
+                "title": "Echa Lux",
+                "summary": "Mag Ognia Calor podejrzewa, że wybuch Magini Lux nie był wypadkiem. Zleca graczowi odnalezienie 'czarnych śladów' w miejscu rytuału, unikając wzroku Doriana, który chce zatuszować prawdę.",
+                "type": "Tajemna Wiedza (Śledztwo/Analiza Magiczna)",
+                "triggers": [
+                    "Kłótnia Calora z Dorianem w bibliotece",
+                    "Dziwne pulsowanie w miejscu wybuchu"
+                ],
+                "steps": [
+                    "Przeszukaj zgliszcza w nocy, szukając 'spalonego metalu'.",
+                    "Przynieś próbkę Calorowi do analizy (Test Wiedzy).",
+                    "Przepytaj świadków (Sybillę lub nowicjuszy).",
+                    "Jeśli znajdziesz dowód na sabotaż: Calor każe oskarżyć Doriana."
+                ],
+                "props": [
+                    "Zwęglony fragment amuletu",
+                    "Fiolka na próbki"
+                ],
+                "events": [
+                    "Dorian zaczepia gracza: 'Nie szukaj tam, gdzie ogień już wygasł'. Sugeruje łapówkę."
+                ],
+                "rewards": {
+                    "material": "Zwój 'Światło' lub mikstura many",
+                    "social": "Przychylność Calora (szansa na darmowe leczenie)"
+                }
+            }
+        },
+        {
+            "user_input": "Intryga dla Służącej chcącej awansować.",
+            "output": {
+                "_thought_process": "Kategoria: Dworska Intryga & Trucizna. Frakcja: Służący. Postać: Beza/Tanka. Cel: Wyeliminowanie konkurencji (Anik) lub przypodobanie się Samowi.",
+                "title": "Fałszywa Nuta",
+                "summary": "Beza chce pozbyć się Anika, ulubionego grajka Magnata Sama. Zleca podrzucenie mu 'skażonego ziela', które sprawi, że straci głos przed ważnym występem.",
+                "type": "Dworska Intryga (Sabotaż)",
+                "triggers": [
+                    "Sam zachwyca się grą Anika",
+                    "Beza rzuca wściekłe spojrzenia na lutnię"
+                ],
+                "steps": [
+                    "Zdobądź 'Ziele Chrypki' od alchemiczki Tanki lub Szkodnika.",
+                    "Odwróć uwagę Anika (np. pytając o autograf lub plotkę).",
+                    "Podmień jego skręta na spreparowanego.",
+                    "Obserwuj kompromitację podczas wieczornej uczty."
+                ],
+                "props": [
+                    "Spreparowany Skręt",
+                    "Lutnia Anika"
+                ],
+                "events": [
+                    "Anik częstuje skrętem samego Sama. Ryzyko gigantycznej wpadki!"
+                ],
+                "rewards": {
+                    "material": "Dostęp do resztek z pańskiego stołu (wino Valerio)",
+                    "social": "Beza dłużniczką gracza (informacje z Zamku)"
+                }
+            }
+        },
+        {
+            "user_input": "Zadanie dla Cienia-Przemytnika.",
+            "output": {
+                "_thought_process": "Kategoria: Szara Strefa & Biznes. Frakcja: Cienie. Postać: Maverick/Blef. Cel: Przemyt towarów z Nowego Obozu.",
+                "title": "Złoty Interes",
+                "summary": "Maverick potrzebuje dostawy ryżówki do Shisha-Baru, ale chce ominąć podatek Magnusa. Gracz ma odebrać towar od Szkodników (Sarniak) i przemycić go kanałami.",
+                "type": "Szara Strefa (Przemyt)",
+                "triggers": [
+                    "Pustki w magazynie Shisha-Baru",
+                    "Maverick narzeka na 'złodziejskie cła'"
+                ],
+                "steps": [
+                    "Spotkaj się z Sarniakiem pod murem obozu w nocy.",
+                    "Przeładuj beczki na wózek z rudą (przykrywka).",
+                    "Przekup lub odwróć uwagę Strażnika przy Bramie (np. Kaina).",
+                    "Dostarcz towar na zaplecze baru."
+                ],
+                "props": [
+                    "Fałszywe kwity przewozowe",
+                    "Beczka Ryżówki"
+                ],
+                "events": [
+                    "Sarniak żąda dopłaty w ostatniej chwili ('Ryzyko wzrosło')."
+                ],
+                "rewards": {
+                    "material": "30 bryłek rudy + darmowa fajka",
+                    "social": "Wstęp do 'strefy VIP' w Shisha-Barze"
+                }
+            }
+        },
+        {
+            "user_input": "Misja dla Najemnika mszczącego się za przeszłość.",
+            "output": {
+                "_thought_process": "Kategoria: Honor & Zemsta. Frakcja: Najemnicy (Nowy Obóz). Postać: Morwen/Karak. Motyw: Rozliczenie krzywd (wątek 'Guilt of the Past').",
+                "title": "Topór z Przeszłości",
+                "summary": "Karak dowiedział się, że Pocak - człowiek, który go okaleczył - jest w Kolonii. Jego siostra, Morwen, chce go powstrzymać przed morderstwem 'sądowym', ale gracz ma wybór.",
+                "type": "Dylemat Moralny (Zemsta vs Litość)",
+                "triggers": [
+                    "Karak ostrzący topór przy ognisku",
+                    "Morwen płacząca w chacie"
+                ],
+                "steps": [
+                    "Znajdź Pocaka w Kopalni (ukrywa się).",
+                    "Wybór A: Wystaw go Karakowi (Walka na śmierć).",
+                    "Wybór B: Ostrzeż Pocaka i nakaż mu ucieczkę (Morwen będzie wdzięczna).",
+                    "Wybór C: Szantażuj Pocaka o długi."
+                ],
+                "props": [
+                    "Stary dłużny weksel",
+                    "Zardzewiały Topór"
+                ],
+                "events": [
+                    "Wojtek (szef najemników) interweniuje: 'Nie róbcie burdelu w moim obozie'."
+                ],
+                "rewards": {
+                    "material": "Unikalny amulet rodzinny Morwen",
+                    "social": "Respekt u 'Hajduszoboszlo Team' (Najemnicy)"
+                }
+            }
+        },
+        {
+            "user_input": "Zadanie dla Guru badającego sny.",
+            "output": {
+                "_thought_process": "Kategoria: Mistycyzm & Śledztwo. Frakcja: Guru (Bractwo). Postać: Baal Ayen. Motyw: 'Księga Szeptów' i zbieranie wizji nowicjuszy.",
+                "title": "Łapacz Snów",
+                "summary": "Baal Ayen tworzy 'Księgę Szeptów', by zrozumieć chaotyczne wizje zsyłane przez Śniącego. Gracz musi przepytać 'wrażliwych' nowicjuszy (Aria, Emma) i spisać ich majaki.",
+                "type": "Mistycyzm (Eksploracja Dialogowa)",
+                "triggers": [
+                    "Baal Ayen medytujący w oparach ziela",
+                    "Krzyki nowicjusza w nocy"
+                ],
+                "steps": [
+                    "Udaj się do slumsów i znajdź Emmę.",
+                    "Podaj jej 'Mrok Północy', by wzmocnić wizję.",
+                    "Zapisz jej słowa (szukaj motywu 'zielonej zarazy' lub 'węży').",
+                    "Wróć do Baala z zapiskami."
+                ],
+                "props": [
+                    "Pusty Pergamin",
+                    "Skręt Mrok Północy"
+                ],
+                "events": [
+                    "Podczas spisywania wizji gracz sam doznaje halucynacji (test Woli)."
+                ],
+                "rewards": {
+                    "material": "Mikstura ducha",
+                    "social": "Błogosławieństwo Śniącego (regeneracja many)"
+                }
+            }
+        },
+        {
+            "user_input": "Nielegalna misja w kopalni dla Strażnika Świątynnego.",
+            "output": {
+                "_thought_process": "Kategoria: Szara Strefa & Eksploatacja. Frakcja: Strażnicy Świątynni. Postać: Gor Vikr. Motyw: 'Czarna Szychta' - nielegalne wydobycie.",
+                "title": "Czarna Szychta",
+                "summary": "Gor Vikr dogadał się ze skorumpowanym strażnikiem Szczerbą. Potrzebują rąk do pracy przy nocnym, nielegalnym wydobyciu. Gracz ma zwerbować zaufanych kopaczy.",
+                "type": "Szara Strefa (Werbunek/Zarządzanie)",
+                "triggers": [
+                    "Szeptana rozmowa pod Faktorią Bractwa",
+                    "Vikr szukający 'ochotników' po zmroku"
+                ],
+                "steps": [
+                    "Znajdź 3 zaufanych kopaczy lub nowicjuszy (np. Milo, Vik).",
+                    "Przekonaj ich wizją zarobku bez podatku.",
+                    "Zaprowadź ich do starego szybu, omijając patrole Gomeza.",
+                    "Pilnuj, by nie uciekli z urobkiem."
+                ],
+                "props": [
+                    "Worek na rudę",
+                    "Stary Kilof"
+                ],
+                "events": [
+                    "Jeden z kopaczy łamie nogę - dobić czy ratować?"
+                ],
+                "rewards": {
+                    "material": "Hojna dola w rudzie (z pominięciem Gomeza)",
+                    "social": "Układ z Gor Vikrem (ochrona w kopalni)"
+                }
+            }
+        },
+        {
+            "user_input": "Zadanie dla Szkodnika - propaganda.",
+            "output": {
+                "_thought_process": "Kategoria: Propaganda & Sabotaż. Frakcja: Szkodniki (Nowy Obóz). Postać: Baryła. Motyw: 'Gang Butelek' i szkalowanie Starego Obozu.",
+                "title": "Wiadomość w Butelce",
+                "summary": "Baryła chce zalać Kolonię propagandą Nowego Obozu. Gracz ma zebrać puste butelki, włożyć do nich ulotki o 'Wolności u Lee' i podrzucić je w Starym Obozie.",
+                "type": "Sabotaż (Propaganda)",
+                "triggers": [
+                    "Baryła narzeka na brak szkła",
+                    "Stos ulotek w chacie Szkodników"
+                ],
+                "steps": [
+                    "Ukradnij puste butelki z karczmy (lub wyżebraj).",
+                    "Umieść w nich ulotki przygotowane przez Aidana.",
+                    "Rozrzuć je w nocy na placu wymian w Starym Obozie.",
+                    "Ucieknij, nim Strażnicy to zauważą."
+                ],
+                "props": [
+                    "Ulotki 'Precz z Gomezem'",
+                    "Worek butelek"
+                ],
+                "events": [
+                    "Kopacz czyta ulotkę na głos i zostaje pobity przez Strażnika."
+                ],
+                "rewards": {
+                    "material": "Ryżówka od Baryły",
+                    "social": "Szacunek w Gangu Butelek"
+                }
+            }
+        },
+        {
+            "user_input": "Naukowa misja dla Maga Wody.",
+            "output": {
+                "_thought_process": "Kategoria: Nauka & Eksploracja. Frakcja: Magowie Wody. Postać: Medus/Honka. Motyw: 'Lekcja Anatomii' na ścierwojadzie.",
+                "title": "Lekcja Anatomii",
+                "summary": "Arcymistrz Medus organizuje publiczną sekcję zwłok ścierwojada, by uczyć anatomii. Gracz musi zdobyć... świeżego ścierwojada i sprosić widownię.",
+                "type": "Nauka (Myślistwo/Organizator)",
+                "triggers": [
+                    "Tablica ogłoszeń w Nowym Obozie",
+                    "Medus czyszczący skalpel"
+                ],
+                "steps": [
+                    "Upoluj ścierwojada (musi być w jednym kawałku, nie posiekany).",
+                    "Zanieś truchło do laboratorium.",
+                    "Roznieś zaproszenia do Magów Ognia i Guru (dyplomacja).",
+                    "Asystuj przy sekcji (trzymaj tacę z organami)."
+                ],
+                "props": [
+                    "Świeże truchło ścierwojada",
+                    "Zaproszenia na pergaminie"
+                ],
+                "events": [
+                    "Ścierwojad okazuje się być tylko ogłuszony i budzi się na stole."
+                ],
+                "rewards": {
+                    "material": "Księga 'Anatomia Bestii'",
+                    "social": "Dostęp do leczenia u Magów Wody"
+                }
+            }
+        }
+    ],
+    "HOOK": [
+        {
+            "user_input": "Daj mi hooki na dzisiejszy wieczór w Karczmie/Slumsach.",
+            "output": {
+                "_thought_process": "Lokacja: Slumsy Starego Obozu. Klimat: Bieda, nadzieja, hazard. Frakcje: Kopacze, Cienie.",
+                "hooks": [
+                    {
+                        "trigger_type": "Hazard",
+                        "description": "Kopacz Maruda biega z obłędem w oczach, szukając swojego 'szczęśliwego kilofa'. Twierdzi, że Cień Blef mu go ukradł, by wymusić dług.",
+                        "dilemma": "Pomóc Marudzie (Litość) czy wyśmiać go z Cieniami (Reputacja)?",
+                        "related_npcs": [
+                            "Maruda",
+                            "Blef"
+                        ]
+                    },
+                    {
+                        "trigger_type": "Tajemnica Kopalni",
+                        "description": "Kopacz Erart siedzi w kucki i rysuje coś w błocie. To mapa tunelu, gdzie zginął Ustregal. Mówi do siebie o 'śmiechu w ciemnościach' (Drużyna z Drugiej Brygady).",
+                        "dilemma": "Zapytać o mapę (Ryzyko szaleństwa) czy donieść Straży (Bezpieczeństwo)?",
+                        "related_npcs": [
+                            "Erart",
+                            "Strażnik"
+                        ]
+                    },
+                    {
+                        "trigger_type": "Handel",
+                        "description": "Służący Knot próbuje po cichu sprzedać srebrny widelec z zastawy Magnata. Wygląda na przerażonego, bo w pobliżu kręci się Zevan.",
+                        "dilemma": "Kupić tanio paserkę (Zysk) czy wydać go Zevanowi (Nagroda)?",
+                        "related_npcs": [
+                            "Knot",
+                            "Zevan"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "user_input": "Hooki dla Magów, Guru i Zamku.",
+            "output": {
+                "_thought_process": "Lokacja: Dziedziniec Zamkowy/Świątynia/Faktoria. Klimat: Polityka, wyższość, sekrety.",
+                "hooks": [
+                    {
+                        "trigger_type": "Polityka/Magia",
+                        "description": "Mag Ognia Calor publicznie ruga nowicjusza za 'bałwochwalstwo'. W tle widać Doriana, który z uśmieszkiem zaprasza tegoż nowicjusza na 'prawdziwą naukę'.",
+                        "dilemma": "Poprzeć ortodoksję Calora czy liberalizm Doriana?",
+                        "related_npcs": [
+                            "Calor",
+                            "Dorian",
+                            "Nowicjusz"
+                        ]
+                    },
+                    {
+                        "trigger_type": "Intryga",
+                        "description": "Służąca Tanka niesie tacę z winem dla Alvareza. Wygląda na zdenerwowaną i nerwowo poprawia fiolkę w kieszeni. Ktoś ją potrąca i wino się wylewa.",
+                        "dilemma": "Pomóc jej (Wdzięczność Służby) czy zapytać o fiolkę (Szantaż)?",
+                        "related_npcs": [
+                            "Tanka",
+                            "Alvarez"
+                        ]
+                    },
+                    {
+                        "trigger_type": "Mistycyzm",
+                        "description": "Baal Pruson dyskutuje z Magiem Wody Medusem o 'pakcie o nieagresji'. Obaj wyglądają na spiętych. Pruson trzyma rękę na zwoju.",
+                        "dilemma": "Podsłuchać rozmowę (Szpiegostwo) czy zaoferować wino (Dyplomacja)?",
+                        "related_npcs": [
+                            "Baal Pruson",
+                            "Medus"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "TRAIT_ANALYSIS": [
+        {
+            "user_input": "Przeanalizuj postać: Beza (Służąca).",
+            "output": {
+                "_thought_process": "Archetyp: Ambitna Intrygantka, 'Lady Macbeth' w wersji służącej. Frakcja: Służący (Ulubiona Sama). Cel: Zostanie Magnatką.",
+                "traits": [
+                    "Ambitna (Chce władzy, nie tylko służby)",
+                    "Przebiegła (Szpieguje dla NO)",
+                    "Bezwzględna (Gotowa poświęcić Anika)",
+                    "Urocza (Wykorzystuje wdzięk jako broń)"
+                ],
+                "strengths": [
+                    "Pozycja 'Ulubionej' u Sama",
+                    "Wsparcie wywiadu Nowego Obozu (Joplin)",
+                    "Zasoby finansowe (Skarb Gangu Piekarzy)"
+                ],
+                "weaknesses": [
+                    "Pycha (Może nie docenić rywali jak Vivienne)",
+                    "Rozdarcie lojalności (Stary Obóz vs Nowy Obóz)",
+                    "Dług u Sebastiana (wykupiła go)"
+                ],
+                "motivations": [
+                    "Zastąpienie Lady Valerii jako Pani na Zamku",
+                    "Zabezpieczenie sobie przyszłości (plan B w NO)",
+                    "Upokorzenie konkurencji (Anik, Tanka)"
+                ]
+            }
+        },
+        {
+            "user_input": "Scharakteryzuj postać: Kąsacz (Najemnik).",
+            "output": {
+                "_thought_process": "Archetyp: Bezwzględny Oportunista, 'Troublemaker'. Frakcja: Najemnicy. Motyw: Chaos, zysk, nienawiść do myśliwych.",
+                "traits": [
+                    "Podstępny (Knucie intryg między obozami)",
+                    "Chciwy (Sprzeda każdego za zysk)",
+                    "Agresywny (Nienawidzi łuczników z powodu wady wzroku)",
+                    "Lojalny (tylko wobec 'Hajduszoboszlo Team' i pieniądza)"
+                ],
+                "strengths": [
+                    "Brak skrupułów",
+                    "Kontakty w półświatku (Szkodniki, Bractwo)",
+                    "Manipulacja (fałszowanie listów)"
+                ],
+                "weaknesses": [
+                    "Słaby wzrok (nie używa łuków)",
+                    "Reputacja zdrajcy (ale użytecznego)",
+                    "Konflikt ze Starym Obozem"
+                ],
+                "motivations": [
+                    "Destabilizacja Starego Obozu",
+                    "Zdobycie 'fałszywych artefaktów' na handel",
+                    "Zemsta na myśliwych"
+                ]
+            }
+        }
+    ],
+    "DIAGNOSIS": [
+        {
+            "history": "User: Chcę okraść Magnata.\nAI: [Ostrzega o ryzyku].",
+            "message": "Mam plan, znam Knot'a służącego, on nie lubi Gomeza.",
+            "output": {
+                "intent": "GENERATE_QUEST",
+                "confidence": 0.95,
+                "reply": "Rozumiem, chcesz wykorzystać Knota jako wtykę. Służący Knot rzeczywiście nienawidzi Magnatów (a zwłaszcza Alvareza i Sama) i może pomóc w kradzieży (np. zostawić otwarte okno), ale będzie żądał udziału w łupie."
+            }
+        },
+        {
+            "history": "",
+            "message": "Kto to jest Zygmunt?",
+            "output": {
+                "intent": "KNOWLEDGE_QUERY",
+                "confidence": 0.85,
+                "reply": "Nie mam w bazie postaci 'Zygmunt'. Czy chodziło Ci o Zevana (Zarządcę Służby), Zgubę (Kopaczkę) czy może postać spoza głównej listy?"
+            }
+        },
+        {
+            "history": "User: Gdzie znajdę zielsko?\nAI: U nowicjuszy lub w Shisha Barze.",
+            "message": "A Anik? Podobno ma dobre.",
+            "output": {
+                "intent": "ANALYZE_TRAITS",
+                "confidence": 0.98,
+                "reply": "To prawda, Anik (Służący) jest silnie uzależniony od 'Mroku Północy' i ma układy z Baalem Sachem. Może mieć towar, ale będzie się bał go sprzedać, by nie stracić pozycji ulubieńca Sama."
+            }
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "session-1765860511428",
+  "profileName": "Kora",
+  "startTime": 1765860511428,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765860511430
+    },
+    {
+      "role": "user",
+      "content": "Command: side_quest",
+      "timestamp": 1765860730866
+    },
+    {
+      "role": "user",
+      "content": "Command: side_quest",
+      "timestamp": 1765860786243
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {},
+  "flowState": {
+    "stage": "DIAGNOSIS",
+    "data": {},
+    "missing": []
+  }
+}

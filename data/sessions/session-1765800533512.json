@@ -1,0 +1,47 @@
+{
+  "id": "session-1765800533512",
+  "profileName": "Rajer",
+  "startTime": 1765800533512,
+  "messages": [
+    {
+      "role": "user",
+      "content": "witam",
+      "timestamp": 1765800533513
+    },
+    {
+      "role": "user",
+      "content": "Nic nie widzę",
+      "timestamp": 1765800562933
+    },
+    {
+      "role": "user",
+      "content": "Co to za postać?",
+      "timestamp": 1765800669741
+    },
+    {
+      "role": "user",
+      "content": "pomóż mi napisać questy dla niego",
+      "timestamp": 1765800689311
+    },
+    {
+      "role": "user",
+      "content": "Kim jestes?",
+      "timestamp": 1765800703934
+    },
+    {
+      "role": "user",
+      "content": "daj info jak działasz",
+      "timestamp": 1765800717521
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {},
+  "flowState": {
+    "stage": "COLLECTION",
+    "data": {},
+    "missing": [],
+    "intent": "GENERATE_QUEST"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "id": "session-1765807011475",
+  "profileName": "Tessa",
+  "startTime": 1765807011475,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Dzien dobry",
+      "timestamp": 1765807011505
+    },
+    {
+      "role": "user",
+      "content": "Co tam?",
+      "timestamp": 1765807019659
+    },
+    {
+      "role": "user",
+      "content": "[Imię: Tessa]",
+      "timestamp": 1765807045095
+    },
+    {
+      "role": "user",
+      "content": "Chce questa",
+      "timestamp": 1765807091869
+    },
+    {
+      "role": "user",
+      "content": "Coś trudnego",
+      "timestamp": 1765807114995
+    },
+    {
+      "role": "user",
+      "content": "cos co jest trudne do znalezienia",
+      "timestamp": 1765807135076
+    },
+    {
+      "role": "user",
+      "content": "Nie, to ma byc wymagające",
+      "timestamp": 1765807166626
+    },
+    {
+      "role": "user",
+      "content": "bezpieczenstwo",
+      "timestamp": 1765807199635
+    },
+    {
+      "role": "user",
+      "content": "no chce zeby cos jej zagrażało i zeby znalazła jakies cos co jej da bezpieczenstwo i to moze byc quest",
+      "timestamp": 1765807275125
+    },
+    {
+      "role": "user",
+      "content": "ok, czego jeszcze nie wiesz?",
+      "timestamp": 1765807332973
+    },
+    {
+      "role": "user",
+      "content": "przestań mowic tak enigmatycznie",
+      "timestamp": 1765807353914
+    },
+    {
+      "role": "user",
+      "content": "Nie wiem, weź sobie [@historia?] i [@slabosci?] i coś wymyśl",
+      "timestamp": 1765807457429
+    },
+    {
+      "role": "user",
+      "content": "czego brakuje ci w systemie zeby przejsc dalej?",
+      "timestamp": 1765807501293
+    },
+    {
+      "role": "user",
+      "content": "wyjdz z roli, chodzi mi o ten program",
+      "timestamp": 1765807521584
+    },
+    {
+      "role": "user",
+      "content": "No chce porad opartych o tą [Imię: Tessa]",
+      "timestamp": 1765807580502
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {},
+  "flowState": {
+    "stage": "COLLECTION",
+    "data": {},
+    "missing": [],
+    "intent": "GENERATE_QUEST"
+  }
+}

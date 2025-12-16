@@ -6,7 +6,7 @@
 
 export const state = {
     currentStep: 1,
-    totalSteps: 6,
+    totalSteps: 8,
     traceId: '---',
     ollamaConnected: false,
     ollamaModels: [],

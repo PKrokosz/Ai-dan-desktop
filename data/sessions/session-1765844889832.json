@@ -1,0 +1,112 @@
+{
+  "id": "session-1765844889832",
+  "profileName": "Ziemniak",
+  "startTime": 1765844889832,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Siema",
+      "timestamp": 1765844889833
+    },
+    {
+      "role": "user",
+      "content": "Potrzebuje pomysłu na quest",
+      "timestamp": 1765844964486
+    },
+    {
+      "role": "user",
+      "content": "ściemniasz, uzywaj tylko źródeł bez wymyslania",
+      "timestamp": 1765845021207
+    },
+    {
+      "role": "user",
+      "content": "Zaginiony sprzedawca",
+      "timestamp": 1765845046812
+    },
+    {
+      "role": "user",
+      "content": "Mozesz jakoś wykorzystać [@relacje?] aby rozpisać ten quest?",
+      "timestamp": 1765845116648
+    },
+    {
+      "role": "user",
+      "content": "Command: main_quest",
+      "timestamp": 1765845394391
+    },
+    {
+      "role": "user",
+      "content": "Command: faction_suggestion",
+      "timestamp": 1765845459705
+    },
+    {
+      "role": "user",
+      "content": "Command: side_quest",
+      "timestamp": 1765845547642
+    },
+    {
+      "role": "user",
+      "content": "Command: side_quest_repeatable",
+      "timestamp": 1765845570230
+    },
+    {
+      "role": "user",
+      "content": "Command: redemption_quest",
+      "timestamp": 1765845676615
+    },
+    {
+      "role": "user",
+      "content": "Command: group_quest",
+      "timestamp": 1765845807252
+    },
+    {
+      "role": "user",
+      "content": "Command: traits",
+      "timestamp": 1765846405163
+    },
+    {
+      "role": "user",
+      "content": "Command: relations",
+      "timestamp": 1765846414570
+    },
+    {
+      "role": "user",
+      "content": "Command: faction_suggestion",
+      "timestamp": 1765846533182
+    },
+    {
+      "role": "user",
+      "content": "Command: secret",
+      "timestamp": 1765846831516
+    },
+    {
+      "role": "user",
+      "content": "Command: correct_text",
+      "timestamp": 1765846886810
+    },
+    {
+      "role": "user",
+      "content": "Dobra, jak masz na imie?",
+      "timestamp": 1765847029579
+    },
+    {
+      "role": "user",
+      "content": "jakimi kolanami?",
+      "timestamp": 1765847044995
+    },
+    {
+      "role": "user",
+      "content": "wyjdz stad",
+      "timestamp": 1765847151836
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {},
+  "flowState": {
+    "stage": "COLLECTION",
+    "data": {},
+    "missing": [],
+    "intent": "GENERATE_QUEST"
+  }
+}

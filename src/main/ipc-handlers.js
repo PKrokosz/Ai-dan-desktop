@@ -315,6 +315,29 @@ ipcMain.handle('open-output-folder', async () => {
     return { success: true };
 });
 
+// Open specific file
+ipcMain.handle('open-file', async (event, filepath) => {
+    try {
+        if (!filepath) return { success: false, error: 'No filepath provided' };
+        // Resolve absolute path if relative
+        const resolvedPath = path.isAbsolute(filepath) ? filepath : path.resolve(config.output.path, filepath);
+
+        if (!fs.existsSync(resolvedPath)) {
+            // Fallback to project root if not in output
+            const rootPath = path.resolve(__dirname, '..', '..', filepath);
+            if (fs.existsSync(rootPath)) {
+                shell.openPath(rootPath);
+                return { success: true };
+            }
+            return { success: false, error: 'File not found' };
+        }
+        shell.openPath(resolvedPath);
+        return { success: true };
+    } catch (e) {
+        return { success: false, error: e.message };
+    }
+});
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // SEKCJA 5: AI COMMAND HANDLER ⭐ GŁÓWNY HANDLER AI
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -411,55 +434,102 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
         let systemPrompt = "Jesteś asystentem AI.";
 
         // --- INTEGRATED GCF LOGIC (THE BRAIN) ---
-        // 1. Analyze Intent (Silent, Fast)
-        let flowActive = false;
-        if (commandType === 'chat' || commandType === 'custom') {
-            const flowIntent = flowManager.analyzeIntent(userPrompt);
-            const currentFlowState = sessionService.getFlowState();
+        // Uses full State Machine from conversation-flow.js (DIAGNOSIS → COLLECTION → CONFIRMATION → EXECUTION)
+        let gcfHandled = false;
 
-            // 2. Update State
-            const newFlowState = flowManager.updateState(currentFlowState, userPrompt, flowIntent);
-            sessionService.updateFlowState(newFlowState);
+        // FAST PATH: Do not use Agentic Flow for simple greetings or short messages (Performance Optimization)
+        // If message is short (< 20 chars) and isn't a command, treat as simple chat (direct streaming)
+        const isSimpleChat = userPrompt.length < 20 && !userPrompt.startsWith('/');
 
-            // 3. Override System Prompt if in Active Stage
-            if (newFlowState.stage !== 'IDLE' && newFlowState.stage !== 'DIAGNOSIS') {
-                logger.info('[GCF] Flow Active', { stage: newFlowState.stage, intent: newFlowState.intent });
-                // Override system prompt with "Gomez's Instruction"
-                const flowInstruction = flowManager.buildSystemPrompt(newFlowState, profile);
-                options.system = (options.system || "") + "\n\n" + flowInstruction;
+        if ((commandType === 'chat' || commandType === 'custom') && !isSimpleChat) {
+            try {
+                const gcfResult = await conversationFlowService.processMessage(
+                    profile?.['Imie postaci'] || 'Player',
+                    userPrompt,
+                    profile,
+                    options.model
+                );
 
-                // Ensure User Prompt is used directly
-                prompt = userPrompt;
-                flowActive = true;
+                // If GCF returns a response, use it directly
+                if (gcfResult && gcfResult.success) {
+                    gcfHandled = true;
+                    logger.info('[GCF] Handled by State Machine', { stage: gcfResult.stage, type: gcfResult.type });
+
+                    // If FORCE_GENERATE, return the recipe as structured output
+                    if (gcfResult.type === 'FORCE_GENERATE' && gcfResult.recipe) {
+                        return {
+                            success: true,
+                            text: gcfResult.recipe,
+                            commandType: 'gcf_generated',
+                            stage: gcfResult.stage
+                        };
+                    }
+
+                    // Otherwise return the conversational message
+                    return {
+                        success: true,
+                        text: gcfResult.message || "...",
+                        commandType: 'gcf_response',
+                        stage: gcfResult.stage,
+                        missingFields: gcfResult.missingFields
+                    };
+                }
+            } catch (gcfError) {
+                logger.warn('[GCF] State Machine error, falling back to standard', { error: gcfError.message });
             }
         }
         // ----------------------------------------
 
-        if (!flowActive) {
-            // Standard Legacy Logic
+
+        if (!gcfHandled) {
+            // Standard Legacy Logic or New PromptBuilder Logic
             if (commandType === 'custom') {
                 prompt = options.customPrompt;
-                // Custom prompts logic: Try loading dynamic system prompt
+
+                // --- NEW: Use PromptBuilder for Custom/Chat if available ---
                 try {
-                    const promptBuilder = require('../prompts/prompt-builder');
-                    if (options.promptConfig) {
-                        systemPrompt = promptBuilder.buildDynamicSystemPrompt(profile, options.promptConfig);
-                        // Re-build prompt if specific builder logic exists for custom? 
-                        // No, custom usually means raw User Prompt + Dynamic System.
-                        // But existing code called buildPrompt? Let's respect preference.
-                        // The existing code line 443 implies buildPrompt is called.
-                        // prompt = promptBuilder.buildPrompt(commandType, profile, options.promptConfig);
-                        // Actually, for 'custom', options.customPrompt IS the prompt.
+                    const { PromptBuilder } = require('../prompts/prompt-builder'); // Class-based
+                    if (PromptBuilder) {
+                        const builder = new PromptBuilder();
+                        // Inject Profile
+                        if (profile) builder.withUserProfile(profile);
+
+                        // Inject Dynamic Context (Passed from Frontend)
+                        if (options.dynamicContext) {
+                            Object.values(options.dynamicContext).forEach(ctxVal => {
+                                // We simply append it to lore or a new method
+                                // For now, append to loreContext raw
+                                builder.context.loreContext += `\n${ctxVal}\n`;
+                            });
+                        }
+
+                        // Inject Task
+                        builder.withTask('custom', { prompt: userPrompt }); // generic
+
+                        // Build System
+                        systemPrompt = builder.build();
+                        logger.info('Built system prompt via PromptBuilder class');
                     } else {
-                        systemPrompt = promptBuilder.buildBaseSystemPrompt(profile);
+                        // Fallback to legacy
+                        const promptBuilder = require('../prompts/prompt-builder');
+                        if (options.promptConfig) {
+                            systemPrompt = promptBuilder.buildDynamicSystemPrompt(profile, options.promptConfig);
+                        } else {
+                            systemPrompt = promptBuilder.buildBaseSystemPrompt(profile);
+                        }
                     }
-                } catch (e) { /* fallback */ }
+                } catch (e) {
+                    logger.warn('PromptBuilder match failed', e);
+                    /* fallback */
+                }
 
             } else if (options.promptConfig) {
-                // Generic Configurable Command
+                // ... (existing config logic)
+                // We should probably migrate this too, but let's leave it for now to minimize breakage
+                // unless user explicitly asked to fully replace logic.
                 try {
                     const promptBuilder = require('../prompts/prompt-builder');
-                    systemPrompt = promptBuilder.buildDynamicSystemPrompt(profile, options.promptConfig); // FIX: Load System Prompt
+                    systemPrompt = promptBuilder.buildDynamicSystemPrompt(profile, options.promptConfig);
                     prompt = promptBuilder.buildPrompt(commandType, profile, options.promptConfig);
                     logger.info('Using configurable prompt builder', { commandType, style: options.promptConfig.style });
                 } catch (err) {
@@ -467,11 +537,29 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
                     prompt = null;
                 }
             } else if (commandType === 'chat') {
-                // Explicit Chat fallback 
                 prompt = userPrompt;
-                // FIX: Load Base System Prompt for Persona
-                const promptBuilder = require('../prompts/prompt-builder');
-                systemPrompt = promptBuilder.buildBaseSystemPrompt(profile);
+                // Use new Builder
+                try {
+                    const { PromptBuilder } = require('../prompts/prompt-builder');
+                    const builder = new PromptBuilder();
+                    if (profile) builder.withUserProfile(profile);
+                    if (options.dynamicContext) {
+                        Object.values(options.dynamicContext).forEach(ctxVal => builder.context.loreContext += `\n${ctxVal}\n`);
+                    }
+                    builder.withTask('custom'); // chat
+                    systemPrompt = builder.build();
+                } catch (e) {
+                    const promptBuilder = require('../prompts/prompt-builder');
+                    systemPrompt = promptBuilder.buildBaseSystemPrompt(profile);
+                }
+            }
+
+            // --- NEXT MOVE SUGGESTION ---
+            // If chat/custom, ask AI to suggest next step
+            if ((commandType === 'chat' || commandType === 'custom') && !prompt.includes('Sugestia:')) {
+                // We append this specific instruction to the USER prompt or SYSTEM?
+                // Append to System is safer to not mess up user inputs
+                systemPrompt += `\n\nZADANIE DODATKOWE: Na końcu odpowiedzi dodaj (w nowej linii): "Sugestia: [Krótka propozycja co gracz może zrobić dalej]".`;
             }
         }
 
@@ -479,24 +567,7 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
         options.system = (options.system ? options.system + "\n" : "") + systemPrompt;
 
         if (!prompt && commandType !== 'custom') {
-            // Legacy Prompts Block (Truncated for brevity in replacement, assuming context matches)
-            const prompts = {
-                'summarize': buildSummarizePrompt(profile),
-                'extract_traits': buildExtractTraitsPrompt(profile),
-                'analyze_relations': buildRelationsPrompt(profile),
-                'main_quest': buildMainQuestPrompt(profile),
-                'side_quest': buildSideQuestPrompt(profile),
-                'redemption_quest': buildRedemptionQuestPrompt(profile),
-                'group_quest': buildGroupQuestPrompt(profile),
-                'story_hooks': buildStoryHooksPrompt(profile),
-                'potential_conflicts': buildConflictsPrompt(profile),
-                'npc_connections': buildNpcConnectionsPrompt(profile),
-                'nickname': buildNicknamePrompt(profile),
-                'faction_suggestion': buildFactionPrompt(profile),
-                'secret': buildSecretPrompt(profile)
-            };
-
-            // Correction Handler Logic kept same...
+            // Special Handler for Text Correction
             if (commandType === 'correct_text') {
                 const textToCorrect = (profile['Historia'] || '') + '\n' + (profile['Terazniejszosc'] || '');
                 if (textToCorrect.trim()) {
@@ -511,19 +582,60 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
                 }
             }
 
-            prompt = prompts[commandType];
+            // Standardized Prompt Building
+            try {
+                const { PromptBuilder } = require('../prompts/prompt-builder');
+                const builder = new PromptBuilder();
+                if (profile) builder.withUserProfile(profile);
+                builder.withLoreContext();
+                builder.withTask(commandType);
 
-            const schema = schemaLoader.getSchemaForCommand(commandType);
-            if (schema) {
-                options.format = schema;
-                logger.info('[AI] Using structured JSON Schema for:', commandType);
-            } else if (['extract_traits', 'analyze_relations', 'main_quest', 'side_quest', 'redemption_quest', 'group_quest', 'story_hooks', 'potential_conflicts', 'npc_connections', 'secret'].includes(commandType)) {
-                options.format = 'json';
+                // Build full system context
+                options.system = builder.build();
+
+                // Generic User Prompt Trigger
+                prompt = "Wykonaj zadanie zdefiniowane w instrukcji systemowej.";
+                if (commandType === 'summarize') {
+                    prompt = "Podsumuj postać zgodnie z instrukcją.";
+                }
+
+                // JSON Enforcement
+                const jsonCommands = [
+                    'extract_traits', 'analyze_relations',
+                    'main_quest', 'side_quest', 'side_quest_repeatable', 'redemption_quest', 'group_quest',
+                    'story_hooks', 'potential_conflicts', 'npc_connections',
+                    'nickname', 'faction_suggestion', 'secret', 'summarize', 'advise'
+                ];
+
+                if (jsonCommands.includes(commandType)) {
+                    options.format = 'json';
+                }
+
+                // Schema Override from SchemaLoader (if exists)
+                const schema = schemaLoader.getSchemaForCommand(commandType);
+                if (schema) {
+                    options.format = schema;
+                }
+
+            } catch (err) {
+                logger.error("Standardized prompt build failed", err);
+                return { success: false, error: `Prompt build failed: ${err.message}` };
             }
         }
 
         if (!prompt) {
             return { success: false, error: `Unknown command: ${commandType}` };
+        }
+
+        // --- PREVIEW MODE ---
+        if (options.preview) {
+            return {
+                success: true,
+                preview: true,
+                system: options.system,
+                prompt: prompt,
+                model: options.model
+            };
         }
 
         try {
@@ -573,7 +685,11 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
                             // Ensure we send the full text just in case, or empty chunk
                             chunk: '',
                             stats: result.stats,
-                            commandType
+                            commandType,
+                            // Metadata for Reporting
+                            system: options.system,
+                            prompt: prompt,
+                            model: options.model
                         });
                     }
 
@@ -601,7 +717,11 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
                                     event.sender.send('ai-stream', {
                                         done: true,
                                         fullText: corrected,
-                                        commandType
+                                        commandType,
+                                        // Metadata update for corrected text
+                                        system: options.system,
+                                        prompt: prompt,
+                                        model: options.model
                                     });
                                 }
                             }
@@ -621,7 +741,7 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
                     }
                     // -----------------------------
 
-                    return { success: true, text: result.text, prompt: prompt, stats: result.stats };
+                    return { success: true, text: result.text, prompt: prompt, system: options.system, model: options.model, stats: result.stats };
                 } else {
                     return { success: false, error: result.error };
                 }
@@ -639,7 +759,7 @@ ipcMain.handle('ai-command', async (event, commandType, profile, options = {}) =
 
                 if (result.success) {
                     sendLog(event, 'success', `AI: ${commandType} zakończone`);
-                    return { success: true, text: result.text, prompt: prompt };
+                    return { success: true, text: result.text, prompt: prompt, system: options.system, model: options.model, stats: result.stats };
                 } else {
                     return { success: false, error: result.error };
                 }
@@ -753,273 +873,7 @@ ipcMain.handle('config:getDefaults', async () => {
 });
 // [Legacy Conversation Flow Removed]
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// SEKCJA 9: AI PROMPT BUILDERS (LEGACY)
-// ═══════════════════════════════════════════════════════════════════════════════
-// ⚠️ LEGACY CODE - Stare builderzy promptów
-// Nowe prompty powinny iść przez src/prompts/prompt-builder.js
-// Te funkcje są fallbackiem gdy promptConfig nie jest ustawiony
-//
-// Dostępne builderzy:
-// - buildSummarizePrompt: Podsumowanie postaci (3 zdania)
-// - buildExtractTraitsPrompt: Ekstrakcja cech (JSON)
-// - buildRelationsPrompt: Analiza relacji (JSON)
-// - buildMainQuestPrompt: Główny quest (JSON)
-// - buildSideQuestPrompt: Quest poboczny (JSON)
-// - buildRedemptionQuestPrompt: Quest odkupienia (JSON)
-// - buildGroupQuestPrompt: Quest grupowy (JSON)
-// - buildStoryHooksPrompt: Hooki fabularne (JSON)
-// - buildConflictsPrompt: Potencjalne konflikty (JSON)
-// - buildNpcConnectionsPrompt: Powiązania z NPC (JSON)
-// - buildNicknamePrompt: Generowanie ksywki
-// - buildFactionPrompt: Sugestia frakcji
-// - buildSecretPrompt: Sekret postaci (JSON)
 
-function buildSummarizePrompt(profile) {
-    return `Jesteś Mistrzem Gry w gotyckiej grze fabularnej.
-
-POSTAĆ:
-Imię: ${profile['Imie postaci'] || 'Nieznane'}
-Gildia: ${profile['Gildia'] || 'Brak'}
-Region: ${profile['Region'] || 'Nieznany'}
-Za co siedzi: ${profile['Wina'] || 'Nieznane'}
-Historia: ${profile['O postaci'] || profile['Jak zarabiala na zycie, kim byla'] || 'Brak'}
-
-ZADANIE: Podsumuj tę postać w MAKSYMALNIE 3 zdaniach. Skup się na tym, kim jest, co robi i co ją motywuje.`;
-}
-
-function buildExtractTraitsPrompt(profile) {
-    return `Przeanalizuj profil postaci i wypisz jej kluczowe cechy.
-
-POSTAĆ:
-Imię: ${profile['Imie postaci'] || 'Nieznane'}
-Historia: ${profile['O postaci'] || profile['Jak zarabiala na zycie, kim byla'] || 'Brak'}
-Słabości: ${profile['Slabosci'] || 'Brak'}
-Umiejętności: ${profile['Umiejetnosci'] || 'Brak'}
-
-WYPISZ:
-1. Główne cechy charakteru (3-5 punktów)
-2. Mocne strony
-3. Słabe strony
-4. Potencjalne motywacje
-
-FORMAT DANYCH (JSON):
-{
-    "traits": ["cecha 1", "cecha 2", ...],
-    "strengths": ["mocna strona 1", ...],
-    "weaknesses": ["słaba strona 1", ...],
-    "motivations": ["motywacja 1", ...]
-}`;
-}
-
-function buildRelationsPrompt(profile) {
-    return `Przeanalizuj relacje postaci.
-
-POSTAĆ: ${profile['Imie postaci'] || 'Nieznane'}
-OPIS RELACJI: ${profile['Znajomi, przyjaciele i wrogowie'] || 'Brak danych'}
-HISTORIA: ${profile['O postaci'] || 'Brak'}
-
-WYPISZ:
-1. SOJUSZNICY - kto i dlaczego
-2. WROGOWIE - kto i dlaczego
-3. NEUTRALNE KONTAKTY - potencjalne relacje do rozwinięcia
-
-FORMAT DANYCH (JSON):
-{
-    "allies": [ {"name": "...", "reason": "..."} ],
-    "enemies": [ {"name": "...", "reason": "..."} ],
-    "neutral": [ {"name": "...", "potential": "..."} ]
-}`;
-}
-
-function buildMainQuestPrompt(profile) {
-    return `Jesteś Mistrzem Gry w gotyckiej grze fabularnej (styl Gothic 1/2).
-
-POSTAĆ:
-Imię: ${profile['Imie postaci'] || 'Nieznane'}
-Gildia: ${profile['Gildia'] || 'Brak'}
-Region: ${profile['Region'] || 'Nieznany'}
-Za co siedzi: ${profile['Wina'] || 'Nieznane'}
-Historia: ${profile['O postaci'] || profile['Jak zarabiala na zycie, kim byla'] || 'Brak'}
-Cele: ${profile['Przyszlosc'] || 'Brak'}
-
-ZADANIE: Zaproponuj GŁÓWNY QUEST dla tej postaci.
-Quest powinien:
-- Być powiązany z jej przeszłością lub winą
-- Wymagać 3-5 konkretnych kroków
-- Angażować inne frakcje w obozie
-- Mieć jasną nagrodę
-
-FORMAT (JSON):
-{
-    "title": "Nazwa questa",
-    "description": "Opis...",
-    "steps": ["krok 1", "krok 2", ...],
-    "reward": "Nagroda..."
-}`;
-}
-
-function buildSideQuestPrompt(profile) {
-    return `Jesteś Mistrzem Gry. Zaproponuj QUEST POBOCZNY dla postaci:
-
-POSTAĆ: ${profile['Imie postaci'] || 'Nieznane'} (${profile['Gildia'] || 'Brak'})
-HISTORIA: ${profile['O postaci'] || 'Brak'}
-UMIEJĘTNOŚCI: ${profile['Umiejetnosci'] || 'Brak'}
-
-Quest poboczny powinien być krótki (1-2 sesje), wykorzystywać umiejętności postaci i dawać małą, ale użyteczną nagrodę.
-
-FORMAT (JSON):
-{
-    "title": "Nazwa",
-    "giver": "Zleceniodawca",
-    "task": "Zadanie",
-    "reward": "Nagroda"
-}`;
-}
-
-function buildRedemptionQuestPrompt(profile) {
-    return `Jesteś Mistrzem Gry. Zaproponuj QUEST ODKUPIENIA dla postaci:
-
-POSTAĆ: ${profile['Imie postaci'] || 'Nieznane'}
-ZA CO SIEDZI: ${profile['Wina'] || 'Nieznane'}
-HISTORIA: ${profile['O postaci'] || 'Brak'}
-
-Quest odkupienia powinien pozwolić postaci zadośćuczynić za swoją winę lub zmazać przeszłość. Może być trudny i wymagający poświęceń.
-
-FORMAT (JSON):
-{
-    "title": "Nazwa questa odkupienia",
-    "sin": "Wina do zmazania",
-    "redemption": "Sposób odkupienia",
-    "cost": "Cena / Poświęcenie",
-    "spiritualReward": "Nagroda duchowa"
-}`;
-}
-
-function buildGroupQuestPrompt(profile) {
-    return `Zaproponuj QUEST GRUPOWY angażujący tę postać i innych graczy:
-
-POSTAĆ: ${profile['Imie postaci'] || 'Nieznane'} (${profile['Gildia'] || 'Brak'})
-UMIEJĘTNOŚCI: ${profile['Umiejetnosci'] || 'Brak'}
-RELACJE: ${profile['Znajomi, przyjaciele i wrogowie'] || 'Brak'}
-
-Quest powinien wymagać współpracy 3-5 graczy o różnych umiejętnościach.
-
-FORMAT (JSON):
-{
-    "title": "Nazwa questa grupowego",
-    "goal": "Cel wspólny",
-    "role": "Rola tej postaci",
-    "neededRoles": "Potrzebne role",
-    "challenges": "Wyzwania"
-}`;
-}
-
-function buildStoryHooksPrompt(profile) {
-    return `Zaproponuj 3 HOOKI FABULARNE dla postaci:
-
-POSTAĆ: ${profile['Imie postaci'] || 'Nieznane'} (${profile['Gildia'] || 'Brak'})
-HISTORIA: ${profile['O postaci'] || 'Brak'}
-WINA: ${profile['Wina'] || 'Nieznane'}
-SŁABOŚCI: ${profile['Slabosci'] || 'Brak'}
-
-Hook fabularny to krótka sytuacja/wydarzenie które wciąga postać w akcję.
-
-FORMAT (JSON):
-{
-    "hooks": [
-        {"title": "Hook 1", "desc": "Opis..."},
-        {"title": "Hook 2", "desc": "Opis..."},
-        {"title": "Hook 3", "desc": "Opis..."}
-    ]
-}`;
-}
-
-function buildConflictsPrompt(profile) {
-    return `Zaproponuj MOŻLIWE KONFLIKTY dla postaci:
-
-POSTAĆ: ${profile['Imie postaci'] || 'Nieznane'} (${profile['Gildia'] || 'Brak'})
-REGION: ${profile['Region'] || 'Nieznany'}
-RELACJE: ${profile['Znajomi, przyjaciele i wrogowie'] || 'Brak'}
-SŁABOŚCI: ${profile['Slabosci'] || 'Brak'}
-
-Wymień 3-4 potencjalne konflikty z innymi frakcjami/postaciami w obozie.
-
-FORMAT (JSON):
-{
-    "conflicts": [
-        {"with": "Frakcja/Osoba", "reason": "Powód", "scenario": "Scenariusz"}
-    ]
-}`;
-}
-
-function buildNpcConnectionsPrompt(profile) {
-    return `Zasugeruj POWIĄZANIA Z NPC dla postaci:
-
-POSTAĆ: ${profile['Imie postaci'] || 'Nieznane'} (${profile['Gildia'] || 'Brak'})
-HISTORIA: ${profile['O postaci'] || 'Brak'}
-REGION: ${profile['Region'] || 'Nieznany'}
-
-Zaproponuj 3-4 NPC (niegraczy) którzy mogą być powiązani z tą postacią.
-
-FORMAT (JSON):
-{
-    "npcs": [
-        {"name": "Imię", "role": "Rola", "relation": "Relacja", "potential": "Potencjał"}
-    ]
-}`;
-}
-
-function buildNicknamePrompt(profile) {
-    return `Wymyśl KSYWKĘ dla postaci:
-
-IMIĘ: ${profile['Imie postaci'] || 'Nieznane'}
-GILDIA: ${profile['Gildia'] || 'Brak'}
-HISTORIA: ${profile['O postaci'] || 'Brak'}
-CECHY: ${profile['Slabosci'] || ''} ${profile['Umiejetnosci'] || ''}
-
-Zaproponuj 3 ksywki pasujące do stylu gotyckiego uniwersum. Każda z krótkim uzasadnieniem.
-
-FORMAT:
-1. "[Ksywka]" - [uzasadnienie]
-2. "[Ksywka]" - [uzasadnienie]
-3. "[Ksywka]" - [uzasadnienie]`;
-}
-
-function buildFactionPrompt(profile) {
-    return `Zasugeruj FRAKCJĘ dla postaci:
-
-POSTAĆ: ${profile['Imie postaci'] || 'Nieznane'}
-OBECNA GILDIA: ${profile['Gildia'] || 'Brak'}
-UMIEJĘTNOŚCI: ${profile['Umiejetnosci'] || 'Brak'}
-CELE: ${profile['Przyszlosc'] || 'Brak'}
-HISTORIA: ${profile['O postaci'] || 'Brak'}
-
-Frakcje w kolonii: Stary Obóz (Gomez), Nowy Obóz (rebelia), Bractwo Śniących, Najemnicy, Cienie.
-
-Zasugeruj którą frakcję powinna wybrać ta postać i dlaczego. Przedstaw argumenty za i przeciw.`;
-}
-
-function buildSecretPrompt(profile) {
-    return `Wymyśl SEKRET dla postaci:
-
-POSTAĆ: ${profile['Imie postaci'] || 'Nieznane'} (${profile['Gildia'] || 'Brak'})
-HISTORIA: ${profile['O postaci'] || 'Brak'}
-WINA: ${profile['Wina'] || 'Nieznane'}
-
-Zaproponuj sekret który postać skrywa. Sekret powinien:
-- Pasować do jej historii
-- Mieć potencjał fabularny (co się stanie jak wyjdzie na jaw?)
-- Motywować jej działania
-
-FORMAT (JSON):
-{
-    "title": "Tytuł sekretu",
-    "secret": "Co skrywa",
-    "motivation": "Dlaczego ukrywa",
-    "consequences": "Co się stanie gdy wyjdzie na jaw"
-}`;
-}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // SEKCJA 10: DATA LOADING HANDLERS
@@ -1507,6 +1361,39 @@ ipcMain.handle('tests:language-stability:run-all', async (event, modelNames) => 
 ipcMain.handle('tests:language-stability:load-cache', async (event) => {
     const cached = languageStabilityTest.loadCached();
     return { success: true, cached };
+});
+
+
+
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SEKCJA 11.5: CHARACTER TEST REPORT
+// ═══════════════════════════════════════════════════════════════════════════════
+
+const { exec } = require('child_process');
+
+// Generate HTML Report
+ipcMain.handle('report:generate', async (event, runId) => {
+    return runWithTrace(async () => {
+        return new Promise((resolve) => {
+            const scriptPath = path.join(__dirname, '../../tools/report-generator/generate.js');
+            // Ensure runId is safe (alphanumeric + dashes/colons)
+            const safeId = (runId || '').replace(/[^a-zA-Z0-9-:]/g, '');
+            const cmd = `node "${scriptPath}" "${safeId}"`;
+
+            logger.info('Running report generator', { cmd });
+
+            exec(cmd, (error, stdout, stderr) => {
+                if (error) {
+                    logger.error('Report generation failed', { error });
+                    resolve({ success: false, error: error.message });
+                    return;
+                }
+                logger.info('Report generated successfully');
+                resolve({ success: true, output: stdout });
+            });
+        });
+    });
 });
 
 // ═══════════════════════════════════════════════════════════════════════════════

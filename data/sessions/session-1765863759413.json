@@ -1,0 +1,31 @@
+{
+  "id": "session-1765863759413",
+  "profileName": "Kora",
+  "startTime": 1765863759413,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Cześć",
+      "timestamp": 1765863759415
+    },
+    {
+      "role": "user",
+      "content": "Przywitaj sie normalnie a jakąś bajkę mi piszesz.",
+      "timestamp": 1765863841329
+    },
+    {
+      "role": "user",
+      "content": "/quest",
+      "timestamp": 1765864051237
+    },
+    {
+      "role": "user",
+      "content": "Command: redemption_quest",
+      "timestamp": 1765864119943
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

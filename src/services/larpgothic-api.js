@@ -6,6 +6,7 @@
 const https = require('https');
 const config = require('../shared/config');
 const logger = require('../shared/logger');
+const { REGIONS, CITIES } = require('./geography-data');
 
 class LarpGothicService {
     constructor() {
@@ -30,16 +31,14 @@ class LarpGothicService {
             18: 'Guru'
         };
 
-        // Region mappings (IDs 1-7 found, using generic names until verified)
-        this.regionMap = {
-            1: 'Region 1 (Stary Obóz?)',
-            2: 'Region 2',
-            3: 'Region 3',
-            4: 'Region 4 (Kopalnia?)',
-            5: 'Region 5',
-            6: 'Region 6',
-            7: 'Region 7'
-        };
+        // Region mappings from geography-data.js
+        this.regions = REGIONS;
+
+        // City lookups for fast access
+        this.citiesById = {};
+        CITIES.forEach(c => {
+            this.citiesById[c.id] = c;
+        });
 
         // Tag categories for semantic search
         this.tagCategories = {
@@ -155,7 +154,20 @@ class LarpGothicService {
      */
     mapProfile(profile) {
         const charId = parseInt(profile.character) || 0;
-        const regionId = parseInt(profile.region) || 0;
+        let regionId = parseInt(profile.region) || 0;
+        let cityName = profile.city || '';
+
+        // Resolve City ID to Name if possible
+        const cityId = parseInt(profile.city);
+        if (!isNaN(cityId) && this.citiesById[cityId]) {
+            const cityData = this.citiesById[cityId];
+            cityName = cityData.name;
+
+            // If regionId is missing or 0, try to infer it from city
+            if (regionId === 0 && cityData.region) {
+                regionId = cityData.region;
+            }
+        }
 
         // Auto-generate tags based on profile content
         const tags = this.tagProfile(profile);
@@ -165,9 +177,9 @@ class LarpGothicService {
             'Imie postaci': profile.name || '',
             'Gildia': this.characterMap[charId] || `Nieznana (${charId})`,
             'GildiaId': charId,
-            'Region': this.regionMap[regionId] || `Nieznany (${regionId})`,
+            'Region': this.regions[regionId] || `Nieznany (${regionId})`,
             'RegionId': regionId,
-            'Miejscowosc': profile.city || '',
+            'Miejscowosc': cityName,
             'Jak zarabiala na zycie, kim byla': profile.now || '',
             'Znajomi, przyjaciele i wrogowie': profile.friends || '',
             'Slabosci': profile.weaks || '',

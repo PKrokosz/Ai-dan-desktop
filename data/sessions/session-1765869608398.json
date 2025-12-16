@@ -1,0 +1,16 @@
+{
+  "id": "session-1765869608398",
+  "profileName": "Hrodgir",
+  "startTime": 1765869608398,
+  "messages": [
+    {
+      "role": "user",
+      "content": "/quest",
+      "timestamp": 1765869608399
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

@@ -173,11 +173,17 @@ export function handleAIStreamChunk(data) {
             clearInterval(state.streamData.timerInterval);
         }
 
-        // Update feed
+        // Update feed with content and metadata
         if (state.aiResultsFeed[state.streamData.cardIndex]) {
-            state.aiResultsFeed[state.streamData.cardIndex].content = state.streamData.content;
-            state.aiResultsFeed[state.streamData.cardIndex].isStreaming = false;
-            state.aiResultsFeed[state.streamData.cardIndex].isNew = false;
+            const item = state.aiResultsFeed[state.streamData.cardIndex];
+            item.content = state.streamData.content;
+            item.isStreaming = false;
+            item.isNew = false;
+
+            // Capture Reporting Metadata
+            if (data.system) item.system = data.system;
+            if (data.prompt) item.prompt = data.prompt;
+            if (data.model) item.model = data.model;
         }
 
         state.aiProcessing = false;

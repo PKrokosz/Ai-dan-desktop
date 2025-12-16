@@ -21,15 +21,39 @@ function detectStructuredOutput(content) {
 
         const parsed = JSON.parse(jsonStr);
 
-        // Detect type by fields
+        // Detect type by fields - NEW KEYS (from PromptBuilder) + OLD KEYS (legacy)
+        // Quest detection: new keys (title, steps, triggers) OR old keys (nazwa_watku, wpis_fabularny)
+        if (parsed.title && (parsed.steps || parsed.triggers || parsed.rewards)) {
+            return { type: 'quest', data: parsed };
+        }
         if (parsed.nazwa_watku || parsed.wpis_fabularny || parsed.styl) {
             return { type: 'quest', data: parsed };
+        }
+
+        // Redemption Quest: new keys (sin, redemption, cost)
+        if (parsed.sin || parsed.redemption) {
+            return { type: 'redemption_quest', data: parsed };
+        }
+
+        // Traits: new keys + old keys
+        if (parsed.traits || parsed.strengths || parsed.weaknesses || parsed.motivations) {
+            return { type: 'traits', data: parsed };
         }
         if (parsed.cechy_charakteru || parsed.slabosci || parsed.nalogi) {
             return { type: 'traits', data: parsed };
         }
+
+        // NPC / Relations
         if (parsed.relacje && Array.isArray(parsed.relacje)) {
             return { type: 'npc', data: parsed };
+        }
+        if (parsed.allies || parsed.enemies || parsed.neutral) {
+            return { type: 'npc', data: parsed };
+        }
+
+        // Hooks
+        if (parsed.hooks && Array.isArray(parsed.hooks)) {
+            return { type: 'hooks', data: parsed };
         }
 
         // Generic JSON
@@ -43,55 +67,85 @@ function detectStructuredOutput(content) {
  * Render Quest card HTML
  */
 function renderQuestCard(data) {
+    // Support both old Polish keys and new English keys
+    const title = data.title || data.nazwa_watku || 'Nowy wątek';
+    const summary = data.summary || data.wpis_fabularny || '';
+    const steps = data.steps || [];
+    const triggers = data.triggers || [];
+    const props = data.props || [];
+    const events = data.events || [];
+    const rewards = data.rewards || {};
+    const rewardText = typeof rewards === 'object'
+        ? `${rewards.material || ''} ${rewards.social || ''}`.trim()
+        : (data.nagroda || rewards || '');
+    const type = data.type || data.styl || 'Quest';
+    const relatedNpcs = data.powiazane_postacie || [];
+    const factions = data.zaangazowane_frakcje || [];
+
     const styleBadges = {
         'Mroczna Intryga': { emoji: '🗡️', color: '#8b0000' },
         'Mistyczna Wizja': { emoji: '🔮', color: '#4b0082' },
         'Osobista Ambitność': { emoji: '⚔️', color: '#b8860b' },
-        'Surowy Realizm': { emoji: '⛏️', color: '#2f4f4f' }
+        'Surowy Realizm': { emoji: '⛏️', color: '#2f4f4f' },
+        'Gamistyczny': { emoji: '🎲', color: '#2e7d32' },
+        'Symulacjonistyczny': { emoji: '⚙️', color: '#455a64' },
+        'Narracyjny': { emoji: '📖', color: '#5d4037' }
     };
 
-    const style = styleBadges[data.styl] || { emoji: '📜', color: '#705d4d' };
-    const frakcje = data.zaangazowane_frakcje || [];
+    const style = styleBadges[type] || { emoji: '📜', color: '#705d4d' };
 
     return `
     <div class="structured-card quest-card" style="border-left: 4px solid ${style.color};">
         <div class="card-header-row">
-            <span class="card-type-badge">${style.emoji} ${data.styl || 'Quest'}</span>
-            <span class="card-zakres">${data.zakres || ''}</span>
+            <span class="card-type-badge">${style.emoji} ${type}</span>
         </div>
-        <h3 class="quest-title">${data.nazwa_watku || 'Nowy wątek'}</h3>
+        <h3 class="quest-title">${title}</h3>
         
-        ${data.cel ? `
-        <div class="quest-section">
-            <span class="section-label">🎯 Cel:</span>
-            <span class="section-value">${data.cel}</span>
-        </div>` : ''}
-        
-        ${data.przeszkoda ? `
-        <div class="quest-section">
-            <span class="section-label">⚠️ Przeszkoda:</span>
-            <span class="section-value">${data.przeszkoda}</span>
-        </div>` : ''}
-        
-        ${data.wpis_fabularny ? `
+        ${summary ? `
         <div class="quest-narrative">
-            ${data.wpis_fabularny}
+            ${summary}
         </div>` : ''}
         
-        ${frakcje.length > 0 ? `
+        ${triggers.length > 0 ? `
+        <div class="quest-section">
+            <span class="section-label">🎯 Wyzwalacze:</span>
+            <span class="section-value">${triggers.join(', ')}</span>
+        </div>` : ''}
+        
+        ${steps.length > 0 ? `
+        <div class="quest-section">
+            <span class="section-label">📋 Kroki:</span>
+            <ol class="quest-steps">
+                ${steps.map(s => `<li>${s}</li>`).join('')}
+            </ol>
+        </div>` : ''}
+        
+        ${props.length > 0 ? `
+        <div class="quest-section">
+            <span class="section-label">🎭 Rekwizyty:</span>
+            <span class="section-value">${props.join(', ')}</span>
+        </div>` : ''}
+        
+        ${events.length > 0 ? `
+        <div class="quest-section">
+            <span class="section-label">⚡ Wydarzenia:</span>
+            <span class="section-value">${events.join(', ')}</span>
+        </div>` : ''}
+        
+        ${factions.length > 0 ? `
         <div class="quest-factions">
-            ${frakcje.map(f => `<span class="faction-tag">${f}</span>`).join('')}
+            ${factions.map(f => `<span class="faction-tag">${f}</span>`).join('')}
         </div>` : ''}
         
-        ${data.powiazane_postacie?.length > 0 ? `
+        ${relatedNpcs.length > 0 ? `
         <div class="quest-characters">
             <span class="section-label">👥 Postacie:</span>
-            ${data.powiazane_postacie.map(p => `<span class="character-tag">${p}</span>`).join('')}
+            ${relatedNpcs.map(p => `<span class="character-tag">${p}</span>`).join('')}
         </div>` : ''}
         
-        ${data.nagroda ? `
+        ${rewardText ? `
         <div class="quest-reward">
-            <span class="section-label">💰 Nagroda:</span> ${data.nagroda}
+            <span class="section-label">💰 Nagroda:</span> ${rewardText}
         </div>` : ''}
         
         <div class="card-actions">
@@ -246,14 +300,51 @@ function tryRenderStructuredCard(content) {
     switch (detected.type) {
         case 'quest':
             return renderQuestCard(detected.data);
+        case 'redemption_quest':
+            return renderRedemptionCard(detected.data);
         case 'traits':
             return renderTraitsCard(detected.data);
         case 'npc':
             return renderNpcCard(detected.data);
         default:
-            // For generic JSON, render as a clean list/card instead of code block
             return renderGenericJson(detected.data);
     }
+}
+
+function renderRedemptionCard(data) {
+    return `
+    <div class="structured-card quest-card" style="border-left: 4px solid #d4af37;">
+        <div class="card-header-row">
+            <span class="card-type-badge">🕊️ Odkupienie</span>
+        </div>
+        <h3 class="quest-title">${data.title || 'Quest Odkupienia'}</h3>
+        
+        <div class="quest-section">
+            <span class="section-label">⚖️ Wina:</span>
+            <span class="section-value" style="color: #ff6b6b;">${data.sin}</span>
+        </div>
+        
+        <div class="quest-narrative">
+            ${data.redemption}
+        </div>
+        
+        <div class="quest-section">
+            <span class="section-label">🦴 Cena/Poświęcenie:</span>
+            <span class="section-value">${data.cost}</span>
+        </div>
+        
+        ${data.spiritualReward ? `
+        <div class="quest-reward">
+            <span class="section-label">✨ Nagroda Duchowa:</span> ${data.spiritualReward}
+        </div>` : ''}
+        
+        <div class="card-actions">
+            <button class="card-btn" onclick="copyCardJSON(this)" data-json='${JSON.stringify(data).replace(/'/g, "&#39;")}'>📋 Kopiuj</button>
+            <button class="card-btn" onclick="toggleRawJSON(this)">👁️ JSON</button>
+        </div>
+        <pre class="raw-json" style="display: none;">${JSON.stringify(data, null, 2)}</pre>
+    </div>
+    `;
 }
 
 /**

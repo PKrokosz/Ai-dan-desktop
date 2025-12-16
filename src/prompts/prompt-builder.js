@@ -1,354 +1,361 @@
 /**
  * @module prompt-builder
- * @description Budowanie promptów z konfigurowalnymi kontekstami i stylami
+ * @description Advanced Prompt Engineering System for Gothic LARP AI.
+ * Implements Google's "Writing Effective Prompts" methodology:
+ * Persona -> Context -> Task -> Output Schema -> Definition of Done.
  */
 
 const fs = require('fs');
 const path = require('path');
-const { CONTEXTS, STYLES, DEFAULT_CONFIG, FACTIONS } = require('./prompt-config');
-const questTemplater = require('../services/quest-templater');
+const { SYSTEM_PROMPTS, COMMAND_SCHEMAS } = require('./templates/system-prompts');
 
-const CONTEXTS_DIR = path.join(__dirname, '..', 'contexts');
+// Load Glossary Data
+const GLOSSARY_PATH = path.join(__dirname, 'data', 'glossary.json');
+const EXAMPLES_PATH = path.join(__dirname, 'data', 'examples.json');
 
-// Cache dla załadowanych kontekstów
-let contextCache = {};
+let GLOSSARY_DATA = {};
+let EXAMPLES_DATA = {};
 
-function mergeConfig(userConfig = {}) {
-    return {
-        ...DEFAULT_CONFIG,
-        ...userConfig,
-        contexts: { ...DEFAULT_CONFIG.contexts, ...userConfig.contexts },
-        focus: { ...DEFAULT_CONFIG.focus, ...userConfig.focus }
-    };
+try {
+    if (fs.existsSync(GLOSSARY_PATH)) {
+        GLOSSARY_DATA = JSON.parse(fs.readFileSync(GLOSSARY_PATH, 'utf8'));
+    }
+    if (fs.existsSync(EXAMPLES_PATH)) {
+        EXAMPLES_DATA = JSON.parse(fs.readFileSync(EXAMPLES_PATH, 'utf8'));
+    }
+} catch (e) {
+    console.error("Failed to load data files:", e);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// VALIDATION - Walidacja danych wejściowych
-// ═══════════════════════════════════════════════════════════════════════════════
-
-/**
- * Limity długości promptów (w znakach)
- */
-const PROMPT_LIMITS = {
-    MIN_LENGTH: 3,
-    MAX_CUSTOM_PROMPT: 8000,
-    MAX_PROFILE_FIELD: 5000,
-    MAX_CONTEXT_TOTAL: 32000  // Łączny limit kontekstu
-};
-
-/**
- * Waliduje prompt użytkownika
- * @param {string} text - Tekst do walidacji
- * @param {number} maxLength - Maksymalna długość (domyślnie MAX_CUSTOM_PROMPT)
- * @returns {{valid: boolean, text?: string, error?: string}} Wynik walidacji
- */
-function validatePromptInput(text, maxLength = PROMPT_LIMITS.MAX_CUSTOM_PROMPT) {
-    // Null/undefined check
-    if (text == null) {
-        return { valid: false, error: 'Brak tekstu promptu' };
-    }
-
-    // Type check
-    if (typeof text !== 'string') {
-        return { valid: false, error: 'Prompt musi być tekstem' };
-    }
-
-    // Trim whitespace
-    const trimmed = text.trim();
-
-    // Min length check
-    if (trimmed.length < PROMPT_LIMITS.MIN_LENGTH) {
-        return { valid: false, error: `Prompt zbyt krótki (min ${PROMPT_LIMITS.MIN_LENGTH} znaki)` };
-    }
-
-    // Max length check
-    if (trimmed.length > maxLength) {
-        return {
-            valid: false,
-            error: `Prompt zbyt długi (${trimmed.length}/${maxLength} znaków)`
+class PromptBuilder {
+    constructor() {
+        this.context = {
+            persona: SYSTEM_PROMPTS.PERSONA,
+            style: SYSTEM_PROMPTS.STYLE_GUIDE,
+            rules: SYSTEM_PROMPTS.RULES_OF_PLAY || '',
+            selfCorrection: SYSTEM_PROMPTS.SELF_CORRECTION,
+            format: SYSTEM_PROMPTS.FORMAT_INSTRUCTION,
+            userProfile: "",
+            loreContext: "",
+            task: "",
+            examples: "",
+            modeInstruction: "", // New: Debug/Design/etc.
+            userInput: "" // New: Separate User Input field
         };
     }
 
-    // Sanitize - remove potential injection patterns (basic)
-    const sanitized = trimmed
-        .replace(/\x00/g, '')  // Null bytes
-        .replace(/[\u200B-\u200D\uFEFF]/g, '');  // Zero-width characters
+    /**
+     * Injects User Profile context (Developer Role)
+     */
+    withUserProfile(profileData) {
+        if (!profileData) return this;
 
-    return { valid: true, text: sanitized };
-}
-
-/**
- * Waliduje profil postaci przed budowaniem promptu
- * @param {object} profile - Profil do walidacji
- * @returns {{valid: boolean, error?: string}}
- */
-function validateProfile(profile) {
-    if (!profile || typeof profile !== 'object') {
-        return { valid: false, error: 'Brak profilu postaci' };
-    }
-
-    // Check for at least one meaningful field
-    const meaningfulFields = ['Imie postaci', 'O postaci', 'Gildia', 'Wina'];
-    const hasContent = meaningfulFields.some(field =>
-        profile[field] && String(profile[field]).trim().length > 0
-    );
-
-    if (!hasContent) {
-        return { valid: false, error: 'Profil nie zawiera wymaganych danych' };
-    }
-
-    // Check field lengths
-    for (const [key, value] of Object.entries(profile)) {
-        if (value && typeof value === 'string' && value.length > PROMPT_LIMITS.MAX_PROFILE_FIELD) {
-            return {
-                valid: false,
-                error: `Pole "${key}" przekracza limit (${value.length}/${PROMPT_LIMITS.MAX_PROFILE_FIELD})`
-            };
+        let profileString = "";
+        if (typeof profileData === 'string') {
+            profileString = profileData;
+        } else if (typeof profileData === 'object') {
+            // Flatten object to readable string
+            profileString = Object.entries(profileData)
+                .map(([key, val]) => `${key.toUpperCase()}: ${val}`)
+                .join('\n');
         }
+
+        this.context.userProfile = `
+DANE POSTACI (USER PROFILE - CONTEXT):
+${profileString}
+`;
+        return this;
     }
 
-    return { valid: true };
-}
+    /**
+     * Injects relevant Lore/Glossary context based on keywords or general injection
+     */
+    withLoreContext(keywords = []) {
+        // Basic Glossary Injection (Factions, Economy Brief)
+        const economySummary = GLOSSARY_DATA.economy
+            ? `CENNIK (Przykłady): ${JSON.stringify(GLOSSARY_DATA.economy.prices)}`
+            : "";
 
-/**
- * Ładuje kontekst z pliku (z cache)
- */
-function loadContext(contextId, maxChars = null) {
-    if (!CONTEXTS[contextId]) {
-        console.warn(`Unknown context: ${contextId}`);
-        return '';
+        const factionsSummary = GLOSSARY_DATA.factions
+            ? `FRAKCJE: ${Object.keys(GLOSSARY_DATA.factions).join(', ')}`
+            : "";
+
+        this.context.loreContext = `
+KONTEKST ŚWIATA (LORE & GLOSSARY):
+${factionsSummary}
+${economySummary}
+WAŻNE LOKACJE: ${GLOSSARY_DATA.world?.general_locations?.join(', ') || ''}
+`;
+        return this;
     }
 
-    const cacheKey = contextId;
-    if (!contextCache[cacheKey]) {
-        const filePath = path.join(CONTEXTS_DIR, CONTEXTS[contextId].file);
-        try {
-            contextCache[cacheKey] = fs.readFileSync(filePath, 'utf-8');
-        } catch (error) {
-            console.error(`Failed to load context ${contextId}:`, error.message);
-            return '';
+    /**
+     * Sets the Mode (Developer Role)
+     * @param {string} mode - 'standard', 'debug', 'creative', 'strict'
+     */
+    withMode(mode = 'standard') {
+        if (mode === 'debug') {
+            this.context.modeInstruction = `
+TRYB: DEBUG
+Wyjaśnij swoje rozumowanie krok po kroku w polu "_thought_process".
+Sprawdź spójność danych dwukrotnie.
+`;
+        } else if (mode === 'creative') {
+            this.context.modeInstruction = `
+TRYB: KREATYWNY
+Bądź brutalny, nieprzewidywalny i zgodny z klimatem Dark Fantasy.
+`;
         }
+        return this;
     }
 
-    let content = contextCache[cacheKey]; // FIX: Define content variable
-    if (maxChars && content.length > maxChars) {
-        content = content.slice(0, maxChars) + '\n[...skrócono...]';
-    }
-    return content;
-}
+    /**
+     * Configures the specific Task/Command
+     * @param {string} commandType - e.g., 'main_quest', 'story_hook'
+     * @param {object} params - additional parameters for the task
+     */
+    withTask(commandType, params = {}) {
+        let taskInstruction = "";
+        let schema = "";
 
-/**
- * Czyści cache kontekstów
- */
-function clearContextCache() {
-    contextCache = {};
-}
-
-/**
- * Wyciąga schematy questów dla danego zakresu
- */
-/**
- * Wyciąga schematy questów przy użyciu QuestTemplater
- */
-function getQuestSchemas(style, count = 2) {
-    const templates = questTemplater.getTemplates(style, count);
-    if (!templates || templates.length === 0) return '';
-    return templates.join('\n\n');
-}
-
-/**
- * Automatycznie dobiera styl na podstawie profilu postaci
- */
-function detectStyleFromProfile(profile) {
-    const text = JSON.stringify(profile).toLowerCase();
-
-    for (const [styleId, style] of Object.entries(STYLES)) {
-        if (styleId === 'auto') continue;
-        for (const keyword of style.keywords) {
-            if (text.includes(keyword.toLowerCase())) {
-                return styleId;
-            }
+        // Capture User Input separately if provided in params
+        if (params.message) {
+            this.context.userInput = `
+WIADOMOŚĆ UŻYTKOWNIKA (TRIGGER):
+"${params.message}"
+`;
         }
-    }
 
-    // Domyślnie: personal (osobiste cele)
-    return 'personal';
-}
+        switch (commandType) {
+            case 'diagnosis':
+                const historyText = params.history ? params.history.slice(-5).map(m => `${m.role}: ${m.content}`).join('\n') : "Brak historii";
+                taskInstruction = `ZADANIE (DEVELOPER): DIAGNOZA INTENCJI.
+Na podstawie historii i nowej wiadomości, określ cel gracza.
 
-/**
- * Buduje kontekst frakcyjny
- */
-function buildFactionContext(faction, contextContent) {
-    if (!faction || !FACTIONS[faction]) return '';
+HISTORIA ROZMOWY:
+${historyText}
 
-    const factionName = FACTIONS[faction].label;
-    const lines = contextContent.split('\n');
-    const relevant = [];
+INSTRUKCJA:
+1. Przeanalizuj czy gracz chce wygenerować treść (Quest, Hook)?
+2. Czy pyta o analizę (Relacje, Cechy)?
+3. Czy to luźna rozmowa (Chat / Unknown)?
 
-    let inFactionSection = false;
-    for (const line of lines) {
-        if (line.includes(factionName) || line.includes(faction)) {
-            inFactionSection = true;
+Zwróć JSON z polem 'intent' (GENERATE_QUEST | ANALYZE_RELATIONS | UNKNOWN).`;
+                schema = COMMAND_SCHEMAS.DIAGNOSIS;
+                break;
+
+            case 'extraction':
+                taskInstruction = `ZADANIE (DEVELOPER): EKSTRAKCJA DANYCH.
+Cel: Wyciągnij dane do formularza "${params.schema?.id || 'Nieznany'}" z wiadomości użytkownika.
+
+SCHEMA PÓL DO ZNALEZIENIA:
+${params.schema?.fields ? Object.entries(params.schema.fields).map(([k, v]) => `- ${k} (${v.type}): ${v.description || ''}`).join('\n') : 'Brak schematu'}
+
+KONTEKST (Już zebrane): ${JSON.stringify(params.currentData || {})}
+
+INSTRUKCJA:
+1. Znajdź wartości dla pól w tekście użytkownika.
+2. Zignoruj resztę.
+3. Zwróć JSON tylko ze znalezionymi polami.`;
+                schema = "{}";
+                this.context.format = "Zwróć TYLKO czysty JSON z ekstrakcją.";
+                break;
+
+            case 'collection':
+                // Check if we should limit questions (Good Practice #9)
+                let missingList = params.missing || [];
+                // Runtime logic does slicing, but we reflect it here for clarity in prompt
+                const missingFields = missingList.join(', ');
+
+                taskInstruction = `ZADANIE (DEVELOPER): WYWIAD (Zadawanie Pytań).
+Brakuje informacji: ${missingFields}.
+
+INSTRUKCJA:
+Zadaj KRÓTKIE, klimatyczne pytanie o te brakujące elementy.
+Nie pytaj o nic więcej.
+Styl: Gothic (NPC/MG).`;
+                schema = "";
+                this.context.format = ""; // Natural language
+                break;
+
+            // --- ENHANCED CONTENT TASKS ---
+
+            case 'main_quest':
+            case 'side_quest':
+            case 'side_quest_repeatable':
+            case 'group_quest':
+            case 'redemption_quest':
+                taskInstruction = `ZADANIE (DEVELOPER): ZAPROJEKTUJ QUEST (${commandType.replace('_', ' ').toUpperCase()}).
+Wygeneruj zadanie zgodnie z podanym schematem JSON.`;
+                schema = COMMAND_SCHEMAS.QUEST;
+                break;
+
+            case 'story_hooks':
+            case 'potential_conflicts':
+            case 'secret':
+                taskInstruction = `ZADANIE (DEVELOPER): GENEROWANIE HACZYKÓW FABULARNYCH.
+Stwórz sytuacje, które wciągną postać w kłopoty.`;
+                schema = COMMAND_SCHEMAS.HOOK;
+                break;
+
+            case 'npc_connections':
+            case 'nickname':
+                taskInstruction = `ZADANIE (DEVELOPER): NPC & KSYWKA.`;
+                schema = COMMAND_SCHEMAS.NPC_ENRICHMENT;
+                break;
+
+            case 'faction_suggestion':
+            case 'advise':
+                taskInstruction = `ZADANIE (DEVELOPER): PORADA.`;
+                schema = COMMAND_SCHEMAS.ADVISORY;
+                break;
+
+            case 'extract_traits':
+                taskInstruction = `ZADANIE (DEVELOPER): ANALIZA PSYCHOLOGICZNA.`;
+                schema = COMMAND_SCHEMAS.TRAIT_ANALYSIS;
+                break;
+
+            case 'analyze_relations':
+                taskInstruction = `ZADANIE (DEVELOPER): ANALIZA RELACJI.`;
+                schema = COMMAND_SCHEMAS.RELATION_ANALYSIS;
+                break;
+
+            case 'summarize':
+                taskInstruction = `ZADANIE (DEVELOPER): PODSUMOWANIE.`;
+                schema = COMMAND_SCHEMAS.SUMMARIZATION;
+                break;
+
+            case 'chat':
+            case 'custom':
+                taskInstruction = `ZADANIE (DEVELOPER): ODGRYWANIE ROLI (ROLEPLAY).
+Bądź pomocny, ale trzymaj się klimatu ("Świat jest brutalny").`;
+                schema = "";
+                this.context.format = "";
+                break;
+
+            default:
+                taskInstruction = `ZADANIE: WYKONAJ POLECENIE GRACZA.`;
+                schema = `{"response": "treść"}`;
         }
-        if (inFactionSection) {
-            relevant.push(line);
-            if (relevant.length > 50) break; // Limit
+
+        this.context.task = `
+${taskInstruction}
+
+OCZEKIWANY SCHEMAT JSON (KONTRAKT):
+${schema}
+`;
+        this.context.examples = this._getExamples(commandType);
+        return this;
+    }
+
+    /**
+     * Assembles the final prompt string adhering to GCF Hierarchy
+     */
+    build() {
+        // Strict Hierarchy:
+        // 1. SYSTEM ROLE (Persona, Style, Rules, Mode)
+        // 2. DEVELOPER ROLE (Context, Examples, Task Schema)
+        // 3. USER ROLE (Input Message) - Trigger for the AI
+
+        const systemBlock = [
+            this.context.persona,
+            this.context.style,
+            this.context.rules,
+            this.context.modeInstruction,
+            this.context.selfCorrection,
+            this.context.format
+        ].filter(Boolean).join('\n\n');
+
+        const developerBlock = [
+            this.context.loreContext,
+            this.context.userProfile,
+            this.context.examples,
+            this.context.task
+        ].filter(Boolean).join('\n\n');
+
+        const userBlock = this.context.userInput;
+
+        return `
+${systemBlock}
+
+========================================
+[KONTEKST I ZADANIE]
+${developerBlock}
+
+========================================
+[TRIGGER]
+${userBlock || "(Brak wejścia użytkownika, generuj na podstawie zadania)"}
+`;
+    }
+
+    /**
+     * Helper to get examples for a command
+     */
+    _getExamples(commandType) {
+        if (!EXAMPLES_DATA) return "";
+
+        let type = "";
+        // Map commands to example categories
+        if (['main_quest', 'side_quest', 'side_quest_repeatable', 'group_quest', 'redemption_quest'].includes(commandType)) {
+            type = 'QUEST';
+        } else if (['story_hooks', 'potential_conflicts', 'secret'].includes(commandType)) {
+            type = 'HOOK';
+        } else if (['diagnosis'].includes(commandType)) {
+            type = 'DIAGNOSIS';
+        } else if (['extract_traits'].includes(commandType)) {
+            type = 'TRAIT_ANALYSIS';
         }
+
+        const examples = EXAMPLES_DATA[type];
+        if (!examples || examples.length === 0) return "";
+
+        const formattedExamples = examples.map((ex, i) => {
+            return `PRZYKŁAD ${i + 1}:\nWEJŚCIE: ${JSON.stringify(ex.user_input || ex.history || ex.message)}\nWYJŚCIE: ${JSON.stringify(ex.output, null, 2)}`;
+        }).join('\n\n');
+
+        return `PRZYKŁADY (FEW-SHOT):\nOto jak powinieneś wykonywać to zadanie. Zwróć uwagę na styl, detale i format.\n\n${formattedExamples}`;
+    }
+}
+
+// ----------------------------------------------------------------------
+// Legacy Adapter functions to maintain compatibility with existing app.js calls
+// ----------------------------------------------------------------------
+
+/**
+ * Main entry point currently used by app.js
+ * @param {string} command - Identifies the intent (e.g. 'main_quest')
+ * @param {object} contextData - Contains user profile, history, etc.
+ */
+async function buildPrompt(command, contextData) {
+    const builder = new PromptBuilder();
+
+    // 1. Inject Profile
+    if (contextData.profile) {
+        builder.withUserProfile(contextData.profile);
+    } else if (contextData.content) {
+        // Fallback if profile is passed as raw content
+        builder.withUserProfile(contextData.content);
     }
 
-    return relevant.join('\n');
+    // 2. Inject Lore
+    builder.withLoreContext();
+
+    // 3. Configure Task
+    builder.withTask(command);
+
+    return builder.build();
 }
 
 /**
- * Buduje BAZOWY System Prompt (Persona, Świat, Styl) - bez instrukcji zadania.
- * Do użycia jako "System Message" w czacie.
+ * Validation function (kept for compatibility)
  */
-// [PIVOT] Technical Assistant Mode
-function buildBaseSystemPrompt(profile, userConfig = {}) {
-    const config = mergeConfig(userConfig);
-    let prompt = '';
-
-    // === ROLE: TECHNICAL & OBJECTIVE ===
-    prompt += `Jesteś Technicznym Asystentem bazy danych Gothic. Twoim celem jest generowanie precyzyjnych, zgodnych z lore treści.\n`;
-    prompt += `NIE JESTEŚ "Mistrzem Gry". Jesteś narzędziem. Nie używaj metafor, poetyckiego języka ani zwrotów "Witaj wietrze".\n`;
-    prompt += `Bądź zwięzły, konkretny i rzeczowy. Odpowiadaj krótko.\n\n`;
-
-    // === CONTEXT AS DATA ===
-    if (config.contexts.geography) {
-        prompt += `[DANE: GEOGRAFIA]\n${loadContext('geography', 2000)}\n\n`;
-    }
-
-    if (config.contexts.system) {
-        let systemContent = loadContext('system', 3000);
-        prompt += `[DANE: SYSTEM/PRAWO]\n${systemContent}\n\n`;
-    }
-
-    // === SUBJECT DATA ===
-    prompt += `[OBIEKT DOCELOWY: POSTAĆ]\n`;
-    prompt += `Imię: ${profile['Imie postaci'] || 'N/A'}\n`;
-    prompt += `Gildia: ${profile['Gildia'] || 'N/A'}\n`;
-    prompt += `Status: ${profile['Wina'] || 'N/A'}\n`;
-    prompt += `Dane Historii: ${profile['O postaci'] || profile['Jak zarabiala na zycie, kim byla'] || 'N/A'}\n`;
-    prompt += `Cele: ${profile['Przyszlosc'] || 'N/A'}\n`;
-    prompt += `Cechy: ${profile['Slabosci'] || 'N/A'}, ${profile['Umiejetnosci'] || 'N/A'}\n\n`;
-
-    // === INSTRUCTIONS ===
-    prompt += `[WYTYCZNE]\n`;
-    prompt += `1. Używaj SUCHEGO, technicznego języka.\n`;
-    prompt += `2. ZERO "klimatycznych wstawek" (np. "Ciemność otula...").\n`;
-    prompt += `3. Skup się na faktach i użyteczności dla Mistrza Gry.\n`;
-
-    return prompt;
-}
-
-/**
- * Główna funkcja budująca prompt
- */
-function buildPrompt(commandType, profile, userConfig = {}) {
-    const config = mergeConfig(userConfig);
-
-    let prompt = buildBaseSystemPrompt(profile, userConfig);
-
-    // === INSTRUKCJE ===
-    const lengthInstructions = {
-        short: 'Odpowiedz krótko (3-5 zdań).',
-        medium: 'Odpowiedz w średniej długości (1-2 akapity).',
-        long: 'Możesz odpowiedzieć szczegółowo (3-4 akapity).'
-    };
-
-    prompt += `=== ZADANIE ===\n`;
-    prompt += `${getCommandInstruction(commandType)}\n`;
-    prompt += `${lengthInstructions[config.responseLength]}\n`;
-
-    if (config.usePlaceholders) {
-        prompt += `Używaj [insert ...] zamiast wymyślania nowych nazw własnych.\n`;
-    }
-
-    if (config.focus.theme) {
-        prompt += `Skup się na motywie: ${config.focus.theme}.\n`;
-    }
-
-    return prompt;
-}
-
-/**
- * Instrukcje dla konkretnych poleceń AI
- */
-function getCommandInstruction(commandType) {
-    const instructions = {
-        'main_quest': 'Zaproponuj GŁÓWNY QUEST powiązany z przeszłością postaci. Podaj: nazwę, opis (2-3 zdania), 3-5 kroków, potencjalną nagrodę.',
-        'side_quest': 'Zaproponuj QUEST POBOCZNY wykorzystujący umiejętności postaci. Krótki (1-2 sesje), z konkretnym zleceniodawcą.',
-        'redemption_quest': 'Zaproponuj QUEST ODKUPIENIA pozwalający zmazać winę postaci. Może wymagać poświęceń.',
-        'group_quest': 'Zaproponuj QUEST GRUPOWY dla 3-5 graczy. Określ rolę tej postaci i potrzebne specjalizacje.',
-        'story_hooks': 'Zaproponuj 3 HOOKI FABULARNE - krótkie sytuacje wciągające postać w akcję.',
-        'potential_conflicts': 'Wymień 3-4 potencjalne KONFLIKTY z innymi frakcjami lub postaciami.',
-        'npc_connections': 'Zasugeruj 3-4 NPC, którzy mogą być powiązani z tą postacią.',
-        'nickname': 'Wymyśl 3 KSYWKI pasujące do stylu gotyckiego uniwersum.',
-        'faction_suggestion': 'Zasugeruj którą frakcję powinna wybrać postać i dlaczego.',
-        'secret': 'Wymyśl SEKRET, który postać skrywa. Powinien pasować do jej historii i mieć potencjał fabularny.',
-        'extract_traits': 'Wypisz kluczowe cechy postaci: charakter, mocne/słabe strony, motywacje.',
-        'analyze_relations': 'Przeanalizuj relacje postaci: sojusznicy, wrogowie, neutralne kontakty.',
-        'summarize': 'Podsumuj postać w MAKSYMALNIE 3 zdaniach.',
-        'custom': '' // Dla własnych promptów
-    };
-
-    return instructions[commandType] || instructions['summarize'];
-}
-
-/**
- * Ładuje dane JSON z pliku
- */
-function loadData(filename) {
-    try {
-        const filePath = path.join(__dirname, '..', 'data', filename);
-        if (fs.existsSync(filePath)) {
-            return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-        }
-    } catch (e) {
-        console.error(`Failed to load ${filename}:`, e);
-    }
-    return [];
-}
-
-/**
- * Pobiera intrygi pasujące do frakcji
- */
-function getRelevantIntrigues(faction) {
-    const allIntrigues = loadData('intrigues.json');
-    if (!allIntrigues.length) return '';
-
-    // Filter by faction or get generic ones
-    const relevant = allIntrigues.filter(i =>
-        !faction || i.factions.includes(faction) || i.factions.length === 0
-    );
-
-    // Limit to 2-3
-    return relevant.slice(0, 3).map(i => `- ${i.name}: ${i.description}`).join('\n');
-}
-
-/**
- * Pobiera losowych NPC
- */
-function getRandomNPCs(count = 3) {
-    const allNpcs = loadData('npcs.json');
-    if (!allNpcs.length) return '';
-
-    const shuffled = allNpcs.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count).map(n => `- ${n.name} (${n.role}, ${n.faction}): Cel: ${n.goal}. Słabość: ${n.weakness}`).join('\n');
+function validatePromptInput(text) {
+    if (!text || text.length < 3) return { valid: false, error: 'Za krótki tekst' };
+    return { valid: true, text };
 }
 
 module.exports = {
     buildPrompt,
-    buildBaseSystemPrompt, // Exported!
-    loadContext,
-    getQuestSchemas,
-    detectStyleFromProfile,
-    clearContextCache,
-    getCommandInstruction,
-    getRelevantIntrigues,
-    getRandomNPCs,
-    // Validation exports
     validatePromptInput,
-    validateProfile,
-    PROMPT_LIMITS
+    PromptBuilder // Export class for future direct usage
 };

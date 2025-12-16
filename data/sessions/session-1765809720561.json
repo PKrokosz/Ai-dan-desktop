@@ -1,0 +1,41 @@
+{
+  "id": "session-1765809720561",
+  "profileName": "Yugul",
+  "startTime": 1765809720561,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765809720562
+    },
+    {
+      "role": "user",
+      "content": "Co to za postać?",
+      "timestamp": 1765809745227
+    },
+    {
+      "role": "user",
+      "content": "W sensie ta postac [Imię: Yugul]",
+      "timestamp": 1765809755334
+    },
+    {
+      "role": "user",
+      "content": "Nie ściemniasz?",
+      "timestamp": 1765809781739
+    },
+    {
+      "role": "user",
+      "content": "Command: traits",
+      "timestamp": 1765809794162
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {},
+  "flowState": {
+    "stage": "IDLE",
+    "data": {},
+    "missing": []
+  }
+}

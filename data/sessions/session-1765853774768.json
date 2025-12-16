@@ -1,0 +1,31 @@
+{
+  "id": "session-1765853774768",
+  "profileName": "Kora",
+  "startTime": 1765853774768,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam.",
+      "timestamp": 1765853774770
+    },
+    {
+      "role": "user",
+      "content": "Command: relations",
+      "timestamp": 1765855010026
+    },
+    {
+      "role": "user",
+      "content": "Command: redemption_quest",
+      "timestamp": 1765855155611
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {},
+  "flowState": {
+    "stage": "IDLE",
+    "data": {},
+    "missing": []
+  }
+}

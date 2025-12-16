@@ -1,0 +1,101 @@
+{
+  "id": "session-1765864469295",
+  "profileName": "Kora",
+  "startTime": 1765864469295,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765864469298
+    },
+    {
+      "role": "user",
+      "content": "[Imię: Kora]",
+      "timestamp": 1765864563111
+    },
+    {
+      "role": "user",
+      "content": "[Gildia: Cień]",
+      "timestamp": 1765864607818
+    },
+    {
+      "role": "user",
+      "content": "[@slabosci?]",
+      "timestamp": 1765864683427
+    },
+    {
+      "role": "user",
+      "content": "Kto z [Kora może wykorzystać?][@slabosci?]",
+      "timestamp": 1765864743727
+    },
+    {
+      "role": "user",
+      "content": "Kto z [Kora może wykorzystać?][[@slabosci?]?]",
+      "timestamp": 1765864824802
+    },
+    {
+      "role": "user",
+      "content": "Command: traits",
+      "timestamp": 1765865022460
+    },
+    {
+      "role": "user",
+      "content": "Command: side_quest",
+      "timestamp": 1765865136588
+    },
+    {
+      "role": "user",
+      "content": "Command: side_quest_repeatable",
+      "timestamp": 1765865149584
+    },
+    {
+      "role": "user",
+      "content": "Command: redemption_quest",
+      "timestamp": 1765865160873
+    },
+    {
+      "role": "user",
+      "content": "Command: group_quest",
+      "timestamp": 1765865191113
+    },
+    {
+      "role": "user",
+      "content": "Command: group_quest",
+      "timestamp": 1765865238051
+    },
+    {
+      "role": "user",
+      "content": "Command: traits",
+      "timestamp": 1765865275436
+    },
+    {
+      "role": "user",
+      "content": "Command: relations",
+      "timestamp": 1765865367744
+    },
+    {
+      "role": "user",
+      "content": "Command: faction_suggestion",
+      "timestamp": 1765865433735
+    },
+    {
+      "role": "user",
+      "content": "Command: correct_text",
+      "timestamp": 1765865585518
+    },
+    {
+      "role": "user",
+      "content": "dobra, czego nie wiesz?",
+      "timestamp": 1765865639822
+    },
+    {
+      "role": "user",
+      "content": "Jak [Magnus Żelazne Serce łączą się z ?][@historia?]",
+      "timestamp": 1765865795340
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

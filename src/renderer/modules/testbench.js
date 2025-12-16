@@ -1,456 +1,384 @@
 /**
  * @module testbench
- * @description Model Testbench UI - Controller for automated model testing
+ * @description Compact Pipeline Validator - Focuses on verifying AI commands.
  * ES6 Module
  */
 
 import { addLog } from './ui-helpers.js';
-
-// Use window.testbenchState for persistence across renders, or move to state.js if preferred.
-// For now, we prefer keeping it here or on window to avoid state.js bloat.
-if (!window.testbenchState) {
-    window.testbenchState = {
-        history: [],
-        lastSummary: null
-    };
-}
+import { runFullPipelineTest, stopPipelineTest, TEST_SEQUENCE } from './automated-test.js';
 
 // ==============================
-// Templates
+// Template
+// ==============================
+
+// ==============================
+// Constants
+// ==============================
+
+// ==============================
+// Template
 // ==============================
 
 export function getTestbenchTemplate() {
-    return `
+  return `
     <div class="card" style="margin-bottom: 20px;">
-      <h3 class="card-title">🧪 Model Testbench - Test Arena</h3>
+      <h3 class="card-title">🧪 Pipeline Validator</h3>
       <p style="color: var(--text-dim); margin-bottom: 15px; font-size: 13px;">
-        Automatyczne testowanie modeli Ollama na różnych scenariuszach. 
-        Pozwala porównać które modele najlepiej radzą sobie z różnymi zadaniami.
+        Narzędzie walidacji komend zdefiniowanych w <code>pipeline_map.md</code>.
+        Uruchamia sekwencję testową na aktualnie wybranym modelu i postaci.
       </p>
-    </div>
-
- <div class="card" style="margin-bottom: 20px;">
-      <h3 class="card-title">📋 Wybierz Modele do Testowania</h3>
-      <div id="testbench-models-container">
-        <p style="color:var(--text-dim);">Ładowanie modeli...</p>
-      </div>
-    </div>
-
-    <div class="card" style="margin-bottom: 20px;">
-      <h3 class="card-title">📝 Wybierz Scenariusze Testowe</h3>
-      <div id="testbench-scenarios-container">
-        <p style="color: var(--text-dim);">Ładowanie scenariuszy... </p>
-      </div>
-    </div>
-
-    <div class="card" style="margin-bottom:20px;">
-      <h3 class="card-title">🚀 Action Panel</h3>
-      <div style="display: flex; gap: 12px; align-items: center;">
-        <button class="btn btn-primary" id="btnRunTests" onclick="window.AppModules.runTestbench()">
-          🧪 Uruchom Testy
-        </button>
-        <button class="btn btn-secondary" id="btnCancelTests" onclick="window.AppModules.cancelTestbench()" disabled style="background: var(--error);">
-          ❌ Anuluj
-        </button>
-        <button class="btn btn-secondary" id="btnExportReport" onclick="window.AppModules.exportTestbenchReport()" disabled>
-          📊 Eksportuj Raport HTML
-        </button>
-        <span id="testbench-status" style="font-size: 12px; color: var(--text-dim);"></span>
-      </div>
-    </div>
-
-    <!-- Progress Section -->
-<div id="testbench-progress" style="display: none; margin-bottom: 20px;">
-      <div class="card">
-        <h3 class="card-title">⏳ Postęp Testów</h3>
-        <div style="margin-bottom: 10px;">
-          <div class="progress-bar" style="height: 24px; background: var(--bg-dark); border-radius: 12px; overflow: hidden;">
-            <div id="testbench-progress-fill" class="progress-fill" style="height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); transition: width 0.3s; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 12px; width: 0%;">
-              0%
-            </div>
-          </div>
-        </div>
-        <div style="font-size: 12px; color: var(--text-muted);">
-          <div><strong>Model:</strong> <span id="testbench-current-model">---</span></div>
-          <div><strong>Scenariusz:</strong> <span id="testbench-current-scenario">---</span></div>
-          <div><strong>Postęp:</strong> <span id="testbench-test-count">0/0</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Results Section -->
-    <div id="testbench-results" style="display: none;">
-      <div class="card">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-          <h3 class="card-title" style="margin: 0;">📊 Wyniki Testów</h3>
-          <div style="display: flex; gap: 10px; align-items: center;">
-            <label style="font-size: 12px; color: var(--text-dim);">Historia:</label>
-            <select id="test-history-selector" class="form-select" style="width: 350px; font-size: 12px;" onchange="loadHistoryResult(this.value)">
-              <option value="current">📊 Aktualny wynik</option>
+      
+      <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px;">
+          <div class="form-group" style="flex: 1; min-width: 250px;">
+            <label class="form-label">Wybierz postać testową</label>
+            <select class="form-select" id="testbenchProfileSelect" onchange="window.AppModules.selectTestProfile(this.value)">
+                <option value="">-- Wybierz postać --</option>
             </select>
           </div>
-        </div>
-        <div id="testbench-results-content">
-          <!-- Results injected here -->
-        </div>
+
+          <div class="form-group" style="flex: 1; min-width: 250px;">
+            <label class="form-label">Wybierz model do testów</label>
+            <select class="form-select" id="testbenchModelSelect" onchange="state.selectedModel = this.value">
+                <option value="">Wybierz model...</option>
+            </select>
+            <div id="testbench-model-hint" style="font-size: 11px; color: var(--gold); margin-top: 4px; display: none;"></div>
+          </div>
+      </div>
+
+      <div class="action-bar" style="display: flex; gap: 10px; margin-bottom: 20px; align-items: center;">
+          <button class="btn btn-primary" id="btnStartPipeline" onclick="window.AppModules.runTestbench()">
+             ▶ Uruchom Walidację Pipeline'u
+          </button>
+          <button class="btn btn-secondary" id="btnStopPipeline" onclick="window.AppModules.cancelTestbench()" disabled>
+             ⏹ Zatrzymaj
+          </button>
+          
+          <div id="testbench-global-status" style="margin-left: 15px; font-size: 13px; color: var(--text-dim); display: none;">
+             <span class="spinner-small" style="display: inline-block; width: 12px; height: 12px; border: 2px solid var(--text-dim); border-top-color: var(--gold); border-radius: 50%; animation: spin 1s linear infinite; margin-right: 8px;"></span>
+             <span>Inicjalizacja...</span>
+          </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">📋 Raport Walidacji</h3>
+      <div class="table-container" style="max-height: 500px; overflow-y: auto;">
+          <table class="data-table" id="pipelineTable" style="width: 100%; border-collapse: collapse;">
+              <thead>
+                  <tr style="text-align: left; background: var(--bg-darker);">
+                      <th style="padding: 10px;">ID</th>
+                      <th>Komenda / Input</th>
+                      <th>Status</th>
+                      <th>Wynik</th>
+                  </tr>
+              </thead>
+              <tbody id="pipelineTableBody">
+                  ${renderRows()}
+              </tbody>
+          </table>
       </div>
     </div>
   `;
+}
+
+function renderRows() {
+  const results = state.testbenchResults || {};
+
+  return TEST_SEQUENCE.map((item, index) => {
+    // Input content preview logic
+    let inputPreview = '';
+    if (item.inputField && state.selectedRow !== null && state.sheetData?.rows?.[state.selectedRow]) {
+      const content = state.sheetData.rows[state.selectedRow][item.inputField] || '';
+      if (content) {
+        inputPreview = `<div class="input-preview-box" title="Oryginalna treść z pola: ${item.inputField}">${content.substring(0, 80)}${content.length > 80 ? '...' : ''}</div>`;
+      }
+    }
+
+    // Check for saved result
+    const saved = results[index] || { status: 'pending', result: null };
+
+    let statusHtml = '<span class="status-badge pending">Oczekuje</span>';
+    let rowStyle = 'border-bottom: 1px solid var(--border-subtle);';
+    let resultHtml = '-';
+
+    if (saved.status === 'running') {
+      statusHtml = '<span style="color: var(--gold);">⏳ Przetwarzanie...</span>';
+      rowStyle += ' background: rgba(255, 215, 0, 0.05);';
+    } else if (saved.status === 'success') {
+      statusHtml = '<span style="color: var(--success);">✅ OK</span>';
+      resultHtml = formatResultHtml(index, saved.result);
+    } else if (saved.status === 'error') {
+      statusHtml = '<span style="color: var(--error);">❌ Błąd</span>';
+      rowStyle += ' background: rgba(255, 0, 0, 0.05);';
+      resultHtml = saved.result || 'Error';
+    }
+
+    return `
+        <tr id="test-row-${index}" style="${rowStyle}">
+            <td style="padding: 8px; color: var(--text-dim);">#${index + 1}</td>
+            <td style="padding: 8px;">
+                <div style="font-weight: bold;">${item.label}</div>
+                <div style="font-size: 11px; color: var(--text-dim); font-family: monospace;">${item.cmd}</div>
+                ${inputPreview}
+            </td>
+            <td style="padding: 8px;" id="test-status-${index}">
+                ${statusHtml}
+            </td>
+            <td style="padding: 8px; font-size: 11px; max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="test-result-${index}">
+                ${resultHtml}
+            </td>
+        </tr>
+    `;
+  }).join('');
+}
+
+function formatResultHtml(index, resultText) {
+  if (!resultText) return '-';
+  const shortText = resultText.substring(0, 80) + '...';
+  // Escape HTML logic for full text
+  const fullText = resultText.replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+  const resultId = `res-content-${index}`;
+
+  return `
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span style="color: var(--text-muted);">${shortText}</span>
+            <button class="btn btn-sm" style="font-size: 10px; padding: 2px 6px;" onclick="const el = document.getElementById('${resultId}'); el.style.display = el.style.display === 'none' ? 'block' : 'none'">
+                👁️ Pokaż
+            </button>
+        </div>
+        <div id="${resultId}" style="display: none; margin-top: 8px; padding: 8px; background: var(--bg-dark); border: 1px solid var(--border-subtle); border-radius: 4px; white-space: pre-wrap; font-family: monospace; font-size: 11px; color: var(--text-primary); max-height: 300px; overflow-y: auto;">
+            ${fullText}
+        </div>
+    `;
 }
 
 // ==============================
 // Logic
 // ==============================
 
-// Initialize testbench view
-export async function initTestbenchView() {
-    // Setup progress event listener
-    if (window.electronAPI) {
-        window.electronAPI.onTestbenchProgress((progress) => {
-            updateTestbenchProgress(progress);
-        });
+import { state } from './state.js';
 
-        // Load models
-        try {
-            const modelsResult = await window.electronAPI.testbenchGetModels();
-            if (modelsResult.success) {
-                renderTestbenchModels(modelsResult.models);
-            } else {
-                const container = document.getElementById('testbench-models-container');
-                if (container) container.innerHTML = `<p style="color: var(--error);">Błąd: ${modelsResult.error}</p>`;
-            }
-        } catch (error) {
-            const container = document.getElementById('testbench-models-container');
-            if (container) container.innerHTML = `<p style="color: var(--error);">Błąd ładowania modeli: ${error.message}</p>`;
-        }
+let cachedTestProfiles = [];
 
-        // Load scenarios
-        try {
-            const scenariosResult = await window.electronAPI.testbenchGetScenarios();
-            if (scenariosResult.success) {
-                renderTestbenchScenarios(scenariosResult.scenarios);
-            } else {
-                const container = document.getElementById('testbench-scenarios-container');
-                if (container) container.innerHTML = `<p style="color: var(--error);">Błąd: ${scenariosResult.error}</p>`;
-            }
-        } catch (error) {
-            const container = document.getElementById('testbench-scenarios-container');
-            if (container) container.innerHTML = `<p style="color: var(--error);">Błąd ładowania scenariuszy: ${error.message}</p>`;
-        }
+export function selectTestProfile(profileId) {
+  // Search in cached profiles or all profiles
+  let profile = cachedTestProfiles.find(p => p.id === profileId);
+
+  // If not in cache (shouldn't happen if selected from dropdown), try finding in allProfiles
+  if (!profile && state.allProfiles) {
+    const rawProfile = state.allProfiles.find(p => (p.id || p['Imie postaci']) === profileId);
+    if (rawProfile) {
+      profile = {
+        id: rawProfile.id || rawProfile['Imie postaci'],
+        name: rawProfile['Imie postaci'],
+        data: rawProfile
+      };
+    }
+  }
+
+  if (profile) {
+    // Mock state data for the test context
+    state.sheetData = { rows: [profile.data] };
+    state.selectedRow = 0;
+    addLog('info', `Wybrano postać testową: ${profile.name}`);
+
+    // Refresh table to show correct input previews
+    // But do not wipe results if we are just verifying inputs? Maybe reset?
+    // Usually selecting new profile implies new test.
+    // state.testbenchResults = {}; // Optional: auto-reset? Let's leave manual reset for button.
+
+    const tableBody = document.getElementById('pipelineTableBody');
+    if (tableBody) tableBody.innerHTML = renderRows();
+  }
+}
+
+export function initTestbenchView() {
+  // Populate model select
+  const selectModel = document.getElementById('testbenchModelSelect');
+  if (selectModel) {
+    selectModel.innerHTML = '<option value="">-- Wybierz model --</option>';
+    if (state.ollamaModels && state.ollamaModels.length > 0) {
+      state.ollamaModels.forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m.name;
+        opt.textContent = `${m.name} (${(m.size / 1024 / 1024 / 1024).toFixed(1)} GB)`;
+        if (state.selectedModel === m.name) opt.selected = true;
+        selectModel.appendChild(opt);
+      });
+    }
+  }
+
+  // Populate profile select with REAL data
+  const selectProfile = document.getElementById('testbenchProfileSelect');
+  if (selectProfile) {
+    selectProfile.innerHTML = '<option value="">-- Wybierz postać --</option>';
+
+    // 1. Check if we have data
+    if (!state.allProfiles || state.allProfiles.length === 0) {
+      const opt = document.createElement('option');
+      opt.disabled = true;
+      opt.textContent = 'Brak danych - załaduj w Kroku 1';
+      selectProfile.appendChild(opt);
     } else {
-        console.error("ElectronAPI not available");
-    }
-}
+      // 2. Select 5 random profiles if not already cached
+      if (cachedTestProfiles.length === 0) {
+        const shuffled = [...state.allProfiles].sort(() => 0.5 - Math.random());
+        cachedTestProfiles = shuffled.slice(0, 5).map(p => ({
+          id: p.id || p['Imie postaci'], // fallback ID
+          name: `${p['Imie postaci']} (${p['Gildia'] || 'Nieznana'})`,
+          data: p
+        }));
+      }
 
-// Render model checkboxes
-function renderTestbenchModels(models) {
-    const container = document.getElementById('testbench-models-container');
-    if (!container) return;
-
-    if (!models || models.length === 0) {
-        container.innerHTML = '<p style="color: var(--text-dim);">Brak dostępnych modeli</p>';
-        return;
-    }
-
-    container.innerHTML = `
-    <div style="margin-bottom: 10px;">
-      <button class="btn btn-sm" onclick="window.AppModules.selectAllModels(true)">✓ Zaznacz wszystkie</button>
-      <button class="btn btn-sm" onclick="window.AppModules.selectAllModels(false)" style="margin-left: 8px;">✗ Odznacz wszystkie</button>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 8px;">
-      ${models.map(m => `
-        <label class="context-checkbox" style="background: var(--bg-dark); padding: 8px; border-radius: 6px;">
-          <input type="checkbox" class="testbench-model-checkbox" value="${m.name}" checked>
-          <span style="font-size: 12px;">${m.name}</span>
-        </label>
-      `).join('')}
-    </div>
-  `;
-}
-
-// Render scenario checkboxes
-function renderTestbenchScenarios(scenarios) {
-    const container = document.getElementById('testbench-scenarios-container');
-    if (!container) return;
-
-    if (!scenarios || scenarios.length === 0) {
-        container.innerHTML = '<p style="color: var(--text-dim);">Brak scenariuszy testowych</p>';
-        return;
+      // 3. Render options
+      cachedTestProfiles.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p.id;
+        opt.textContent = p.name;
+        selectProfile.appendChild(opt);
+      });
     }
 
-    // Group by category
-    const byCategory = {};
-    scenarios.forEach(s => {
-        if (!byCategory[s.category]) byCategory[s.category] = [];
-        byCategory[s.category].push(s);
-    });
-
-    container.innerHTML = `
-    <div style="margin-bottom: 10px;">
-      <button class="btn btn-sm" onclick="window.AppModules.selectAllScenarios(true)">✓ Zaznacz wszystkie</button>
-      <button class="btn btn-sm" onclick="window.AppModules.selectAllScenarios(false)" style="margin-left: 8px;">✗ Odznacz wszystkie</button>
-    </div>
-    ${Object.entries(byCategory).map(([category, items]) => `
-      <div style="margin-bottom: 15px;">
-        <h4 style="font-size: 13px; color: var(--gold-soft); margin-bottom: 8px; text-transform: capitalize;">${category.replace('_', ' ')}</h4>
-        <div style="display: flex; flex-direction: column; gap: 6px;">
-          ${items.map(s => `
-            <label class="context-checkbox" style="background: var(--bg-dark); padding: 6px 10px; border-radius: 4px;">
-              <input type="checkbox" class="testbench-scenario-checkbox" value="${s.id}" checked>
-              <span style="font-size: 11px; color: var(--text-muted);">${s.name}</span>
-            </label>
-          `).join('')}
-        </div>
-      </div>
-    `).join('')}
-  `;
+    // Helper: styling for input preview box
+    if (!document.getElementById('testbench-styles')) {
+      const style = document.createElement('style');
+      style.id = 'testbench-styles';
+      style.textContent = `
+              .input-preview-box {
+                  margin-top: 5px;
+                  padding: 4px 6px;
+                  background: rgba(0, 100, 255, 0.1);
+                  border-left: 3px solid #0066ff;
+                  color: var(--text-dim);
+                  font-size: 10px;
+                  border-radius: 0 4px 4px 0;
+                  max-width: 100%;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+              }
+          `;
+      document.head.appendChild(style);
+    }
+  }
 }
 
-// Select/deselect all models
-export function selectAllModels(checked) {
-    document.querySelectorAll('.testbench-model-checkbox').forEach(cb => {
-        cb.checked = checked;
-    });
-}
+export function runTestbench() {
+  const btnStart = document.getElementById('btnStartPipeline');
+  const btnStop = document.getElementById('btnStopPipeline');
+  const globalStatus = document.getElementById('testbench-global-status');
+  const statusText = globalStatus ? globalStatus.querySelector('span:last-child') : null;
 
-// Select/deselect all scenarios
-export function selectAllScenarios(checked) {
-    document.querySelectorAll('.testbench-scenario-checkbox').forEach(cb => {
-        cb.checked = checked;
-    });
-}
+  if (state.selectedRow === null || state.selectedRow === undefined) {
+    addLog('error', 'Wybierz najpierw postać testową!');
+    return;
+  }
 
-// Run testbench
-export async function runTestbench() {
-    // Get selected models
-    const selectedModels = Array.from(document.querySelectorAll('.testbench-model-checkbox:checked'))
-        .map(cb => cb.value);
+  if (btnStart) btnStart.disabled = true;
+  if (btnStop) btnStop.disabled = false;
 
-    // Get selected scenarios
-    const selectedScenarios = Array.from(document.querySelectorAll('.testbench-scenario-checkbox:checked'))
-        .map(cb => cb.value);
+  // Show immediate feedback
+  if (globalStatus) {
+    globalStatus.style.display = 'flex';
+    if (statusText) statusText.textContent = 'Przygotowywanie...';
+  }
 
-    if (selectedModels.length === 0) {
-        addLog('warn', 'Wybierz przynajmniej jeden model');
-        return;
+  // Initialize persistence if missing
+  state.testbenchResults = {};
+
+  // Reset UI
+  // Deprecated: we now rely on renderRows re-rendering based on state.testbenchResults
+  const tableBody = document.getElementById('pipelineTableBody');
+  if (tableBody) tableBody.innerHTML = renderRows(); // Refreshes with empty results
+
+  runFullPipelineTest((index, status, resultText) => {
+    if (index === -1) {
+      // Global status update
+      if (status === 'completed') {
+        if (btnStart) btnStart.disabled = false;
+        if (btnStop) btnStop.disabled = true;
+        if (globalStatus) globalStatus.style.display = 'none';
+      }
+      return;
     }
 
-    if (selectedScenarios.length === 0) {
-        addLog('warn', 'Wybierz przynajmniej jeden scenariusz');
-        return;
+    // CAPTURE METADATA from the latest feed item
+    // runFullPipelineTest calls this callback with resultText which is content.
+    // We want to find the corresponding item in state.aiResultsFeed to get system/prompt.
+    // The test runs sequentially, so we can look at the latest item in feed
+    // that matches the logic (or simply the last one).
+    let metadata = {};
+    const lastFeedItem = state.aiResultsFeed && state.aiResultsFeed.length > 0
+      ? state.aiResultsFeed[state.aiResultsFeed.length - 1]
+      : null;
+
+    if (lastFeedItem && lastFeedItem.command === TEST_SEQUENCE[index].label) {
+      metadata = {
+        system: lastFeedItem.system,
+        prompt: lastFeedItem.prompt,
+        model: lastFeedItem.model
+      };
+    } else if (lastFeedItem) {
+      // Fallback: If command label didn't perfectly match (e.g. truncated), try assuming it's the last one
+      metadata = {
+        system: lastFeedItem.system,
+        prompt: lastFeedItem.prompt,
+        model: lastFeedItem.model
+      };
     }
 
-    // Disable run button, enable cancel button
-    const btnRun = document.getElementById('btnRunTests');
-    const btnCancel = document.getElementById('btnCancelTests');
-    if (btnRun) btnRun.disabled = true;
-    if (btnCancel) btnCancel.disabled = false;
+    // Save to state
+    if (!state.testbenchResults) state.testbenchResults = {};
+    const previous = state.testbenchResults[index] || {};
+    state.testbenchResults[index] = {
+      status: status,
+      result: (status === 'success' || status === 'error') ? resultText : previous.result,
+      ...metadata // Spread captured metadata
+    };
 
-    const statusEl = document.getElementById('testbench-status');
-    if (statusEl) statusEl.textContent = '⏳ Uruchamianie testów...';
-
-    const progressEl = document.getElementById('testbench-progress');
-    const resultsEl = document.getElementById('testbench-results');
-    if (progressEl) progressEl.style.display = 'block';
-    if (resultsEl) resultsEl.style.display = 'none';
-
-    addLog('info', `🧪 Rozpoczynam testy: ${selectedModels.length} modeli × ${selectedScenarios.length} scenariuszy`);
-
-    try {
-        const result = await window.electronAPI.testbenchRunTests(selectedModels, selectedScenarios);
-
-        if (result.success) {
-            addLog('success', `✓ Testy zakończone! ${result.summary.successfulTests}/${result.summary.totalTests} udanych`);
-
-            // Store in history with metadata
-            const historyEntry = {
-                id: Date.now(),
-                timestamp: new Date().toISOString(),
-                summary: result.summary,
-                metadata: {
-                    models: selectedModels,
-                    scenarios: selectedScenarios,
-                    totalTests: result.summary.totalTests,
-                    successRate: Math.round((result.summary.successfulTests / result.summary.totalTests) * 100)
-                }
-            };
-
-            if (!window.testbenchState) window.testbenchState = { history: [] };
-            if (!window.testbenchState.history) window.testbenchState.history = [];
-            window.testbenchState.history.unshift(historyEntry);
-
-            // Keep only last 10 results
-            if (window.testbenchState.history.length > 10) {
-                window.testbenchState.history = window.testbenchState.history.slice(0, 10);
-            }
-
-            // Set as current and display
-            window.testbenchState.lastSummary = result.summary;
-            displayTestbenchResults(result.summary);
-            // updateHistoryDropdown(); // Assuming this is defined or we need to export it? 
-            // It was not in the file I viewed? Wait.
-            // I missed updateHistoryDropdown in the file scan? 
-            // Checking step 602. It ends at line 399.
-            // updateHistoryDropdown is NOT defined in testbench-ui.js in the view!
-            // Line 260 calls it: `updateHistoryDropdown();`
-            // But it is not defined in the file?
-            // Maybe it's in `testbench-history.js`?
-            // Yes, `testbench-history.js` is included in index.html line 221.
-            // I should leave `updateHistoryDropdown()` call as is (global from another script).
-            if (typeof updateHistoryDropdown === 'function') {
-                updateHistoryDropdown();
-            } else if (window.updateHistoryDropdown) {
-                window.updateHistoryDropdown();
-            }
-
-            const btnExport = document.getElementById('btnExportReport');
-            if (btnExport) btnExport.disabled = false;
-        } else {
-            addLog('error', `✗ Błąd testów: ${result.error}`);
-            if (statusEl) statusEl.textContent = `❌ Błąd: ${result.error}`;
-        }
-    } catch (error) {
-        addLog('error', `Błąd: ${error.message}`);
-        if (statusEl) statusEl.textContent = `❌ Błąd: ${error.message}`;
-    } finally {
-        if (btnRun) btnRun.disabled = false;
-        if (btnCancel) btnCancel.disabled = true;
-        if (progressEl) progressEl.style.display = 'none';
+    // Update global status text on each step
+    if (statusText && status === 'running') {
+      statusText.textContent = `Testowanie: ${TEST_SEQUENCE[index]?.label || '...'}`;
     }
+
+    // Direct DOM manipulation for instant feedback (in case renderStep is slow/debounced)
+    const statusEl = document.getElementById(`test-status-${index}`);
+    const resultEl = document.getElementById(`test-result-${index}`);
+    const rowEl = document.getElementById(`test-row-${index}`);
+
+    if (statusEl) {
+      if (status === 'running') {
+        statusEl.innerHTML = '<span style="color: var(--gold);">⏳ Przetwarzanie...</span>';
+        if (rowEl) rowEl.style.background = 'rgba(255, 215, 0, 0.05)';
+      } else if (status === 'success') {
+        statusEl.innerHTML = '<span style="color: var(--success);">✅ OK</span>';
+        if (rowEl) rowEl.style.background = 'transparent';
+
+        if (resultEl) resultEl.innerHTML = formatResultHtml(index, resultText);
+
+      } else if (status === 'error') {
+        statusEl.innerHTML = '<span style="color: var(--error);">❌ Błąd</span>';
+        if (rowEl) rowEl.style.background = 'rgba(255, 0, 0, 0.05)';
+        if (resultEl) resultEl.textContent = resultText || 'Error';
+      }
+    }
+  });
 }
 
-// Cancel running tests
-export async function cancelTestbench() {
-    addLog('warn', 'Anulowanie testów...');
-    const statusEl = document.getElementById('testbench-status');
-    if (statusEl) statusEl.textContent = '⚠️ Anulowanie...';
-
-    const btnCancel = document.getElementById('btnCancelTests');
-    if (btnCancel) btnCancel.disabled = true;
-
-    try {
-        await window.electronAPI.testbenchCancel();
-        addLog('warn', '⚠️ Testy anulowane');
-    } catch (error) {
-        addLog('error', `Błąd anulowania: ${error.message}`);
-    }
+export function cancelTestbench() {
+  stopPipelineTest();
+  const btnStart = document.getElementById('btnStartPipeline');
+  const btnStop = document.getElementById('btnStopPipeline');
+  if (btnStart) btnStart.disabled = false;
+  if (btnStop) btnStop.disabled = true;
 }
 
-// Update progress display
-function updateTestbenchProgress(progress) {
-    const fill = document.getElementById('testbench-progress-fill');
-    if (fill) {
-        fill.style.width = progress.progressPercent + '%';
-        fill.textContent = progress.progressPercent + '%';
-    }
-    const modelEl = document.getElementById('testbench-current-model');
-    if (modelEl) modelEl.textContent = progress.currentModel || '---';
-    const sceneEl = document.getElementById('testbench-current-scenario');
-    if (sceneEl) sceneEl.textContent = progress.currentScenario || '---';
-    const countEl = document.getElementById('testbench-test-count');
-    if (countEl) countEl.textContent = `${progress.completedTests}/${progress.totalTests}`;
-}
-
-// Display results
-function displayTestbenchResults(summary) {
-    const container = document.getElementById('testbench-results-content');
-    if (!container) return;
-
-    // Model stats table
-    const modelStatsRows = Object.entries(summary.modelStats || {})
-        .map(([modelName, stats]) => {
-            const scoreColor = stats.averageScore >= 70 ? 'var(--success)'
-                : stats.averageScore >= 50 ? 'var(--gold)'
-                    : 'var(--error)';
-
-            return `
-        <tr>
-          <td style="font-weight: 500;">${modelName}</td>
-          <td>${stats.totalTests}</td>
-          <td>${stats.successfulTests}</td>
-          <td>
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <div style="flex: 1; height: 20px; background: var(--bg-dark); border-radius: 10px; overflow: hidden;">
-                <div style="width: ${stats.averageScore}%; height: 100%; background: ${scoreColor};"></div>
-              </div>
-              <span style="font-weight: bold; color: ${scoreColor};">${stats.averageScore}%</span>
-            </div>
-          </td>
-          <td>${stats.averageResponseTime}ms</td>
-          <td>${stats.tokenMetrics?.avgPromptTokens || '-'}</td>
-          <td>${stats.tokenMetrics?.avgResponseTokens || '-'}</td>
-          <td><strong>${stats.tokenMetrics?.avgTokensPerSecond || '-'}</strong></td>
-        </tr>
-      `;
-        }).join('');
-
-    // Top performers
-    const topPerformers = (summary.topPerformers || [])
-        .slice(0, 10)
-        .map(perf => `
-      <div style="padding: 10px; background: var(--bg-dark); border-radius: 6px; margin-bottom: 8px; border-left: 3px solid var(--gold);">
-        <div style="font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 4px;">
-          ${perf.scenarioName}
-        </div>
-        <div style="font-size: 11px; color: var(--gold-soft);">
-          🏆 Winner: <strong>${perf.winnerModel}</strong> (${perf.score}% score)
-        </div>
-      </div>
-    `).join('');
-
-    container.innerHTML = `
-    <div style="margin-bottom: 20px;">
-      <h4 style="font-size: 14px; margin-bottom: 10px;">📊 Statystyki Modeli</h4>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Model</th>
-            <th>Testy</th>
-            <th>Udane</th>
-            <th>Średni Score</th>
-            <th>Średni Czas</th>
-            <th>Tok Prompt</th>
-            <th>Tok Response</th>
-            <th>Tok/sek</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${modelStatsRows}
-        </tbody>
-      </table>
-    </div>
-
-    <div>
-      <h4 style="font-size: 14px; margin-bottom: 10px;">🏆 Top Performers (Najlepsze modele per scenariusz)</h4>
-      ${topPerformers}
-    </div>
-  `;
-
-    const resEl = document.getElementById('testbench-results');
-    if (resEl) resEl.style.display = 'block';
-
-    const statusEl = document.getElementById('testbench-status');
-    if (statusEl) statusEl.textContent = '✅ Testy zakończone';
-}
-
-// Export report
-export async function exportTestbenchReport() {
-    const summary = window.testbenchState?.lastSummary;
-    if (!summary) {
-        addLog('warn', 'Brak wyników do eksportu');
-        return;
-    }
-
-    try {
-        const filename = `testbench-report-${new Date().toISOString().slice(0, 19).replace(/:/g, '-')}.html`;
-        const result = await window.electronAPI.testbenchExportReport(summary, filename);
-
-        if (result.success) {
-            addLog('success', `📊 Raport zapisany: ${result.path}`);
-        } else {
-            addLog('error', `Błąd eksportu: ${result.error}`);
-        }
-    } catch (error) {
-        addLog('error', `Błąd: ${error.message}`);
-    }
-}
+// Stubs for legacy exports if any other module relies on them
+export function exportTestbenchReport() { addLog('info', 'Not implemented in compact mode'); }
+export function selectAllModels() { }
+export function selectAllScenarios() { }

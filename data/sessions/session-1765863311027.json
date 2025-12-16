@@ -1,0 +1,16 @@
+{
+  "id": "session-1765863311027",
+  "profileName": "Zefir",
+  "startTime": 1765863311027,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765863311028
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

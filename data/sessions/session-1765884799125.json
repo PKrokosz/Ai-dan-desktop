@@ -1,0 +1,116 @@
+{
+  "id": "session-1765884799125",
+  "profileName": "Unknown",
+  "startTime": 1765884799125,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Test deep path: @cecha.imie",
+      "timestamp": 1765884799126
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765884985122
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@sekret?]",
+      "timestamp": 1765884991854
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765885008697
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@relacje?]",
+      "timestamp": 1765885015736
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765885031543
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@historia?]",
+      "timestamp": 1765885038677
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765885056944
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@aspiracje?]",
+      "timestamp": 1765885063769
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765885078174
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [@slabosci?]",
+      "timestamp": 1765885085051
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765885098961
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765885105864
+    },
+    {
+      "role": "user",
+      "content": "Test kontekstu: [Imię: Vivienne]",
+      "timestamp": 1765885112893
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765885127872
+    },
+    {
+      "role": "user",
+      "content": "/pomoc",
+      "timestamp": 1765885135588
+    },
+    {
+      "role": "user",
+      "content": "Analizuj",
+      "timestamp": 1765885154128
+    },
+    {
+      "role": "user",
+      "content": "/ksywka",
+      "timestamp": 1765885161864
+    },
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765885384284
+    },
+    {
+      "role": "user",
+      "content": "Dobra, spokojnie. Nie produkuj sie. Pomóz mi przygotowac watek dla Kory.",
+      "timestamp": 1765885483663
+    },
+    {
+      "role": "user",
+      "content": "Command: relations",
+      "timestamp": 1765885570491
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

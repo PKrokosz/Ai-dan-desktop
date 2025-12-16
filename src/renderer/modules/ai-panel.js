@@ -7,6 +7,8 @@
 import { state } from './state.js';
 import { QUICK_ACTIONS } from './config.js';
 import { addLog, renderStep } from './ui-helpers.js';
+import { runAI } from './ai-core.js';
+import { showContextPreviewModal } from './ui-modal-helper.js';
 
 // ==============================
 // Dropdown Toggle
@@ -336,7 +338,7 @@ export function renderMinimalistAIPanel() {
     if (searchPanel) searchPanel.style.display = 'none';
   }
 
-  // 3. Update Feed Content
+  // 3. Update Feed Content - OPTIMIZED to prevent flickering
   const feedContentEl = document.getElementById('ai-feed-content');
   if (feedContentEl) {
     if (!state.aiResultsFeed || state.aiResultsFeed.length === 0) {
@@ -348,51 +350,67 @@ export function renderMinimalistAIPanel() {
                </div>`;
       }
     } else {
-      // Render Feed Items
-      const feedHTML = state.aiResultsFeed.map((item, index) => {
-        const isUser = item.type === 'user';
-        let contentHtml = item.content;
+      // SMART RENDER CHECK: Only re-render if count changed or actively processing (streaming)
+      // or if last item changed content (streaming)
+      const currentCount = state.aiResultsFeed.length;
+      const lastItem = state.aiResultsFeed[currentCount - 1];
+      const lastContentHash = lastItem ? (lastItem.content.length + (lastItem.isStreaming ? '_stream' : '')) : '';
 
-        if (!isUser) {
-          if (item.isStreaming) {
-            contentHtml = item.content || '<span class="cursor-blink">|</span>';
-          } else if (window.StructuredCardRenderer && window.StructuredCardRenderer.tryRenderStructuredCard) {
-            const card = window.StructuredCardRenderer.tryRenderStructuredCard(item.content);
-            contentHtml = card || formatMarkdown(item.content);
-          } else {
-            contentHtml = formatMarkdown(item.content);
+      const shouldRender =
+        !feedContentEl.dataset.lastCount ||
+        feedContentEl.dataset.lastCount != currentCount ||
+        feedContentEl.dataset.lastHash != lastContentHash ||
+        state.aiProcessing; // Always update during processing/streaming
+
+      if (shouldRender) {
+        // Render Feed Items
+        const feedHTML = state.aiResultsFeed.map((item, index) => {
+          const isUser = item.type === 'user';
+          let contentHtml = item.content;
+
+          if (!isUser) {
+            if (item.isStreaming) {
+              contentHtml = item.content || '<span class="cursor-blink">|</span>';
+            } else if (window.StructuredCardRenderer && window.StructuredCardRenderer.tryRenderStructuredCard) {
+              const card = window.StructuredCardRenderer.tryRenderStructuredCard(item.content);
+              contentHtml = card || formatMarkdown(item.content);
+            } else {
+              contentHtml = formatMarkdown(item.content);
+            }
           }
-        }
 
-        return `
-                  <div class="ai-message ${isUser ? 'user' : 'bot'} ${item.isNew ? 'animate-fade-in' : ''}" id="ai-card-${index}">
-                     <div class="ai-avatar">${isUser ? '👤' : '🤖'}</div>
-                     <div class="ai-message-content">
-                        ${contentHtml}
-                     </div>
-                     ${!isUser && !item.isStreaming ? `
-                        <div class="ai-actions" style="opacity: 0; transition: opacity 0.2s; position: absolute; right: 10px; top: 10px;">
-                            <button class="btn-icon" onclick="copyToClipboard(decodeURIComponent('${encodeURIComponent(item.content)}'))" title="Kopiuj">📋</button>
-                        </div>
-                     ` : ''}
-                  </div>
-              `;
-      }).join('');
+          return `
+                      <div class="ai-message ${isUser ? 'user' : 'bot'} ${item.isNew ? 'animate-fade-in' : ''}" id="ai-card-${index}">
+                         <div class="ai-avatar">${isUser ? '👤' : '🤖'}</div>
+                         <div class="ai-message-content">
+                            ${contentHtml}
+                         </div>
+                         ${!isUser && !item.isStreaming ? `
+                            <div class="ai-actions" style="opacity: 0; transition: opacity 0.2s; position: absolute; right: 10px; top: 10px;">
+                                <button class="btn-icon" onclick="copyToClipboard(decodeURIComponent('${encodeURIComponent(item.content)}'))" title="Kopiuj">📋</button>
+                            </div>
+                         ` : ''}
+                      </div>
+                  `;
+        }).join('');
 
-      // ALWAYS update if content differs (Fixing the user bubble missing issue)
-      if (feedContentEl.innerHTML !== feedHTML) {
-        const currentChildren = feedContentEl.children.length;
-        const newChildrenCount = state.aiResultsFeed.length;
+        if (feedContentEl.innerHTML !== feedHTML) {
+          feedContentEl.innerHTML = feedHTML;
 
-        feedContentEl.innerHTML = feedHTML;
+          // Mark state as rendered
+          feedContentEl.dataset.lastCount = currentCount;
+          feedContentEl.dataset.lastHash = lastContentHash;
 
-        // Clear new flags only after render
-        state.aiResultsFeed.forEach(i => i.isNew = false);
+          // Clear new flags only after render
+          setTimeout(() => {
+            state.aiResultsFeed.forEach(i => i.isNew = false);
+          }, 500);
 
-        // Scroll to bottom only if new item added or explicit request
-        if (currentChildren !== newChildrenCount || state.aiProcessing) {
-          feedContainer = document.getElementById('aiFeedContainer');
-          if (feedContainer) feedContainer.scrollTop = feedContainer.scrollHeight;
+          // Scroll to bottom
+          if (state.aiProcessing || (lastItem && lastItem.isNew)) {
+            feedContainer = document.getElementById('aiFeedContainer');
+            if (feedContainer) feedContainer.scrollTop = feedContainer.scrollHeight;
+          }
         }
       }
     }
@@ -402,7 +420,7 @@ export function renderMinimalistAIPanel() {
   const loadingInd = document.getElementById('ai-loading-indicator');
   const timerDisplay = document.getElementById('thinking-timer-display');
 
-  // Calculate elapsed time locally if timer is active
+  // ... (Timer logic same as before)
   let elapsedStr = '0.0';
   if (state.streamData?.isThinking && state.streamData.thinkStartTime) {
     const elapsed = (Date.now() - state.streamData.thinkStartTime) / 1000;
@@ -412,32 +430,14 @@ export function renderMinimalistAIPanel() {
   if (loadingInd) {
     if (state.aiProcessing) {
       loadingInd.style.display = 'flex';
-      // Force update timer text directly
       if (timerDisplay) timerDisplay.textContent = `(${elapsedStr}s)`;
-
-      // Ensure container is scrolled during thinking
-      feedContainer = document.getElementById('aiFeedContainer');
-      if (feedContainer && state.streamData?.isThinking) {
-        feedContainer.scrollTop = feedContainer.scrollHeight;
-      }
     } else {
       loadingInd.style.display = 'none';
     }
   }
 
-  // 5. Update Input Area State
   const sendBtn = document.getElementById('btn-send-prompt');
-  if (sendBtn) {
-    if (state.aiProcessing) {
-      sendBtn.textContent = '⏹️';
-      sendBtn.title = 'Zatrzymaj (lub zresetuj)';
-      sendBtn.classList.add('processing');
-    } else {
-      sendBtn.textContent = '▶';
-      sendBtn.title = 'Wyślij wiadomość';
-      sendBtn.classList.remove('processing');
-    }
-  }
+  if (sendBtn) sendBtn.classList.remove('processing');
 
   // 6. Update Tools & Dropdowns
   const btnQuick = document.getElementById('btn-quick-actions');
@@ -461,7 +461,29 @@ export function renderMinimalistAIPanel() {
     renderContextDropdown();
   }
 
-  // Return empty string as we handled DOM directly
+  // CLICK OUTSIDE HANDLER (One-time init)
+  if (!window._contextPreviewInited) {
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.ai-dropdown-menu') ||
+        e.target.closest('#btn-quick-actions') ||
+        e.target.closest('#btn-model-select') ||
+        e.target.closest('#btn-context-settings')) return;
+
+      // Close all
+      if (state.ui && state.ui.dropdowns) {
+        let changed = false;
+        ['quickActions', 'model', 'context'].forEach(k => {
+          if (state.ui.dropdowns[k]) {
+            state.ui.dropdowns[k] = false;
+            changed = true;
+          }
+        });
+        if (changed) renderStep();
+      }
+    });
+    window._contextPreviewInited = true;
+  }
+
   return '';
 }
 

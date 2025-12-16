@@ -1,0 +1,31 @@
+{
+  "id": "session-1765885695513",
+  "profileName": "Vigdis",
+  "startTime": 1765885695513,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Siema mordo. Co tam slychac?",
+      "timestamp": 1765885695515
+    },
+    {
+      "role": "user",
+      "content": "Kim jest postać z karty postaci?",
+      "timestamp": 1765885843901
+    },
+    {
+      "role": "user",
+      "content": "Pisz krotkie wiadomosci. Jakiś jeden quest który używa [@slabosci?]  i [@aspiracje?] [Imię: Vigdis]",
+      "timestamp": 1765885957308
+    },
+    {
+      "role": "user",
+      "content": "tak",
+      "timestamp": 1765885978118
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

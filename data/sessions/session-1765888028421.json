@@ -1,0 +1,21 @@
+{
+  "id": "session-1765888028421",
+  "profileName": "Kora",
+  "startTime": 1765888028421,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Witam",
+      "timestamp": 1765888028423
+    },
+    {
+      "role": "user",
+      "content": "Test deep path: @cecha.imie",
+      "timestamp": 1765888067612
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

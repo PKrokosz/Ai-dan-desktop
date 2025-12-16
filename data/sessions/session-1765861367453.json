@@ -1,0 +1,97 @@
+{
+  "id": "session-1765861367453",
+  "profileName": "Zysk",
+  "startTime": 1765861367453,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Dzień dobry",
+      "timestamp": 1765861367454
+    },
+    {
+      "role": "user",
+      "content": "Daj mi jakiś pomysl na questa dla [Imię: Zysk]",
+      "timestamp": 1765861420063
+    },
+    {
+      "role": "user",
+      "content": "/debug",
+      "timestamp": 1765861471598
+    },
+    {
+      "role": "user",
+      "content": "Command: traits",
+      "timestamp": 1765861508643
+    },
+    {
+      "role": "user",
+      "content": "Command: faction_suggestion",
+      "timestamp": 1765861573801
+    },
+    {
+      "role": "user",
+      "content": "Command: correct_text",
+      "timestamp": 1765861620108
+    },
+    {
+      "role": "user",
+      "content": "Command: correct_text",
+      "timestamp": 1765861662089
+    },
+    {
+      "role": "user",
+      "content": "Command: group_quest",
+      "timestamp": 1765861689436
+    },
+    {
+      "role": "user",
+      "content": "Command: side_quest_repeatable",
+      "timestamp": 1765861709033
+    },
+    {
+      "role": "user",
+      "content": "Command: redemption_quest",
+      "timestamp": 1765861728069
+    },
+    {
+      "role": "user",
+      "content": "Command: group_quest",
+      "timestamp": 1765861760839
+    },
+    {
+      "role": "user",
+      "content": "Siema",
+      "timestamp": 1765862691062
+    },
+    {
+      "role": "user",
+      "content": "Miałeś najpierw sie przywitać i dopytać co potrzebuje",
+      "timestamp": 1765862751409
+    },
+    {
+      "role": "user",
+      "content": "Ja nie jestem Sam, ja jestem organizatorem Larpa, nazywam sie Krokiet, projektuje cie, a Sam to jest postać w którą wciela się gracz i którego kartę czytasz",
+      "timestamp": 1765862802776
+    },
+    {
+      "role": "user",
+      "content": "z Bezą",
+      "timestamp": 1765862891128
+    },
+    {
+      "role": "user",
+      "content": "Command: correct_text",
+      "timestamp": 1765862971001
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {},
+  "flowState": {
+    "stage": "DIAGNOSIS",
+    "data": {},
+    "missing": [],
+    "mode": "debug"
+  }
+}
