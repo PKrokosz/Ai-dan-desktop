@@ -12,6 +12,10 @@
 
 - [O Projekcie](#-o-projekcie)
 - [Funkcjonalności](#-funkcjonalności)
+- [Integracja Gothic API](#-integracja-gothic-api)
+- [Modele AI](#-modele-ai)
+- [Konfiguracja (ConfigHub)](#-konfiguracja-confighub)
+- [Testowanie postaci](#-testowanie-postaci)
 - [Jak używać](#-jak-używać)
 - [Instalacja](#️-instalacja)
 - [Znane problemy](#️-znane-problemy)
@@ -45,12 +49,13 @@
 
 | Co robi | Jak |
 |---------|-----|
-| Lokalne modele | Obsługa `phi4-mini`, `mistral`, `gemma` i innych |
+| Lokalne modele | Obsługa `ministral-3`, `gemma3`, `phi4` i innych |
 | Konfigurowalne prompty | Pełna kontrola nad instrukcjami dla AI |
 | Szybkie akcje | Predefiniowane polecenia (generuj quest, opisz postać, itp.) |
-| Temperatura | Suwak kreatywności 0.0–1.0 |
+| Streaming | Odpowiedzi wyświetlane w czasie rzeczywistym |
+| GPT-style UI | Bąbelki czatu z zaokrąglonymi rogami, user po prawej |
 
-### 🧪 Testbench (Panel testowy)
+### 🧪 Model Testbench
 
 | Co robi | Jak |
 |---------|-----|
@@ -58,12 +63,116 @@
 | Porównania | Uruchom ten sam test na wielu modelach |
 | Raporty | Wyniki PASS/FAIL z czasem generowania |
 
-### 🔍 Wyszukiwarka Wiedzy (Lore)
+### 🔍 Wyszukiwarka Wiedzy (RAG)
 
 | Co robi | Jak |
 |---------|-----|
+| Vector Store | Semantyczne wyszukiwanie w dokumentacji |
 | Przeszukiwanie Excela | Znajdź wzmianki o postaciach w plikach źródłowych |
-| Kontekst | Podgląd wierszy z pełnym kontekstem |
+| Kontekst | Automatyczne dołączanie relevantnych informacji do promptów |
+
+---
+
+## 🌐 Integracja Gothic API
+
+Aplikacja integruje się z **LarpGothic API** do pobierania danych o postaciach zarejestrowanych na grę.
+
+### Funkcje
+
+| Funkcja | Opis |
+|---------|------|
+| Pobieranie profili | Automatyczne ładowanie wszystkich postaci z API |
+| Synchronizacja | Odświeżanie danych przy starcie aplikacji |
+| Filtrowanie | Wyszukiwanie postaci po nazwie, gildii, itp. |
+
+### Konfiguracja API
+
+Endpoint API jest konfigurowalny w **ConfigHub** → zakładka "API".
+
+---
+
+## 🧠 Modele AI
+
+### Wymagane modele
+
+```bash
+# Model do czatu (wybierz jeden lub więcej)
+ollama pull ministral-3        # Szybki, dobra jakość polskiego
+ollama pull gemma3:4b          # Dobra równowaga jakość/szybkość
+ollama pull phi4               # Microsoft, dobra logika
+
+# Model embeddingowy (WYMAGANY dla RAG/Vector Store)
+ollama pull nomic-embed-text   # 274MB, niezbędny dla wyszukiwania semantycznego
+```
+
+### Tabela porównawcza modeli
+
+| Model | Rozmiar | Polski | Szybkość | Użycie |
+|-------|---------|--------|----------|--------|
+| `ministral-3` | ~3GB | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Główny do czatu |
+| `gemma3:4b` | ~4GB | ⭐⭐⭐ | ⭐⭐⭐⭐ | Alternatywa |
+| `phi4` | ~8GB | ⭐⭐⭐ | ⭐⭐⭐ | Logika, analiza |
+| `nomic-embed-text` | 274MB | - | ⭐⭐⭐⭐⭐ | Embeddingi (RAG) |
+
+> **💡 Model embeddingowy:**  
+> `nomic-embed-text` jest **wymagany** dla funkcji wyszukiwania semantycznego (RAG).
+> Bez niego Vector Store nie będzie działał poprawnie.
+
+---
+
+## ⚙️ Konfiguracja (ConfigHub)
+
+ConfigHub to centralne miejsce konfiguracji aplikacji (dostępne z sidebaru).
+
+### Zakładki
+
+| Zakładka | Ustawienia |
+|----------|------------|
+| **Modele** | Wybór domyślnego modelu, ścieżka do modeli Ollama |
+| **API** | Endpoint Gothic API, timeout |
+| **Prompty** | Edycja system promptów, stylów odpowiedzi |
+| **RAG** | Włącz/wyłącz wyszukiwanie semantyczne, limit dokumentów |
+| **Zaawansowane** | Debug mode, trace logging |
+
+### Lokalizacja pliku konfiguracji
+
+```
+%APPDATA%/agent-mg/config.json
+```
+
+---
+
+## 🧪 Testowanie postaci
+
+### Character Testbench (18 kroków)
+
+Automatyczny test formatowania i spójności odpowiedzi AI dla wybranej postaci.
+
+#### Co testuje
+
+| Kategoria | Przykładowe testy |
+|-----------|-------------------|
+| **Formatowanie** | Markdown, listy, nagłówki |
+| **Spójność** | Ksywki, nazwy, relacje |
+| **Język** | Polski bez anglicyzmów |
+| **Kontekst** | Znajomość lore, frakcji |
+| **Questy** | Generowanie questów głównych/pobocznych |
+
+#### Jak uruchomić
+
+1. Wybierz postać w panelu AI
+2. Kliknij przycisk **🧪 Test Postaci** w pasku narzędzi
+3. Poczekaj na wykonanie 18 kroków (widoczny progress bar)
+4. Po zakończeniu kliknij link do raportu HTML
+
+#### Raport HTML
+
+Po zakończeniu testu generowany jest szczegółowy raport:
+
+- **Karta postaci** - podsumowanie profilu
+- **Wyniki testów** - 18 kroków z odpowiedziami AI
+- **Analityka** - średni czas odpowiedzi, długość, itp.
+- **Lokalizacja:** `output/test_report.html`
 
 ---
 
@@ -71,21 +180,21 @@
 
 ### Podstawowy workflow
 
-1. **Źródło danych** → Wczytaj Excel/PDF z postaciami
+1. **Źródło danych** → Wczytaj Excel/PDF z postaciami LUB pobierz z Gothic API
 2. **Ekstrakcja** → Wybierz postać do pracy
 3. **AI Processing** → Użyj czatu do generowania treści
-4. **Scalanie** → Połącz wyniki
-5. **Eksport** → Zapisz do pliku
+4. **Testowanie** → Uruchom Character Test dla weryfikacji
+5. **Eksport** → Zapisz do pliku lub wygeneruj raport
 
 ### Szybkie akcje AI
 
-- Kliknij **[+]** przy polu tekstowym
+- Kliknij **⚡ Szybkie Akcje** w pasku czatu
 - Wybierz akcję (np. "Generuj quest", "Opisz wygląd")
 - AI wygeneruje treść na podstawie kontekstu postaci
 
 ### Zmiana modelu
 
-- Kliknij przycisk **Model** w panelu wpisywania
+- Kliknij przycisk **🧠 Model** w panelu wpisywania
 - Wybierz model z listy dostępnych
 - Różne modele = różna jakość i szybkość
 
@@ -98,58 +207,41 @@
 - Windows 10/11
 - [Ollama](https://ollama.com/) zainstalowana lokalnie
 - Minimum 8GB RAM (16GB+ zalecane dla większych modeli)
+- ~5GB miejsca na dysku (modele)
 
-### 👶 Instrukcja "Krok po Kroku" (Dla nietechnicznych / ELI5)
+### 👶 Instrukcja "Krok po Kroku" (Dla nietechnicznych)
 
-Jeśli masz czystego Windowsa i nie wiesz od czego zacząć:
+1. **Zainstaluj Node.js**
+    - Wejdź na [nodejs.org](https://nodejs.org/)
+    - Pobierz wersję **LTS**
+    - Zainstaluj (klikaj "Next" aż do końca)
 
-1.  **Zainstaluj Node.js**
-    *   Wejdź na [nodejs.org](https://nodejs.org/)
-    *   Pobierz wersję **LTS** (Recommended for Most Users)
-    *   Zainstaluj (klikaj ciągle "Next" aż do końca)
+2. **Zainstaluj Git** (opcjonalne)
+    - Wejdź na [git-scm.com](https://git-scm.com/)
+    - Pobierz i zainstaluj
 
-2.  **Zainstaluj Git** (opcjonalne, ale ułatwia życie)
-    *   Wejdź na [git-scm.com](https://git-scm.com/)
-    *   Pobierz i zainstaluj (zostaw wszystkie opcje domyślne)
+3. **Zainstaluj Ollama + modele**
 
-3.  **Zainstaluj AI (Ollama)**
-    *   Wejdź na [ollama.com](https://ollama.com/)
-    *   Pobierz i zainstaluj program
-    *   Po instalacji otwórz **Wiersz Polecenia** (wpisz `cmd` w menu Start)
-    *   Wpisz komendę: `ollama pull mistral` (to pobierze "mózg" dla bota, może to zająć kilka minut bo plik ma kilka GB)
+    ```bash
+    # Po instalacji Ollama:
+    ollama pull ministral-3       # Model do czatu
+    ollama pull nomic-embed-text  # Model embeddingowy (WYMAGANY!)
+    ```
 
-4.  **Uruchom Aplikację**
-    *   Pobierz ten projekt (na górze strony: zielony przycisk **Code** -> **Download ZIP**)
-    *   Rozpakuj pobrany plik ZIP
-    *   Wejdź do folderu z rozpakowanymi plikami
-    *   W pasku adresu folderu (na górze, tam gdzie ścieżka C:\...) wpisz `cmd` i wciśnij Enter - otworzy się czarre okno
-    *   Wpisz: `npm install` (zainstaluje potrzebne biblioteki, czekaj aż skończy)
-    *   Wpisz: `npm start` (uruchomi program!)
+4. **Uruchom aplikację**
 
-### Szybki start (Testerzy)
-
-```bash
-# 1. Pobierz instalator z Releases
-# 2. Uruchom Ollama
-ollama serve
-
-# 3. Pobierz zalecane modele (wymagane)
-ollama pull phi4-mini
-ollama pull mistral
-
-# 4. Model embeddingowy (opcjonalny - dla wyszukiwania semantycznego)
-ollama pull nomic-embed-text
-```
-
-> **💡 Uwaga o modelach embeddingowych:**  
-> Model `nomic-embed-text` jest **opcjonalny**. Bez niego aplikacja działa normalnie.  
-> Potrzebny tylko do zaawansowanego wyszukiwania podobnych treści (Vector Store).
+    ```bash
+    git clone https://github.com/PKrokosz/Ai-dan-desktop.git
+    cd Ai-dan-desktop
+    npm install
+    npm start
+    ```
 
 ### Dla deweloperów
 
 ```bash
 npm install
-npm run dev     # tryb deweloperski
+npm run dev     # tryb deweloperski (hot reload)
 npm run build   # budowanie .exe
 ```
 
@@ -159,9 +251,11 @@ npm run build   # budowanie .exe
 
 | Problem | Rozwiązanie |
 |---------|-------------|
-| Pierwsze uruchomienie AI wolne | Model ładuje się do RAM — poczekaj |
+| Pierwsze uruchomienie AI wolne | Model ładuje się do RAM — poczekaj 30-60s |
 | Brak odpowiedzi AI | Sprawdź czy Ollama działa (`ollama serve`) |
-| Model nie znaleziony | Upewnij się, że pobrałeś model (`ollama pull nazwa`) |
+| Model nie znaleziony | `ollama pull nazwa_modelu` |
+| RAG nie działa | Upewnij się że masz `nomic-embed-text` |
+| Duży plik vector-store.json | Normalny dla dużych baz wiedzy (~70MB) |
 
 ---
 
@@ -170,7 +264,6 @@ npm run build   # budowanie .exe
 Projekt jest w fazie beta — Twój feedback jest bezcenny!
 
 - **GitHub Issues**: [Zgłoś problem lub sugestię](https://github.com/PKrokosz/Ai-dan-desktop/issues)
-- **Prywatne wiadomości**: Skontaktuj się bezpośrednio z autorem
 - **Pull Requests**: Mile widziane!
 
 ### Uwagi dotyczące AI
@@ -178,7 +271,7 @@ Projekt jest w fazie beta — Twój feedback jest bezcenny!
 - Jakość odpowiedzi zależy od wybranego modelu
 - Większe modele = lepsza jakość, ale wolniejsze działanie
 - Efektywność mocno zależy od specyfikacji sprzętu (RAM, GPU)
-- Eksperymentuj z temperaturą (niższa = bardziej stabilne, wyższa = bardziej kreatywne)
+- Eksperymentuj z temperaturą (niższa = stabilne, wyższa = kreatywne)
 
 ---
 
