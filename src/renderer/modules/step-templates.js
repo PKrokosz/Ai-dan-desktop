@@ -16,63 +16,82 @@ import { state } from './state.js';
 /**
  * Step 1: Source - Data source selection
  */
+/**
+ * Step 1: Source - Data source selection (Minimalist & Aesthetic Redesign)
+ */
 export function sourceTemplate() {
   return `
-    <div class="card">
-      <h3 class="card-title">📊 Źródło danych</h3>
-      <div class="form-group">
-        <label class="form-label">Wybierz źródło</label>
-        <select class="form-select" id="dataSource">
-          <option value="larpgothic">🔥 LarpGothic API (baza postaci)</option>
-          <option value="sheets">Google Sheets (tabela zgłoszeń)</option>
-          <option value="local">Lokalny plik JSON</option>
-        </select>
+    <div class="minimal-container">
+      <div class="minimal-header">
+        <h2 class="minimal-title">Wybierz Źródło</h2>
+        <p class="minimal-subtitle">Określ skąd mam pobrać dane do analizy.</p>
+      </div>
+
+      <div class="minimal-source-wrapper">
+        <div class="minimal-select-container">
+          <select class="minimal-select" id="dataSource">
+            <option value="larpgothic">🔥 Baza Postaci (LarpGothic API)</option>
+            <option value="sheets">📊 Arkusz Zgłoszeń (Google Sheets)</option>
+            <option value="local">📁 Lokalny plik JSON</option>
+          </select>
+        </div>
       </div>
       
-      <div class="form-group larpgothic-search" style="margin-top: 15px;">
-        <label class="form-label">Szukaj postać lub wybierz tag poniżej</label>
-        <div style="position: relative;">
-          <input type="text" class="form-input" id="searchName" placeholder="Wpisz imię, gildię, zawód..." oninput="handleSearchInput()" autocomplete="off">
-          <div id="searchSuggestions" class="search-suggestions" style="display: none;"></div>
-        </div>
+      <div class="minimal-search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="minimal-search-input" id="searchName" 
+               placeholder="Wpisz imię, gildię lub zawód..." 
+               oninput="handleSearchInput()" autocomplete="off">
+        <button class="filter-icon-btn" id="tagsFilterBtn" onclick="toggleTagsDrawer()" title="Pokaż/Ukryj Tagi">
+            ⚙️ Filtry
+        </button>
+        <div id="searchSuggestions" class="search-suggestions" style="display: none; top: 100%;"></div>
       </div>
 
-      <div class="form-group" style="margin-top: 15px;">
-        <label class="form-label" style="margin-bottom: 10px;">🏷️ Szybkie tagi dla MG</label>
-        
-        <div class="tag-row" style="margin-bottom: 8px;">
-          <span style="font-size: 11px; color: var(--text-dim); margin-right: 8px;">⚖️ Za co siedzi:</span>
-          <button class="tag-btn" onclick="searchByTag('kradzież')">🗡️ Kradzież</button>
-          <button class="tag-btn" onclick="searchByTag('przemyt')">📦 Przemyt</button>
-          <button class="tag-btn" onclick="searchByTag('zabójstwo')">💀 Zabójstwo</button>
-          <button class="tag-btn" onclick="searchByTag('oszustwo')">🎭 Oszustwo</button>
-          <button class="tag-btn" onclick="searchByTag('bójka')">👊 Bójka</button>
-        </div>
-        
-        <div class="tag-row" style="margin-bottom: 8px;">
-          <span style="font-size: 11px; color: var(--text-dim); margin-right: 8px;">💼 Zawód:</span>
-          <button class="tag-btn" onclick="searchByTag('górnik')">⛏️ Górnik</button>
-          <button class="tag-btn" onclick="searchByTag('kowal')">🔨 Kowal</button>
-          <button class="tag-btn" onclick="searchByTag('handlarz')">💎 Handlarz</button>
-          <button class="tag-btn" onclick="searchByTag('łowca')">🏹 Łowca</button>
-          <button class="tag-btn" onclick="searchByTag('najemnik')">⚔️ Najemnik</button>
-          <button class="tag-btn" onclick="searchByTag('strażnik')">🛡️ Strażnik</button>
-        </div>
-        
-        <div class="tag-row">
-          <span style="font-size: 11px; color: var(--text-dim); margin-right: 8px;">⚠️ Wady:</span>
-          <button class="tag-btn" onclick="searchByTag('alkoholik')">🍺 Pijak</button>
-          <button class="tag-btn" onclick="searchByTag('hazardzista')">🎲 Hazard</button>
-          <button class="tag-btn" onclick="searchByTag('chciwość')">🤑 Chciwy</button>
-          <button class="tag-btn" onclick="searchByTag('gniew')">😠 Porywczy</button>
-        </div>
+      <div id="tagsDrawer" class="tags-drawer">
+         <div class="tag-category">
+            <div class="tag-category-title">⚖️ Za co siedzi</div>
+            <div class="tag-cloud">
+               <button class="tag-chip" onclick="searchByTag('kradzież')">🗡️ Kradzież</button>
+               <button class="tag-chip" onclick="searchByTag('przemyt')">📦 Przemyt</button>
+               <button class="tag-chip" onclick="searchByTag('zabójstwo')">💀 Zabójstwo</button>
+               <button class="tag-chip" onclick="searchByTag('oszustwo')">🎭 Oszustwo</button>
+               <button class="tag-chip" onclick="searchByTag('bójka')">👊 Bójka</button>
+            </div>
+         </div>
+         
+         <div class="tag-category">
+            <div class="tag-category-title">💼 Zawód</div>
+            <div class="tag-cloud">
+               <button class="tag-chip" onclick="searchByTag('górnik')">⛏️ Górnik</button>
+               <button class="tag-chip" onclick="searchByTag('kowal')">🔨 Kowal</button>
+               <button class="tag-chip" onclick="searchByTag('handlarz')">💎 Handlarz</button>
+               <button class="tag-chip" onclick="searchByTag('łowca')">🏹 Łowca</button>
+               <button class="tag-chip" onclick="searchByTag('najemnik')">⚔️ Najemnik</button>
+               <button class="tag-chip" onclick="searchByTag('strażnik')">🛡️ Strażnik</button>
+            </div>
+         </div>
+         
+         <div class="tag-category">
+            <div class="tag-category-title">⚠️ Wady</div>
+            <div class="tag-cloud">
+               <button class="tag-chip" onclick="searchByTag('alkoholik')">🍺 Pijak</button>
+               <button class="tag-chip" onclick="searchByTag('hazardzista')">🎲 Hazard</button>
+               <button class="tag-chip" onclick="searchByTag('chciwość')">🤑 Chciwy</button>
+               <button class="tag-chip" onclick="searchByTag('gniew')">😠 Porywczy</button>
+            </div>
+         </div>
       </div>
 
-      <div id="searchStats" style="font-size: 11px; color: var(--text-dim); margin-top: 10px; text-align: right;">
+      <div class="minimal-footer-stats" id="searchStats">
         ${state.allProfiles.length > 0 ? `✓ Dostępnych ${state.allProfiles.length} profili` : '⏳ Ładowanie bazy postaci...'}
       </div>
       
-      <button class="btn btn-primary" style="margin-top: 15px;" onclick="loadDataSource()">Załaduj dane</button>
+      <div class="floating-action-container">
+         <button class="floating-btn" onclick="loadDataSource()">
+            Załaduj Dane →
+         </button>
+      </div>
     </div>
   `;
 }

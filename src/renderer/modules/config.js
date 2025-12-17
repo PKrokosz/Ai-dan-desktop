@@ -66,14 +66,14 @@ export const PERSONALITY_PROMPTS = {
 // Step Definitions
 // ==============================
 export const STEPS = [
-    { id: 1, title: 'Krok 1: Źródło danych', key: 'source' },
-    { id: 2, title: 'Krok 2: Ekstrakcja', key: 'extraction' },
-    { id: 3, title: 'Krok 3: AI Processing', key: 'ai' },
-    { id: 4, title: 'Krok 4: Scalanie', key: 'merge' },
-    { id: 5, title: 'Krok 5: Generowanie questów', key: 'quests' },
-    { id: 6, title: 'Krok 6: Eksport', key: 'export' },
-    { id: 7, title: '🧪 Model Testbench', key: 'testbench' },
-    { id: 8, title: '⚙️ Ustawienia', key: 'settings' }
+    { id: 1, title: 'Krok 1: Źródło danych', key: 'source', icon: '📂' },
+    { id: 2, title: 'Krok 2: Ekstrakcja', key: 'extraction', icon: '⚡' },
+    { id: 3, title: 'Krok 3: AI Processing', key: 'ai', icon: '🧠' },
+    { id: 4, title: 'Krok 4: Scalanie', key: 'merge', icon: '🔗' },
+    { id: 5, title: 'Krok 5: Generowanie questów', key: 'quests', icon: '📜' },
+    { id: 6, title: 'Krok 6: Eksport', key: 'export', icon: '💾' },
+    { id: 7, title: '🧪 Model Testbench', key: 'testbench', icon: '🧪' },
+    { id: 8, title: '⚙️ Ustawienia', key: 'settings', icon: '⚙️' }
 ];
 
 // ==============================

@@ -11,6 +11,11 @@
 </head>
 
 <body>
+  <div class="window-controls">
+    <button class="win-btn" onclick="window.electronAPI.minimizeWindow()" title="Minimize">─</button>
+    <button class="win-btn" onclick="window.electronAPI.maximizeWindow()" title="Maximize">□</button>
+    <button class="win-btn close" onclick="window.electronAPI.closeWindow()" title="Close">✕</button>
+  </div>
   <div id="app">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -21,27 +26,27 @@
 
       <nav class="steps-nav">
         <div class="step-item" data-step="1">
-          <span class="step-indicator">○</span>
+          <span class="step-icon">📂</span>
           <span class="step-label">Źródło danych</span>
         </div>
         <div class="step-item" data-step="2">
-          <span class="step-indicator">○</span>
+          <span class="step-icon">⚡</span>
           <span class="step-label">Ekstrakcja</span>
         </div>
         <div class="step-item" data-step="3">
-          <span class="step-indicator">○</span>
+          <span class="step-icon">🧠</span>
           <span class="step-label">AI Processing</span>
         </div>
         <div class="step-item" data-step="4">
-          <span class="step-indicator">○</span>
+          <span class="step-icon">🔗</span>
           <span class="step-label">Scalanie</span>
         </div>
         <div class="step-item" data-step="5">
-          <span class="step-indicator">○</span>
+          <span class="step-icon">📜</span>
           <span class="step-label">Questy</span>
         </div>
         <div class="step-item" data-step="6">
-          <span class="step-indicator">○</span>
+          <span class="step-icon">💾</span>
           <span class="step-label">Eksport</span>
         </div>
       </nav>
@@ -114,7 +119,7 @@
     </main>
 
     <!-- Log Panel (collapsible) -->
-    <aside class="log-panel" id="logPanel">
+    <aside class="log-panel collapsed" id="logPanel">
       <div class="log-header">
         <span>Logi</span>
         <button class="btn-icon" id="btnToggleLogs">▼</button>

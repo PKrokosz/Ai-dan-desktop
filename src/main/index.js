@@ -20,7 +20,8 @@ function createWindow() {
         minWidth: 900,
         minHeight: 600,
         backgroundColor: '#0e0c09', // Dark gothic background
-        titleBarStyle: 'default',
+        frame: false, // Borderless window
+        titleBarStyle: 'hidden', // Hide title bar but keep window controls (on Mac) - on Windows requires custom HTML
         icon: path.join(__dirname, '../assets/icon.ico'),
         webPreferences: {
             nodeIntegration: false,

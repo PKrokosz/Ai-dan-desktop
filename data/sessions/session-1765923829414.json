@@ -1,0 +1,16 @@
+{
+  "id": "session-1765923829414",
+  "profileName": "Kora",
+  "startTime": 1765923829414,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Przeanalizuj poniższe dane i wygeneruj RAPORT AI-DNA:\n\nImię: Kora\nGildia: Cień\nBio: W Górnym Mieście Khorinis handlowałam kamieniami szlachetnymi do wyrobu biżuterii. Zaopatrywał mnie w nie jeden z zamorskich kupców gildii Araxos. Choć sama nie zajmowałam się jubilerstwem, znajdowałam klientów zarówno wśród ambitnych czeladników, jak i podróżnych kupców odwiedzających miasto.\r\n\r\n(Kupiec, może chcieć dalej utrzymać ze mną kontakt pod barierą)\r\n\r\nBiznes bywał jednak kapryśny &#8211; stan wojenny i polityczne napięcia utrudniały handel. Kiedy interes podupadał, zaczęłam szukać szybszych sposobów na zarobek. Dzięki znajomości podstaw chemii barwników odkryłam, że odpady magicznej rudy można odpowiednio malować, by przypominały kamienie szlachetne &#8211; i tak rozpoczęłam drobny proceder oszustwa.\r\n\r\n(Czy ktoś w Kolonii zna się na fałszowaniu minerałów? Może ktoś wie że Kora podrabiała kamienie i chciałby współpracować? Może jakiś jubiler chciałby jakiś przekręt z tym związany, albo w jakiś sposób ten wątek połączyć z mechaniką magicznych przedmiotów.)\r\n\n\nANKIETA GRACZA (2025):\n",
+      "timestamp": 1765923829419
+    }
+  ],
+  "entities": {},
+  "knowledge_graph": [],
+  "summary": "",
+  "metadata": {}
+}

@@ -131,5 +131,11 @@ contextBridge.exposeInMainWorld('electronAPI', {
     configReset: (section) => ipcRenderer.invoke('config:reset', section),
     configExport: () => ipcRenderer.invoke('config:export'),
     configImport: (jsonString) => ipcRenderer.invoke('config:import', jsonString),
-    configGetDefaults: () => ipcRenderer.invoke('config:getDefaults')
+    configImport: (jsonString) => ipcRenderer.invoke('config:import', jsonString),
+    configGetDefaults: () => ipcRenderer.invoke('config:getDefaults'),
+
+    // Window Controls
+    minimizeWindow: () => ipcRenderer.invoke('window:minimize'),
+    maximizeWindow: () => ipcRenderer.invoke('window:maximize'),
+    closeWindow: () => ipcRenderer.invoke('window:close')
 });

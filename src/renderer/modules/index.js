@@ -24,9 +24,14 @@ export {
     setRenderStep,
     updateStepIndicators,
     updateStepTitle,
-    closeModal,
-    createModal
+    toggleTagsDrawer
 } from './ui-helpers.js';
+
+export {
+    closeModal,
+    createModal,
+    showContextPreviewModal
+} from './ui-modal-helper.js';
 
 // UI Core (primary renderStep source)
 import {

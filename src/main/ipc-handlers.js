@@ -1694,6 +1694,25 @@ ipcMain.handle('ollama:set-models-path', async (event, { newPath, moveModels }) 
  * @param {string} text - Tekst odpowiedzi do walidacji
  * @returns {{valid: boolean, error?: string}} Wynik walidacji
  */
+// Window Controls
+ipcMain.handle('window:minimize', () => {
+    const win = require('electron').BrowserWindow.getFocusedWindow();
+    if (win) win.minimize();
+});
+
+ipcMain.handle('window:maximize', () => {
+    const win = require('electron').BrowserWindow.getFocusedWindow();
+    if (win) {
+        if (win.isMaximized()) win.unmaximize();
+        else win.maximize();
+    }
+});
+
+ipcMain.handle('window:close', () => {
+    const win = require('electron').BrowserWindow.getFocusedWindow();
+    if (win) win.close();
+});
+
 function validateResponse(text) {
     if (!text || text.length < 5) return { valid: false, error: 'Zbyt krótka odpowiedź' };
 
