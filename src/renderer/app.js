@@ -236,10 +236,16 @@ laneStyles.textContent = `
   .action-btn:hover { border-color: var(--gold); color: var(--gold); }
 
   .character-overlay {
-    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 400px; max-height: 80vh; background: var(--bg-panel); border: 1px solid var(--gold);
+    position: fixed; 
+    width: 400px; height: 500px; max-height: 90vh; background: var(--bg-panel); border: 1px solid var(--gold);
     border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.7); z-index: 1000;
     display: flex; flex-direction: column; overflow: hidden; resize: both;
+    min-width: 300px; min-height: 200px;
+  }
+  .character-overlay.is-persistent {
+    width: 600px; height: 700px;
+    border: 2px solid var(--gold-bright);
+    box-shadow: 0 15px 60px rgba(0,0,0,0.8);
   }
   .overlay-header {
     padding: 10px 15px; background: var(--bg-dark); border-bottom: 1px solid var(--border);

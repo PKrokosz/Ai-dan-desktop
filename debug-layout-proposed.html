@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Proposed</title>
+    <link rel="stylesheet" href="src/renderer/styles/theme.css">
+    <style>
+        body {
+            background: #0e0c09;
+            color: #f2e5b5;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .ruler-y {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            background: #00ff00;
+            /* Green for Proposed */
+            z-index: 9999;
+            transform: translateX(-50%);
+        }
+
+        .label-y {
+            position: absolute;
+            left: 50%;
+            color: #00ff00;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2px 5px;
+            font-size: 12px;
+            z-index: 10000;
+            white-space: nowrap;
+        }
+
+        .layout-wrapper {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            height: 100vh;
+        }
+
+        .sidebar-mock {
+            background: #15120e;
+            border-right: 1px solid rgba(244, 217, 95, 0.12);
+        }
+
+        .main-mock {
+            position: relative;
+            background: radial-gradient(circle at top center, #1a1a1a, #0d0d0d);
+        }
+
+        .minimal-container {
+            border: 1px dashed rgba(0, 255, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="layout-wrapper">
+        <div class="sidebar-mock">
+            <div style="padding: 25px; border-bottom: 1px solid rgba(244, 217, 95, 0.12);">
+                <span style="color: #b88a2b; font-weight: bold; font-size: 18px;">Agent MG</span>
+            </div>
+        </div>
+        <div class="main-mock">
+
+            <!-- Proposed Measurement Guide: 25vh -->
+            <div class="ruler-y" style="top: 0; height: 25vh;"></div>
+            <div class="label-y" style="top: 12vh; margin-left: 10px;">Proposed: 25vh (~270px) Spacing</div>
+
+            <!-- The Content moved down -->
+            <div class="minimal-container"
+                style="padding-top: 25vh; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-start; max-width: 900px; margin: 0 auto;">
+                <div class="minimal-header">
+                    <h2 class="minimal-title">Wybierz Źródło</h2>
+                    <p class="minimal-subtitle">Określ skąd mam pobrać dane do analizy.</p>
+                </div>
+
+                <div class="minimal-source-wrapper">
+                    <div class="minimal-select-container">
+                        <div class="minimal-select"
+                            style="padding: 10px; border: 1px solid #333; border-radius: 99px; text-align:center;">
+                            🔥 Baza Postaci (LarpGothic API)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="minimal-search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="minimal-search-input" value="Wpisz imię..."
+                        style="background:transparent; border:none; color:#f2e5b5;">
+                    <button class="filter-icon-btn">⚙️ Filtry</button>
+                </div>
+
+                <div class="minimal-footer-stats">
+                    ✓ Dostępnych 360 profili
+                </div>
+
+                <div class="floating-action-container">
+                    <button class="floating-btn">Załaduj Dane →</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

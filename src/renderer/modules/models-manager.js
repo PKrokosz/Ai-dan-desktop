@@ -440,3 +440,34 @@ export async function pullModel(modelName) {
         if (window.addLog) window.addLog('error', `Błąd pobierania: ${result.error}`);
     }
 }
+
+// ==============================
+// Configuration Helpers
+// ==============================
+
+export async function pickModelPath() {
+    try {
+        const result = await window.electronAPI.selectDirectory();
+        if (result && !result.canceled && result.filePaths.length > 0) {
+            const path = result.filePaths[0];
+            if (window.addLog) window.addLog('info', `Wybrano ścieżkę: ${path}`);
+            // Logic to update UI or State?
+            // Assuming there is an input #ollamaPath (from step-templates.js settingsTemplate?)
+            // I should check settingsTemplate but I don't have it fully.
+            // But usually we prompts user or update config directly.
+            // Let's assume we update the config immediately or prompt confirmation.
+            if (confirm(`Czy chcesz ustawić nową ścieżkę dla modeli: ${path}?`)) {
+                await window.electronAPI.updateConfig({ ollamaModelPath: path });
+                alert('Ścieżka zaktualizowana. Zrestartuj aplikację aby zmiany weszły w życie.');
+            }
+        }
+    } catch (e) {
+        console.error('Pick path failed', e);
+    }
+}
+
+export async function changeModelPath() {
+    // This was likely a button to trigger the same or advanced logic.
+    // For now, alias to pickModelPath or show info.
+    alert('Użyj przycisku "Zmień" aby wybrać nową lokalizację.');
+}

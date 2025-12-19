@@ -242,43 +242,71 @@ class ProfileService {
             const mentions = [];
             const foundKeys = new Set(); // Prevent duplicates per profile
 
-            // 1. Prepare Keys
-            const nameParts = characterName.split(/\s+/).filter(part => part.length > 2);
-            // Include full name and valid parts
-            const keysToCheck = [characterName];
+            // 1. Prepare Keys & Stems
+            const IGNORED_PREFIXES = ['Baal', 'Gor', 'Cor', 'Don', 'Lord', 'Baron', 'Sir', 'Mistrz'];
+            const nameParts = characterName.split(/\s+/);
+            let keys = [characterName];
+
+            // Only add parts if they are not generic prefixes (unless the name IS just the prefix, unlikely)
             if (nameParts.length > 1) {
-                nameParts.forEach(p => keysToCheck.push(p));
+                nameParts.forEach(p => {
+                    if (p.length > 2 && !IGNORED_PREFIXES.includes(p)) {
+                        keys.push(p);
+                    }
+                });
+            } else {
+                // Single word name - add it regardless (e.g. just "Baal" if someone is named that)
+                if (nameParts[0].length > 2) keys.push(nameParts[0]);
             }
 
+            // Generate Stems for Vowel-Ending keys (simple stemming) to handle declensions like Diego -> Diega
+            const finalKeys = [];
+            const processedKeys = new Set();
+
+            keys.forEach(k => {
+                if (processedKeys.has(k)) return;
+                processedKeys.add(k);
+
+                finalKeys.push({ key: k, isStem: false });
+
+                // If ends with vowel and length > 3, create a stem (e.g., Diego -> Dieg)
+                const lastChar = k.slice(-1).toLowerCase();
+                if (['a', 'e', 'i', 'o', 'y'].includes(lastChar) && k.length > 3) {
+                    const stem = k.slice(0, -1);
+                    if (!processedKeys.has(stem)) {
+                        finalKeys.push({ key: stem, isStem: true });
+                        processedKeys.add(stem);
+                    }
+                }
+            });
+
             // 2. Build Strategies (Regexes)
-            const strategies = keysToCheck.map(key => {
+            const strategies = finalKeys.map(item => {
+                const key = item.key;
                 const sanitized = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
                 const firstChar = key[0];
-                // Check if Capitalized (heuristic for proper noun)
-                const isUpper = firstChar === firstChar.toUpperCase() && firstChar !== firstChar.toLowerCase();
+                const isUpper = firstChar === firstChar.toUpperCase() && firstChar !== firstChar.toLowerCase(); // Check if Capitalized
 
-                // Regex: Start Boundary + Key. 
-                // We use Prefix matching to allow declensions (Zyska, Jana).
-                // We use Word Boundary at start to avoid inside-word matches (poZyskać).
-                // We enforce Case Sensitivity if isUpper is true.
-
-                const boundary = `(^|\\s|[.,;?!:()"\\-])`;
+                // Regex Boundaries
+                const boundaryStart = `(^|\\s|[.,;?!:()"\\-])`;
+                // Lookahead to ensure we end at a boundary (whitespace, punctuation, or EOL)
+                const boundaryEnd = `(?=($|\\s|[.,;?!:()"\\-]))`;
 
                 if (isUpper) {
-                    // Start Boundary + (Capitalized Key OR All-Upper Key)
-                    // e.g. "Zysk" -> matches " Zysk", " Zyska", " ZYSK". Ignored " zysk".
-                    // We manually construct the pattern to handle "Zysk" vs "ZYSK" without 'i' flag overall?
-                    // Or just use 'i' flag but enforce first char?
-                    // Actually, standard names don't change case mid-word often.
-                    // Let's rely on strict First Char check in the regex pattern itself.
-                    // Pattern: Boundary + [KeyFirstChar] + [KeyRest] ... ?
-                    // Simplest: `Boundary` + `Key`. Flag: NONE (Case Sensitive).
-                    // But then "ZYSK" (all caps) fails if key is "Zysk".
-                    // Solution: `Boundary` + `(Zysk|ZYSK)`.
-                    return new RegExp(`${boundary}(${sanitized}|${sanitized.toUpperCase()})(${boundary})`, '');
+                    // Hybrid Strategy:
+                    if (key.length > 3) {
+                        // Long names (>3): Allow random suffix 0-4 chars (covers flexible declension)
+                        // Example: Magnus -> Magnusa, Magnusowi
+                        return new RegExp(`${boundaryStart}(${sanitized}|${sanitized.toUpperCase()})[a-ząęśżźółńć]{0,4}${boundaryEnd}`, 'm');
+                    } else {
+                        // Short names (<=3): Strict List of suffixes to avoid False Positives (e.g. Jan -> Janusz)
+                        // Common PL suffixes: a, u, owi, em, ie, y, i, ów, om
+                        const suffixes = "(a|u|owi|em|ie|y|i|ów|om|os|aś)?";
+                        return new RegExp(`${boundaryStart}(${sanitized}|${sanitized.toUpperCase()})${suffixes}${boundaryEnd}`, 'm');
+                    }
                 } else {
-                    // Standard Case Insensitive
-                    return new RegExp(`${boundary}${sanitized}`, 'i');
+                    // Standard Case Insensitive Prefix Match (for non-capitalized keywords)
+                    return new RegExp(`${boundaryStart}${sanitized}`, 'i');
                 }
             });
 
@@ -299,14 +327,19 @@ class ProfileService {
                         let excerpt = this._extractExcerptRegex(allText, regex);
                         if (!excerpt) excerpt = '...wspomniano...';
 
+                        // Determine which field contains the match
+                        let field = 'Raport';
+                        if (regex.test(summary)) field = 'Podsumowanie';
+                        else if (regex.test(about)) field = 'O postaci';
+                        else if (regex.test(facts)) field = 'Fakty';
+
                         mentions.push({
                             year: year,
-                            mentioningCharacter: profile['Imie postaci'] || 'Nieznana',
-                            sourcedBy: profile['Imie postaci'] || 'Nieznana',
+                            sourceName: profile['Imie postaci'] || 'Nieznana',
                             sourceGuild: profile['Gildia'] || 'Nieznana',
                             source: 'Raport',
-                            text: excerpt,
-                            excerpt: excerpt,
+                            field: field,
+                            context: excerpt,
                             fullText: allText
                         });
                         break; // Stop after first valid key match for this profile
@@ -441,11 +474,17 @@ class ProfileService {
             'O postaci': profile.about || '',
             'Fakty': profile.facts || '',
             'Wina': profile.guilt || '',
+            'Wina (za co skazany)': profile.guilt || '',
             'Podsumowanie': profile.summary || '',
             'Status': profile.status,
-            'Edycja': profile.edition || '', // Important for timeline
+            'Edycja': profile.edition || '',
             'Rok': profile.year || (profile.edition ? (String(profile.edition).replace(/\D/g, '').length === 4 ? String(profile.edition).replace(/\D/g, '') : `20${String(profile.edition).replace(/\D/g, '')}`) : ''),
-            // Add other fields as needed
+            // Additional fields for renderProfileDetails
+            'Znajomi, przyjaciele i wrogowie': profile.friends || '',
+            'Przyszlosc': profile.future || '',
+            'Umiejetnosci': profile.skills || '',
+            'Slabosci': profile.weaks || '',
+            'Jak zarabiala na zycie, kim byla': profile.now || '',
             '_raw': profile
         };
     }

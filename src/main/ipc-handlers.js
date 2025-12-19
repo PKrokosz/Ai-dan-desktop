@@ -34,7 +34,7 @@
  * @requires ../services/conversation-flow - Guided Conversation Flow Service
  */
 
-const { ipcMain, shell, app } = require('electron');
+const { ipcMain, shell, app, BrowserWindow } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const logger = require('../shared/logger');
@@ -62,6 +62,7 @@ const schemaLoader = require('../schemas/schema-loader');          // JSON Schem
 const conversationFlowService = require('../services/conversation-flow'); // Guided Conversation Flow
 const flowManager = require('../services/flow-manager'); // Integrated GCF Logic
 const relationshipService = require('../services/relationship-service'); // Relationship Analysis Service
+const excelSearch = require('../services/excel-search'); // Excel Search & Enrichment
 
 // Initialize GCF with persistence path
 try {
@@ -127,6 +128,7 @@ ipcMain.handle('fetch-sheets', async (event) => {
     });
 });
 
+
 // Fetch data from LarpGothic API
 ipcMain.handle('fetch-larpgothic', async (event, search = {}) => {
     return runWithTrace(async () => {
@@ -137,6 +139,16 @@ ipcMain.handle('fetch-larpgothic', async (event, search = {}) => {
         const result = await larpgothicService.fetchProfiles(search);
 
         if (result.success) {
+            sendProgress(event, 1, 80, `Pobrano ${result.rows.length} profili. Wzbogacam o dane fabularne...`);
+
+            // Enrich with Story Groups from Excel
+            try {
+                await excelSearch.enrichWithGroups(result.rows);
+                logger.info('Enriched profiles with Faction Groups');
+            } catch (e) {
+                logger.warn('Failed to enrich groups', { error: e.message });
+            }
+
             sendProgress(event, 1, 100, `Pobrano ${result.rows.length} profili`);
             logger.info('LarpGothic data fetched', { count: result.rows.length });
         } else {
@@ -174,6 +186,15 @@ ipcMain.handle('search-mentions', async (event, characterName) => {
     });
 });
 
+// Get promotion tracker data (Excel)
+ipcMain.handle('get-promotions', async (event, characterName) => {
+    return runWithTrace(async () => {
+        logger.info('Fetching promotions for character', { characterName });
+        const promotionTracker = require('../services/promotion-tracker');
+        return await promotionTracker.getPromotionsForCharacter(characterName);
+    });
+});
+
 // Analyze relationships
 ipcMain.handle('analyze-relations', async (event, forceRefresh = false) => {
     return runWithTrace(async () => {
@@ -187,6 +208,35 @@ ipcMain.handle('analyze-relations', async (event, forceRefresh = false) => {
         } catch (e) {
             logger.error('Relationship analysis failed', e);
             return { success: false, error: e.message };
+        }
+    });
+});
+
+// AI-Summarize a relationship context
+ipcMain.handle('summarize-relationship', async (event, { source, target, snippet }) => {
+    return runWithTrace(async () => {
+        logger.info('Summarizing relationship', { source, target });
+
+        const prompt = `Jesteś asystentem MG w Gothic LARP. 
+Na podstawie poniższego wycinka tekstu, opisz JEDNYM KRÓTKIM ZDANIEM relację: ${source} -> ${target}.
+Skup się na faktach (np. "X jest dłużnikiem Y", "X nienawidzi Y").
+
+WYCINEK: "${snippet}"
+
+Zasady:
+1. Tylko jedno zdanie.
+2. Zachowaj gotycki klimat, ale bądź konkretny.
+3. Jeśli tekst jest niejasny, napisz "Wzmianka o charakterze neutralnym".`;
+
+        const aiResult = await ollamaService.generateText(prompt, {
+            model: 'gemma3:1b', // Fast & Lean
+            temperature: 0.3
+        });
+
+        if (aiResult.success) {
+            return { success: true, summary: aiResult.text.trim() };
+        } else {
+            return { success: false, error: aiResult.error };
         }
     });
 });
@@ -305,8 +355,10 @@ ipcMain.handle('fetch-world-context', async (event) => {
     });
 });
 
+
+
 // ═══════════════════════════════════════════════════════════════════════════════
-// SEKCJA 4: PIPELINE HANDLERS
+// SEKCJA 5: AI COMMAND HANDLER
 // ═══════════════════════════════════════════════════════════════════════════════
 // Przetwarzanie danych postaci przez "lanes" (ścieżki analizy):
 // - process-lane: Przetwarza pojedynczą ścieżkę przez AI + indeksuje do RAG
@@ -1113,10 +1165,14 @@ ipcMain.handle('data:load-world-context', async (event) => {
 
 ipcMain.handle('get-profile-by-name', async (event, name) => {
     return runWithTrace(async () => {
-        const excelSearchService = require('../services/excel-search');
+        logger.info('Fetching profile by name for window', { name });
+        const profileService = require('../services/profile-service');
         try {
-            const profile = await excelSearchService.getProfileByName(name);
-            return { success: true, profile };
+            const res = await profileService.getProfiles({ name: name });
+            if (res.success && res.profiles && res.profiles.length > 0) {
+                return { success: true, profile: res.profiles[0] };
+            }
+            return { success: false, error: 'Nie znaleziono postaci' };
         } catch (error) {
             logger.error('Error fetching profile by name:', error);
             return { success: false, error: error.message };
@@ -1696,12 +1752,12 @@ ipcMain.handle('ollama:set-models-path', async (event, { newPath, moveModels }) 
  */
 // Window Controls
 ipcMain.handle('window:minimize', () => {
-    const win = require('electron').BrowserWindow.getFocusedWindow();
+    const win = BrowserWindow.getFocusedWindow();
     if (win) win.minimize();
 });
 
 ipcMain.handle('window:maximize', () => {
-    const win = require('electron').BrowserWindow.getFocusedWindow();
+    const win = BrowserWindow.getFocusedWindow();
     if (win) {
         if (win.isMaximized()) win.unmaximize();
         else win.maximize();
@@ -1709,8 +1765,42 @@ ipcMain.handle('window:maximize', () => {
 });
 
 ipcMain.handle('window:close', () => {
-    const win = require('electron').BrowserWindow.getFocusedWindow();
+    const win = BrowserWindow.getFocusedWindow();
     if (win) win.close();
+});
+
+ipcMain.handle('window:open-character', async (event, { name, persistent = false }) => {
+    const charWindow = new BrowserWindow({
+        width: persistent ? 950 : 750,
+        height: persistent ? 900 : 700,
+        minWidth: 600,
+        minHeight: 500,
+        frame: false,
+        resizable: true,
+        backgroundColor: '#0e0c09',
+        title: `Postać: ${name}`,
+        webPreferences: {
+            nodeIntegration: false,
+            contextIsolation: true,
+            preload: path.join(__dirname, 'preload.js')
+        }
+    });
+
+    charWindow.loadFile(path.join(__dirname, '../renderer/character-view.html'), {
+        query: { name, persistent: persistent.toString() }
+    });
+
+    // Position it slightly offset from main window if possible
+    const allWindows = BrowserWindow.getAllWindows();
+    if (allWindows.length > 1) {
+        const mainWin = allWindows.find(w => w !== charWindow);
+        if (mainWin) {
+            const [x, y] = mainWin.getPosition();
+            charWindow.setPosition(x + 80, y + 60);
+        }
+    }
+
+    return { success: true };
 });
 
 function validateResponse(text) {

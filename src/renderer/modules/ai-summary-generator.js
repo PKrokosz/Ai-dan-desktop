@@ -178,7 +178,8 @@ STYL:
     static async loadNotes(profileName) {
         if (!profileName) return [];
         try {
-            const result = await window.electronAPI.invoke('list-files', 'ai-dna/notes');
+            // Updated to use specific exposed API
+            const result = await window.electronAPI.listFiles('ai-dna/notes');
             if (result.success && result.files) {
                 // Filter by profile name
                 // Note: saved artifacts have "profile" field

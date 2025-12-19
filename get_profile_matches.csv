@@ -1,0 +1,5 @@
+#TYPE Selected.Microsoft.PowerShell.Commands.MatchInfo
+"LineNumber","Line","Path"
+"1102","// - get-profile-by-name: Pobiera profil postaci po imieniu","P:\ai-dan-desktop\src\main\ipc-handlers.js"
+"1157","ipcMain.handle('get-profile-by-name', async (event, name) => {","P:\ai-dan-desktop\src\main\ipc-handlers.js"
+"48","    getProfileByName: (name) => ipcRenderer.invoke('get-profile-by-name', name),","P:\ai-dan-desktop\src\main\preload.js"

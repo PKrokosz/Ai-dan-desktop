@@ -15,6 +15,8 @@ export function initializeMermaid() {
         theme: 'dark',
         securityLevel: 'loose',
         fontFamily: 'Inter, sans-serif',
+        maxTextSize: 10000000,
+        maxEdges: 5000,
     });
 
     isInitialized = true;

@@ -291,6 +291,11 @@ export async function runAI(commandType, overrideProfile = null, options = {}) {
         // STRICT LANGUAGE ENFORCEMENT (RECENCY BIAS)
         systemContext += `\n\n[SZYBKA INSTRUKCJA KOŃCOWA]\n1. Odpowiadaj WYŁĄCZNIE w języku POLSKIM.\n2. Zachowaj klimat Gothic (brutalny, surowy).\n3. Nie używaj anglicyzmów.`;
 
+        // Inject User Focus (Active Profile from UI)
+        if (state.promptParts && state.promptParts.active_profile) {
+            systemContext += `\n\n[KONTEKST UI]\nUżytkownik obecnie przegląda profil:\n${state.promptParts.active_profile}`;
+        }
+
         // Optimizing Prompt
         const optimized = applyModelOptimization({
             role: 'Jesteś doświadczonym Mistrzem Gry w świecie Gothic LARP. Znam Kolonię Karną od podszewki. Pomagam tworzyć angażujące wątki fabularne, ale potrafię też prowadzić luźną rozmowę w klimacie.',

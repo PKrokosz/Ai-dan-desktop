@@ -6,6 +6,7 @@
 
 import { state } from './state.js';
 import { AiSummaryGenerator } from './ai-summary-generator.js';
+import { formatMarkdown } from './streaming-handler.js';
 
 // ==============================
 // Styles
@@ -311,12 +312,12 @@ export function renderProfileDetails(profile) {
   const weaknesses = highlightText(getVal('Slabosci', 'Brak danych'), '');
 
   // Combine profession into story if exists
-  let mainStoryHtml = `<p>${story}</p>`;
+  let mainStoryHtml = `<p>${linkifyNames(story, name)}</p>`;
   if (profession && profession !== '-') {
     mainStoryHtml = `
       <div style="margin-bottom:12px; padding-bottom:12px; border-bottom:1px dashed var(--border-subtle);">
         <strong style="color:var(--gold-soft); font-size:12px; text-transform:uppercase;">📅 Teraźniejszość / Zajęcie</strong>
-        <p style="margin-top:4px;">${highlightText(profession, '')}</p>
+        <p style="margin-top:4px;">${linkifyNames(highlightText(profession, ''), name)}</p>
       </div>
       <strong style="color:var(--gold-soft); font-size:12px; text-transform:uppercase;">📜 Historia</strong>
       ${mainStoryHtml}
@@ -327,8 +328,9 @@ export function renderProfileDetails(profile) {
   const renderList = (text) => {
     if (!text || text === '-') return '<p class="text-muted">Brak danych.</p>';
     const items = text.split('. ').filter(f => f.trim().length > 3);
-    if (items.length <= 1) return `<p>${text}</p>`;
-    return `<ul class="styled-list">${items.map(f => `<li>${f.trim().endsWith('.') ? f : f + '.'}</li>`).join('')}</ul>`;
+    const linkifiedText = linkifyNames(text, name);
+    if (items.length <= 1) return `<p>${linkifiedText}</p>`;
+    return `<ul class="styled-list">${items.map(f => `<li>${linkifyNames(f.trim().endsWith('.') ? f : f + '.', name)}</li>`).join('')}</ul>`;
   };
 
   return `
@@ -407,7 +409,7 @@ export function renderProfileDetails(profile) {
           <h3 class="card-title">Relacje</h3>
         </div>
         <div class="card-content">
-          ${relations}
+          ${linkifyNames(relations, name)}
         </div>
       </div>
 
@@ -428,7 +430,6 @@ export function renderProfileDetails(profile) {
       <!-- TIMELINE SECTION (Full Width Bottom) -->
       <div class="profile-timeline-container" style="animation-delay: 0.4s;">
          <span class="timeline-label">⏳ Oś Czasu / Historia Zgłoszeń</span>
-         <div id="timeline-container-${id}" data-name="${name}">Ładowanie historii...</div>
          <div id="timeline-container-${id}" data-name="${name}">Ładowanie historii...</div>
       </div>
       
@@ -600,10 +601,9 @@ window.triggerAiDna = async (id, name) => {
     // Check if this is OUR stream (we can match by 'custom' command or add a specialized commandType later)
     if (data.commandType === 'custom' && data.chunk) {
       accumText += data.chunk;
-      contentNode.innerHTML = window.StructuredCardRenderer.renderGenericJson ?
-        accumText.replace(/\n/g, '<br>') : accumText; // Simple render for now, markdown later?
-      // Use existing Markdown parser if available? 
-      // For now simple text replacement or `waiting` class removal
+      // Live Render: Use formatMarkdown if feasible (it might be heavy on every chunk, but for text usually fine)
+      // Or simple replace for newlines to keep it readable
+      contentNode.innerHTML = formatMarkdown ? formatMarkdown(accumText) : accumText.replace(/\n/g, '<br>');
     }
 
     if (data.done) {
@@ -611,14 +611,8 @@ window.triggerAiDna = async (id, name) => {
       btn.disabled = false;
       btn.innerHTML = '<span>⚡ Generuj Raport</span>';
 
-      // Formatting: Apply Markdown render if possible
-      // We can use a simple generic markdown parser or just leave as is.
-      // Let's try to format structure headers if present (#, ##)
-      contentNode.innerHTML = accumText
-        .replace(/^#\s+(.*$)/gm, '<h1>$1</h1>')
-        .replace(/^##\s+(.*$)/gm, '<h2 style="color:var(--gold); font-size:14px; margin-top:10px; border-bottom:1px solid #333;">$1</h2>')
-        .replace(/\*\*(.*?)\*\*/g, '<strong style="color:var(--text-primary);">$1</strong>')
-        .replace(/\n/g, '<br>');
+      // Formatting: Apply proper Markdown
+      contentNode.innerHTML = formatMarkdown ? formatMarkdown(accumText) : accumText.replace(/\n/g, '<br>');
 
       // Save Artifact
       AiSummaryGenerator.saveArtifact(name, 'climatic_report', accumText);
@@ -728,20 +722,92 @@ export function linkifyNames(text, excludeName = '') {
 // Character Overlay
 // ==============================
 
+window.highestZIndex = 1000;
+
 /**
- * Close character overlay
+ * Global helper for making elements draggable with snapping
  */
-export function closeCharacterOverlay() {
-  const overlay = document.getElementById('charOverlay');
-  if (overlay) overlay.remove();
+function makeDraggable(el, handle) {
+  let isDragging = false;
+  let offset = { x: 0, y: 0 };
+
+  handle.onmousedown = (e) => {
+    isDragging = true;
+    el.style.zIndex = ++window.highestZIndex || 1000;
+    offset.x = el.offsetLeft - e.clientX;
+    offset.y = el.offsetTop - e.clientY;
+    e.preventDefault();
+  };
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    let x = e.clientX + offset.x;
+    let y = e.clientY + offset.y;
+
+    // Magnetic Snapping
+    const threshold = 20;
+    if (Math.abs(x) < threshold) x = 0;
+    if (Math.abs(y) < threshold) y = 0;
+    if (Math.abs(window.innerWidth - (x + el.offsetWidth)) < threshold) x = window.innerWidth - el.offsetWidth;
+    if (Math.abs(window.innerHeight - (y + el.offsetHeight)) < threshold) y = window.innerHeight - el.offsetHeight;
+
+    el.style.left = x + 'px';
+    el.style.top = y + 'px';
+  });
+
+  document.addEventListener('mouseup', () => { isDragging = false; });
 }
 
 /**
- * Open character overlay with profile data
- * @param {string} name - Character name
+ * Close character overlay
  */
-export async function openCharacterOverlay(name) {
+export function closeCharacterOverlay(id = 'charOverlay') {
+  const overlay = document.getElementById(id);
+  // Important: Check if we are trying to close all, only close non-persistent ones unless ID specified
+  if (id === 'ALL_TRANSIENT') {
+    document.querySelectorAll('.character-overlay:not(.is-persistent)').forEach(el => el.remove());
+  } else if (overlay) {
+    overlay.remove();
+  }
+
+  // If no more overlays, clear context
+  if (!document.querySelector('.character-overlay')) {
+    if (typeof window.updatePromptPart === 'function') {
+      window.updatePromptPart('active_profile', null);
+    } else if (window.AppModules && window.AppModules.updatePromptPart) {
+      window.AppModules.updatePromptPart('active_profile', null);
+    }
+  }
+}
+
+/**
+ * Open character overlay with profile data (DOM-based quick preview)
+ * @param {string} name - Character name
+ * @param {boolean} isPersistent - If true, opens in native window instead
+ */
+export async function openCharacterOverlay(name, isPersistent = false) {
   if (!name) return;
+
+  // If persistent is requested, open native window directly
+  if (isPersistent) {
+    try {
+      await window.electronAPI.openCharacterWindow(name, { persistent: true });
+    } catch (e) {
+      console.error("Failed to open native character window", e);
+    }
+    return;
+  }
+
+  // === DOM-based overlay for quick preview ===
+  const nameSafe = name.replace(/[^a-zA-Z0-9]/g, '_');
+  const overlayId = `charOverlay-${nameSafe}`;
+
+  // If exists, bring to front
+  let overlay = document.getElementById(overlayId);
+  if (overlay) {
+    overlay.style.zIndex = ++window.highestZIndex || 1000;
+    return;
+  }
 
   // Try to find in current sheetData first
   let profile = state.sheetData?.rows?.find(p => p['Imie postaci']?.toLowerCase() === name.toLowerCase());
@@ -752,11 +818,22 @@ export async function openCharacterOverlay(name) {
     profile = { 'Imie postaci': name, 'Gildia': 'Ładowanie...', 'O postaci': 'Pobieranie danych...' };
   }
 
-  closeCharacterOverlay();
+  // Update Chat Context
+  const contextStr = `Kontekst Postaci: ${profile['Imie postaci'] || name} (${profile['Gildia'] || '?'}). Fakty: ${(profile['Fakty'] || '').substring(0, 100)}...`;
+  if (typeof window.updatePromptPart === 'function') {
+    window.updatePromptPart('active_profile', contextStr);
+  }
 
-  const overlay = document.createElement('div');
-  overlay.id = 'charOverlay';
+  overlay = document.createElement('div');
+  overlay.id = overlayId;
   overlay.className = 'character-overlay';
+  overlay.style.zIndex = ++window.highestZIndex || 1000;
+
+  // Initial position (offset from center)
+  const count = document.querySelectorAll('.character-overlay').length;
+  overlay.style.left = `calc(50% - 200px + ${count * 30}px)`;
+  overlay.style.top = `calc(50% - 200px + ${count * 30}px)`;
+  overlay.style.transform = 'none';
 
   const renderOverlayContent = (p) => {
     const pName = p['Imie postaci'] || p['name'] || p['Imie'] || 'Nieznana';
@@ -767,58 +844,42 @@ export async function openCharacterOverlay(name) {
     const pRegion = p['Region'] || p['region'] || '-';
 
     return `
-      <div class="overlay-header" id="overlayHeader">
+      <div class="overlay-header" id="header-${overlayId}">
         <div style="display:flex; align-items:center;">
-             <button class="overlay-nav-btn" onclick="openCharacterOverlay('${pName}')" title="Przejdź do pełnego profilu tej postaci">➜</button>
+             <button class="overlay-nav-btn" onmousedown="event.stopPropagation();" onclick="event.stopPropagation(); openCharacterOverlay('${pName.replace(/'/g, "\\'")}', true)" title="Otwórz pełny profil w osobnym oknie">➜</button>
              <div class="overlay-title">
                 <span>👤</span> ${pName} <span style="font-weight:normal; color:var(--text-dim); font-size:11px;">(${pGuild})</span>
              </div>
         </div>
-        <div class="overlay-close" onclick="closeCharacterOverlay()">✕</div>
+        <div class="overlay-close" onmousedown="event.stopPropagation();" onclick="closeCharacterOverlay('${overlayId}')">✕</div>
       </div>
-  <div class="overlay-content" id="overlayBody">
-    ${pStory ? `
-        <div class="overlay-section">
-           <h4>Historia</h4>
-           <div>${highlightText(pStory, '')}</div>
-        </div>` : ''}
-    ${pFacts ? `
-        <div class="overlay-section">
-           <h4>Fakty</h4>
-           <div>${highlightText(pFacts, '')}</div>
-        </div>` : ''}
-    <div style="font-size: 11px; color: var(--text-dim); margin-top: 10px;">
-      ID: ${pId} | Region: ${pRegion}
-    </div>
-  </div>
-`;
+      <div class="overlay-content" id="body-${overlayId}">
+        ${pStory ? `
+          <div class="overlay-section">
+             <h4>Historia</h4>
+             <div>${linkifyNames(pStory, pName)}</div>
+          </div>` : ''}
+        ${pFacts ? `
+          <div class="overlay-section">
+             <h4>Fakty</h4>
+             <div>${linkifyNames(pFacts, pName)}</div>
+          </div>` : ''}
+        <div style="font-size: 11px; color: var(--text-dim); margin-top: 10px;">
+          ID: ${pId} | Region: ${pRegion}
+        </div>
+      </div>
+    `;
   };
 
   overlay.innerHTML = renderOverlayContent(profile);
+  overlay.onmousedown = () => {
+    overlay.style.zIndex = ++window.highestZIndex || 1000;
+  };
+
   document.body.appendChild(overlay);
 
-  // Setup Dragging
-  const setupDrag = () => {
-    const header = document.getElementById('overlayHeader');
-    if (!header) return;
-    let isDragging = false;
-    let offset = { x: 0, y: 0 };
-
-    header.onmousedown = function (e) {
-      isDragging = true;
-      offset.x = overlay.offsetLeft - e.clientX;
-      offset.y = overlay.offsetTop - e.clientY;
-    };
-    document.onmousemove = function (e) {
-      if (isDragging) {
-        e.preventDefault();
-        overlay.style.left = (e.clientX + offset.x) + 'px';
-        overlay.style.top = (e.clientY + offset.y) + 'px';
-      }
-    };
-    document.onmouseup = function () { isDragging = false; };
-  };
-  setupDrag();
+  const header = document.getElementById(`header-${overlayId}`);
+  if (header) makeDraggable(overlay, header);
 
   // Fetch if needed
   if (isFetching) {
@@ -826,41 +887,65 @@ export async function openCharacterOverlay(name) {
       const apiResult = await window.electronAPI.getProfileByName(name);
       if (apiResult.success && apiResult.profile) {
         overlay.innerHTML = renderOverlayContent(apiResult.profile);
-        setupDrag();
+        const newHeader = document.getElementById(`header-${overlayId}`);
+        if (newHeader) makeDraggable(overlay, newHeader);
       } else {
-        const body = document.getElementById('overlayBody');
-        if (body) body.innerHTML = `<p style="color: var(--text-muted);">Nie znaleziono szczegółowych danych tej postać w bazie.</p>`;
+        const body = document.getElementById(`body-${overlayId}`);
+        if (body) body.innerHTML = `<p style="color: var(--text-muted);">Nie znaleziono szczegółowych danych tej postaci w bazie.</p>`;
       }
     } catch (e) {
-      const body = document.getElementById('overlayBody');
+      const body = document.getElementById(`body-${overlayId}`);
       if (body) body.innerHTML = `<p style="color: var(--warning);">Błąd pobierania danych: ${e.message}</p>`;
     }
   }
 }
+
 
 /**
  * Jump to character in extraction view
  * @param {string} name - Character name
  */
 export function jumpToCharacter(name) {
-  if (!state.sheetData?.rows) {
-    console.warn('jumpToCharacter: No sheet data');
-    return;
-  }
+  if (!name) return;
 
-  const index = state.sheetData.rows.findIndex(p =>
-    p['Imie postaci']?.toLowerCase() === name.toLowerCase()
-  );
+  // 1. Try to find in current list
+  if (state.sheetData?.rows) {
+    const index = state.sheetData.rows.findIndex(p =>
+      p['Imie postaci']?.toLowerCase() === name.toLowerCase()
+    );
 
-  if (index !== -1) {
-    state.selectedRow = index;
-    state.currentStep = 2; // Go to extraction step
-    if (typeof renderStep === 'function') {
-      renderStep();
+    if (index !== -1) {
+      state.selectedRow = index;
+      state.currentStep = 2; // Extraction view
+      if (typeof window.renderStep === 'function') {
+        window.renderStep();
+      }
+      return;
     }
-  } else {
-    openCharacterOverlay(name);
   }
+
+  // 2. Try to find in global cache
+  if (state.allProfiles) {
+    const globalProfile = state.allProfiles.find(p =>
+      p['Imie postaci']?.toLowerCase() === name.toLowerCase()
+    );
+
+    if (globalProfile) {
+      state.sheetData = { success: true, rows: [globalProfile] };
+      state.selectedRow = 0;
+      state.currentStep = 2;
+      if (typeof window.renderStep === 'function') {
+        window.renderStep();
+      }
+      return;
+    }
+  }
+
+  // 3. Fallback to overlay if really not found anywhere
+  openCharacterOverlay(name);
+
+  // Close only TRANSIENT overlays when jump successful
+  closeCharacterOverlay('ALL_TRANSIENT');
 }
 
 // ==============================
@@ -884,11 +969,20 @@ export async function loadProfileTimeline(containerId, name, userid) {
     const result = await window.electronAPI.getProfileHistory({ name, userid });
 
     if (!result.success || !result.profiles || result.profiles.length === 0) {
-      container.innerHTML = '<div class="timeline-empty">Brak historii zgłoszeń.</div>';
+      container.innerHTML = `<div class="timeline-empty">Brak historii zgłoszeń dla ${name}.</div>`;
       return;
     }
 
-    renderTimeline(container, result.profiles);
+    // Fetch promotions (Excel)
+    let promotions = [];
+    try {
+      promotions = await window.electronAPI.getPromotions(name);
+      console.log(`Loaded ${promotions.length} promotions for ${name}`);
+    } catch (e) {
+      console.warn('Failed to load promotions', e);
+    }
+
+    renderTimeline(container, result.profiles, promotions);
 
   } catch (e) {
     console.error('Timeline error:', e);
@@ -907,24 +1001,24 @@ export function openTimelineDetail(index) {
   const node = window.currentTimelineNodes[index];
   if (!node) return;
 
-  closeCharacterOverlay(); // Close any existing overlay
-
+  const overlayId = `timelineDetail-${index}-${Date.now()}`;
   const overlay = document.createElement('div');
-  overlay.id = 'charOverlay';
+  overlay.id = overlayId;
   overlay.className = 'character-overlay';
+  overlay.style.zIndex = ++window.highestZIndex || 1000;
   // Position slightly offset if possible, or center
 
-  const contentHtml = highlightText(node.content, '');
+  const contentHtml = linkifyNames(node.content);
 
   overlay.innerHTML = `
-      <div class="overlay-header" id="overlayHeader">
+      <div class="overlay-header" id="header-${overlayId}">
         <div style="display: flex; align-items: center;">
-            <button class="overlay-nav-btn" onclick="openCharacterOverlay('${node.raw['Imie postaci'] || 'Postać'}')" title="Przejdź do pełnego profilu tej postaci">➜</button>
+            <button class="overlay-nav-btn" onmousedown="event.stopPropagation();" onclick="event.stopPropagation(); openCharacterOverlay('${(node.raw['Imie postaci'] || 'Postać').replace(/'/g, "\\'")}', true)" title="Otwórz w nowym, dużym oknie">➜</button>
             <div class="overlay-title">
                <span>${node.type === 'card' ? '📜' : '📝'}</span> ${node.title} <span style="font-weight:normal; color:var(--text-dim); font-size:11px;">(${node.year} - ${node.guild})</span>
             </div>
         </div>
-        <div class="overlay-close" onclick="closeCharacterOverlay()">✕</div>
+        <div class="overlay-close" onmousedown="event.stopPropagation();" onclick="closeCharacterOverlay('${overlayId}')">✕</div>
       </div>
       <div class="overlay-content" id="overlayBody">
          <div class="overlay-section">
@@ -937,27 +1031,11 @@ export function openTimelineDetail(index) {
       </div>
   `;
 
+  overlay.onmousedown = () => { overlay.style.zIndex = ++window.highestZIndex || 1000; };
   document.body.appendChild(overlay);
 
-  // Simple Drag Logic (Duplicated from openCharacterOverlay for independence)
-  const header = document.getElementById('overlayHeader');
-  let isDragging = false;
-  let offset = { x: 0, y: 0 };
-  if (header) {
-    header.onmousedown = function (e) {
-      isDragging = true;
-      offset.x = overlay.offsetLeft - e.clientX;
-      offset.y = overlay.offsetTop - e.clientY;
-    };
-    document.onmousemove = function (e) {
-      if (isDragging) {
-        e.preventDefault();
-        overlay.style.left = (e.clientX + offset.x) + 'px';
-        overlay.style.top = (e.clientY + offset.y) + 'px';
-      }
-    };
-    document.onmouseup = function () { isDragging = false; };
-  }
+  const header = document.getElementById(`header-${overlayId}`);
+  if (header) makeDraggable(overlay, header);
 }
 
 /**
@@ -965,7 +1043,13 @@ export function openTimelineDetail(index) {
  * @param {HTMLElement} container 
  * @param {Array} profiles 
  */
-function renderTimeline(container, profiles) {
+/**
+ * Render timeline visualization
+ * @param {HTMLElement} container 
+ * @param {Array} profiles 
+ * @param {Array} promotions (Optional)
+ */
+function renderTimeline(container, profiles, promotions = []) {
   // Sort Ascending by Edition/Year (Oldest -> Newest)
   const sorted = [...profiles].sort((a, b) => {
     const edA = parseInt(a.Edycja) || 0;
@@ -1027,9 +1111,6 @@ function renderTimeline(container, profiles) {
     }
 
     // Node 2: Summary (After event)
-    // Only add if there is a summary or strictly required. 
-    // User asked for "summary from year x as next card", so we add it.
-    // If empty, we show specific text.
     const hasSummary = p.Podsumowanie && p.Podsumowanie.length > 0;
     timelineNodes.push({
       type: 'summary',
@@ -1043,15 +1124,56 @@ function renderTimeline(container, profiles) {
     });
   });
 
+  // Merge Promotions if available
+  if (promotions && promotions.length > 0) {
+    // Dedup promotions by year/rank to avoid adding same promo multiple times?
+    // Assuming clean data from tracker.
+    promotions.forEach(promo => {
+      timelineNodes.push({
+        type: 'promotion',
+        year: promo.year, // "2018", etc.
+        title: `⭐ Awans: ${promo.rank}`,
+        content: `Postać otrzymała rangę: ${promo.rank}.`,
+        guild: 'Awans',
+        status: 'auto',
+        raw: { 'Imie postaci': timelineNodes[0]?.raw?.['Imie postaci'] }
+      });
+    });
+  }
+
+  // Sort ALL nodes by Year/Edition
+  timelineNodes.sort((a, b) => {
+    // Extract year number strictly
+    const getYear = (y) => {
+      if (!y) return 0;
+      const match = y.toString().match(/\d{4}/);
+      if (match) return parseInt(match[0]);
+      return parseInt(y.toString().replace(/\D/g, '')) || 0;
+    };
+
+    const yearA = getYear(a.year);
+    const yearB = getYear(b.year);
+
+    if (yearA !== yearB) return yearA - yearB;
+
+    // Secondary sort: Card < Promotion < Summary
+    const typeOrder = { 'card': 1, 'promotion': 2, 'summary': 3 };
+    return (typeOrder[a.type] || 9) - (typeOrder[b.type] || 9);
+  });
+
+  // Make sure function is globally available
+  if (typeof window !== 'undefined') window.openTimelineDetail = openTimelineDetail;
+
   // Store for click handlers
   window.currentTimelineNodes = timelineNodes;
+  console.log('Updated window.currentTimelineNodes:', window.currentTimelineNodes.length, 'nodes');
 
   // Get character name from first node
   const characterName = timelineNodes[0]?.raw?.['Imie postaci'] || 'Postać';
 
   const html = `
       <div class="timeline-actions" style="margin-bottom: 10px; display: flex; gap: 10px; flex-wrap: wrap;">
-        <button class="btn-timeline-ai" onclick="generateTimelineSummary()" title="Wygeneruj spójną historię z AI">
+        <button class="btn-timeline-ai" onclick="window.generateTimelineSummary()" title="Wygeneruj spójną historię z AI">
           ✨ Generuj Historię AI
         </button>
       </div>
@@ -1060,10 +1182,9 @@ function renderTimeline(container, profiles) {
         <div class="timeline-track">
           ${timelineNodes.map((node, index) => {
     const isCard = node.type === 'card';
+    const isPromo = node.type === 'promotion';
     const statusClass = node.status === 'accepted' ? 'status-ok' : (node.status === 'rejected' ? 'status-bad' : 'status-neu');
-    // Different marker color or style for summary?
-    const markerClass = isCard ? 'marker-card' : 'marker-summary';
-    const nodeIcon = isCard ? '' : ''; // Icons handled in title for now
+    const markerClass = isCard ? 'marker-card' : (isPromo ? 'marker-promo' : 'marker-summary');
 
     return `
               <div class="timeline-node ${node.type}-node" data-node-year="${node.year}">
@@ -1073,7 +1194,7 @@ function renderTimeline(container, profiles) {
                 <div class="timeline-bookmarks-container" id="bookmarks-${node.year.replace(/\D/g, '')}"></div>
                 
                 <div class="timeline-marker ${statusClass} ${markerClass}"></div>
-                <div class="timeline-content" onclick="openTimelineDetail(${index})" style="cursor: pointer;">
+                <div class="timeline-content" onclick="console.log('Clicked node ${index}'); window.openTimelineDetail(${index})" style="cursor: pointer;">
                   <div class="t-summary" title="Kliknij by rozwinąć">${highlightText(node.content.substring(0, 300) + (node.content.length > 300 ? '...' : ''), '')}</div>
                   ${isCard ? `<div class="t-meta">Gildia: ${node.guild}</div>` : ''}
                 </div>
@@ -1136,13 +1257,12 @@ async function injectTimelineBookmarks(characterName) {
  * Open a specific drawer for year-based mentions
  */
 function openMentionsDrawer(year, mentions) {
-  let overlay = document.getElementById('charOverlay');
-  if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.id = 'charOverlay';
-    overlay.className = 'character-overlay';
-    document.body.appendChild(overlay);
-  }
+  const overlayId = `mentionsOverlay-${year}-${Date.now()}`;
+  let overlay = document.createElement('div');
+  overlay.id = overlayId;
+  overlay.className = 'character-overlay';
+  overlay.style.zIndex = ++window.highestZIndex || 1000;
+  document.body.appendChild(overlay);
 
   // Add click handler for expanding text
   window.toggleMentionText = (index) => {
@@ -1153,28 +1273,28 @@ function openMentionsDrawer(year, mentions) {
   };
 
   overlay.innerHTML = `
-        <div class="overlay-header">
+        <div class="overlay-header" id="header-${overlayId}">
             <div style="display:flex; align-items:center;">
                 <div class="overlay-title">🔖 Wzmianki w roku ${year}</div>
             </div>
-            <div class="overlay-close" onclick="closeCharacterOverlay()">✕</div>
+            <div class="overlay-close" onmousedown="event.stopPropagation();" onclick="closeCharacterOverlay('${overlayId}')">✕</div>
         </div>
         <div class="overlay-content">
             <div class="mentions-list">
                 ${mentions.map((m, idx) => `
                     <div class="mention-item" style="cursor: auto;">
-                        <div class="mention-header" style="cursor: pointer;" onclick="openCharacterOverlay('${m.sourcedBy}')">
-                            <span class="mention-author">👤 ${m.sourcedBy}</span>
+                        <div class="mention-header" style="cursor: pointer;" onclick="event.stopPropagation(); openCharacterOverlay('${m.sourceName.replace(/'/g, "\\'")}', true)">
+                            <span class="mention-author">👤 ${m.sourceName}</span>
                             <span class="mention-guild">${m.sourceGuild || ''}</span>
-                            <span style="margin-left:auto; font-size:10px;">➜ Profil</span>
+                            <span style="margin-left:auto; font-size:10px;">➜ Otwórz</span>
                         </div>
                         
                         <div class="mention-text" style="cursor: pointer;" onclick="toggleMentionText(${idx})">
-                            "${m.text}" <span style="color:var(--gold); font-size:10px;">(Pokaż całość)</span>
+                            "${m.context}" <span style="color:var(--gold); font-size:10px;">(Pokaż całość)</span>
                         </div>
                         
                         <div id="mention-full-${idx}" style="display:none; margin-top:8px; padding-top:8px; border-top:1px dashed var(--border-subtle); color:var(--text-primary); font-size:12px; white-space: pre-wrap;">
-                            ${highlightText(m.fullText || m.text, '')}
+                            ${highlightText(m.fullText || m.context, '')}
                         </div>
                     </div>
                 `).join('')}
@@ -1183,6 +1303,9 @@ function openMentionsDrawer(year, mentions) {
     `;
 
   overlay.classList.add('active');
+
+  const header = document.getElementById(`header-${overlayId}`);
+  if (header) makeDraggable(overlay, header);
 }
 
 /**
@@ -1222,11 +1345,24 @@ export async function loadMentions(characterName) {
       html += `<div class="mention-year-group">
         <div class="mention-year-header">${year}</div>
         <div class="mention-items">
-          ${byYear[year].map(m => `
-            <div class="mention-item" onclick="openCharacterOverlay('${m.mentioningCharacter}')">
-              <span class="mention-char">👤 ${m.mentioningCharacter}</span>
-              <span class="mention-source">(${m.source})</span>
-              <div class="mention-excerpt">"${m.excerpt}"</div>
+          ${byYear[year].map((m, i) => `
+            <div class="mention-item" style="flex-direction: column; align-items: flex-start;">
+                <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:4px;">
+                    <div style="cursor:pointer; display:flex; align-items:center; gap:5px;" onclick="closeCharacterOverlay(); jumpToCharacter('${m.sourceName.replace(/'/g, "\\'")}')">
+                        <span class="mention-char">👤 ${m.sourceName}</span>
+                        <span style="font-size:10px; color:var(--text-dim);">(${m.field})</span>
+                    </div>
+                    ${m.fullText ?
+          `<button class="btn-icon" style="font-size:10px; padding:2px 6px;" onclick="document.getElementById('m-full-list-${year}-${i}').style.display = document.getElementById('m-full-list-${year}-${i}').style.display === 'none' ? 'block' : 'none'">🔍 Pokaż</button>`
+          : ''
+        }
+                </div>
+              
+              <div class="mention-excerpt">"${m.context}"</div>
+              
+              <div id="m-full-list-${year}-${i}" style="display:none; margin-top:8px; padding-top:8px; border-top:1px dashed var(--border-subtle); font-size:11px; color:var(--text-primary); white-space:pre-wrap; width:100%;">
+                 ${highlightText(m.fullText || '', '')}
+              </div>
             </div>
           `).join('')}
         </div>
@@ -1420,7 +1556,8 @@ timelineStyle.textContent = `
     z-index: 2;
     border: 2px solid var(--bg-dark);
   }
-  .marker-card { background: #ffd700; box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); } 
+  .marker-card { background: #ffd700; box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
+  .marker-promo { background: #4caf50; box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); } 
   .marker-summary { background: #aaa; }
 
   .status-ok { border-color: #4caf50; }

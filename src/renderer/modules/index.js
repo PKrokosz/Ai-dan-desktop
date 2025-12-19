@@ -65,6 +65,7 @@ export {
 // Core Logic Modules
 export * as mermaidAdapter from './mermaid-adapter.js';
 export * as relationshipAnalyzer from './relationship-analyzer.js';
+export { showGlobalGraph } from './relationship-analyzer.js';
 
 // AI Core Functions
 export {
@@ -99,6 +100,8 @@ export {
 
 export { runCharacterTest } from './character-test-runner.js';
 
+// Features (Consolidated below)
+
 // AI Panel & Dropdowns
 import {
     toggleDropdown,
@@ -118,7 +121,22 @@ export {
     renderMinimalistAIPanel
 };
 
-// Data Manager (consolidated)
+// Data Manager (Consolidated)
+import {
+    updateSearchStats,
+    handleSearchInput,
+    selectSuggestion,
+    hideSuggestions,
+    searchByTag,
+    preloadData,
+    loadDataSource,
+    getSortedRows,
+    sortData,
+    selectRow,
+    triggerSpark,
+    setFilters
+} from './data-manager.js';
+
 export {
     updateSearchStats,
     handleSearchInput,
@@ -129,8 +147,15 @@ export {
     loadDataSource,
     getSortedRows,
     sortData,
-    selectRow
-} from './data-manager.js';
+    selectRow,
+    triggerSpark,
+    setFilters
+};
+
+import { openLetterGenerator } from './letter-generator.js';
+import { generateGossip } from './gossip-module.js';
+
+export { openLetterGenerator, generateGossip };
 
 // Initialization
 export {
@@ -203,6 +228,44 @@ export {
     selectTestProfile
 };
 
+// Models Manager (consolidated)
+import {
+    OLLAMA_MODELS,
+    filterModelsByVram,
+    renderModelCategories,
+    populateModelSelects,
+    isModelInstalled,
+    checkOllama,
+    updateModelStatuses,
+    updateDownloadQueue,
+    pullModel,
+    toggleCategory,
+    setExtractionModel,
+    setGenerationModel,
+    getCurrentModel,
+    pickModelPath,
+    changeModelPath
+} from './models-manager.js';
+
+export {
+    OLLAMA_MODELS,
+    filterModelsByVram,
+    renderModelCategories,
+    populateModelSelects,
+    isModelInstalled,
+    checkOllama,
+    updateModelStatuses,
+    updateDownloadQueue,
+    pullModel,
+    toggleCategory,
+    setExtractionModel,
+    setGenerationModel,
+    getCurrentModel,
+    pickModelPath,
+    changeModelPath
+};
+
+
 // ==============================
 // Global Exposure for Legacy HTML
 // ==============================
@@ -220,7 +283,14 @@ if (typeof window !== 'undefined') {
         selectAllModels,
         selectAllScenarios,
         selectTestProfile,
-        runFullPipelineTest
+        selectTestProfile,
+        runFullPipelineTest,
+        triggerSpark,
+        setFilters,
+        openLetterGenerator,
+        generateGossip,
+        pickModelPath,
+        changeModelPath
     };
 
     // Legacy direct access for onclick="" in HTML
@@ -228,23 +298,10 @@ if (typeof window !== 'undefined') {
     window.showTestbench = showTestbench;
     window.showAdvancedTests = showAdvancedTests;
     window.renderStep = renderStep;
+    window.pickModelPath = pickModelPath;
+    window.changeModelPath = changeModelPath;
+    window.checkOllama = checkOllama;
 }
-// Models Manager (consolidated)
-export {
-    OLLAMA_MODELS,
-    filterModelsByVram,
-    renderModelCategories,
-    populateModelSelects,
-    isModelInstalled,
-    checkOllama,
-    updateModelStatuses,
-    updateDownloadQueue,
-    pullModel,
-    toggleCategory,
-    setExtractionModel,
-    setGenerationModel,
-    getCurrentModel
-} from './models-manager.js';
 export { default as ContextManager } from './context-manager.js';
 
 

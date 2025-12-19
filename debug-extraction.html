@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extraction Screen Debug</title>
+    <link rel="stylesheet" href="src/renderer/styles/theme.css">
+    <style>
+        body {
+            padding: 40px;
+        }
+
+        /* Mock state classes */
+        .active {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(184, 138, 43, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <h3 class="card-title">Pobrane zgłoszenia</h3>
+
+        <div class="table-controls" style="margin-bottom: 10px; display: flex; gap: 10px; align-items: center;">
+            <span style="color: var(--text-dim); font-size: 12px;">Sortuj:</span>
+            <!-- The FIX: using btn-secondary btn-small -->
+            <button class="btn btn-secondary btn-small active">Imię</button>
+            <button class="btn btn-secondary btn-small">Gildia</button>
+            <button class="btn btn-secondary btn-small">Region</button>
+            <span style="color: var(--text-dim); font-size: 11px; margin-left: auto;">96 postaci</span>
+        </div>
+
+        <div id="characterTableContainer" style="max-height: 400px; overflow-y: auto;">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Wybierz</th>
+                        <th style="cursor:pointer">Imię postaci ▲</th>
+                        <th style="cursor:pointer">Gildia</th>
+                        <th style="cursor:pointer">Region</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="radio" name="rowSelect"></td>
+                        <td>Żbik</td>
+                        <td>Cień</td>
+                        <td>Khorinis</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="rowSelect" checked></td>
+                        <td>Ziemniak</td>
+                        <td>Szkodnik</td>
+                        <td>Archolos</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="rowSelect"></td>
+                        <td>Zguba</td>
+                        <td>Kopacz</td>
+                        <td>Khorinis</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

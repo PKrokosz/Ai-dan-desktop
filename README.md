@@ -45,6 +45,15 @@
 | 6-etapowy wizard | Prowadzi od danych podstawowych po eksport |
 | Relacje | Wizualizacja i edycja powiązań między postaciami |
 
+### ⏳ Timeline i Historia
+
+| Co robi | Jak |
+|---------|-----|
+| Oś czasu | Chronologiczna wizualizacja historii postaci |
+| Integracja Awansów | Automatyczne oznaczanie awansów z pliku `drzewka postaci.xlsx` |
+| Inteligentne Wzmianki | Wyszukiwanie wzmianek o postaci w innych podsumowaniach (uwzględnia odmianę imion i ignoruje tytuły) |
+| Generowanie Historii | AI łączy zdarzenia z osi czasu w spójną narrację fabularną |
+
 ### 🤖 AI Chat (Ollama)
 
 | Co robi | Jak |

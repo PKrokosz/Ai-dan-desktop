@@ -69,9 +69,7 @@ export const STEPS = [
     { id: 1, title: 'Krok 1: Źródło danych', key: 'source', icon: '📂' },
     { id: 2, title: 'Krok 2: Ekstrakcja', key: 'extraction', icon: '⚡' },
     { id: 3, title: 'Krok 3: AI Processing', key: 'ai', icon: '🧠' },
-    { id: 4, title: 'Krok 4: Scalanie', key: 'merge', icon: '🔗' },
-    { id: 5, title: 'Krok 5: Generowanie questów', key: 'quests', icon: '📜' },
-    { id: 6, title: 'Krok 6: Eksport', key: 'export', icon: '💾' },
+
     { id: 7, title: '🧪 Model Testbench', key: 'testbench', icon: '🧪' },
     { id: 8, title: '⚙️ Ustawienia', key: 'settings', icon: '⚙️' }
 ];

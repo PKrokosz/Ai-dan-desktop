@@ -48,6 +48,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     getProfileByName: (name) => ipcRenderer.invoke('get-profile-by-name', name),
     getProfileHistory: (criteria) => ipcRenderer.invoke('get-profile-history', criteria),
     searchMentions: (characterName) => ipcRenderer.invoke('search-mentions', characterName),
+    getPromotions: (characterName) => ipcRenderer.invoke('get-promotions', characterName),
     getAllCharacterNames: () => ipcRenderer.invoke('get-all-character-names'),
 
     // Data Loading (Excel)
@@ -74,8 +75,12 @@ contextBridge.exposeInMainWorld('electronAPI', {
         ipcRenderer.on('conv-flow-update', (event, data) => callback(data));
     },
 
+    // Social Network Analysis
+    analyzeRelations: (forceRefresh) => ipcRenderer.invoke('analyze-relations', forceRefresh),
+
     // File operations
     saveOutput: (filename, content) => ipcRenderer.invoke('save-output', filename, content),
+    listFiles: (subfolder) => ipcRenderer.invoke('list-files', subfolder),
     openOutputFolder: () => ipcRenderer.invoke('open-output-folder'),
     openFile: (filepath) => ipcRenderer.invoke('open-file', filepath),
 
@@ -137,5 +142,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
     // Window Controls
     minimizeWindow: () => ipcRenderer.invoke('window:minimize'),
     maximizeWindow: () => ipcRenderer.invoke('window:maximize'),
-    closeWindow: () => ipcRenderer.invoke('window:close')
+    closeWindow: () => ipcRenderer.invoke('window:close'),
+    openCharacterWindow: (name, options = {}) => ipcRenderer.invoke('window:open-character', { name, ...options })
 });

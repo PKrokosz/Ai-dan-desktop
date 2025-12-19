@@ -325,11 +325,15 @@ body {
 .minimal-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px 0;
-  min-height: 70vh;
+  padding: 20vh 0 50px;
+  /* Expert Choice: 20vh (Optical Balance) */
+  /* Push down by 15% of viewport height */
+  min-height: 100%;
+  /* Use full height */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Start from top + padding */
   position: relative;
 }
 
@@ -708,6 +712,18 @@ body {
   color: var(--text-primary);
 }
 
+.btn-secondary.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(184, 138, 43, 0.1);
+}
+
+.btn-small {
+  padding: 5px 12px;
+  font-size: 12px;
+  height: auto;
+}
+
 .btn-icon {
   background: transparent;
   border: none;
@@ -1059,11 +1075,118 @@ body {
   border-color: var(--success);
 }
 
+/* --- Enriched Character List (Lore View) --- */
+.lore-row {
+  display: grid;
+  grid-template-columns: 40px 200px 1fr 100px;
+  align-items: center;
+  background: rgba(20, 18, 14, 0.4);
+  border: 1px solid rgba(244, 217, 95, 0.08);
+  border-left: 2px solid rgba(244, 217, 95, 0.1);
+  border-radius: 2px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lore-row:hover {
+  border-color: #b88a2b;
+  background: rgba(184, 138, 43, 0.05) !important;
+  border-left-color: #b88a2b;
+  transform: translateX(2px);
+}
+
+.lore-row.selected {
+  background: rgba(184, 138, 43, 0.1) !important;
+  border-color: #b88a2b;
+  border-left-color: #b88a2b;
+}
+
+/* Guild Colors - Unified to Gold/Neutral to avoid "pstrokacizna" */
+.guild-mage,
+.guild-shadow,
+.guild-merc,
+.guild-sect,
+.guild-neutral {
+  border-left-color: rgba(244, 217, 95, 0.2) !important;
+}
+
+/* Lore Badges - Wireframe Style */
+.lore-badge {
+  font-size: 10px;
+  font-family: 'Fira Code', monospace;
+  color: #a89f81;
+  /* Muted gold/grey */
+  background: transparent;
+  border: 1px solid rgba(168, 159, 129, 0.3);
+  padding: 1px 6px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Mute icons by default */
+.lore-row .skill-icons,
+.lore-row .context-col div {
+  filter: grayscale(0.8) sepia(0.5);
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+.lore-row:hover .skill-icons,
+.lore-row:hover .context-col div {
+  filter: none;
+  opacity: 1;
+}
+
 /* Model hints */
 .model-hint {
   font-size: 11px;
   color: var(--text-dim);
   margin-top: 4px;
+}
+
+/* Spark Button (Iskra) */
+.spark-btn {
+  background: transparent;
+  border: 1px solid rgba(244, 217, 95, 0.2);
+  color: rgba(244, 217, 95, 0.6);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 12px;
+}
+
+.spark-btn:hover {
+  background: rgba(244, 217, 95, 0.1);
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  box-shadow: 0 0 10px rgba(184, 138, 43, 0.3);
+  transform: scale(1.1);
+}
+
+.spark-btn:active {
+  transform: scale(0.9);
+}
+
+/* Badge Hover Effect */
+.lore-badge {
+  transition: all 0.2s;
+  cursor: help;
+}
+
+.lore-badge:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  background: rgba(184, 138, 43, 0.1);
 }
 
 /* Model download controls */

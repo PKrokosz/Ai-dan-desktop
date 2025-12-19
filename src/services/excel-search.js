@@ -12,6 +12,7 @@ class ExcelSearchService {
         this.paths = {
             charHistory: path.join(__dirname, '../../docs/tabela podsumowan.xlsx'),
             mgProfiles: path.join(__dirname, '../../docs/Larp Gothic - Mapowanie kompetencji (Odpowiedzi).xlsx'),
+            charTrees: path.join(__dirname, '../../docs/drzewka postaci.xlsx'),
             docsDir: path.join(__dirname, '../../docs/')
         };
 
@@ -19,6 +20,7 @@ class ExcelSearchService {
         this.data = {
             charHistory: null,
             mgProfiles: null,
+            charTrees: null,
             factionHistory: {}
         };
 
@@ -144,6 +146,37 @@ class ExcelSearchService {
         }
     }
 
+    // --- Character Trees (2021-2024 Index) ---
+    async loadCharTrees() {
+        const now = Date.now();
+        if (this.data.charTrees && (now - this.timestamps.charTrees < this.CACHE_DURATION)) {
+            return this.data.charTrees;
+        }
+
+        try {
+            logger.info('Loading Character Trees', { path: this.paths.charTrees });
+            if (!fs.existsSync(this.paths.charTrees)) {
+                logger.warn('Character Trees file not found');
+                return [];
+            }
+
+            const workbook = XLSX.readFile(this.paths.charTrees);
+            // We want 'Indeks_postaci' sheet ideally, or first one if missing
+            const sheetName = workbook.SheetNames.includes('Indeks_postaci')
+                ? 'Indeks_postaci'
+                : workbook.SheetNames[0];
+
+            const sheet = workbook.Sheets[sheetName];
+            this.data.charTrees = XLSX.utils.sheet_to_json(sheet);
+            this.timestamps.charTrees = now;
+            return this.data.charTrees;
+        } catch (error) {
+            logger.error('Failed to load Character Trees', { error: error.message });
+            return [];
+        }
+    }
+
+
     generateNameVariations(name) {
         if (!name) return [];
         const cleanName = name.trim();
@@ -253,6 +286,8 @@ class ExcelSearchService {
                             if (foundValidMatch) {
                                 results.push({
                                     sourceName: rowName,
+                                    sourceGuild: row['Gildia'] || row['guild'] || '',
+                                    year: row['Rok'] || row['Edycja'] || 'Unknown',
                                     field: columnNames[col] || col,
                                     context: this.extractContext(cellValue, variation),
                                     fullText: cellValue
@@ -317,6 +352,146 @@ class ExcelSearchService {
             .map(row => row['Imie postaci'] || row['name'])
             .filter(name => name && typeof name === 'string' && name.length > 0);
     }
-}
+    /**
+     * Enrich character datum with lore context extracted from text fields.
+     * @param {Object} row - Raw row from Excel
+     * @returns {Object} enriched context object
+     */
+    enrichCharacterMetadata(row) {
+        // Aggregate all text
+        const keys = ['about', 'facts', 'history', 'summary', 'ans1', 'ans2', 'ans3', 'ans4', 'ans5', 'ans6', 'ans7', 'ans8', 'ans9'];
+        const fullText = keys.map(k => (row[k] || '')).join(' ').toLowerCase();
+
+        const context = {
+            badge: null,
+            skills: [],
+            seniority: 0.1 // Default: Newcomer
+        };
+
+        // 1. Identify Lore Badge (Specifics)
+        const guild = (row['guild'] || row['class'] || '').toLowerCase();
+
+        if (guild.includes('mag') || guild.includes('ogień') || fullText.includes('klasztor')) {
+            // Mage Logic
+            const circleMatch = fullText.match(/(i|ii|iii|iv|v|vi|\d)\s*krąg/i);
+            if (circleMatch) {
+                context.badge = `🔥 ${circleMatch[0].toUpperCase()}`;
+            } else {
+                context.badge = '🔥 Klasztor';
+            }
+            context.skills.push('magic');
+        }
+        else if (guild.includes('cień') || guild.includes('stary')) {
+            // Shadow Logic
+            if (fullText.includes('diego')) context.badge = '👥 Banda Diego';
+            else if (fullText.includes('kruk')) context.badge = '🦅 Ludzie Kruka';
+            else if (fullText.includes('gomez')) context.badge = '🏰 Ludzie Gomeza';
+            else if (fullText.includes('fisk')) context.badge = '💰 Dłużnik Fiska';
+            else if (fullText.includes('brama')) context.badge = '🛡️ Brama Płn.';
+            else context.badge = '⛺ Stary Obóz';
+
+            context.skills.push('stealth');
+        }
+        else if (guild.includes('szkodnik') || guild.includes('nowy')) {
+            // Rogue Logic
+            // New Rule: Thief vs Bandit
+            if (fullText.includes('złodziej') || fullText.includes('krad')) context.badge = '🧤 Grupa Złodziei';
+            else if (fullText.includes('bandyt') || fullText.includes('napad')) context.badge = '⚔️ Bandyci';
+            else if (fullText.includes('lares')) context.badge = '🗡️ Banda Laresa';
+            else if (fullText.includes('lee')) context.badge = '⚔️ Najemnicy Lee';
+            else if (fullText.includes('ryż')) context.badge = '🌾 Pola Ryżowe';
+            else context.badge = '🌊 Nowy Obóz';
+
+            context.skills.push('combat');
+        }
+        else if (guild.includes('bractwo') || guild.includes('nowicjusz') || guild.includes('bagna')) {
+            // Sect Logic
+            if (fullText.includes('zbiór') || fullText.includes('ziera')) context.badge = '🌿 Zbieracz';
+            else if (fullText.includes('guru') || fullText.includes('cor')) context.badge = '👁️ Uczeń Guru';
+            else context.badge = '🏯 Obóz Bractwa';
+
+            context.skills.push('alchemy');
+        }
+        else if (guild.includes('kopacz')) {
+            // Digger Logic - Brigades
+            const brigadeMatch = fullText.match(/(\d+)\.?\s*brygada|brygada\s*(\d+)/);
+            if (brigadeMatch) {
+                const num = brigadeMatch[1] || brigadeMatch[2];
+                context.badge = `⛏️ Brygada ${num}`;
+            }
+            else if (fullText.includes('szyb') || fullText.includes('kopalni')) context.badge = '⛏️ Szyb Złoty';
+            else context.badge = '⛏️ Zew. Pierścień';
+
+            context.skills.push('smith'); // Often digging implies strength/smithing affinity
+        }
+
+        // 2. Extract Skills
+        if (fullText.includes('alchemi') || fullText.includes('mikstur')) context.skills.push('alchemy');
+        if (fullText.includes('kradzież') || fullText.includes('włam') || fullText.includes('złodziej')) context.skills.push('thief');
+        if (fullText.includes('polowan') || fullText.includes('skór') || fullText.includes('zwierz') || fullText.includes('trofe')) context.skills.push('hunt');
+        if (fullText.includes('handel') || fullText.includes('kupiec') || fullText.includes('towar')) context.skills.push('trade');
+        if (fullText.includes('miecz') || fullText.includes('walka') || fullText.includes('siła')) context.skills.push('sword');
+        if (fullText.includes('kowal')) context.skills.push('smith');
+
+        // Dedupe skills
+        context.skills = [...new Set(context.skills)];
+
+        // 3. Extract Seniority (Editions)
+        // Look for "3 edycja", "2 raz", etc.
+        const editionMatch = fullText.match(/(\d+)\.?\s*(edycja|raz)/);
+        if (editionMatch) {
+            const count = parseInt(editionMatch[1]);
+            // Normalize to 0-1 scale for bar: 1 is newcomer, 10 is max veteran
+            context.seniority = Math.min(count * 0.1, 1.0);
+            context.seniorityLabel = `${count}. Edycja`;
+        } else {
+            if (fullText.includes('stary') || fullText.includes('weteran')) {
+                context.seniority = 0.8;
+                context.seniorityLabel = 'Weteran';
+            }
+            else {
+                context.seniority = 0.1;
+                context.seniorityLabel = 'Debiut';
+            }
+        }
+
+        return context;
+        return context;
+    }
+
+    /**
+     * Enrich a list of profiles with "Story Group" data from local Faction History files.
+     * @param {Array} profiles - List of profile objects (must have 'Imie postaci' or 'name')
+     * @returns {Promise<Array>} - Enriched profiles with 'StoryGroup' property
+     */
+    async enrichWithGroups(profiles) {
+        // Ensure faction data is loaded
+        const factionData = await this.loadFactionHistory();
+
+        // Build efficient Lookup Map: Name (normalized) -> Group
+        const groupMap = new Map();
+
+        Object.values(factionData).forEach(rows => {
+            rows.forEach(row => {
+                const name = (row['Imię postaci'] || row['Imie postaci'] || '').trim().toLowerCase();
+                const group = row['Grupa / Profesja'] || row['Grupa'] || '';
+                if (name && group) {
+                    groupMap.set(name, group);
+                }
+            });
+        });
+
+        // Enrich profiles
+        profiles.forEach(p => {
+            const pName = (p['Imie postaci'] || p['name'] || '').trim().toLowerCase();
+            if (groupMap.has(pName)) {
+                p['StoryGroup'] = groupMap.get(pName);
+            }
+        });
+
+        return profiles;
+    }
+
+} // End of Class
 
 module.exports = new ExcelSearchService();

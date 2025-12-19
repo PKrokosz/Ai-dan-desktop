@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podgląd Postaci</title>
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/overlay.css">
+    <style>
+        :root {
+            --bg-dark: #0e0c09;
+        }
+
+        body {
+            background: var(--bg-dark);
+            overflow-y: auto;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            user-select: none;
+        }
+
+        .window-header {
+            background: var(--bg-panel);
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            border-bottom: 1px solid var(--border-subtle);
+            -webkit-app-region: drag;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .window-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 5px;
+            -webkit-app-region: no-drag;
+        }
+
+        .win-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        .win-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        .win-btn.close:hover {
+            background: #e81123;
+            color: white;
+        }
+
+        .profile-container {
+            padding: 20px;
+            -webkit-app-region: no-drag;
+        }
+
+        .nav-btn {
+            background: var(--gold);
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        /* Gothic Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-soft);
+            border-radius: 4px;
+        }
+
+        /* CRITICAL: Override the complex grid layout for this standalone window */
+        .profile-container .profile-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+            /* Reset all grid properties */
+            grid-template-columns: unset !important;
+            grid-template-areas: unset !important;
+        }
+
+        .profile-container .profile-card {
+            width: 100% !important;
+            max-width: none !important;
+            grid-column: unset !important;
+            grid-area: unset !important;
+        }
+
+        /* Hide timeline and AI sections in popup - they need main app context */
+        .profile-container .profile-timeline-container,
+        .profile-container .ai-notes-section,
+        .profile-container .ai-dna-section {
+            display: none !important;
+        }
+
+        /* Better card styling for popup */
+        .profile-container .card-content {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .profile-container .hero-card {
+            padding: 16px;
+            background: rgba(200, 150, 50, 0.08);
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .profile-container .crime-card {
+            background: rgba(255, 100, 100, 0.08);
+            border-left: 3px solid #ff8888;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="window-header">
+        <div class="window-title" id="winTitle">
+            <span id="expandBtnCont"></span>
+            <span id="titleText">Postać</span>
+        </div>
+        <div class="window-controls">
+            <button class="win-btn close" onclick="window.close()">✕</button>
+        </div>
+    </div>
+
+    <div id="content" class="profile-container">
+        <div style="text-align: center; margin-top: 100px; color: var(--gold);">
+            <h2>Wczytywanie...</h2>
+        </div>
+    </div>
+
+    <script type="module">
+        import { renderProfileDetails, openCharacterOverlay, linkifyNames } from './modules/profile-renderer.js';
+
+        // Expose to window for inline onclicks
+        window.openCharacterOverlay = openCharacterOverlay;
+
+        async function init() {
+            const params = new URLSearchParams(window.location.search);
+            const charName = params.get('name');
+            const isPersistent = params.get('persistent') === 'true';
+
+            if (!charName) {
+                document.getElementById('content').innerHTML = 'Brak nazwy postaci.';
+                return;
+            }
+
+            document.getElementById('titleText').innerText = charName;
+            document.title = charName;
+
+            if (!isPersistent) {
+                document.getElementById('expandBtnCont').innerHTML = `
+                    <button class="nav-btn" onclick="openCharacterOverlay('${charName.replace(/'/g, "\\'")}', true); window.close();" title="Otwórz pełną kartę">➜</button>
+                `;
+            }
+
+            try {
+                const result = await window.electronAPI.getProfileByName(charName);
+                if (result.success && result.profile) {
+                    const profile = result.profile;
+                    // We need to pass the full profile object to renderProfileDetails
+                    let html = renderProfileDetails(profile);
+
+                    // Apply linkification to the rendered HTML
+                    html = linkifyNames(html, charName);
+
+                    document.getElementById('content').innerHTML = html;
+                } else {
+                    document.getElementById('content').innerHTML = `<p style="padding:40px; text-align:center; color: var(--text-dim);">
+                        Nie znaleziono danych postaci: <strong>${charName}</strong><br>
+                        <small>${result.error || ''}</small>
+                    </p>`;
+                }
+            } catch (e) {
+                console.error(e);
+                document.getElementById('content').innerHTML = `<p style="color:red; padding:40px;">Błąd: ${e.message}</p>`;
+            }
+        }
+
+        init();
+    </script>
+</body>
+
+</html>

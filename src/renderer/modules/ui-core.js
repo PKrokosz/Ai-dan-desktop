@@ -31,18 +31,8 @@ export function renderStep() {
         if (logPanel) logPanel.style.display = 'none'; // Default hide logs on chat step
 
         // Add edge nav arrow
-        const arrow = document.createElement('div');
-        arrow.className = 'edge-nav-arrow';
-        arrow.innerHTML = '▶';
-        arrow.title = 'Przejdź dalej';
-        arrow.onclick = () => {
-            if (state.currentStep < state.totalSteps) {
-                state.currentStep++;
-                if (window.AppModules && window.AppModules.renderStep) window.AppModules.renderStep();
-                else renderStep(); // Fallback internal recursion
-            }
-        };
-        document.body.appendChild(arrow);
+        // Edge arrow removed as there are no linear steps after AI Processing (Step 3)
+
 
         // Add small logs toggle
         const toggleExists = document.querySelector('.log-toggle-mini');

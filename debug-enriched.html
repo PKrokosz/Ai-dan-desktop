@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Data Extraction Test</title>
+    <link rel="stylesheet" href="src/renderer/styles/theme.css">
+    <style>
+        body {
+            padding: 40px;
+            background: #0e0c09;
+            color: #f2e5b5;
+        }
+
+        .lore-list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .lore-row {
+            display: grid;
+            grid-template-columns: 40px 200px 1fr 150px;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(20, 18, 14, 0.8), rgba(30, 26, 20, 0.4));
+            border: 1px solid rgba(244, 217, 95, 0.15);
+            border-left: 3px solid transparent;
+            border-radius: 4px;
+            padding: 10px 15px;
+            transition: all 0.2s;
+        }
+
+        .lore-row:hover {
+            border-color: #b88a2b;
+            background: rgba(40, 35, 25, 0.6);
+            transform: translateY(-1px);
+        }
+
+        /* Generated from Logic */
+        .guild-mage {
+            border-left-color: #c94a4a;
+        }
+
+        .guild-shadow {
+            border-left-color: #c9a227;
+        }
+
+        .guild-sect {
+            border-left-color: #4a9f4a;
+        }
+
+        .identity-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .char-name {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            color: #f2e5b5;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .char-role {
+            font-size: 11px;
+            color: #8a7d5c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .context-col {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lore-badge {
+            font-size: 11px;
+            color: #d6c48a;
+            background: rgba(184, 138, 43, 0.1);
+            border: 1px solid rgba(184, 138, 43, 0.3);
+            padding: 2px 8px;
+            border-radius: 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            min-width: 80px;
+            justify-content: center;
+        }
+
+        .skill-icons {
+            display: flex;
+            gap: 8px;
+            opacity: 0.7;
+        }
+
+        .skill-icon {
+            font-size: 14px;
+            cursor: help;
+            transition: opacity 0.2s;
+            color: #8a7d5c;
+        }
+
+        .meta-col {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .region {
+            font-size: 12px;
+            color: #8a7d5c;
+        }
+
+        .timeline-preview {
+            height: 3px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+            position: relative;
+            margin-top: 4px;
+        }
+
+        .timeline-fill {
+            height: 100%;
+            background: #5a5040;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card" style="border:none; background:transparent;">
+        <h3 style="color:#b88a2b; font-family:'Cinzel', serif; margin-bottom:20px;">Real Data Extraction Test</h3>
+        <div class="lore-list-container">
+
+            <!-- Real Data: Breed -->
+            <div class="lore-row guild-mage">
+                <input type="radio" style="accent-color:#b88a2b;">
+                <div class="identity-col">
+                    <span class="char-name">Breed</span>
+                    <span class="char-role">Mag Ognia (Implied)</span>
+                </div>
+                <div class="context-col">
+                    <span class="lore-badge">🔥 Klasztor</span>
+                    <div class="skill-icons">
+                        <span class="skill-icon" title="Magic">✨</span>
+                        <span class="skill-icon" title="Trade">💰</span>
+                    </div>
+                </div>
+                <div class="meta-col">
+                    <span class="region">Khorinis</span>
+                    <div class="timeline-preview">
+                        <div class="timeline-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real Data: Bagniak -->
+            <div class="lore-row guild-sect">
+                <input type="radio">
+                <div class="identity-col">
+                    <span class="char-name">Bagniak</span>
+                    <span class="char-role">Nowicjusz</span>
+                </div>
+                <div class="context-col">
+                    <span class="lore-badge">👁️ Uczeń Guru</span>
+                    <div class="skill-icons">
+                        <span class="skill-icon" title="Alchemy">⚗️</span>
+                    </div>
+                </div>
+                <div class="meta-col">
+                    <span class="region">Bagno</span>
+                    <div class="timeline-preview">
+                        <div class="timeline-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real Data: Ukel -->
+            <div class="lore-row guild-shadow">
+                <input type="radio">
+                <div class="identity-col">
+                    <span class="char-name">Ukel</span>
+                    <span class="char-role">Cień</span>
+                </div>
+                <div class="context-col">
+                    <span class="lore-badge">⛺ Stary Obóz</span>
+                    <div class="skill-icons">
+                        <span class="skill-icon" title="Stealth (Spod lady)">👣</span>
+                    </div>
+                </div>
+                <div class="meta-col">
+                    <span class="region">Stary Obóz</span>
+                    <div class="timeline-preview">
+                        <div class="timeline-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

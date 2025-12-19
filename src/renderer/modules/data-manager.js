@@ -128,6 +128,33 @@ export async function loadDataSource() {
 
             const filtered = window.state.allProfiles.filter(p => {
                 if (!query) return true;
+
+                // Advanced Prefix Search (e.g. "gildia:cień")
+                if (query.includes(':')) {
+                    const parts = query.split(/\s+/); // Split by spaces
+                    return parts.every(part => {
+                        if (part.includes(':')) {
+                            const [key, val] = part.split(':');
+                            if (!val) return true;
+
+                            // Map prefixes to fields
+                            if (['gildia', 'guild', 'g'].includes(key)) return (p['Gildia'] || '').toLowerCase().includes(val);
+                            if (['region', 'reg', 'r'].includes(key)) return (p['Region'] || '').toLowerCase().includes(val);
+                            if (['id'].includes(key)) return (p['id'] || '').toString() === val;
+                            if (['grupa', 'group', 'story', 's'].includes(key)) return (p['StoryGroup'] || '').toLowerCase().includes(val);
+                            if (['imie', 'name', 'n'].includes(key)) return (p['Imie postaci'] || '').toLowerCase().includes(val);
+                            if (['tag', 't'].includes(key)) return (p.Tags || []).some(t => t.name.toLowerCase().includes(val));
+
+                            return false; // Unknown prefix fails match
+                        }
+                        // Non-prefixed part = Global Search
+                        return (p['Imie postaci']?.toLowerCase().includes(part)) ||
+                            (p['Gildia']?.toLowerCase().includes(part)) ||
+                            (p['Region']?.toLowerCase().includes(part));
+                    });
+                }
+
+                // Default Global Search (OR)
                 return (p['Imie postaci']?.toLowerCase().includes(query)) ||
                     (p['Gildia']?.toLowerCase().includes(query)) ||
                     (p['Region']?.toLowerCase().includes(query));
@@ -174,7 +201,26 @@ export function getSortedRows() {
     // Add original index to each row for proper selection
     const rowsWithIndex = window.state.sheetData.rows.map((row, i) => ({ ...row, _originalIndex: i }));
 
-    return rowsWithIndex.sort((a, b) => {
+    // Filter logic integrated into sorting
+    const filteredRows = rowsWithIndex.filter(row => {
+        // 1. Guild Filter
+        if (window.state.filterGuild && window.state.filterGuild !== 'all') {
+            const g = (row['Gildia'] || '').toLowerCase();
+            const f = window.state.filterGuild.toLowerCase();
+            // Simple string matching for now (e.g. 'mag' matches 'Mag Ognia')
+            if (!g.includes(f)) return false;
+        }
+
+        // 2. Story Group Filter
+        if (window.state.filterGroup && window.state.filterGroup !== 'all') {
+            const rowGroup = (row['StoryGroup'] || '').toLowerCase();
+            if (rowGroup !== window.state.filterGroup.toLowerCase()) return false;
+        }
+
+        return true;
+    });
+
+    return filteredRows.sort((a, b) => {
         let valA, valB;
 
         switch (window.state.sortBy) {
@@ -190,17 +236,39 @@ export function getSortedRows() {
                 valA = (a['Region'] || '').toLowerCase();
                 valB = (b['Region'] || '').toLowerCase();
                 break;
+            case 'seniority': // New Sort
+                // Parse seniority from text (simplified heuristic again, mirroring extraction)
+                const getSen = (r) => {
+                    const txt = ((r['O postaci'] || '') + (r['Fakty'] || '')).toLowerCase();
+                    const m = txt.match(/(\d+)\.?\s*(edycja|raz)/);
+                    if (m) return parseInt(m[1]);
+                    if (txt.includes('weteran')) return 5;
+                    return 0;
+                };
+                valA = getSen(a);
+                valB = getSen(b);
+                break;
             default:
                 valA = a['Imie postaci'] || '';
                 valB = b['Imie postaci'] || '';
         }
 
         if (window.state.sortDir === 'asc') {
-            return valA.localeCompare(valB, 'pl');
+            if (valA < valB) return -1;
+            if (valA > valB) return 1;
+            return 0;
         } else {
-            return valB.localeCompare(valA, 'pl');
+            if (valA < valB) return 1;
+            if (valA > valB) return -1;
+            return 0;
         }
     });
+}
+
+export function setFilters(guild, group) {
+    if (guild !== undefined) window.state.filterGuild = guild;
+    if (group !== undefined) window.state.filterGroup = group;
+    if (window.renderStep) window.renderStep();
 }
 
 export function sortData(column) {
@@ -295,4 +363,74 @@ function deduplicateProfiles(rows) {
     });
 
     return result;
+}
+
+// ==============================
+// Creative Spark (Iskra) ⚡
+// ==============================
+import { createModal } from './ui-modal-helper.js';
+
+export function triggerSpark(index) {
+    if (!window.state.sheetData || !window.state.sheetData.rows[index]) return;
+
+    const char = window.state.sheetData.rows[index];
+    const hook = generateHeuristicHook(char);
+
+    // Format output with strict structure
+    const outputHtml = `
+      <div style="font-family: 'Courier New', monospace; color: var(--text-primary); padding: 10px;">
+        <div style="margin-bottom: 20px; font-size: 14px; line-height: 1.8;">
+           <span style="color: var(--gold-bright);">[KTO]</span> <span style="color: #fff; font-weight: bold;">${hook.kto}</span><br>
+           <span style="color: var(--gold-bright);">[KOMU]</span> ${hook.komu}<br>
+           <span style="color: var(--gold-bright);">[CO]</span> ${hook.co}<br>
+           <span style="color: var(--gold-bright);">[KIEDY]</span> ${hook.kiedy}<br>
+           <span style="color: var(--gold-bright);">[EFEKT]</span> ${hook.efekt}<br>
+           <span style="color: #ff5555;">[GROŹBA]</span> ${hook.grozba}
+        </div>
+        
+        <div style="font-style: italic; color: var(--text-dim); border-top: 1px solid var(--border-subtle); padding-top: 10px;">
+           "Szybki Hook" wygenerowany na podstawie analizy gildii i statusu.
+        </div>
+      </div>
+    `;
+
+    createModal('spark-modal', `⚡ Iskra Fabularna: ${char['Imie postaci']}`, outputHtml);
+}
+
+function generateHeuristicHook(char) {
+    const guild = (char['Gildia'] || '').toLowerCase();
+    const name = char['Imie postaci'] || 'Postać';
+
+    // Arrays for randomization
+    const targets = ['Thorus', 'Gomez', 'Cor Kalom', 'Lee', 'Lares', 'Diego', 'Fisk', 'Wrzód', 'Sędzia', 'Kowal Huno'];
+    const actions = [
+        'Musi dostarczyć 50 bryłek rudy',
+        'Ma znaleźć zaginionego kopacza',
+        'Musi ukraść pierścień strażnika',
+        'Ma zabić ścierwojada przy bramie',
+        'Musi przekazać tajny list',
+        'Ma śledzić podejrzanego nowicjusza',
+        'Musi odpracować dług (zbieranie ziela)'
+    ];
+    const deadlines = ['Do świtu', 'Przed zmianą warty', 'Natychmiast', 'W ciągu godziny', 'Do jutra', 'Zanim wróci konwój'];
+    const rewards = ['Ochrona przed strażą', 'Mieszek złota (10 bryłek)', 'Dobre słowo u Magnata', 'Mikstura lecząca', 'Przydział ryżu', 'Lepszy kilof'];
+    const threats = ['Wypadek w kopalni', 'Wizyta w karcerze', 'Brak przydziału wody', 'Gniew Magnatów', 'Pobicie przez straż', 'Zesłanie na bagna'];
+
+    // Heuristic Context Adjustments
+    let potentialTargets = targets;
+    if (guild.includes('nowy') || guild.includes('szkodnik')) potentialTargets = ['Lee', 'Lares', 'Lewus', 'Ryżowy Książę', 'Cronos'];
+    if (guild.includes('bractwo') || guild.includes('sekta')) potentialTargets = ['Y' + 'Berion', 'Cor Kalom', 'Cor Angar', 'Baal Lukor', 'Fortuno']; // 'Y' + 'Berion' to avoid lint issues? No, YBerion is fine.
+
+    return {
+        kto: name,
+        komu: pickRandom(potentialTargets),
+        co: pickRandom(actions),
+        kiedy: pickRandom(deadlines),
+        efekt: pickRandom(rewards),
+        grozba: pickRandom(threats) // Threat
+    };
+}
+
+function pickRandom(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
 }

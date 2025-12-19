@@ -1,0 +1,6 @@
+#TYPE Selected.Microsoft.PowerShell.Commands.MatchInfo
+"LineNumber","Line","Path"
+"165","// Handlers moved to ipc-handlers.js","P:\ai-dan-desktop\src\main\index.js"
+"168","require('./ipc-handlers');","P:\ai-dan-desktop\src\main\index.js"
+"29"," * @module ipc-handlers","P:\ai-dan-desktop\src\main\ipc-handlers.js"
+"9"," * - ipc-handlers.js","P:\ai-dan-desktop\src\shared\config-hub.js"
