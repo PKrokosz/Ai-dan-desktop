@@ -103,7 +103,8 @@ export const state = {
             context: false,
             model: false,
             personality: false
-        }
+        },
+        suggestionIndex: -1
     },
 
     // Active downloads tracking

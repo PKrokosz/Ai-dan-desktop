@@ -41,7 +41,7 @@ export function sourceTemplate() {
         <span class="search-icon">🔍</span>
         <input type="text" class="minimal-search-input" id="searchName" 
                placeholder="Wpisz imię, gildię lub zawód..." 
-               oninput="handleSearchInput()" autocomplete="off">
+               autocomplete="off">
         <button class="filter-icon-btn" id="tagsFilterBtn" onclick="toggleTagsDrawer()" title="Pokaż/Ukryj Tagi">
             ⚙️ Filtry
         </button>
@@ -50,25 +50,51 @@ export function sourceTemplate() {
 
       <div id="tagsDrawer" class="tags-drawer">
          <div class="tag-category">
-            <div class="tag-category-title">⚖️ Za co siedzi</div>
+            <div class="tag-category-title">🏰 Obóz</div>
+            <div class="tag-cloud">
+               <button class="tag-chip" onclick="searchByTag('stary obóz')">⛺ Stary Obóz</button>
+               <button class="tag-chip" onclick="searchByTag('nowy obóz')">🌊 Nowy Obóz</button>
+               <button class="tag-chip" onclick="searchByTag('bractwo')">🏯 Bractwo</button>
+               <button class="tag-chip" onclick="searchByTag('skazaniec')">📍 Skazaniec</button>
+            </div>
+         </div>
+
+         <div class="tag-category">
+            <div class="tag-category-title">👥 Frakcja</div>
+            <div class="tag-cloud">
+               <button class="tag-chip" onclick="searchByTag('cień')">⛺ Cienie</button>
+               <button class="tag-chip" onclick="searchByTag('magnat')">👑 Magnaci</button>
+               <button class="tag-chip" onclick="searchByTag('strażnik')">🛡️ Strażnicy</button>
+               <button class="tag-chip" onclick="searchByTag('najemnik')">⚔️ Najemnicy</button>
+               <button class="tag-chip" onclick="searchByTag('szkodnik')">🗡️ Szkodnicy</button>
+               <button class="tag-chip" onclick="searchByTag('guru')">👁️ Guru</button>
+               <button class="tag-chip" onclick="searchByTag('nowicjusz')">🌿 Nowicjusze</button>
+               <button class="tag-chip" onclick="searchByTag('kopacz')">⛏️ Kopacze</button>
+               <button class="tag-chip" onclick="searchByTag('kret')">⛏️ Krety</button>
+               <button class="tag-chip" onclick="searchByTag('służący')">🧹 Służący</button>
+            </div>
+         </div>
+         
+         <div class="tag-category">
+            <div class="tag-category-title">💼 Profesja</div>
+            <div class="tag-cloud">
+               <button class="tag-chip" onclick="searchByTag('łowca')">🏹 Łowca</button>
+               <button class="tag-chip" onclick="searchByTag('alchemik')">⚗️ Alchemik</button>
+               <button class="tag-chip" onclick="searchByTag('kowal')">🔨 Kowal</button>
+               <button class="tag-chip" onclick="searchByTag('górnik')">⛏️ Górnik</button>
+               <button class="tag-chip" onclick="searchByTag('handlarz')">💎 Handlarz</button>
+               <button class="tag-chip" onclick="searchByTag('zielarz')">🌿 Zielarz</button>
+            </div>
+         </div>
+
+         <div class="tag-category">
+            <div class="tag-category-title">⚖️ Wyrok</div>
             <div class="tag-cloud">
                <button class="tag-chip" onclick="searchByTag('kradzież')">🗡️ Kradzież</button>
                <button class="tag-chip" onclick="searchByTag('przemyt')">📦 Przemyt</button>
                <button class="tag-chip" onclick="searchByTag('zabójstwo')">💀 Zabójstwo</button>
                <button class="tag-chip" onclick="searchByTag('oszustwo')">🎭 Oszustwo</button>
-               <button class="tag-chip" onclick="searchByTag('bójka')">👊 Bójka</button>
-            </div>
-         </div>
-         
-         <div class="tag-category">
-            <div class="tag-category-title">💼 Zawód</div>
-            <div class="tag-cloud">
-               <button class="tag-chip" onclick="searchByTag('górnik')">⛏️ Górnik</button>
-               <button class="tag-chip" onclick="searchByTag('kowal')">🔨 Kowal</button>
-               <button class="tag-chip" onclick="searchByTag('handlarz')">💎 Handlarz</button>
-               <button class="tag-chip" onclick="searchByTag('łowca')">🏹 Łowca</button>
-               <button class="tag-chip" onclick="searchByTag('najemnik')">⚔️ Najemnik</button>
-               <button class="tag-chip" onclick="searchByTag('strażnik')">🛡️ Strażnik</button>
+               <button class="tag-chip" onclick="searchByTag('długi')">💰 Długi</button>
             </div>
          </div>
          
@@ -79,6 +105,8 @@ export function sourceTemplate() {
                <button class="tag-chip" onclick="searchByTag('hazardzista')">🎲 Hazard</button>
                <button class="tag-chip" onclick="searchByTag('chciwość')">🤑 Chciwy</button>
                <button class="tag-chip" onclick="searchByTag('gniew')">😠 Porywczy</button>
+               <button class="tag-chip" onclick="searchByTag('tchórz')">😰 Tchórz</button>
+               <button class="tag-chip" onclick="searchByTag('naiwny')">🤷 Naiwny</button>
             </div>
          </div>
       </div>

@@ -28,25 +28,68 @@ export function updateSearchStats() {
     }
 }
 
-export function handleSearchInput() {
+export function handleSearchInput(event) {
     const input = document.getElementById('searchName');
     const suggestionsPanel = document.getElementById('searchSuggestions');
 
     if (!input || !suggestionsPanel || !window.state.allProfiles || window.state.allProfiles.length === 0) return;
 
+    // Handle Keyboard Navigation
+    if (event && (event.key === 'ArrowDown' || event.key === 'ArrowUp' || event.key === 'Enter' || event.key === 'Tab')) {
+        const items = suggestionsPanel.querySelectorAll('.suggestion-item:not(.no-results)');
+        if (items.length > 0) {
+            if (event.key === 'ArrowDown') {
+                event.preventDefault();
+                window.state.ui.suggestionIndex = Math.min(window.state.ui.suggestionIndex + 1, items.length - 1);
+                updateSuggestionHighlight(items);
+                return;
+            }
+            if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                window.state.ui.suggestionIndex = Math.max(window.state.ui.suggestionIndex - 1, -1);
+                updateSuggestionHighlight(items);
+                return;
+            }
+            if (event.key === 'Enter' || event.key === 'Tab') {
+                if (window.state.ui.suggestionIndex >= 0) {
+                    event.preventDefault();
+                    items[window.state.ui.suggestionIndex].click();
+                    if (event.key === 'Enter') loadDataSource();
+                    return;
+                }
+            }
+        }
+    }
+
     const query = input.value.toLowerCase().trim();
+    window.state.ui.suggestionIndex = -1; // Reset highlight
 
     if (query.length < 2) {
         suggestionsPanel.style.display = 'none';
         return;
     }
 
-    // Filter ALL profiles
+    // Filter ALL profiles based on Expanded Fields
     const matches = window.state.allProfiles.filter(p => {
         const name = (p['Imie postaci'] || '').toLowerCase();
         const guild = (p['Gildia'] || '').toLowerCase();
         const region = (p['Region'] || '').toLowerCase();
-        return name.includes(query) || guild.includes(query) || region.includes(query);
+        const group = (p['StoryGroup'] || '').toLowerCase();
+        const city = (p['Miejscowosc'] || '').toLowerCase();
+
+        // Match in Tags
+        const tags = (p.Tags || []).map(t => t.name.toLowerCase());
+
+        // Match in Storyline Data (Enriched fields)
+        const lore = `${p['Fabuła_Opis'] || ''} ${p['Fabuła_SłowaKluczowe'] || ''} ${p['Fabuła_Wątki'] || ''} ${p['Fabuła_Notatki'] || ''}`.toLowerCase();
+
+        return name.includes(query) ||
+            guild.includes(query) ||
+            region.includes(query) ||
+            group.includes(query) ||
+            city.includes(query) ||
+            tags.some(t => t.includes(query)) ||
+            lore.includes(query);
     }).slice(0, 15); // Show top 15 matches
 
     if (matches.length === 0) {
@@ -57,12 +100,26 @@ export function handleSearchInput() {
 
     suggestionsPanel.innerHTML = matches.map(p => `
     <div class="suggestion-item" onclick="window.AppModules.selectSuggestion('${p['Imie postaci']}')">
-      <span class="suggestion-name">${p['Imie postaci']}</span>
-      <span class="suggestion-meta">${p['Gildia']} • ${p['Region']}</span>
+      <div class="suggestion-name">${p['Imie postaci']}</div>
+      <div class="suggestion-meta">
+        ${p['Gildia']} • ${p['Region']}
+        ${p['StoryGroup'] ? `<br><small style="opacity: 0.6">${p['StoryGroup']}</small>` : ''}
+      </div>
     </div>
   `).join('');
 
     suggestionsPanel.style.display = 'block';
+}
+
+function updateSuggestionHighlight(items) {
+    items.forEach((item, idx) => {
+        if (idx === window.state.ui.suggestionIndex) {
+            item.classList.add('active');
+            item.scrollIntoView({ block: 'nearest' });
+        } else {
+            item.classList.remove('active');
+        }
+    });
 }
 
 export function selectSuggestion(name) {
@@ -86,26 +143,58 @@ export function searchByTag(tagName) {
         return;
     }
 
-    // Filter profiles that have this tag
+    const t = tagName.toLowerCase();
+
+    // Camp Filtering Logic (Map camp tag to multiple guilds)
+    const CAMP_GUILDS = {
+        'stary obóz': ['kopacz', 'cień', 'strażnik', 'magnat', 'służba'],
+        'nowy obóz': ['kret', 'szkodnik', 'najemnik', 'mag wody'],
+        'bractwo': ['nowicjusz', 'strażnik świątynny', 'guru'],
+    };
+
+    // Filter profiles
     const matches = window.state.allProfiles.filter(p => {
+        // 1. Direct tag match
         if (p.Tags && Array.isArray(p.Tags)) {
-            return p.Tags.some(t => t.name === tagName);
+            const hasTag = p.Tags.some(tag => tag.name.toLowerCase() === t);
+            if (hasTag) return true;
         }
+
+        // 2. Camp-to-Guild match
+        if (CAMP_GUILDS[t]) {
+            const guild = (p['Gildia'] || '').toLowerCase();
+            return CAMP_GUILDS[t].some(g => guild.includes(g));
+        }
+
         return false;
     });
 
     if (matches.length > 0) {
         window.state.sheetData = { success: true, rows: matches };
-        if (window.addLog) window.addLog('success', `Znaleziono ${matches.length} postaci z tagiem "${tagName}"`);
+        if (window.addLog) window.addLog('success', `Znaleziono ${matches.length} postaci dla filtra "${tagName}"`);
         window.state.currentStep = 2;
         if (window.renderStep) window.renderStep();
     } else {
-        if (window.addLog) window.addLog('warn', `Brak postaci z tagiem "${tagName}". Próbuję wyszukiwanie pełnotekstowe...`);
+        if (window.addLog) window.addLog('warn', `Brak postaci dla filtra "${tagName}". Próbuję wyszukiwanie pełnotekstowe...`);
         // Fallback to full-text search
         document.getElementById('searchName').value = tagName;
         loadDataSource();
     }
 }
+
+// Global Keyboard Listener for Search Bar (ensure it handles keys correctly)
+document.addEventListener('keydown', (e) => {
+    if (e.target.id === 'searchName') {
+        handleSearchInput(e);
+    }
+});
+
+// Input event listener for typing (triggers suggestions on each keystroke)
+document.addEventListener('input', (e) => {
+    if (e.target.id === 'searchName') {
+        handleSearchInput(e);
+    }
+});
 
 // ==============================
 // Data Loading

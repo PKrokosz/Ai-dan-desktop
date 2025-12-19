@@ -2665,3 +2665,59 @@ body {
 .ai-message.bot .ai-message-content {
   border-radius: 12px 12px 12px 2px;
 }
+
+/* ==============================
+   Search Suggestions
+   ============================== */
+#searchSuggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-panel);
+  border: 1px solid var(--gold-soft);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.suggestion-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: all 0.2s;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover,
+.suggestion-item.active {
+  background: rgba(184, 138, 43, 0.15);
+  border-left: 3px solid var(--gold);
+}
+
+.suggestion-name {
+  font-weight: 600;
+  color: var(--gold-bright);
+  font-size: 14px;
+}
+
+.suggestion-meta {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.suggestion-item.no-results {
+  color: var(--text-dim);
+  font-style: italic;
+  cursor: default;
+  text-align: center;
+  padding: 20px;
+}

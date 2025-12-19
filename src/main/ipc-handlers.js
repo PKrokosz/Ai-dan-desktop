@@ -141,10 +141,10 @@ ipcMain.handle('fetch-larpgothic', async (event, search = {}) => {
         if (result.success) {
             sendProgress(event, 1, 80, `Pobrano ${result.rows.length} profili. Wzbogacam o dane fabularne...`);
 
-            // Enrich with Story Groups from Excel
+            // Enrich with Lore and Story Groups from Excel
             try {
-                await excelSearch.enrichWithGroups(result.rows);
-                logger.info('Enriched profiles with Faction Groups');
+                await excelSearch.enrichWithLore(result.rows);
+                logger.info('Enriched profiles with full Lore context');
             } catch (e) {
                 logger.warn('Failed to enrich groups', { error: e.message });
             }

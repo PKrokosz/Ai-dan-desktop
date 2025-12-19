@@ -460,32 +460,65 @@ class ExcelSearchService {
     }
 
     /**
-     * Enrich a list of profiles with "Story Group" data from local Faction History files.
-     * @param {Array} profiles - List of profile objects (must have 'Imie postaci' or 'name')
-     * @returns {Promise<Array>} - Enriched profiles with 'StoryGroup' property
+     * Enrich a list of profiles with full lore context from local Faction History files.
+     * @param {Array} profiles - List of profile objects
+     * @returns {Promise<Array>} - Enriched profiles
      */
-    async enrichWithGroups(profiles) {
+    async enrichWithLore(profiles) {
         // Ensure faction data is loaded
         const factionData = await this.loadFactionHistory();
 
-        // Build efficient Lookup Map: Name (normalized) -> Group
-        const groupMap = new Map();
+        // Build efficient Lookup Map: Name (normalized) -> Lore Object
+        const loreMap = new Map();
 
         Object.values(factionData).forEach(rows => {
             rows.forEach(row => {
                 const name = (row['Imię postaci'] || row['Imie postaci'] || '').trim().toLowerCase();
-                const group = row['Grupa / Profesja'] || row['Grupa'] || '';
-                if (name && group) {
-                    groupMap.set(name, group);
+                if (name) {
+                    loreMap.set(name, {
+                        group: row['Grupa / Profesja'] || row['Grupa'] || '',
+                        description: row['Krótki opis postaci'] || '',
+                        keywords: row['Słowa kluczowe'] || '',
+                        plots: row['Wątki'] || '',
+                        facts: row['Najważniejsze fakty z podsumowania'] || '',
+                        goals: row['Cele personalne'] || '',
+                        notes: row['Notatki'] || '',
+                        playstyle: row['Playstyle'] || '',
+                        origin: `${row['Pochodzenie ogólne'] || ''} ${row['Pochodzenie dokładne'] || ''}`.trim()
+                    });
                 }
             });
         });
 
         // Enrich profiles
         profiles.forEach(p => {
-            const pName = (p['Imie postaci'] || p['name'] || '').trim().toLowerCase();
-            if (groupMap.has(pName)) {
-                p['StoryGroup'] = groupMap.get(pName);
+            const pNameFull = (p['Imie postaci'] || p['name'] || '').trim().toLowerCase();
+            const pNameFirst = pNameFull.split(' ')[0]; // Handle "Nox (Cień)" -> "Nox"
+
+            let lore = loreMap.get(pNameFull);
+
+            // Fallback: Try first name or partial match if no exact match
+            if (!lore) {
+                for (const [key, val] of loreMap.entries()) {
+                    if (key.includes(pNameFull) || pNameFull.includes(key)) {
+                        lore = val;
+                        break;
+                    }
+                }
+            }
+
+            if (lore) {
+                p['StoryGroup'] = lore.group;
+                p['Fabuła_Opis'] = lore.description;
+                p['Fabuła_SłowaKluczowe'] = lore.keywords;
+                p['Fabuła_Wątki'] = lore.plots;
+                p['Fabuła_Fakty'] = lore.facts;
+                p['Fabuła_Cele'] = lore.goals;
+                p['Fabuła_Notatki'] = lore.notes;
+                p['Fabuła_Playstyle'] = lore.playstyle;
+                if (lore.origin && (!p['Region'] || p['Region'].includes('Nieznany'))) {
+                    p['Region'] = lore.origin;
+                }
             }
         });
 

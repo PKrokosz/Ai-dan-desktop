@@ -31,6 +31,14 @@ class LarpGothicService {
             18: 'Guru'
         };
 
+        // Camp mapping based on Guild IDs
+        this.CAMP_MAP = {
+            'Stary Obóz': [1, 2, 3, 4, 30],       // Kopacz, Cień, Strażnik, Magnat, Służba
+            'Nowy Obóz': [21, 13, 14, 28, 6],    // Kret, Szkodnik, Najemnik, Mag Wody
+            'Bractwo': [29, 7, 15, 18],          // Nowicjusz, Strażnik Świątynny, Guru
+            'Skazaniec': [16]                    // Skazaniec
+        };
+
         // Region mappings from geography-data.js
         this.regions = REGIONS;
 
@@ -42,33 +50,38 @@ class LarpGothicService {
 
         // Tag categories for semantic search
         this.tagCategories = {
+            // 🏰 Obóz (Camps)
+            'stary obóz': { icon: '⛺', keywords: ['stary obóz', 'starym obozie', 'gomez', 'kminek'] },
+            'nowy obóz': { icon: '🌊', keywords: ['nowy obóz', 'nowym obozie', 'lee', 'lares'] },
+            'bractwo': { icon: '🏯', keywords: ['bractwo', 'obóz bractwa', 'sekta', 'yberion', 'kalom'] },
+
             // ⚖️ Za co siedzi (guilt/crime)
-            'kradzież': { icon: '🗡️', keywords: ['kradzież', 'kradł', 'złodziej', 'ukradł', 'włamanie'] },
-            'przemyt': { icon: '📦', keywords: ['przemyt', 'przemycał', 'kontraband', 'szmuglował'] },
-            'zabójstwo': { icon: '💀', keywords: ['zabójstwo', 'zabił', 'morderstwo', 'morderca', 'śmierć'] },
-            'oszustwo': { icon: '🎭', keywords: ['oszustwo', 'oszukał', 'fałszerstwo', 'szarlatan'] },
-            'bójka': { icon: '👊', keywords: ['bójka', 'pobicie', 'napaść', 'bijatyka'] },
-            'długi': { icon: '💰', keywords: ['dług', 'długi', 'nie spłacił', 'bankrut'] },
+            'kradzież': { icon: '🗡️', keywords: ['kradzież', 'kradł', 'złodziej', 'ukradł', 'włamanie', 'zwinął'] },
+            'przemyt': { icon: '📦', keywords: ['przemyt', 'przemycał', 'kontraband', 'szmuglował', 'nielegalny transport'] },
+            'zabójstwo': { icon: '💀', keywords: ['zabójstwo', 'zabił', 'morderstwo', 'morderca', 'śmierć', 'pozbawił życia'] },
+            'oszustwo': { icon: '🎭', keywords: ['oszustwo', 'oszukał', 'fałszerstwo', 'szarlatan', 'naciągał'] },
+            'bójka': { icon: '👊', keywords: ['bójka', 'pobicie', 'napaść', 'bijatyka', 'uderzył'] },
+            'długi': { icon: '💰', keywords: ['dług', 'długi', 'nie spłacił', 'bankrut', 'winien rudę'] },
 
             // 💼 Zawód/Zajęcie
-            'górnik': { icon: '⛏️', keywords: ['kopacz', 'górnik', 'ruda', 'kopalnia', 'wydobycie', 'kopie'] },
-            'kowal': { icon: '🔨', keywords: ['kowal', 'płatnerz', 'kuźnia', 'żelazo', 'ostrza', 'miecz'] },
-            'handlarz': { icon: '💎', keywords: ['kupiec', 'handlarz', 'handel', 'sprzedaż', 'targ', 'sklep'] },
-            'łowca': { icon: '🏹', keywords: ['łowca', 'myśliwy', 'polowanie', 'tropiciel', 'zwierzyna'] },
-            'strażnik': { icon: '🛡️', keywords: ['strażnik', 'ochroniarz', 'wartownik', 'patrol'] },
-            'najemnik': { icon: '⚔️', keywords: ['najemnik', 'wojownik', 'gladiator', 'walka', 'żołnierz'] },
-            'zielarz': { icon: '🌿', keywords: ['zielarz', 'uzdrowiciel', 'medyk', 'leczenie', 'ziół'] },
-            'alchemik': { icon: '⚗️', keywords: ['alchemik', 'alchemia', 'mikstury', 'eliksir'] },
-            'paser': { icon: '🔓', keywords: ['paser', 'paserstwo', 'kradzione', 'cienie'] },
-            'skryba': { icon: '📜', keywords: ['skryba', 'pisarz', 'uczony', 'księgi', 'czytanie'] },
+            'górnik': { icon: '⛏️', keywords: ['kopacz', 'górnik', 'ruda', 'kopalnia', 'wydobycie', 'kopie', 'kilof'] },
+            'kowal': { icon: '🔨', keywords: ['kowal', 'płatnerz', 'kuźnia', 'żelazo', 'ostrza', 'miecz', 'wykuwa'] },
+            'handlarz': { icon: '💎', keywords: ['kupiec', 'handlarz', 'handel', 'sprzedaż', 'targ', 'sklep', 'wymiana'] },
+            'łowca': { icon: '🏹', keywords: ['łowca', 'myśliwy', 'polowanie', 'tropiciel', 'zwierzyna', 'łuk', 'tatuuje'] },
+            'strażnik': { icon: '🛡️', keywords: ['strażnik', 'ochroniarz', 'wartownik', 'patrol', 'pilnuje'] },
+            'najemnik': { icon: '⚔️', keywords: ['najemnik', 'wojownik', 'gladiator', 'walka', 'żołnierz', 'zaciężny'] },
+            'zielarz': { icon: '🌿', keywords: ['zielarz', 'uzdrowiciel', 'medyk', 'leczenie', 'ziół', 'apteka'] },
+            'alchemik': { icon: '⚗️', keywords: ['alchemik', 'alchemia', 'mikstury', 'eliksir', 'warzy'] },
+            'paser': { icon: '🔓', keywords: ['paser', 'paserstwo', 'kradzione', 'cienie', 'skup'] },
+            'skryba': { icon: '📜', keywords: ['skryba', 'pisarz', 'uczony', 'księgi', 'czytanie', 'kaligrafia'] },
 
             // ⚠️ Wady/Cechy (useful for GM)
-            'alkoholik': { icon: '🍺', keywords: ['alkohol', 'pijak', 'pić', 'wódka', 'piwo'] },
-            'hazardzista': { icon: '🎲', keywords: ['hazard', 'kości', 'grać', 'zakład'] },
-            'chciwość': { icon: '🤑', keywords: ['chciwy', 'chciwość', 'żądny', 'bogactwo'] },
-            'gniew': { icon: '😠', keywords: ['gniewny', 'wściekły', 'porywczy', 'agresywny'] },
-            'tchórz': { icon: '😰', keywords: ['tchórz', 'strach', 'boi się', 'ucieka'] },
-            'naiwny': { icon: '🤷', keywords: ['naiwny', 'łatwowierny', 'głupi', 'ufny'] }
+            'alkoholik': { icon: '🍺', keywords: ['alkohol', 'pijak', 'pić', 'wódka', 'piwo', 'ryżówka', 'nalewka'] },
+            'hazardzista': { icon: '🎲', keywords: ['hazard', 'kości', 'grać', 'zakład', 'poker', 'szuler'] },
+            'chciwość': { icon: '🤑', keywords: ['chciwy', 'chciwość', 'żądny', 'bogactwo', 'bryłki', 'skąpy'] },
+            'gniew': { icon: '😠', keywords: ['gniewny', 'wściekły', 'porywczy', 'agresywny', 'wybuchowy'] },
+            'tchórz': { icon: '😰', keywords: ['tchórz', 'strach', 'boi się', 'ucieka', 'lękliwy'] },
+            'naiwny': { icon: '🤷', keywords: ['naiwny', 'łatwowierny', 'głupi', 'ufny', 'dał się nabrać'] }
         };
     }
 
@@ -171,6 +184,18 @@ class LarpGothicService {
 
         // Auto-generate tags based on profile content
         const tags = this.tagProfile(profile);
+
+        // Map to Camp
+        let camp = 'Inne';
+        for (const [campName, ids] of Object.entries(this.CAMP_MAP)) {
+            if (ids.includes(charId)) {
+                camp = campName;
+                break;
+            }
+        }
+        if (camp !== 'Inne') {
+            tags.push({ name: camp.toLowerCase(), icon: this.tagCategories[camp.toLowerCase()]?.icon || '📍' });
+        }
 
         return {
             'id': profile.id,

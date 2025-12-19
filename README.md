@@ -30,6 +30,18 @@ Duża aktualizacja skupiająca się na relacjach, historii i wygodzie użytkowan
 - **Ignorowanie tytułów**: Przedrostki takie jak "Baal", "Gor", "Cor" są inteligentnie pomijane przy wyszukiwaniu, co eliminuje fałszywe powiązania między postaciami o tym samym tytule.
 - **Precyzja**: Znaczna redukcja "szumu" w sekcji "Wzmianki".
 
+### 📚 Wzbogacanie Lore (Fabuła Integration)
+
+- **Automatyczne wzbogacanie profili**: Profile postaci z API są automatycznie uzupełniane danymi z plików `Fabuła <Frakcja> 2025.xlsx`.
+- **Nowe pola fabularne**: `StoryGroup` (Grupa/Profesja), `Fabuła_Opis`, `Fabuła_SłowaKluczowe`, `Fabuła_Wątki`, `Fabuła_Fakty`, `Fabuła_Cele`, `Fabuła_Notatki`, `Fabuła_Playstyle`, `Region`.
+- **Inteligentne dopasowywanie nazw**: Algorytm obsługuje warianty imion (np. "Nox" ↔ "Drax") i częściowe dopasowania.
+
+### 🏷️ Rozszerzone filtry tagów
+
+- **Nowe kategorie**: Obóz, Frakcja, Profesja, Wyrok, Wady.
+- **Filtrowanie obozowe**: Kliknięcie np. "Stary Obóz" automatycznie filtruje powiązane gildie (Cienie, Kopacze, Strażnicy).
+- **Nawigacja klawiaturą**: Pełna obsługa `↑`, `↓`, `Tab`, `Enter` dla sugestii wyszukiwania.
+
 ### 🖼️ System Okien (Character Overlay)
 
 - Kliknięcie w postać (np. na timeline lub w relacjach) otwiera teraz "pływające" okno (Overlay) zamiast przeładowywać widok.
