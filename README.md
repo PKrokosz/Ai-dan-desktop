@@ -8,6 +8,35 @@
 
 ---
 
+## 🚀 Ostatnie zmiany (v1.1) - Relationship Update
+
+Duża aktualizacja skupiająca się na relacjach, historii i wygodzie użytkowania.
+
+### 🕸️ Graf Relacji (Relationship Navigator)
+
+- Dodano interaktywny graf relacji między postaciami.
+- Wizualizacja powiązań (przyjaciel, wróg, dłużnik) w czasie rzeczywistym.
+- Analiza "Sąsiedztwa" - AI analizuje grupy postaci i proponuje wspólne wątki fabularne.
+
+### ⏳ Timeline 2.0 & Awanse
+
+- **Integracja z Excelem**: Aplikacja teraz automatycznie wczytuje historię awansów z pliku `drzewka postaci.xlsx`.
+- **Wizualizacja Awansów**: Nowe, zielone znaczniki (⭐) na osi czasu wskazują moment zmiany rangi/klasy.
+- **Ulepszony Layout**: Czytelniejszy podział na edycje i lata.
+
+### 🔍 Smart Search (Inteligentne Wyszukiwanie)
+
+- **Obsługa polskiej fleksji**: System rozpoznaje odmienione imiona (np. "Diego" -> "Diega") dzięki algorytmom stemmingu.
+- **Ignorowanie tytułów**: Przedrostki takie jak "Baal", "Gor", "Cor" są inteligentnie pomijane przy wyszukiwaniu, co eliminuje fałszywe powiązania między postaciami o tym samym tytule.
+- **Precyzja**: Znaczna redukcja "szumu" w sekcji "Wzmianki".
+
+### 🖼️ System Okien (Character Overlay)
+
+- Kliknięcie w postać (np. na timeline lub w relacjach) otwiera teraz "pływające" okno (Overlay) zamiast przeładowywać widok.
+- Możliwość szybkiego podglądu wielu postaci bez utraty kontekstu.
+
+---
+
 ## 📋 Spis treści
 
 - [O Projekcie](#-o-projekcie)
